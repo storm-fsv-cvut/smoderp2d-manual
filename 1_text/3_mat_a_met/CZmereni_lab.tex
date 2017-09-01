@@ -1,0 +1,32 @@
+%!TEX ROOT = ../mainCZ.tex
+%\subsubsection{Měření na žlabu}
+\label{sss:zlab}
+Laboratorní dešťový simulátor (LabDS) byl konstruován od roku 1999 do roku 2002 a od té doby bylo provedeno přes dvěstěpadesát experimentů zemědělské půdy vystavený extrémním srážkovým událostem. Jedná se o tryskový dešťový simulátor typu \textit{Norton Ladder Rainfall Simulator} \cite{Norton2010} s kyvnými tryskami VeeJet s pádovou výškou kapky 2,43 m a průměrem kapky 2,3 mm. Zařízení umožňuje pro každou simulaci nastavit odlišné podmínky simulace, které se mohou lišit podélným sklonem půdního povrchu v rozmezí 0°–8°, intenzitou simulovaného deště v rozmezí 20–60~mm/hod. 
+Plocha půdního vzorku je 4~x~0,9~m a hloubky 15~cm, přičemž dalších 5 cm tvoří spodní drenážní vrstva písku oddělená speciální mřížkou proti vyplavování sedimentu do spodního horizontu. Půdní vzorek je standartě proseta přes síta s velikostí ok 20x20 mm, aby došlo k odstranění rostlinných zbytků a větších frakcí. Po naplnění erozního kontejneru se půdní vzorek před začátkem simulací ponechává v klidu po dobu cca 4-6 týdnů, aby došlo k rovnoměrné konsolidaci celého vzorku.
+
+\input{./tab/TACZLabDS_sumarry}
+
+Při simulacích trvajících nejčastěji 60 minut se sleduje a zaznamenává průběh a rychlost povrchového odtoku, ze kterého se následně získává i průběh půdního smyvu, respektive celková ztráty půdy. Dalšími veličinami, které se zaznamenávají, jsou vlhkost půdního vzorku na začátku a konci simulace a kontrolní intenzity simulovaného deště po skončení měření [1]. 
+Z hlediska objemu testovaných půdních vzorků se jedná o kvádr velikosti 4 x 0,9 m a hloubky 15 cm, přičemž dalších 5 cm tvoří spodní drenážní vrstva písku. Před naplněním kontejneru je půda navíc proseta přes síta s velikostí ok 20 x 20 mm, aby došlo k odstranění rostlinných zbytků a větších frakcí kameniva. Po naplnění erozního kontejneru se půdní vzorek před začátkem simulací ponechává v klidu po dobu cca 4-6 týdnů, aby došlo k rovnoměrné konsolidaci celého vzorku.
+
+První kalibrace a následná validace odtokových parametrů byla provedena na výsledcích jednotlivých měření na laboratorním dešťovém simulátoru z let 2002 až 2008 \citep{KavkaDisertace}. Pro vlastní kalibraci a optimalizaci odtokových parametrů byl vytvořen model \textit{SmoderpMSExcel} a primárně byl určen pro jeden úsek svahu s konstantním sklonem a pro srážku s konstantní intenzitou.
+
+Samotná kalibrace odtokových parametrů na základně naměřených hodnot probíhá ve dvou krocích. Nejprve byly určeny krajní hodnoty nasycené hydraulické vodivosti pro danou půdu vycházející z pedologického průzkumu. K těmto hodnotám byly přiřazeny hodnoty sorptivity. V těchto mezích jsou hledány hodnoty K a S tak, aby mezi měřenými a vypočtenými hodnotami byla maximální shoda. K nalezení optimálního řešení je používána metoda metody nejmenších čtverců. V dalším kroku je podobným způsobem pomocí lineární regrese metodou vyhodnocen i povrchový odtok. Měněnými parametry v tomto kroku řešitele jsou parametry rovnice \acs{MKWA}.
+
+Výše popsaný postup byl aplikován na reprezentativní výběr měření z jednotlivých sad měření na různých půdách. Počet měření jednotlivých sad a počet z nich vybraných měření uvádí následující tabulka.
+
+\input{./tab/TACZSmoderp1D_kalibrace}
+
+U parametrů b, X bylo dostačující použití lineární regrese. Proložení složitější křivky nepřineslo výrazně těsnější vztah porovnáním hodnoty koeficientu determinace (R2). Pro parametr b se R2 rovná 0,87, pro parametr X se rovná 0,93. Pro parametr Y byl zvolen mocninný trend regresní křivky výsledným R2 = 0,83.
+
+\input{./tab/TAparametry_Kavka} 
+
+V rámci zpětného porovnání s dřívějšími verzemi bylo provedeno porovnání celkových výsledků pro čtyři verze modelu IV. I/11 – 96, 4.01, 5.01, 10.01 na svahu o délce 120 m se sklonem 6\%. U varianty modelu 10.01 byl upraven výpočet nejprve tak, aby se délka elementu rovnala délce celého svahu a výpočet probíhal stejně jako v předchozích verzích na svahu nerozděleném na elementy. Pak byl svah spočten pro variantu jednoduchý svah (délka elementu 10 m) a pro variantu násep (délka elementu 1 m).
+
+\input{./tab/TACZSmoderp1Dverze_porovnani}
+
+Prostorová varianta modelu s podporou GIS aplikací začala být vyvíjena již v roce 2012  a jejím vývoji se pokračuje do teď. Nic méně, první problém, který se ukázal být zásadní byly nestandardní jednotky použité při kalibraci parametrů \acs{b}, \acs{X}, \acs{Y} rovnice \acs{MKWA}. Tyto nelineární a statisticky odvozené parametry nebylo možné jednoduše použít a bylo nutné přepočítat všechny vstupní hodnoty na jednotky SI a zopakovat kalibrační postup. Parametr \acs{b} zůstal po kalibraci zachován původní na rozdíl od parametrů \acs{X}, \acs{Y}. Nová kalibrace byla provedena na rozšířeném setu dat z dešťového simulátoru až do roku 2011. A pro verifikaci byla prvně využita data z terénních simulací pomocí dešťového simulátoru \citep{EGUDS}. Parametry odpovídající jednotkám SI jsou uvedeny v tabulce \ref{tab:Neuman_param}.
+
+\input{./tab/TAparametry_Neuman}
+
+Tyto parametry byly využity při stavbě prostorového řešení modelu Smoderp2D.

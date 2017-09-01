@@ -1,0 +1,624 @@
+\relax 
+\providecommand\hyper@newdestlabel[2]{}
+\catcode `"\active 
+\catcode `-\active 
+\providecommand\HyperFirstAtBeginDocument{\AtBeginDocument}
+\HyperFirstAtBeginDocument{\ifx\hyper@anchor\@undefined
+\global\let\oldcontentsline\contentsline
+\gdef\contentsline#1#2#3#4{\oldcontentsline{#1}{#2}{#3}}
+\global\let\oldnewlabel\newlabel
+\gdef\newlabel#1#2{\newlabelxx{#1}#2}
+\gdef\newlabelxx#1#2#3#4#5#6{\oldnewlabel{#1}{{#2}{#3}}}
+\AtEndDocument{\ifx\hyper@anchor\@undefined
+\let\contentsline\oldcontentsline
+\let\newlabel\oldnewlabel
+\fi}
+\fi}
+\global\let\hyper@last\relax 
+\gdef\HyperFirstAtBeginDocument#1{#1}
+\providecommand\HyField@AuxAddToFields[1]{}
+\providecommand\HyField@AuxAddToCoFields[2]{}
+\AC@reset@newl@bel
+\select@language{czech}
+\@writefile{toc}{\select@language{czech}}
+\@writefile{lof}{\select@language{czech}}
+\@writefile{lot}{\select@language{czech}}
+\@writefile{toc}{\contentsline {section}{Obsah}{i}{Doc-Start}}
+\@writefile{toc}{\contentsline {subsection}{Seznam zkratek}{ii}{section*.1}}
+\newacro{a}[\AC@hyperlink{a}{$a$}]{parametr MKWA}
+\newacro{A}[\AC@hyperlink{A}{$A$}]{pr\IeC {\r u}to\IeC {\v c}n\IeC {\'a} plocha [$m^{2}$]}
+\newacro{b}[\AC@hyperlink{b}{$b$}]{parametr MKWA}
+\newacro{brill}[\AC@hyperlink{brill}{$b_{rill}$}]{\IeC {\v s}\IeC {\'\i }\IeC {\v r}ka r\IeC {\'y}hy [$m$]}
+\newacro{BrutoSR}[\AC@hyperlink{BrutoSR}{$B_{\Delta t}$}]{sr\IeC {\'a}\IeC {\v z}ka [$m$]}
+\newacro{CFL}[\AC@hyperlink{CFL}{$CFL$}]{Courant-Friedrich-Lewy podm\IeC {\'\i }nka}
+\newacro{D8}[\AC@hyperlink{D8}{$D8$}]{jednosm\IeC {\v e}rn\IeC {\'y} odtokov\IeC {\'y} algoritmus}
+\newacro{dT}[\AC@hyperlink{dT}{$\Delta t$}]{\IeC {\v c}asov\IeC {\'y} krok [$s$]}
+\newacro{dTmax}[\AC@hyperlink{dTmax}{$\Delta t_{max}$}]{maxim\IeC {\'a}ln\IeC {\'\i } \IeC {\v c}asov\IeC {\'y} krok [$s$]}
+\newacro{dTmult}[\AC@hyperlink{dTmult}{$\Delta t_{mult}$}]{multiplik\IeC {\'a}tor \IeC {\v c}asov\IeC {\'y} krok [$-$]}
+\newacro{dX}[\AC@hyperlink{dX}{$\Delta x$}]{prostorov\IeC {\'y} krok [$m$]}
+\newacro{dS}[\AC@hyperlink{dS}{$\frac  {\mathrm  {d}S}{\mathrm  {d}t}$}]{zm\IeC {\v e}na z\IeC {\'a}soby [$m^3/s$]}
+\newacro{ES}[\AC@hyperlink{ES}{$ES$}]{efektivn\IeC {\'\i } sr\IeC {\'a}\IeC {\v z}ka [$m^3/s$]}
+\newacro{es}[\AC@hyperlink{es}{$es$}]{intenzita sr\IeC {\'a}\IeC {\v z}ky [$m/s$]}
+\newacro{hcrit}[\AC@hyperlink{hcrit}{$h^{crit}$}]{kritick\IeC {\'a} hloubka [$m$]}
+\newacro{hrill}[\AC@hyperlink{hrill}{$h^{rill}$}]{hloubka r\IeC {\'y}hy [$m$]}
+\newacro{hsur}[\AC@hyperlink{hsur}{$h^{sur}$}]{v\IeC {\'y}\IeC {\v s}ka hladiny na povrchu [$m$]}
+\newacro{HyVod}[\AC@hyperlink{HyVod}{$k$}]{nasycen\IeC {\'a} hydraulick\IeC {\'a} vodivost [$m s^{-1}$]}
+\newacro{i}[\AC@hyperlink{i}{$i$}]{\IeC {\v r}e\IeC {\v s}en\IeC {\'e}n\IeC {\'y} element}
+\newacro{Inf}[\AC@hyperlink{Inf}{$Inf$}]{infiltrovan\IeC {\'e} mno\IeC {\v z}stv\IeC {\'\i } [$m^3/s$]}
+\newacro{inf}[\AC@hyperlink{inf}{$inf$}]{intenzita infiltrace [$m/s$]}
+\newacro{Itot}[\AC@hyperlink{Itot}{$I_{tot}$}]{celkov\IeC {\'y} p\IeC {\v r}\IeC {\'\i }tok za \IeC {\v c}as [$m^3/s$]}
+\newacro{I}[\AC@hyperlink{I}{$I$}]{sklon [@@@jj procenta nebo stupne]}
+\newacro{K}[\AC@hyperlink{K}{$K$}]{sou\IeC {\v c}initel \IeC {\v s}\IeC {\'\i }\IeC {\v r}ky (pro plo\IeC {\v s}n\IeC {\'y} odtok K = 1)}
+\newacro{Ki}[\AC@hyperlink{Ki}{$K_i$}]{nasycen\IeC {\'a} hydraulick\IeC {\'a} vodivost v bu\IeC {\v n}ce $i$ [$m/s$]}
+\newacro{Lai}[\AC@hyperlink{Lai}{$I_{LAI}$}]{pom\IeC {\v e}rn\IeC {\'a} plocha listov\IeC {\'a}}
+\newacro{lrill}[\AC@hyperlink{lrill}{$l_{rill}$}]{d\IeC {\'e}lka r\IeC {\'y}hy [$m$]}
+\newacro{MKWA}[\AC@hyperlink{MKWA}{$MKWA$}]{modifikovan\IeC {\'a} rovnice kinematick\IeC {\'e} vlny}
+\newacro{mfda}[\AC@hyperlink{mfda}{$mfda$}]{v\IeC {\'\i }cesm\IeC {\v e}rn\IeC {\'y} odtokov\IeC {\'y} algoritmus}
+\newacro{n}[\AC@hyperlink{n}{$n$}]{mannig\IeC {\r u}v sou\IeC {\v c}initel drsnosti}
+\newacro{NetoSR}[\AC@hyperlink{NetoSR}{$I_{N}$}]{efektivn\IeC {\'\i } sr\IeC {\'a}\IeC {\v z}ka}
+\newacro{PS}[\AC@hyperlink{PS}{$PS$}]{potenci\IeC {\'a}ln\IeC {\'\i } sr\IeC {\'a}\IeC {\v z}ka [$m$]}
+\newacro{Otot}[\AC@hyperlink{Otot}{$O_{tot}$}]{odtokov\IeC {\'e} mno\IeC {\v z}stv\IeC {\'\i } za \IeC {\v c}as [$m^{3}/s$]}
+\newacro{Oin}[\AC@hyperlink{Oin}{$O^{in}$}]{objem p\IeC {\v r}\IeC {\'\i }toku ze sousedn\IeC {\'\i } bu\IeC {\v n}ky za \IeC {\v c}as [$m^{3}/s$]}
+\newacro{oin}[\AC@hyperlink{oin}{$o^{in}$}]{v\IeC {\'y}\IeC {\v s}ka vtoku za \IeC {\v c}as [$m/s$]}
+\newacro{oinrill}[\AC@hyperlink{oinrill}{$o^{in}_{rill}$}]{v\IeC {\'y}\IeC {\v s}ka vtoku v r\IeC {\'y}ze za \IeC {\v c}as [$m/s$]}
+\newacro{Oout}[\AC@hyperlink{Oout}{$O^{out}$}]{objem odtoku z bu\IeC {\v n}ky za \IeC {\v c}as [$m^{3}/s$]}
+\newacro{oout}[\AC@hyperlink{oout}{$o^{out}$}]{v\IeC {\'y}\IeC {\v s}ka odtoku z bu\IeC {\v n}ky za \IeC {\v c}as [$m/s$]}
+\newacro{ooutrill}[\AC@hyperlink{ooutrill}{$o^{out}_{rill}$}]{v\IeC {\'y}\IeC {\v s}ka odtoku v r\IeC {\'y}ze za \IeC {\v c}as [$m/s$]}
+\newacro{Orill}[\AC@hyperlink{Orill}{$O_{rill}$}]{objem odtoku - r\IeC {\'y}hov\IeC {\'y} odtok [$m^{3}$]}
+\newacro{Osur}[\AC@hyperlink{Osur}{$O_{sur}$}]{objem odtoku - plo\IeC {\v s}n\IeC {\'y} odtok [$m^{3}$]}
+\newacro{O}[\AC@hyperlink{O}{$O$}]{omo\IeC {\v c}en\IeC {\'y} obvod [$m$]}
+\newacro{PotI}[\AC@hyperlink{PotI}{$I_{POT}$}]{potencion\IeC {\'a}ln\IeC {\'\i } intercepce}
+\newacro{q}[\AC@hyperlink{q}{$q$}]{pr\IeC {\r u}tok [$m^{3}{s}^{-1}$]}
+\newacro{qrill}[\AC@hyperlink{qrill}{$q_{rill}$}]{pr\IeC {\r u}tok v r\IeC {\'y}h\IeC {\'a}ch [$m^{3}/s$]}
+\newacro{qsur}[\AC@hyperlink{qsur}{$q_{sur}$}]{specifick\IeC {\'y} plo\IeC {\v s}n\IeC {\'y} pr\IeC {\r u}tok [$m^{2}/s$]}
+\newacro{Qtot}[\AC@hyperlink{Qtot}{$q_{t}$}]{celkov\IeC {\'y} odtok}
+\newacro{Rrill}[\AC@hyperlink{Rrill}{$R_{rill}$}]{hydraulick\IeC {\'y} polom\IeC {\v e}r v r\IeC {\'y}ze [m]}
+\newacro{R2}[\AC@hyperlink{R2}{$R^2$}]{koeficient determinace}
+\newacro{ro}[\AC@hyperlink{ro}{$\rho $}]{t\IeC {\'\i }hov\IeC {\'e} zrychlen\IeC {\'\i } @@@jj neni to hustota? zrychlen\IeC {\'\i } ma jine jednotky [$m s^{-1}$]}
+\newacro{rratio}[\AC@hyperlink{rratio}{$rill_{ratio}$}]{parametr tvaru r\IeC {\'y}hy [-]}
+\newacro{ratio}[\AC@hyperlink{ratio}{$ratio$}]{celo\IeC {\v c}\IeC {\'\i }seln\IeC {\'y} faktor d\IeC {\v e}l\IeC {\'\i }c\IeC {\'\i } \IeC {\v c}asov\IeC {\'y} krok p\IeC {\v r}i v\IeC {\'y}po\IeC {\v c}tu r\IeC {\'y}hov\IeC {\'e}ho odtoku}
+\newacro{slope}[\AC@hyperlink{slope}{$i_{0}$}]{sklon[-]}
+\newacro{Sorb}[\AC@hyperlink{Sorb}{$S_{i}$}]{sorptivita p\IeC {\r u}dy [$m \sqrt  {s}$]}
+\newacro{S}[\AC@hyperlink{S}{$S$}]{sorptivita p\IeC {\r u}dy [$m \sqrt  {s}$]}
+\newacro{t}[\AC@hyperlink{t}{$t$}]{\IeC {\v c}asov\IeC {\'y} krok[$s$]}
+\newacro{tau}[\AC@hyperlink{tau}{$\tau $}]{te\IeC {\v c}n\IeC {\'e} nap\IeC {\v e}t\IeC {\'\i } [$Pa$]}
+\newacro{Vout}[\AC@hyperlink{Vout}{$V_{out}$}]{objem objem odtelk\IeC {\'e}ho [$m^{3}$]}
+\newacro{Vcrit}[\AC@hyperlink{Vcrit}{$V_{crit}$}]{objem vody do kritick\IeC {\'e} hladiny [$m^{3}$]}
+\newacro{vrill}[\AC@hyperlink{vrill}{$v_{rill}$}]{rychlost proud\IeC {\v e}n\IeC {\'\i } - r\IeC {\'y}hov\IeC {\'y} odtok [$m/s$]}
+\newacro{Vrill}[\AC@hyperlink{Vrill}{$V_{rill}$}]{objem vody v r\IeC {\'y}ze v dan\IeC {\'e}m elementu [$m^{3}$]}
+\newacro{vsur}[\AC@hyperlink{vsur}{$v_{sur}$}]{rychlost proud\IeC {\v e}n\IeC {\'\i } - plo\IeC {\v s}n\IeC {\'y} odtok [$m/s$]}
+\newacro{Vtot}[\AC@hyperlink{Vtot}{$V_{tot}$}]{celkov\IeC {\'y} objem vody v elementu [$m^{3}$]}
+\newacro{X}[\AC@hyperlink{X}{$X$}]{parametr MKWA}
+\newacro{Y}[\AC@hyperlink{Y}{$Y$}]{parametr MKWA}
+\newacro{GIS}[\AC@hyperlink{GIS}{$GIS$}]{geografick\IeC {\'e} informa\IeC {\v c}n\IeC {\'\i } syst\IeC {\'e}my}
+\newacro{g}[\AC@hyperlink{g}{$g$}]{gravita\IeC {\v c}n\IeC {\'\i } zrychlen\IeC {\'\i } [$m/s^{2}$]}
+\newacro{ij}[\AC@hyperlink{ij}{$i, j$}]{sou\IeC {\v r}adnice elementu - bu\IeC {\v n}ky}
+\newacro{MD8}[\AC@hyperlink{MD8}{$MD8$}]{Multiple Flow Direction Algorithm}
+\newacro{bunka}[\AC@hyperlink{bunka}{$P$}]{plocha bu\IeC {\v n}ky [$m^3$]}
+\citation{KavkaDisertace}
+\acronymused{CFL}
+\acronymused{CFL}
+\acronymused{ratio}
+\acronymused{ratio}
+\acronymused{ratio}
+\acronymused{CFL}
+\acronymused{CFL}
+\acronymused{ratio}
+\acronymused{ratio}
+\@writefile{toc}{\contentsline {subsection}{Seznam obr\IeC {\'a}zk\IeC {\r u}}{iv}{section*.1}}
+\citation{Neumann15:232823}
+\acronymused{ratio}
+\@writefile{toc}{\contentsline {subsection}{Seznam tabulek}{v}{section*.1}}
+\citation{LieveVan-Camp2004}
+\citation{Boardman2006}
+\citation{Bryan2000}
+\citation{Gimenez2008,Govers2007}
+\citation{Chaplot2012}
+\citation{Cerdan2002,Auerswald2009,BauerSGEM}
+\citation{Walling1983}
+\citation{Beven2005,Verstraeten2001}
+\citation{Otero2011,Davidova2016}
+\citation{Sanguesa2010}
+\citation{Strauss2000}
+\citation{Marques2007}
+\citation{EGUDS}
+\@writefile{toc}{\contentsline {section}{\IeC {\'U}vod}{1}{section*.1}}
+\citation{Pandey2016}
+\citation{Wischmeier1978}
+\citation{Renard1991}
+\citation{Davidova2016}
+\citation{Laflen1997}
+\citation{Woolhiser1989}
+\citation{Schindewolf2012a}
+\citation{Holy1984}
+\@writefile{toc}{\contentsline {section}{\numberline {1}Materi\IeC {\'a}l a metody}{3}{section.1}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {1.1}SMODERP - historick\IeC {\'y} v\IeC {\'y}voj}{3}{subsection.1.1}}
+\newlabel{SM_hist}{{1.1}{3}{SMODERP - historický vývoj}{subsection.1.1}{}}
+\@writefile{toc}{\contentsline {paragraph}{Profilov\IeC {\'e} verze - SMODERP 1D}{3}{subsection.1.1}}
+\@writefile{toc}{\contentsline {subparagraph}{1986 - 1996}{3}{subsection.1.1}}
+\acronymused{MKWA}
+\@writefile{toc}{\contentsline {subparagraph}{2001 - 2006}{3}{subsection.1.1}}
+\citation{Nemecek2011}
+\citation{KavkaDisertace}
+\@writefile{toc}{\contentsline {subparagraph}{2010 - 2012}{4}{subsection.1.1}}
+\@writefile{toc}{\contentsline {paragraph}{Prostorov\IeC {\'e} \IeC {\v r}e\IeC {\v s}en\IeC {\'\i } - SMODERP 2D}{4}{subsection.1.1}}
+\acronymused{GIS}
+\citation{Holy1984}
+\AC@undonewlabel{acro:cour}
+\newlabel{acro:cour}{{1.1}{5}{Prostorové řešení - SMODERP 2D}{section*.2}{}}
+\acronymused{cour}
+\acronymused{dT}
+\@writefile{toc}{\contentsline {subparagraph}{do diskuse d\IeC {\'a}t}{5}{subsection.1.1}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {1.2}Experiment\IeC {\'a}ln\IeC {\'\i } m\IeC {\v e}\IeC {\v r}en\IeC {\'\i }}{5}{subsection.1.2}}
+\newlabel{Exp_mer}{{1.2}{5}{Experimentální měření}{subsection.1.2}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {1.2.1}M\IeC {\v e}\IeC {\v r}en\IeC {\'\i } na sklopn\IeC {\'e}m hydraulick\IeC {\'e}m \IeC {\v z}labu}{5}{subsubsection.1.2.1}}
+\newlabel{Exp_mer_zlab}{{1.2.1}{5}{Měření na sklopném hydraulickém žlabu}{subsubsection.1.2.1}{}}
+\citation{Holy1984}
+\citation{Norton2010}
+\@writefile{lot}{\contentsline {table}{\numberline {1}{\ignorespaces Original and corrected parameters for MKWA based on hydraulic trough\relax }}{6}{table.caption.3}}
+\providecommand*\caption@xref[2]{\@setref\relax\@undefined{#1}}
+\newlabel{tab:puvodni}{{1}{6}{Original and corrected parameters for MKWA based on hydraulic trough\relax }{table.caption.3}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {1.2.2}Labolatorn\IeC {\'\i } de\IeC {\v s}\IeC {\v t}ov\IeC {\'y} simul\IeC {\'a}tor}{6}{subsubsection.1.2.2}}
+\newlabel{Exp_ mer_labDS}{{1.2.2}{6}{Labolatorní dešťový simulátor}{subsubsection.1.2.2}{}}
+\newlabel{sss:zlab}{{1.2.2}{6}{Labolatorní dešťový simulátor}{subsubsection.1.2.2}{}}
+\citation{KavkaDisertace}
+\@writefile{lot}{\contentsline {table}{\numberline {2}{\ignorespaces P\IeC {\v r}ehled m\IeC {\v e}\IeC {\v r}en\IeC {\'\i } na labolatorn\IeC {\'\i }m de\IeC {\v s}\IeC {\v t}ov\IeC {\'e}m simul\IeC {\'a}toru 2002 - 2016\relax }}{7}{table.caption.4}}
+\newlabel{tab:addlabel}{{2}{7}{Přehled měření na labolatorním dešťovém simulátoru 2002 - 2016\relax }{table.caption.4}{}}
+\citation{KavkaDisertace}
+\citation{KavkaDisertace}
+\citation{EGUDS}
+\acronymused{MKWA}
+\@writefile{lot}{\contentsline {table}{\numberline {3}{\ignorespaces P\IeC {\v r}ehled experiment\IeC {\r u} pou\IeC {\v z}it\IeC {\'y}ch pro kalibraci odtokov\IeC {\'y}ch parametr\IeC {\r u}\relax }}{8}{table.caption.5}}
+\newlabel{tab:addlabel}{{3}{8}{Přehled experimentů použitých pro kalibraci odtokových parametrů\relax }{table.caption.5}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {4}{\ignorespaces Recalibrated parameters \citep  {KavkaDisertace}\relax }}{8}{table.caption.6}}
+\newlabel{tab:addlabel}{{4}{8}{Recalibrated parameters \citep {KavkaDisertace}\relax }{table.caption.6}{}}
+\acronymused{b}
+\acronymused{X}
+\acronymused{Y}
+\acronymused{MKWA}
+\acronymused{b}
+\acronymused{X}
+\acronymused{Y}
+\citation{Neumann15:232823}
+\citation{Neumann15:232823}
+\@writefile{lot}{\contentsline {table}{\numberline {5}{\ignorespaces Porovn\IeC {\'a}n\IeC {\'\i } v\IeC {\'y}stup\IeC {\r u} verz\IeC {\'\i } modelu 1996 a\IeC {\v z} 2010\relax }}{9}{table.caption.7}}
+\newlabel{tab:addlabel}{{5}{9}{Porovnání výstupů verzí modelu 1996 až 2010\relax }{table.caption.7}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {6}{\ignorespaces {Recalibrated parameters to SI\citep  {Neumann15:232823}}\relax }}{9}{table.caption.8}}
+\newlabel{tab:Neuman_param}{{6}{9}{{Recalibrated parameters to SI\citep {Neumann15:232823}}\relax }{table.caption.8}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {1.3}Pu\IeC {\v z}it\IeC {\'e} vztahy a jejich odvozen\IeC {\'\i }}{9}{subsection.1.3}}
+\newlabel{modelovani}{{1.3}{9}{Pužité vztahy a jejich odvození}{subsection.1.3}{}}
+\acronymused{Inf}
+\acronymused{ES}
+\acronymused{Otot}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {1.3.1}Plo\IeC {\v s}n\IeC {\'y} povrchov\IeC {\'y} odtok}{9}{subsubsection.1.3.1}}
+\citation{Nevim}
+\acronymused{dS}
+\acronymused{Itot}
+\acronymused{Otot}
+\newlabel{eq:bilobecne}{{1}{10}{Plošný povrchový odtok}{equation.1.1}{}}
+\acronymused{dS}
+\acronymused{dS}
+\acronymused{Itot}
+\acronymused{Itot}
+\acronymused{Otot}
+\acronymused{Otot}
+\acronymused{Itot}
+\acronymused{Otot}
+\acronymused{Itot}
+\acronymused{ES}
+\acronymused{Oin}
+\acronymused{Otot}
+\acronymused{Inf}
+\acronymused{Oout}
+\acronymused{Oin}
+\acronymused{Oin}
+\acronymused{Oout}
+\acronymused{Oout}
+\acronymused{ES}
+\acronymused{ES}
+\acronymused{Inf}
+\acronymused{Inf}
+\acronymused{ES}
+\acronymused{Oin}
+\acronymused{Inf}
+\acronymused{Oout}
+\newlabel{eq:bilancnirceV}{{2}{10}{Plošný povrchový odtok}{equation.1.2}{}}
+\acronymused{D8}
+\acronymused{mfda}
+\acronymused{ES}
+\acronymused{Inf}
+\acronymused{Oin}
+\acronymused{Oout}
+\acronymused{bunka}
+\acronymused{hsur}
+\acronymused{hsur}
+\acronymused{hsur}
+\acronymused{dT}
+\acronymused{hsur}
+\acronymused{hsur}
+\acronymused{dT}
+\acronymused{es}
+\acronymused{oin}
+\acronymused{inf}
+\acronymused{oout}
+\newlabel{eq:bilancnirce}{{3}{10}{Plošný povrchový odtok}{equation.1.3}{}}
+\acronymused{hsur}
+\acronymused{hsur}
+\acronymused{es}
+\acronymused{es}
+\acronymused{inf}
+\acronymused{inf}
+\acronymused{oin}
+\acronymused{oin}
+\acronymused{oout}
+\acronymused{oout}
+\citation{philip1957}
+\acronymused{es}
+\@writefile{toc}{\contentsline {paragraph}{Efektivn\IeC {\'\i } sr\IeC {\'a}\IeC {\v z}ka \acs {es}}{11}{equation.1.3}}
+\acronymused{PotI}
+\acronymused{Lai}
+\acronymused{dT}
+\acronymused{PS}
+\acronymused{PS}
+\acronymused{PS}
+\acronymused{Lai}
+\acronymused{PS}
+\acronymused{PS}
+\acronymused{PotI}
+\acronymused{es}
+\acronymused{PS}
+\acronymused{PotI}
+\acronymused{dT}
+\acronymused{PS}
+\acronymused{PS}
+\acronymused{Lai}
+\acronymused{Lai}
+\acronymused{PotI}
+\acronymused{PotI}
+\acronymused{inf}
+\@writefile{toc}{\contentsline {paragraph}{Intenzita infiltrace \acs {inf}}{11}{equation.1.3}}
+\newlabel{eq:phillip}{{4}{11}{Intenzita infiltrace \acs {inf}}{equation.1.4}{}}
+\acronymused{inf}
+\acronymused{Sorb}
+\acronymused{Ki}
+\acronymused{inf}
+\acronymused{inf}
+\acronymused{Sorb}
+\acronymused{Sorb}
+\acronymused{Ki}
+\acronymused{Ki}
+\acronymused{K}
+\acronymused{Sorb}
+\citation{Schwab1993}
+\acronymused{oin}
+\acronymused{oout}
+\@writefile{toc}{\contentsline {paragraph}{Plo\IeC {\v s}n\IeC {\'y} odtok \acs {oin}, \acs {oout}}{12}{equation.1.4}}
+\newlabel{rce_odtok}{{1.3.1}{12}{Plošný odtok \acs {oin}, \acs {oout}}{equation.1.4}{}}
+\acronymused{qsur}
+\acronymused{a}
+\acronymused{hsur}
+\acronymused{b}
+\acronymused{qsur}
+\acronymused{qsur}
+\acronymused{a}
+\acronymused{a}
+\acronymused{X}
+\acronymused{I}
+\acronymused{Y}
+\acronymused{b}
+\acronymused{b}
+\acronymused{a}
+\acronymused{b}
+\acronymused{X}
+\acronymused{Y}
+\acronymused{oout}
+\acronymused{oin}
+\acronymused{dX}
+\acronymused{bunka}
+\acronymused{qsur}
+\acronymused{dX}
+\acronymused{dX}
+\acronymused{bunka}
+\acronymused{bunka}
+\@writefile{toc}{\contentsline {paragraph}{Odvozen\IeC {\'e} veli\IeC {\v c}iny}{12}{equation.1.4}}
+\acronymused{Vout}
+\acronymused{dT}
+\acronymused{qsur}
+\acronymused{Vout}
+\acronymused{Vout}
+\acronymused{vsur}
+\acronymused{qsur}
+\acronymused{hsur}
+\newlabel{eg:v}{{5}{12}{Odvozené veličiny}{equation.1.5}{}}
+\acronymused{vsur}
+\acronymused{vsur}
+\acronymused{tau}
+\acronymused{ro}
+\acronymused{g}
+\acronymused{hsur}
+\acronymused{I}
+\acronymused{K}
+\newlabel{eg:tau}{{6}{12}{Odvozené veličiny}{equation.1.6}{}}
+\citation{DyrovaE.1984}
+\citation{CabikJ.1963}
+\acronymused{tau}
+\acronymused{tau}
+\acronymused{ro}
+\acronymused{ro}
+\acronymused{g}
+\acronymused{g}
+\acronymused{I}
+\acronymused{I}
+\acronymused{K}
+\acronymused{K}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {1.3.2}Soust\IeC {\v r}ed\IeC {\v e}n\IeC {\'y} odtok v r\IeC {\'y}h\IeC {\'a}ch}{13}{subsubsection.1.3.2}}
+\newlabel{sec:soustredenyodtok}{{1.3.2}{13}{Soustředěný odtok v rýhách}{subsubsection.1.3.2}{}}
+\acronymused{I}
+\acronymused{qrill}
+\acronymused{vrill}
+\acronymused{A}
+\acronymused{A}
+\acronymused{n}
+\acronymused{Rrill}
+\acronymused{I}
+\newlabel{eq:qrill}{{7}{13}{Soustředěný odtok v rýhách}{equation.1.7}{}}
+\acronymused{qrill}
+\acronymused{qrill}
+\acronymused{vrill}
+\acronymused{vrill}
+\acronymused{A}
+\acronymused{A}
+\acronymused{n}
+\acronymused{n}
+\acronymused{Rrill}
+\acronymused{Rrill}
+\acronymused{hcrit}
+\acronymused{Vrill}
+\acronymused{Vrill}
+\acronymused{Vtot}
+\acronymused{Vcrit}
+\acronymused{hsur}
+\acronymused{hcrit}
+\acronymused{bunka}
+\acronymused{Vrill}
+\acronymused{Vrill}
+\acronymused{Vtot}
+\acronymused{Vtot}
+\acronymused{Vcrit}
+\acronymused{Vcrit}
+\acronymused{hcrit}
+\acronymused{hcrit}
+\acronymused{rratio}
+\@writefile{lof}{\contentsline {figure}{\numberline {1}{\ignorespaces Tvar r\IeC {\'y}ny a v\IeC {\'y}\IeC {\v s}ka vodn\IeC {\'\i } hladiny p\IeC {\v r}i pln\IeC {\v e}n\IeC {\'\i } r\IeC {\'y}ny \IeC {\v c}i ust\IeC {\'a}len\IeC {\'\i } proud\IeC {\v e}n\IeC {\'\i } (napravo), tvar r\IeC {\'y}ny p\IeC {\v r}i jej\IeC {\'\i }m pr\IeC {\'a}zdn\IeC {\v e}n\IeC {\'\i } (nalevo)\relax }}{14}{figure.caption.9}}
+\newlabel{fig:rill_schema}{{1}{14}{Tvar rýny a výška vodní hladiny při plnění rýny či ustálení proudění (napravo), tvar rýny při jejím prázdnění (nalevo)\relax }{figure.caption.9}{}}
+\acronymused{Vrill}
+\acronymused{Vrill}
+\acronymused{Rrill}
+\acronymused{A}
+\acronymused{O}
+\acronymused{hrill}
+\acronymused{brill}
+\acronymused{brill}
+\acronymused{hrill}
+\acronymused{brill}
+\acronymused{rratio}
+\acronymused{brill}
+\acronymused{rratio}
+\acronymused{brill}
+\acronymused{brill}
+\acronymused{O}
+\acronymused{O}
+\acronymused{rratio}
+\acronymused{rratio}
+\@writefile{toc}{\contentsline {paragraph}{Celkov\IeC {\'a} bilance}{14}{figure.caption.9}}
+\acronymused{hsur}
+\acronymused{hsur}
+\acronymused{dT}
+\acronymused{es}
+\acronymused{oin}
+\acronymused{inf}
+\acronymused{oout}
+\acronymused{oinrill}
+\acronymused{ooutrill}
+\newlabel{eq:bilancnircerill}{{8}{14}{Celková bilance}{equation.1.8}{}}
+\acronymused{oinrill}
+\acronymused{oinrill}
+\acronymused{ooutrill}
+\acronymused{ooutrill}
+\acronymused{D8}
+\acronymused{oinrill}
+\acronymused{ooutrill}
+\@writefile{toc}{\contentsline {paragraph}{R\IeC {\'y}hov\IeC {\'y} odtok \acs {oinrill}, \acs {ooutrill}}{15}{equation.1.8}}
+\acronymused{oinrill}
+\acronymused{ooutrill}
+\acronymused{qrill}
+\acronymused{brill}
+\acronymused{lrill}
+\acronymused{lrill}
+\acronymused{lrill}
+\@writefile{toc}{\contentsline {paragraph}{Pozn\IeC {\'a}mka nebo to d\IeC {\'a}t do diskuse k \IeC {\v c}l\IeC {\'a}nku}{15}{equation.1.8}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {1.4}SMODERP 2D - postup v\IeC {\'y}po\IeC {\v c}tu}{15}{subsection.1.4}}
+\newlabel{vypocet}{{1.4}{15}{SMODERP 2D - postup výpočtu}{subsection.1.4}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {1.4.1}Vstupy do modelu}{15}{subsubsection.1.4.1}}
+\newlabel{kap:vstupy}{{1.4.1}{15}{Vstupy do modelu}{subsubsection.1.4.1}{}}
+\citation{kavka}
+\@writefile{toc}{\contentsline {paragraph}{Digit\IeC {\'a}ln\IeC {\'\i } model ter\IeC {\'e}nu}{16}{subsubsection.1.4.1}}
+\newlabel{sec:vstupdmt}{{1.4.1}{16}{Digitální model terénu}{subsubsection.1.4.1}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {2}{\ignorespaces digit\IeC {\'a}ln\IeC {\'\i }ho modelu ter\IeC {\'e}nu povod\IeC {\'\i } B\IeC {\'y}kovice\relax }}{17}{figure.caption.10}}
+\newlabel{fig:bykovicedmt}{{2}{17}{digitálního modelu terénu povodí Býkovice\relax }{figure.caption.10}{}}
+\@writefile{toc}{\contentsline {paragraph}{Shapefile p\IeC {\r u}d}{17}{figure.caption.10}}
+\newlabel{sec:vstuppuda}{{1.4.1}{17}{Shapefile půd}{figure.caption.10}{}}
+\@writefile{toc}{\contentsline {paragraph}{Shapefile vyu\IeC {\v z}it\IeC {\'\i } \IeC {\'u}zem\IeC {\'\i }}{17}{figure.caption.11}}
+\newlabel{sec:vstupvegetace}{{1.4.1}{17}{Shapefile využití území}{figure.caption.11}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {3}{\ignorespaces Uk\IeC {\'a}zka vektorov\IeC {\'e} vrstvy, atributov\IeC {\'e} tabulky a polem v atributov\IeC {\'e} tabulce (pudni\_druh) s identifik\IeC {\'a}torem p\IeC {\r u}dn\IeC {\'\i }ho typu na vyzna\IeC {\v c}en\IeC {\'e}m \IeC {\'u}zem\IeC {\'\i } (HP).\relax }}{18}{figure.caption.11}}
+\newlabel{fig:bykovicepuda}{{3}{18}{Ukázka vektorové vrstvy, atributové tabulky a polem v atributové tabulce (pudni\_druh) s identifikátorem půdního typu na vyznačeném území (HP).\relax }{figure.caption.11}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {4}{\ignorespaces Uk\IeC {\'a}zka vektorov\IeC {\'e} vrstvy, atributov\IeC {\'e} tabulky a polem v atributov\IeC {\'e} tabulce (LandUse) s~identifik\IeC {\'a}torem typu vegetace na vyzna\IeC {\v c}en\IeC {\'e}m \IeC {\'u}zem\IeC {\'\i } (TP - travn\IeC {\'\i } porost).\relax }}{18}{figure.caption.12}}
+\newlabel{fig:bykovicevegetace}{{4}{18}{Ukázka vektorové vrstvy, atributové tabulky a polem v atributové tabulce (LandUse) s~identifikátorem typu vegetace na vyznačeném území (TP - travní porost).\relax }{figure.caption.12}{}}
+\@writefile{toc}{\contentsline {paragraph}{Sr\IeC {\'a}\IeC {\v z}kov\IeC {\'y} soubor}{18}{figure.caption.12}}
+\newlabel{sec:vstupsrazka}{{1.4.1}{18}{Srážkový soubor}{figure.caption.12}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5}{\ignorespaces Uk\IeC {\'a}zka sr\IeC {\'a}\IeC {\v z}kov\IeC {\'y}ch dat. V intervalu 0 - 10 minut je \IeC {\'u}hrn 3 mm, v intervalu 10 - 60 minut je \IeC {\'u}hrn 40 mm a v intervalu 60 - 70 \IeC {\'u}hrn 0 mm\relax }}{19}{figure.caption.13}}
+\newlabel{fig:srazkovysoubor}{{5}{19}{Ukázka srážkových dat. V intervalu 0 - 10 minut je úhrn 3 mm, v intervalu 10 - 60 minut je úhrn 40 mm a v intervalu 60 - 70 úhrn 0 mm\relax }{figure.caption.13}{}}
+\acronymused{PS}
+\@writefile{toc}{\contentsline {paragraph}{\IeC {\v C}asov\IeC {\'y} krok modelu}{19}{figure.caption.13}}
+\newlabel{sec:vstupkrok}{{1.4.1}{19}{Časový krok modelu}{figure.caption.13}{}}
+\acronymused{dT}
+\@writefile{toc}{\contentsline {paragraph}{D\IeC {\'e}lka b\IeC {\v e}hu modelu}{19}{figure.caption.13}}
+\newlabel{sec:vstupbeh}{{1.4.1}{19}{Délka běhu modelu}{figure.caption.13}{}}
+\@writefile{toc}{\contentsline {paragraph}{Povrchov\IeC {\'a} retence}{20}{figure.caption.13}}
+\newlabel{sec:vstupretence}{{1.4.1}{20}{Povrchová retence}{figure.caption.13}{}}
+\@writefile{toc}{\contentsline {paragraph}{Bodov\IeC {\'y} shapefile}{20}{figure.caption.13}}
+\newlabel{sec:vstupbody}{{1.4.1}{20}{Bodový shapefile}{figure.caption.13}{}}
+\@writefile{toc}{\contentsline {paragraph}{V\IeC {\'y}stupn\IeC {\'\i } adres\IeC {\'a}\IeC {\v r}}{20}{figure.caption.13}}
+\newlabel{sec:vstupadresar}{{1.4.1}{20}{Výstupní adresář}{figure.caption.13}{}}
+\@writefile{toc}{\contentsline {paragraph}{R\IeC {\'y}hov\IeC {\'y} odtok}{20}{figure.caption.13}}
+\newlabel{sec:vstupryhovy}{{1.4.1}{20}{Rýhový odtok}{figure.caption.13}{}}
+\@writefile{toc}{\contentsline {paragraph}{V\IeC {\'\i }cesm\IeC {\v e}rn\IeC {\'y} odtok}{20}{figure.caption.13}}
+\newlabel{sec:vstupvicesmerny}{{1.4.1}{20}{Vícesměrný odtok}{figure.caption.13}{}}
+\@writefile{toc}{\contentsline {paragraph}{\IeC {\'U}prava tabulky parametr\IeC {\r u} p\IeC {\r u}dy a vegetace}{20}{figure.caption.13}}
+\newlabel{sec:upravatabulkyparametru}{{1.4.1}{20}{Úprava tabulky parametrů půdy a vegetace}{figure.caption.13}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {6}{\ignorespaces Uk\IeC {\'a}zka tabulky s charakteristikami p\IeC {\r u}d a vegetace (n\IeC {\v e}kter\IeC {\'e} hodnoty v tomto obr\IeC {\'a}zku nejsou realistick\IeC {\'e}). V\IeC {\'y}znam veli\IeC {\v c}in v jednotliv\IeC {\'y}ch sloupc\IeC {\'\i }ch je pops\IeC {\'a}n v tabulce~\ref  {tab:soilveg}.\relax }}{21}{figure.caption.14}}
+\newlabel{fig:tabsoilveg}{{6}{21}{Ukázka tabulky s charakteristikami půd a vegetace (některé hodnoty v tomto obrázku nejsou realistické). Význam veličin v jednotlivých sloupcích je popsán v tabulce~\ref {tab:soilveg}.\relax }{figure.caption.14}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {7}{\ignorespaces P\IeC {\v r}ehled experiment\IeC {\r u} pou\IeC {\v z}it\IeC {\'y}ch pro kalibraci odtokov\IeC {\'y}ch parametr\IeC {\r u}\relax }}{21}{table.caption.15}}
+\acronymused{HyVod}
+\acronymused{Sorb}
+\acronymused{n}
+\acronymused{PotI}
+\acronymused{Lai}
+\acronymused{b}
+\acronymused{X}
+\acronymused{Y}
+\acronymused{tau}
+\newlabel{tab:soilveg}{{7}{21}{Přehled experimentů použitých pro kalibraci odtokových parametrů\relax }{table.caption.15}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {1.4.2}Tok programu}{21}{subsubsection.1.4.2}}
+\newlabel{kap:tok}{{1.4.2}{21}{Tok programu}{subsubsection.1.4.2}{}}
+\acronymused{oin}
+\acronymused{oinrill}
+\@writefile{lof}{\contentsline {figure}{\numberline {7}{\ignorespaces soubory a adresa modelu SMODERP\relax }}{23}{figure.caption.16}}
+\newlabel{fig:adresare}{{7}{23}{soubory a adresa modelu SMODERP\relax }{figure.caption.16}{}}
+\citation{python}
+\citation{numpy}
+\@writefile{toc}{\contentsline {paragraph}{Programovac\IeC {\'\i } jazyk Python}{24}{figure.caption.16}}
+\newlabel{sec:python}{{1.4.2}{24}{Programovací jazyk Python}{figure.caption.16}{}}
+\@writefile{toc}{\contentsline {paragraph}{CFL podm\IeC {\'\i }nka - \IeC {\v r}e\IeC {\v s}en\IeC {\'\i } nestability v\IeC {\'y}po\IeC {\v c}tu}{24}{figure.caption.16}}
+\newlabel{sec:cfl}{{1.4.2}{24}{CFL podmínka - řešení nestability výpočtu}{figure.caption.16}{}}
+\acronymused{CFL}
+\acronymused{CFL}
+\acronymused{CFL}
+\acronymused{dT}
+\acronymused{dX}
+\newlabel{eq:courrovnice}{{11}{24}{CFL podmínka - řešení nestability výpočtu}{equation.1.11}{}}
+\acronymused{CFL}
+\acronymused{CFL}
+\acronymused{dT}
+\acronymused{dT}
+\acronymused{dX}
+\acronymused{dX}
+\acronymused{CFL}
+\acronymused{dT}
+\acronymused{dT}
+\@writefile{lot}{\contentsline {table}{\numberline {8}{\ignorespaces Krit\IeC {\'e}ria zm\IeC {\v e}ny \IeC {\v c}asov\IeC {\'e}ho kroku vych\IeC {\'a}zej\IeC {\'\i }c\IeC {\'\i } z plo\IeC {\v s}n\IeC {\'e}ho odtoku\relax }}{25}{table.caption.17}}
+\newlabel{tab:cflsheet}{{8}{25}{Kritéria změny časového kroku vycházející z plošného odtoku\relax }{table.caption.17}{}}
+\acronymused{CFL}
+\acronymused{CFL}
+\acronymused{CFL}
+\acronymused{CFL}
+\acronymused{dT}
+\acronymused{dX}
+\acronymused{dTmax}
+\acronymused{dT}
+\@writefile{lot}{\contentsline {table}{\numberline {9}{\ignorespaces Krit\IeC {\'e}ria zm\IeC {\v e}ny faktoru \acs {ratio} p\IeC {\v r}i d\IeC {\v e}len\IeC {\'\i } \IeC {\v c}asov\IeC {\'e}ho kroku p\IeC {\v r}\IeC {\'\i } v\IeC {\'y}po\IeC {\v c}tu r\IeC {\'y}hov\IeC {\'e}ho odtoku\relax }}{25}{table.caption.18}}
+\acronymused{ratio}
+\newlabel{tab:cflrill}{{9}{25}{Kritéria změny faktoru \acs {ratio} při dělení časového kroku pří výpočtu rýhového odtoku\relax }{table.caption.18}{}}
+\acronymused{CFL}
+\acronymused{CFL}
+\acronymused{CFL}
+\acronymused{CFL}
+\acronymused{ratio}
+\acronymused{ratio}
+\acronymused{ratio}
+\acronymused{ratio}
+\acronymused{ratio}
+\acronymused{dTmult}
+\acronymused{dTmult}
+\acronymused{dTmult}
+\acronymused{dTmult}
+\acronymused{dT}
+\acronymused{dT}
+\acronymused{dTmult}
+\acronymused{ratio}
+\acronymused{ratio}
+\acronymused{dTmult}
+\acronymused{CFL}
+\acronymused{CFL}
+\acronymused{dTmult}
+\acronymused{ratio}
+\acronymused{dTmult}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {1.4.3}V\IeC {\'y}stupy z modelu}{25}{subsubsection.1.4.3}}
+\newlabel{kap:vystupy}{{1.4.3}{25}{Výstupy z modelu}{subsubsection.1.4.3}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {8}{\ignorespaces \IeC {\v C}asov\IeC {\'y} krok \IeC {\v r}\IeC {\'\i }zen rychlost\IeC {\'\i } plo\IeC {\v s}n\IeC {\'e}ho odtoku. \acs {CFL} rychle stoupne k 1 a za\IeC {\v c}ne zkracovat \IeC {\v c}asov\IeC {\'y} krok (horn\IeC {\'\i } graf). P\IeC {\'a}r minut pozd\IeC {\v e}ji $\acs {CFL}_{rill}$ stoupne nad 0.5, \acs {ratio} stoupne na 2 (doln\IeC {\'\i } graf) t\IeC {\'\i }m za\IeC {\v c}ne lok\IeC {\'a}ln\IeC {\v e} d\IeC {\v e}lit \IeC {\v c}asov\IeC {\'y} krok p\IeC {\v r}i v\IeC {\'y}po\IeC {\v c}tu r\IeC {\'y}hov\IeC {\'e}ho odtoku. \acs {ratio} na spodn\IeC {\'\i }m grafu stoupne maxim\IeC {\'a}ln\IeC {\'\i } na 4 a neovlivn\IeC {\'\i } tedy celkov\IeC {\'y} \IeC {\v c}asov\IeC {\'y} krok (na horn\IeC {\'\i }m grafu). Na obou grafech je vid\IeC {\v e}t jak se po 25 minut\IeC {\v e} (kdy v modelu skon\IeC {\v c}ila sr\IeC {\'a}\IeC {\v z}kov\IeC {\'a} ud\IeC {\'a}lost) d\IeC {\'a}lka \IeC {\v c}asov\IeC {\'e}ho kroku i \acs {ratio} vr\IeC {\'a}t\IeC {\'\i } na p\IeC {\r u}vodn\IeC {\'\i } hodnoty.\relax }}{26}{figure.caption.19}}
+\acronymused{CFL}
+\acronymused{CFL}
+\acronymused{ratio}
+\acronymused{ratio}
+\acronymused{ratio}
+\newlabel{fig:cfl1}{{8}{26}{Časový krok řízen rychlostí plošného odtoku. \acs {CFL} rychle stoupne k 1 a začne zkracovat časový krok (horní graf). Pár minut později $\acs {CFL}_{rill}$ stoupne nad 0.5, \acs {ratio} stoupne na 2 (dolní graf) tím začne lokálně dělit časový krok při výpočtu rýhového odtoku. \acs {ratio} na spodním grafu stoupne maximální na 4 a neovlivní tedy celkový časový krok (na horním grafu). Na obou grafech je vidět jak se po 25 minutě (kdy v modelu skončila srážková událost) dálka časového kroku i \acs {ratio} vrátí na původní hodnoty.\relax }{figure.caption.19}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {9}{\ignorespaces \IeC {\v C}asov\IeC {\'y} krok \IeC {\v r}\IeC {\'\i }zen rychlost\IeC {\'\i } r\IeC {\'y}hov\IeC {\'e}ho odtoku. \acs {CFL} plo\IeC {\v s}n\IeC {\'e}ho odtoku nep\IeC {\v r}ekro\IeC {\v c}\IeC {\'\i } b\IeC {\v e}hem v\IeC {\'y}po\IeC {\v c}tu hodnotu cca 0.35 (na horn\IeC {\'\i }m grafu), proto nem\IeC {\'a} \IeC {\v z}\IeC {\'a}rn\IeC {\'y} vliv na velikost \IeC {\v c}asov\IeC {\'e}ho kroku. $\acs {CFL}_{rill}$ rychle vystoup\IeC {\'\i } 9 kr\IeC {\'a}t nad kritickou hodnotu 0.5 (spodn\IeC {\'\i } graf, prvn\IeC {\'\i }ch 10 minut v\IeC {\'y}po\IeC {\v c}tu). To zp\IeC {\r u}sob\IeC {\'\i } n\IeC {\'a}r\IeC {\r u}st \acs {ratio} na 9 co\IeC {\v z} je maxim\IeC {\'a}ln\IeC {\'\i } povolen\IeC {\'e} d\IeC {\v e}len\IeC {\'\i } lok\IeC {\'a}ln\IeC {\'\i }ho \IeC {\v c}asov\IeC {\'e}ho kroku p\IeC {\v r}i v\IeC {\'y}po\IeC {\v c}tu r\IeC {\'y}hov\IeC {\'e}ho odtoku. P\IeC {\v r}\IeC {\'\i } dal\IeC {\v s}\IeC {\'\i }m p\IeC {\v r}ekro\IeC {\v c}en\IeC {\'\i } hodnot 0.3 (cca 12 minuta na doln\IeC {\'\i }m grafu) dojde ke zmen\IeC {\v s}en\IeC {\'\i } celkov\IeC {\'e}ho \IeC {\v c}asov\IeC {\'e}ho kroku na 90 \% p\IeC {\r u}vodn\IeC {\'\i } hodnoty (horn\IeC {\'\i } graf). Na obou grafech je vid\IeC {\v e}t jak se po 20 minut\IeC {\v e} (kdy v modelu skon\IeC {\v c}ila sr\IeC {\'a}\IeC {\v z}kov\IeC {\'a} ud\IeC {\'a}lost) d\IeC {\'a}lka \IeC {\v c}asov\IeC {\'e}ho kroku i \acs {ratio} vr\IeC {\'a}t\IeC {\'\i } na p\IeC {\r u}vodn\IeC {\'\i } hodnoty.\relax }}{27}{figure.caption.20}}
+\acronymused{CFL}
+\acronymused{CFL}
+\acronymused{ratio}
+\acronymused{ratio}
+\newlabel{fig:cfl2}{{9}{27}{Časový krok řízen rychlostí rýhového odtoku. \acs {CFL} plošného odtoku nepřekročí během výpočtu hodnotu cca 0.35 (na horním grafu), proto nemá žárný vliv na velikost časového kroku. $\acs {CFL}_{rill}$ rychle vystoupí 9 krát nad kritickou hodnotu 0.5 (spodní graf, prvních 10 minut výpočtu). To způsobí nárůst \acs {ratio} na 9 což je maximální povolené dělení lokálního časového kroku při výpočtu rýhového odtoku. Pří dalším překročení hodnot 0.3 (cca 12 minuta na dolním grafu) dojde ke zmenšení celkového časového kroku na 90 \% původní hodnoty (horní graf). Na obou grafech je vidět jak se po 20 minutě (kdy v modelu skončila srážková událost) dálka časového kroku i \acs {ratio} vrátí na původní hodnoty.\relax }{figure.caption.20}{}}
+\@writefile{toc}{\contentsline {paragraph}{Hydrogramy}{28}{subsubsection.1.4.3}}
+\newlabel{sec:hydrogramy}{{1.4.3}{28}{Hydrogramy}{subsubsection.1.4.3}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {2}V\IeC {\'y}sledky}{29}{section.2}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.1}Porovn\IeC {\'a}n\IeC {\'\i } metod 1D a 2D}{29}{subsection.2.1}}
+\newlabel{porovnani1D2D}{{2.1}{29}{Porovnání metod 1D a 2D}{subsection.2.1}{}}
+\acronymused{dT}
+\acronymused{dT}
+\acronymused{dT}
+\@writefile{lof}{\contentsline {figure}{\numberline {10}{\ignorespaces Flow chart toku programu\relax }}{30}{figure.caption.21}}
+\newlabel{fig:flowchart}{{10}{30}{Flow chart toku programu\relax }{figure.caption.21}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {11}{\ignorespaces Profiles and runof concetration - Horany\relax }}{31}{figure.caption.22}}
+\newlabel{fig:horany}{{11}{31}{Profiles and runof concetration - Horany\relax }{figure.caption.22}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {12}{\ignorespaces Hydrographs 1D and 2D Smoderp - Horany study area\relax }}{32}{figure.caption.23}}
+\newlabel{graf:graf_1}{{12}{32}{Hydrographs 1D and 2D Smoderp - Horany study area\relax }{figure.caption.23}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {13}{\ignorespaces Profiles and runof concetration - Bykovicky catchment \relax }}{33}{figure.caption.24}}
+\newlabel{fig:horany}{{13}{33}{Profiles and runof concetration - Bykovicky catchment \relax }{figure.caption.24}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {14}{\ignorespaces Hydrographs 1D and 2D Smoderp - Bykovicky catchment\relax }}{33}{figure.caption.25}}
+\newlabel{graf:graf_1}{{14}{33}{Hydrographs 1D and 2D Smoderp - Bykovicky catchment\relax }{figure.caption.25}{}}
+\bibstyle{csplainnat}
+\bibdata{bib/bib}
+\bibcite{Auerswald2009}{{1}{2009}{{Auerswald et~al.}}{{Auerswald, Fiener,, Dikau}}}
+\bibcite{BauerSGEM}{{2}{2014}{{Bauer et~al.}}{{Bauer, Kavka, Janotov{\'{a}}, Kr{\'{a}}sa, {Dost{\'{a}}l T.},, Davidov{\'{a}}}}}
+\bibcite{Beven2005}{{3}{2005}{{Beven et~al.}}{{Beven, Heathwaite, Haygarth, Walling, Brazier,, Withers}}}
+\bibcite{Boardman2006}{{4}{2006}{{Boardman et~al.}}{{Boardman, Poesen,, {Wiley InterScience (Online service)}}}}
+\bibcite{Bryan2000}{{5}{2000}{{Bryan -- B.}}{{Bryan, B.}}}
+\bibcite{CabikJ.1963}{{6}{1963}{{Cab{\'{i}}k}}{{}}}
+\bibcite{Cerdan2002}{{7}{2002}{{Cerdan et~al.}}{{Cerdan, {Le Bissonnais}, Couturier,, Saby}}}
+\bibcite{Chaplot2012}{{8}{2012}{{Chaplot -- Poesen}}{{Chaplot, Poesen}}}
+\bibcite{Davidova2016}{{9}{2016}{{Davidova et~al.}}{{Davidova, Dostal, David,, Strauss}}}
+\bibcite{DyrovaE.1984}{{10}{1984}{{D{\'{y}}rov{\'{a}} E.}}{{}}}
+\bibcite{Gimenez2008}{{11}{2008}{{Gimnez -- Govers}}{{Gimnez, Govers}}}
+\bibcite{Govers2007}{{12}{2007}{{Govers et~al.}}{{Govers, Gim{\'{e}}nez,, {Van Oost}}}}
+\@writefile{toc}{\contentsline {section}{\numberline {3}Seznam pou\IeC {\v z}it\IeC {\'y}ch zdroj\IeC {\r u}}{34}{section.3}}
+\bibcite{Holy1984}{{13}{1984}{{Holy}}{{}}}
+\bibcite{KavkaDisertace}{{14}{2011}{{Kavka}}{{}}}
+\bibcite{EGUDS}{{15}{2015}{{Kavka et~al.}}{{Kavka, Dost{\'{a}}l, Iserloh, Davidov{\'{a}}, Kr{\'{a}}sa, David, Vopravil, {Khel T.},, Bauer}}}
+\bibcite{Laflen1997}{{16}{1997}{{Laflen et~al.}}{{Laflen, Elliot, Flanagan, Meyer,, Nearing}}}
+\bibcite{LieveVan-Camp2004}{{17}{2004}{{{Lieve Van-Camp} et~al.}}{{{Lieve Van-Camp}, Bujarrabal, Gentile, Jones, Montanarella, Olazabal,, Selvaradjou}}}
+\bibcite{Marques2007}{{18}{2007}{{Marques et~al.}}{{Marques, Bienes, Jim{\'{e}}nez,, P{\'{e}}rez-Rodr{\'{i}}guez}}}
+\bibcite{Nemecek2011}{{19}{2011}{{N{\v {e}}me{\v {c}}ek et~al.}}{{N{\v {e}}me{\v {c}}ek, M{\"{u}}hlhanselov{\'{a}}, Mack\IeC {\r u}, Vokoun, Vav\IeC {\v r}{\'{i}}{\v {c}}ek,, Nov{\'{a}}k}}}
+\bibcite{Neumann15:232823}{{20}{2015}{{Neumann -- Kavka}}{{Neumann, Kavka}}}
+\bibcite{Norton2010}{{21}{2010}{{Norton -- Savabi}}{{Norton, Savabi}}}
+\bibcite{Otero2011}{{22}{2011}{{Otero et~al.}}{{Otero, Figueroa, Mu{\~{n}}oz,, Pe{\~{n}}a}}}
+\bibcite{Pandey2016}{{23}{2016}{{Pandey et~al.}}{{Pandey, Himanshu, Mishra,, Singh}}}
+\bibcite{philip1957}{{24}{1957}{{Philip}}{{}}}
+\bibcite{Renard1991}{{25}{1991}{{Renard et~al.}}{{Renard, Foster, Weesies,, Porter}}}
+\bibcite{Sanguesa2010}{{26}{2010}{{Sang{\"{u}}esa et~al.}}{{Sang{\"{u}}esa, Arum{\'{i}}, Pizarro,, Link}}}
+\bibcite{Schindewolf2012a}{{27}{2012}{{Schindewolf -- Schmidt}}{{Schindewolf, Schmidt}}}
+\bibcite{Schwab1993}{{28}{1993}{{Schwab}}{{}}}
+\bibcite{Strauss2000}{{29}{2000}{{Strauss et~al.}}{{Strauss, Pitty, Pfeffer,, Mentler}}}
+\bibcite{Verstraeten2001}{{30}{2001}{{Verstraeten -- Poesen}}{{Verstraeten, Poesen}}}
+\bibcite{Walling1983}{{31}{1983}{{Walling}}{{}}}
+\bibcite{Wischmeier1978}{{32}{1978}{{Wischmeier -- Smith}}{{Wischmeier, Smith}}}
+\bibcite{Woolhiser1989}{{33}{1989}{{Woolhiser et~al.}}{{Woolhiser, Smith, Goodrich,, States}}}

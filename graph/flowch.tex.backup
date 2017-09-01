@@ -1,0 +1,72 @@
+{\small
+\begin{center}
+\begin{tikzpicture}[node distance=1.5cm]
+
+\node (start) [startstop] {Start};
+\node (dataprep) [process, below of=start] {Data preparation};
+\node (in) [io, left of=dataprep, xshift=-3.0cm] {Input data};
+
+\node (dec1) [decision, below of=dataprep, yshift=-0.5cm] {End time?};
+
+\node (atm) [process, below of=dec1] {Atmosferic input};
+\node (flow) [process, below of=atm] {Sheet flow};
+
+\node (stop) [startstop] {End};
+
+\node (check) [process, right of=flow, xshift=2.0cm] {Check time step size};
+\node (updatet) [process, right of=atm, xshift=2.0cm] {Update time};
+
+\node (dec2) [decision, below of=flow, yshift=-0.5cm] {Critical water level?};
+\node (rillflow) [process, below of=dec2] {Rill flow};
+
+
+
+\node (dd1) [guide, right of=rillflow, xshift=2.0cm] {};
+\node (dd2) [guide, right of=dec1, xshift=2.0cm] {};
+\node (dd3) [guide, right of=dec2, xshift=2.0cm] {};
+
+
+\draw [arrow] (start) -- (dataprep);
+\draw [arrow] (in) -- (dataprep);
+\draw [arrow] (dataprep) -- (dec1);
+\draw [arrow] (dec1) -- node[anchor=west] {no} (atm);
+\draw [arrow] (atm) -- (flow);
+\draw [arrow] (flow) -- (dec2);
+\draw [arrow] (dec2) -- node[anchor=west] {yes} (rillflow);
+
+\draw [line] (rillflow) -- (dd1);
+\draw [arrow] (dd1) -- (check);
+
+\draw [line] (updatet) -- (dd2);
+\draw [arrow] (dd2) -- (dec1);
+
+\draw [line] (dec2) -- node[anchor=north] {no}(dd3);
+\draw [arrow] (dd3) -- (check);
+
+% \node (pro1) [process, below of=in1] {Process 1};
+% \node (dec1) [decision, below of=pro1, yshift=-0.5cm] {Decision 1};
+% \node (pro2a) [process, below of=dec1, yshift=-0.5cm] {Process 2a};
+% \node (pro2b) [process, right of=dec1, xshift=2cm] {Process 2b};
+% \node (out1) [io, below of=pro2a] {Output};
+% \node (stop) [startstop, below of=out1] {Stop};
+% 
+% 
+% 
+% \draw [arrow] (start) -- (in1);
+% \draw [arrow] (in1) -- (pro1);
+% \draw [arrow] (pro1) -- (dec1);
+% \draw [arrow] (dec1) -- (pro2a);
+% \draw [arrow] (dec1) -- (pro2b);
+% 
+% \draw [arrow] (dec1) -- node[anchor=east] {yes} (pro2a);
+% \draw [arrow] (dec1) -- node[anchor=south] {no} (pro2b);
+% 
+% \draw [arrow] (pro2b) -- (pro1);
+% 
+% \draw [arrow] (pro2a) -- (out1);
+% \draw [arrow] (out1) -- (stop);
+
+
+\end{tikzpicture}
+\end{center}
+}

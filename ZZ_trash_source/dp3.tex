@@ -1,0 +1,1324 @@
+\documentclass[11pt]{article}
+\usepackage[cp1250]{inputenc}
+\usepackage{a4wide}
+\usepackage{amsmath}
+\usepackage{color, colortbl}
+\usepackage{amssymb}
+\usepackage{fancyhdr} 
+\usepackage{multirow}
+\usepackage[pdftex]{graphicx}
+\usepackage{verbatim}
+\usepackage{parskip}
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage{pdflscape} 
+\usepackage[czech]{babel}
+\usepackage{indentfirst}
+\usepackage[
+	unicode,				
+	breaklinks=true,		
+	hypertexnames=false, 	
+	colorlinks=true,
+    citecolor=black,
+    filecolor=black,
+    linkcolor=black,
+    urlcolor=black
+]{hyperref}
+\hypersetup{pdfauthor={Nikola Nìmcová}, pdftitle={Modelování soustøedìného odtoku pro potøeby modelu SMODERP}}
+\usepackage{listings}
+\lstset{
+  language=XML,
+  showspaces=false,
+  showstringspaces=false,
+  frame=single,
+  keywordstyle=\color{black},
+  commentstyle=\color{dkgreen},
+  stringstyle=\color{blue}
+}
+\usepackage{nomencl}
+\makenomenclature
+
+\renewcommand{\baselinestretch}{1.1}
+%\renewcommand{\thetable}{Tab. è.}
+%\renewcommand{\thefigure}{Obr. è.}
+%\DeclareCaptionLabelFormat{simple}{#2}
+
+\captionsetup{format=hang,labelformat=simple,labelsep=quad}
+\renewcommand{\headrulewidth}{0.5pt}  % tloustka linky v záhlaví
+\addtolength{\headheight}{15pt}      % prostor pro zahlavi
+\addtolength{\oddsidemargin}{5mm}     % zvetseny levy okraj o 5mm pro vazbu
+\graphicspath{{images/}}              % adresar s obrazky
+
+\begin{document}
+\hyphenation{build}
+\pagestyle{empty}
+
+\begin{titlepage}
+\begin{center}
+\textsc{\huge Èeské vysoké uèení technické v Praze}\\
+\bigskip{}
+\bigskip{}
+\textsc{\huge Fakulta stavební}\\
+\smallskip{}
+\vspace{1cm}
+\begin{center}
+\includegraphics[scale=0.4]{logo_cvut_b&w.jpg}
+\end{center}
+\bigskip{}
+\bigskip{}
+\bigskip{}
+\bigskip{}
+\bigskip{}
+\bigskip{}
+\bigskip{}
+\huge {DIPLOMOVÁ PRÁCE}\\
+\bigskip{}
+\bigskip{}
+\bigskip{}
+\bigskip{}
+\bigskip{}
+\bigskip{}
+\bigskip{}
+\bigskip{}
+\bigskip{}
+\vfill
+\begin{figure}[b]
+\begin{tabbing}
+\huge{leden 2013} \hspace*{73mm}
+\= \huge{Bc. Nikola Nìmcová}\\
+\end{tabbing}
+\end{figure}
+
+\end{center}
+\end{titlepage}
+\newpage
+
+\begin{titlepage}
+\begin{center}
+\textsc{\Large Èeské vysoké uèení technické v Praze}\\
+\smallskip{}
+\textsc{Fakulta stavební}\\
+\smallskip{}
+\textsc{Katedra hydromeliorací a krajinného inenırství}\\
+\vspace{1cm}
+\begin{center}
+\includegraphics[scale=0.3]{logo_cvut.jpg}
+\end{center}
+\bigskip{}
+\large {Diplomová práce}\\
+\bigskip{}
+\bigskip{}
+{\bf \Large Modelování soustøedìného odtoku pro potøeby modelu SMODERP}\\
+\bigskip{}
+{\large Modelling of concentrated flow for SMODERP}\\
+\bigskip{}
+\bigskip{}
+\bigskip{}
+\bigskip{}
+\bigskip{}
+\bigskip{}
+{\large Studijní program : Geodézie a kartografie}\\
+\bigskip{}
+{\large Studijní obor : Geoinformatika}\\
+\vfill
+\begin{figure}[b]
+\begin{tabbing}
+\textbf{leden 2013} \hspace*{53mm}
+\= \textbf{Vypracovala: Bc. Nikola Nìmcová}\\
+\> \textbf{Vedoucí práce: Ing. Petr Kavka, PhD. }
+\end{tabbing}
+\end{figure}
+
+\end{center}
+\end{titlepage}
+\newpage
+\section*{!!! Originál zadání !!!}
+\newpage
+\raggedright
+\pagestyle{fancy}
+\lhead{}
+\chead{}
+\rhead{ ÈVUT v Praze \includegraphics[scale=0.08]{images/logo_cvut_b&w.jpg}}
+\lfoot{}
+\cfoot{\thepage}
+\rfoot{}
+\setcounter{page}{1}                 
+\pagenumbering{arabic} 
+\parskip=10pt
+\setlength{\parindent}{0.4cm}               
+
+\section*{Èestné prohlášení}
+ \par Prohlašuji, e jsem diplomovou práci\hspace{2mm} "Modelování soustøedìného odtoku pro potøeby modelu SMODERP"\hspace{2mm} vypracovala samostatnì a e jsem uvedla veškeré pouité informaèní zdroje v souladu s Metodickım pokynem o dodrování etickıch principù pøi pøípravì vysokoškolskıch závìreènıch prací. \par
+\begin{flushright}
+\vspace*{5mm}
+Datum: 20.prosince 2012\\
+\vspace*{10mm}
+. . . . . . . . . . . . . . . . . . . . . . . \\
+                  podpis
+\end{flushright}
+
+\newpage
+\section*{Podìkování}
+\par Na tomto místì bych ráda podìkovala vedoucímu diplomové práce Ing. Petru Kavkovi, PhD. za cenné rady a pøipomínky, vstøícnost a trpìlivost pøi zpracování práce. Dále bych chtìla podìkovat mé rodinì za podporu bìhem studia a korekturu práce.   
+\newpage
+\tableofcontents
+
+\newpage
+\listoffigures
+\addcontentsline{toc}{section}{Seznam obrázkù}
+\newpage
+\listoftables
+\addcontentsline{toc}{section}{Seznam tabulek}
+\newpage
+\section*{Abstrakt}
+\par Tato diplomová práce se zabıvá vytvoøením funkèního modelu povrchového odtoku se zahrnutím soustøedìného odtoku pøi simulované sráce, díky kterému bude mono lokalizovat na daném území místa, která jsou ohroena vodní erozí. Jedná se o rozšíøení ji existujícího modelu SMODERP, kterı slouí k urèení erozní ohroenosti a navrhování protierozních opatøení. Tento pùvodní model však uvauje pouze plošnı odtok vody. Pro co nejpøesnìjší vystiení reálného odtoku je zahrnutí soustøedìného odtoku dùleitou souèástí, nebo tvorba rıh samozøejmì vıraznì ovlivòuje vıslednou podobu vıstupních rastrù. Vıstupem nového modelu je 8 vrstev - maximální vıška hladiny, celkovı prùtok, rychlost plošného odtoku, rychlost soustøedìného odtoku, teèné napìtí, suma všech odtokù z buòky, prùtok soustøedìného odtoku jako rastrová i vektorová vrstva. 
+\section*{Klíèová slova}
+soustøedìnı odtok, SMODERP, eroze, ArcGIS, hydraulika
+\section*{Summary}
+\par This Master Thesis deals with creation of a functional model of concentrated flow that will locate places endangered by water erosion. It is an extension of existing model SMODERP, that is used for determining the erosion vulnerability and drafting the erosion controls. The original model considers only the overland flow. For the best approximation of the real runoff the inclusion of the concentrated flow is a necessary part, because creation of rills influences the output layers quite distinctly. Output of the new model are 8 layers - maximum  water level, total flow, overland runoff speed, concentrated runoff speed, shear stress, runoff sum from each cell, concentrated flow as raster and also feature layer. 
+\section*{Keywords}
+concentrated flow, SMODERP, erosion, ArcGIS, hydraulics
+
+\newpage
+\section*{Úvod a cíl práce}
+\addcontentsline{toc}{section}{Úvod}
+
+\raggedright
+\pagestyle{fancy}
+\lhead{}
+\chead{}
+\rhead{ ÈVUT v Praze \includegraphics[scale=0.08]{logo_cvut_b&w.jpg}}
+\lfoot{}
+\cfoot{\thepage}
+\rfoot{}
+\parskip=10pt 
+\setlength{\parindent}{0.4cm}               
+\par \cite{monteith} oznaèuje pùdu jako zásobárnu látek, které jsou potøebné ke vzniku a následnému udrování ivého organismu, jako je voda, minerály a stopové prvky. Vlastnosti pùdy vıraznì ovlivòují rùst a vıvoj rostlin, a tím pádem i vıivu zvíøat a lidí. Pøeití a prosperita všech suchozemskıch biologickıch spoleèenstev, pøirozenıch i umìlıch, závisí na tenké vrchní vrstvì Zemì. Pùda je proto bezesporu nejcennìjší pøírodní bohatství a je pøirozenou souèástí národního jmìní kadého státu. Pùdu je nutné chránit nejen pro souèasnou dobu, ale se znaènım vıhledem do budoucna \cite{mzp_defpud}. 
+\par V Èesku je pùda ohroena jak nekontrolovanou vıstavbou ve volné krajinì, tak i degradací pùdy v dùsledku eroze \cite{holy}. Erozi rozlišujeme vìtrnou a vodní, a to podle pùsobícího èinitele. Vìtrná eroze spoèívá v rozrušování pùdní hmoty kinetickou energií vìtru, v pøemísování uvolnìnıch èástic a jejich ukládání pøi poklesu energie vzdušného proudu. Vodní eroze je charakterizována rozrušováním a smyvem pùdní hmoty. Produkty vodní eroze se v podobì splavenin dostávají do vodních tokù a mohou zpùsobit rychlé zanášení vodních nádrí. Na èástice v suspenzi jsou navíc vázány napø. slouèeniny dusíku a fosforu, které zpùsobují zhoršení kvality vody \cite{janecek}.
+ \par Pøímé urèení intenzity vodní eroze je moné na jednotlivıch svazích a pozemcích. Poznání zákonitostí vzniku a prùbìhu procesu eroze je zaloeno na dlouhodobıch pozorováních a experimentu. Zjištìné vztahy kvantifikují vlivy jednotlivıch faktorù na erozi a vedly k odvození a pouívání tzv. empirickıch modelù erozního procesu. Rozvoj teorie v oblasti hydrauliky povrchového odtoku, infiltrace, mechanizmù erozních procesù a rozvoj vıpoèetní techniky umonily pøechod od empirickıch postupù k simulaèním modelùm. Úèelem modelù je nejen vymezení eroznì ohroenıch oblastí, ale i hodnocení dopadu rùznıch zpùsobù zemìdìlského hospodaøení, osevních postupù, pozemkovıch úprav nebo pøedpovídanıch klimatickıch zmìn na erozní a transportní procesy v povodí \cite{nearing}.  
+\par Na vıše uvedenıch principech byla v zahranièí (zejména v USA) sestavena celá øada simulaèních modelù hydrologickıch, erozních a transportních procesù. Z pomìrnì velkého mnoství se jen nìkteré uplatnily v praktické aplikaci. Nejznámìjší modely jsou CREAMS, ANSWERS, EPIC, WEPP, EROSION 3D a další. CREAMS (Chemical. Runoff and Erozion from Agricultural Managment Systems-1980) je první komplexní model øešení hydrologickıch a erozních procesù a transportu nìkterıch látek(N,P, pesticidù), kterı však pro celé území pøedpokládá jedinı LandUse, homogenní pùdní podmínky a prostorovì uniformní sráky. Deterministickı model pro dlouhodobé simulace umoòuje vyhodnotit vliv jednotlivého deštì na transport látek. Stejnì tak i EPIC (Erosion Productivity Impact Calculator-1982) pracuje jen s homogenními plochami. Tento model podrobnì simuluje vıvoj plodin v závislosti na klimatickıch a hydrologickıch podmínkách i na erozi a jako jedinı ze soudobıch modelù uvauje i vliv vìtrné eroze. ANSWERS (Areal Non-point Source Watershed Environmental Response Simulation model-1981) simuluje hydrologické a erozní procesy v zemìdìlsky vyuívanıch malıch povodích. Tento model nahrazuje povodí systémem ètvercovıch homogenních elementù, z nich kadı tvoøí samostatnou jednotku. Vısledky hydrologickıch a erozních procesù se pøenášejí do sousedních elementù. ANSWERS tak mùe pracovat i s nehomogeními pùdními a vegetaèními pomìry v povodí, rùznımi zpùsoby obhospodaøování a s vlivem nerovnomìrného zasaení deštìm. Perspektivním simulaèním modelem se zdá bıt WEPP (Water Erosion Prediction Project-1987). Model vyuívá program vyvinutí souboru simulaèních modelù pro øešení hydrologickıch, erozních a transportních procesù na jednotlivém svahu, jednoduchém povodí i sloitém nehomogenním povodí a tento postup v USA pomalu nahradil donedávna pouívané empirické postupy. 
+\par Všechny tyto modely vytváøejí simulaci eroze pomocí rovnice USLE (Universal Soil Loss Equation), která poèítá pøípustnou ztrátu pùdy na tzv. jednotkovém pozemku na základì faktorù ovlivòujících prùbìh eroze (srákovı faktor, faktor pùdy, nepøerušené délky svahu, sklonu svahu, vegetaèního krytu a vlivu protierozních opatøení). Trochu jinı zpùsob vıpoètu pouívá SMODERP (Simulaèní Model Povrchového Odtoku a Erozního Procesu-1988). Simulaèní model, zaloenı na fyzikálních principech, vyvinutıch na katedøe hydromeliorací FSv ÈVUT v Praze, simuluje povrchovı odtok a erozní proces ze sráky promìnlivé intenzity na svahu o ploše do cca 1 $km^2$ s nehomogenními morfologickımi pùdami a vegetaèními pomìry. Model je urèen pro stanovení hodnot plošného povrchového odtoku (objem odtoku, kulminaèní prùtok, rychlost, hloubka) v jednotlivıch charakteristickıch profilech vyšetøovaného svahu a ve zvolenıch èasovıch intervalech od poèátku sráky, a dále pro stanovení pøípustné délky pozemku ve smìru sklonu (odtoku) na základì krajního nevymílacího teèného napìtí a krajní nevymílací rychlosti povrchového odtoku \cite{manual}. Dále model slouí k urèení návrhovıch hodnot pro dimenzování protierozních prvkù. SMODERP vyhovuje jak ÈSN 75 4500 - \emph{Protierozní ochrana zemìdìlské pùdy}, tak i metodice VUMOP v.v.i. - \emph{Ochrana zemìdìlské pùdy pøed erozí} \cite{disert}. Model uvauje vliv infiltrace a intercepce, ale nezahrnuje v sobì samotné uvolòování a odnos èástic, a ani následnou sedimentaci. Zabıvá se pouze popisem pohybu vody a stanovením jeho charakteristik. Vztahy a parametry pro plošnı povrchovı odtok byly urèeny na základì vızkumu pro pùdní druhy. Pøi vıvoji SMODERPu byl kladen dùraz na monost aplikace v technické praxi, tedy pro posuzování erozní ohroenosti pozemkù, a pro navrhování protierozních opatøení.
+\par Model se skládá ze dvou èástí - tzv. submodel 1, kterı slouí k urèení erozní ohroenosti, a submodel 2, pomocí kterého jsou stanoveny hydraulické charakteristiky. 
+\par Simulace probíhá jednodimenzionálnì v charakteristickıch profilech, které nahrazují èást øešeného území. Erozní ohroenost jednotlivıch pozemkù je posuzována z hlediska limitních rychlostí a teènıch napìtí plošného povrchového odtoku. Druhı submodel slouí ke stanovení odtokovıch charakteristik (maximální prùtok, objem odtoku)    
+\subsection{Cíl práce}
+\par Cílem diplomové práce bylo pøidání simulace soustøedìného odtoku do modelu SMODERP. Stávající vztahy pro plošnı odtok byly doplnìny o fyzikální principy popisující pohyb vody v korytech (rıhách). Práce navazovala na bakaláøskou práci J.Zajíèka - 2D rozšíøení programu SMODERP \cite{zajda}, kterı pøevedl pùvodní program SMODERP 1D, naprogramovanı v prostøedí MS Visual FoxPro, do programu ArcGIS. ArcGIS je geografickı informaèní systém, jeho vıkonné nástroje pro editaci, analızu a modelování spolu s bohatımi monostmi datovıch modelù a správy dat z nìj v souèasné dobì èiní nejkomplexnìjší GIS software. Simulace SMODERP tak probíhá s vyuitím pùvodních fyzikálních vztahù v prostøedí GIS, èím je umonìna i geografická vizualizace vısledkù. GIS nabízí náhled na data zpùsobem, kterım je moné procesy lépe pochopit, pøípadnì také sdílet. 
+\par Pùvodní program SMODERP 1D uvauje pouze plošnı odtok a simulaci provádí jen na jednotlivıch charakteristickıch profilech. Pøevedením do ArcGISu byl pøidán další rozmìr a aplikace tak mohla vyhodnocovat celá území. Stále však byl uvaován pouze plošnı odtok. Tento zpùsob simulace neodpovídá pøíliš realitì, kde proudící voda pøi dosaení krajních nevymílacích hodnot rychlosti a teèného napìtí, zaèíná vytváøet nepravidelnou sí rıek. Pohyb vody v rıhách se øídí jinımi fyzikálními vztahy ne plošnı odtok. Pøidáním soustøedìného odtoku se tak zpøesnila simulace povrchového odtoku. Zhlediska vodní eroze patøí právì soustøedìnı odtok k tìm nebezpeènım jevùm, nebo takto proudící voda má vìtší kinetickou energii a nese sebou vìtší mnoství splavenin. Nová verze modelu by tak mìla pomoci blíe urèit erozní ohroenost danıch pozemkù.
+
+\newpage 
+\part{Problematika vodní eroze}
+\par Neustálım pùsobením dešovıch sráek a proudící vody dochází k oddìlení pùdních èástic a ivin od zemského povrchu, jejich transportu a nakonec uloení na jiném místì. Oddìlení, pøenos a usazení materiálu se souhrnnì oznaèují jako proces eroze. Eroze je v podstatì pøirozenı proces. Za normálních podmínek mùe bıt urèitı stupeò eroze prospìšnı ekosystémùm, pùdní ztráty jsou kompenzovány zvìtráváním substrátu a tvorbou nové pùdy. Její nadmìrné pùsobení však mùe vést k poškození ekosystému a ztrátì jeho funkènosti. Zvláš nebezpeèné jsou zejména pøívalové deštì, které jsou charakterizovány vysokou intenzitou, krátkou dobou trvání a malou zasaenou plochou. Povrchovı odtok, vznikající z tìchto sráek rychle kumuluje a má vırazné erozní úèinky \cite{eroze}. 
+\par Mechanismus vodní eroze se øídí pùsobením a vzájemnou interakcí erozních faktorù, které proces eroze vyvolávají a ovlivòují. Míra ohroení území, resp. jeho èást (napø. jednotlivého pozemku) procesy vodní eroze je urèena vztahem mezi schopností erozních èinitelù zpùsobit erozi a schopností povrchu pùdy tomuto pùsobení odolávat. Erozními èiniteli pøi procesu vodní eroze jsou dešové sráky a z nich vzniklı povrchovı odtok. Schopnost erozních èinitelù zpùsobit uvolnìní a transport pùdních èástic (tzv. erozivita) je urèena pøedevším jejich  kvalitativními znaky, zejména kinetickou energií. Schopnost odolávat eroznímu pùsobení (tzv. erodibilita) je v širším pojetí dána fyzikálními vlastnostmi pùdy (zrnitostní sloení, struktura, obsah organické hmoty, apod.) \cite{eroze}. S vıraznì rostoucím vyuitím pùdy èlovìkem je erodibilita ovlivnìna podle \cite{janecek} pøedevším faktory jako 
+\begin{itemize}
+\item nedostateèná ochrana pùdy vegetací, napø. pøi pìstování plodin okopaninového charakteru
+\item obhospodaøování rozlehlıch pùdních celkù na dlouhıch nepøerušovanıch svazích
+\item pouití tìké techniky
+\item vyuití konvenèních pìstebních technologií
+\item sníení vsaku vody do pùdy
+\item nezpevnìná koryta (bøehy) tokù
+\item rušení stálıch hydrografickıch prvkù v krajinì (remízky, zatravnìné údolnice, cestní pøíkopy)
+\end{itemize} 
+
+\par Erozivita dešovıch sráek se projevuje nejvıraznìji na poèátku erozního procesu, kdy na pùdní povrch, na kterém se dosud nevytvoøila vrstva povrchovì odtékající vody, dopadají dešové kapky se znaènou kinetickou energií.\par
+\par  V závislosti na topografické poloze vznikají odnosem pùdních èástic a jejich následnou sedimentací v urèitıch lokalitách mìlké pùdy, resp. pùdy hluboké (koluviální). V dlouhodobém horizontu vede eroze ke sniování mocnosti ornice, v extrémních pøípadech je zcela zlikvidována ornièní vrstva i podornièí. Eroze vıraznì mìní vlastnosti pùdy (obsah vody, substrátu, humusu a ivin) \cite{weise} a její jinak pøirozené funkce. Jejím pùsobením se omezují ekologické funkce pùdy, dochází k poškozování povrchovıch a podzemních vod, sniuje se zadrování vody (retence) a regulaèní funkce pùdy v hydrosféøe. Omezuje se produkèní schopnost pùdy. Neménì dùleité jsou i vedlejší úèinky eroze. Jedná se o zanášení tokù a nádrí, obohacování vody ivinami, apod. \cite{mzp_eroze}. Ji vzniklé ztráty pùdy zpravidla není moné nahradit. 
+Nevyhnutelnım dùsledkem tohoto procesu je tak vyèerpání omezeného a nenahraditelného zdroje pùdy \cite{schmidt}. 
+\par Rozeznáváme tøi formy povrchové vodní eroze.
+\begin{itemize}
+\item plošná
+\item vımolová
+\item proudová
+\end{itemize}
+\par Na neèlenìnıch, pøímıch svazích dochází pøedevším k plošné erozi. Plošná eroze je charakterizována rozrušováním a smyvem pùdní hmoty na celém území, pøi ní povrchovı odtok odnáší jemné pùdní èástice a na nì vázané chemické látky. Dochází ke zmìnì pùdní textury a obsahu ivin v pùdì. 
+\par Vımolová vodní eroze vzniká postupnım soustøeïováním povrchovì stékající vody, která vyrıvá v pùdním povrchu mìlké záøezy, postupnì se prohlubující.
+\par Proudová vodní eroze probíhá ve vodních tocích pùsobením vodního proudu. Vırazná liniovì probíhající eroze se tvoøí vìtšinou u konvergujících svahù podél izobat, kterımi soustøedìnì odtéká povrchovı odtok. 
+\par Zatímco soustøedìnı odtok bıvá pomìrnì patrnı, plošná eroze je pøi krátkodobém pozorování sotva znatelná. Tento fakt sebou nese riziko, e dlouhodobé poškozování pùdy nemusí bıt registrováno a ani bráno jako pøíliš váná hrozba. 
+\par I pøes zmínìné nepøíznivé úèinky eroze èasto nejsou opatøení na zmírnìní jejího pùsobení v zájmu vìtšiny zemìdìlcù. Jak ji bylo øeèeno, škody zjištìné pøi krátkodobém pozorování - napøíklad v prùbìhu hospodáøského roku - nejsou pøíliš viditelné a nejsou tak povaovány za podstatné. Vıznamné škody zpùsobené dlouhodobımi procesy a také škody na nezemìdìlskıch pozemcích však do provozního úèetnictví nevstupují. Protierozní opatøení se tak zemìdìlcùm ekonomicky nevyplatí, jejich vıznam je patrnı spíše z dlouhodobého hlediska, a tak musí bıt ochrana pùdy provádìna pøedevším s dlouholetım vıhledem na zachování pùdních zdrojù, nezávisle na krátkodobıch ekonomickıch úvahách. \par   
+       
+\newpage
+\part{Fyzikální základy}
+\raggedright
+\pagestyle{fancy}
+\lhead{\leftmark}
+\chead{}
+\rhead{ ÈVUT v Praze \includegraphics[scale=0.08]{logo_cvut_b&w.jpg}}
+\lfoot{}
+\cfoot{\thepage}
+\rfoot{}
+\parskip=10pt
+\setlength{\parindent}{0.4cm} 
+\section{Základní bilanèní rovnice}
+\par Základní rovnicí, pomocí které probíhá celı vıpoèet, a která byla ji souèástí pùvodního skriptu J.Zajíèka, je základní bilanèní rovnice, která øíká, e vıška hladiny v daném èasovém kroku \emph{t} v dané buòce \emph{i} je rovna souètu vıšky hladiny v buòce \emph{i} z pøedchozího kroku \emph{t-1}, hodnot odtoku ze sousedních buòek, u nich smìr odtoku vede právì do buòky \emph{i}, v èase \emph{t-1} a efektivní sráky. Efektivní sráka se získá odeètením povrchové retence a infiltrace od pùvodní sráky. Od této hodnoty je nutné ještì odeèíst hodnotu odtoku v daném èasové kroku \emph{t}.
+\begin{equation}
+H_{i,t} = H_{i,t-1} + ES_{i,t} + O_{i-1,t} - O_{i,t}
+\end{equation}
+\label{eqt:bil}
+kde H je hloubka povrchového odtoku [mm], \\
+ES je efektivní sráka [mm], \\
+O je odtok [mm]\\
+i je èíslo øešené buòky,\\
+t je èasovı krok.  \\
+
+\par Soustøedìnı odtok vzniká pøi pøekroèení krajní nevymílací rychlosti. Po jejím pøekroèení dochází k vytváøení rıh a odtok v tìchto rıhách se ji neøídí podle rovnic plošného odtoku, ale rovnicemi na vıpoèet rovnomìrného proudìní kapalin v korytech. 
+\par Pøi zahrnutí soustøedìného odtoku do modelu, je povrchovı odtok souèet plošného a soustøedìného odtoku. 
+\begin{equation}
+O_{i,t} = O_{plos_{i,t}} + O_{soustr_{i,t}}
+\end{equation} 
+\par Pokud není pøekroèena krajní rychlost, odtok probíhá i dál plošnì.
+\begin{equation}
+O_{i,t} = O_{plos_{i,t}}
+\end{equation}  
+\newpage
+\par Hodnoty krajních rychlostí a teènıch napìtí se liší podle typu pùdy a vegetaèního pokryvu.
+ 
+\begin{table}[h]
+\centering
+\begin{tabular}{|c|c|c|c|}
+\hline
+\bf{Kód a druh pùdy} & \bf{Kód a druh plodiny} & \bf{v [m/s]} & \bf{$\tau$ [Pa]} \\
+\hline \hline
+1 - písèitá & 1 - bez vegetace & 0.305 & 13.27  \\
+\hline
+1 - písèitá & 2 - širokoøádkové plodiny & 0.305 & 13.27 \\
+\hline
+1 - písèitá & 3 - úzkoøádkové plodiny & 0.305 & 13.27  \\
+\hline
+1 - písèitá & 4 - travní porost & 1 & 25 \\
+\hline \hline
+2 - hlinitopísèitá & 1 - bez vegetace & 0.264 & 11.5  \\
+\hline
+2 - hlinitopísèitá & 2 - širokoøádkové plodiny & 0.264 & 11.5 \\
+\hline
+2 - hlinitopísèitá & 3 - úzkoøádkové plodiny & 0.264 & 11.5  \\
+\hline
+2 - hlinitopísèitá & 4 - travní porost & 0.9 & 22.5 \\
+\hline \hline
+3 - hlinitá & 1 - bez vegetace & 0.248 & 10.79  \\
+\hline
+3 - hlinitá & 2 - širokoøádkové plodiny & 0.248 & 10.79 \\
+\hline
+3 - hlinitá & 3 - úzkoøádkové plodiny & 0.248 & 10.79  \\
+\hline
+3 - hlinitá & 4 - travní porost & 0.8 & 20 \\
+\hline \hline
+4 - jílovitohlinitá & 1 - bez vegetace & 0.245 & 10.66  \\
+\hline
+4 - jílovitohlinitá & 2 - širokoøádkové plodiny & 0.245 & 10.66 \\
+\hline
+4 - jílovitohlinitá & 3 - úzkoøádkové plodiny & 0.245 & 10.66  \\
+\hline
+4 - jílovitohlinitá & 4 - travní porost & 0.7 & 18.5 \\
+\hline \hline
+5 - jílovitá & 1 - bez vegetace & 0.245 & 10.66  \\
+\hline
+5 - jílovitá & 2 - širokoøádkové plodiny & 0.245 & 10.66 \\
+\hline
+5 - jílovitá & 3 - úzkoøádkové plodiny & 0.245 & 10.66  \\
+\hline
+5 - jílovitá & 4 - travní porost & 0.6 & 15 \\
+\hline 
+\end{tabular}
+\caption[Krajní nevymílací hodnoty]{Krajní nevymílací rychlosti v a krajní nevymílací napìtí $\tau$ \\ Zdroj : \cite{manual}} 
+\end{table}
+\par Z hodnot kritickıch teènıch napìtí $\tau$ je vypoètena v kadé buòce kritická vıška hladiny. Pøi pøekroèení této vıšky vytváøí objem vody, kterı se nachází nad kritickou vıškou, soustøedìnı odtok, zbıvající objem pod kritickou hladinou se dále zúèastní plošného odtoku. 
+\newpage   
+\section{Plošnı odtok vody pod kritickou hladinou}
+Prùtok Q (10 l/s) plošného odtoku vody je dán vztahem
+\begin{equation}
+Q = a*h^b
+\end{equation}  
+kde h je hloubka povrchového odtoku (cm),  \\
+a, b jsou odtokové parametry.
+\par Parametr b je závislı pouze na pùdním druhu, zatímco parametr a je závislı nejen na pùdním druhu, ale i na sklonu svahu.
+\begin{equation}
+a = x*l^y
+\end{equation} 
+kde l je sklon svahu (\%). \\
+Parametry b, x, y byly urèeny na základì mmìøení v hydraulickém labu.
+Vıpoèet rychlosti plošného odtoku v (m/s) vychází ze vztahu pro vıpoèet prùtoku. Prùtok je definován jako rychlost proudìní danım profilem.
+\begin{equation}
+v = \frac{Q}{h}
+\end{equation}
+ 
+\section{Soustøedìnı odtok vody nad kritickou hladinou}
+\par Popis pohybu vody pøi erozi není úplnì jednoznaènı, nebo proudìní reálnıch kapalin je sloitı proces, kterı je ovlivòován mnostvím faktorù. Pøi zkoumání tohoto pohybu jsou tedy zámìrnì nìkteré z faktorù ignorovány a je provedena urèitá idealizace. Nejznámìjším – a pro zkoumání nejjednodušším pøíkladem – je pohyb tzv. ideální kapaliny. Ideální (dokonalá) kapalina je na rozdíl od skuteèné kapaliny dokonale nestlaèitelná a bez vnitøního tøení. 
+\subsection{Ustálené rovnomìrné proudìní v korytech}
+\par Podle \cite{kolar} je proudìní v korytech ustálené (stacionární), pokud je na èase nezávislé. Ustálené proudìní se dìlí na nerovnomìrné s hladinou vzdutou nebo sníenou, a na rovnomìrné s hladinou rovnobìnou se dnem, která se dá povaovat za zvláštní pøípad nerovnomìrného proudìní. Pro modelování soustøedìného odtoku bylo stanoveno, e voda v rıhách proudí rovnomìrnì. Pøi rovnomìrném proudìní v korytech musí bıt stálı prùtok Q, prùtoènı prùøez S i sklon dna $i_{0}$ a shodná drsnost v celé trati. Pøi stejném S je hloubka y konstantní, take hladina probíhá rovnobìnì se dnem. Prùtok Q $(m^{3}/s)$ je vyjádøen pouitím Chézyho rovnice.
+\begin{equation} \label{eq:chez}
+Q = vS = CS \sqrt{Ri_{0}} 
+\end{equation} 
+\par Rychlostní souèinitel C $(m^{0.5}/s)$  závisí na drsnosti stìn koryta a na vegetaèním krytu. Poèítá se z empirickıch vırazù napø. podle Pavlovského èi Ganguilleta-Kuttera. Pro model Hydrology\&Erosion Model byl zvolen vıpoèet z Manningovy rovnice pro vıpoèet rychlosti proudìní v otevøeném korytì, která zní 
+\begin{equation}
+v = \frac{1}{n} R^{2/3} i_{0}^{1/2} 
+\end{equation} 
+Rychlostní souèinitel C pak odpovídá vırazu
+\begin{equation}
+C = \frac{R^{1/6}}{n} 
+\end{equation} 
+Dosazením do rovnice \ref{eq:chez} se dostane
+\begin{equation}
+Q = \frac{R^{1/6}}{n} S \sqrt{Ri_{0}}   
+\end{equation}
+kde R (m) je hydraulickı polomìr 
+\begin{equation}
+R = \frac{S}{O}
+\end{equation}
+pøièem S $(m^2)$ je plocha prùtoèného prùøezu, O (m) omoèenı obvod.
+\begin{figure}[h]
+\centering
+\includegraphics[scale=0.2]{images/Equivalent_diameter.png}
+\caption[Hydraulickı polomìr]{Hydraulickı polomìr \\ Zdroj : \cite{wiki}}
+\end{figure}
+\newline Vısledná rovnice pro rovnomìrné proudìní v rıze 
+\begin{equation} \label{eq:total}
+Q = \frac{\left(\frac{S}{O}\right)^{1/6}}{n} S \sqrt{\frac{S}{O} i_{0}}   
+\end{equation} 
+Rychlost proudìní v rıze se vypoète podle základního vztahu pro prùtok
+\begin{equation} \label{eq:speed}
+v = \frac{Q}{S} = \frac{Q * l}{V}   
+\end{equation}
+kde V je objem vody, l je délka úseku v buòce.
+
+\subsection{Stanovení rozmìrù rıhy}
+\par Pøi tvorbì rıh u simulace odtoku bylo uvaováno pro zjednodušení obdélníkové koryto o hloubce y, šíøce b.\\
+\begin{figure}[t]
+\centering
+\includegraphics[scale=0.6]{images/Oddelnikove_koryto.png}
+\caption[Obdélníkové koryto]{Obdélníkové koryto \\ Zdroj : \cite{wiki}}
+\end{figure}
+Prùtoènı prùøez S se vypoète
+\begin{equation}
+S = by
+\end{equation} 
+Omoèenı obvod O
+\begin{equation}
+O = b + 2y
+\end{equation} 
+
+\par Pøesné rozmìry rıhy pøi modelování odtoku nejsou známy, pro vıpoèet prùtoku ale byl stanoven pomìr hloubky a šíøky koryta.\\
+\begin{equation}
+\frac{y}{b} = \frac{2}{3} 
+\end{equation}
+\par Pomìr šíøky a vıšky je ve skriptu uloen jako parametr, kterı je ale moné v pøípadì potøeby zmìnit. Stanovením pomìru se získá jedna z neznámıch b nebo y. Tu zbıvající neznámou je moné získat díky znalosti objemu vody v jedné buòce v daném èasovém kroku. Objem je dán ze vztahu
+\begin{equation}
+V = byl 
+\end{equation} 
+kde l (m) je délka rıhy v buòce. 
+\section{Odtokové mnoství}
+\par Z vypoèteného prùtoku, velikosti øešeného úseku a délky èasového kroku je vypoèteno odtokové mnoství $O_{i,t}$, tedy mnoství vody za èasovı krok pøevedené na vıšku. 
+\begin{equation}
+O_{i,t} = \frac{60*\Delta t}{L_{i}}*\frac{Q_{i,t}}{10}
+\end{equation} 
+kde $\Delta$ t je simulaèní krok (min), \\
+$L_{i}$ je délka úseku (m). 
+
+\par Teèné napìtí se vypoète (Pa)
+\begin{equation} \label{eq:stress}
+\tau = \rho * g * h * i   
+\end{equation}
+kde $\rho$ je mìrná hustota vody (t/$m^3$), \\
+    g je tíhové zrychlení (m/s), \\
+    h je hloubka povrchového odtoku (mm),\\
+    i je sklon svahu (\%).\\
+\newpage
+\part{Popis vıpoèetního skriptu}
+\setcounter{section}{0}
+\parskip=10pt
+\setlength{\parindent}{0.4cm} 
+\par Skript pro simulaci soustøedìného odtoku byl vytvoøen v programovacím jazyku Python. Tento jazyk byl zvolen jednak z dùvodu návaznosti na skript J.Zajíèka, a dále také z dùvodu propojení ArcGISu s Pythonem, kterı je ji nedílnou souèástí tohoto programu. Python je vyuit jako skriptovací jazyk pro provádìní prostorové analızy v ArcGISu, nebo splòuje potøeby široké komunity uivatelù.
+\section{GIS a prostøedí ArcGIS}
+\par Díky rozsahu a širokému poli pùsobnosti, ve kterém je moné GIS (geografické informaèní systémy) vyuít, je velmi obtíné takové systémy dnes pøesnì definovat. Obecnì by se ale tento pojem dal popsat jako informaèní systém na uchování, zobrazení a analızu geoinformací. Geodata, která takovı systém vyuívá, popisují geometrii, topologii, typické vlastnosti a dynamiku geoobjektù \cite{spec}. V poslední dobì GIS úspìšnì pronikl do širokého pole moného vyuití - od typickıch volnì dostupnıch interaktivních mapovıch aplikací na Internetu, pøes tématické mapové portály regionù a oblastí èi mapové aplikace ve státní správì se zamìøením na aplikace zemìdìlského, ekologického, infrastrukturálního, socioekonomického, statistického èi demografického charakteru a po specifické aplikace slouící k navigaci dopravy èi simulaci krizovıch situací \cite{spec}. 
+\par GISy se zaèaly teoreticky i prakticky formovat bìhem 60.let 20.století, kdy na akademické pùdì vznikaly první skupinky nadšencù, jen se snaily integrovat informace z rùznıch vìdních oblastí. V prùbìhu let se postupnì vyvíjely funkèní systémy, pøedevším v USA. Vıznamnım zákazníkem, ale i zadavatelem konkrétních speciálních aplikací, se stala armáda. Mnoho dnes bìnıch geografickıch produktù a technologií vznikalo pùvodnì právì na poadavky armády. V souèasné dobì jsou nejznámìjšími firmai zabıvajícími se vıvojem GIS produktù spoleènosti ESRI, Bentley, Intergraph, Leica Geosystems a Autodesk. Protipólem komerèního pøístupu svìtovıch jednièek jsou tzv. "Open Source GIS" produkty, zaloené na filozofii volnì dostupnıch aplikací. Pøíkladem jsou napø. GRASS (Geographic Resources Analysis Support System), OpenMap a GMT (The Generic Mapping Tools). 
+\par Nejvıznamnìjším svìtovım dodavatelem a distributorem GISù je spoleènost ESRI (Environmental System Research Institute) a její produkt ArcGIS. Jedná se o nejrozšíøenìjší geografickı informaèní systém pro práci s mapami a obecnì geografickımi informacemi. Pouívá se pro tvorbu a uívání map, shromaïování a zpracování geografickıch dat, analızu informací získanıch z map, sdílení geografickıch informací, zpracování geografickıch informací v databázích \cite{esri}. Systém ArcGIS je interoperabilní, respektuje standardy GIS i obecné standardy IT. Obsahuje hotové nástroje a komponenty, které se dají programovat a propojovat s jinımi technologiemi. Jednotlivé produkty operují na desktopovıch, serverovıch i mobilních platformách, vèetnì prostøedí pro vıvoj a správu webovıch slueb. Technologií Esri ArcGIS je vybavena vìtšina vıznamnıch institucí státní správy \cite{wiki}. 
+\par Ještì pøed vytvoøením systému ArcGIS se Esri zamìøila na vıvoj softwaru Arc/INFO ovládaném pøes pøíkazovou øádku, dále programu ArcView GIS 3.x s grafickım uivatelskım rozhraním. Další produkty Esri zahrnovaly MapObjects, knihovnu pro vıvojáøe, a ArcSDE, relaèní databázovı systém. Rozdílné produkty se nezávisle na sobì postupnì vyvíjely a nastal problém s jejich propojením. V roce 1999 tak Esri vydala první verzi programu ArcGIS, konkrétnì ArcGIS 8.0, kterı kombinoval vizuální uivatelské rozhraní ArcVIEW s funkcemi Arc/INFO. Novı software obsahoval nové grafické uivatelské rozhraní ArcMap a aplikaci pro správu souborù ArcCatalog. S postupnım vydáváním novıch verzí jsou také vytváøena nová rozšíøení (extensions). Ji ve verzi 8.0 jsou obsaena rozšíøení 3D Analyst a Spatial Analyst urèenıch pro analızu modelù terénu. Verze ArcGIS 9.0 byla rozšíøena o \it{geoprocessing environment} \normalfont, které umoòuje spouštìní tradièních GIS funkcí interaktivnì nebo z jakéhokoliv skriptovacího jazyka. Mezi nejpouívanìjší patøí Python, dále Perl a VBScript. Verze 9.0 obsahovala také vizuální programovací prostøedí ModelBuilder, které umoòuje provádìt vıpoèty buï pomocí grafického modelu nebo exportovat tyto modely do skriptovacího jazyka a spouštìt z pøíkazového øádku \cite{esri}. Souèasnı program ArcGIS obsahuje aplikace ArcMap, ArcCatalog, dále pak rozsáhlou knihovnu funkcí ArcToolbox a 3D vizualizaci geografickıch dat ArcGlobe. 
+\par Souèasnou nejnovìjší verzí je ArcGIS 10.1, vydanou v èervnu roku 2012. Hydrology\&Erosion Model byl spouštìn v ArcGIS 10.0. S kadou novou verzí programu ArcGIS se bohuel mìní mnoina podporovanıch pøíkazù jazyka, a tak jsou vytvoøené programy tìko pøenositelné pod jinou verzi programu ArcGIS.
+\section{Programovací jazyk Python}
+\par Python je programovací jazyk, kterı umoòuje pracovat rychleji a spojovat jednotlivé systémy efektivnìji \cite{python}. Jedná se o dynamickı, objektovì orientovanı skriptovací programovací jazyk, kterı v roce 1991 navrhl Guido van Rossum jako open source projekt. Byl vytvoøen tak, aby umoòoval tvorbu rozsáhlıch, plnohodnotnıch aplikací. Kód programu je ve srovnání s jinımi jazyky krátkı a dobøe èitelnı.
+\par K vıznaènım vlastnostem jazyka Python patøí jeho jednoduchost z hlediska uèení. Bıvá dokonce povaován za jeden z nejvhodnìjších programovacích jazykù pro zaèáteèníky. Tato skuteènost je dána tím, e jedním z jeho inspiraèních zdrojù byl programovací jazyk ABC, kterı byl jako jazyk pro vıuku a pro pouití zaèáteèníky pøímo vytvoøen. Python ale pøesto mùe slouit i pro navrhování sloitìjších aplikací. Podstatnou mìrou k tomu pøispívá èistota a jednoduchost syntaxe, na kterou se pøi vıvoji jazyka hodnì dbá \cite{wiki}. Zdánlivım nedostatkem mùe bıt odsazování kódu, které sice øeší problematiku vnoøování závorek a nekoneèného hledání problémù s tím spojenıch, ale zpoèátku tato nutnost mùe èinit jisté obtíe.
+\par Vıznaènou vlastností jazyka Python je produktivnost z hlediska rychlosti psaní programù. Tıká se to jak nejjednodušších programù, tak aplikací velmi rozsáhlıch. U jednoduchıch programù se tato vlastnost projevuje pøedevším struèností zápisu. S vysokou produktivností souvisí dostupnost a snadná pouitelnost široké škály knihovních modulù, umoòujících snadné øešení úloh z øady oblastí. \
+\par Ani Python není dokonalı – v tom smyslu, e ne na všechno je nejlepší. Jedním z problémù Pythonu je nedostateèná rychlost vıpoètù, co vychází z technické implementace jazyka. To se ale projeví a u sloitìjších aplikací. To je v dnešní dobì asi jediná vıtka vùèi Pythonu – ve všem ostatním dokáe konkurovat nebo dokonce pøedèit ostatní jazyky \cite{pov_pyt}. 
+\par Python se snadno vkládá do jinıch aplikací (embedding), kde pak slouí jako jejich skriptovací jazyk. Tím lze aplikacím psanım v kompilovanıch programovacích jazycích dodávat chybìjící prunost. Jiné aplikace nebo aplikaèní knihovny mohou naopak implementovat rozhraní, které umoní jejich pouití v roli pythonovského modulu. Jinımi slovy, pythonovskı program je mùe vyuívat jako modul dostupnı pøímo z jazyka Python. \par
+Programování v Pythonu klade velkı dùraz na produktivitu práce programátora. Myšlenky návrhu jazyka jsou shrnuty ve filosofii Pythonu.  
+\par Nejnovìjší verzí, která byla zvìøejnìna je Python 3.3.0, je k dispozici od záøí roku 2012. Pro tvorbu simulaèního modelu však byla zvolena verze 2.6, a to z dùvodu kompatibility s programem ArcGIS 10.0. Ke psaní skriptu byl pouit editor PythonWin 2.6. 
+    
+\section{Vstupní data}
+\par Pohyb vody v krajinì je ovlivnìn nìkolika faktory. Pøedevším je to morfologie terénu. Vodní erozi vıraznì ovlivòují sklon, délka a tvar svahu, v menší míøe se také uplatòuje expozice svahu. Sklon svahu je jedním z rozhodujících erozních faktorù; jeho vliv mùe bıt ostatními faktory (napø. vegetaèním, pùdním i hospodáøsko-technickım faktorem) zeslaben, nikdy však plnì potlaèen. Vliv délky svahu není jednoznaènı a v dùsledku pùsobení ostatních faktorù se neprojevuje vdy stejnì vıraznì. Zpravidla však pøi rostoucí délce svahu a dostateènì dlouhé dobì trvání, deštì pøevyšující dobu koncentrace povrchového odtoku, se intenzita eroze zvyšuje podle exponenciální závislosti.
+Tvar svahu (konvexní, konkávní, kombinovanı svah) vıraznì ovlivòuje intenzitu eroze v dùsledku moné nepøirozené kombinace sklonu a délky svahu v urèitıch jeho èástech. 
+\par Pùsobení vodní eroze se liší také podle typu pùdy. Pùdní pomìry jsou charakterizovány fyzikálními vlastnostmi pùdy, zejména, texturou, strukturou, obsahem organické hmoty, vlhkostí, apod. Tyto vlastnosti urèují velikost a èasovı prùbìh infiltrace vody do pùdy a tím ovlivòují tvorbu povrchového odtoku. Souèasnì urèují odolnost pùdy proti destrukèním úèinkùm dešovıch kapek a povrchového odtoku a transportovatelnost uvolnìnıch pùdních èástic. Obecnì platí, e nejménì náchylné k erozi jsou pùdy s vysokım podílem velkıch písèitıch èástic (pùdy písèité), dále pak pùdy jílovité s vysokım obsahem podílem jílovité frakce, vyznaèující se silnım kohezivním úèinkem. Nejménì odolné proti erozi jsou pùdy hlinité s velkım podílem èástic prachové kategorie, které jsou snadno uvolnitelné a transportovatelné. Za obzvláš náchylné k vodní erozi jsou povaovány spraše. 
+\par Geologické pomìry pùsobí na erozní procesy nepøímo, kdy jako mateènı substrát ovlivòují nìkteré pùdní vlastnosti. Jejich pøímı vliv se projevuje pøi pùsobení erozivních èinitelù na obnaenı geologickı podklad. 
+\par Pùsobení vegetace na prùbìh a intenzitu erozních procesù se projevuje ochranou pùdního povrchu  pøed pøímım dopadem dešovıch kapek, podporou vsaku do pùdy, retardací povrchového odtoku, zpevnìním pùdy koøenovım systémem a zlepšením celkovıch fyzikálních, chemickıch a biologickıch vlastností pùdy. 
+\par Proto jsou pro vytvoøení simulace soustøedìného odtoku potøebné digitální model terénu, data obsahující charakteristiky pùdy, data popisující vegetaci a dále pak srákovı soubor, kterı stanovuje prùbìh sráky. \\
+\begin{figure}[h]
+\centering
+\includegraphics[scale=0.5]{vstup_apl.jpg}
+\caption[Vstupní data]{Vstupní data \\ Zdroj : vlastní zpracování}
+\end{figure}
+\newpage
+\begin{itemize}
+\item \textbf{Input surface raster} 
+\par Rastr popisující povrch neboli digitální model terénu (DMT) modeluje zemskı povrch ve smyslu holého povrchu bez zahrnutí vegetace a lidskıch vıtvorù jako jsou budovy, mosty apod. Vstupem je rastrová vrstva, její kadı pixel nese informaci o vıšce terénu v daném bodì. 
+\item \textbf{Input soil polygon features}
+\par Vektorová vrstva (polygony) urèující typ pùdy. Kadı polygon má atribut charakterizující pùdu na vymezené ploše. Typy pùdy jsou stanoveny podle Novákovy klasifikace, která rozlišuje pùdy podle podílu jílnatıch èástic.
+
+\begin{table}[h]
+\centering
+\begin{tabular}{|c|c|c|}
+\hline
+procento jílnatıch èástic $<$0.01 mm & \multicolumn{2}{|c|}{Oznaèení pùdního druhu} \\
+\hline
+0 - 10 & písèitá & PP  \\
+\hline
+10 - 20 & hlinitopísèitá & HP \\
+\hline
+20 - 30 & písèitohlinit8 & PH  \\
+\hline
+30 - 45 & hlinitá & HH \\
+\hline
+45 - 60 & jílovitohlinitá & JH  \\
+\hline
+60 - 75 & jílovitá & JJ \\
+\hline
+ $>$ 75 & jíl & J0  \\
+\hline
+\end{tabular}
+\caption[Novákova klasifikace pùdního druhu]{Novákova klasifikace pùdního druhu \\ Zdroj : \cite{manual}} 
+\end{table}
+\par Na základì zaøazení do skupiny jsou pak urèeny koeficienty charakterizující pùdní typ pro další vıpoèet. Pro získání koeficientù je rozdìlení podle Nováka pøíliš podrobné, a tak byl poèet skupin zredukován.
+\begin{itemize}
+\item Písèitá pùda (PP)
+\item Hlinitopísèitá pùda (HP)
+\item Hlinitá pùda (HH)
+\item Jílovitohlinitá pùda (JH)
+\item Jílovitá pùda (JJ)
+\end{itemize}
+
+\begin{figure}[t]
+\centering
+\includegraphics[scale=0.6]{tab_puda.jpg}
+\caption[Input soil polygon features]{Input soil polygon features \\ Zdroj : vlastní zpracování}
+\end{figure}
+ \newpage 
+\item \textbf{Soil types}
+\par Sloupec v atributové tabulce vrstvy Soil polygon features typu string, kterı obsahuje potøebnı kód stanovující typu pùdy. 
+\item \textbf{Input vegetation polygon features}
+Vektorová vrstva (polygony) urèující vegetaèní pokryv v daném území. Veškerá vegetace je shrnuta do ètyø skupin
+\begin{itemize}
+\item Bez Vegetace (BV)
+\item ŠirokoØádková plodina (SR)
+\item ÚzkoØádková plodina (UR)
+\item Travní Porost (TP)
+\end{itemize}
+
+\begin{figure}[h]
+\centering
+\includegraphics[scale=0.6]{tab_veg.jpg}
+\caption[Input vegetation polygon features]{Input vegetation polygon features \\ Zdroj : vlastní zpracování}
+\end{figure}
+
+\item \textbf{Vegetation types}
+\par Sloupec atributové tabulky typu string, kterı charakterizuje vegetaci. Obsahuje pøeddefinovanı kód typu pokryvu. 
+\item \textbf{Rainfall file}
+\par Srákovı textovı soubor charakterizující prùbìh sráky. Obsahuje informace o sloupci vody, kterı spadl za danı èasovı krok. 
+\item \textbf{Time interval [min]}
+\par Èasovı krok, ve kterém probìhne simulace. Údaj je nutné zadat s desetinnou teèkou a zároveò je tøeba mít nastavenou desetinnou teèku defaultnì jako oddìlovaè v Ovládacích panelech MS Windows. Velikost èasového kroku urèí podrobnost simulace i celkovou dobu bìhu aplikace.  
+\item \textbf{Total running time [min]}
+\par Celková dobì bìhu simulace. Údaj je nutné zadat s desetinnou teèkou a zároveò je tøeba mít nastavenou desetinnou teèku defaultnì jako oddìlovaè v Ovládacích panelech MS Windows. Tato hodnota stanovuje dobu sráky, která probìhne na daném území.  
+\item \textbf{Surface retention [mm]}
+\par Povrchová retence je schopnost pùdy zadrovat vodu. Pùdní povrch vykazuje urèitou hodnotu retenèní kapacity. Po jejím naplnìní dochází k povrchového odtoku \cite{manual}.
+\item \textbf{Output folder}
+\par Adresáø, do kterého budou uloena vıstupní data.
+\end{itemize}
+\section{Pouité metody}
+\subsection{Naètení vstupních dat}
+\par Vstupní data byla naètena pomocí pøíkazu GetParameterAsText()
+\begin{verbatim}
+promenna = gp.GetParameterAsText(0)
+\end{verbatim}
+Tento zápis znamená, e vstupní parametr s indexem 0 (tato funkce indexuje vstupy od 0) ze seznamu parametrù bude uloen jako promenná. Vstupem této funkce musí bıt data typu integer. Všechny vstupní soubory jsou tak uloeny pod jednotlivımi promìnnımi. 
+\subsection{Pøevedení vektorovıch vrstev na rastrové}
+\par Hlavní vıpoèet probíhá pomocí základní bilanèní rovnice. Postupnì v jednotlivıch èasovıch krocích je v kadé buòce vypoètena vıška hladiny. Proto je nutné i vstupující vektorové vrstvy pøevést na rastrové vrstvy. 
+\begin{verbatim}
+out_rasterdataset = arcpy.PolygonToRaster_conversion (in_features, 
+value_field, out_rasterdataset, {cell_assignment}, {priority_field},
+{cellsize})
+\end{verbatim}
+Tato funkce ArcGISu pøevede vstupní polygonovou vrstvu (in\_features) na rastr (out\_rasterdataset). Dalším povinnım parametrem je value\_field urèující sloupec v atributové tabulce, jeho hodnotu budou tvoøit hodnoty rastru. Nepovinnımi parametry jsou pak ještì cell\_assignment, kterım se stanoví metoda, jak bude urèena hodnota pixelu v pøípadì, e zasahuje do více polygonù. Priority\_field urèuje sloupec v atributové tabulce, kterı stanoví poøadí polí v pøípadì stejné hodnoty ve value\_field. Pomocí cell\_size se stanoví velikost pixelu vısledného rastru. Pøi tvorbì rastru bylo ještì nutné zajistit, aby maska vısledného rastru sedìla pøesnì na rastru DMT, tzn. aby si polohy pixelù jednotlivıch rastrù pøesnì odpovídaly. K tomu slouí funkce snapRaster.
+\begin{verbatim}
+arcpy.env.snapRaster = rastr
+\end{verbatim}
+Chybou funkce PolygonToRaster je fakt, e pøi vytváøení hodnot pixelù z pole typu string, není schopná tento typ pøevést i do rastru, ale pøi konverzi jednoduše jednotlivım tøídám pøidìlí náhodnì nìjakı integer. Pro další vıpoèty je ale takovıto rastr nepouitelnı. Protoe pøevod ze vstupního pole integer probíhá bez problému, byl nejprve v atributové tabulce pøidán novı sloupec typu integer.
+\begin{verbatim}
+AddField_management (in_table, field_name, field_type, {field_precision},
+{field_scale}, {field_length}, {field_alias}, {field_is_nullable},
+{field_is_required}, {field_domain})
+\end{verbatim} 
+Novı sloupec je moné charakterizovat pomocí mnoství parametrù, pro potøeby tohoto skriptu však bohatì staèilo urèit field\_type (SHORT). Jeho hodnoty byly urèeny pomocí reklasifikace, kdy jednotlivım tøídám byly pøidìleny èíselné kódy podle stanoveného klíèe. Pro vektorovou vrstvu pùd vypadal pøevod takto :
+\begin{verbatim}
+rows = gp.UpdateCursor(features)
+for row in rows:
+    if getattr(row, ptyp) == "PP":
+        row.typ_pudy_n = 1
+    if getattr(row, ptyp) == "HP":
+        row.typ_pudy_n = 2
+    if getattr(row, ptyp) == "HH":
+        row.typ_pudy_n = 3
+    if getattr(row, ptyp) == "JH":
+        row.typ_pudy_n = 4
+    if getattr(row, ptyp) == "JJ":
+        row.typ_pudy_n = 5
+    rows.UpdateRow(row)
+del row, rows 
+\end{verbatim}
+Pro editaci atributové tabulky je nutné vytvoøit si tzv. kurzor, kterım je pak moné procházet tabulkou a upravovat hodnoty polí. Stejnì tomu tak bylo uèinìno ve vrstvì vegetace :
+\begin{verbatim}
+rows = gp.UpdateCursor(features)
+for row in rows:
+    if getattr(row, vtyp) == "BV":
+        row.typ_veg_n = 1
+    if getattr(row, vtyp) == "SR":
+        row.typ_veg_n = 2
+    if getattr(row, vtyp) == "UR":
+        row.typ_veg_n = 3
+    if getattr(row, vtyp) == "TP":
+        row.typ_veg_n = 4
+    rows.UpdateRow(row)
+del row, rows
+\end{verbatim}
+
+Funkce AddField\_Management() umí vytvoøit pole, jeho název se ještì nenachází v tabulce. Proto bylo tøeba ošetøit pøípad, kdy se u pøidávané pole v tabulce jednou nachází. 
+\begin{verbatim}
+if gp.ListFields(features, new_field).Next():
+    arcpy.DeleteField_management(features, new_field)
+arcpy.AddField_management(features, new_field, field_type, field_length)
+\end{verbatim}
+
+\subsection{Oøezání rastrù}
+\par Rozmìry rastru DMT nemusí odpovídat novì vytvoøenım rastrùm pùd a vegetace. Proto je nutné vytvoøit jejich prùnik, tak aby mohl vıpoèet probíhal jen v pixelech u kterıch jsou známy všechny hodnoty. K tomu byl vytvoøen vıpoèet v Raster Calculatoru.
+\begin{verbatim}
+raster_soil = SetNull(IsNull(dmt)  |  IsNull(puda)  |  IsNull(veg), puda)
+raster_dmt = SetNull(IsNull(dmt)  |  IsNull(puda)  |  IsNull(veg), dmt)
+raster_veg = SetNull(IsNull(dmt)  |  IsNull(puda)  |  IsNull(veg), veg)
+\end{verbatim}
+Teprve poté mohly bıt ze všech rastrù vytvoøeny matice, na nich pak probíhá celı vıpoèet.
+
+\subsection{Naètení parametrù}
+\par Jednotlivé typy pùd a vegetace se rozlišují pøedevším rùznımi parametry, které dále vstupují do vıpoètu. Textura pùdy urèuje sorptivitu pùdy \emph{S}, souèinitel nasycené hydraulické vodivosti \emph{K}, souèinitel $\alpha$ a odtokové parametry \emph{b}, \emph{X}, \emph{Y}, podle typu vegetace jsou pak stanoveny potenciální intercepce \emph{PI}, pomìrná plocha listová \emph{PPL}, Manningùv souèinitel drsnosti \emph{n}. Pro získání parametru kadému pixelu byla napsána funkce limity(), která vyuívá datovı typ dictionary (v èeském pøekladu té jako slovník). Na rozdíl od jinıch sloenıch datovıch typù, jako jsou string, list, tuples, které pouívají celá èísla jako indexy pro pøístup jednotlivım polokám, poloka v dictionary se skládá z dvojice key (klíè) - value (hodnota). Klíèem mùe bıt pouze nemìnitelnı datovı typ, hodnotou libovolnı datovı typ. V tomto pøípadì klíèem jsou typy pùd a vegetace, hodnoty k nim pøiøazené jsou jednotlivé parametry. 
+\begin{verbatim}
+# k - soucinitel nasycene hydraulicke vodivosti [cm/min]    
+k_dict=dict([('PP1', 0.100), ('PP2', 0.118), ('PP3', 0.126), ('PP4', 0.140),
+('HP1', 0.022), ('HP2', 0.025), ('HP3', 0.029), ('HP4', 0.030), ('HH1', 0.010),
+('HH2', 0.014), ('HH3', 0.015), ('HH4', 0.016), ('JH1', 0.0015), ('JH2', 0.0055), 
+('JH3', 0.0060), ('JH4', 0.0070), ('JJ1', 0.0010), ('JJ2', 0.0040), ('JJ3', 0.0050), 
+('JJ4', 0.0060), ('OT', -3.40282346639e+038)])
+\end{verbatim}
+
+Vytvoøení matice parametrù.
+\begin{verbatim}
+cell_soil = matice_pùdy[i][j]
+cell_veg = matice_vegetace[i][j]
+npar = limity.limity(cell_soil, cell_veg)
+val_k = npar[0]
+val_s = npar[1]
+val_n = npar[2]
+val_ppl = npar[3]
+val_pi = npar[4]
+val_alfa = npar[5]
+val_b = npar[6]
+val_x = npar[7]
+val_y = npar[8]
+val_tau = npar[9]
+    
+# Parametry: pozice, K, S, N, PPL, PI, ALFA, B, X, Y, tau value
+mpar = [i,j,val_k,val_s,val_n,val_ppl,val_pi,val_alfa,val_b,val_x,val_y,val_tau]
+    
+# Pridani hodnot/hodnoty do vektoru
+mat_par.append(mpar) 
+\end{verbatim}
+
+\subsection{Vıpoèet kritické vıšky hladiny}
+\par Jako kritická vıška hladiny je oznaèena hladina, pøi které dojde k pøekroèení krajní nevymílací rychlosti. Tato mezní hodnota je vypoètena podle vztahu \ref{eq:stress} 
+\begin{verbatim}
+mat_hcrit = []
+for i in range(dmt_lines):
+  slope = mat_slope[i]
+  tau_crit = mat_par[i][11]
+  hcrit = (tau_crit / 0.098067 / slope)
+  mat_hcrit.append(hcrit) 
+\end{verbatim}
+ 
+\subsection{Vıpoèet soustøedìného odtoku}
+\par Pøi pøekroèení kritické hladiny dojde k vıpoètu objemu, kterı se nachází nad kritickou hladinou, a kterı se zúèastní rıhového odtoku. Zbytek vody pod kritickou hladinou pøedstavuje plošnı odtok. Pokud hladina nepøekroèí kritickou hodnotu, dochází jen k plošnému odtoku. Celkovı odtok z buòky se pak rovná souètu tìchto dvou typù odtoku.
+\par Do vıpoètu soustøedìného odtoku se zapojuje i délka úseku L, tedy vzdálenost bunìk. U bunìk sousedících hranou se tato rovná velikosti pixelu, u bunìk sousedících jen bodem je to délka úhlopøíèky pixelu. Vıpoèet prùtoku probíhá podle rovnice \ref{eq:total}. Do promìnné groove\_ratio je uloenı pomìr rozmìrù rıhy, kterı byl pùvodnì stanoven na $\frac{2}{3}$, ale jeho velikost je v pøípadì nutnosti moné zmìnit. Rychlost vody v rıze se vypoète rovnicí \label{eq:speed}.   
+\begin{verbatim}
+h_crit = mat_hcrit[i]
+if h0 > h_crit:
+  # plosny i ryhovy odtok
+  rill_ratio = 2/3
+  V_str = (h0 - h_crit)* 0.001 * vpix * spix   #[m3]
+  od = mat_fd[i][0]   \% zjištìní smìru odtoku
+  if od == 32:
+    q_str = (math.pow(rill_ratio, 1/3))/(math.pow((2*rill_ratio + 1), 2/3)) 
+				* 1/mat_par[i][4] * math.pow(V_str/L, 4/3) *
+            math.sqrt(mat_slope[i]/100)   
+    v_str = 0.1*q_str / V_str * L
+	 q_plos =  math.pow(h_crit/10, mat_par[i][8]) * A   #[10 l/s]
+    q = q_str + q_plos   #[10 l/s ]
+else:      
+    #  jen plosny odtok 
+    V_str = -3.40282346639e+038
+    q_str = 0
+    v_str = -3.40282346639e+038
+    q_plos = math.pow(h0/10,mat_par[i][8]) * A  # [10 l/s]
+    q = q_str + q_plos   # [10 l/s]
+\end{verbatim}
+\subsection{Uloení vısledkù}
+Vısledné rastry jsou uloeny do zvoleného sloky. Vıstupy popisující soustøedìnı odtok jsou uloeny jen v pøípadì, e tento odtok nastane. 
+\begin{verbatim}
+if numpy.any(prut_str != -3.40282346639e+038):
+    prutok_q_str.save(output+"/streamflow")
+    v_str.save(output+"/streamspeed")
+\end{verbatim}
+V pøípadì vytvoøení soustøedìného odtoku jsou vytvoøené rıhy uloeny ve vektorové vrstvì. Jedním z atributù tìchto polylinií je prùtok. Funkce StreamToFeature() pøevádí rastrovou lineární sí na vrstvu polylinií. K urèení spojitosti linií je nutnı rastr smìru odtoku. 
+\begin{verbatim}
+StreamToFeature (in_stream_raster, in_flow_direction_raster, 
+out_polyline_features, {simplify})
+\end{verbatim} 
+\begin{verbatim}
+if arcpy.Exists("streamflow"):
+    int_prut = Int(10000*prutok_q_str)
+    StreamToFeature(int_prut, outFlowDirection, output+"/flow_line.shp", 
+    "SIMPLIFY")
+    line = output+"/flow_line.shp"
+    arcpy.AddField_management(line, "flow", "FLOAT", 10, 5)
+    arcpy.CalculateField_management(line, "flow", 'float(!GRID_CODE!)/10000', 
+    "PYTHON")
+    arcpy.DeleteField_management(line, "GRID_CODE")
+\end{verbatim}
+
+\section{Vıstupní data}
+Vıstupní soubory jsou rastrové vrstvy speed, level, flow, stress, runoffsum, streamflow, streamspeed a flow\_line. Všechny vrstvy obsahují maximální hodnoty jednotlivıch charakteristik pro kadı pixel.
+\begin{itemize}
+\item Speed - rychlost plošného odtoku
+\item Level - hladina odtoku
+\item Flow - celkovı prùtok (souèet plošného a soustøedìného odtoku)
+\item Stress - teèné napìtí
+\item Runoffsum - suma všech odtokù z jednotlivıch bunìk
+\item Streamflow - prùtok soustøedìného odtoku
+\item Streamspeed - rychlost soustøedìného odtoku
+\item Flow\_line - vektorová vrstva prùtoku soustøedìného odtoku
+\end{itemize}
+\par Vıstupní data byla zvolena z dùvodu jejich dalšího vyuití. Znalosti jejich hodnot slouí dále napøíklad k navrhování technickıch opatøení, silnièních pøíkopù nebo malıch vodních nádrí. Protierozní opatøení se navrhují s cílem omezit negativní dùsledky pùsobení erozního procesu na pùdu, vodní zdroje, intravilán, apod. Dále jsou pak technická opatøení budována za úèelem regulace odtokového reimu èi zvıšení ekologické stability území. Ze získanıch hodnot prùtoku, rychlosti, napìtí a objemu vody je urèeno umístìní ochrannıch opatøení a vypoètou se jejich rozmìry. Obecnì lze konstatovat, e efektivní návrh systémù protierozní ochrany musí spoèívat v zachycení povrchovì odtékající vody na chránìném pozemku, umonìní co nejvìtší èásti povrchového odtoku vsáknout se do pùdního profilu a sníení rychlosti odtékající vody.  
+
+\newpage
+\part{Pouití aplikace}
+\setcounter{section}{0}
+\par Simulace byla provedena na tøech modelech terénu. Prvotní testování bylo provedeno na modelovém svahu, po odladìní byl skript spuštìn i na reálnıch datech. 
+\par Pro simulaci byl nejprve pouit soubor s konstantní srákou, ve které jsou srákové úhrny po celou dobu simulace nemìnné. Poté byla aplikace spuštìna s promìnlivou srákou. Konkrétnì pro zadaná území byl pouit srákovı soubor ze stanice Brník.  
+\section{Digitální model terénu è. 1 - testovací plocha}
+\label{sec:test}
+\par Pro úèely testování funkènosti modelu byl vytvoøen umìlı svah s konstantním sklonem a danım smìrem odtoku. Rastr modelující dva konvergující protilehlé svahy o konstantním sklonu 10.77\%. Na jejich sousedící hranì je vytvoøena rıha, kde se pøepokládá soustøedìnı odtok. Sklon svahu v rıze je 4\%. Velikost pixelu je 5 metrù. 
+\begin{figure}[h]
+\centering
+\includegraphics[scale=0.6]{rastr_model.jpg}
+\caption[Vstupní data - DMT]{Vstupní data - DMT \\ Zdroj : vlastní zpracování}
+\end{figure}
+\par Hodnoty i tvar svahu byly vytvoøeny tak, aby bylo moné pøedpokládat smìr odtoku a ovìøit správnost vıpoètù v programu SMODERP 1D. 
+\newpage
+\begin{figure}[t]
+\centering
+\includegraphics[scale=0.6]{slope_model.jpg}
+\caption[Sklon svahu na modelovém rastru]{Sklon svahu na modelovém rastru \\ Zdroj : vlastní zpracování}
+\end{figure}
+\begin{figure}[h]
+\centering
+\includegraphics[scale=0.9]{flowdir.jpg}
+\caption[Smìr odtoku na modelovém svahu]{Smìr odtoku na modelovém svahu \\ Zdroj : vlastní zpracování}
+\end{figure}
+\par Rastr byl vytvoøen pùvodnì v MS Excel, kde byl exportován do formátu ASCII. Z ASCII je pak moné v ArcGISu vytvoøit rastrovı soubor. ASCII je textovı soubor, kterı ale hned na zaèátku obsahuje informace o poètu øádkù a sloupcù a stanovuje souøadnice rohù. Pøevod ASCII souboru na rastr provádí ArcGIS pomocí funkce Ascii to Raster. 
+\par Pro charakteristiku pùdy a vegetace byl zadán pouze jeden shapefile. Území je rozdìleno na dvì èásti. Ve vıchodní èásti se nachází písèitá pùda bez vegetace, v západní je hlinitopísèitá pùda s úzkoøádkovou vegetací. Dva typy pùdy byly zvoleny proto, aby bylo ovìøeno, e skript zpracovává vstupní data správnì.  
+\begin{figure}[t]
+\centering
+\includegraphics[scale=0.8]{puda_model.jpg}
+\caption[Vstupní data - vektorovı soubor popisující typ pùdy a vegetace]{Vstupní data - vektorovı soubor popisující typ pùdy a vegetace \\ Zdroj : vlastní zpracování}
+\end{figure}
+\begin{figure}[h]
+\centering
+\includegraphics[scale=0.8]{tabpuda_model.jpg}
+\caption[Atributová tabulka]{Atributová tabulka \\ Zdroj : vlastní zpracování}
+\end{figure}
+
+\subsection{Simulace s konstantní srákou}
+\subsubsection{Vstupní data}
+\begin{itemize}
+\item \bf{Rainfall file} \normalfont \\
+\begin{verbatim}
+0	0
+120 46.16
+\end{verbatim}
+Soubor popisující prùbìh sráky. V prvním sloupci jsou dány èasové kroky, ve druhém pak mnoství vody spadlé na daném území. V pøípadì konstantní sráky se úhrny nemìní. 
+\begin{figure}[t]
+\centering
+\includegraphics[scale=0.8]{srazka_stala_graf.png}
+%\caption[Atributová tabulka]{Atributová tabulka \\ Zdroj : vlastní zpracování}
+\end{figure}
+\newpage
+\item \bf{Time interval} \normalfont \\
+0.2
+\item \bf{Total running time} \normalfont \\
+40
+\item \bf{Surface retention} \normalfont \\
+0
+\end{itemize}
+\newpage 
+\subsubsection{Vısledky}
+\par Z vıstupních rastrù je patrnı prùbìh prùtoku vody. S rostoucí vzdáleností od poèátku svahu postupnì narùstá prùtok, hladina, rychlost i teèné napìtí. Na pravém svahu je vıraznì rozlišena hranice mezi rùznımi typy vegetace a pùdy. Vpravo se nachází úzkoøádková vegetace a je patrné, e odtok vody tam probíhá daleko pomaleji ne v levé èásti bez vegetace. Po pøekroèení hranice dochází k prudkému zvìtšení odtoku. Nejvìtší prùtok se podle oèekávání nachází ve støedové rıze, a to pøedevším v horní èásti, kde je závìrovı profil území. 
+\par Hladina v rıze prudce narùstá a do chvíle, kdy nastane soustøedìnı odtok. Prùtok soustøedìného odtoku je toti daleko vìtší ne odtoku plošného. Proto nedochází k tak vıraznému narùstání hladiny a zadrování vody v území.
+\begin{itemize}
+\item \bf{Level} \normalfont \\
+\begin{figure}[h]
+\centering
+\includegraphics[scale=0.6]{levelstala_model.jpg}
+\caption[Vıška hladiny na modelovém svahu s konstantní srákou]{Vıška hladiny na modelovém svahu s konstantní srákou \\ Zdroj : vlastní zpracování}
+\end{figure}
+\newpage
+\item \bf{Flow} \normalfont \\
+\begin{figure}[h]
+\centering
+\includegraphics[scale=0.6]{flowstala_model.jpg}
+\caption[Celkovı prùtok na modelovém svahu s konstantní srákou]{Celkovı prùtok na modelovém svahu s konstantní srákou \\ Zdroj : vlastní zpracování}
+\end{figure}
+\item \bf{Speed} \normalfont  \\
+\begin{figure}[h]
+\centering
+\includegraphics[scale=0.6]{speedstala_model.jpg}
+\caption[Rychlost plošného odtoku na modelovém svahu s konstantní srákou]{Rychlost plošného odtoku na modelovém svahu s konstantní srákou \\ Zdroj : vlastní zpracování}
+\end{figure}
+\par Rychlost odtoku je nejvìtší v dolní èásti boèních svahù, tìsnì pøed napojením na støedovou rıhu. V rıze je rychlost menší z dùvodu menšího sklonu svahu. 
+\newpage
+\item \bf{Shear Stress} \normalfont \\
+\begin{figure}[h]
+\centering
+\includegraphics[scale=0.6]{stressstala_model.jpg}
+\caption[Teèné napìtí na modelovém svahu s konstantní srákou]{Teèné napìtí na modelovém svahu s konstantní srákou \\ Zdroj : vlastní zpracování}
+\end{figure}
+\item \bf{Runoff Sum} \normalfont  \\
+\begin{figure}[h]
+\centering
+\includegraphics[scale=0.6]{runoffsumstala_model.jpg}
+\caption[Suma všech odtokù z buòky na modelovém svahu s konstantní srákou]{Suma všech odtokù z buòky na modelovém svahu s konstantní srákou \\ Zdroj : vlastní zpracování}
+\end{figure}
+\newpage
+\item \bf{Stream Flow} \normalfont  \\
+\begin{figure}[h]
+\centering
+\includegraphics[scale=0.6]{strflowstala_model.jpg}
+\caption[Prùtok soustøedìného odtoku na modelovém svahu s konstantní srákou]{Prùtok soustøedìného odtoku na modelovém svahu s konstantní srákou \\ Zdroj : vlastní zpracování}
+\end{figure}
+\item \bf{Stream Speed} \normalfont  \\
+\begin{figure}[h]
+\centering
+\includegraphics[scale=0.6]{strspeedstala_model.jpg}
+\caption[Rychlost soustøedìného odtoku na modelovém svahu s konstantní srákou]{Rychlost soustøedìného odtoku na modelovém svahu s konstantní srákou \\ Zdroj : vlastní zpracování}
+\end{figure}
+\par V daném pøípadì nastal soustøedìnı odtok jen ve støedové rıze. Prùtok se zvìtšuje smìrem k závìrovému profilu. Rychlost se postupnì také mírnì zvìtšuje, ale rozdíly jsou v takovém øádu, kterı ArcGIS ji nerozeznává. Zmìny nastávají a na jedenáctém místì za desetinnou èárkou. 
+\newpage 
+\item \bf{Stream Flow Line} \normalfont  \\
+\begin{figure}[h]
+\centering
+\includegraphics[scale=0.6]{flowlinestala_model.jpg}
+\caption[Prùtok soustø. odtoku na modelovém svahu s konstant.srákou - polylinie]{Prùtok soustøedìného odtoku na modelovém svahu s konstantní srákou - polylinie \\ Zdroj : vlastní zpracování}
+\end{figure}
+
+\begin{figure}[h]
+\centering
+\includegraphics[scale=0.45]{tabflowlinestala_model.jpg}
+\caption[Vıøez atr.tab. prùtoku soustø.odtoku na modelovém svahu s konst. srákou]{Vıøez atributové tabulky vrstvy prùtok soustøedìného odtoku na modelovém svahu s konstantní srákou\\ Zdroj : vlastní zpracování}
+\end{figure}
+\end{itemize} 
+\par Vytvoøená vektorová vrstva obsahuje v atributové tabulce sloupec s informací o prùtoku soustøedìného odtoku. Jednotlivé èásti polylinie pøedstavují úseky se stejnım prùtokem. 
+\newpage
+\subsection{Simulace s promìnlivou srákou}
+\subsubsection{Vstupní data}
+\begin{itemize}
+\item \bf{Rainfall file} \normalfont \\
+\begin{verbatim}
+5	17.04
+10	23.47
+15	27.12
+20	30.01
+30	33.47
+45	36.31
+60	40.16
+90	43.76
+120 46.16
+\end{verbatim}
+Promìnlivá sráka ze stanice Brník je popsána jednotlivımi srákovımi úhrny za dané èasové kroky. 
+\begin{figure}[h]
+\centering
+\includegraphics[scale=0.8]{srazka_prom_graf.png}
+%\caption[Atributová tabulka]{Atributová tabulka \\ Zdroj : vlastní zpracování}
+\end{figure}
+\item \bf{Time interval} \normalfont \\
+0.2
+\item \bf{Total running time} \normalfont \\
+40
+\item \bf{Surface retention} \normalfont \\
+0
+\end{itemize}
+\subsubsection{Vısledky}
+\par Pøi srovnání vısledkù simulace na testovací ploše, nejprve s konstantní, poté s promìnlivou srákou, jsou patrné rozdíly. Prùbìh promìnlivé sráky je znázornìn v grafu v pøedchozí kapitole. Nejintenzivnìjší sráka probíhá hned v poèáteèních 10 minutách, v dalších èasovıch intervalech je intenzita ji menší. Na rozdíl od konstantní sráky, pøi promìnlivé sráce odtok vody velice rychle hned po zaèátku narùstá, následnı prùbìh je ji pomalejší.   
+\begin{itemize}
+\item \bf{Level} \normalfont \\
+\begin{figure}[h]
+\centering
+\includegraphics[scale=0.6]{levelprom_model.jpg}
+\caption[Vıška hladiny na modelovém svahu s promìnlivou srákou]{Vıška hladiny na modelovém svahu s promìnlivou srákou \\ Zdroj : vlastní zpracování}
+\end{figure}
+\newpage
+\item \bf{Flow} \normalfont \\
+\begin{figure}[h]
+\centering
+\includegraphics[scale=0.6]{flowprom_model.jpg}
+\caption[Celkovı prùtok na modelovém svahu s promìnlivou srákou]{Celkovı prùtok na modelovém svahu s promìnlivou srákou \\ Zdroj : vlastní zpracování}
+\end{figure}
+
+\item \bf{Speed} \normalfont  \\
+\begin{figure}[h]
+\centering
+\includegraphics[scale=0.6]{speedprom_model.jpg}
+\caption[Rychlost plošného odtoku na modelovém svahu s promìnlivou srákou]{Rychlost plošného odtoku na modelovém svahu s promìnlivou srákou \\ Zdroj : vlastní zpracování}
+\end{figure}
+\newpage
+\item \bf{Shear Stress} \normalfont \\
+\begin{figure}[h]
+\centering
+\includegraphics[scale=0.6]{stressprom_model.jpg}
+\caption[Teèné napìtí na modelovém svahu s promìnlivou srákou]{Teèné napìtí na modelovém svahu s promìnlivou srákou \\ Zdroj : vlastní zpracování}
+\end{figure}
+
+\item \bf{Runoff Sum} \normalfont  \\
+\begin{figure}[h]
+\centering
+\includegraphics[scale=0.6]{runoffsumprom_model.jpg}
+\caption[Suma všech odtokù z buòky na modelovém svahu s promìnlivou srákou]{Suma všech odtokù z buòky na modelovém svahu s promìnlivou srákou \\ Zdroj : vlastní zpracování}
+\end{figure}
+\newpage
+\item \bf{Stream Flow} \normalfont  \\
+\begin{figure}[h]
+\centering
+\includegraphics[scale=0.55]{strflowprom_model.jpg}
+\caption[Prùtok soustøedìného odtoku na modelovém svahu s promìnlivou srákou]{Prùtok soustøedìného odtoku na modelovém svahu s promìnlivou srákou \\ Zdroj : vlastní zpracování}
+\end{figure}
+\item \bf{Stream Speed} \normalfont  \\
+\begin{figure}[h]
+\centering
+\includegraphics[scale=0.55]{strspeedprom_model.jpg}
+\caption[Rychlost soustøedìného odtoku na modelovém svahu s promìnlivou srákou]{Rychlost soustøedìného odtoku na modelovém svahu s promìnlivou srákou \\ Zdroj : vlastní zpracování}
+\end{figure}
+\par Jak je vidìt, v pøípadì této sráky dochází k soustøedìnému odtoku ji na svazích. V levé èásti bez vegetace k tomu dochází nedaleko zaèátku odtoku, v pravé s úzkoøádkovou vegetací se soustøedìnı odtok vytváøí pozdìji. Vzhledem k tomu, e sklon na postranních svazích je vìtší ne ve støedové rıze, je zde také rychlost odtoku vìtší. 
+\newpage
+\item \bf{Stream Flow Line} \normalfont  \\
+\begin{figure}[h]
+\centering
+\includegraphics[scale=0.6]{flowlineprom_model.jpg}
+\caption[Prùtok soustø.odtoku na modelovém svahu s promìnl.srákou - polylinie]{Prùtok soustøedìného odtoku na modelovém svahu s promìnlivou srákou - polylinie \\ Zdroj : vlastní zpracování}
+\end{figure}
+\end{itemize}
+\subsection{Porovnání prùbìhu prùtoku}
+\par Pro znázornìní vlivu sráky na prùbìh odtoku byl vytvoøen hydrogram. Tento graf znázoròuje prùbìh celkového prùtoku (souèet plošného i soustøedìného odtoku) v závìrovém bodu území.
+\par Z obou hydrogramù je patrné, e do èasu 120 minut probíhá stoupání prùtoku. U promìnlivé sráky je toto stoupání vıraznìjší, co je logické vzhledem k prùbìhu sráky. Po ukonèení sráky je prùtok u obou grafù konstantní. Postupnì se spadlé úhrny pøesouvají smìrem k závìrovému profilu. Poté co celou odtokovou dráhu urazí i objem vody z nejvzdálenìjších bunìk, dochází k prudkému poklesu prùtoku. U promìnlivé sráky dojde k ukonèení prùtoku déle. U konstantní sráky toti dochází k naplnìní pomaleji, a tak voda stíhá postupnì odtéci. U promìnlivé dojde hned na zaèátku k nahromadìní vody, která nestihne odtéci, a odtok pak tvrá déla. To je patrné napøíklad i pøi porovnání vıslednıch rastrù maximální hladiny èi prùtoku. Hodnoty u promìnlivé sráky jsou nìkolikanásobnì vìtší. 
+\newpage
+\begin{figure}[t]
+\centering
+\includegraphics[scale=0.8]{hydrogram_model.png}
+\caption[Prùbìh celkového prùtoku v závìrovém bodu profilu]{Prùbìh celkového prùtoku v závìrovém bodu profilu \\ Zdroj : vlastní zpracování}
+\end{figure}
+\newpage
+\section{Digitální model terénu è. 2 - Bıkovice}
+\par Dále byla simulace provedena na digitálním modelu terénu Bıkovice. Jedná se o pozemek o rozloze 0.6 $km^2$ v povodí Bıkovického potoka (Benešovsko), na jeho ploše provádí KHMKI FSv ÈVUT experimentální vızkum, jeho cílem je mìøení ztráty pùdy a pøípadnì i kalibrace modelù. Plocha je vybavena zaøízením pro kontinuální záznam sráek a povrchového odtoku a vlhkostními èidly, která sledují vıvoj pùdní vlhkosti v èase \cite{disert}.
+\newpage 
+\begin{figure}[t]
+\centering
+\includegraphics[scale=0.45]{bykovice_orto.jpg}
+\caption[Zkoumanı pozemek - Bıkovice]{Zkoumanı pozemek - Bıkovice \\ Zdroj : WMS Ortofoto - Geoportál ÈÚZK}
+\end{figure}
+\begin{figure}[h]
+\centering
+\includegraphics[scale=0.67]{rastr_byk.jpg}
+\caption[Vstupní data - DMT Bıkovice]{Vstupní data - DMT Bıkovice \\ Zdroj : vlastní zpracování}
+\end{figure}
+\newpage
+\par Vstupní digitální model terénu má velikost pixelu 5 metrù. Na pozemku se nachází dva typy pùdy - hlinitá a jílovitohlinitá. Co se tıèe vegetace, na vìtšinì plochy je orná pùda - úzkoøádkové plodiny. Pouze na okrajích a uprostøed je zatravnìnı pás. 
+\begin{figure}[h]
+\centering
+\includegraphics[scale=0.6]{pudy_byk.jpg}
+\caption[Typy pùd - Bıkovice]{Typy pùd - Bıkovice \\ Zdroj : vlastní zpracování}
+\end{figure}
+\begin{figure}[h]
+\centering
+\includegraphics[scale=0.6]{veg_byk.jpg}
+\caption[Vegetace - Bıkovice]{Vegetace - Bıkovice \\ Zdroj : vlastní zpracování}
+\end{figure} 
+\par Pro spuštìní simulace byly pouity stejné srákové soubory jako u pøedchozího modelu terénu. 
+
+\subsection{Simulace s konstantní srákou}
+\subsubsection{Vstupní data}
+\begin{itemize}
+\item \bf{Time interval} \normalfont \\
+0.2
+\item \bf{Total running time} \normalfont \\
+40
+\item \bf{Surface retention} \normalfont \\
+0
+\end{itemize}
+\subsubsection{Vısledky}
+\par Ji z digitálního modelu terénu je patrné, e pozemek se svauje k severu. Postupnì se vytváøí nìkolik odtokovıch drah, kde se soustøeïuje voda. Tøi nejvıraznìjší odtokové dráhy jsou podle ortofota zatravnìné. V tìchto nejvıraznìjších rıhách jsou úseky s nejvyšší hladinou. 
+\begin{itemize}
+\item \bf{Level} \normalfont \\
+\begin{figure}[h]
+\centering
+\includegraphics[scale=0.67]{levelstala_byk.jpg}
+\caption[Vıška hladiny na pozemku Bıkovice s konstantní srákou]{Vıška hladiny na pozemku Bıkovice s konstantní srákou \\ Zdroj : vlastní zpracování}
+\end{figure}
+\newpage
+\item \bf{Flow} \normalfont \\
+\begin{figure}[h]
+\centering
+\includegraphics[scale=0.67]{flowstala_byk.jpg}
+\caption[Celkovı prùtok na pozemku Bıkovice s konstantní srákou]{Celkovı prùtok na pozemku Bıkovice s konstantní srákou \\ Zdroj : vlastní zpracování}
+\end{figure}
+\item \bf{Speed} \normalfont  \\
+\begin{figure}[h]
+\centering
+\includegraphics[scale=0.67]{speedstala_byk.jpg}
+\caption[Rychlost plošného odtoku na pozemku Bıkovice s konstantní srákou]{Rychlost plošného odtoku na pozemku Bıkovice s konstantní srákou \\ Zdroj : vlastní zpracování}
+\end{figure}
+\par Rychlost odtoku se postupnì v rıhách zvìtšuje. V rastru rychlosti plošného odtoku je patrnıch 6 menších povodí, která se na pozemku vytvoøila. Logicky podél rozvodnic se nachází místa s nejmenší rychlostí.
+\newpage
+\item \bf{Shear Stress} \normalfont \\
+\begin{figure}[h]
+\centering
+\includegraphics[scale=0.67]{stressstala_byk.jpg}
+\caption[Teèné napìtí na pozemku Bıkovice s konstantní srákou]{Teèné napìtí na pozemku Bıkovice s konstantní srákou \\ Zdroj : vlastní zpracování}
+\end{figure}
+\item \bf{Runoff Sum} \normalfont  \\
+\begin{figure}[h]
+\centering
+\includegraphics[scale=0.67]{runoffsumstala_byk.jpg}
+\caption[Suma všech odtokù z buòky na pozemku Bıkovice s konstantní srákou]{Suma všech odtokù z buòky na pozemku Bıkovice s konstantní srákou \\ Zdroj : vlastní zpracování}
+\end{figure}
+\newpage
+\item \bf{Stream Flow} \normalfont  \\
+\begin{figure}[h]
+\centering
+\includegraphics[scale=0.67]{strflowstala_byk.jpg}
+\caption[Prùtok soustøedìného odtoku na pozemku Bıkovice s konstantní srákou]{Prùtok soustøedìného odtoku na pozemku Bıkovice s konstantní srákou \\ Zdroj : vlastní zpracování}
+\end{figure}
+\item \bf{Stream Speed} \normalfont  \\
+\begin{figure}[h]
+\centering
+\includegraphics[scale=0.67]{strspeedstala_byk.jpg}
+\caption[Rychlost soustøedìného odtoku na pozemku Bıkovice s konstantní srákou]{Rychlost soustøedìného odtoku na pozemku Bıkovice s konstantní srákou \\ Zdroj : vlastní zpracování}
+\end{figure}
+\par Soustøedìnı odtok se pøi danıch vstupních hodnotách vytváøí na nìkolika místech. Kromì tøí nejvìtších odtokovıch rıh, se ještì tvoøí drobnìjší rıhy u severní hranice pozemku. 
+\newpage 
+\item \bf{Stream Flow Line} \normalfont  \\
+\begin{figure}[h]
+\centering
+\includegraphics[scale=0.67]{flowlinestala_byk.jpg}
+\caption[Prùtok soustø. odtoku na pozemku Bıkovice s konstant.srákou - polylinie]{Prùtok soustøedìného odtoku na pozemku Bıkovice s konstantní srákou - polylinie \\ Zdroj : vlastní zpracování}
+\end{figure}
+\end{itemize}
+\subsection{Simulace s promìnlivou srákou}
+\subsubsection{Vstupní data}
+\begin{itemize}
+\item \bf{Time interval} \normalfont \\
+0.2
+\item \bf{Total running time} \normalfont \\
+40
+\item \bf{Surface retention} \normalfont \\
+0
+\end{itemize}
+\par Simulace s tìmito vstupními hodnotami ale neprobìhla úplnì celá, nebo v èase 20 minut došlo k pøeteèení. To znamená, e nebyl vhodnì stanoven èasovı krok, a v nìkteré buòce byl odtok vìtší ne aktuální hladina. V tom pøípadì je skript ukonèen.  
+\newpage 
+\subsubsection{Vısledky}
+\par Pøi promìnlivé sráce dojde díky vìtším úhrnùm v poèáteèní fázi k daleko vìtšímu prùtoku vody. Hodnoty maximální hladiny pøi promìnlivé sráce jsou v nìkterıch buòkách a dvojnásobky hladiny pøi sráce konstantní.  
+\begin{itemize}
+\item \bf{Level} \normalfont \\
+\begin{figure}[h]
+\centering
+\includegraphics[scale=0.67]{levelprom_byk.jpg}
+\caption[Vıška hladiny na pozemku Bıkovice s promìnlivou srákou]{Vıška hladiny na pozemku Bıkovice s promìnlivou srákou \\ Zdroj : vlastní zpracování}
+\end{figure}
+\item \bf{Flow} \normalfont \\
+\begin{figure}[h]
+\centering
+\includegraphics[scale=0.67]{flowprom_byk.jpg}
+\caption[Celkovı prùtok na pozemku Bıkovice s promìnlivou srákou]{Celkovı prùtok na pozemku Bıkovice s promìnlivou srákou \\ Zdroj : vlastní zpracování}
+\end{figure}
+\newpage
+\item \bf{Speed} \normalfont  \\
+\begin{figure}[h]
+\centering
+\includegraphics[scale=0.67]{speedprom_byk.jpg}
+\caption[Rychlost plošného odtoku na pozemku Bıkovice s promìnlivou srákou]{Rychlost plošného odtoku na pozemku Bıkovice s promìnlivou srákou \\ Zdroj : vlastní zpracování}
+\end{figure}
+\par Také rychlost plošného odtoku je pøi promìnlivé sráce vìtší, pøedevším v severní èásti. V rastru je dobøe zøetelnı zatravnìnı pás, kde je rychlost plošného odtoku daleko menší.
+\par Pøi odtoku se tvoøí vìtší mnoství menších rıek, které zaèínají pomìrnì brzy po zahájení odtoku. Nejvìtší prùtok soustøedìného odtoku je ve tøech nejvıraznìjších rıhách.  
+\newpage
+\item \bf{Shear Stress} \normalfont \\
+\begin{figure}[h]
+\centering
+\includegraphics[scale=0.67]{stressprom_byk.jpg}
+\caption[Teèné napìtí na pozemku Bıkovice s promìnlivou srákou]{Teèné napìtí na pozemku Bıkovice s promìnlivou srákou \\ Zdroj : vlastní zpracování}
+\end{figure}
+\item \bf{Runoff Sum} \normalfont  \\
+\begin{figure}[h]
+\centering
+\includegraphics[scale=0.67]{runoffsumprom_byk.jpg}
+\caption[Suma všech odtokù z buòky na pozemku Bıkovice s promìnlivou srákou]{Suma všech odtokù z buòky na pozemku Bıkovice s promìnlivou srákou \\ Zdroj : vlastní zpracování}
+\end{figure}
+\newpage
+\item \bf{Stream Flow} \normalfont  \\
+\begin{figure}[h]
+\centering
+\includegraphics[scale=0.67]{strflowprom_byk.jpg}
+\caption[Prùtok soustøedìného odtoku na pozemku Bıkovice s promìnlivou srákou]{Prùtok soustøedìného odtoku na pozemku Bıkovice s promìnlivou srákou \\ Zdroj : vlastní zpracování}
+\end{figure}
+\item \bf{Stream Speed} \normalfont  \\
+\begin{figure}[h]
+\centering
+\includegraphics[scale=0.67]{strspeedprom_byk.jpg}
+\caption[Rychlost soustøedìného odtoku na pozemku Bıkovice s promìnlivou srákou]{Rychlost soustøedìného odtoku na pozemku Bıkovice s promìnlivou srákou \\ Zdroj : vlastní zpracování}
+\end{figure}
+\newpage
+\item \bf{Stream Flow Line} \normalfont  \\
+\begin{figure}[h]
+\centering
+\includegraphics[scale=0.67]{flowlineprom_byk.jpg}
+\caption[Prùtok soustø. odtoku na pozemku Bıkovice s prom.srákou - polylinie]{Prùtok soustøedìného odtoku na pozemku Bıkovice s promìnlivou srákou - polylinie \\ Zdroj : vlastní zpracování}
+\end{figure}
+\end{itemize}
+\subsection{Porovnání prùbìhu prùtoku}
+\par Pro znázornìní vlivu sráky na prùbìh odtoku byl vytvoøen hydrogram. Tento graf znázoròuje prùbìh celkového prùtoku (souèet plošného i soustøedìného odtoku) v závìrovém bodu území po celou dobu odtoku.
+\par Vzhledem k tomu, e na území Bıkovice je nìkolik menších povodíèek a neexistuje pouze jeden závìrovı profil, bylo vybráno nejvetší povodí a na nìm byl vytvoøen hydrogram.
+\begin{figure}[h]
+\centering
+\includegraphics[scale=0.8]{povodi.jpg}
+\caption[Vybrané povodí pro tvorbu hydrogramu]{Vybrané povodí pro tvorbu hydrogramu \\ Zdroj : vlastní zpracování}
+\end{figure}
+\par Stejnì jako u testovacího rastru i v tomto pøípadì prùbìh prùtoku pøi promìnlivé sráce má podobnı tvar jako pøi sráce konstantní. U promìnlivé sráky však dochází hned na zaèátku k prudšímu nárùstu prùtoku. Naopak odtok veškeré vody probíhá pozdìji. Veškeré zmìny v prùtoku probíhají u obou sráek, vdy však s urèitıch èasovım rozdílem.
+\begin{figure}[h]
+\centering
+\includegraphics[scale=0.8]{hydrogram_byk.png}
+\caption[Prùbìh celkového prùtoku v závìrovém bodu profilu]{Prùbìh celkového prùtoku v závìrovém bodu profilu \\ Zdroj : vlastní zpracování}
+\end{figure}
+\newpage
+\section{Digitální model terénu è. 3 - Nuèice}
+\par Zadané území jsou pøedevším zemìdìlské pozemky, nacházející se mezi obcemi Prusice, Nuèice a Konojedy v okrese Praha-vıchod. Území se rozkládá na ploše katastrálních území Prusice (kód území 708127), Nuèice (kód území 708101), Konojedy (kód území 708097). Rozloha území je 2.1 $km^2$.
+\begin{figure}[h]
+\centering
+\includegraphics[scale=0.55]{nucice_orto.jpg}
+\caption[Ortofoto - Nuèice]{Ortofoto - Nuèice \\ Zdroj : WMS Ortofoto - Geoportál ÈÚZK}
+\end{figure}
+\newpage
+\begin{figure}[h]
+\centering
+\includegraphics[scale=0.6]{rastr_nuc.jpg}
+\caption[Vstupní data - DMT Nuèice]{Vstupní data - DMT Nuèice \\ Zdroj : vlastní zpracování}
+\end{figure}
+\par Vstupní digitální model terénu má velikost pixelu 5 metrù. Na pozemku se nachází dva typy pùdy - hlinitá a hlinitopísèitá. Co se tıèe vegetace, na vìtšinì plochy je orná pùda - širokoøádkové plodiny. Na zkoumaném území se nachází les, kterı byl vzhledem ke svému úèinku na intenzitu ztráty pùdy zaøazen také mezi širokoøádkovou vegetaci.  
+\begin{figure}[h]
+\centering
+\includegraphics[scale=0.6]{puda_nuc.jpg}
+\caption[Typy pùd - Nuèice]{Typy pùd - Nuèice \\ Zdroj : vlastní zpracování}
+\end{figure}
+\newpage
+\par Pro spuštìní simulace byly pouity stejné srákové soubory jako u pøedchozích modelù terénu. Vısledky obou dvou simulací pro zkoumané území v Nuèicích jsou souèástí pøílohy.
+
+\subsection{Simulace s konstantní srákou}
+\subsubsection{Vstupní data}
+\begin{itemize}
+\item \bf{Time interval} \normalfont \\
+0.15
+\item \bf{Total running time} \normalfont \\
+40
+\item \bf{Surface retention} \normalfont \\
+0
+\end{itemize}
+
+\subsection{Simulace s promìnlivou srákou}
+\subsubsection{Vstupní data}
+\begin{itemize}
+\item \bf{Time interval} \normalfont \\
+0.15
+\item \bf{Total running time} \normalfont \\
+40
+\item \bf{Surface retention} \normalfont \\
+0
+\end{itemize}
+
+\subsection{Porovnání prùbìhu prùtoku}
+\par Stejnì jako u pøedchozích dvou území, i v Nuèicích jsou patrné rozdíly mezi odtokem pøi promìnlivé a konstantní sráce. Je samozøejmé, e všechny vısledky jsou ovlivnìny celkovou dobou bìhu simulace. V pøípadì Nuèic se jedná u rozlohou vìtší území, a proto i celkovı odtok trvá delší dobu. Kompletní odteèení vody trvalo u tohoto území kolem 113.3 hodin. Vısledky, zachycené ze simulace trvající 40 minut, tak zobrazují maximální hodnoty pro poèátek celého odtoku. 
+\par Z pøiloenıch souborù je patrné, e v pøípadì promìnlivé sráky dochází k rychlejšímu nárùstu prùtoku. Zatímco u konstantní sráky se soustøedìnı odtok vytváøí jen na nìkolika málo úsecích a to pøedevším na hlavních odtokovıch drahách, u promìnlivé sráky probíhá tvorba rıh a soustøeïování odtoku více. Pokud by simulace bìela déle, vytvoøilo by se postupnì daleko více rıek. 
+\begin{figure}[h]
+\centering
+\includegraphics[scale=0.8]{hydrogram_nuc.png}
+\caption[Prùbìh celkového prùtoku v závìrovém bodu profilu]{Prùbìh celkového prùtoku v závìrovém bodu profilu \\ Zdroj : vlastní zpracování}
+\end{figure}
+\par Stejnì tak i prùbìh prùtoku v závìrovém bodu území v hydrogramu je podobnı pøedchozím modelùm. U promìnlivé sráky dochází k prudšímu nárùstu, naopak k pozdìjšímu poklesu prùtoku. Pøesto prùbìh pøi této sráce pomìrnì pøesnì kopíruje prùbìh pøi sráce konstantní. 
+
+\newpage
+\section{Porovnání s vısledky modelu SMODERP 1D}
+\par Jak bylo øeèeno ji v úvodu, zahrnutím soustøedìného odtoku jsou velice vıznamnì ovlivnìny i vıstupní soubory modelu. Tento rozdíl byl patrnı pøi porovnání vısledkù s døívìjší verzí SMODERPU 1D. Verze 1D simuluje povrchovı odtok, ale pøedpokládá pouze plošnı odtok vody a poèítá na charakteristickıch profilech svahu. Vzhledem k tomu, e porovnání na reálnıch plochách by nebylo pøíliš pøesné, byla vybrána testovací plocha zmínìná ji v \ref{sec:test}.
+\par Testovací plocha pøedstavuje terén, kterı je moné zadat i do SMODERPu 1D. Odtok na boèních svazích probíhá podél celé støedové rıhy stejnì, proto byly jako vısledky vzaty hodnoty v poslední buòce nad rıhou, a to na levé polovinì, kde je všude stejná vegetace.
+\begin{figure}[h]
+\centering
+\includegraphics[scale=0.6]{smoderp.png}
+\caption[Vısledky modelu SMODERP 1D]{Vısledky modelu SMODERP 1D \\ Zdroj : vlastní zpracování}
+\end{figure}
+\newpage
+\begin{table}
+\centering
+\begin{tabular}{|c|c|c|}
+\hline
+\bf{Velièina} & \bf{SMODERP 1D} & \bf{SMODERP 2D se soustø.odtokem}  \\
+\hline \hline
+vıška hladiny [mm] & 18.3 & 23.19 \\
+\hline
+celkovı prùtok [10 l/s] & - &  26.63  \\
+\hline
+plošnı prùtok [10 l/s] & 31.8 & -   \\
+\hline
+prùtok soustø.odtoku [10 l/s] & - & 0.54 \\
+\hline
+rychlost ploš.odtoku [m/s] & 0.35 & 0.24   \\
+\hline
+rychlost soustøed.odtoku [m/s] & - & 0.82    \\
+\hline
+teèné napìtí [Pa] & 17.92 & 25.30  \\
+\hline 
+suma odtokù [l] & 26022 & 26819 \\
+\hline
+\end{tabular}
+\caption[Porovnání vısledkù s modelem SMODERP 1D]{Porovnání vısledkù s modelem SMODERP 1D}
+\end{table} 
+\par Z vısledkù vyplıvá, jak moc soustøedìnı odtok ovlivòuje vısledky modelu. Hodnoty charakterizující plošnı odtok jsou vìtšinou v nové verzi zmenšeny o tu èást odtoku, ze které se vytvoøil soustøedìnı odtok. To je vidìt napøíklad u rychlosti plošného odtoku. 
+\newpage
+\part{Závìr}
+\par Cílem diplomové práce bylo vytvoøit funkèní simulaèní model, vylepšení pùvodního modelu SMODERP, kterı zahrnuje i tvorbu soustøedìného odtoku. Text práce popisuje teorii hydrologickıch jevù a pouité fyzikální vztahy. Dále vysvìtluje pouité metody a celkové zpracování modelu. Model byl vyzkoušen na nìkolika modelech terénu, vısledky jsou souèástí této práce. Nejprve byla funkènost modelu ovìøena na testovacím modelu terénu, kterı byl vytvoøen s pøesnì danımi charakteristikami, tak aby smìr a pùsobení povrchového odtoku byly pøedem známy a bylo moné nalézt pøípadné chyby. Po odladìní všech nedostatkù byla simulace spuštìna i na reálnıch datech - na digitálních modelech terénu menšího pozemku Bıkovice a poté na rozsáhlejším území Nuèice. Vısledky obou simulací ji pøedstavují data, která je moné pouít napøíklad pøi reálném návrhu protierozních opatøení. 
+\par Dalším cílem práce bylo upravit zpùsob spouštìní simulace. Model se spouští v programu ArcGIS jako klasická funkce, pro vıpoèet ale bylo pùvodnì potøeba vloit velké mnoství rastrù obsahujících informace o parametrech charakterizujících pùdu a vegetaci. Tento zpùsob byl nahrazen vloením dvou shapefilù. Pùdy a vegetace jsou rozdìleny do jednotlivıch tøíd a naètení parametrù probíhá automaticky naètením z pøiloeného souboru. Parametry se urèují experimentálním vızkumem a postupem èasu jsou postupnì zpøesòovány. V pøípadì nutnosti je tak moné tyto hodnoty upravit. 
+\par Vıstupem simulace je 8 vrstev - rastry maximální vıška hladiny, celkovı prùtok, prùtok soustøedìného odtoku, rychlost plošného odtoku, rychlost soustøedìného odtoku, teèné napìtí, suma všech odtokù z bunìk a vektorová vrstva prùtoku soustøedìného odtoku. Tyto vısledné soubory je moné vyuít napøíklad pøi návrhu protierozních opatøení. 
+\par Zahrnutím soustøedìného odtoku do simulace povrchového odtoku došlo k vıraznému zpøesnìní. Protoe není ve skuteènosti moné vytvoøit model, kterı by pøesnì odpovídal reálnému pohybu vody, znamená jakékoliv pøiblíení se realitì velkı posun vpøed. 
+\par Pøesto má souèasná verze simulaèního modelu mnoho nedostatkù a moností vylepšení. Bezesporu vıznamnım problémem je èasová nároènost. Pøi spouštìní simulace na rozsáhlejším rastru se doba zpracování pohybuje v øádu nìkolika dnù, co není pøíliš akceptovatelné. Doba bìhu se dá samozøejmì ovlivnit rùznımi zpùsoby - pøedevším je to nastavená doba bìhu simulace a dále pak zvolenı nejmenší èasovı krok. Zkrácení doby zpracování by mohlo probìhnout po úpravì skriptu, napøíklad zjednodušením metod. Další moností je bezpochyby volba jiného programovacího jazyka. Python je toti sice velice jednoduchı, dobøe èitelnı a srozumitelnı jazyk, ale pøi nároènìjších aplikacích se projeví vırazná èasová nároènost. Proto volba jiného vhodnìjšího jazyka bude pøi dalším vylepšení modelu nutnım krokem. Lepších vısledkù by se dosáhlo napøíklad pouitím nìkterého z kompilovanıch jazykù, napøíklad C nebo C++. Otázkou však zùstává jejich propojení s programem ArcGIS.
+\par Dalším nedostatkem modelu je, e pøi nevhodné volbì minimálního èasového kroku dojde k tzv. pøeteèení modelu. To znamená, e v urèité fázi je objem vody, kterı má odtéci, vìtší ne aktuální objem vody v buòce. V tom pøípadì je skript ukonèen a je uloen poslední stav pøed pøeteèením. Tento problém bude vyøešen zavedením Courrantovy podmínky, pomocí které bude urèen èasovı krok.
+\par Model bude pouit na Katedøe hydromeliorací a krajinného inenırství pøi vıuce studenty a také v technické praxi. Vzhledem k tomu, e tato diplomová práce je finální prací autorky pøi studiu na Fakultì Stavební ÈVUT, je další posun ve vıvoji modelu a jeho vylepšení nejspíše v rukách nìkoho dalšího.    
+    
+
+\vfill
+V Praze dne 20.prosince 2012
+\makenomenclature
+
+\clearpage 
+\begin{thebibliography}{9}
+\bibitem{arcgis}
+ArcGIS Resource Center. \it{ArcGIS Help Library} \normalfont [online]. \textcopyright 1995-2012, 2012-6-27 [cit. 2012-11-19]. \\Dostupné z WWW:$<$http://help.arcgis.com/en/arcgisdesktop/10.0/help/$>$.
+
+\bibitem{eroze}
+\it{Vodní eroze} \normalfont [online]. Poslední úprava: 20.06.2006, [cit. 2012-12-10]. \\Dostupné z WWW:$<$http://eroze.sweb.cz/index.htm$>$.
+
+\bibitem{esri}
+Environmental Systems Research Institute, Inc. (Esri). \it{What is GIS?} \normalfont [online]. \textcopyright 1995-2012, 2012-6-27 [cit. 2012-12-12]. \\Dostupné z WWW:$<$http://www.esri.com/what-is-gis$>$.
+
+\bibitem{holy}
+HOLİ, Miloš. \it{Eroze a ivotní prostøedí}. \normalfont 1.vyd.Praha : ÈVUT, 1994. 383 s. ISBN: 978-80-010-1078-5.
+
+\bibitem{janecek}
+JANEÈEK, Miloslav. \it{Základy erodologie}. \normalfont 1.vyd.Praha : Èeská zemìdìlská univerzita, 2008. 172 s. ISBN: 978-80-213-1842-7.
+
+\bibitem{disert}
+KAVKA, Petr. \it{Kalibrace a validace modelu SMODERP} \normalfont [online] Praha, záøí 2011 [2012-12-9] Disertaèní práce. FSv ÈVUT. Školitel : doc. Dr. Ing. Tomáš Dostál \\Dostupné z WWW:$<$http://storm.fsv.cvut.cz/smoderp/wp-content/uploads/2011/11/Disertace\_Kavka2011.pdf$>$.
+
+\bibitem{manual}
+KAVKA, Petr. \it{Manuál k programu SMODERP 10.01}. \normalfont. 2012, [cit. 2012-12-11]
+
+\bibitem{kolar}
+KOLÁØ, Václav, C. PATOÈKA a J.BÉM. \it{Hydraulika}. \normalfont 1.vyd.Praha : SNTL/ALFA, 1983. 480 s. ISBN 04-718-83.
+
+\bibitem{krasa}
+KRÁSA, Josef, V. DAVID. \it{Geografické systémy jako podklad rozhodovacího procesu, zejména pro úkoly krajinného inenırství}. \normalfont[online]. \textcopyright 2006, [cit. 2012-12-12]. \\Dostupné z WWW:$<$http://storm.fsv.cvut.cz/on\_line/gisz/Kurz\_GIS\_skriptum.pdf$>$.
+
+\bibitem{spec}
+MIKE. IS: Geografické informaèní systémy. \it{Specialista.info}.\normalfont[online]. Vydáno dne 22.1.2007, [cit. 2012-12-12]. \\Dostupné z WWW:$<$http://magazin.specialista.info/view.php?cisloclanku=2007010005$>$.
+
+\bibitem{mzp_defpud}
+MINISTERSTVO IVOTNÍHO PROSTØEDÍ \it{Definice pùdy}. \normalfont[online]. \textcopyright 2008-2012, [cit. 2012-12-08]. \\Dostupné z WWW:$<$http://www.mzp.cz/cz/definice\_pudy$>$.
+
+\bibitem{mzp_eroze}
+MINISTERSTVO IVOTNÍHO PROSTØEDÍ \it{Poškození pùdy erozí}. \normalfont[online]. \textcopyright 2008-2012, [cit. 2012-12-08]. \\Dostupné z WWW:$<$http://www.mzp.cz/cz/poskozeni\_pudy\_erozi$>$.
+
+\bibitem{monteith}
+MONTEITH, J.L. \it{Grundzüge der Umweltphysik}. \normalfont Darmstadt : 1978.
+
+\bibitem{nearing}
+NEARING, M.A., V. JETTEN, C. BAFFAUT a kol. \it{Modelling response of soil erosion and runoff to changes in precipitation and cover}. \normalfont Catena 61 : 2005, s.131 - 154.
+
+\bibitem{python}
+PYTHON SOFTWARE FOUNDATION. \it{Python Programming Language - Official Website} \normalfont [online]. \textcopyright 1990-2012 [cit. 2012-11-19]. \\Dostupné z WWW:$<$www.python.org$>$.
+
+
+\bibitem{schmidt}
+SCHMIDT, Jürgen.\it{Entwicklung und Anwendung eines physikalisch begründeten Simulationsmodells für die Erosion geneigter landwirtschaftlicher Nutzflächen} \normalfont
+[online]. Freiberg: Institut für Geographische Wissenschaften, 1996, Aktualisierung: 30.08.2012 [cit. 2012-11-25]. Berliner Geographische Abhandlungen, Heft 61. ISBN 3-88009-062-9. \\ Dostupné z WWW:
+$<$http://tu-freiberg.de/fakult3/tbt/boden/Publikationen.html$>$.
+
+\bibitem{pov_pyt}
+SMÍŠEK, Ondøej. \it{Povídání o Pythonu} \normalfont [online]. \textcopyright 2009-2012, [cit. 2012-12-11]. \\Dostupné z WWW:$<$http://blog.ubique.cz/$>$.
+
+\bibitem{weise}
+WEISE, R. \it{Zu einigen Aspekten der wasserbedingten Bodenerosion auf industriemässig bewirtschafteten Obstplantagen glazialer Gebiete bei Potsdam}. \normalfont Berlin, 1990. 
+
+\bibitem{wiki}
+\it{Wikipedia} \normalfont [online]. \textcopyright 2001-2012, [cit. 2012-11-30]. \\Dostupné z WWW:$<$http://www.wikipedia.org/$>$.
+
+\bibitem{zajda}
+ZAJÍÈEK, Jan. \it{2D rozšíøení programu SMODERP} \normalfont [online] Praha, èerven 2012 [2012-12-9] Bakaláøská práce. FSv ÈVUT. Vedoucí práce : Ing. Petr Kavka, PhD. \\Dostupné z WWW:$<$http://geo.fsv.cvut.cz/proj/bp/2012/$>$.
+
+\end{thebibliography}
+
+\newpage
+\part{Pøílohy}
+\appendix
+\section{Maximální celkovı prùtok v povodí Nuèice pøi konstantní sráce}
+\newpage
+\section{Maximální vıška hladiny v povodí Nuèice pøi konstantní sráce}
+\newpage
+\section{Maximální rychlost plošného odtoku v povodí Nuèice pøi konstantní sráce}
+\newpage
+\section{Maximální teèné napìtí v povodí Nuèice pøi konstantní sráce}
+\newpage
+\section{Suma všech odtokù v povodí Nuèice pøi konstantní sráce}
+\newpage
+\section{Maximální prùtok soustøedìného odtoku v povodí Nuèice pøi konstantní sráce}
+\newpage
+\section{Maximální rychlost soustøedìného odtoku v povodí Nuèice pøi konstantní sráce}
+\newpage
+\section{Prùtok soustøedìného odtoku v povodí Nuèice pøi konstantní sráce}
+\newpage
+\section{Maximální celkovı prùtok v povodí Nuèice pøi promìnlivé sráce}
+\newpage
+\section{Maximální vıška hladiny v povodí Nuèice pøi promìnlivé sráce}
+\newpage
+\section{Maximální rychlost plošného odtoku v povodí Nuèice pøi promìnlivé sráce}
+\newpage
+\section{Maximální teèné napìtí v povodí Nuèice pøi promìnlivé sráce}
+\newpage
+\section{Suma všech odtokù v povodí Nuèice pøi promìnlivé sráce}
+\newpage
+\section{Maximální prùtok soustøedìného odtoku v povodí Nuèice pøi promìnlivé sráce}
+\newpage
+\section{Maximální rychlost soustøedìného odtoku v povodí Nuèice pøi promìnlivé sráce}
+\newpage
+\section{Prùtok soustøedìného odtoku v povodí Nuèice pøi promìnlivé sráce}
+\newpage
+
+
+\end{document}

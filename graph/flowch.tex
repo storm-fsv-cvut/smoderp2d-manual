@@ -1,0 +1,65 @@
+\begin{figure}[htb!]
+{\small
+\begin{center}
+\begin{tikzpicture}[node distance=1.5cm]
+
+
+\node (start) [startstop] {Start};
+\node (dataprep) [process, below of=start] {Data preparation};
+\node (in) [io, left of=dataprep, xshift=-3.0cm] {Input data};
+
+\node (dec1) [decision, below of=dataprep, yshift=-0.0cm] {End time?};
+
+\node (atm) [process, below of=dec1] {Atmosferic input};
+\node (flow) [process, below of=atm] {Sheet flow};
+
+\node (output) [io, left of=dec1, xshift=-3.0cm] {Ouput data};
+\node (stop) [startstop, left of=atm, xshift=-3.0cm] {End};
+
+\node (check) [process, right of=flow, xshift=2.0cm] {Check time step size};
+\node (updatet) [process, right of=atm, xshift=2.0cm] {Update time};
+
+\node (dec2) [decision, below of=flow, yshift=-0.0cm] {Critical water level?};
+\node (rillflow) [process, below of=dec2] {Rill flow};
+
+\node (dec3) [decision, below of=rillflow, yshift=-0.0cm] {Streams calc.?};
+\node (streamflow) [process, below of=dec3] {Stream flow};
+
+
+% uzly ohnutym caram
+\node (dd1) [guide, right of=rillflow, xshift=2.0cm] {};
+\node (dd2) [guide, right of=dec1, xshift=2.0cm] {};
+\node (dd3) [guide, right of=dec2, xshift=2.0cm] {};
+\node (dd4) [guide, right of=dec3, xshift=2.0cm] {};
+
+% jednotlive sipky
+\draw [arrow] (start) -- (dataprep);
+\draw [arrow] (in) -- (dataprep);
+\draw [arrow] (dataprep) -- (dec1);
+\draw [arrow] (dec1) -- node[anchor=west] {no} (atm);
+\draw [arrow] (atm) -- (flow);
+\draw [arrow] (flow) -- (dec2);
+\draw [arrow] (dec2) -- node[anchor=west] {yes} (rillflow);
+\draw [arrow] (dec1) -- node[anchor=north] {yes} (output);
+\draw [arrow] (output) -- (stop);
+\draw [arrow] (rillflow) -- (dec3);
+\draw [arrow] (dec3) -- node[anchor=west] {yes} (streamflow);
+
+
+% ohnute cary line (jen cara) do guide (jen neviditelny bod)
+%             arrow  z guide (jen neviditelny bod) tam kam chci
+\draw [line] (updatet) -- (dd2);
+\draw [arrow] (dd2) -- (dec1);
+
+\draw [line] (dec2) -- node[anchor=north] {no}(dd3);
+\draw [arrow] (dd3) -- (check);
+
+\draw [line] (dec3) -- node[anchor=north] {no}(dd4);
+\draw [arrow] (dd4) -- (check);
+
+
+\end{tikzpicture}
+\end{center}
+}
+\caption{Flow chart toku programu}
+\end{figure}

@@ -1,0 +1,46 @@
+\DeclareUrlCommand\url{\def\UrlLeft{<}\def\UrlRight{>} \urlstyle{tt}}
+\pagestyle{headings}
+\setlength{\parskip}{8pt}
+\setlength{\parindent}{16pt}
+
+% ridke radkovani
+\sloppy
+
+% cesta k obrazkum
+\graphicspath{ {img/} {graph/}}
+
+% definice rotace bunky
+\newcommand*\rot{\rotatebox[origin=c]{90}}
+
+%http://tex.stackexchange.com/questions/63390/how-to-decrease-spacing-before-chapter-title
+\makeatletter
+\def\@makechapterhead#1{\vspace*{5\p@}
+  {\parindent \z@ \raggedright \normalfont
+    \ifnum \c@secnumdepth >\m@ne
+        \huge\bfseries \@chapapp\space \thechapter
+        \par\nobreak
+        \vskip 20\p@
+    \fi
+    \interlinepenalty\@M
+    \Huge \bfseries #1\par\nobreak
+    \vskip 40\p@
+  }}
+\def\@makeschapterhead#1{%
+  %%%%%\vspace*{50\p@}% %%% removed!
+  {\parindent \z@ \raggedright
+    \normalfont
+    \interlinepenalty\@M
+    \Huge \bfseries  #1\par\nobreak
+    \vskip 40\p@
+  }}
+\makeatother
+
+%http://tex.stackexchange.com/questions/53338/reducing-spacing-after-headings
+\titlespacing\section{0pt}{12pt plus 4pt minus 2pt}{12pt plus 2pt minus 2pt}
+\titlespacing\subsection{0pt}{12pt plus 2pt minus 2pt}{12pt plus 2pt minus 2pt}
+\titlespacing\subsubsection{0pt}{6pt plus 4pt minus 2pt}{6pt plus 2pt minus 2pt}
+
+%definice barev
+\definecolor{tab_bg}{HTML}{C0C0C0}
+\definecolor{tab_bg_light}{HTML}{EFEFEF}
+\definecolor{tab_line}{HTML}{000000}

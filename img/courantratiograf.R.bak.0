@@ -1,0 +1,22 @@
+path = getSrcDirectory(function() {})
+if(length(path) != 0){setwd(path)}
+load('manualgraf.RData')
+par(mar = c(3,3,1,7))
+
+plot(D$X..Time.s.,D$courant,type='l',ylab = '', xlab = '')
+mtext("Courantovo číslo",side = 2,line = 2)
+mtext("Čas [s]",side = 1,line = 2)
+
+
+lines(D$X..Time.s.,D$courantrill,col=2)
+
+par(new=TRUE)
+plot(D$X..Time.s.,D$deltaTime.s.,type='l',ylab = '',xlab = '',axes = FALSE,col=3)
+axis(4)
+mtext('Délka časového kroku [s]',side = 4,line = 2)
+
+
+par(new=TRUE)
+plot(D$X..Time.s.,D$ratio,type='l',ylab = '',xlab = '',axes = FALSE,col=4)
+axis(4,line = 4)
+mtext('Dělení časového kroku při týpočtu v rýze [s]',side = 4,line = 6)

@@ -1,0 +1,35 @@
+%!TEX ROOT = ../mainCZ.tex
+\label{sss:CZDS_rizeni}
+Základem řízení DS je modulární programovatelný automat WAGO-I/O-System 750, jehož jádrem je procesorová jednotka PFC 750-8202. Toto zařízení v sobě kombinuje jednak možnost vzdáleného ovládání simulátoru a také se jedná o záznamové zařízení (dataloger)
+Tlak je základním parametrem každého tryskového simulátoru, takže je důležité ho během simulace udržovat konstantní. Vhodným způsobem změny intenzity deště je nikoliv změna tlaku na trysce, která by ovlivnila charakter deště, ale přerušování výtoku z trysek pomocí předřazeného elektromagnetického ventilu, který je ovládacím prvkem otevírán a uzavírán v předem určeném naprogramovaném pořadí a intervalech. Aby byly minimalizovány rázy v rozvodném systému a udržena tak co největší homogenita výtoku trysek, bylo zvoleno střídavé otevírání a uzavírání stejného počtu trysek tak, aby v oběhu systému bylo stále stejné množství vody.
+
+Řídicí systém simulátoru se skládá z hardwarových komponent tří typů akčních členů, snímačů a vlastního řídicího systému. Jako akční členy jsou použity:
+\begin{itemize}
+\item{solenoidové ventily (jeden pro každou trysku, tj. devět kusů celkem, každý s proudovým odběrem 1,1 A), fyzicky propojené do tří skupin (1+4+7, 2+5+8, 3+6+9); přivedením napětí 12 V DC ventil otevírá přívod vody do trysky. Najednou mohou být aktivované všechny ventily, a je tedy nutné dostatečně dimenzovat napájecí zdroj.}
+\item{regulační ventil značky Arag, udržující konstantní tlak v zařízení; ovládá se signálem ±12V DC, kdy polarita přivedeného signálu určuje směr pohybu kuželky ventilu,
+ventil hlavního obtoku, také značky Arag, přes který jde voda z čerpadla ke zmíněnému regulačnímu ventilu; ovládán je signálem ±12 V DC, kdy polarita určuje směr pohybu, při době přejezdu z úplného otevření do úplného zavření asi 1,2 s}
+\item{dvoupolohový ventil značky Bragila, umístěný za regulačním ventilem a ovládající obtok přívodu vody do trysek; je ovládán připojením/odpojením napětí 12 V DC}
+\end{itemize}
+ 
+Ze snímačů je zapojen zatím pouze snímač tlaku DMP 331 od firmy BD Sensors s proudovým výstupem, který měří tlak v systému na rameni u trysek a poskytuje základní údaj pro zpětnovazební regulaci.
+ 
+Hardware vlastního řídicího systému tvoří jednotky modulárního systému WAGO-I/O-System 750 (PLC, karty I/O, napájecí zdroje) v sestavě:
+\begin{itemize}
+\item{procesorová jednotka WAGO PFC 750-8202 s ethernetovým portem Ethernet}
+\item{karta DO (8×) WAGO 750-530 ke spínání relé a ovládání akčních členů,}
+\item{karta DI (8×) WAGO 750-430 s napojeným tlačítkem umístěným na dveřích rozváděče,}
+\item{karta AI 0 až 20 mA (4×) WAGO 750-453 s napojeným snímačem tlaku,}
+\item{zdroje napájení WAGO 787-1631 12 V DC (15 A) a WAGO 787-1606 24 V DC (2 A).}
+\end{itemize}
+ 
+Vedle zmíněných komponent řídicí systém ještě obsahuje další běžné komponenty v podobě relé, jističů či ochran a také směrovač (router) WiFi, který vytváří malou lokální síť, do které je zapojena jednotka PFC, a díky němuž lze celé zařízení bezdrátově ovládat z tabletu/PC.
+ 
+%\subsubsection{Požadavky při simulování deště}
+Z požadavků kladených v simulátoru na řídicí systém jsou nejdůležitější rychlost nastavení požadovaných parametrů deště a garance udržení provozních hodnot parametrů simulátoru v požadovaných mezích. Základní čtyři úlohy požadované od řídicího systému simulátoru lze formulovat takto:
+\begin{itemize}
+\item{Udržovat během aktivního chodu simulátoru konstantní tlak v potrubí přivádějícím vodu z nádrže přes čerpadlo do trysek, z nichž proudí voda stále pod stejným tlakem nezávisle na počtu otevřených trysek}.
+\item{Zaručit bezpečné spuštění a ukončení činnosti zařízení tak, aby při uzavření trysek tlak vody nepoškodil přívodní hadice. Čerpací soustrojí vhánějící do potrubí vodu z nádrže lze totiž ovládat pouze manuálně a jeho výkon nelze řídit ani je nelze vypnout z PLC.
+Scénáře chodu trysek simulátoru musí být začleněny přímo do programu procesorové jednotky PFC.}
+\item{Zaručit automatický chod simulátoru tak, aby operátor nemusel nastavovat parametry zařízení ale pouze vybral požadovanou intenzitu deště. Operátor by měl simulátor ovládat bezdrátově z notebooku nebo tabletu.}
+\end{itemize}
+

@@ -1,0 +1,110 @@
+%!TEX ROOT = ../mainCZ.tex
+\begin{itemize}
+\item texty nutno upravit
+\end{itemize}
+
+\subsubsection{Princip jednosměrného odtoku D8} \label{subsection:d8}
+Princip nástroje určení směru odtoku ($Flow Direction$), který v prostředí ArcGIS je následující. Tento nástroj (tool) vezme vstupní rastr digitálního modelu terénu, neboli~výškový rastr.
+Provede výpočet, jehož~výstupem je rastr, který~v~každé buňce rastru obsahuje hodnotu určující směr odtoku z~této buňky. Hodnot je osm, podle osmi sousedních buněk, do~kterých může odtékat voda, viz.~obrázek~\ref{fig:D8}.
+Právě podle osmi směrů odtoku se tento přístup nazývá D8 (eight-direction approach).
+%\begin{figure}[hbt]
+ % \centering
+  %\includegraphics[scale = 0.7]{obrazky/flowdirectionD8.png}
+ % \caption{Flow Direction D8 \cite{d8}}
+ % \label{fig:D8}
+%\end{figure} \medskip
+Samotný výpočet algoritmu je v~zásadě primitivní. Pro~všechny sousední buňky se vypočte maximální sklon \cite{d8}: \bigskip
+\\ \textit{maximální\_sklon = rozdíl\_výšek / vzdálenost * 100}  \bigskip 
+\\ Rozdíl výšek je rozdíl výšky v~aktuálním bodě a~konkrétní sousední buňky. Vzdálenost je vypočtena mezi~středy buněk a~liší se v~závislosti na~poloze sousední buňky. 
+Pro~buňky sousedící vrcholem je hodnota velikosti pixelu přenásobena o~odmocninu ze~dvou. Pro~zbylé buňky sousedící hranou je velikost vzdálenosti rovna velikosti pixelu. 
+Po~nalezení nejstrmějšího směru odtoku je hodnota uložena v~podobě bitové hodnoty, reprezentující daný směr. Před~použitím nástroje $Flow Direction$ se v modelu SMODERP 2D zpracuje vstupní rastr pomocí nástroje $Fill$.
+Tento algoritmus zaplní bezodtoké oblasti rastru nejnižší hodnotou z~okolí a~do~této nejnižší sousední buňky pak pošle vodu.
+Poté~již nemůže dojít k~situaci, kdy~všechny sousední buňky k~dané buňce mají vyšší hodnoty výšek a~nedocházelo by tedy k~odtoku.
+Výsledný rastr nemusí obsahovat pouze buňky s~hodnotami $2^0$,$2^1$,...,$2^7$ \cite{flowdir}. Jestliže nastane situace, kdy~má více sousedních buněk nejnižší hodnotu výšek, pak je výsledná hodnota součtem všech směrů.
+Např. hodnota maximálního sklonu bude stejná pro~sousední buňku vlevo a~nahoře, odtok tedy bude směrem na~západ (hodnota = 16) a~na~sever (hodnota = 64), výsledná hodnota bude součtem 16 a~64, tedy 84.
+
+\subsubsection{Princip vícesměrného odtoku MD\texorpdfstring{$\infty$}{infty}} \label{subsection:MD}
+Obecný postup je převzat z \cite{seibert}. Stejně jako v~případě algoritmu D$\infty$ byly zavedeny trojúhelníkové plošky pro~výpočet lokálního sklonu a~směru pro~každou trojúhelníkovou plošku.
+Okolo středového bodu $M$ bylo vytvořeno osm trojúhelníků, viz.~obrázek \ref{fig:TF}. Každý se zbývajícími dvěma vrcholy $P1$, $P2$ ve~dvou sousedících buňkách. 
+Pro~každý z~těchto trojúhelníků je vypočten směr největšího sklonu. Pokud označíme výšky bodů $M$, $P1$, $P2$ jako $h_M$, $h_{P1}$, $h_{P2}$, rozdíly výšek se vypočtou takto:
+\begin{equation}
+z_1 = h_{P1} - h_M \\
+, z_2 = h_{P2} - h_M \\ 
+\end{equation} \\[0.2cm]
+Obdobně se vypočtou rozdíly v~x-ových a~y-ových souřadnicích. Po~výpočtu rozdílu jednotlivých souřadnic je vypočten normálový vektor: \\
+\begin{equation}
+n = \left( \begin{array}{c}
+n_x \\
+n_y \\
+n_z \end{array} \right)
+= \left( \begin{array}{c}
+z_1y_2 - z_2y_1 \\
+z_1x_2 - z_2x_1 \\
+y_1x_2 - y_2x_1 \end{array} \right) \label{eq:vektor} 
+\end{equation} \\[0.2cm] 
+Směr odtoku $d$ a~sklon $s$ na~trojúhelníkové ploše se vypočte pomocí rovnice \ref{eq:dir}. Hodnota nula pro~$d$ označuje směr osy $y$ a~hodnota $3\pi/2$ označuje směr osy $x$.
+\begin{equation}
+  d = \begin{cases} 0, & n_x = 0, n_y \geq 0 \\ \label{eq:dir}
+  \pi, & n_x = 0, n_y < 0 \\
+  \pi/2 - \arctan\left( \frac{n_y}{n_x} \right), & n_x > 0 \\
+  3\pi/2 - \arctan\left( \frac{n_y}{n_x}\right), & n_x < 0 \\
+  \end{cases} 
+\end{equation} \\[0.3cm]
+\begin{equation}
+ s = -\tan \left( \arccos \left( \frac{n_z}{\sqrt{n_x^2 + n_y^2 + n_z^2}} \right) \right) \label{eq:slope}
+\end{equation} \\[0.2cm]
+Jestliže největší sklon od~bodu $M$ je mimo rozpětí 0-45° ($\pi/4$ radián), je použit sklon strmější k~jednomu z~bodů $P1$, $P2$ a~zároveň i~sklon je spočten k~tomuto bodu.
+V~případě, že oba sousední body jsou výše položeny než~bod $M$, směr není pro tento trojúhelník uvažován. Po~spočtení všech osmi směrů a~sklonů pro~jednotlivé plošky,
+jsou tyto směry považovány za~lokálně nejstrmější pro~každý trojúhelník v~rozsahu 45°. Směry vedoucí přímo do bodu $P1$ nebo $P2$, tedy ty, kde $d = 0$ nebo $d = \pi/4$
+jsou uvažovány pouze v případě, kdy obě vedlejší sousední buňky mají směr k~bodu $P1$ nebo $P2$. Tato situace je znázorněna na~obrázku \ref{fig:direction}. 
+%\begin{figure}[hbt]
+ % \centering
+  %\includegraphics[scale=0.5]{obrazky/directions.png}
+%  \caption{Ukázka určení směrů odtoku z buňky \cite{seibert}}
+ % \label{fig:direction}
+%\end{figure} 
+\par První případ je směr mířící mezi buňky 5 a~6. Druhý případ je směr, který vede přímo do~buňky 3. Tato situace nastane, jestliže pro~trojúhelník M43 vyjde lokální směr $d = \pi/4$
+a~pro~trojúhelník M32 směr vyjde $d = 0$.
+\par Poté, co je směr odtoku pro~buňku vypočten, je celkový odtok rozdělen do~všech výsledných směrů na~základě sklonu.
+Pro~směry mířící mezi body $P1$ a~$P2$ je odtok rozdělen do~dvou buněk na~základě nevějtšího sklonu. Poměr odtoku do~buněk s~body $P1$ a~$P2$ bude v~tomto pořadí $\alpha_2/45\,^{\circ}{\rm}$ a~$\alpha_1/45\,^{\circ}{\rm}$.
+%\begin{figure}[hbt]
+%  \centering
+ % \includegraphics[scale=0.5]{obrazky/facets.png}
+  %\caption{Trojúhelníkové plošky \cite{seibert}}
+  %\label{fig:TF}
+%\end{figure} \\[0.3cm]
+
+\subsubsection{Technické řešení vícesměrného odtoku MD\texorpdfstring{$\infty$}{infty}} \label{subsection:MDtechicke}
+Po~načtení rastru DMT ze~vstupních parametrů a zaplnění bezodtokých míst funkcí $Fill$ je tento rastr převeden na~NumPy matici. 
+Algoritmus cyklem projíždí všechny prvky matice a~u~těch, které~mají hodnotu různou od~NoData nalezne okolí. Hledání okolí buňky provádí funkce $neighbors$, ta je definována takto:
+\begin{lstlisting}
+	  def neighbors(i,j,array,x,y):
+	    ...
+	    return nb1,nb2,nb3,nb4,nb5,nb6,nb7,nb8
+\end{lstlisting}
+Vstupem funkce je pozice v~matici, dále celá matice a~její rozměry. Funkce $neighbors$ vypočítá hodnoty výšek sousedních osmi buněk a~vrátí je na~výstup. 
+Výstup z~funkce $neighbors$ slouží jako jeden z~vstupních parametrů pro~další funkci pojmenovanou $dir\_slope$, jelikož jejím výstupem je směr odtoku a~sklon tohoto směru. 
+\begin{lstlisting}
+	  def dir_slope(pointM, nbrs,vpix,spix):
+	    ...
+	    return direction, slope
+\end{lstlisting}
+Pro~každý trojúhelník byla spočtena hodnota $d$, viz. vzorec \ref{eq:dir}. Hodnota $s$ byla po~špatných a~nelogických výsledcích počítána podle jiného vzorce, který již dával správné výsledky:
+\begin{equation}
+ s_0 = \sqrt{\frac{z_1^2}{2y_1^2} + \frac{z_2^2}{y_2^2}} \label{eq:slopeOprava}
+\end{equation}  
+\par Vzorec se liší pro~každý trojúhelníček, uvedený je pro~výpočet sklonu, kdy~sousední buňka je severozápadní a~severní. Tímto postupem bylo zbytečné počítat z-tovou složku vekotoru $n$, vzorec \ref{eq:vektor}.
+Byly ošetřeny případy, kdy~sousední buňky aktuálního počítaného trojúhelníku jsou obě výše položené, nebo~obě mimo~rastr (NoData). Další případ nastane, jestliže je jeden bod vně~rastr a~druhý v~rastru leží.
+Směr je potom určen přímo do~toho bodu, který~náleží rastru. Taktéž i~sklon je počítán pouze mezi tímto bodem a~bodem $M$. Lokální směr $d$ v~každé plošce po~vypočtení nesmí překročit 45°. 
+V~situaci, že~tuto hodnotu překročí, je směru přiřazena hodnota 0 nebo~45° v~závislosti na~vzájemném porovnání výšek bodů v~trojúhelníku. Takto jsou zpracovány všechny plošky a~je zjištěno,
+zda-li do~každého trojúhelníku nastává směr odtoku nebo~ne. Na~konci funkce $dir\_slope$ se kontroluje případ, kdy~směr sousedních trojúhelníků odkazuje přesně do~stejného bodu,
+tedy hodnoty směrů musí být pro~první trojúhelník $d = 45\,^{\circ}{\rm}$ a~pro~následující sousední trojúhelník $d = 0$. Výstupem funkce jsou dva vektory o~osmi prvcích, směr a~sklon pro~každou plošku.
+\par Další fází výpočtu je zjištění poměru vody, která~poteče do~jednotlivých směrů. K~výpočtu poměrů byl použit tento vzorec \cite{holmgren}:
+\begin{equation}
+ f_i = \frac{s_i^x}{\sum\limits_{j=1}^8 s_j^x} \label{eq:proportions}
+\end{equation}
+\par , kde~$s$ vyznačuje sklon vypočteného směru konkrétní trojúhelníkové plošky a~$x$ je proměnný exponent. Pokud by byl exponent zvolen 1, bude výsledná síť obdobná jako při~použití MD8 algoritmu.
+Při~zvětšování exponentu $x$, bude síť více vypadat jako při~použití D8 metody. Výchozí hodnota exponentu byla zvolena $x=4$, což~je kompromis mezi~oběma variantami.
+\par V~další části výpočtu je rozdělen zjištěný poměr z~celkového odtoku do~dvou, případně pouze do~jedné buňky v~závislosti na~směru odtoku $d$. Ve~výsledku je vypočten vektor osmi čísel, 
+kde~každá hodnota od~0 do~1 přestavuje již procentuální poměr z~celkového odtoku do~každé sousední buňky.
+\par Vektor osmi čísel obsahující procentuální poměr je ve výsledku přenásoben celkovým plošným odtokem. 

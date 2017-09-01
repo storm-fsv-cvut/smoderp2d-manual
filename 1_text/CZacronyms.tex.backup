@@ -1,0 +1,109 @@
+\begin{acronym}
+\setlength{\parskip}{0ex}
+\setlength{\itemsep}{1ex}
+
+\acro{a}[$a$]{parametr MKWA}
+\acro{A}[$A$]{průtočná plocha  [$m^{2}$]}
+\acro{b}[$b$]{parametr MKWA}
+\acro{brill}[$b_{rill}$]{šířka rýhy [$m$]}
+\acro{BrutoSR}[$B_{\Delta t}$]{srážka [$m$]}
+
+\acro{CFL}[$CFL$]{Courant-Friedrich-Lewy podmínka}
+
+
+\acro{D8}[$D8$]{jednosměrný odtokový algoritmus}
+
+\acro{dT}[$\Delta t$]{časový krok [$s$]}
+\acro{dTmax}[$\Delta t_{max}$]{maximální časový krok [$s$]}
+\acro{dX}[$\Delta x$]{prostorový krok [$m$]}
+\acro{dS}[$\frac{\mathrm{d}S}{\mathrm{d}t}$]{změna zásoby [$m^3/s$]}
+
+\acro{ES}[$ES$]{efektivní srážka [$m^3/s$]}
+\acro{es}[$es$]{intenzita srážky [$m/s$]}
+
+\acro{hcrit}[$h^{crit}$]{kritická hloubka [$m$]}
+\acro{hrill}[$h^{rill}$]{hloubka rýhy [$m$]}
+\acro{hsur}[$h^{sur}$]{výška hladiny na povrchu [$m$]}
+\acro{HyVod}[$k$]{nasycená hydraulická vodivost [$m s^{-1}$]}
+\acro{i}[$i$]{řešenéný element}
+
+\acro{Inf}[$Inf$]{infiltrované množství [$m^3/s$]}
+\acro{inf}[$inf$]{intenzita infiltrace [$m/s$]}
+
+% \acro{VItot}[$\dot{I_{tot}}$]{celkový přítok [$m^3/s$]}
+\acro{Itot}[$I_{tot}$]{celkový přítok za čas [$m^3/s$]}
+
+\acro{I}[$I$]{sklon [@@@jj procenta nebo stupne]}
+
+\acro{K}[$K$]{součinitel šířky (pro plošný odtok K = 1)}
+\acro{Ki}[$K_i$]{nasycená hydraulická vodivost v buňce $i$ [$m/s$]}
+
+\acro{Lai}[$I_{LAI}$]{poměrná plocha listová}
+\acro{lrill}[$l_{rill}$]{délka rýhy [$m$]}
+\acro{MKWA}[$MKWA$]{modifikovaná rovnice kinematické vlny}
+
+\acro{mfda}[$mfda$]{vícesměrný odtokový algoritmus}
+
+\acro{n}[$n$]{mannigův součinitel drsnosti}
+\acro{NetoSR}[$I_{N}$]{efektivní srážka}
+
+\acro{PS}[$PS$]{potenciální srážka [$m$]}
+
+% \acro{VOtot}[$\dot{O_{tot}}$]{odtokové množství [$m^{3}$]}
+\acro{Otot}[$O_{tot}$]{odtokové množství za čas [$m^{3}/s$]}
+% \acro{VOin}[$\dot{O^{in}}$]{objem přítoku ze sousední buňky [$m^{3}$]}
+\acro{Oin}[$O^{in}$]{objem přítoku ze sousední buňky  za čas [$m^{3}/s$]}
+\acro{oin}[$o^{in}$]{výška vtoku za čas [$m/s$]}
+\acro{oinrill}[$o^{in}_{rill}$]{výška vtoku v rýze za čas [$m/s$]}
+% \acro{VOout}[$\dot{O^{out}}$]{objem odtoku z buňky [$m^{3}$]}
+\acro{Oout}[$O^{out}$]{objem odtoku z buňky  za čas [$m^{3}/s$]}
+\acro{oout}[$o^{out}$]{výška odtoku z buňky  za čas [$m/s$]}
+\acro{ooutrill}[$o^{out}_{rill}$]{výška odtoku v rýze za čas [$m/s$]}
+
+
+
+
+\acro{Orill}[$O_{rill}$]{objem odtoku - rýhový odtok [$m^{3}$]}
+\acro{Osur}[$O_{sur}$]{objem odtoku - plošný odtok [$m^{3}$]}
+\acro{O}[$O$]{omočený obvod [$m$]}
+\acro{PotI}[$I_{POT}$]{potencionální intercepce}
+\acro{q}[$q$]{průtok [$m^{3}{s}^{-1}$]}
+\acro{qrill}[$q_{rill}$]{průtok v rýhách [$m^{3}/s$]}
+\acro{qsur}[$q_{sur}$]{specifický plošný průtok [$m^{2}/s$]}
+\acro{Qtot}[$q_{t}$]{celkový odtok}
+
+\acro{Rrill}[$R_{rill}$]{hydraulický poloměr v rýze [m]}
+
+\acro{R2}[$R^2$]{koeficient determinace}
+\acro{ro}[$\rho$]{tíhové zrychlení @@@jj neni to hustota? zrychlení ma jine jednotky [$m s^{-1}$]}
+\acro{rratio}[$rill_{ratio}$]{parametr tvaru rýhy [-]}
+\acro{ratio}[$rill_{ratio}$]{parametr tvaru rýhy [-]}
+\acro{slope}[$i_{0}$]{sklon[-]}
+\acro{Sorb}[$S_{i}$]{sorptivita půdy [$m \sqrt{s}$]}
+\acro{S}[$S$]{sorptivita půdy [$m \sqrt{s}$]}
+\acro{t}[$t$]{časový krok[$s$]}
+\acro{tau}[$\tau$]{tečné napětí [$Pa$]}
+
+\acro{Vout}[$V_{out}$]{objem objem odtelkého [$m^{3}$]}
+
+\acro{Vcrit}[$V_{crit}$]{objem vody do kritické hladiny [$m^{3}$]}
+\acro{vrill}[$v_{rill}$]{rychlost proudění - rýhový odtok [$m/s$]}
+\acro{Vrill}[$V_{rill}$]{objem vody v rýze v daném elementu [$m^{3}$]}
+\acro{vsur}[$v_{sur}$]{rychlost proudění - plošný odtok [$m/s$]}
+\acro{Vtot}[$V_{tot}$]{celkový objem vody v elementu [$m^{3}$]}
+\acro{X}[$X$]{parametr MKWA}
+\acro{Y}[$Y$]{parametr MKWA}
+\acro{GIS}[$GIS$]{geografické informační systémy}
+\acro{g}[$g$]{gravitační zrychlení [$m/s^{2}$]}
+
+\acro{ij}[$i, j$]{souřadnice elementu - buňky}
+\acro{MD8}[$MD8$]{Multiple Flow Direction Algorithm}
+
+\acro{bunka}[$P$]{plocha buňky [$m^3$]}
+
+
+
+\end{acronym}
+%1to je \ac{MLS}
+%2to je \acl{MLS}
+%3to je \acs{MLS} 

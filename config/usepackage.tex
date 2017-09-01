@@ -1,0 +1,118 @@
+%Petr - pouzivam
+
+%obecne
+\usepackage[czech]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[IL2]{fontenc}
+% \usepackage{charter}
+
+\usepackage{framed}
+\usepackage{mathtools}
+\usepackage{pdflscape}
+\usepackage[top=3cm, left=3.5cm, right=2.5cm, bottom=3cm, headheight=15pt, includeheadfoot]{geometry}%rozměry stránky
+\usepackage{textcomp}
+\usepackage[round]{natbib}
+\usepackage{hyperref}
+\hypersetup{
+    bookmarks=true,         % show bookmarks bar?
+    unicode=false,          % non-Latin characters in Acrobat’s bookmarks
+    pdftoolbar=true,        % show Acrobat’s toolbar?
+    pdfmenubar=true,        % show Acrobat’s menu?
+    pdffitwindow=false,     % window fit to page when opened
+    pdfstartview={FitH},    % fits the width of the page to the window
+    pdftitle={Smoderp manual},    % title
+    pdfauthor={Kavka ...},     % author
+    pdfsubject={Subject},   % subject of the document
+    pdfcreator={Creator},   % creator of the document
+    pdfproducer={Producer}, % producer of the document
+    pdfkeywords={keyword1, key2, key3}, % list of keywords
+    pdfnewwindow=true,      % links in new PDF window
+    colorlinks=false,       % false: boxed links; true: colored links
+    linkcolor=red,          % color of internal links (change box color with linkbordercolor)
+    citecolor=green,        % color of links to bibliography
+    filecolor=magenta,      % color of file links
+    urlcolor=cyan           % color of external links
+}
+\usepackage[printonlyused]{acronym} %rejstik
+% \usepackage{acronym} %rejstik
+\makeatletter
+\AtBeginDocument{%
+  \renewcommand*{\AC@hyperlink}[2]{#2}%
+}
+\makeatother
+
+
+
+%text
+\usepackage{subcaption}
+\usepackage{caption}
+\usepackage{listings} % inserting code 
+
+%tabulky
+\usepackage{array}
+\usepackage{tabulary}
+\usepackage{multirow}
+\usepackage{multicol}
+
+%obrazky
+
+
+
+
+
+
+
+
+
+%Lenka - nepouzivam
+\usepackage{longtable}
+\usepackage{siunitx}
+\usepackage{rotating}
+\usepackage[table,xcdraw]{xcolor}
+\usepackage{booktabs}
+\usepackage{url}
+%\usepackage[pdftex,unicode,bookmarksnumbered,raiselinks=true]{hyperref}
+\usepackage{indentfirst}
+\usepackage{fancyhdr}
+\usepackage[font={footnotesize},labelfont=bf,justification=centering]{caption}
+\usepackage{hhline}
+\usepackage{colortbl}
+\usepackage{array,graphicx}
+\usepackage{placeins}
+
+\usepackage{titlesec}
+\titleformat{\paragraph}%[runin]
+{\normalfont\normalsize\bfseries}{\theparagraph}{}{}
+
+\usepackage[table]{xcolor}
+\usepackage{setspace}
+
+
+% vetsi mezera mezi odstavci
+\setlength{\parskip}{0.5em}
+
+
+% nadefinovane tvary do flow chart diagramu
+% ten jeden po postaven v ./graph/CZflowch
+\usepackage{tikz}
+\usetikzlibrary{shapes.geometric, arrows}
+\tikzstyle{startstop} = [rectangle, rounded corners, minimum width=3cm, minimum height=1cm,text centered, draw=black, fill=red!30]
+\tikzstyle{io} = [trapezium, trapezium left angle=70, trapezium right angle=110, minimum width=1cm, minimum height=1cm, text centered, draw=black, fill=blue!30]
+\tikzstyle{arrow} = [thick,->,>=stealth]
+\tikzstyle{decision} =  [diamond, minimum width=1cm, minimum height=1cm, text centered, text width=2cm, draw=black, fill=green!30, aspect=2]
+\tikzstyle{process} = [rectangle, minimum width=3cm, minimum height=1cm, text centered, text width=3cm, draw=black, fill=orange!30]
+\tikzstyle{guide} = [inner sep=0pt,minimum size=0mm]
+\tikzstyle{line} = [thick]
+
+
+
+\usepackage{dirtree}
+\usepackage{indentfirst}
+
+% tohle je jen prikaz na delatni popisu rovnic 
+% jeho pouziti he v kapitole pouzite vztahy treba
+\newcommand{\jj}[2]{
+   & \acs{#1} & je \acl{#1}#2 \\
+}
+
+

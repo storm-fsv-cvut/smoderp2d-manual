@@ -1,0 +1,259 @@
+\begin{thebibliography}{29}
+\providecommand{\natexlab}[1]{#1}
+\providecommand{\url}[1]{\texttt{#1}}
+\expandafter\ifx\csname urlstyle\endcsname\relax
+  \providecommand{\doi}[1]{doi: #1}\else
+  \providecommand{\doi}{doi: \begingroup \urlstyle{rm}\Url}\fi
+
+\bibitem[Auerswald et~al.(2009)Auerswald, Fiener,, Dikau]{Auerswald2009}
+{\sc Auerswald}, K. -- {\sc Fiener}, P. -- {\sc Dikau}, R.
+\newblock {Rates of sheet and rill erosion in Germany A meta-analysis}.
+\newblock \emph{Geomorphology}. 2009, 111, 3-4, s.~182--193.
+\newblock ISSN 0169555X.
+\newblock \doi{10.1016/j.geomorph.2009.04.018}.
+\newblock Dostupn{\'{e}}~z:
+  $\texttt{<{http://linkinghub.elsevier.com/retrieve/pii/S0169555X09001871}>}$.
+
+\bibitem[Bauer et~al.(2014)Bauer, Kavka, Janotov{\'{a}}, Kr{\'{a}}sa,
+  {Dost{\'{a}}l T.},, Davidov{\'{a}}]{BauerSGEM}
+{\sc Bauer}, M. et~al.
+\newblock {EXPERIMENTAL RESEARCH OF SOIL EROSION PROCESSES IN THE CZECH
+  REPUBLIC}.
+\newblock In \emph{14th International Multidisciplinary Scientific
+  Geoconference SGEM 2014, Conference Proceedings vol. II}, s. 131--138, Sofia,
+  BG, 2014.
+\newblock \doi{10.5593/SGEM2014/B32/S13.018}.
+\newblock ISBN 978-619-7105-18-6.
+
+\bibitem[Beven et~al.(2005)Beven, Heathwaite, Haygarth, Walling, Brazier,,
+  Withers]{Beven2005}
+{\sc Beven}, K. et~al.
+\newblock {On the concept of delivery of sediment and nutrients to stream
+  channels}.
+\newblock \emph{Hydrological Processes}. feb 2005, 19, 2, s.~551--556.
+\newblock ISSN 0885-6087.
+\newblock \doi{10.1002/hyp.5796}.
+\newblock Dostupn{\'{e}}~z:
+  $\texttt{<{http://doi.wiley.com/10.1002/hyp.5796}>}$.
+
+\bibitem[Boardman et~al.(2006)Boardman, Poesen,, {Wiley InterScience (Online
+  service)}]{Boardman2006}
+{\sc Boardman}, J. -- {\sc Poesen}, J. -- {\sc {Wiley InterScience (Online
+  service)}}.
+\newblock \emph{{Soil erosion in Europe}}.
+\newblock Wiley, 2006.
+\newblock ISBN 9780470859100.
+
+\bibitem[Bryan -- B.(2000)Bryan, B.]{Bryan2000}
+{\sc Bryan}, R.~B. -- {\sc B.}, R.
+\newblock {Soil erodibility and processes of water erosion on hillslope}.
+\newblock \emph{Geomorphology}. mar 2000, 32, 3-4, s.~385--415.
+\newblock ISSN 0169555X.
+\newblock \doi{10.1016/S0169-555X(99)00105-1}.
+\newblock Dostupn{\'{e}}~z:
+  $\texttt{<{http://linkinghub.elsevier.com/retrieve/pii/S0169555X99001051}>}$.
+
+\bibitem[Cerdan et~al.(2002)Cerdan, {Le Bissonnais}, Couturier,,
+  Saby]{Cerdan2002}
+{\sc Cerdan}, O. et~al.
+\newblock {Modelling interrill erosion in small cultivated catchments}.
+\newblock \emph{Hydrological Processes}. nov 2002, 16, 16, s.~3215--3226.
+\newblock ISSN 0885-6087.
+\newblock \doi{10.1002/hyp.1098}.
+\newblock Dostupn{\'{e}}~z:
+  $\texttt{<{http://doi.wiley.com/10.1002/hyp.1098}>}$.
+
+\bibitem[Chaplot -- Poesen(2012)Chaplot, Poesen]{Chaplot2012}
+{\sc Chaplot}, V. -- {\sc Poesen}, J.
+\newblock {Sediment, soil organic carbon and runoff delivery at various spatial
+  scales}.
+\newblock \emph{CATENA}. 2012, 88, 1, s.~46--56.
+\newblock ISSN 03418162.
+\newblock \doi{10.1016/j.catena.2011.09.004}.
+
+\bibitem[Davidova et~al.(2016)Davidova, Dostal, David,, Strauss]{Davidova2016}
+{\sc Davidova}, T. et~al.
+\newblock {Determining the protective effect of agricultural crops on the soil
+  erosion process using a field rainfall simulator}.
+\newblock \emph{Plant, Soil and Environment}. jun 2016, 61, No. 3, s.~109--115.
+\newblock ISSN 12141178.
+\newblock \doi{10.17221/903/2014-PSE}.
+\newblock Dostupn{\'{e}}~z:
+  $\texttt{<{http://www.agriculturejournals.cz/web/pse.htm?volume=61{\&}firstPage=109{\&}type=publishedArticle}>}$.
+
+\bibitem[Gimnez -- Govers(2008)Gimnez, Govers]{Gimenez2008}
+{\sc Gimnez}, R. -- {\sc Govers}, G.
+\newblock {Effects of freshly incorporated straw residue on rill erosion and
+  hydraulics}.
+\newblock \emph{CATENA}. jan 2008, 72, 2, s.~214--223.
+\newblock ISSN 03418162.
+\newblock \doi{10.1016/j.catena.2007.05.004}.
+\newblock Dostupn{\'{e}}~z:
+  $\texttt{<{http://linkinghub.elsevier.com/retrieve/pii/S0341816207000860}>}$.
+
+\bibitem[Govers et~al.(2007)Govers, Gim{\'{e}}nez,, {Van Oost}]{Govers2007}
+{\sc Govers}, G. -- {\sc Gim{\'{e}}nez}, R. -- {\sc {Van Oost}}, K.
+\newblock {Rill erosion: Exploring the relationship between experiments,
+  modelling and field observations}.
+\newblock \emph{Earth-Science Reviews}. 2007, 84, 3-4, s.~87--102.
+\newblock ISSN 00128252.
+\newblock \doi{10.1016/j.earscirev.2007.06.001}.
+\newblock Dostupn{\'{e}}~z:
+  $\texttt{<{http://linkinghub.elsevier.com/retrieve/pii/S0012825207000803}>}$.
+
+\bibitem[Holy(1984)]{Holy1984}
+{\sc Holy}, M.
+\newblock {Vztahy mezi povrchov{\'{y}}m odtokem a transportem {\v{z}}ivin v
+  povod{\'{i}} vod{\'{a}}rensk{\'{y}}ch n{\'{a}}dr{\v{z}}{\'{i}}
+  (d{\'{i}}l{\v{c}}{\'{i}} zpr{\'{a}}va v{\'{y}}zkumn{\'{e}}ho {\'{u}}kolu VI 4
+  15/01 03/)}.
+\newblock Technical report, CTU in Prague, Prague, 1984.
+
+\bibitem[Holy et~al.(1988)Holy, Vaska,, Karel]{Holy1988}
+{\sc Holy}, M. -- {\sc Vaska}, J. -- {\sc Karel}, V.
+\newblock {SMODERP: A Simulation Model for Determination of Surface Runoff and
+  Prediction of Erosion Processes}.
+\newblock \emph{Technical Papers of the Faculty of Civil Engineering}. 1988,
+  Series 8, s.~pp. 5 -- 42.
+
+\bibitem[Kavka(2011)]{KavkaDisertace}
+{\sc Kavka}, P.
+\newblock \emph{{KALIBRACE A VALIDACE MODELU SMODERP}}.
+\newblock PhD thesis, 2011.
+\newblock Dostupn{\'{e}}~z:
+  $\texttt{<{http://storm.fsv.cvut.cz/smoderp/?page{\_}id=19}>}$.
+
+\bibitem[Kavka et~al.(2015)Kavka, Dost{\'{a}}l, Iserloh, Davidov{\'{a}},
+  Kr{\'{a}}sa, David, Vopravil, {Khel T.},, Bauer]{EGUDS}
+{\sc Kavka}, P. et~al.
+\newblock {A medium scale mobile rainfall simulator for experiments on soil
+  erosion and soil hydrology}.
+\newblock In \emph{Geophysical Research Abstracts, Volume 17, (Memory stick)},
+  G{\{}{\"{o}}{\}}ttingen, DE, 2015.
+
+\bibitem[Laflen et~al.(1997)Laflen, Elliot, Flanagan, Meyer,,
+  Nearing]{Laflen1997}
+{\sc Laflen}, J.~M. et~al.
+\newblock {WEPP Predicting water erosion using a process-based model}.
+\newblock \emph{Journal of Soil and Water Conservation}. 1997, 52, 2,
+  s.~96--102.
+\newblock ISSN 0022-4561.
+
+\bibitem[{Lieve Van-Camp} et~al.(2004){Lieve Van-Camp}, Bujarrabal, Gentile,
+  Jones, Montanarella, Olazabal,, Selvaradjou]{LieveVan-Camp2004}
+{\sc {Lieve Van-Camp}}, E. et~al.
+\newblock {REPORTS OF THE TECHNICAL WORKING GROUPS ESTABLISHED UNDER THE
+  THEMATIC STRATEGY FOR SOIL PROTECTION VOLUME -III ORGANIC MATTER}.
+\newblock 2004.
+
+\bibitem[Marques et~al.(2007)Marques, Bienes, Jim{\'{e}}nez,,
+  P{\'{e}}rez-Rodr{\'{i}}guez]{Marques2007}
+{\sc Marques}, M.~J. et~al.
+\newblock {Effect of vegetal cover on runoff and soil erosion under light
+  intensity events. Rainfall simulation over USLE plots.}
+\newblock \emph{The Science of the total environment}. may 2007, 378, 1-2,
+  s.~161--5.
+\newblock ISSN 0048-9697.
+\newblock \doi{10.1016/j.scitotenv.2007.01.043}.
+\newblock Dostupn{\'{e}}~z:
+  $\texttt{<{http://www.ncbi.nlm.nih.gov/pubmed/17306858}>}$.
+
+\bibitem[N{\v{e}}me{\v{c}}ek et~al.(2011)N{\v{e}}me{\v{c}}ek,
+  M{\"{u}}hlhanselov{\'{a}}, Macků, Vokoun, Vavř{\'{i}}{\v{c}}ek,,
+  Nov{\'{a}}k]{Nemecek2011}
+{\sc N{\v{e}}me{\v{c}}ek}, J. et~al.
+\newblock {Czech Taxonomic Classification System of Soils}.
+\newblock 2011.
+
+\bibitem[Neumann -- Kavka(2015)Neumann, Kavka]{Neumann15:232823}
+{\sc Neumann}, M. -- {\sc Kavka}, P.
+\newblock {VYU{\{}{\v{Z}}{\}}IT{\{}{\'{I}}{\}} DVOU METOD
+  M{\{}{\v{E}}{\}}{\{}$\backslash$v R{\}}EN{\{}{\'{I}}{\}} RYCHLOSTI
+  POVRCHOV{\{}{\'{E}}{\}}HO ODTOKU KE KALIBRACI
+  SR{\{}{\'{A}}{\}}{\{}{\v{Z}}{\}}KO-ODTOKOV{\{}{\'{Y}}{\}}CH
+  MODEL{\{}$\backslash$r U{\}}}.
+\newblock In \emph{Voda a krajina 2015}, s. 81--89, Praha, CZ, 2015.
+\newblock ISBN 978-80-01-05794-0.
+
+\bibitem[Otero et~al.(2011)Otero, Figueroa, Mu{\~{n}}oz,,
+  Pe{\~{n}}a]{Otero2011}
+{\sc Otero}, J. et~al.
+\newblock {Loss of soil and nutrients by surface runoff in two agro-ecosystems
+  within an Andean paramo area}.
+\newblock \emph{Ecological Engineering}. 2011, 37, 12, s.~2035--2043.
+\newblock ISSN 09258574.
+\newblock \doi{10.1016/j.ecoleng.2011.08.001}.
+
+\bibitem[Pandey et~al.(2016)Pandey, Himanshu, Mishra,, Singh]{Pandey2016}
+{\sc Pandey}, A. et~al.
+\newblock {Physically based soil erosion and sediment yield models revisited}.
+\newblock \emph{Catena}. 2016, 147, s.~595--620.
+\newblock ISSN 03418162.
+\newblock \doi{10.1016/j.catena.2016.08.002}.
+\newblock Dostupn{\'{e}}~z:
+  $\texttt{<{http://dx.doi.org/10.1016/j.catena.2016.08.002}>}$.
+
+\bibitem[Renard et~al.(1991)Renard, Foster, Weesies,, Porter]{Renard1991}
+{\sc Renard}, K.~G. et~al.
+\newblock {RUSLE: Revised universal soil loss equation}.
+\newblock \emph{Journal of Soil and Water Conservation}. jan 1991, 46, 1,
+  s.~30--33.
+\newblock Dostupn{\'{e}}~z:
+  $\texttt{<{http://www.jswconline.org/content/46/1/30.short}>}$.
+
+\bibitem[Sang{\"{u}}esa et~al.(2010)Sang{\"{u}}esa, Arum{\'{i}}, Pizarro,,
+  Link]{Sanguesa2010}
+{\sc Sang{\"{u}}esa}, C. et~al.
+\newblock {A Rainfall Simulator for the in situ Study of Superficial Runoff and
+  Soil Erosion}.
+\newblock \emph{Chilean journal of agricultural research}. 2010, 70, 1,
+  s.~178--182.
+\newblock ISSN 0718-5839.
+\newblock \doi{10.4067/S0718-58392010000100019}.
+\newblock Dostupn{\'{e}}~z:
+  $\texttt{<{http://www.scielo.cl/scielo.php?script=sci{\{}{\_}{\}}arttext{\{}{\&}{\}}pid=S0718-58392010000100019{\{}{\&}{\}}lng=en{\{}{\&}{\}}nrm=iso{\{}{\&}{\}}tlng=en}>}$.
+
+\bibitem[Schindewolf -- Schmidt(2012)Schindewolf, Schmidt]{Schindewolf2012a}
+{\sc Schindewolf}, M. -- {\sc Schmidt}, J.
+\newblock {Parameterization of the EROSION 2D/3D soil erosion model using a
+  small-scale rainfall simulator and upstream runoff simulation}.
+\newblock \emph{Catena}. 2012, 91, s.~47--55.
+\newblock ISSN 03418162.
+\newblock \doi{10.1016/j.catena.2011.01.007}.
+
+\bibitem[Strauss et~al.(2000)Strauss, Pitty, Pfeffer,, Mentler]{Strauss2000}
+{\sc Strauss}, P. et~al.
+\newblock {Rainfall Simulation for Outdoor Experiments}.
+\newblock 2000, s. 329--333.
+
+\bibitem[Verstraeten -- Poesen(2001)Verstraeten, Poesen]{Verstraeten2001}
+{\sc Verstraeten}, G. -- {\sc Poesen}, J.
+\newblock {Modelling the long term sediment trap efficiency of small ponds}.
+\newblock \emph{Hydrological Processes}. 2001, 15, 14, s.~2797--2819.
+\newblock ISSN 0885-6087.
+\newblock \doi{10.1002/hyp.269}.
+\newblock Dostupn{\'{e}}~z:
+  $\texttt{<{http://doi.wiley.com/10.1002/hyp.269}>}$.
+
+\bibitem[Walling(1983)]{Walling1983}
+{\sc Walling}, D.
+\newblock {The sediment delivery problem}.
+\newblock \emph{Journal of Hydrology}. aug 1983, 65, 1-3, s.~209--237.
+\newblock ISSN 00221694.
+\newblock \doi{10.1016/0022-1694(83)90217-2}.
+\newblock Dostupn{\'{e}}~z:
+  $\texttt{<{http://linkinghub.elsevier.com/retrieve/pii/0022169483902172}>}$.
+
+\bibitem[Wischmeier -- Smith(1978)Wischmeier, Smith]{Wischmeier1978}
+{\sc Wischmeier}, W.~H. -- {\sc Smith}, D.~D.
+\newblock {Predicting Rainfall Erosion Losses - A Guide to Conservation
+  Planning}.
+\newblock 1978, , Handbook No.537.
+
+\bibitem[Woolhiser et~al.(1989)Woolhiser, Smith, Goodrich,,
+  States]{Woolhiser1989}
+{\sc Woolhiser}, D.~A. et~al.
+\newblock {KINEROS: A Kinematic Runoff and Erosion Model}.
+\newblock 1989, 25.
+
+\end{thebibliography}

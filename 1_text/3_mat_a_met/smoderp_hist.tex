@@ -1,0 +1,38 @@
+%!TEX ROOT = ../main.tex
+The model has been developed since the end of the 1980´s at the Department of Irrigation, Drainage and Landscape Engineering, Faculty of Civil Engineering, Czech Technical University in Prague. The first version of 1D model, designed in the FORTRAN programming language, was developed in 1989 \citep{Holy1988}. Model based on \textit{kinematics approach for sheet flow with special form} MKWA.
+\begin{equation}
+q = a.h^b
+\end{equation}
+\textit{where \textbf{a} and \textbf{b} are calibrated parameters and \textbf{h} watter lewel}
+
+Parameter a based on slope and soil type, parameter b based only on soil type.
+The parameters developed only for tree soil types groups according contemporary soil system classification. Parameters are derived based on measurements on the hydraulic trough, more about methodology of the measurement are i the section \ref{sss:zlab}
+
+\input{./tab/TAparametry_puvodni} 
+
+Description of programming this version are in \citep{Holy1988}. Two basically independent sub-models: (i) sub-model 1 used for the calculation of admissible slope length and designing of soil conservation measures, (ii) sub-model 2 designed for the calculation of runoff characteristics in order to implement soil conservation measures.
+Other versions of the model, launched particularly between 1996 and 2001, further developed operating systems, but internal processes wasn't modified. However, these versions did not considerably interfere with parameters and relations inside the model.
+
+A new version of the 1D model with name SMODERP 10.01 was carried out in 2011 \citep{KavkaDisertace}. This version of the model involved changes in the model especially the parameters of MKWA was changed. The changing are:
+\begin{itemize}
+\item Runoff parameters in the MKVA was re-calibrated, 
+\begin{itemize}
+\item small correction of the original parameters \textit{\ref{tab:puvodni}},
+\item based on laboratory rainfall simulation (\textit{107 simulations1}) runoff parameters was estimated for all soil types in accordance with the Czech system of soil classification (CTCSS) \citep{Nemecek2011} occurred.
+\end{itemize}
+\item Modification was introduced by replacement of the current generation in slopes. Previously version of the model functioned in particular sections of various lengths which had been initially defined as parts of the slope between two contour lines with identical vegetation and soil types. New approach can divides the aforesaid sections into individual elements of the same length and forms thus.
+\item  The time step was fixed at a value of 0.2 min. Fixed time step caused in earlier versions of the model oscillations and instability numericnou calculation. The model implentovny in accordance with the division of spatial elemnty also three fixed time steps so as to ensure stability calculation.
+\item old version of the model worked with unevenly long stretches. Each segment was defined as part of the slope between two contour lines with the same type of vegetation and the same soil type (based on maps in 80.). It has been shown that the unevenly size skews result. Sections are subdivided into individual equal elements automatically in this version. This is a transition from a partially split (semi-distributed) model on the model divided (distributed).
+\end{itemize}
+
+\input{./tab/TAparametry_Kavka} 
+
+Spatial model with the support of GIS applications began to be developed in 2012 and its development continues till now. Nothing less the first problem which proved to be crucial are nonstandard units that have been used for the calibration parameters b, X, Y equation MKWA. These non-linear and statistically derived parameters could not be easily transform. It was necessary to convert all input values to SI units and the calibration procedure are have repeated. The new calibration was performed on the extended (ten years) set of the lab rain simulator. For verification was first used data from field simulations using a rain simulator \citep{EGUDS}. The parameters corresponding with SI units are in table \ref{tab:Neuman_param}
+
+\input{./tab/TAparametry_Neuman} 
+
+
+The 2D model which is developed in last year is prepared as an extension to the widespread GIS software ArcGIS. The actual script to calculate the 2D model was elaborated in Python and used in ArcGIS standard tools. Python is a remarkably powerful dynamic open-source programming language that can be widely used and supported. Python was first introduced to the ArcGIS version 9.0. Since then, Python has been considered as a scripting language for the analysis of spatial data. In the future, the most memory and time consuming parts of the script will be overwritten in C++ with the purpose to shorten the runtime script.
+Moreover, besides mathematical calculation of surface runoff, the 2D model also includes a submodel implemented for runoff calculation in the rills.
+
+

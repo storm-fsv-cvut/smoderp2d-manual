@@ -1,0 +1,43 @@
+%!TEX ROOT = ../mainCZ.tex
+\paragraph{Profilové verze - SMODERP 1D}  \mbox{} \\
+Vývoj modelu je možné rozdělit do dvou základní etap. V tém první se jednalo o vývoj jednorozměrného modelu, tzv. profilové verze. V druhé pak o rozvoj prostorového řešení (2D).
+\subparagraph{1986 - 1996}  \mbox{} \\
+První měření vedoucí ke odvození modelu bylo provedeno na sklopném hydraulickém žlabu \citep{Holy1984}. Na základě těchto měření byl stanoven vztah pro výpočet průtoku na základě výšky hladiny. První verze modelu byla vyvinuta v roce 1989. Zahrnovala v sobě procesy ovlivňující povrchový odtok a erozi. V zásadě to byly dva oddělené submodely  (i) submodel pro výpočet přípustné délky  a (ii) submodel pro výpočet odtokových charakteristik. Model pracoval v charakteristických profilech zadávaných formou vodorovné vzdálenosti v konstantní odlehlosti vrstevnic. Počet takto definovaných úseků byl omezen na deset. Časový krok modelu byl fixní 0,2 minuty.
+
+Fyzikální popis prodění vody byl postaven na modifikované kinematické rovnici pro plošný odtok \acs{MKWA} ve tvaru:
+
+$q = a.h^b$
+
+Z měření bylo odvozeno že parametr $a$ je funkcí sklonu zatímco parametr $b$ je pouze funkcí půdního typu. Parametry byly odvozeny pouze pro tři půdní druhy, což odpovídalo tehdejší taxonomii půd.
+\subparagraph{2001 - 2006}  \mbox{} \\
+Tato verze byla aktualizována v roce 2001 pod označením verze 2.20. Především šlo o vylepšení uživatelského rozhraní. V roce 2001 byla také vytvořena zkušební verze 3.55, ve které byl zahrnut kromě simulace erozní ohroženosti i výpočet odtokových charakteristik. Tato verze byla v roce 2003 aktualizována zcela funkční verzí 4.01. Poslední verzí, která přímo vychází a navazuje na předchozí verze, má označení 5.1 a vznikla v roce 2010. Z výpočtu byl kvůli nedostatku dat pro verifikaci vyřazen výpočet ztráty půdy. Vedle základních odtokových charakteristik jsou uváděny také další charakteristiky (maximální výška hladiny, rychlost proudění a doba kulminace). Tato verze je přechodem mezi navazující verze. Ve verzích 2.20 až 5.1 nebylo nijak zasahováno do výpočetních procesů v modelu.
+\subparagraph{2010 - 2012}  \mbox{} \\
+Nová verze modelu SMODERP s označením 10.01, byla naprogramována v programovacím jazyku Visual FoxPro. Model verze 10.01 je také fyzikálně založený epizodní jednorozměrný model. Nejedná se již o model částečně dělný, ale o model plně distribuovaný . Dále jsou do modelu zahrnuty rekalibrováné odtokové parametry. V modelu jsou zachovány dříve ověřené fyzikální vztahy. Do verze 10.01 byly zahrnuty následující změny:
+\begin{itemize}
+\item upuštění od výpočtu ztráty půdy,
+\item nově určené odtokové parametry pro jednotlivé kategorie půdních druhů podle Nováka \cite{Nemecek2011},
+\item v modelu je možné zadávat libovolně dlouhé na vrstevnicích nezávislé části svahu,
+\item model bude pracovat v jednotlivých elementech, jejich velikost bude dána zvoleným charakterem řešeného profilu. Jedná se o zásadní přechod mezi semidistrubuovaným a distribuovaným přístupem,
+\item určení přerušení svahu.
+\end{itemize}
+
+\paragraph{Prostorové řešení - SMODERP 2D} \mbox{} \\
+
+Od roku 2012 je vyvíjeno prostorové řešení výpočtu povrchového odtoku. V návaznosti na rozvoj \acs{GIS} software a výpočetní techniky vůbec je  dalším logickým krokem vytvořit prostorově distribuovaný model. Myšlenku tohoto dalšího rozvoje modelu stanovil \cite {KavkaDisertace}. Základními úlohami a otázkami v řešení modelu bylo:
+\begin{itemize}
+\item je možné zjednodušující předpoklady zahrnuté do výpočtu profilové metody aplikovat do prostorově děleného modelu,
+\item pro výpočet v jednotlivých buňkách rastru je třeba do dvourozměrného modelu zahrnout algoritmus odtoku resp. přítoku mezi jednotlivými buňkami rastru, 
+\item do modelu zavést dynamický výpočtový krok a zajistit numerickou stabilitu výpočtu, 
+\item zavedení výpočtu soustředěného odtoku v rýhách, které profilová metoda nijak nezohledňovala,
+\item ověřit dostupnost vstupních dat pro prostorové řešení a zajistit jejich zpracování do 2D verze.
+\end{itemize}
+
+Zvolené řešení bylo postavené na platformě ESRI GIS. Která používá jako svůj nativní skriptovací jazyk Python. Knihovny ESRI ArcGIS jsou využívány na zpracování vstupních dat a pro finalizaci geoprostorých výstupů. Vstupní data o vegetaci, půdě, DMT a srážce jsou převedeny do rastrové reprezentace v pravidelné mřížce odpovídající DMT. Po zpracování vstupních dat a jejich převedení na rastrovou reprezentaci jsou převedeny do matic a vlastní výpočet již běží nezávisle na palatformě ArCGIS.
+Dynamický časový krok a zároveň zajištění stability výpočtu bylo ve výpočtu vyřešeno pomocí \ac{cour}. Prostorová mřížka výpočtu je neměnná, výpočetní časový krok \acs{dT} se v modelu mění úměrně vypočtené rychlosti.
+Vzájemné vazby mezi buňkami byli nejprve řešeny pomocí AcgGIS nativního výpočtu jednosměrného odtoku. Později byla do modelu implementována metoda vícesměnného odtoku. Soustředěný odtok v rýhách byl do modelu zaveden jako oddělený podporces, který je spouštěn v buňkách, kde dojde k překročení kritického proudění vody a dochází tak k vymílání půdních částic.  
+
+\subparagraph{do diskuse dát}
+\begin{itemize}
+\item jiné platformy
+\item jádra
+\end{itemize}

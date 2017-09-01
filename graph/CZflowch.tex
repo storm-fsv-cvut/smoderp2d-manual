@@ -1,0 +1,81 @@
+\begin{figure}[htb!]
+{\small
+\begin{center}
+\begin{tikzpicture}[node distance=1.5cm]
+
+
+\node (start) [startstop] {Start};
+\node (dataprep) [process, below of=start] {Příprava dat};
+\node (in) [io, left of=dataprep, xshift=-4.0cm] {Vstupní data};
+
+\node (dec1) [decision, below of=dataprep, yshift=-0.5cm] {Konečný čas?};
+
+\node (atm) [process, below of=dec1, yshift=-0.5cm] {Srážka za \acs{dT}};
+\node (flow) [process, below of=atm] {Plošný odtok};
+
+
+\node (check) [process, right of=flow, xshift=2.0cm] {Kontrola \acs{dT}};
+\node (updatet) [process, right of=atm, xshift=2.0cm] {Aktualizace \acs{dT}};
+
+\node (dec2) [decision, below of=flow, yshift=-0.5cm] {{\footnotesize Překročení kritické výšky hladiny?}};
+\node (rillflow) [process, below of=dec2, yshift=-0.5cm] {Rýhový odtok};
+
+\node (dec3) [decision, below of=rillflow, yshift=-0.5cm] {Je buňka v toku?};
+\node (streamflow) [process, below of=dec3, yshift=-0.5cm] {Otok úsekem toku};
+
+\node (output) [io, below of=streamflow, yshift=-0.5cm] {Výstupní data};
+\node (stop) [startstop, below of=output, yshift=-0.5cm] {Konec};
+
+% uzly ohnutym caram
+\node (dd1) [guide, right of=rillflow, xshift=2.0cm] {};
+\node (dd2) [guide, right of=dec1, xshift=2.0cm] {};
+\node (dd3) [guide, right of=dec2, xshift=2.0cm] {};
+\node (dd4) [guide, right of=dec3, xshift=2.0cm] {};
+\node (dd5) [guide, right of=streamflow, xshift=2.0cm] {};
+\node (dd6) [guide, left  of=dec1, xshift=-2.0cm] {};
+\node (dd7) [guide, left  of=output, xshift=-2.0cm] {};
+
+
+% jednotlive sipky
+\draw [arrow] (start) -- (dataprep);
+\draw [arrow] (in) -- (dataprep);
+\draw [arrow] (dataprep) -- (dec1);
+\draw [arrow] (dec1) -- node[anchor=west] {ne} (atm);
+\draw [arrow] (atm) -- (flow);
+\draw [arrow] (flow) -- (dec2);
+\draw [arrow] (dec2) -- node[anchor=west] {ano} (rillflow);
+% \draw [arrow] (dec1) -- node[anchor=north] {ano} (output);
+\draw [arrow] (output) -- (stop);
+\draw [arrow] (rillflow) -- (dec3);
+\draw [arrow] (dec3) -- node[anchor=west] {ano} (streamflow);
+\draw [arrow] (check) -- (updatet);
+
+
+% ohnute cary line (jen cara) do guide (jen neviditelny bod)
+%             arrow  z guide (jen neviditelny bod) tam kam chci
+
+\draw [line] (updatet) -- (dd2);
+\draw [arrow] (dd2) -- (dec1);
+
+\draw [line] (dec2) -- node[anchor=north] {ne}(dd3);
+\draw [arrow] (dd3) -- (check);
+
+\draw [line] (dec3) -- node[anchor=north] {ne}(dd4);
+\draw [arrow] (dd4) -- (check);
+
+\draw [line] (streamflow) -- node[anchor=north] {ne}(dd5);
+\draw [arrow] (dd5) -- (check);
+
+
+\draw [line] (dec1) -- node[anchor=north] {ano}(dd6);
+\draw [line] (dd6) -- (dd7);
+\draw [arrow] (dd7) -- (output);
+
+
+
+\end{tikzpicture}
+\end{center}
+}
+\caption{Flow chart toku programu}
+\label{fig:flowchart}
+\end{figure}

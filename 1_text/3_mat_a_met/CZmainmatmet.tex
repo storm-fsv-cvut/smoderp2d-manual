@@ -1,0 +1,58 @@
+%!TEX ROOT = ../mainCZ.tex
+%\input{./1_text/3_mat_a_met/2}
+
+Úvodní část je věnována historickému pozadí a vývoji modelu SMODERP. Odvození parametrů o kterých se hovoří v kapitole \ref{SM_hist} jsou podrobně popsány v kapitole \ref{Exp_mer}. Použité fyzikální vztahy jsou popsány v kapitole \ref{modelovani}. SOučasná verze modelu z hlediska zpracování vstupních dat, výpočtu a uváděných výstupů je pak v kapitole \ref{vypocet}.
+
+
+
+
+
+\subsection{SMODERP - historický vývoj} \label{SM_hist}
+\input{1_text/3_mat_a_met/CZsmoderp_hist}
+Detailněji je postup výpočtu 2D verze modelu uveden v kapitole \ref{vypocet}.
+
+\subsection{Experimentální měření} \label{Exp_mer}
+Experimentální měření a z něj vycházející vztahy pro výpočet plošného odtoku je možné rozdělit do tří etap. První je odvození základních parametrů na sklopném hydraulickém žlabu, které bylo prováděno simulací již vzniklého odtoku. Druhou fází pak měření laboratorním dešťovém simulátoru. A ověření výsledků pak bylo provedeno na datech z terénních měření a z experimentálních ploch a nebo pomocí polního dešťového simulátoru.
+
+	\subsubsection{Měření na sklopném hydraulickém žlabu} \label{Exp_mer_zlab}
+	\input{1_text/3_mat_a_met/CZmereni_zlab}
+
+
+	\subsubsection{Labolatorní dešťový simulátor} \label{Exp_ mer_labDS}
+	\input{./1_text/3_mat_a_met/CZmereni_lab}
+
+
+%	\subsubsection{Polní dešťový simulátor} \label{Exp_mer_DS}
+%	\input{./1_text/3_mat_a_met/CZmobile_DS}
+
+%		\paragraph{Ovládání dešťového simulátoru}		
+%		\input{./1_text/3_mat_a_met/CZmobile_DS_ovladani}
+
+
+\subsection{Pužité vztahy a jejich odvození} \label{modelovani}
+
+V modelu jsou použity zjednodušené vztahy pro základní bilance a výpočet jednotlivých složek odtoku: infiltrovaného množství \acs{Inf}, efektivní srážky \acs{ES} a odteklého množství \acs{Otot}. Proudění povrchové vody je rozděleno na výpočet plošného odtoku, soustředěného plošného odtoku v rýhách a výpočet v hydrografické síti - vodních tocích.
+
+%	\subsubsection{Použité rovnice}
+	\input{./1_text/3_mat_a_met/CZsmoderp_rovnice_zaklad}
+
+
+\subsection{SMODERP 2D - postup výpočtu} \label{vypocet}
+Jak již bylo uvedeno v kapitole \ref{SM_hist} současná verze modelu SMODERP je napsána v programovacím jazyce Python. Jsou od sebe oddělena část přípravy dat a samotné zpracování.
+Příprava dat využívá v současné době nástroje z knihoven ArcGIS. Proces samotného výpočtu již využívá pouze standardní knihovny Python, jako je knihovna \texttt{numpy}, nebo \texttt{math}, atp. Pro přehlednost je text rozdělen do třech částí, vstupní data \ref{kap:vstupy}, tok programu \ref{kap:tok} a výstupy \ref{kap:vystupy}
+
+	%\subsubsection{Princip výpočtu} \label{kap:principvypoctu}
+%	\input{./1_text/3_mat_a_met/CZsmoderp_princip}
+		
+	
+	\subsubsection{Vstupy do modelu} \label{kap:vstupy}
+	\input{./1_text/3_mat_a_met/CZsmoderp_vstupy} 
+	
+	\subsubsection{Tok programu} \label{kap:tok}
+	\input{./1_text/3_mat_a_met/CZsmoderp_process}
+	
+	\subsubsection{Výstupy z modelu} \label{kap:vystupy}
+	\input{./1_text/3_mat_a_met/CZsmoderp_vystupy}
+
+%\clearpage
+%\newpage\null\thispagestyle{empty}\newpage

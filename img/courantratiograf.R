@@ -1,0 +1,64 @@
+path = getSrcDirectory(function() {})
+if(length(path) != 0){setwd(path)}
+load('manualgraf.RData')
+D$deltaTime.s.[1]=30
+
+png('courantratio.png',width = 2500,height = 1300,res=230,bg='transparent')
+par(mar = c(3,3,1,3))
+layout(matrix(c(1,2),ncol=1))
+
+
+plot(D$X..Time.s./60,D$courant,type='b',ylab = '', xlab = '')
+mtext("Courantovo číslo, plošný odtok",side = 2,line = 2)
+mtext("Čas [minuty]",side = 1,line = 2)
+grid()
+
+par(new=TRUE)
+plot(D$X..Time.s.,D$deltaTime.s.,type='b',ylab = '',xlab = '',axes = FALSE,col=3)
+axis(4,col=3,col.axis=3)
+mtext('Délka časového kroku [s]',side = 4,line = 2,col=3)
+
+
+plot(D$X..Time.s./60,D$courantrill,type='b',ylab = '', xlab = '')
+mtext("Courantovo číslo, rýhový odtok",side = 2,line = 2)
+mtext("Čas [minuty]",side = 1,line = 2)
+grid()
+
+
+par(new=TRUE)
+plot(D$X..Time.s.,D$ratio,type='b',ylab = '',xlab = '',axes = FALSE,col=4)
+axis(4,col=4,col.axis=4,at=c(1,2,3,4))
+mtext('Dělení časového kroku při týpočtu v rýze [s]',side = 4,line = 2,col=4)
+dev.off()
+
+
+load('manualgraf2.RData')
+D$deltaTime.s.[1]=30
+
+png('courantratio2.png',width = 2500,height = 1300,res=230,bg='transparent')
+par(mar = c(3,3,1,3))
+layout(matrix(c(1,2),ncol=1))
+
+
+plot(D$X..Time.s./60,D$courant,type='b',ylab = '', xlab = '')
+mtext("Courantovo číslo, plošný odtok",side = 2,line = 2)
+mtext("Čas [minuty]",side = 1,line = 2)
+grid()
+
+par(new=TRUE)
+plot(D$X..Time.s.,D$deltaTime.s.,type='b',ylab = '',xlab = '',axes = FALSE,col=3)
+axis(4,col=3,col.axis=3)
+mtext('Délka časového kroku [s]',side = 4,line = 2,col=3)
+
+
+plot(D$X..Time.s./60,D$courantrill,type='b',ylab = '', xlab = '')
+mtext("Courantovo číslo, rýhový odtok",side = 2,line = 2)
+mtext("Čas [minuty]",side = 1,line = 2)
+grid()
+
+
+par(new=TRUE)
+plot(D$X..Time.s.,D$ratio,type='b',ylab = '',xlab = '',axes = FALSE,col=4)
+axis(4,col=4,col.axis=4,at=c(1,2,3,4,5,6,7,8,9))
+mtext('Dělení časového kroku při týpočtu v rýze [s]',side = 4,line = 2,col=4)
+dev.off()

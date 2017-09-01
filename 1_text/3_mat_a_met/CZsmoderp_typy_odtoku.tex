@@ -1,0 +1,17 @@
+%!TEX ROOT = ../mainCZ.tex
+%\section{Nejběžnější typy odtoků a jejich implementace do programu} \label{typyodtoku}
+Existují tři nejběžnější algoritmy, každý odlišně řešící problematiku odtoku na rastrovém modelu terénu. Prvním z~nich je algoritmus D8 z~roku 1984 \cite{Modely1986}.
+Algoritmus je podrobně popsán v~následující kapitole~\ref{subsection:d8}. Jelikož odtok nastává vždy jen do~jedné sousední buňky, dochází často ke~koncentraci vodních sítí a~síť odtoku pak neodpovídá skutečnosti.
+Na~druhou stranu je jeho výhodou jeho jednoduchost a~fakt, že~nedochází k~něchtené disperzi, jako je tomu u~druhého algoritmu.
+
+Druhým algoritmem je MD8, neboli Multiple Flow Direction Algorithm.
+MD8 algoritmem je voda odváděna do~všech níže položených sousedních buněk a~poměr vody je rozdělen procentuálně podle~sklonu. Ve~výsledku má algoritmus tendenci vytvářet více realistické prostorové sítě toku než~D8 
+tím, že nedochází k~takové koncentraci vody v~síti. U~D8 má mnohem větší vliv malý rozdíl výšek mezi sousedními buňkami na~to, která~buňka přijme veškerou vodu.
+Použitím MD8 tyto malé výškové rozdíly nemají zdaleka takový vliv, jelikož je množství vody rozděleno poměrem mezi níže položené buňky. Největší nevýhodou tohoto algoritmu je jeho přílišná disperze na~konvergentních svazích v~důsledku odtoku do~všech níže položených buněk.
+
+V~roce 1997 byl navržen algoritmus pojmenovaný D$\infty$ Davidem G. Tarbotonem z~americké univerzity v~Utahu, který~je založen na~osmi trojúhelníkových ploškách.%, viz.~obrázek \ref{fig:TF}. 
+Díky tomuto postupu jsou odstraněny limitace v~podobě možnosti pouze osmi směrů odtoku z~buňky. Proto je algoritmus pojmenován D$\infty$, jelikož může nastat nekonečně možností výsledného směru odtoku. 
+Tento~přístup umožňuje pouze jeden směr odtoku, rozdělený mezi~jednu nebo~dvě buňky v~závislosti na~směru odtoku.
+
+Poslední dva zmíněné algoritmy MD8 a~D$\infty$ mají oproti~D8 nevýhodu ve~větší časové náročnosti výpočtu. %V~kapitole~\ref{subsection:MD} je popsán algoritmus MD$\infty$, který využívá výhody MD8 algoritmu za~použití trojúhelníkových plošek obdobně jako D$\infty$ algoritmus.
+V programu SMODERP 2D jsou použity dva přístupy. Pro plošný odtok uživatel volí mezi jednosměrným odtokem MD$\infty$. Soustředěný odtok v rýhách využívá jen jednosměrného odtoku D8.

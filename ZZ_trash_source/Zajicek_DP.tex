@@ -1,0 +1,324 @@
+\chapter{Popis fyzikálních vztahů} \label{chapter:vztahy}
+\markboth{POPIS FYZIKÁLNÍCH VZTAHŮ}{} %zajisti, aby byl text uvod v zahlavi
+
+\section{Základní bilanční rovnice} \label{section:bilancnirovnice}
+\newpage
+\section{Kritické hodnoty napětí a rychlosti pro výpočet kritické výšky hladiny} \label{section:kritickehodnoty}
+Hodnoty krajních rychlostí a~tečného napětí se~liší podle typu půdy a~vegetace. Hodnoty jsou uvedeny v~následující tabulce:
+\begin{center}
+\begin{table}[ht]
+  \begin{center}
+    \begin{tabular}{|c|c|c|c|} \hline
+      \bf{Kód a druh půdy} & \bf{Kód a druh plodiny} & \bf{v [m/s]} & \bf{$\tau$ [Pa]} \\ \hline \hline
+1 - písčitá & 1 - bez vegetace & 0.305 & 13.27  \\ \hline
+1 - písčitá & 2 - širokořádkové plodiny & 0.305 & 13.27 \\ \hline
+1 - písčitá & 3 - úzkořádkové plodiny & 0.305 & 13.27  \\ \hline
+1 - písčitá & 4 - travní porost & 1 & 25 \\ \hline \hline
+2 - hlinitopísčitá & 1 - bez vegetace & 0.264 & 11.5  \\ \hline
+2 - hlinitopísčitá & 2 - širokořádkové plodiny & 0.264 & 11.5 \\ \hline
+2 - hlinitopísčitá & 3 - úzkořádkové plodiny & 0.264 & 11.5  \\ \hline
+2 - hlinitopísčitá & 4 - travní porost & 0.9 & 22.5 \\ \hline \hline
+3 - hlinitá & 1 - bez vegetace & 0.248 & 10.79  \\ \hline
+3 - hlinitá & 2 - širokořádkové plodiny & 0.248 & 10.79 \\ \hline
+3 - hlinitá & 3 - úzkořádkové plodiny & 0.248 & 10.79  \\ \hline
+3 - hlinitá & 4 - travní porost & 0.8 & 20 \\ \hline \hline
+4 - jílovitohlinitá & 1 - bez vegetace & 0.245 & 10.66  \\ \hline
+4 - jílovitohlinitá & 2 - širokořádkové plodiny & 0.245 & 10.66 \\ \hline
+4 - jílovitohlinitá & 3 - úzkořádkové plodiny & 0.245 & 10.66  \\ \hline
+4 - jílovitohlinitá & 4 - travní porost & 0.7 & 18.5 \\ \hline \hline
+5 - jílovitá & 1 - bez vegetace & 0.245 & 10.66  \\ \hline
+5 - jílovitá & 2 - širokořádkové plodiny & 0.245 & 10.66 \\ \hline
+5 - jílovitá & 3 - úzkořádkové plodiny & 0.245 & 10.66  \\ \hline
+5 - jílovitá & 4 - travní porost & 0.6 & 15 \\ \hline 
+    \end{tabular}
+  \end{center}
+  \vskip3mm  % zmenšit odsazení
+  \caption{Krajní nevymílací rychlosti $v$ a krajní nevymílací napětí $\tau$ \cite{vrana}}
+  \label{Tab. kritickehodnoty}
+\end{table}
+\end{center}
+Hodnota kritické výšky hladiny je vypočtena pro~každou buňku rastru z~hodnoty kritického napětí $\tau$. Pokud v~průběhu výpočtu překročí výška hladiny vody na~dané buňce z~napětí vypočtenou kritickou výšku,
+objem vody v~buňce nad~touto kritickou hladinou se začne koncentrovat v~rýze a objem pod~úrovní kritické hladiny odtéká jako plošný.
+\section{Plošný odtok} \label{subsection:plosnyodtok}
+Plošným odtokem v~modelu $SMODERP 2D$ se~rozumí odtok, který je pod~kritickou výškou hladiny a~odtéká v~každém časovém intervalu do~jedné nebo~více sousedních buněk rastru. Plošný odtok narozdíl od~soustředěného nastává po~celou dobu běhu programu.
+V~závislosti na intenzitě srážky a~morfologii rastru může nebo~nemusí dojít k překročení kritické výšky hladiny. Odtokové množství, neboli objem odtoku vychází ze~vztahu mezi~průtokem $Q_{plos}$ a~časovým krokem $\Delta t$.
+\begin{equation}
+V_{plos} = \frac{Q_{plos} * 60 * \Delta t}{10}
+\end{equation}
+
+\begin{tabular}{l l}
+$V_{plos}$ & plošný odtok [$l$], \\
+$Q_{plos}$ & plošný průtok [$10l/s$], \\
+$\Delta t$ & časový krok [$s$], \\
+\end{tabular} \\ \vspace{0.3cm}
+
+Průtok $Q_{plos}$ je závislý na~sklonu svahu, výšce hladiny vody $h$ v~centimetrech a~vegetaci.
+
+
+\section{Soustředěný odtok} \label{subsection:soustredenyodtok}
+Soustředěný (rýhový) odtok nastává po překročení kritické výšky hladiny při větších průtocích. Jedná se o pohyb vody v korytu obdélníkového tvaru. Odvození je tedy zcela odlišné, než při plošném odtoku.
+Je třeba zdůraznit, že vztahy uvedené dále nejsou odvozeny pro~kapaliny reálné, nýbrž ideální. Ideální kapalina je nestlačitelná a~bez~vnitřního tření.
+
+
+
+\section{Typy odtoků}
+SMODERP 2D řeší více druhů odtoků vody z~rastru. Tím jednodušším rozdělením je počet směrů,~do~kterých voda z~buňky odtéká. Buď odtéká pouze jedním směrem jako je popsáno v~\ref{subsection:d8}
+nebo může voda téci i~do~více směrů, viz. část \ref{subsection:MD}. Pro~obě tyto možnosti dále může nastat plošný, případně soustředěný (rýhový) odtok. Plošný odtok nastává vždy, podmínky
+pro~vznik rýhového odtoku jsou popsány v \ref{subsection:soustredenyodtok}.  
+\subsection{Jednosměrný odtok D8} \label{subsection:d8}
+\subsubsection{Obecný princip}
+Princip nástroje určení směru odtoku ($Flow Direction$), který~používá prostředí ArcGIS je následující. Tento nástroj (tool) vezme vstupní rastr digitálního modelu terénu, neboli~výškový rastr.
+Provede výpočet, jehož~výstupem je rastr, který~v~každé buňce rastru obsahuje hodnotu určující směr odtoku z~této buňky. Hodnot je osm, podle osmi sousedních buněk, do~kterých může odtékat voda, viz.~obrázek~\ref{fig:D8}.
+Právě podle osmi směrů odtoku se tento přístup nazývá D8 (eight-direction approach).
+\begin{figure}[hbt]
+  \centering
+  \includegraphics[scale = 0.7]{obrazky/flowdirectionD8.png}
+  \caption{Flow Direction D8 \cite{d8}}
+  \label{fig:D8}
+\end{figure} \medskip
+\subsubsection{Popis algoritmu D8}
+Samotný výpočet algoritmu je v~zásadě primitivní. Pro~všechny sousední buňky se vypočte maximální sklon \cite{d8}: \bigskip
+\\ \textit{maximální\_sklon = rozdíl\_výšek / vzdálenost * 100}  \bigskip 
+\\ Rozdíl výšek je rozdíl výšky v~aktuálním bodě a~konkrétní sousední buňky. Vzdálenost je vypočtena mezi~středy buněk a~liší se v~závislosti na~poloze sousední buňky. 
+Pro~buňky sousedící vrcholem je hodnota velikosti pixelu přenásobena o~odmocninu ze~dvou. Pro~zbylé buňky sousedící hranou je velikost vzdálenosti rovna velikosti pixelu. 
+Po~nalezení nejstrmějšího směru odtoku je hodnota uložena v~podobě bitové hodnoty, reprezentující daný směr. Před~použitím nástroje $Flow Direction$ se obvykle zpracuje vstupní rastr pomocí nástroje $Fill$.
+Tento algoritmus zaplní bezodtoké oblasti rastru nejnižší hodnotou z~okolí a~do~této nejnižší sousední buňky pak pošle vodu.
+Poté~již nemůže dojít k~situaci, kdy~všechny sousední buňky k~dané buňce mají vyšší hodnoty výšek a~nedocházelo by tedy k~odtoku. \smallskip
+Výsledný rastr nemusí obsahovat pouze buňky s~hodnotami $2^0$,$2^1$,...,$2^7$ \cite{flowdir}. Jestliže nastane situace, kdy~má více sousedních buněk nejnižší hodnotu výšek, pak je výsledná hodnota součtem všech směrů.
+Např. hodnota maximálního sklonu bude stejná pro~sousední buňku vlevo a~nahoře, odtok tedy bude směrem na~západ (hodnota = 16) a~na~sever (hodnota = 64), výsledná hodnota bude součtem 16 a~64, tedy 84. 
+
+\subsection{Vícesměrný odtok MD\texorpdfstring{$\infty$}{infty}} \label{subsection:MD}
+\subsubsection{Popis algoritmu} \label{section:MD}
+
+\chapter{Vývojové prostředí a programovací jazyk} \label{chapter:programovani}
+Program byl původně tvořen v~editoru PythonWin 2.6, ale~vzhledem k~jeho nepříznivému uživatelskému rozhraní bylo od~toho programu upuštěno a~zbylý vývoj se odehrával ve~vývojovém prostředí NetBeans IDE 6.9 za~použití programovací jazyka Python 2.6.5. 
+Spuštění probíhá v~programu ArcGIS~10.0, kompatibilní je i~s~verzí 10.1. Na starších verzích nebyl program testován. 
+
+\section{GIS a platforma ArcGIS} \label{section:gis}
+Definicí významu GIS je několik. V~této práci je uvedena definice, kterou~používá firma ESRI.
+Pojem Geografický informační systém by se dal definovat jako organizovaný soubor počítačového hardwaru, softwaru a~geografických údajů navržený na~získávání, ukládání, upravování, obhospodařování, analyzování a~zobrazování všech forem geografických údajů \cite{gis}.
+
+ESRI (Environmental System Research Institute) je nejvýznamnějším světovým dodavatelem a~distributorem GISů se~svým produktem ArcGIS. Jedná se o~nejrozšířenější geografický informační systém pro~práci s~mapami a~obecně geografickými informacemi. 
+Používá se pro~tvorbu a~užívání map, shromažďování a~zpracování geografických dat, analýzu informací získaných z~map, sdílení geografických informací, zpracování geografických informací v~databázích. Systém ArcGIS je interoperabilní, respektuje standardy GIS i~obecné standardy IT.
+Obsahuje hotové nástroje a~komponenty, které~se dají programovat a~propojovat s~jinými technologiemi. Jednotlivé produkty operují na~desktopových, serverových i~mobilních platformách, včetně prostředí pro~vývoj a~správu webových služeb. 
+Technologií Esri ArcGIS je vybavena většina významných institucí státní správy. Ještě před~vytvořením systému ArcGIS se~Esri zaměřila na~vývoj softwaru Arc/INFO ovládaném přes~příkazovou řádku, dále~programu ArcView~GIS~3.x s~grafickým uživatelským rozhraním.
+Další produkty Esri zahrnovaly MapObjects, knihovnu pro~vývojáře, a~ArcSDE, relační databázový systém. Rozdílné produkty se~nezávisle na~sobě postupně vyvíjely a~nastal problém s~jejich propojením. 
+V~roce 1999 tak Esri vydala první verzi programu ArcGIS, konkrétně ArcGIS~8.0, který~kombinoval vizuální uživatelské rozhraní ArcVIEW s~funkcemi Arc/INFO. Nový software obsahoval nové grafické uživatelské rozhraní ArcMap a~aplikaci pro~správu souborů ArcCatalog. 
+S~postupným vydáváním nových verzí jsou také vytvářena nová rozšíření (extensions). Již ve~verzi 8.0 jsou obsažena rozšíření 3D Analyst a~Spatial Analyst určených pro~analýzu modelů terénu. Verze ArcGIS~9.0 byla rozšířena o~geoprocessing environment, 
+které~umožňuje spouštění tradičních GIS funkcí interaktivně nebo~z~jakéhokoliv skriptovacího jazyka. Mezi~nejpoužívanější patří Python, dále Perl a~VBScript. Verze 9.0 obsahovala také vizuální programovací prostředí ModelBuilder, 
+které~umožňuje provádět výpočty buď pomocí grafického modelu nebo~exportovat tyto modely do~skriptovacího jazyka a~spouštět z~příkazového řádku. Současný program ArcGIS obsahuje aplikace ArcMap, ArcCatalog, dále pak~rozsáhlou knihovnu funkcí ArcToolbox a~3D vizualizaci geografických dat ArcGlobe \cite{nikola}. 
+
+V~současnosti (prosinec 2013) je nejnovější verze programu ArcGIS~10.2, která~vyšla v~červenci 2013. Tato~verze je zpětně plně kompatibilní s~předchozí verzí 10.1. Program SMODERP 2D byl vytvořen pro~verzi programu ArcGIS 10.0. 
+Pro~úspěšný běh programu je nutné mít vypůjčenou licenci ArcGIS Spatial Analyst, díky níž je možno použít nástroje nezbytné pro~výpočty programu.
+\section{Programovací jazyk Python} \label{section:python}
+Python je objektově orientovaný programovací jazyk, který se může využít v~mnoha oblastech vývoje softwaru. Nabízí významnou podporu k~integraci s~ostatními jazyky a~nástroji a~přichází s~mnoha standardními knihovnami.
+Jeho použití je velice široké od~programů na~zpracování multimedií až~po~zpracování textů. Python není závislý na~platformě, na~které běží \cite{python}. Zajímavým rozšířením jazyka Pyhton je NumPy. 
+Je to balíček užívaný pro~vědecké výpočty. Umožňuje podporu velkých, multi-dimenzionálních polí a~matic, spolu s~velkou knihovnou matematických funkcí pro~práci s~těmito poli \cite{numpy}. 
+Pomocí tohoto balíčku bylo v~programu operováno s~naprostou vetšinou polí a~matic. 
+V~současnosti (Prosinec 2013) je nejnovější verze jazyka 3.3.3. Poslední verze vývojové větve 2.x Pythonu vyšla v~roce 2010 a~byla to~verze 2.7. 
+Nyní všechna vylepšení jazyka už jsou dělána pro~vývojovou větev 3.x. K~tvorbě programu byla zvolena verze 2.6.5, která~je kompatibilní s~programem ArcGIS~10.0.     
+\section{Vývojové prostředí NetBeans IDE} \label{section:netbeans}
+NetBeans vyvíjené firmou Oracle je open source projekt s~rozsáhlou uživatelskou základnou a~komunitou vývojářů. V~rámci projektu existují dva hlavní produkty: vývojové prostředí NetBeans (NetBeans IDE) a~vývojová platforma NetBeans (The NetBeans Platform).
+Vývojové prostředí NetBeans IDE je nástroj, pomocí kterého programátoři mohou psát, překládat, ladit a~šířit programy. NetBeans IDE je napsáno v~jazyce Java a~je postaveno na~stejnojmenné platformě. 
+Primárně je určeno pro~vývoj aplikací v~jazyce Java, ale~může podporovat i~další programovací jazyky (ve~verzi 6.0 např. C++, PHP, Ruby). Kromě vývojového prostředí je také dostupná vývojová platforma NetBeans Platform, 
+což~je modulární a~rozšířitelný základ pro~použití při~vytváření rozsáhlých aplikací. Oba produkty jsou vyvíjeny pod~open source licencí a je možné je bezplatné používat v~komerčním i~nekomerčním prostředí \cite{netbeans}.
+Podpora jazyka Python v~prostředí NetBeans IDE je ponechána pouze na~uživatelské komunitě. Oracle se na~podpoře nepodílí. Situace tedy vypadá tak, že~Python lze jako~plugin doinstalovat pouze do~starších verzí NetBeans IDE 6.7, 6.8 nebo~6.9.
+Pro~nejnovější verze větve 7.x již plugin na~doinstalování chybí. Z~tohoto důvodu byl program vytvářen ve~verzi NetBeans IDE 6.9 s~verzí jazyka Python 2.6.5. 
+\chapter{Popis programu} \label{chapter:manual}
+Něco o programu, vývoj, odkaz na stránky....Bude popsáno jak s programem zacházet, se vstupy atd.
+\section{První spuštění modelu v programu ArcMap} \label{section:prvnispusteni}
+
+\section{Vstupní data} \label{section:data}
+\subsection{Vhodná volba vstupních parametrů} \label{subsection:volbaparametru}
+\subsection{Úprava tabulky parametrů půdy a vegetace} \label{subsection:upravatabulkyparametru}
+\section{Výstupní data} \label{section:vystupnidata}
+\section{Popis skriptu - řešení} \label{section:kod}
+\chapter{Simulace a výsledky} \label{chapter:testy}
+Simulace proběhla na~třech digitálních modelech terénu. Pro~účely prvotního odlaďování byl vytvořen testovací rastr. Zbylé dva digitální modely terénu jsou vytvořeny z~reálných dat.
+Ke~každému digitálnímu modelu byla vytvořena bodová vrstva, v~jejíž bodech jsou prezentovány výsledky pomocí hydrogramů \ref{sdsdsd}. K~simulaci byl použit srážkový soubor s~proměnlivou srážkou, konkrétně je to měření na~rastru Býkovic ze~dne 8.2.2010 s~následující intenzitou:
+\begin{figure}[hbt]
+  \centering
+  \includegraphics[scale = 0.6]{obrazky/promenlivasrazka.png}
+  \caption{Proměnlivá srážka - intenzita deště v průběhu běhu modelu}
+  \label{fig:promenlivasrazka}
+\end{figure}
+ 
+\section{DMT - testovací rastr} \label{section:testovacirastr}
+Testovací plocha je svah s~konstantním sklonem a~předem známým sklonem odtoku. Rastr zobrazený na~obrázku \ref{fig:testovacirastr} je údolí tvaru $V$, kde~údolnice má sklon čtyři procenta. Velikost jedné buňky je pět metrů.
+Charaktetristiky půdy a~vegetace určuje jeden vstupní shapefile. Území je rozděleno na~dvě části, viz~obr.~\ref{fig:testovacirastrpuda}. Vpravo je písčitá půda bez~vegetace a~vlevé je hlinitopísčitá půda s~úzkořádkovou vegetací.
+Takto zvolená půda a~vegetace byla vybrána z~důvodu dobré kontroly infiltrace a~ověření správnosti zpracování vstupního shapefilu půdy a~vegetace.
+\newpage
+\begin{figure}[hbt]
+  \centering
+  \includegraphics[scale = 0.6]{obrazky/testovacirastr.png}
+  \caption{Testovací plocha}
+  \label{fig:testovacirastr}
+\end{figure} \medskip
+ 
+\begin{figure}[hbt]
+  \centering
+  \includegraphics[scale = 0.6]{obrazky/testovacirastr_puda.png}
+  \caption{Vektorový soubor určující typ půdy a vegetace}
+  \label{fig:testovacirastrpuda}
+\end{figure} \medskip
+\subsection{Test č.1 - pouze povrchový jednosměrný odtok} \label{subsection:test1testovni}
+V~tomto testu nebyla zvolena možnost vícesměrného ani~soustředěného odtoku. Ostatní vstupní parametry byly zadány takto: \medskip
+
+\begin{tabular}{ l  r l }
+Velikost časového kroku (Time interval)  & 0.2 & [min] \\
+Velikost časového kroku (Total running time)  & 120 & [min] \\
+Velikost povrchové retence (Surface retention)  & 0.2 & [mm] \\
+\end{tabular} \medskip
+\par Vstupní parametry byly zvoleny stejně i~u~ostatních testů testovacího rastru. Vždy je doba běhu modelu 120 minut a~časový krok s~povrchovou retencí 0.2.
+\subsubsection{Výsledné rastry} \label{subsubsection:test1rastry}
+\begin{figure}[hbt]
+  \centering
+  \includegraphics[scale = 0.9]{obrazky/test1rastry.png}
+  \caption{Výsledné rastry průtoku, výšky hladiny a infiltrace}
+  \label{fig:test1rastry}
+\end{figure}
+\clearpage
+\newpage
+\begin{figure}[hbt]
+  \centering
+  \includegraphics[scale = 0.9]{obrazky/test1rastry2.png}
+  \caption{Výsledné rastry zbytku objemu, sumy odtoku, napětí a rychlosti}
+  \label{fig:test1rastry2}
+\end{figure}
+\clearpage
+Z~výsledných rastrů je patrný průběh odtoku. Směrem k~nejnižšímu místu údolnice postupně narůstá hladina vody, tím pádem i~průtok, rychlost a~tečné napětí. 
+Lze vidět i~hranici mezi oběma typy půdy a~vegetací.  Vpravo na~písčité půdě dochází k~mnohem větší infiltraci než na~půdě hlinitopísčité s~vegetací. 
+Z~toho vyplívá, že~dochází i~k~menšímu odtoku z~těchto buněk a~hodnoty hladiny, průtoku, napětí a~rychlosti jsou nižší. Největší hodnoty průtoku jsou podle očekávání v~nejnižším místě údolnice (FID=5). 
+U~testovacího rastru je maximální suma odtoků v~litrech zároveň celkovou sumou odtoku z~celého rastru.
+\subsubsection{Výsledné hydrogramy} \label{subsubsection:test1hydro}
+V~programu ArcGIS byla vytvořena bodová vrstva o~pěti bodech, obrázek~\ref{fig:test1body}. V~těchto bodech, respektive buňkách, byly vytvořeny hydrogramy. 
+K~těmto buňkám je přidána ještě buňka s~maximální hodnotou akumulace průtoku (Flow Accumulation), označena nejvyšším indexem FID=5. Celkem tedy jsou hydrogramy vytvořeny pro~6 buněk testovacího rastru.  
+Z~výsledků na~obrázku~\ref{fig:test1hydro} je patrný průběh odtokové vlny. V bodě FID=0, který je téměř na~kraji rastru, skončí odtok za~zhruba 32 minut. 
+Naopak v~bodě FID=2, do~kterého z~důvodu jeho polohy blíže k~údolnici přitéká více vody po~delší dobu, skončí odtok za~necelých 70 minut. Bod FID=1 je příkladem průběhu odtoku na~půdě písčité bez~vegetace.
+Zde~se více vody infiltruje, proto~odtok končí prakticky s~koncem srážky v~čase kolem~25.~minuty. Zbývající tři body FID=3, FID=4 a~FID=5 jsou názornou ukázkou, jak~postupně putuje voda údolnící.
+U~bodu FID=3 je maximální průtok v~čase kolem~23.~minuty, v~bodě FID=4 přibližně o~2~minuty později a~v~nejnižsím místě údolnice je maximální průtok v~čase okolo~29.~minuty.
+Hodnoty výšky hladiny a~průtoku jsou značně velké v~souvislosti s~volbou vstupního parametru pro~pouze plošný odtok, to znamená, že~nikdy nedojde k~odtoku soustředěnému. 
+Soustředěný odtok je větší než plošný a~nedocházelo by k~takovému nárůstu hladiny a~průtoku zejména v~buňkách údolnice.   
+\begin{figure}[hbt]
+  \centering
+  \includegraphics[scale = 0.4]{obrazky/test1body.png}
+  \caption{Rozmístění bodů na rastru a jejich FID}
+  \label{fig:test1body}
+\end{figure}
+\begin{figure}[hbt]
+  \centering
+  \includegraphics[scale = 0.6]{obrazky/test1hydro.png}
+  \caption{Hydrogramy bodů}
+  \label{fig:test1hydro}
+\end{figure}
+\clearpage
+\subsection{Test č.2 - pouze povrchový vícesměrný odtok} \label{subsection:test2testovni}
+Tento test se liší oproti předchozímu pouze ve výpočtu směru odtoku. Odtok je vícesměrný, může nastat do více sousedních buněk. To v případě testovací rastru nenastane, změní se pouze směr odtoku \ref{dsdsd}.
+\subsubsection{Výsledné rastry} \label{subsubsection:test2rastry}
+\begin{figure}[hbt]
+  \centering
+  \includegraphics[scale = 0.9]{obrazky/test2rastry.png}
+  \caption{Výsledné rastry průtoku, výšky hladiny a infiltrace}
+  \label{fig:test2rastry}
+\end{figure}
+\clearpage
+\newpage
+\begin{figure}[hbt]
+  \centering
+  \includegraphics[scale = 0.9]{obrazky/test2rastry2.png}
+  \caption{Výsledné rastry zbytku objemu, sumy odtoku, napětí a rychlosti}
+  \label{fig:test2rastry2}
+\end{figure}
+\clearpage
+Výsledky dokládají průběh odtoku. Na rastru zbytku objemu lze vidět, že ve 120. minutě, kdy model doběhl, zbyla voda již pouze v nejnižší buňce údolnice.
+Pokud porovnáme rastr infiltrace z minulého testu jednosměrného odtoku \ref{fig:test1rastry} s infiltrací z tohoto testu je dobře vidět rozdíl ve směru odtoku.  
+\subsubsection{Výsledné hydrogramy} \label{subsubsection:test2hydro}
+Hydrogramy mají podobný průběh jako v případě jednosměrného odtoku \ref{fig:test1hydro}. Díky odlišnému směru odtoku v buňkách mimo údolnici odteče voda z rastru dříve.   
+\begin{figure}[hbt]
+  \centering
+  \includegraphics[scale = 0.6]{obrazky/test2hydro.png}
+  \caption{Hydrogramy bodů}
+  \label{fig:test2hydro}
+\end{figure}
+\clearpage
+\subsection{Test č.3 - povrchový a soustředěný jednosměrný odtok} \label{subsection:test3testovni}
+Jak název napovídá, tento test již uvažuje nejen plošný odtok, ale při překročení kritické výšky hladiny vznikají rýhy a odtok je soustředěný. V tomto testování veškerý odtok probíhá pouze jednosměrně.
+\subsubsection{Výsledné rastry} \label{subsubsection:test3rastry}
+\begin{figure}[hbt]
+  \centering
+  \includegraphics[scale = 0.9]{obrazky/test3rastry.png}
+  \caption{Výsledné rastry průtoku, výšky hladiny a infiltrace}
+  \label{fig:test3rastry}
+\end{figure}
+\clearpage
+\newpage
+\begin{figure}[hbt]
+  \centering
+  \includegraphics[scale = 0.9]{obrazky/test3rastry2.png}
+  \caption{Výsledné rastry zbytku objemu, sumy odtoku, napětí a rychlosti}
+  \label{fig:test3rastry2}
+\end{figure}
+\clearpage
+\newpage
+\begin{figure}[t]
+  \centering
+  \includegraphics[scale = 0.9]{obrazky/test3rastry3.png}
+  \caption{Výsledné rastry průtoku a rychlosti toku v rýze}
+  \label{fig:test3rastry3}
+\end{figure}
+Ve výsledných rastrech jsou zobrazeny vzniklé rýhy. Jedná se o místa s hlinitou písčitou půdou včetně údolnice. 
+Maximální průtok se zastaví na hodnotě 920.259 l/s, poté už nastává průtok v rýze a hodnota plošného průtoku se nezvětší. Ve výsledných rastrech jsou oproti předchozím testům navíc rastry průtoku a rychlosti v rýze.
+Maximální rychlost toku v rýze je více než 6x větší než rychlost plošného odtoku. Stejně tak průtok v rýze je několikrát větší než průtok plošný. 
+\clearpage
+\subsubsection{Výsledné hydrogramy} \label{subsubsection:test3hydro}
+Na hydrogramech u bodů na údolnici FID=3, FID=4, FID=5a bodu FID=2 mimo údolnici je zřejmé, jak roste plošný odtok, dokud nedosáhne maximální hodnoty. Poté nastává odtok v rýze a plošný zůstává konstantní. V momentě, kdy už není splněna podmínka pro rýhový odtok, plošný odtok klesá.
+U ostatních bodů nedochází k rýhovému odtoku, pouze plošnému. \medskip
+\begin{figure}[hbt]
+  \centering
+  \includegraphics[scale = 0.6]{obrazky/test3hydro.png}
+  \caption{Hydrogramy bodů}
+  \label{fig:test3hydro}
+\end{figure} 
+\clearpage
+\subsection{Test č.4 - povrchový a soustředěný vícesměrný odtok} \label{subsection:test4testovni}
+V posledním testu na testovacím rastru je povolen vícesměrný odtok stejně jako soustředěný odtok.  
+\subsubsection{Výsledné rastry} \label{subsubsection:test4rastry}
+\begin{figure}[hbt]
+  \centering
+  \includegraphics[scale = 0.9]{obrazky/test4rastry.png}
+  \caption{Výsledné rastry průtoku, výšky hladiny a infiltrace}
+  \label{fig:test4rastry}
+\end{figure}
+\clearpage
+\newpage
+\begin{figure}[hbt]
+  \centering
+  \includegraphics[scale = 0.9]{obrazky/test4rastry2.png}
+  \caption{Výsledné rastry zbytku objemu, sumy odtoku, napětí a rychlosti}
+  \label{fig:test4rastry2}
+\end{figure}
+\clearpage
+\newpage
+\begin{figure}[t]
+  \centering
+  \includegraphics[scale = 0.9]{obrazky/test4rastry3.png}
+  \caption{Výsledné rastry průtoku a rychlosti toku v rýze}
+  \label{fig:test4rastry3}
+\end{figure}
+Rýhy soustředěného odtoku vznikly na menším území než v případě jednosměrného odtoku. Velikost maxima plošného průtoku je shodná jako v předchozím testu, ale průtok v rýze je výrazně nižší.
+Téměř všechna voda stihla z rastru odtéct, pouze necelých 1,5 litru zbylo v nejnižší buňce údolnice.   
+\clearpage
+\subsubsection{Výsledné hydrogramy} \label{subsubsection:test3hydro}
+Hydrogramy z tohoto testu jsou podobné předchozímu testování. Stejně jako v případě \ref{subsubsection:test2hydro} odteče za dobu běhu modelu více vody z rastru než při jednosměrném odtoku.
+Zajímavá je situace v bodě FID=3. Po vzniku rýhy v čase kolem 14. minuty nastává plynulý přítok ze sousedních buněk a křivka už by dosáhla maxima a započla by kulminace, 
+když v 18. minutě přijde vlna putující údolnící a hodnota průtoku v rýze se dramaticky zvedne. Stejně jak je rychlý nástup této vlny, tak i rychle opadne. Ve 22. minutě už nastává plynulá kulminace.
+Situace v bodech FID=4 a FID=5 je velmi podobná.  
+\begin{figure}[hbt]
+  \centering
+  \includegraphics[scale = 0.6]{obrazky/test4hydro.png}
+  \caption{Hydrogramy bodů}
+  \label{fig:test4hydro}
+\end{figure} 
+\clearpage
+\section{DMT - Býkovice} \label{section:testovacirastr}
+\section{DMT - Nučice} \label{section:testovacirastr}

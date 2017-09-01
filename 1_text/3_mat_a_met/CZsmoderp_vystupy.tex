@@ -1,0 +1,77 @@
+%!TEX ROOT = ../mainCZ.tex
+%\section{Výstupní data} \label{section:vystupnidata}
+\textbf{Zde dodelat}
+\begin{itemize}
+\item popsat výstupy mimo temp
+\item popsat co jsou v temp
+\item popsat výstupy v určitých krocích
+\end{itemize}
+
+
+
+Po úspěšném ukončení modelu je do výstupního adresáře uloženo několik souborů. Každý z těchto souborů obsahuje hodnoty pro každou buňku rastru. Buňky, na kterých neprobíhal výpočet neobsahují žádné hodnoty, tedy NoData. Základní výstupy jsou uvedeny přímo ve zvoleném výstupním adresáři. Mimo hlavní výstupy jsou volitelně ukládány i dočasné výstupy sloužící pro případnou kontrolu. V podadresáři \textbf{temp} jsou dočasné soubory výpočtu v ploše a v podadresáři \textbf{temp_dp} jsou dočasné soubory vodních toků. \textbf{Dočasným výsledkům bude věnována jedna z dalších kapitol}
+
+\textbf{tenhle seznam doplnit popisem o co tam jde a v jakých je to jednotkách}
+\begin{itemize}
+\item VRestEndRillL3.asc
+\item TotalBil.asc
+\item toky.asc
+\item SurRet.asc
+\item stream.shp
+\item ShearStress.asc
+\item body hydrogamů (*.dat) - průběh veličin pro jednotlivé body zadané v kapitole XXXX
+\item MaxWaterRillL.asc
+\item MaxWateL.asc
+\item MaxVelovity.asc
+\item MaxQRillL3t_1.asc
+\item MaxQL3t_1.asc
+\item HCrit.asc
+\item FinalState.asc
+\item CumVRestL3.asc
+\item CumVOutRillL3.asc
+\item CumVOutL3.asc
+\item CumVInL3.asc
+\item AreaRill.asc
+\end{itemize}
+
+\textbf{toto je origoš z DP}
+
+\par Ne vždy se vytvoří všechny tyto výstupní soubory. Záleží na zvolených vstupních parametrech. Pokud uživatel nezadá žádnou bodovou vrstvu, nevytvoří se poslední textový soubor. 
+V případě, že uživatel nezvolí možnost soustředěného odtoku, nevytvoří se rastry a shapefile související s tímto typem odtoku. Rastr soustředění odtoku se nevytvoří při nezvolení vícesměrného odtoku. 
+Ostatní soubory se vytvoří pokaždé.  
+
+\textbf{ z diplomky}
+
+Výstupy se ukládají do adresáře nazvaného output. Cestu k němu si volí uživatel v rámci vstupních dat (viz kap. 2.3.1). Model prochází stále vývojem a dotýká se to i výstupních souborů. Princip ale zůstává stejný a jedná se spíše o úpravy zdrojového kódu zajištující lepší přehlednost a práci s kódem pro budoucí úpravy. Např. práce s vícerozměrnými maticemi a převedení všech výpočtů do základních (SI) jednotek. 
+Výsledkem modelu jsou soubory (.shp, .rst, .txt, .dbf), které reprezentují parametry (Zajíček J., 2014):
+hladina
+Výstupem jsou hodnoty maximální výšky hladiny pro každou buňku. Jedná se tedy o rastrovou vrstvu vytvořenou porovnáváním hodnot výšek hladiny v každém časovém kroku. Uložena je nejvyšší hodnota. Výška hladiny v jednotlivých krocích je získána pomocí bilance přítoků a odtoků do buňky.  
+průtok
+Výstupem jsou hodnoty maximálního průtoku pro každou buňku. Obdobně jako u hladiny jsou porovnávány hodnoty v jednotlivých krocích a uložena maximální hodnota. Hodnoty průtoku v jednotlivých časových krocích jsou vypočteny pomocí metody kinematické vlny (teorie viz kap. 1.5.2).
+infiltrace
+Výstupem infiltrace jsou hodnoty v každé buňce, které jsou během doby běhu modelu postupně načítány až do vyčerpání infiltrační kapacity.
+zbytkový objem
+Zbytkovým objemem se rozumí objem, který v dané buňce v časovém kroku zůstal. V případě odtoku veškeré vody z rastru je rastr nulový. Matematicky je objem vyjádřen jako rozdíl celkového objemu v buňce (zbytkový objem z předchozího kroku a přítoky) a povrchového a soustředěného odtoku.
+odtok
+Výstup týkající se odtoku slouží pro konečnou bilanci (kontrolu) a testování. Jedná se o celkové množství, které z buňky odteklo za celou dobu běhu modelu. 
+rychlost
+Rastr rychlostí je výstupem sloužící k určení erozní ohroženosti. Porovnávány jsou hodnoty skutečných rychlostí s limitními nevymílacími rychlostmi (viz tab. č. 3 ).
+napětí. 
+
+Obdobou je rastr tečného napětí. Slouží k určení míst potencionálně nebezpečných. Hodnoty limitních hodnot tečného napětí jsou uvedeny ve stejné tabulce jako rychlosti průtok v rýze (viz tab. č. 3 ).
+
+Průtok v rýze je rastrová vrstva znázorňující maximální průtok v rýze při soustředěném odtoku. Výstup je vytvořen jen při volbě typu výpočtu s uvažováním rýhového odtoku. Rýha vznikne pouze v buňkách, kde výška hladiny překročí hladinu kritickou. 
+rychlost v rýze
+Rastr obsahuje hodnoty maximální rychlosti v buňkách, kde je rýha vytvořena. Výpočet v rýhách probíhá odlišně oproti povrchovému odtoku. Jedná se o větší rychlosti, a proto na těchto buňkách probíhá výpočet za běžný časový krok 3x. V jiném případě by hrozilo, že výpočet nebude konvergovat.
+souhrn
+
+Final evalution.txt je textový soubor, který obsahuje souhrn zadaných vstupů a čas běhu modelu a bilanci vody. 
+hydrogram
+Point hydrographs.txt je textový soubor s hodnotami výšky hladiny, průtoku, napětí, rychlostí v bodech zadaných vstupní bodovou vrstvou. Soubor slouží k tvorbě hydrogramů v těchto bodech. Automaticky je k vrstvě přidán bod, ve kterém je hodnota flow acumulation nejvyšší.
+Výstupem v současnosti je i řada dalších vrstev, které slouží ale spíše k tvorbě a testování modelu a pro samotného uživatele nejsou potřebné.	
+
+
+\paragraph{Hydrogramy} \label{sec:hydrogramy}
+
+
+
