@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (MiKTeX 2.9) (preloaded format=pdflatex 2016.10.10)  1 SEP 2017 11:42
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (MiKTeX 2.9) (preloaded format=pdflatex 2016.10.22)  8 SEP 2017 09:54
 entering extended mode
 **./mainCZ.tex
 (mainCZ.tex
@@ -28,11 +28,11 @@ Package: babel 2016/04/23 3.9r The Babel package
 *************************************
 * Local config file bblopts.cfg used
 *
-(C:\Users\Kavka\AppData\Roaming\MiKTeX\2.9\tex\latex\arabi\bblopts.cfg
+(C:\Users\KavkaNTB\AppData\Roaming\MiKTeX\2.9\tex\latex\arabi\bblopts.cfg
 File: bblopts.cfg 2005/09/08 v0.1 add Arabic and Farsi to "declared" options of
  babel
 )
-(C:\Users\Kavka\AppData\Roaming\MiKTeX\2.9\tex\latex\babel-czech\czech.ldf
+(C:\Users\KavkaNTB\AppData\Roaming\MiKTeX\2.9\tex\latex\babel-czech\czech.ldf
 Language: czech 2008/07/06 v3.1a Czech support from the babel system
 
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\babel\babel.def"
@@ -361,7 +361,7 @@ Now handling font encoding U ...
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\fontenc.sty"
 Package: fontenc 2016/06/19 v1.99m Standard LaTeX package
 
-(C:\Users\Kavka\AppData\Roaming\MiKTeX\2.9\tex\cslatex\base\il2enc.def
+(C:\Users\KavkaNTB\AppData\Roaming\MiKTeX\2.9\tex\cslatex\base\il2enc.def
 File: il2enc.def 1997/08/20 CSLaTeX
 Now handling font encoding IL2 ...
 ... no UTF-8 mapping file for font encoding IL2
@@ -369,10 +369,10 @@ Now handling font encoding IL2 ...
 LaTeX Font Info:    Try loading font information for IL2+cmr on input line 105.
 
 
-(C:\Users\Kavka\AppData\Roaming\MiKTeX\2.9\tex\cslatex\base\il2cmr.fd
+(C:\Users\KavkaNTB\AppData\Roaming\MiKTeX\2.9\tex\cslatex\base\il2cmr.fd
 File: il2cmr.fd 1997/02/06 CSLaTeX font definitions
 ))
-(C:\Users\Kavka\AppData\Roaming\MiKTeX\2.9\tex\latex\framed\framed.sty
+(C:\Users\KavkaNTB\AppData\Roaming\MiKTeX\2.9\tex\latex\framed\framed.sty
 Package: framed 2011/10/22 v 0.96: framed or shaded text with page breaks
 \OuterFrameSep=\skip43
 \fb@frw=\dimen104
@@ -380,9 +380,8 @@ Package: framed 2011/10/22 v 0.96: framed or shaded text with page breaks
 \FrameRule=\dimen106
 \FrameSep=\dimen107
 )
-(C:\Users\Kavka\AppData\Roaming\MiKTeX\2.9\tex\latex\mathtools\mathtools.sty
-Package: mathtools 2017/05/24 v1.19 mathematical typesetting tools
-
+(C:\Users\KavkaNTB\AppData\Roaming\MiKTeX\2.9\tex\latex\mathtools\mathtools.sty
+Package: mathtools 2015/11/12 v1.18 mathematical typesetting tools
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\graphics\keyval.sty"
 Package: keyval 2014/10/28 v1.15 key=value parser (DPC)
 \KV@toks@=\toks16
@@ -400,8 +399,8 @@ LaTeX Info: Redefining \addtolength on input line 81.
 \calc@Ccount=\count91
 \calc@Cskip=\skip46
 )
-(C:\Users\Kavka\AppData\Roaming\MiKTeX\2.9\tex\latex\mathtools\mhsetup.sty
-Package: mhsetup 2017/03/31 v1.3 programming setup (MH)
+(C:\Users\KavkaNTB\AppData\Roaming\MiKTeX\2.9\tex\latex\mathtools\mhsetup.sty
+Package: mhsetup 2010/01/21 v1.2a programming setup (MH)
 )
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\amsmath\amsmath.sty"
 Package: amsmath 2016/06/28 v2.15d AMS math features
@@ -461,13 +460,6 @@ LaTeX Font Info:    Redeclaring font encoding OMS on input line 635.
 LaTeX Info: Redefining \[ on input line 2739.
 LaTeX Info: Redefining \] on input line 2740.
 )
-
-LaTeX Warning: You have requested, on input line 116, version
-               `2016/11/05' of package amsmath,
-               but only version
-               `2016/06/28 v2.15d AMS math features'
-               is available.
-
 LaTeX Info: Thecontrolsequence`\('isalreadyrobust on input line 129.
 LaTeX Info: Thecontrolsequence`\)'isalreadyrobust on input line 129.
 LaTeX Info: Thecontrolsequence`\['isalreadyrobust on input line 129.
@@ -481,7 +473,8 @@ LaTeX Info: Thecontrolsequence`\]'isalreadyrobust on input line 129.
 \l_MT_below_intertext_sep=\dimen123
 \l_MT_above_shortintertext_sep=\dimen124
 \l_MT_below_shortintertext_sep=\dimen125
-) ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\oberdiek\pdflscape.sty"
+)
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\oberdiek\pdflscape.sty"
 Package: pdflscape 2016/05/14 v0.11 Display of landscape pages in PDF (HO)
 
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\graphics\lscape.sty"
@@ -694,7 +687,7 @@ Package textcomp Info: Setting pplj sub-encoding to TS1/3 on input line 407.
 Package textcomp Info: Setting ptmx sub-encoding to TS1/4 on input line 408.
 Package textcomp Info: Setting ptmj sub-encoding to TS1/4 on input line 409.
 )
-(C:\Users\Kavka\AppData\Roaming\MiKTeX\2.9\tex\latex\natbib\natbib.sty
+(C:\Users\KavkaNTB\AppData\Roaming\MiKTeX\2.9\tex\latex\natbib\natbib.sty
 Package: natbib 2010/09/13 8.31b (PWD, AO)
 \bibhang=\skip51
 \bibsep=\skip52
@@ -776,7 +769,7 @@ Package hyperref Info: Implicit mode ON; LaTeX internals redefined.
 Package hyperref Info: Bookmarks ON on input line 4735.
 \c@Hy@tempcnt=\count113
 
-(C:\Users\Kavka\AppData\Roaming\MiKTeX\2.9\tex\latex\url\url.sty
+(C:\Users\KavkaNTB\AppData\Roaming\MiKTeX\2.9\tex\latex\url\url.sty
 \Urlmuskip=\muskip11
 Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
 )
@@ -823,14 +816,14 @@ Package hyperref Info: Option `pdfmenubar' set `true' on input line 35.
 Package hyperref Info: Option `pdffitwindow' set `false' on input line 35.
 Package hyperref Info: Option `pdfnewwindow' set `true' on input line 35.
 Package hyperref Info: Option `colorlinks' set `false' on input line 35.
-(C:\Users\Kavka\AppData\Roaming\MiKTeX\2.9\tex\latex\acronym\acronym.sty
+(C:\Users\KavkaNTB\AppData\Roaming\MiKTeX\2.9\tex\latex\acronym\acronym.sty
 Package: acronym 2015/03/21 v1.41 Support for acronyms (Tobias Oetiker)
 
-(C:\Users\Kavka\AppData\Roaming\MiKTeX\2.9\tex\latex\bigfoot\suffix.sty
+(C:\Users\KavkaNTB\AppData\Roaming\MiKTeX\2.9\tex\latex\bigfoot\suffix.sty
 Package: suffix 2006/07/15 1.5a Variant command support
 )
-(C:\Users\Kavka\AppData\Roaming\MiKTeX\2.9\tex\latex\xstring\xstring.sty
-(C:\Users\Kavka\AppData\Roaming\MiKTeX\2.9\tex\generic\xstring\xstring.tex
+(C:\Users\KavkaNTB\AppData\Roaming\MiKTeX\2.9\tex\latex\xstring\xstring.sty
+(C:\Users\KavkaNTB\AppData\Roaming\MiKTeX\2.9\tex\generic\xstring\xstring.tex
 \@xs@message=\write3
 \integerpart=\count120
 \decimalpart=\count121
@@ -839,13 +832,13 @@ Package: xstring 2013/10/13  v1.7c  String manipulations (C Tellechea)
 )
 \AC@clearlist=\toks23
 )
-(C:\Users\Kavka\AppData\Roaming\MiKTeX\2.9\tex\latex\caption\subcaption.sty
+(C:\Users\KavkaNTB\AppData\Roaming\MiKTeX\2.9\tex\latex\caption\subcaption.sty
 Package: subcaption 2016/05/22 v1.1-161 Sub-captions (AR)
 
-(C:\Users\Kavka\AppData\Roaming\MiKTeX\2.9\tex\latex\caption\caption.sty
+(C:\Users\KavkaNTB\AppData\Roaming\MiKTeX\2.9\tex\latex\caption\caption.sty
 Package: caption 2016/02/21 v3.3-144 Customizing captions (AR)
 
-(C:\Users\Kavka\AppData\Roaming\MiKTeX\2.9\tex\latex\caption\caption3.sty
+(C:\Users\KavkaNTB\AppData\Roaming\MiKTeX\2.9\tex\latex\caption\caption3.sty
 Package: caption3 2016/05/22 v1.7-166 caption3 kernel (AR)
 Package caption3 Info: TeX engine: e-TeX on input line 67.
 \captionmargin=\dimen138
@@ -861,8 +854,7 @@ Package caption Info: hyperref package is loaded.
 )
 \c@subfigure=\count123
 \c@subtable=\count124
-)
-(C:\Users\Kavka\AppData\Roaming\MiKTeX\2.9\tex\latex\listings\listings.sty
+) (C:\Users\KavkaNTB\AppData\Roaming\MiKTeX\2.9\tex\latex\listings\listings.sty
 \lst@mode=\count125
 \lst@gtempboxa=\box28
 \lst@token=\toks24
@@ -876,17 +868,16 @@ Package caption Info: hyperref package is loaded.
 \lst@lineno=\count130
 \lst@maxwidth=\dimen148
 
-(C:\Users\Kavka\AppData\Roaming\MiKTeX\2.9\tex\latex\listings\lstmisc.sty
+(C:\Users\KavkaNTB\AppData\Roaming\MiKTeX\2.9\tex\latex\listings\lstmisc.sty
 File: lstmisc.sty 2015/06/04 1.6 (Carsten Heinz)
 \c@lstnumber=\count131
 \lst@skipnumbers=\count132
 \lst@framebox=\box29
 )
-(C:\Users\Kavka\AppData\Roaming\MiKTeX\2.9\tex\latex\listings\listings.cfg
+(C:\Users\KavkaNTB\AppData\Roaming\MiKTeX\2.9\tex\latex\listings\listings.cfg
 File: listings.cfg 2015/06/04 1.6 listings configuration
 ))
 Package: listings 2015/06/04 1.6 (Carsten Heinz)
-
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\tools\array.sty"
 Package: array 2014/10/28 v2.4c Tabular extension package (FMi)
 \col@sep=\dimen149
@@ -895,7 +886,7 @@ Package: array 2014/10/28 v2.4c Tabular extension package (FMi)
 \extratabsurround=\skip54
 \backup@length=\skip55
 )
-(C:\Users\Kavka\AppData\Roaming\MiKTeX\2.9\tex\latex\tabulary\tabulary.sty
+(C:\Users\KavkaNTB\AppData\Roaming\MiKTeX\2.9\tex\latex\tabulary\tabulary.sty
 Package: tabulary 2014/06/11 v0.10 tabulary package (DPC)
 \TY@count=\count133
 \TY@linewidth=\dimen151
@@ -973,24 +964,39 @@ Package: longtable 2014/10/28 v4.11 Multi-page Table package (DPC)
 \c@LT@chunks=\count147
 \LT@p@ftn=\toks26
 )
-(C:\Users\Kavka\AppData\Roaming\MiKTeX\2.9\tex\latex\siunitx\siunitx.sty
-(C:\Users\Kavka\AppData\Roaming\MiKTeX\2.9\tex\latex\l3kernel\expl3.sty
-Package: expl3 2017/07/19 L3 programming layer (loader) 
+(C:\Users\KavkaNTB\AppData\Roaming\MiKTeX\2.9\tex\latex\siunitx\siunitx.sty
+(C:\Users\KavkaNTB\AppData\Roaming\MiKTeX\2.9\tex\latex\l3kernel\expl3.sty
+Package: expl3 2016/10/19 v6730 L3 programming layer (loader) 
 
-(C:\Users\Kavka\AppData\Roaming\MiKTeX\2.9\tex\latex\l3kernel\expl3-code.tex
-Package: expl3 2017/07/19 L3 programming layer (code)
+(C:\Users\KavkaNTB\AppData\Roaming\MiKTeX\2.9\tex\latex\l3kernel\expl3-code.tex
+Package: expl3 2016/10/19 v6730 L3 programming layer (code)
+L3 Module: l3bootstrap 2016/06/13 v6596 L3 Bootstrap code
+L3 Module: l3names 2016/10/13 v6722 L3 Namespace for primitives
+L3 Module: l3basics 2016/09/01 v6696 L3 Basic definitions
+L3 Module: l3expan 2016/08/19 v6684 L3 Argument expansion
+L3 Module: l3tl 2016/08/19 v6692 L3 Token lists
+L3 Module: l3str 2016/08/19 v6692 L3 Strings
+L3 Module: l3seq 2016/08/19 v6685 L3 Sequences and stacks
+L3 Module: l3int 2016/09/07 v6700 L3 Integers
 \c_max_int=\count148
 \l_tmpa_int=\count149
 \l_tmpb_int=\count150
 \g_tmpa_int=\count151
 \g_tmpb_int=\count152
-\g__intarray_font_int=\count153
-\g__prg_map_int=\count154
-\c_log_iow=\count155
-\l_iow_line_count_int=\count156
-\l__iow_line_target_int=\count157
-\l__iow_one_indent_int=\count158
-\l__iow_indent_int=\count159
+L3 Module: l3quark 2016/08/19 v6685 L3 Quarks
+L3 Module: l3prg 2016/08/18 v6679 L3 Control structures
+\g__prg_map_int=\count153
+L3 Module: l3clist 2016/08/19 v6685 L3 Comma separated lists
+L3 Module: l3token 2016/09/01 v6695 L3 Experimental token manipulation
+L3 Module: l3prop 2016/08/19 v6685 L3 Property lists
+L3 Module: l3msg 2016/08/19 v6691 L3 Messages
+L3 Module: l3file 2016/08/19 v6685 L3 File and I/O operations
+\l_iow_line_count_int=\count154
+\l__iow_target_count_int=\count155
+\l__iow_current_line_int=\count156
+\l__iow_current_word_int=\count157
+\l__iow_current_indentation_int=\count158
+L3 Module: l3skip 2016/08/19 v6692 L3 Dimensions and skips
 \c_zero_dim=\dimen166
 \c_max_dim=\dimen167
 \l_tmpa_dim=\dimen168
@@ -1009,110 +1015,56 @@ Package: expl3 2017/07/19 L3 programming layer (code)
 \l_tmpb_muskip=\muskip15
 \g_tmpa_muskip=\muskip16
 \g_tmpb_muskip=\muskip17
-\l_keys_choice_int=\count160
-\c__fp_leading_shift_int=\count161
-\c__fp_middle_shift_int=\count162
-\c__fp_trailing_shift_int=\count163
-\c__fp_big_leading_shift_int=\count164
-\c__fp_big_middle_shift_int=\count165
-\c__fp_big_trailing_shift_int=\count166
-\c__fp_Bigg_leading_shift_int=\count167
-\c__fp_Bigg_middle_shift_int=\count168
-\c__fp_Bigg_trailing_shift_int=\count169
-\c__fp_rand_size_int=\count170
-\c__fp_rand_four_int=\count171
-\c__fp_rand_eight_int=\count172
-\l__sort_length_int=\count173
-\l__sort_min_int=\count174
-\l__sort_top_int=\count175
-\l__sort_max_int=\count176
-\l__sort_true_max_int=\count177
-\l__sort_block_int=\count178
-\l__sort_begin_int=\count179
-\l__sort_end_int=\count180
-\l__sort_A_int=\count181
-\l__sort_B_int=\count182
-\l__sort_C_int=\count183
-\l__tl_build_start_index_int=\count184
-\l__tl_build_index_int=\count185
-\l__tl_analysis_normal_int=\count186
-\l__tl_analysis_index_int=\count187
-\l__tl_analysis_nesting_int=\count188
-\l__tl_analysis_type_int=\count189
-\l__regex_internal_a_int=\count190
-\l__regex_internal_b_int=\count191
-\l__regex_internal_c_int=\count192
-\l__regex_balance_int=\count193
-\l__regex_group_level_int=\count194
-\l__regex_mode_int=\count195
-\c__regex_cs_in_class_mode_int=\count196
-\c__regex_cs_mode_int=\count197
-\l__regex_catcodes_int=\count198
-\l__regex_default_catcodes_int=\count199
-\c__regex_catcode_D_int=\count266
-\c__regex_catcode_S_int=\count267
-\c__regex_catcode_L_int=\count268
-\c__regex_catcode_O_int=\count269
-\c__regex_catcode_A_int=\count270
-\c__regex_all_catcodes_int=\count271
-\l__regex_show_lines_int=\count272
-\l__regex_min_state_int=\count273
-\l__regex_max_state_int=\count274
-\l__regex_left_state_int=\count275
-\l__regex_right_state_int=\count276
-\l__regex_capturing_group_int=\count277
-\l__regex_min_pos_int=\count278
-\l__regex_max_pos_int=\count279
-\l__regex_curr_pos_int=\count280
-\l__regex_start_pos_int=\count281
-\l__regex_success_pos_int=\count282
-\l__regex_curr_char_int=\count283
-\l__regex_curr_catcode_int=\count284
-\l__regex_last_char_int=\count285
-\l__regex_case_changed_char_int=\count286
-\l__regex_curr_state_int=\count287
-\l__regex_step_int=\count288
-\l__regex_min_active_int=\count289
-\l__regex_max_active_int=\count290
-\l__regex_replacement_csnames_int=\count291
-\l__regex_match_count_int=\count292
-\l__regex_min_submatch_int=\count293
-\l__regex_submatch_int=\count294
-\l__regex_zeroth_submatch_int=\count295
-\g__debug_trace_regex_int=\count296
+L3 Module: l3keys 2016/09/21 v6711 L3 Key-value interfaces
+\l_keys_choice_int=\count159
+L3 Module: l3fp 2016/08/19 v6685 L3 Floating points
+\c__fp_leading_shift_int=\count160
+\c__fp_middle_shift_int=\count161
+\c__fp_trailing_shift_int=\count162
+\c__fp_big_leading_shift_int=\count163
+\c__fp_big_middle_shift_int=\count164
+\c__fp_big_trailing_shift_int=\count165
+\c__fp_Bigg_leading_shift_int=\count166
+\c__fp_Bigg_middle_shift_int=\count167
+\c__fp_Bigg_trailing_shift_int=\count168
+L3 Module: l3box 2016/08/19 v6685 L3 Experimental boxes
 \c_empty_box=\box60
 \l_tmpa_box=\box61
 \l_tmpb_box=\box62
 \g_tmpa_box=\box63
 \g_tmpb_box=\box64
-\l__box_top_dim=\dimen172
-\l__box_bottom_dim=\dimen173
-\l__box_left_dim=\dimen174
-\l__box_right_dim=\dimen175
-\l__box_top_new_dim=\dimen176
-\l__box_bottom_new_dim=\dimen177
-\l__box_left_new_dim=\dimen178
-\l__box_right_new_dim=\dimen179
-\l__box_internal_box=\box65
-\l__coffin_internal_box=\box66
-\l__coffin_internal_dim=\dimen180
-\l__coffin_offset_x_dim=\dimen181
-\l__coffin_offset_y_dim=\dimen182
-\l__coffin_x_dim=\dimen183
-\l__coffin_y_dim=\dimen184
-\l__coffin_x_prime_dim=\dimen185
-\l__coffin_y_prime_dim=\dimen186
-\c_empty_coffin=\box67
-\l__coffin_aligned_coffin=\box68
-\l__coffin_aligned_internal_coffin=\box69
-\l_tmpa_coffin=\box70
-\l_tmpb_coffin=\box71
-\l__coffin_display_coffin=\box72
-\l__coffin_display_coord_coffin=\box73
-\l__coffin_display_pole_coffin=\box74
-\l__coffin_display_offset_dim=\dimen187
-\l__coffin_display_x_dim=\dimen188
-\l__coffin_display_y_dim=\dimen189
+L3 Module: l3coffins 2016/08/19 v6685 L3 Coffin code layer
+\l__coffin_internal_box=\box65
+\l__coffin_internal_dim=\dimen172
+\l__coffin_offset_x_dim=\dimen173
+\l__coffin_offset_y_dim=\dimen174
+\l__coffin_x_dim=\dimen175
+\l__coffin_y_dim=\dimen176
+\l__coffin_x_prime_dim=\dimen177
+\l__coffin_y_prime_dim=\dimen178
+\c_empty_coffin=\box66
+\l__coffin_aligned_coffin=\box67
+\l__coffin_aligned_internal_coffin=\box68
+\l_tmpa_coffin=\box69
+\l_tmpb_coffin=\box70
+\l__coffin_display_coffin=\box71
+\l__coffin_display_coord_coffin=\box72
+\l__coffin_display_pole_coffin=\box73
+\l__coffin_display_offset_dim=\dimen179
+\l__coffin_display_x_dim=\dimen180
+\l__coffin_display_y_dim=\dimen181
+L3 Module: l3color 2016/06/13 v6596 L3 Experimental color support
+L3 Module: l3sys 2015/09/25 v6087 L3 Experimental system/runtime functions
+L3 Module: l3candidates 2016/08/19 v6688 L3 Experimental additions to l3kernel
+\l__box_top_dim=\dimen182
+\l__box_bottom_dim=\dimen183
+\l__box_left_dim=\dimen184
+\l__box_right_dim=\dimen185
+\l__box_top_new_dim=\dimen186
+\l__box_bottom_new_dim=\dimen187
+\l__box_left_new_dim=\dimen188
+\l__box_right_new_dim=\dimen189
+\l__box_internal_box=\box74
 \l__coffin_bounding_shift_dim=\dimen190
 \l__coffin_left_corner_dim=\dimen191
 \l__coffin_right_corner_dim=\dimen192
@@ -1120,50 +1072,51 @@ Package: expl3 2017/07/19 L3 programming layer (code)
 \l__coffin_top_corner_dim=\dimen194
 \l__coffin_scaled_total_height_dim=\dimen195
 \l__coffin_scaled_width_dim=\dimen196
+L3 Module: l3luatex 2016/08/18 v6679 L3 Experimental LuaTeX-specific functions
 )
-(C:\Users\Kavka\AppData\Roaming\MiKTeX\2.9\tex\latex\l3kernel\l3pdfmode.def
-File: l3pdfmode.def 2017/03/18 v L3 Experimental driver: PDF mode
-\l__driver_color_stack_int=\count297
+(C:\Users\KavkaNTB\AppData\Roaming\MiKTeX\2.9\tex\latex\l3kernel\l3pdfmode.def
+File: l3pdfmode.def 2016/08/18 v6679 L3 Experimental driver: PDF mode
+\l__driver_color_stack_int=\count169
 \l__driver_tmp_box=\box75
 ))
-(C:\Users\Kavka\AppData\Roaming\MiKTeX\2.9\tex\latex\l3packages\xparse\xparse.s
-ty
-Package: xparse 2017/07/19 L3 Experimental document command parser
-\l__xparse_current_arg_int=\count298
-\g__xparse_grabber_int=\count299
-\l__xparse_m_args_int=\count300
-\l__xparse_mandatory_args_int=\count301
-\l__xparse_v_nesting_int=\count302
+(C:\Users\KavkaNTB\AppData\Roaming\MiKTeX\2.9\tex\latex\l3packages\xparse\xpars
+e.sty
+Package: xparse 2016/10/19 v6730 L3 Experimental document command parser
+\l__xparse_current_arg_int=\count170
+\l__xparse_m_args_int=\count171
+\l__xparse_mandatory_args_int=\count172
+\l__xparse_processor_int=\count173
+\l__xparse_v_nesting_int=\count174
 )
-Package: siunitx 2017/08/02 v2.7j A comprehensive (SI) units package
+Package: siunitx 2016/09/02 v2.6s A comprehensive (SI) units package
 
-(C:\Users\Kavka\AppData\Roaming\MiKTeX\2.9\tex\latex\l3packages\l3keys2e\l3keys
-2e.sty
-Package: l3keys2e 2017/07/19 LaTeX2e option processing using LaTeX3 keys
+(C:\Users\KavkaNTB\AppData\Roaming\MiKTeX\2.9\tex\latex\l3packages\l3keys2e\l3k
+eys2e.sty
+Package: l3keys2e 2016/10/19 v6730 LaTeX2e option processing using LaTeX3 keys
 )
 \l__siunitx_tmp_box=\box76
 \l__siunitx_tmp_dim=\dimen197
-\l__siunitx_tmp_int=\count303
-\l__siunitx_number_mantissa_length_int=\count304
-\l__siunitx_number_uncert_length_int=\count305
-\l__siunitx_round_int=\count306
-\l__siunitx_process_decimal_int=\count307
-\l__siunitx_process_uncertainty_int=\count308
-\l__siunitx_process_fixed_int=\count309
-\l__siunitx_process_integer_min_int=\count310
-\l__siunitx_process_precision_int=\count311
-\l__siunitx_group_min_int=\count312
+\l__siunitx_tmp_int=\count175
+\l__siunitx_number_mantissa_length_int=\count176
+\l__siunitx_number_uncert_length_int=\count177
+\l__siunitx_round_int=\count178
+\l__siunitx_process_decimal_int=\count179
+\l__siunitx_process_uncertainty_int=\count180
+\l__siunitx_process_fixed_int=\count181
+\l__siunitx_process_integer_min_int=\count182
+\l__siunitx_process_precision_int=\count183
+\l__siunitx_group_min_int=\count184
 \l__siunitx_angle_marker_box=\box77
 \l__siunitx_angle_unit_box=\box78
 \l__siunitx_angle_marker_dim=\dimen198
 \l__siunitx_angle_unit_dim=\dimen199
-\l__siunitx_unit_int=\count313
-\l__siunitx_unit_denominator_int=\count314
-\l__siunitx_unit_numerator_int=\count315
-\l__siunitx_unit_prefix_int=\count316
-\l__siunitx_unit_prefix_base_int=\count317
-\l__siunitx_unit_prefix_gram_int=\count318
-\l__siunitx_number_product_int=\count319
+\l__siunitx_unit_int=\count185
+\l__siunitx_unit_denominator_int=\count186
+\l__siunitx_unit_numerator_int=\count187
+\l__siunitx_unit_prefix_int=\count188
+\l__siunitx_unit_prefix_base_int=\count189
+\l__siunitx_unit_prefix_gram_int=\count190
+\l__siunitx_number_product_int=\count191
 \c__siunitx_one_fill_skip=\skip68
 \l__siunitx_table_unit_align_skip=\skip69
 \l__siunitx_table_exponent_dim=\dimen256
@@ -1184,126 +1137,128 @@ Package: l3keys2e 2017/07/19 LaTeX2e option processing using LaTeX3 keys
 .................................................
 . LaTeX info: "xparse/define-command"
 . 
-. Defining command \DeclareBinaryPrefix with sig. 'mmm' on line 7247.
+. Defining command \DeclareBinaryPrefix with sig. 'mmm' on line 7237.
 .................................................
 .................................................
 . LaTeX info: "xparse/define-command"
 . 
-. Defining command \DeclareSIPostPower with sig. 'mm' on line 7250.
+. Defining command \DeclareSIPostPower with sig. 'mm' on line 7240.
 .................................................
 .................................................
 . LaTeX info: "xparse/define-command"
 . 
-. Defining command \DeclareSIPrefix with sig. 'mmm' on line 7253.
+. Defining command \DeclareSIPrefix with sig. 'mmm' on line 7243.
 .................................................
 .................................................
 . LaTeX info: "xparse/define-command"
 . 
-. Defining command \DeclareSIPrePower with sig. 'mm' on line 7256.
+. Defining command \DeclareSIPrePower with sig. 'mm' on line 7246.
 .................................................
 .................................................
 . LaTeX info: "xparse/define-command"
 . 
-. Defining command \DeclareSIQualifier with sig. 'mm' on line 7259.
+. Defining command \DeclareSIQualifier with sig. 'mm' on line 7249.
 .................................................
 .................................................
 . LaTeX info: "xparse/define-command"
 . 
-. Defining command \DeclareSIUnit with sig. 'O{}mm' on line 7262.
+. Defining command \DeclareSIUnit with sig. 'O{}mm' on line 7252.
 .................................................
 .................................................
 . LaTeX info: "xparse/define-command"
 . 
-. Defining command \DeclareSIUnitWithOptions with sig. 'mmm' on line 7265.
+. Defining command \DeclareSIUnitWithOptions with sig. 'mmm' on line 7255.
 .................................................
 .................................................
 . LaTeX info: "xparse/define-command"
 . 
-. Defining command \ang with sig. 'o>{\SplitArgument {2}{;}}m' on line 7280.
+. Defining command \ang with sig. 'o>{\SplitArgument {2}{;}}m' on line 7270.
 .................................................
 .................................................
 . LaTeX info: "xparse/define-command"
 . 
-. Defining command \num with sig. 'om' on line 7289.
+. Defining command \num with sig. 'om' on line 7279.
 .................................................
 .................................................
 . LaTeX info: "xparse/define-command"
 . 
-. Defining command \numlist with sig. 'o>{\SplitList {;}}m' on line 7298.
+. Defining command \numlist with sig. 'o>{\SplitList {;}}m' on line 7288.
 .................................................
 .................................................
 . LaTeX info: "xparse/define-command"
 . 
-. Defining command \numrange with sig. 'omm' on line 7307.
+. Defining command \numrange with sig. 'omm' on line 7297.
 .................................................
 .................................................
 . LaTeX info: "xparse/define-command"
 . 
-. Defining command \SIlist with sig. 'o>{\SplitList {;}}mm' on line 7319.
+. Defining command \SIlist with sig. 'o>{\SplitList {;}}mm' on line 7309.
 .................................................
 .................................................
 . LaTeX info: "xparse/define-command"
 . 
-. Defining command \SIrange with sig. 'ommm' on line 7331.
+. Defining command \SIrange with sig. 'ommm' on line 7321.
 .................................................
 .................................................
 . LaTeX info: "xparse/define-command"
 . 
-. Defining command \SI with sig. 'omom' on line 7343.
+. Defining command \SI with sig. 'omom' on line 7333.
 .................................................
 .................................................
 . LaTeX info: "xparse/define-command"
 . 
-. Defining command \sisetup with sig. 'm' on line 7346.
+. Defining command \sisetup with sig. 'm' on line 7336.
 .................................................
 .................................................
 . LaTeX info: "xparse/define-command"
 . 
-. Defining command \tablenum with sig. 'om' on line 7361.
+. Defining command \tablenum with sig. 'om' on line 7351.
 .................................................
 .................................................
 . LaTeX info: "xparse/define-command"
 . 
-. Defining command \si with sig. 'om' on line 7373.
+. Defining command \si with sig. 'om' on line 7363.
 .................................................
 .................................................
 . LaTeX info: "xparse/define-command"
 . 
-. Defining command \numInBookmark with sig. 'om' on line 7420.
+. Defining command \__siunitx_bookmark_num:w with sig. 'om' on line 7410.
 .................................................
 .................................................
 . LaTeX info: "xparse/define-command"
 . 
-. Defining command \numrangeInBookmark with sig. 'omm' on line 7422.
+. Defining command \__siunitx_bookmark_numrange:w with sig. 'omm' on line
+. 7412.
 .................................................
 .................................................
 . LaTeX info: "xparse/define-command"
 . 
-. Defining command \SIInBookmark with sig. 'omom' on line 7424.
+. Defining command \__siunitx_bookmark_SI:w with sig. 'omom' on line 7414.
 .................................................
 .................................................
 . LaTeX info: "xparse/define-command"
 . 
-. Defining command \SIlistInBookmark with sig. 'omm' on line 7426.
+. Defining command \__siunitx_bookmark_SIlist:w with sig. 'omm' on line 7416.
 .................................................
 .................................................
 . LaTeX info: "xparse/define-command"
 . 
-. Defining command \SIrangeInBookmark with sig. 'ommm' on line 7428.
+. Defining command \__siunitx_bookmark_SIrange:w with sig. 'ommm' on line
+. 7418.
 .................................................
 .................................................
 . LaTeX info: "xparse/define-command"
 . 
-. Defining command \siInBookmark with sig. 'om' on line 7429.
+. Defining command \__siunitx_bookmark_si:w with sig. 'om' on line 7419.
 .................................................
 \g__file_internal_ior=\read1
 
-(C:\Users\Kavka\AppData\Roaming\MiKTeX\2.9\tex\latex\beamer\translator\translat
-or.sty
+(C:\Users\KavkaNTB\AppData\Roaming\MiKTeX\2.9\tex\latex\beamer\base\translator\
+translator.sty
 Package: translator 2010/06/12 ver 1.10
 
-(C:\Users\Kavka\AppData\Roaming\MiKTeX\2.9\tex\latex\beamer\translator\translat
-or-language-mappings.tex)))
+(C:\Users\KavkaNTB\AppData\Roaming\MiKTeX\2.9\tex\latex\beamer\base\translator\
+translator-language-mappings.tex)))
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\graphics\rotating.sty"
 Package: rotating 2016/05/22 v2.16c rotated objects in LaTeX
 
@@ -1315,13 +1270,13 @@ Package: graphicx 2014/10/28 v1.0g Enhanced LaTeX Graphics (DPC,SPQR)
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\ifthen.sty"
 Package: ifthen 2014/09/29 v1.1c Standard LaTeX ifthen package (DPC)
 )
-\c@r@tfl@t=\count320
+\c@r@tfl@t=\count192
 \rotFPtop=\skip72
 \rotFPbot=\skip73
 \rot@float@box=\box83
 \rot@mess@toks=\toks27
 )
-(C:\Users\Kavka\AppData\Roaming\MiKTeX\2.9\tex\latex\xcolor\xcolor.sty
+(C:\Users\KavkaNTB\AppData\Roaming\MiKTeX\2.9\tex\latex\xcolor\xcolor.sty
 Package: xcolor 2016/05/11 v2.12 LaTeX color extensions (UK)
 
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\00miktex\color.cfg"
@@ -1329,12 +1284,12 @@ File: color.cfg 2016/01/02 v1.6 sample color configuration
 )
 Package xcolor Info: Driver file: pdftex.def on input line 225.
 
-(C:\Users\Kavka\AppData\Roaming\MiKTeX\2.9\tex\latex\colortbl\colortbl.sty
+(C:\Users\KavkaNTB\AppData\Roaming\MiKTeX\2.9\tex\latex\colortbl\colortbl.sty
 Package: colortbl 2012/02/13 v1.0a Color table columns (DPC)
 \everycr=\toks28
 \minrowclearance=\skip74
 )
-\rownum=\count321
+\rownum=\count193
 Package xcolor Info: Model `cmy' substituted by `cmy0' on input line 1348.
 Package xcolor Info: Model `hsb' substituted by `rgb' on input line 1352.
 Package xcolor Info: Model `RGB' extended on input line 1364.
@@ -1344,8 +1299,7 @@ Package xcolor Info: Model `tHsb' substituted by `hsb' on input line 1368.
 Package xcolor Info: Model `HSB' substituted by `hsb' on input line 1369.
 Package xcolor Info: Model `Gray' substituted by `gray' on input line 1370.
 Package xcolor Info: Model `wave' substituted by `hsb' on input line 1371.
-)
-(C:\Users\Kavka\AppData\Roaming\MiKTeX\2.9\tex\latex\booktabs\booktabs.sty
+) (C:\Users\KavkaNTB\AppData\Roaming\MiKTeX\2.9\tex\latex\booktabs\booktabs.sty
 Package: booktabs 2005/04/14 v1.61803 publication quality tables
 \heavyrulewidth=\dimen267
 \lightrulewidth=\dimen268
@@ -1357,37 +1311,35 @@ Package: booktabs 2005/04/14 v1.61803 publication quality tables
 \cmidrulesep=\dimen274
 \cmidrulekern=\dimen275
 \defaultaddspace=\dimen276
-\@cmidla=\count322
-\@cmidlb=\count323
+\@cmidla=\count194
+\@cmidlb=\count195
 \@aboverulesep=\dimen277
 \@belowrulesep=\dimen278
-\@thisruleclass=\count324
-\@lastruleclass=\count325
+\@thisruleclass=\count196
+\@lastruleclass=\count197
 \@thisrulewidth=\dimen279
-)
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\tools\indentfirst.sty"
+) ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\tools\indentfirst.sty"
 Package: indentfirst 1995/11/23 v1.03 Indent first paragraph (DPC)
 )
-(C:\Users\Kavka\AppData\Roaming\MiKTeX\2.9\tex\latex\fancyhdr\fancyhdr.sty
-Package: fancyhdr 2017/06/30 v3.9a Extensive control of page headers and footer
-s
-\f@nch@headwidth=\skip75
-\f@nch@O@elh=\skip76
-\f@nch@O@erh=\skip77
-\f@nch@O@olh=\skip78
-\f@nch@O@orh=\skip79
-\f@nch@O@elf=\skip80
-\f@nch@O@erf=\skip81
-\f@nch@O@olf=\skip82
-\f@nch@O@orf=\skip83
+(C:\Users\KavkaNTB\AppData\Roaming\MiKTeX\2.9\tex\latex\fancyhdr\fancyhdr.sty
+Package: fancyhdr 2016/09/06 3.8 Extensive control of page headers and footers
+\fancy@headwidth=\skip75
+\f@ncyO@elh=\skip76
+\f@ncyO@erh=\skip77
+\f@ncyO@olh=\skip78
+\f@ncyO@orh=\skip79
+\f@ncyO@elf=\skip80
+\f@ncyO@erf=\skip81
+\f@ncyO@olf=\skip82
+\f@ncyO@orf=\skip83
 )
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\tools\hhline.sty"
 Package: hhline 2014/10/28 v2.03 Table rule package (DPC)
 )
-(C:\Users\Kavka\AppData\Roaming\MiKTeX\2.9\tex\latex\placeins\placeins.sty
+(C:\Users\KavkaNTB\AppData\Roaming\MiKTeX\2.9\tex\latex\placeins\placeins.sty
 Package: placeins 2005/04/18  v 2.2
 )
-(C:\Users\Kavka\AppData\Roaming\MiKTeX\2.9\tex\latex\titlesec\titlesec.sty
+(C:\Users\KavkaNTB\AppData\Roaming\MiKTeX\2.9\tex\latex\titlesec\titlesec.sty
 Package: titlesec 2016/03/21 v2.10.2 Sectioning titles
 \ttl@box=\box84
 \beforetitleunit=\skip84
@@ -1399,47 +1351,50 @@ Package: titlesec 2016/03/21 v2.10.2 Sectioning titles
 \titlewidthlast=\dimen283
 \titlewidthfirst=\dimen284
 )
-(C:\Users\Kavka\AppData\Roaming\MiKTeX\2.9\tex\latex\setspace\setspace.sty
+(C:\Users\KavkaNTB\AppData\Roaming\MiKTeX\2.9\tex\latex\setspace\setspace.sty
 Package: setspace 2011/12/19 v6.7a set line spacing
 )
-(C:\Users\Kavka\AppData\Roaming\MiKTeX\2.9\tex\latex\pgf\frontendlayer\tikz.sty
-(C:\Users\Kavka\AppData\Roaming\MiKTeX\2.9\tex\latex\pgf\basiclayer\pgf.sty
-(C:\Users\Kavka\AppData\Roaming\MiKTeX\2.9\tex\latex\pgf\utilities\pgfrcs.sty
-(C:\Users\Kavka\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\utilities\pgfutil-co
-mmon.tex
+(C:\Users\KavkaNTB\AppData\Roaming\MiKTeX\2.9\tex\latex\pgf\frontendlayer\tikz.
+sty
+(C:\Users\KavkaNTB\AppData\Roaming\MiKTeX\2.9\tex\latex\pgf\basiclayer\pgf.sty
+(C:\Users\KavkaNTB\AppData\Roaming\MiKTeX\2.9\tex\latex\pgf\utilities\pgfrcs.st
+y
+(C:\Users\KavkaNTB\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\utilities\pgfutil
+-common.tex
 \pgfutil@everybye=\toks30
 \pgfutil@tempdima=\dimen285
 \pgfutil@tempdimb=\dimen286
 
-(C:\Users\Kavka\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\utilities\pgfutil-co
-mmon-lists.tex))
-(C:\Users\Kavka\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\utilities\pgfutil-la
-tex.def
+(C:\Users\KavkaNTB\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\utilities\pgfutil
+-common-lists.tex))
+(C:\Users\KavkaNTB\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\utilities\pgfutil
+-latex.def
 \pgfutil@abb=\box85
- (C:\Users\Kavka\AppData\Roaming\MiKTeX\2.9\tex\latex\ms\everyshi.sty
+
+(C:\Users\KavkaNTB\AppData\Roaming\MiKTeX\2.9\tex\latex\ms\everyshi.sty
 Package: everyshi 2001/05/15 v3.00 EveryShipout Package (MS)
 ))
-(C:\Users\Kavka\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\utilities\pgfrcs.cod
-e.tex
+(C:\Users\KavkaNTB\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\utilities\pgfrcs.
+code.tex
 Package: pgfrcs 2015/08/07 v3.0.1a (rcs-revision 1.31)
 ))
 Package: pgf 2015/08/07 v3.0.1a (rcs-revision 1.15)
 
-(C:\Users\Kavka\AppData\Roaming\MiKTeX\2.9\tex\latex\pgf\basiclayer\pgfcore.sty
-
-(C:\Users\Kavka\AppData\Roaming\MiKTeX\2.9\tex\latex\pgf\systemlayer\pgfsys.sty
-
-(C:\Users\Kavka\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\systemlayer\pgfsys.c
-ode.tex
+(C:\Users\KavkaNTB\AppData\Roaming\MiKTeX\2.9\tex\latex\pgf\basiclayer\pgfcore.
+sty
+(C:\Users\KavkaNTB\AppData\Roaming\MiKTeX\2.9\tex\latex\pgf\systemlayer\pgfsys.
+sty
+(C:\Users\KavkaNTB\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\systemlayer\pgfsy
+s.code.tex
 Package: pgfsys 2014/07/09 v3.0.1a (rcs-revision 1.48)
 
-(C:\Users\Kavka\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\utilities\pgfkeys.co
-de.tex
+(C:\Users\KavkaNTB\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\utilities\pgfkeys
+.code.tex
 \pgfkeys@pathtoks=\toks31
 \pgfkeys@temptoks=\toks32
 
-(C:\Users\Kavka\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\utilities\pgfkeysfil
-tered.code.tex
+(C:\Users\KavkaNTB\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\utilities\pgfkeys
+filtered.code.tex
 \pgfkeys@tmptoks=\toks33
 ))
 \pgf@x=\dimen287
@@ -1452,80 +1407,81 @@ tered.code.tex
 \pgf@yc=\dimen294
 \w@pgf@writea=\write4
 \r@pgf@reada=\read2
-\c@pgf@counta=\count326
-\c@pgf@countb=\count327
-\c@pgf@countc=\count328
-\c@pgf@countd=\count329
+\c@pgf@counta=\count198
+\c@pgf@countb=\count199
+\c@pgf@countc=\count266
+\c@pgf@countd=\count267
 \t@pgf@toka=\toks34
 \t@pgf@tokb=\toks35
 \t@pgf@tokc=\toks36
 
-(C:\Users\Kavka\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\systemlayer\pgf.cfg
+(C:\Users\KavkaNTB\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\systemlayer\pgf.c
+fg
 File: pgf.cfg 2008/05/14  (rcs-revision 1.7)
 )
 Driver file for pgf: pgfsys-pdftex.def
 
-(C:\Users\Kavka\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\systemlayer\pgfsys-p
-dftex.def
+(C:\Users\KavkaNTB\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\systemlayer\pgfsy
+s-pdftex.def
 File: pgfsys-pdftex.def 2014/10/11  (rcs-revision 1.35)
 
-(C:\Users\Kavka\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\systemlayer\pgfsys-c
-ommon-pdf.def
+(C:\Users\KavkaNTB\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\systemlayer\pgfsy
+s-common-pdf.def
 File: pgfsys-common-pdf.def 2013/10/10  (rcs-revision 1.13)
 )))
-(C:\Users\Kavka\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\systemlayer\pgfsysso
-ftpath.code.tex
+(C:\Users\KavkaNTB\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\systemlayer\pgfsy
+ssoftpath.code.tex
 File: pgfsyssoftpath.code.tex 2013/09/09  (rcs-revision 1.9)
-\pgfsyssoftpath@smallbuffer@items=\count330
-\pgfsyssoftpath@bigbuffer@items=\count331
+\pgfsyssoftpath@smallbuffer@items=\count268
+\pgfsyssoftpath@bigbuffer@items=\count269
 )
-(C:\Users\Kavka\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\systemlayer\pgfsyspr
-otocol.code.tex
+(C:\Users\KavkaNTB\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\systemlayer\pgfsy
+sprotocol.code.tex
 File: pgfsysprotocol.code.tex 2006/10/16  (rcs-revision 1.4)
 ))
-(C:\Users\Kavka\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\basiclayer\pgfcore.c
-ode.tex
+(C:\Users\KavkaNTB\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\basiclayer\pgfcor
+e.code.tex
 Package: pgfcore 2010/04/11 v3.0.1a (rcs-revision 1.7)
 
-(C:\Users\Kavka\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\math\pgfmath.code.te
-x
-(C:\Users\Kavka\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\math\pgfmathcalc.cod
-e.tex
-(C:\Users\Kavka\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\math\pgfmathutil.cod
-e.tex)
-(C:\Users\Kavka\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\math\pgfmathparser.c
-ode.tex
+(C:\Users\KavkaNTB\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\math\pgfmath.code
+.tex
+(C:\Users\KavkaNTB\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\math\pgfmathcalc.
+code.tex
+(C:\Users\KavkaNTB\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\math\pgfmathutil.
+code.tex)
+(C:\Users\KavkaNTB\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\math\pgfmathparse
+r.code.tex
 \pgfmath@dimen=\dimen295
-\pgfmath@count=\count332
+\pgfmath@count=\count270
 \pgfmath@box=\box86
 \pgfmath@toks=\toks37
 \pgfmath@stack@operand=\toks38
 \pgfmath@stack@operation=\toks39
 )
-(C:\Users\Kavka\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\math\pgfmathfunction
-s.code.tex
-(C:\Users\Kavka\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\math\pgfmathfunction
-s.basic.code.tex)
-(C:\Users\Kavka\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\math\pgfmathfunction
-s.trigonometric.code.tex)
-(C:\Users\Kavka\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\math\pgfmathfunction
-s.random.code.tex)
-(C:\Users\Kavka\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\math\pgfmathfunction
-s.comparison.code.tex)
-(C:\Users\Kavka\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\math\pgfmathfunction
-s.base.code.tex)
-(C:\Users\Kavka\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\math\pgfmathfunction
-s.round.code.tex)
-(C:\Users\Kavka\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\math\pgfmathfunction
-s.misc.code.tex)
-(C:\Users\Kavka\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\math\pgfmathfunction
-s.integerarithmetics.code.tex)))
-(C:\Users\Kavka\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\math\pgfmathfloat.co
-de.tex
-\c@pgfmathroundto@lastzeros=\count333
+(C:\Users\KavkaNTB\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\math\pgfmathfunct
+ions.code.tex
+(C:\Users\KavkaNTB\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\math\pgfmathfunct
+ions.basic.code.tex)
+(C:\Users\KavkaNTB\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\math\pgfmathfunct
+ions.trigonometric.code.tex)
+(C:\Users\KavkaNTB\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\math\pgfmathfunct
+ions.random.code.tex)
+(C:\Users\KavkaNTB\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\math\pgfmathfunct
+ions.comparison.code.tex)
+(C:\Users\KavkaNTB\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\math\pgfmathfunct
+ions.base.code.tex)
+(C:\Users\KavkaNTB\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\math\pgfmathfunct
+ions.round.code.tex)
+(C:\Users\KavkaNTB\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\math\pgfmathfunct
+ions.misc.code.tex)
+(C:\Users\KavkaNTB\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\math\pgfmathfunct
+ions.integerarithmetics.code.tex)))
+(C:\Users\KavkaNTB\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\math\pgfmathfloat
+.code.tex
+\c@pgfmathroundto@lastzeros=\count271
 ))
-(C:\Users\Kavka\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\basiclayer\pgfcorepo
-ints.code.tex
+(C:\Users\KavkaNTB\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\basiclayer\pgfcor
+epoints.code.tex
 File: pgfcorepoints.code.tex 2013/10/07  (rcs-revision 1.27)
 \pgf@picminx=\dimen296
 \pgf@picmaxx=\dimen297
@@ -1542,127 +1498,129 @@ File: pgfcorepoints.code.tex 2013/10/07  (rcs-revision 1.27)
 \pgf@zx=\dimen308
 \pgf@zy=\dimen309
 )
-(C:\Users\Kavka\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\basiclayer\pgfcorepa
-thconstruct.code.tex
+(C:\Users\KavkaNTB\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\basiclayer\pgfcor
+epathconstruct.code.tex
 File: pgfcorepathconstruct.code.tex 2013/10/07  (rcs-revision 1.29)
 \pgf@path@lastx=\dimen310
 \pgf@path@lasty=\dimen311
 )
-(C:\Users\Kavka\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\basiclayer\pgfcorepa
-thusage.code.tex
+(C:\Users\KavkaNTB\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\basiclayer\pgfcor
+epathusage.code.tex
 File: pgfcorepathusage.code.tex 2014/11/02  (rcs-revision 1.24)
 \pgf@shorten@end@additional=\dimen312
 \pgf@shorten@start@additional=\dimen313
 )
-(C:\Users\Kavka\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\basiclayer\pgfcoresc
-opes.code.tex
+(C:\Users\KavkaNTB\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\basiclayer\pgfcor
+escopes.code.tex
 File: pgfcorescopes.code.tex 2015/05/08  (rcs-revision 1.46)
 \pgfpic=\box87
 \pgf@hbox=\box88
 \pgf@layerbox@main=\box89
-\pgf@picture@serial@count=\count334
+\pgf@picture@serial@count=\count272
 )
-(C:\Users\Kavka\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\basiclayer\pgfcoregr
-aphicstate.code.tex
+(C:\Users\KavkaNTB\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\basiclayer\pgfcor
+egraphicstate.code.tex
 File: pgfcoregraphicstate.code.tex 2014/11/02  (rcs-revision 1.12)
 \pgflinewidth=\dimen314
 )
-(C:\Users\Kavka\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\basiclayer\pgfcoretr
-ansformations.code.tex
+(C:\Users\KavkaNTB\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\basiclayer\pgfcor
+etransformations.code.tex
 File: pgfcoretransformations.code.tex 2015/08/07  (rcs-revision 1.20)
 \pgf@pt@x=\dimen315
 \pgf@pt@y=\dimen316
 \pgf@pt@temp=\dimen317
 )
-(C:\Users\Kavka\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\basiclayer\pgfcorequ
-ick.code.tex
+(C:\Users\KavkaNTB\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\basiclayer\pgfcor
+equick.code.tex
 File: pgfcorequick.code.tex 2008/10/09  (rcs-revision 1.3)
 )
-(C:\Users\Kavka\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\basiclayer\pgfcoreob
-jects.code.tex
+(C:\Users\KavkaNTB\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\basiclayer\pgfcor
+eobjects.code.tex
 File: pgfcoreobjects.code.tex 2006/10/11  (rcs-revision 1.2)
 )
-(C:\Users\Kavka\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\basiclayer\pgfcorepa
-thprocessing.code.tex
+(C:\Users\KavkaNTB\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\basiclayer\pgfcor
+epathprocessing.code.tex
 File: pgfcorepathprocessing.code.tex 2013/09/09  (rcs-revision 1.9)
 )
-(C:\Users\Kavka\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\basiclayer\pgfcorear
-rows.code.tex
+(C:\Users\KavkaNTB\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\basiclayer\pgfcor
+earrows.code.tex
 File: pgfcorearrows.code.tex 2015/05/14  (rcs-revision 1.43)
 \pgfarrowsep=\dimen318
 )
-(C:\Users\Kavka\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\basiclayer\pgfcoresh
-ade.code.tex
+(C:\Users\KavkaNTB\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\basiclayer\pgfcor
+eshade.code.tex
 File: pgfcoreshade.code.tex 2013/07/15  (rcs-revision 1.15)
 \pgf@max=\dimen319
-\pgf@sys@shading@range@num=\count335
+\pgf@sys@shading@range@num=\count273
 )
-(C:\Users\Kavka\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\basiclayer\pgfcoreim
-age.code.tex
+(C:\Users\KavkaNTB\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\basiclayer\pgfcor
+eimage.code.tex
 File: pgfcoreimage.code.tex 2013/07/15  (rcs-revision 1.18)
 
-(C:\Users\Kavka\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\basiclayer\pgfcoreex
-ternal.code.tex
+(C:\Users\KavkaNTB\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\basiclayer\pgfcor
+eexternal.code.tex
 File: pgfcoreexternal.code.tex 2014/07/09  (rcs-revision 1.21)
 \pgfexternal@startupbox=\box90
 ))
-(C:\Users\Kavka\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\basiclayer\pgfcorela
-yers.code.tex
+(C:\Users\KavkaNTB\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\basiclayer\pgfcor
+elayers.code.tex
 File: pgfcorelayers.code.tex 2013/07/18  (rcs-revision 1.7)
 )
-(C:\Users\Kavka\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\basiclayer\pgfcoretr
-ansparency.code.tex
+(C:\Users\KavkaNTB\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\basiclayer\pgfcor
+etransparency.code.tex
 File: pgfcoretransparency.code.tex 2013/09/30  (rcs-revision 1.5)
 )
-(C:\Users\Kavka\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\basiclayer\pgfcorepa
-tterns.code.tex
+(C:\Users\KavkaNTB\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\basiclayer\pgfcor
+epatterns.code.tex
 File: pgfcorepatterns.code.tex 2013/11/07  (rcs-revision 1.5)
 )))
-(C:\Users\Kavka\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\modules\pgfmodulesha
-pes.code.tex
+(C:\Users\KavkaNTB\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\modules\pgfmodule
+shapes.code.tex
 File: pgfmoduleshapes.code.tex 2014/03/21  (rcs-revision 1.35)
 \pgfnodeparttextbox=\box91
 )
-(C:\Users\Kavka\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\modules\pgfmoduleplo
-t.code.tex
+(C:\Users\KavkaNTB\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\modules\pgfmodule
+plot.code.tex
 File: pgfmoduleplot.code.tex 2015/08/03  (rcs-revision 1.13)
 )
-(C:\Users\Kavka\AppData\Roaming\MiKTeX\2.9\tex\latex\pgf\compatibility\pgfcomp-
-version-0-65.sty
+(C:\Users\KavkaNTB\AppData\Roaming\MiKTeX\2.9\tex\latex\pgf\compatibility\pgfco
+mp-version-0-65.sty
 Package: pgfcomp-version-0-65 2007/07/03 v3.0.1a (rcs-revision 1.7)
 \pgf@nodesepstart=\dimen320
 \pgf@nodesepend=\dimen321
 )
-(C:\Users\Kavka\AppData\Roaming\MiKTeX\2.9\tex\latex\pgf\compatibility\pgfcomp-
-version-1-18.sty
+(C:\Users\KavkaNTB\AppData\Roaming\MiKTeX\2.9\tex\latex\pgf\compatibility\pgfco
+mp-version-1-18.sty
 Package: pgfcomp-version-1-18 2007/07/23 v3.0.1a (rcs-revision 1.1)
 ))
-(C:\Users\Kavka\AppData\Roaming\MiKTeX\2.9\tex\latex\pgf\utilities\pgffor.sty
-(C:\Users\Kavka\AppData\Roaming\MiKTeX\2.9\tex\latex\pgf\utilities\pgfkeys.sty
-(C:\Users\Kavka\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\utilities\pgfkeys.co
-de.tex))
-(C:\Users\Kavka\AppData\Roaming\MiKTeX\2.9\tex\latex\pgf\math\pgfmath.sty
-(C:\Users\Kavka\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\math\pgfmath.code.te
-x))
-(C:\Users\Kavka\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\utilities\pgffor.cod
-e.tex
+(C:\Users\KavkaNTB\AppData\Roaming\MiKTeX\2.9\tex\latex\pgf\utilities\pgffor.st
+y
+(C:\Users\KavkaNTB\AppData\Roaming\MiKTeX\2.9\tex\latex\pgf\utilities\pgfkeys.s
+ty
+(C:\Users\KavkaNTB\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\utilities\pgfkeys
+.code.tex))
+(C:\Users\KavkaNTB\AppData\Roaming\MiKTeX\2.9\tex\latex\pgf\math\pgfmath.sty
+(C:\Users\KavkaNTB\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\math\pgfmath.code
+.tex))
+(C:\Users\KavkaNTB\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\utilities\pgffor.
+code.tex
 Package: pgffor 2013/12/13 v3.0.1a (rcs-revision 1.25)
 
-(C:\Users\Kavka\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\math\pgfmath.code.te
-x)
+(C:\Users\KavkaNTB\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\math\pgfmath.code
+.tex)
 \pgffor@iter=\dimen322
 \pgffor@skip=\dimen323
 \pgffor@stack=\toks40
 \pgffor@toks=\toks41
 ))
-(C:\Users\Kavka\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\frontendlayer\tikz\t
-ikz.code.tex
+(C:\Users\KavkaNTB\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\frontendlayer\tik
+z\tikz.code.tex
 Package: tikz 2015/08/07 v3.0.1a (rcs-revision 1.151)
 
-(C:\Users\Kavka\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\libraries\pgflibrary
-plothandlers.code.tex
+(C:\Users\KavkaNTB\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\libraries\pgflibr
+aryplothandlers.code.tex
 File: pgflibraryplothandlers.code.tex 2013/08/31 v3.0.1a (rcs-revision 1.20)
-\pgf@plot@mark@count=\count336
+\pgf@plot@mark@count=\count274
 \pgfplotmarksize=\dimen324
 )
 \tikz@lastx=\dimen325
@@ -1675,47 +1633,47 @@ File: pgflibraryplothandlers.code.tex 2013/08/31 v3.0.1a (rcs-revision 1.20)
 \tikz@figbox@bg=\box93
 \tikz@tempbox=\box94
 \tikz@tempbox@bg=\box95
-\tikztreelevel=\count337
-\tikznumberofchildren=\count338
-\tikznumberofcurrentchild=\count339
-\tikz@fig@count=\count340
+\tikztreelevel=\count275
+\tikznumberofchildren=\count276
+\tikznumberofcurrentchild=\count277
+\tikz@fig@count=\count278
 
-(C:\Users\Kavka\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\modules\pgfmodulemat
-rix.code.tex
+(C:\Users\KavkaNTB\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\modules\pgfmodule
+matrix.code.tex
 File: pgfmodulematrix.code.tex 2013/09/17  (rcs-revision 1.8)
-\pgfmatrixcurrentrow=\count341
-\pgfmatrixcurrentcolumn=\count342
-\pgf@matrix@numberofcolumns=\count343
+\pgfmatrixcurrentrow=\count279
+\pgfmatrixcurrentcolumn=\count280
+\pgf@matrix@numberofcolumns=\count281
 )
-\tikz@expandcount=\count344
+\tikz@expandcount=\count282
 
-(C:\Users\Kavka\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\frontendlayer\tikz\l
-ibraries\tikzlibrarytopaths.code.tex
+(C:\Users\KavkaNTB\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\frontendlayer\tik
+z\libraries\tikzlibrarytopaths.code.tex
 File: tikzlibrarytopaths.code.tex 2008/06/17 v3.0.1a (rcs-revision 1.2)
 )))
-(C:\Users\Kavka\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\frontendlayer\tikz\l
-ibraries\tikzlibraryshapes.geometric.code.tex
+(C:\Users\KavkaNTB\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\frontendlayer\tik
+z\libraries\tikzlibraryshapes.geometric.code.tex
 File: tikzlibraryshapes.geometric.code.tex 2008/01/09 v3.0.1a (rcs-revision 1.1
 )
 
-(C:\Users\Kavka\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\libraries\shapes\pgf
-libraryshapes.geometric.code.tex
+(C:\Users\KavkaNTB\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\libraries\shapes\
+pgflibraryshapes.geometric.code.tex
 File: pgflibraryshapes.geometric.code.tex 2008/06/26 v3.0.1a (rcs-revision 1.1)
 
 ))
-(C:\Users\Kavka\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\frontendlayer\tikz\l
-ibraries\tikzlibraryarrows.code.tex
+(C:\Users\KavkaNTB\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\frontendlayer\tik
+z\libraries\tikzlibraryarrows.code.tex
 File: tikzlibraryarrows.code.tex 2008/01/09 v3.0.1a (rcs-revision 1.1)
 
-(C:\Users\Kavka\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\libraries\pgflibrary
-arrows.code.tex
+(C:\Users\KavkaNTB\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\libraries\pgflibr
+aryarrows.code.tex
 File: pgflibraryarrows.code.tex 2013/09/23 v3.0.1a (rcs-revision 1.16)
 \arrowsize=\dimen331
 ))
-(C:\Users\Kavka\AppData\Roaming\MiKTeX\2.9\tex\latex\dirtree\dirtree.sty
+(C:\Users\KavkaNTB\AppData\Roaming\MiKTeX\2.9\tex\latex\dirtree\dirtree.sty
 Package: dirtree 2012/12/11 v0.32 package wrapper for dirtree
 
-(C:\Users\Kavka\AppData\Roaming\MiKTeX\2.9\tex\generic\dirtree\dirtree.tex
+(C:\Users\KavkaNTB\AppData\Roaming\MiKTeX\2.9\tex\generic\dirtree\dirtree.tex
 `dirtree' v0.32, 2012/12/11 (jcc)
 \DT@offset=\dimen332
 \DT@width=\dimen333
@@ -1724,46 +1682,16 @@ Package: dirtree 2012/12/11 v0.32 package wrapper for dirtree
 \DT@rulewidth=\dimen336
 \DT@dotwidth=\dimen337
 \DTbaselineskip=\dimen338
-\DT@counti=\count345
-\DT@countii=\count346
-\DT@countiii=\count347
-\DT@countiv=\count348
+\DT@counti=\count283
+\DT@countii=\count284
+\DT@countiii=\count285
+\DT@countiv=\count286
 \DT@indent=\dimen339
 \DT@parskip=\dimen340
 \DT@baselineskip=\dimen341
 )
 File: dirtree.tex 2012/12/11 v0.32 `dirtree' (jcc)
 )) (mainCZ.aux
-! Undefined control sequence.
-l.21 \reset@newl@bel
-                    
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-! Undefined control sequence.
-l.147 \undonewlabel
-                   {acro:cour}
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-
-! LaTeX Error: Missing \begin{document}.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.147 \undonewlabel{a
-                     cro:cour}
-You're in trouble here.  Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
 
 LaTeX Warning: Label `tab:addlabel' multiply defined.
 
@@ -1805,33 +1733,18 @@ LaTeX Font Info:    ... okay on input line 5.
 LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 5.
 LaTeX Font Info:    ... okay on input line 5.
 
-(C:\Users\Kavka\AppData\Roaming\MiKTeX\2.9\tex\context\base\supp-pdf.mkii
-Overfull \hbox (797.20335pt too wide) in paragraph at lines 147--13
-[]\IL2/cmr/m/n/10.95 acro:cour                                                 
-                                                                               
-                                                                               
-                                                                               
-                                                                               
-                                                                               
-                                  [][][][]
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 147--13
-
- []
-
+(C:\Users\KavkaNTB\AppData\Roaming\MiKTeX\2.9\tex\context\base\supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count349
+\scratchcounter=\count287
 \scratchdimen=\dimen342
 \scratchbox=\box96
-\nofMPsegments=\count350
-\nofMParguments=\count351
+\nofMPsegments=\count288
+\nofMParguments=\count289
 \everyMPshowfont=\toks42
-\MPscratchCnt=\count352
+\MPscratchCnt=\count290
 \MPscratchDim=\dimen343
-\MPnumerator=\count353
-\makeMPintoPDFobject=\count354
+\MPnumerator=\count291
+\makeMPintoPDFobject=\count292
 \everyMPtoPDFconversion=\toks43
 ) ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\oberdiek\epstopdf-base.sty"
 Package: epstopdf-base 2016/05/15 v2.6 Base part for package epstopdf
@@ -1888,7 +1801,7 @@ Package: nameref 2016/05/21 v2.44 Cross-referencing by name of section
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\oberdiek\gettitlestring.sty"
 Package: gettitlestring 2016/05/16 v1.5 Cleanup title references (HO)
 )
-\c@section@level=\count355
+\c@section@level=\count293
 )
 LaTeX Info: Redefining \ref on input line 5.
 LaTeX Info: Redefining \pageref on input line 5.
@@ -1902,28 +1815,28 @@ Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: listings package is loaded.
 Package caption Info: longtable package is loaded.
 
-(C:\Users\Kavka\AppData\Roaming\MiKTeX\2.9\tex\latex\caption\ltcaption.sty
+(C:\Users\KavkaNTB\AppData\Roaming\MiKTeX\2.9\tex\latex\caption\ltcaption.sty
 Package: ltcaption 2013/06/09 v1.4-94 longtable captions (AR)
 )
 Package caption Info: rotating package is loaded.
 Package caption Info: End \AtBeginDocument code.
-\c@lstlisting=\count356
+\c@lstlisting=\count294
 
-(C:\Users\Kavka\AppData\Roaming\MiKTeX\2.9\tex\latex\beamer\translator\dicts\tr
-anslator-basic-dictionary\translator-basic-dictionary-English.dict
+(C:\Users\KavkaNTB\AppData\Roaming\MiKTeX\2.9\tex\latex\beamer\base\translator\
+dicts\translator-basic-dictionary\translator-basic-dictionary-English.dict
 Dictionary: translator-basic-dictionary, Language: English 
 )
-(C:\Users\Kavka\AppData\Roaming\MiKTeX\2.9\tex\latex\siunitx\siunitx-abbreviati
-ons.cfg
-File: siunitx-abbreviations.cfg 2017/08/02 v2.7j siunitx: Abbreviated units
+(C:\Users\KavkaNTB\AppData\Roaming\MiKTeX\2.9\tex\latex\siunitx\siunitx-abbrevi
+ations.cfg
+File: siunitx-abbreviations.cfg 2016/09/02 v2.6s siunitx: Abbreviated units
 ) ABD: EveryShipout initializing macros
-\c__siunitx_mathsf_int=\count357
-\c__siunitx_mathtt_int=\count358
+\c__siunitx_mathsf_int=\count295
+\c__siunitx_mathtt_int=\count296
  [1
 
-{C:/Users/Kavka/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map}] [2
 
-] (mainCZ.toc)
+{C:/Users/KavkaNTB/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map}] (mainCZ.
+toc)
 \tf@toc=\write6
 \openout6 = `mainCZ.toc'.
 
@@ -1956,18 +1869,15 @@ same identifier (name{page.1}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
 l.3 
-     [1]))pdfTeX warning (ext4): destination with the same identifier (name{pag
-e.2}) has been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.38 \newpage
-              [2] (1_text/3_mat_a_met/CZmainmatmet.tex
+     [1])) [2] (1_text/3_mat_a_met/CZmainmatmet.tex
 (1_text/3_mat_a_met/CZsmoderp_hist.tex [3]
 Underfull \hbox (badness 10000) in paragraph at lines 24--25
 
  []
 
-Package acronym Info: Label `acro:cour' overridden on input line 36.
+Package acronym Info: Label `acro:cour' newly defined as it shall be overridden
+
+although it is yet undefined on input line 36.
 
 Package acronym Warning: Acronym `cour' is not defined on input line 36.
 
@@ -2021,7 +1931,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 8--8
 (tab/TAparametry_Neuman.tex)) (1_text/3_mat_a_met/CZsmoderp_rovnice_zaklad.tex
 [9]
 
-Package natbib Warning: Citation `Nevim' on page 10 undefined on input line 119
+Package natbib Warning: Citation `Nevim' on page 10 undefined on input line 122
 .
 
 [10] [11]
@@ -2044,7 +1954,7 @@ Package hyperref Warning: Composite letter `\textasciicaron+e'
 (hyperref)                not defined in PD1 encoding,
 (hyperref)                removing `\textasciicaron' on input line 314.
 
-<./img/rill_schema.png, id=469, 380.1402pt x 102.82988pt>
+<./img/rill_schema.png, id=465, 380.1402pt x 102.82988pt>
 File: ./img/rill_schema.png Graphic file (type png)
 
 <use ./img/rill_schema.png>
@@ -2061,60 +1971,62 @@ Package hyperref Warning: Composite letter `\textasciicaron+c'
 
 LaTeX Font Info:    Try loading font information for IL2+cmtt on input line 42.
 
-(C:\Users\Kavka\AppData\Roaming\MiKTeX\2.9\tex\cslatex\base\il2cmtt.fd
+(C:\Users\KavkaNTB\AppData\Roaming\MiKTeX\2.9\tex\cslatex\base\il2cmtt.fd
 File: il2cmtt.fd 1997/08/20 CSLaTeX font definitions
 )
-(1_text/3_mat_a_met/CZsmoderp_vstupy.tex [15]
-<./img/dmtbk.png, id=503, 919.95459pt x 550.42848pt>
+(1_text/3_mat_a_met/CZsmoderp_vstupy.tex [15] [16]
+<./img/dmtbk.png, id=505, 919.95459pt x 550.42848pt>
 File: ./img/dmtbk.png Graphic file (type png)
  <use ./img/dmtbk.png>
 Package pdftex.def Info: ./img/dmtbk.png used on input line 38.
 (pdftex.def)             Requested size: 213.39568pt x 127.67934pt.
 
 
-Package natbib Warning: Citation `kavka' on page 16 undefined on input line 46.
+Package natbib Warning: Citation `kavka' on page 17 undefined on input line 46.
 
 
-[16] <./img/pudnityp.png, id=509, 1072.14671pt x 629.42128pt>
+<./img/pudnityp.png, id=507, 1072.14671pt x 629.42128pt>
 File: ./img/pudnityp.png Graphic file (type png)
 
 <use ./img/pudnityp.png>
 Package pdftex.def Info: ./img/pudnityp.png used on input line 61.
 (pdftex.def)             Requested size: 213.39568pt x 125.27696pt.
- [17 <./img/dmtbk.png>]
-<./img/lu.png, id=515, 1176.72565pt x 691.60709pt>
+
+Underfull \vbox (badness 1389) has occurred while \output is active []
+
+ [17 <./img/dmtbk.png>] <./img/lu.png, id=513, 1176.72565pt x 691.60709pt>
 File: ./img/lu.png Graphic file (type png)
- <use ./img/lu.png>
+
+<use ./img/lu.png>
 Package pdftex.def Info: ./img/lu.png used on input line 85.
 (pdftex.def)             Requested size: 213.39568pt x 125.41257pt.
-
-<./img/srazka.png, id=517, 477.83223pt x 213.44861pt>
+ <./img/srazka.png, id=515, 477.83223pt x 213.44861pt>
 File: ./img/srazka.png Graphic file (type png)
- <use ./img/srazka.png>
+
+<use ./img/srazka.png>
 Package pdftex.def Info: ./img/srazka.png used on input line 107.
 (pdftex.def)             Requested size: 213.39568pt x 95.32468pt.
-
-[18 <./img/pudnityp.png> <./img/lu.png>]
+ [18 <./img/pudnityp.png>]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [19 <./img/srazka.png>]
+ [19 <./img/lu.png> <./img/srazka.png>]
 
-LaTeX Warning: Reference `subsection:MD' on page 20 undefined on input line 143
+LaTeX Warning: Reference `subsection:MD' on page 20 undefined on input line 141
 .
 
-[20] <./img/tabsoilveg.png, id=538, 1279.60411pt x 178.99431pt>
+<./img/tabsoilveg.png, id=532, 1279.60411pt x 178.99431pt>
 File: ./img/tabsoilveg.png Graphic file (type png)
 
 <use ./img/tabsoilveg.png>
-Package pdftex.def Info: ./img/tabsoilveg.png used on input line 152.
+Package pdftex.def Info: ./img/tabsoilveg.png used on input line 150.
 (pdftex.def)             Requested size: 426.79135pt x 59.6992pt.
  (tab/tabsoilveg.tex
 Underfull \hbox (badness 10000) in paragraph at lines 7--7
 []|\IL2/cmr/m/n/10 HlaviËka
  []
 
-)) (1_text/3_mat_a_met/CZsmoderp_process.tex [21 <./img/tabsoilveg.png>]
-(img/dirtree.tex [22]
+) [20 <./img/tabsoilveg.png>]) (1_text/3_mat_a_met/CZsmoderp_process.tex
+[21] (img/dirtree.tex [22]
 *geometry* verbose mode - [ newgeometry ] result:
 * driver: pdftex
 * paper: a4paper
@@ -2174,180 +2086,384 @@ Underfull \hbox (badness 10000) in paragraph at lines 57--57
 
 [23])
 
-Package natbib Warning: Citation `python' on page 24 undefined on input line 51
+Package natbib Warning: Citation `python' on page 24 undefined on input line 49
 .
 
 
-Package natbib Warning: Citation `numpy' on page 24 undefined on input line 51.
+Package natbib Warning: Citation `numpy' on page 24 undefined on input line 49.
 
 
 [24
 
 
-] <./img/courantratio.png, id=580, 785.54347pt x 408.4826pt>
+] <./img/courantratio.png, id=577, 785.54347pt x 408.4826pt>
 File: ./img/courantratio.png Graphic file (type png)
 
 <use ./img/courantratio.png>
-Package pdftex.def Info: ./img/courantratio.png used on input line 119.
+Package pdftex.def Info: ./img/courantratio.png used on input line 117.
 (pdftex.def)             Requested size: 426.79135pt x 221.92986pt.
 
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-<./img/courantratio2.png, id=581, 785.54347pt x 408.4826pt>
+<./img/courantratio2.png, id=578, 785.54347pt x 408.4826pt>
 File: ./img/courantratio2.png Graphic file (type png)
 
 <use ./img/courantratio2.png>
-Package pdftex.def Info: ./img/courantratio2.png used on input line 127.
+Package pdftex.def Info: ./img/courantratio2.png used on input line 125.
 (pdftex.def)             Requested size: 426.79135pt x 221.92986pt.
 
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-(graph/CZflowch.tex)) (1_text/3_mat_a_met/CZsmoderp_vystupy.tex [25] [26 <./img
-/courantratio.png>]
-Underfull \vbox (badness 8075) has occurred while \output is active []
+(graph/CZflowch.tex)) (1_text/3_mat_a_met/CZsmoderp_vystupy.tex
+! Missing $ inserted.
+<inserted text> 
+                $
+l.12 ... plo≈°e a v podadres√°≈ôi \textbf{temp_dp}
+                                                   jsou doƒçasn√© soubory vo...
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
 
- [27 <./img/courantratio2.png>])) [28] (1_text/4_concl/CZmainconcl.tex
-(1_text/4_concl/1D2Dcomparison.tex
-<img/horany_print3.jpg, id=606, 844.8363pt x 597.6729pt>
+! Extra }, or forgotten $.
+<recently read> \egroup 
+                        
+l.12 ... plo≈°e a v podadres√°≈ôi \textbf{temp_dp}
+                                                   jsou doƒçasn√© soubory vo...
+I've deleted a group-closing symbol because it seems to be
+spurious, as in `$x}$'. But perhaps the } is legitimate and
+you forgot something else, as in `\hbox{$x}'. In such cases
+the way to recover is to insert both the forgotten and the
+deleted material, e.g., by typing `I$}'.
+
+
+LaTeX Warning: Command \v invalid in math mode on input line 12.
+
+
+LaTeX Warning: Command \' invalid in math mode on input line 12.
+
+
+LaTeX Warning: Command \' invalid in math mode on input line 12.
+
+
+LaTeX Warning: Command \r invalid in math mode on input line 12.
+
+! Missing $ inserted.
+<inserted text> 
+                $
+l.13 
+     
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+Missing character: There is no Ë in font cmr10!
+Missing character: There is no È in font cmr10!
+Missing character: There is no Ì in font cmr10!
+Missing character: There is no ˘ in font cmr10!
+
+Overfull \hbox (259.67117pt too wide) in paragraph at lines 12--13
+\IL2/cmr/m/n/10.95 bory v˝-poËtu v ploπe a v po-da-d-re-s·¯i \IL2/cmr/bx/n/10.9
+5 temp$[]\OML/cmm/m/it/10.95 pjsoudoasnsouboryvodnchtok:[]$ 
+ []
+
+[25]
+! Missing $ inserted.
+<inserted text> 
+                $
+l.26 \item MaxQRillL3t_
+                       1.asc
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+
+! LaTeX Error: Command \item invalid in math mode.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.27 \item
+           MaxQL3t_1.asc
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+! LaTeX Error: Something's wrong--perhaps a missing \item.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.27 \item M
+            axQL3t_1.asc
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+! LaTeX Error: Something's wrong--perhaps a missing \item.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.27 \item M
+            axQL3t_1.asc
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+! LaTeX Error: Command \item invalid in math mode.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.28 \item
+           HCrit.asc
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+! Missing $ inserted.
+<inserted text> 
+                $
+l.28 \item H
+            Crit.asc
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+! Missing } inserted.
+<inserted text> 
+                }
+l.28 \item H
+            Crit.asc
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+! Extra }, or forgotten \endgroup.
+\par ...m \@noitemerr {\@@par }\fi \else {\@@par }
+                                                  \fi 
+l.28 \item H
+            Crit.asc
+I've deleted a group-closing symbol because it seems to be
+spurious, as in `$x}$'. But perhaps the } is legitimate and
+you forgot something else, as in `\hbox{$x}'. In such cases
+the way to recover is to insert both the forgotten and the
+deleted material, e.g., by typing `I$}'.
+
+[26 <./img/courantratio.png>] [27 <./img/courantratio2.png>]
+Overfull \hbox (7.83415pt too wide) in paragraph at lines 68--72
+[]\IL2/cmr/bx/n/10.95 Final eva-lu-tion.txt je tex-tov˝ sou-bor, kter˝ ob-sa-hu
+je sou-hrn za-da-n˝ch vstup˘
+ []
+
+))
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [28]
+[29] (1_text/4_concl/CZmainconcl.tex (1_text/4_concl/1D2Dcomparison.tex
+<img/horany_print3.jpg, id=609, 844.8363pt x 597.6729pt>
 File: img/horany_print3.jpg Graphic file (type jpg)
 
 <use img/horany_print3.jpg>
 Package pdftex.def Info: img/horany_print3.jpg used on input line 5.
 (pdftex.def)             Requested size: 341.43437pt x 241.54549pt.
- [29] [30] [31 <./img/horany_print3.jpg>]
-<graph/1D2Dhorany.png, id=620, 548.0475pt x 584.93532pt>
+ [30] [31] [32 <./img/horany_print3.jpg>]
+<graph/1D2Dhorany.png, id=623, 548.0475pt x 584.93532pt>
 File: graph/1D2Dhorany.png Graphic file (type png)
 
 <use graph/1D2Dhorany.png>
 Package pdftex.def Info: graph/1D2Dhorany.png used on input line 13.
 (pdftex.def)             Requested size: 341.43437pt x 364.42337pt.
- <img/byk.jpg, id=621, 844.8363pt x 597.6729pt>
-File: img/byk.jpg Graphic file (type jpg)
-
-<use img/byk.jpg>
-Package pdftex.def Info: img/byk.jpg used on input line 22.
-(pdftex.def)             Requested size: 341.43437pt x 241.54549pt.
- [32
+ [33
 
  <./graph/1D2Dhorany.png>]
-<graph/1D2DByk.jpg, id=626, 362.3136pt x 217.7736pt>
+<img/byk.jpg, id=628, 844.8363pt x 597.6729pt>
+File: img/byk.jpg Graphic file (type jpg)
+ <use img/byk.jpg>
+Package pdftex.def Info: img/byk.jpg used on input line 22.
+(pdftex.def)             Requested size: 341.43437pt x 241.54549pt.
+
+<graph/1D2DByk.jpg, id=629, 362.3136pt x 217.7736pt>
 File: graph/1D2DByk.jpg Graphic file (type jpg)
  <use graph/1D2DByk.jpg>
 Package pdftex.def Info: graph/1D2DByk.jpg used on input line 30.
 (pdftex.def)             Requested size: 341.43437pt x 205.22226pt.
-))
-[33 <./img/byk.jpg> <./graph/1D2DByk.jpg>] (citace.tex
+)
+[34 <./img/byk.jpg> <./graph/1D2DByk.jpg>]) [35] (citace.tex
 
 Package hyperref Warning: Composite letter `\textring+u'
 (hyperref)                not defined in PD1 encoding,
 (hyperref)                removing `\textring' on input line 3.
 
 (mainCZ.bbl
-Underfull \hbox (badness 3118) in paragraph at lines 9--16
-[]\IL2/cmr/m/sc/10.95 Auerswald\IL2/cmr/m/n/10.95 , K. -- \IL2/cmr/m/sc/10.95 F
-i-e-ner\IL2/cmr/m/n/10.95 , P. -- \IL2/cmr/m/sc/10.95 Di-kau\IL2/cmr/m/n/10.95 
-, R.  Ra-tes of sheet and rill ero-
+LaTeX Font Info:    Font shape `IL2/cmtt/bx/n' in size <10.95> not available
+(Font)              Font shape `IL2/cmtt/m/n' tried instead on input line 15.
+
+Underfull \hbox (badness 1540) in paragraph at lines 30--38
+[]\IL2/cmr/m/sc/10.95 Beven\IL2/cmr/bx/n/10.95 , K. et al.  On the con-cept of 
+de-li-very of se-di-ment and nu-
  []
 
 
-Underfull \hbox (badness 2318) in paragraph at lines 9--16
-\IL2/cmr/m/n/10.95 sion in Ger-many A meta-analysis.  \IL2/cmr/m/it/10.95 Ge-o-
-mor-pho-logy\IL2/cmr/m/n/10.95 . 2009, 111, 3-4, s. 182--
+Underfull \hbox (badness 1205) in paragraph at lines 48--55
+[]\IL2/cmr/m/sc/10.95 Bryan\IL2/cmr/bx/n/10.95 , R. B. -- \IL2/cmr/m/sc/10.95 B
+.\IL2/cmr/bx/n/10.95 , R.  Soil ero-di-bi-lity and pro-ces-ses of wa-ter ero-
  []
 
 
-Underfull \hbox (badness 3281) in paragraph at lines 9--16
-\IL2/cmr/m/n/10.95 193.  ISSN 0169555X.  doi: $10 . 1016 / j . geomorph . 2009 
-. 04 . 018$.  Do-stupnÈ z:
+Underfull \hbox (badness 1895) in paragraph at lines 48--55
+\IL2/cmr/bx/n/10.95 sion on hill-slope.  \IL2/cmr/bx/it/10.95 Ge-o-mor-pho-logy
+\IL2/cmr/bx/n/10.95 . mar 2000, 32, 3-4, s. 385--415.
  []
 
 
-Underfull \hbox (badness 8000) in paragraph at lines 48--55
-[]\IL2/cmr/m/sc/10.95 Bryan\IL2/cmr/m/n/10.95 , R. B. -- \IL2/cmr/m/sc/10.95 B.
-\IL2/cmr/m/n/10.95 , R.  Soil ero-di-bi-lity and pro-ces-ses of wa-ter ero-
+Underfull \hbox (badness 1210) in paragraph at lines 48--55
+\IL2/cmr/bx/n/10.95 ISSN 0169555X.  doi: $10 . 1016 / S0169-[]555X(99 ) 00105-[
+]1$.  Do-stupnÈ z:
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 48--55
-\IL2/cmr/m/n/10.95 sion on hill-slope.  \IL2/cmr/m/it/10.95 Ge-o-mor-pho-logy\I
-L2/cmr/m/n/10.95 . mar 2000, 32, 3-4, s. 385--415.
+Underfull \hbox (badness 2050) in paragraph at lines 80--88
+[]\IL2/cmr/m/sc/10.95 Davidova\IL2/cmr/bx/n/10.95 , T. et al.  De-ter-mi-ning t
+he pro-tective ef-fect of ag-ricul-tu-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 48--55
-\IL2/cmr/m/n/10.95 ISSN 0169555X.  doi: $10 . 1016 / S0169-[]555X(99 ) 00105-[]
-1$.  Do-stupnÈ z:
+Underfull \hbox (badness 1852) in paragraph at lines 80--88
+\IL2/cmr/bx/n/10.95 ral crops on the soil ero-sion pro-cess using a field ra-in
+-fall si-mu-la-
  []
 
 
-Overfull \hbox (121.82831pt too wide) in paragraph at lines 80--88
-[]$\IL2/cmr/m/n/10.95 . 
+Underfull \hbox (badness 2005) in paragraph at lines 80--88
+\IL2/cmr/bx/n/10.95 tor.  \IL2/cmr/bx/it/10.95 Plant, Soil and En-vi-ron-ment\I
+L2/cmr/bx/n/10.95 . jun 2016, 61, No. 3, s. 109--
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 96--104
-[]\IL2/cmr/m/sc/10.95 Gimnez\IL2/cmr/m/n/10.95 , R. -- \IL2/cmr/m/sc/10.95 Go-v
-ers\IL2/cmr/m/n/10.95 , G.  Ef-fects of fre-shly in-cor-po-ra-ted straw re-si-
+Underfull \hbox (badness 1609) in paragraph at lines 80--88
+\IL2/cmr/bx/n/10.95 115.  ISSN 12141178.  doi: $10 . 17221 / 903 / 2014-[]PSE$.
+  Do-stupnÈ z:
  []
 
 
-Underfull \hbox (badness 3623) in paragraph at lines 96--104
-\IL2/cmr/m/n/10.95 due on rill ero-sion and hyd-rau-lics.  \IL2/cmr/m/it/10.95 
-CA-TENA\IL2/cmr/m/n/10.95 . jan 2008, 72, 2, s. 214--
+Overfull \hbox (122.28453pt too wide) in paragraph at lines 80--88
+[]$\IL2/cmr/bx/n/10.95 . 
+ []
+
+[36]
+Underfull \hbox (badness 5105) in paragraph at lines 106--114
+[]\IL2/cmr/m/sc/10.95 Govers\IL2/cmr/bx/n/10.95 , G. -- \IL2/cmr/m/sc/10.95 Gi-
+mÈ-nez\IL2/cmr/bx/n/10.95 , R. -- \IL2/cmr/m/sc/10.95 Van Oost\IL2/cmr/bx/n/10.
+95 , K.  Rill ero-sion: Ex-
  []
 
 
-Underfull \hbox (badness 6658) in paragraph at lines 96--104
-\IL2/cmr/m/n/10.95 223.  ISSN 03418162.  doi: $10 . 1016 / j . catena . 2007 . 
-05 . 004$.  Do-stupnÈ z:
+Underfull \hbox (badness 4634) in paragraph at lines 106--114
+\IL2/cmr/bx/n/10.95 plo-ring the re-lati-on-ship be-tween ex-pe-ri-ments, mo-de
+l-ling and field
  []
 
-[34]
+
+Underfull \hbox (badness 6157) in paragraph at lines 106--114
+\IL2/cmr/bx/n/10.95 ob-servati-ons.  \IL2/cmr/bx/it/10.95 Earth-Science Re-view
+s\IL2/cmr/bx/n/10.95 . 2007, 84, 3-4, s. 87--102.
+ []
+
+
+Underfull \hbox (badness 2269) in paragraph at lines 106--114
+\IL2/cmr/bx/n/10.95 ISSN 00128252.  doi: $10 . 1016 / j . earscirev . 2007 . 06
+ . 001$.  Do-stupnÈ z:
+ []
+
 LaTeX Font Info:    Try loading font information for OMS+cmr on input line 136.
 
- ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\omscmr.fd"
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\omscmr.fd"
 File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
-LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10.95> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 136.
+LaTeX Font Info:    Font shape `OMS/cmr/bx/n' in size <10.95> not available
+(Font)              Font shape `OMS/cmsy/b/n' tried instead on input line 136.
 
-Underfull \hbox (badness 4752) in paragraph at lines 173--181
-\IL2/cmr/m/n/10.95 RYCH-LOSTI PO-VR-CHOV\OMS/cmsy/m/n/10.95 f\IL2/cmr/m/n/10.95
- …\OMS/cmsy/m/n/10.95 g\IL2/cmr/m/n/10.95 HO OD-TOKU KE KA-LIB-RACI SR\OMS/cmsy
-/m/n/10.95 f\IL2/cmr/m/n/10.95 ¡\OMS/cmsy/m/n/10.95 gf\IL2/cmr/m/n/10.95 Æ\OMS/
-cmsy/m/n/10.95 g\IL2/cmr/m/n/10.95 KO-
+Underfull \hbox (badness 1383) in paragraph at lines 155--164
+\IL2/cmr/bx/it/10.95 The Science of the to-tal en-vi-ron-ment\IL2/cmr/bx/n/10.9
+5 . may 2007, 378, 1-2, s. 161--
  []
 
 
-Underfull \hbox (badness 1953) in paragraph at lines 214--220
-[]\IL2/cmr/m/sc/10.95 Renard\IL2/cmr/m/n/10.95 , K. G. et al.  RUSLE: Re-vi-sed
- uni-ver-sal soil loss equation.  \IL2/cmr/m/it/10.95 Jour-
+Underfull \hbox (badness 1281) in paragraph at lines 173--181
+[]\IL2/cmr/m/sc/10.95 Neumann\IL2/cmr/bx/n/10.95 , M. -- \IL2/cmr/m/sc/10.95 Ka
+vka\IL2/cmr/bx/n/10.95 , P.  VYU\OMS/cmsy/b/n/10.95 f\IL2/cmr/bx/n/10.95 Æ\OMS/
+cmsy/b/n/10.95 g\IL2/cmr/bx/n/10.95 IT\OMS/cmsy/b/n/10.95 f\IL2/cmr/bx/n/10.95 
+Õ\OMS/cmsy/b/n/10.95 g \IL2/cmr/bx/n/10.95 DVOU ME-TOD M\OMS/cmsy/b/n/10.95 f\I
+L2/cmr/bx/n/10.95 Ã\OMS/cmsy/b/n/10.95 gf$\OMS/cmsy/m/n/10.95 n$\IL2/cmr/bx/n/1
+0.95 v
+ []
+
+[37]
+Underfull \hbox (badness 6792) in paragraph at lines 199--206
+[]\IL2/cmr/m/sc/10.95 Pandey\IL2/cmr/bx/n/10.95 , A. et al.  Phy-s-i-cally base
+d soil ero-sion and se-di-ment
  []
 
 
-Underfull \hbox (badness 1009) in paragraph at lines 214--220
-\IL2/cmr/m/it/10.95 nal of Soil and Wa-ter Con-servation\IL2/cmr/m/n/10.95 . ja
-n 1991, 46, 1, s. 30--33.  Do-stupnÈ z:
+Underfull \hbox (badness 3954) in paragraph at lines 199--206
+\IL2/cmr/bx/n/10.95 yield mo-dels re-vi-si-ted.  \IL2/cmr/bx/it/10.95 Ca-tena\I
+L2/cmr/bx/n/10.95 . 2016, 147, s. 595--620.  ISSN
  []
 
-[35]
+
+Underfull \hbox (badness 10000) in paragraph at lines 199--206
+\IL2/cmr/bx/n/10.95 03418162.  doi: $10 . 1016 / j . catena . 2016 . 08 . 002$.
+  Do-stupnÈ z:
+ []
+
 LaTeX Font Info:    Try loading font information for OMS+cmtt on input line 231
 .
 LaTeX Font Info:    No file OMScmtt.fd. on input line 231.
 
-
-LaTeX Font Warning: Font shape `OMS/cmtt/m/n' undefined
+LaTeX Font Warning: Font shape `OMS/cmtt/bx/n' undefined
 (Font)              using `OMS/cmsy/m/n' instead
 (Font)              for symbol `textbraceleft' on input line 231.
 
 
-Overfull \hbox (232.45561pt too wide) in paragraph at lines 223--232
-[]$\IL2/cmr/m/n/10.95 . 
+Underfull \hbox (badness 3039) in paragraph at lines 223--232
+[]\IL2/cmr/m/sc/10.95 Sang¸esa\IL2/cmr/bx/n/10.95 , C. et al.  A Ra-in-fall Si-
+mu-la-tor for the in situ Study
  []
 
-) [36])
+
+Underfull \hbox (badness 10000) in paragraph at lines 223--232
+\IL2/cmr/bx/n/10.95 of Su-per-fi-cial Ru-noff and Soil Ero-sion.  \IL2/cmr/bx/i
+t/10.95 Chi-lean jour-nal of
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 223--232
+\IL2/cmr/bx/it/10.95 ag-ricul-tu-ral re-search\IL2/cmr/bx/n/10.95 . 2010, 70, 1
+, s. 178--182.  ISSN 0718-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 223--232
+\IL2/cmr/bx/n/10.95 5839.  doi: $10 . 4067 / S0718-[]58392010000100019$.  Do-st
+upnÈ z:
+ []
+
+
+Overfull \hbox (232.91183pt too wide) in paragraph at lines 223--232
+[]$\IL2/cmr/bx/n/10.95 . 
+ []
+
+
+Underfull \hbox (badness 2653) in paragraph at lines 253--260
+[]\IL2/cmr/m/sc/10.95 Verstraeten\IL2/cmr/bx/n/10.95 , G. -- \IL2/cmr/m/sc/10.9
+5 Po-esen\IL2/cmr/bx/n/10.95 , J.  Mo-del-ling the long term se-di-ment
+ []
+
+) [38])
 
 Package natbib Warning: There were undefined citations.
 
@@ -2363,8 +2479,8 @@ Package rerunfilecheck Warning: File `mainCZ.out' has changed.
 (rerunfilecheck)                or use package `bookmark'.
 
 Package rerunfilecheck Info: Checksums for `mainCZ.out':
-(rerunfilecheck)             Before: 23C689A3EE44D86A1D916EA058C61A96;1461
-(rerunfilecheck)             After:  56500946E8AECB2F787B9A097A6B7715;1481.
+(rerunfilecheck)             Before: 56500946E8AECB2F787B9A097A6B7715;1481
+(rerunfilecheck)             After:  AB610FAC961738C034668640F8A7E6CB;1573.
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
@@ -2375,53 +2491,61 @@ LaTeX Warning: There were undefined references.
 LaTeX Warning: There were multiply-defined labels.
 
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 50.
- ) 
-Here is how much of TeX's memory you used:
- 34792 strings out of 493334
- 671802 string characters out of 3136671
- 728936 words of memory out of 3000000
- 37510 multiletter control sequences out of 15000+200000
- 549741 words of font info for 79 fonts, out of 3000000 for 9000
- 1141 hyphenation exceptions out of 8191
- 57i,14n,60p,10408b,967s stack positions out of 5000i,500n,10000p,200000b,50000s
-pdfTeX warning (dest): name{Hfootnote.1} has been referenced but does not exi
-st, replaced by a fixed one
+ )
+(\end occurred inside a group at level 1)
 
- <C:\Users\Kavka\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\public\csfonts\dpi657
-\cscsc10.pk> <C:\Users\Kavka\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\public\cs
-fonts\dpi600\cstt10.pk> <C:\Users\Kavka\AppData\Local\MiKTeX\2.9\fonts\pk\ljfou
-r\public\csfonts\dpi600\csr6.pk> <C:\Users\Kavka\AppData\Local\MiKTeX\2.9\fonts
-\pk\ljfour\public\csfonts\dpi600\csr8.pk> <C:\Users\Kavka\AppData\Local\MiKTeX\
-2.9\fonts\pk\ljfour\public\csfonts\dpi657\cstt10.pk> <C:\Users\Kavka\AppData\Lo
-cal\MiKTeX\2.9\fonts\pk\ljfour\public\csfonts\dpi600\csr10.pk> <C:\Users\Kavka\
-AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\public\csfonts\dpi657\csti10.pk> <C:\U
-sers\Kavka\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\public\csfonts\dpi600\csr9.
-pk> <C:\Users\Kavka\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\public\csfonts\dpi
-600\csbx9.pk> <C:\Users\Kavka\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen
-\ec\dpi600\tcrm1095.pk> <C:\Users\Kavka\AppData\Local\MiKTeX\2.9\fonts\pk\ljfou
-r\public\csfonts\dpi600\csbx12.pk> <C:\Users\Kavka\AppData\Local\MiKTeX\2.9\fon
-ts\pk\ljfour\public\csfonts\dpi657\csbx10.pk> <C:\Users\Kavka\AppData\Local\MiK
-TeX\2.9\fonts\pk\ljfour\public\csfonts\dpi720\csbx12.pk> <C:\Users\Kavka\AppDat
-a\Local\MiKTeX\2.9\fonts\pk\ljfour\public\csfonts\dpi600\csr12.pk> <C:\Users\Ka
-vka\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\public\csfonts\dpi600\csr17.pk> <C
-:\Users\Kavka\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\public\csfonts\dpi657\cs
-r10.pk><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmex10
-.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi10.p
-fb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi6.pfb>
-<C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi7.pfb><C:
-/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Pr
-ogram Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi9.pfb><C:/Progr
-am Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Program 
-Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr6.pfb><C:/Program File
-s (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr7.pfb><C:/Program Files (x
-86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Program Files (x86)/
-MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Program Files (x86)/Mi
-KTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy6.pfb><C:/Program Files (x86)/MiKTe
-X 2.9/fonts/type1/public/amsfonts/cm/cmsy7.pfb><C:/Program Files (x86)/MiKTeX 2
-.9/fonts/type1/public/amsfonts/cm/cmsy8.pfb>
-Output written on mainCZ.pdf (43 pages, 2236679 bytes).
+### simple group (level 1) entered at line 12 ({)
+### bottom level 
+Here is how much of TeX's memory you used:
+ 33952 strings out of 493334
+ 655031 string characters out of 3136662
+ 694337 words of memory out of 3000000
+ 36662 multiletter control sequences out of 15000+200000
+ 25483 words of font info for 76 fonts, out of 3000000 for 9000
+ 1141 hyphenation exceptions out of 8191
+ 57i,14n,60p,10408b,1043s stack positions out of 5000i,500n,10000p,200000b,50000s
+pdfTeX warning (dest): name{Hfootnote.1} has been referenced bu
+t does not exist, replaced by a fixed one
+
+ <C:\Users\KavkaNTB\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\public\csfonts\dpi
+657\csbxti10.pk> <C:\Users\KavkaNTB\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\pu
+blic\csfonts\dpi657\cscsc10.pk> <C:\Users\KavkaNTB\AppData\Local\MiKTeX\2.9\fon
+ts\pk\ljfour\jknappen\ec\dpi600\tcbx1095.pk> <C:\Users\KavkaNTB\AppData\Local\M
+iKTeX\2.9\fonts\pk\ljfour\public\csfonts\dpi600\cstt10.pk> <C:\Users\KavkaNTB\A
+ppData\Local\MiKTeX\2.9\fonts\pk\ljfour\public\csfonts\dpi600\csr6.pk> <C:\User
+s\KavkaNTB\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\public\csfonts\dpi600\csr8.
+pk> <C:\Users\KavkaNTB\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\public\csfonts\
+dpi657\cstt10.pk> <C:\Users\KavkaNTB\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\p
+ublic\csfonts\dpi600\csr10.pk> <C:\Users\KavkaNTB\AppData\Local\MiKTeX\2.9\font
+s\pk\ljfour\public\csfonts\dpi657\csti10.pk> <C:\Users\KavkaNTB\AppData\Local\M
+iKTeX\2.9\fonts\pk\ljfour\public\csfonts\dpi600\csr9.pk> <C:\Users\KavkaNTB\App
+Data\Local\MiKTeX\2.9\fonts\pk\ljfour\public\csfonts\dpi600\csbx9.pk> <C:\Users
+\KavkaNTB\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\tcrm1095.
+pk> <C:\Users\KavkaNTB\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\public\csfonts\
+dpi600\csbx12.pk> <C:\Users\KavkaNTB\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\p
+ublic\csfonts\dpi657\csr10.pk> <C:\Users\KavkaNTB\AppData\Local\MiKTeX\2.9\font
+s\pk\ljfour\public\csfonts\dpi657\csbx10.pk> <C:\Users\KavkaNTB\AppData\Local\M
+iKTeX\2.9\fonts\pk\ljfour\public\csfonts\dpi720\csbx12.pk> <C:\Users\KavkaNTB\A
+ppData\Local\MiKTeX\2.9\fonts\pk\ljfour\public\csfonts\dpi600\csr12.pk> <C:\Use
+rs\KavkaNTB\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\public\csfonts\dpi600\csr1
+7.pk><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbsy10.
+pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmex10.pf
+b><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi10.pfb>
+<C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi6.pfb><C:
+/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi7.pfb><C:/Pr
+ogram Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Progr
+am Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi9.pfb><C:/Program 
+Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Program Fil
+es (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr6.pfb><C:/Program Files (
+x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr7.pfb><C:/Program Files (x86)
+/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Program Files (x86)/MiK
+TeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Program Files (x86)/MiKTe
+X 2.9/fonts/type1/public/amsfonts/cm/cmsy6.pfb><C:/Program Files (x86)/MiKTeX 2
+.9/fonts/type1/public/amsfonts/cm/cmsy7.pfb><C:/Program Files (x86)/MiKTeX 2.9/
+fonts/type1/public/amsfonts/cm/cmsy8.pfb>
+Output written on mainCZ.pdf (44 pages, 2272117 bytes).
 PDF statistics:
- 1455 PDF objects out of 1728 (max. 8388607)
- 187 named destinations out of 1000 (max. 500000)
+ 1538 PDF objects out of 1728 (max. 8388607)
+ 190 named destinations out of 1000 (max. 500000)
  233 words of extra memory for PDF output out of 10000 (max. 10000000)
 
