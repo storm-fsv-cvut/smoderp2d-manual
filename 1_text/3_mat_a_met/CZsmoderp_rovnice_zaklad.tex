@@ -7,7 +7,24 @@
 %
 %
 %
-Základní odvození vztahů povrchových procesů v modelu SMODERP vychází z rovnice kontinuity a rovnice pohybové na základě kinematického principu s využitím experimentálních měření. V celém řešeném prostou je po jednotlivý elementech v každém časovém kroku provedena bilance zásoby a následně vypočteno odteklé množství za daný časový krok. V ploše povodí jsou směry odtoků resp. přítoků dány funkcí směru odtoku. v místě vodních toků je pak veškerý tok směrován dále vodním tokem.
+Základní odvození vztahů povrchových procesů v modelu SMODERP vychází z rovnice kontinuity a rovnice pohybové na základě kinematického principu s využitím experimentálních měření.
+Jak již bylo zmíněno v úvodu, jedná se o distribuovaný epizodní hydrologicko erozní model. Výpočet je řešen na pravidelné rastrové síti elementů. Podrobnost řešení je dána rozlišením vstupního rastru. V celém řešeném prostou je po jednotlivých elementech v každém časovém kroku provedena bilance zásoby a následně vypočteno odteklého množství za daný časový krok. Obecně se jedná o tři základní složky:
+
+\begin{itemize}
+\item infiltrace do půdy\acs{Inf}
+\item efektivní srážka \acs{ES}
+\item odteklé množství \acs{Otot}
+\end{itemize}
+
+Proudění povrchové vody a množství odtoku je pak podle řešeno třemi odlišnými typy odtoku:
+\begin{itemize}
+\item plošný odtok
+\item soustředěný odtok v rýhách
+\item výpočet odtoku v hydrografické síti
+\end{itemize}
+
+V ploše povodí jsou směry odtoků resp. přítoků dány funkcí směru odtoku. V místě vodních toků je pak veškerý tok směrován dále vodním tokem.
+
 
 \subsubsection{Plošný povrchový odtok} 
 
@@ -441,5 +458,24 @@ Q =\frac {1}{n} h^{2/3} S^{1/2}
 %newb = math.sqrt(V/(rillRatio*l)) #KAvka, tohl eje divně
 \subsubsection{Odtok hydrografickou sítí} \label{sec:tokyodtok}
 \textbf{tohle není vůbec napsané}
+
+V názvu kapitoly není záměrně zvoleno slovo vodní toky. SMODERP je zamýšlen také jako nástroj pro navrhování opatření v ploše povodí. Cílem je simulovat a navrhovat odtoky i v dočasné hydrografické síti, která je tvořena přirozeným nebo častěji umělým přerušením přirozené odtokové dráhy. Nejčastěji se jedná o příkopy a průlehy které mají odváděcí a často erozní funkci. 
+Všechny prvky (síť vodních toků, přkopy, průlehy, atp.) jsou zadávány v rámci jednoho shapefile. Každý jednotlivý úsek je zadán jako konkrétní polygon (feature). Pro řešení jsou Pro vlastní výpočet je třeba zadat typ a rozměry konkrétního prvku. Protože je model určen pro malá povodí jsou v modelu předpokládány pouze základní příčné profily (trojúhelník, obdélník, lichoběžník, parabola).
+
+
+Proudění v těchto otevřených korytech je řešeno Mannigovou rovnicí ve tvaru:
+\begin{equation}
+    \acs{qstream} = \acs{A} \frac{1}{\acs{n}} \acs{Rsheet}^{2/3} \acs{I}^{1/2}  ,
+    \label{eq:qtok}
+  \end{equation}
+  \begin{tabular}{stream}
+    kde \jj{qstream}{,}
+        \jj{vstream}{,}
+        \jj{A}{,}
+        \jj{n}{\ a}
+        \jj{Rstream}{.}
+  \end{tabular
+
+Model sice pracuje v rastrové síti, ale v případě, že se na daném elemetu vyskytuje vodní tok, je veškerá
 
 Příkopy mohou vytvořit prostor, kam bude voda soustředěna a kde nebude páchat škody. Voda je příkopy odvedena do sítě stávajících vodních toků.  Současný model pracuje s plošným povrchovým a rýhovým odtokem, ale rutina pro odtok v rámci hydrografické sítě chybí. Tato část tvoří nedílnou součást odtokového procesu. Cílem mé diplomové práce proto je rozšíření modelu o rutinu odtoku v hydrografické síti a hydraulickým výpočtem v rámci této sítě.

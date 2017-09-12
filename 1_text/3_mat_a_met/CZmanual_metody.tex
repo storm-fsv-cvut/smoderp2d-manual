@@ -1,22 +1,10 @@
 %!TEX ROOT = ../mainCZ.tex
 %\input{./1_text/3_mat_a_met/2}
 
-V této kapitole jsou popsány jednotlivé výpočetní vztahy, které jsou v modelu využity. Dále tato část manuálu obsahuje stručný popis základních částí zdrojového kódu.\subsection{Použité vztahy a jejich odvození} \label{modelovani}
+Tuto část uživatlského manuálu je nutné považovat za spíše teoretickou, popisující jednotlivé výpočetní vztahy, které jsou v modelu využity. V případě, že to lépe popisuje zvolené řešení jsou zde uvedeny i popis příslušné části zdrojového kódu.
 
-V modelu jsou použity zjednodušené vztahy pro výpočet celkové bilance v jednotlivých výpočetních elementech a výpočet jednotlivých složek odtoku:
 
-\begin{itemize}
-\item infiltrace do půdy\acs{Inf}
-\item efektivní srážka \acs{ES}
-\item odteklé množství \acs{Otot}
-\end{itemize}
-
-Proudění povrchové vody a množství odtoku je rozděleno na tři principiálně odlišné procesy:
-\begin{itemize}
-\item plošný odtok
-\item soustředěný odtok v rýhách
-\item výpočet odtoku v hydrografické síti
-\end{itemize}
+\subsection{Použité vztahy a jejich odvození} \label{modelovani}
 
 
 %	\subsubsection{Použité rovnice}
@@ -24,7 +12,7 @@ Proudění povrchové vody a množství odtoku je rozděleno na tři principiál
 
 
 \subsection{SMODERP 2D - postup výpočtu} \label{vypocet}
-Současná verze modelu SMODERP je napsána v programovacím jazyce Python. V rámci kódu jsou od sebe oddělena část přípravy dat a samotné zpracování.
+Tato verze modelu SMODERP je napsána v programovacím jazyce Python. V rámci kódu jsou od sebe oddělena část přípravy dat a samotné zpracování.
 Příprava dat využívá v současné době nástroje z knihoven ArcGIS proto byl zvolen jako programovací jazyk Python, který je pro prostředí ArcGIS nativním programovacím jazykem. Proces samotného výpočtu již využívá pouze standardní knihovny Python, jako je knihovna \texttt{numpy}, nebo \texttt{math}, atp. Pro přehlednost je text rozdělen do třech částí, vstupní data \ref{kap:vstupy}, tok programu \ref{kap:tok} a výstupy \ref{kap:vystupy}
 
 	%\subsubsection{Princip výpočtu} \label{kap:principvypoctu}
