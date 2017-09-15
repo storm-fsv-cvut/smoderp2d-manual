@@ -9,7 +9,16 @@
 
 
 
-Po úspěšném ukončení modelu je do výstupního adresáře uloženo několik souborů. Každý z těchto souborů obsahuje hodnoty pro každou buňku rastru. Buňky, na kterých neprobíhal výpočet neobsahují žádné hodnoty, tedy NoData. Základní výstupy jsou uvedeny přímo ve zvoleném výstupním adresáři. Mimo hlavní výstupy jsou volitelně ukládány i dočasné výstupy sloužící pro případnou kontrolu. V podadresáři \textbf{temp} jsou dočasné soubory výpočtu v ploše a v podadresáři \textbf{temp_dp} jsou dočasné soubory vodních toků. \textbf{Dočasným výsledkům bude věnována jedna z dalších kapitol}
+Po úspěšném ukončení modelu je do výstupního adresáře uloženo několik souborů.
+\begin{itemize}
+\item rastrové soubory výsledků ve formátu .asc nebo .grid (ArcGIS)
+\item textové soubory hydrogramů jednotlivých bodů a stream.txt pro  
+\item dočasné soubory v adresářích temp (pro plošný odtok) a temp-dp (pro odtok ve vodních tocích)
+\end{itemize}
+
+\textbf{rastrové výstupy}
+Každý z těchto souborů obsahuje hodnoty pro každou buňku rastru. Buňky, na kterých neprobíhal výpočet neobsahují žádné hodnoty, tedy NoData. 
+%Základní výstupy jsou uvedeny přímo ve zvoleném výstupním adresáři. Mimo hlavní výstupy jsou volitelně ukládány i dočasné výstupy sloužící pro případnou kontrolu. V podadresáři \textbf{temp} jsou dočasné soubory výpočtu v ploše a v podadresáři \textbf{temp_dp} jsou dočasné soubory vodních toků. \textbf{Dočasným výsledkům bude věnována jedna z dalších kapitol}
 
 \textbf{tenhle seznam doplnit popisem o co tam jde a v jakých je to jednotkách}
 \begin{itemize}
@@ -19,7 +28,6 @@ Po úspěšném ukončení modelu je do výstupního adresáře uloženo několi
 \item SurRet.asc
 \item stream.shp
 \item ShearStress.asc
-\item body hydrogamů (*.dat) - průběh veličin pro jednotlivé body zadané v kapitole XXXX
 \item MaxWaterRillL.asc
 \item MaxWateL.asc
 \item MaxVelovity.asc
@@ -34,7 +42,13 @@ Po úspěšném ukončení modelu je do výstupního adresáře uloženo několi
 \item AreaRill.asc
 \end{itemize}
 
+
+
 \textbf{toto je origoš z DP}
+
+\textbf{textové soubory}
+
+Výstypy ve formátu (*.dat) - obsahují průběh veličin v zadaných bodech zadaných ve vstupní vrstvě XXXX. Soubory jsou pojmenovány podle FID daného prvku. \textit{point000} odpovídá bodu s FID = 0. V případě, že některý ze zadaných bodů leží mimo řešenou oblast je z dalšího výpočtu vyřazen. FID bodů pak neodpovídají přímo zadaným bodům. Ty odpovídají poloze bodů ve vrstvě \textbf{pointCheck.shp} v adresáři s dočasnými výsledky \textit{temp}.
 
 \par Ne vždy se vytvoří všechny tyto výstupní soubory. Záleží na zvolených vstupních parametrech. Pokud uživatel nezadá žádnou bodovou vrstvu, nevytvoří se poslední textový soubor. 
 V případě, že uživatel nezvolí možnost soustředěného odtoku, nevytvoří se rastry a shapefile související s tímto typem odtoku. Rastr soustředění odtoku se nevytvoří při nezvolení vícesměrného odtoku. 
