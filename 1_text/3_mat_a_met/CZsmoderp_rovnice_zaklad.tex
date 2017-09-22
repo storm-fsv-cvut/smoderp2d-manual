@@ -16,23 +16,15 @@ Jak již bylo zmíněno v úvodu, jedná se o distribuovaný epizodní hydrologi
 \item odteklé množství \acs{Otot}
 \end{itemize}
 
-Proudění povrchové vody a množství odtoku je pak podle řešeno třemi odlišnými typy odtoku:
-\begin{itemize}
-\item plošný odtok
-\item soustředěný odtok v rýhách
-\item výpočet odtoku v hydrografické síti
-\end{itemize}
+Proudění vody a množství odtoku na povrchu je pak podle řešeno třemi odlišnými typy odtoku. Mimo hydrografickou síť je se jedná o \textbf{povrchový odtok}, který je buď jako \textbf{plošný povrchový odtok} a nebo \textbf{soustředěný odtok v rýhách}. Ve vodních tocích a dočasné hydrografické síti se pak jedná o soustředěný odtok. V ploše povodí jsou směry odtoků resp. přítoků dány funkcí směru odtoku. V místě vodních toků je pak veškerý tok směrován dále vodním tokem.
 
-V ploše povodí jsou směry odtoků resp. přítoků dány funkcí směru odtoku. V místě vodních toků je pak veškerý tok směrován dále vodním tokem.
+% PeKa - pokuso jsem se rozdělit povrchový odtok (plošný a rýhy dohromady), ab bylo jasnější o co jde
 
 
-\subsubsection{Plošný povrchový odtok} 
+\subsubsection{Bilanční rovnice} 
 
 % 
-% 
-% 
-% 
-Základním vztahem řešení v elementu je bilance plošného odtoku.
+Základním vztahem řešení je bilance celkového zásoby v elementu.
 \begin{equation}
 \acs{dS} = \acs{Itot} - \acs{Otot},
 \label{eq:bilobecne}
@@ -46,8 +38,6 @@ Základním vztahem řešení v elementu je bilance plošného odtoku.
       \jj{Itot}{,}
       \jj{Otot}{.}
 \end{tabular}
-
-
 
 
 Podle složek povrchového odtoku lze \acs{Itot} a \acs{Otot} rovnici~\ref{eq:bilobecne}  rozepsat takto podle složek povrchového odtoku použitých v modelu SMODERP 
@@ -71,7 +61,7 @@ $$
 \end{tabular}
 
 
-Bilanční rovnici pro každou buňku $i$ v čase $t$ lze rozepsat jako
+Bilanční rovnici pro každou buňku $i$ v čase $t$ lze rozepsat jako:
 
 
 
@@ -96,8 +86,7 @@ Toto $m$ se liší podle použitého odtokového algoritmu jednosměrného \acs{
 
 Při samotném řešení se v modelu SMODERP operuje s veličinami ve výškových jednotkách. Pokud celou rovnici~\ref{eq:bilancnirceV} podělíme velkostí buňky \acs{bunka} a vyjádříme časovou derivaci jako diferenci ($\frac{\mathrm{d}\acs{hsur}_{i,t}}{\mathrm{d}t} \approx \frac{\acs{hsur}_{i,t} - \acs{hsur}_{i,t-1}}{\acs{dT}}$), vypadá rovnice~\ref{eq:bilancnirceV} následovně:
 
-
-
+%nejsou to náhodou objemové jednoty, které dělíme plochou
 
 \begin{equation} 
 \acs{hsur}_{i,t} = \acs{hsur}_{i,t-1} + \acs{dT}\left(\acs{es}_{i,t} + \sum_j^m \acs{oin}_{j,t-1} - \acs{inf}_{i,t} - \acs{oout}_{i,t-1}\right),
@@ -159,6 +148,7 @@ $$
       \jj{PotI}{\ a}
       & $\sum_{\bar{t} = t_{init}}^{t}$ & vyjadřuje množství srážky které propadlo \\
       && povrchem listů plodiny od počátečního času $t_{init}$ do času $t$.
+      \label{srazka}
 \end{tabular}
 
 
@@ -202,7 +192,11 @@ Philipova rovnice byla zvolena především z důvodu relativně malého počtu 
 % 
 % 
 % 
-\paragraph{Plošný odtok  \acs{oin}, \acs{oout}} \label{rce_odtok}
+\paragraph{Povrchový odtok  \acs{oin}, \acs{oout}} \label{sec:povrch_odtok}
+Povrchový odtok je v modelu rozdělen do dvou složek a to \textbf{plošný povrchový odtok} a \textbf{soustředěný odtok v rýhách}. Z hlediska výše uvedené rovnice \ref{eq:bilancnirce} se odtok, resp. přítok skládá z těchto dvou složek. Vznik soustředěného odtoku je podmíněn překročením limitní rychlosti, resp. limitního tečného napětí (viz. kapitola \ref{sec:soustredenyodtok}).
+
+\subsubsection{Plošný povrchový odtok} \label{sec:plosny_odtok}
+
 Rovnice plošného odtoku vychází z kinematického přístupu k řešení pohybové rovnice,
 % 
 % 
@@ -218,9 +212,6 @@ $$
       \jj{a}{\ ($a = \acs{X}\acs{I}^{\acs{Y}}$)\ a}
       \jj{b}{.}
 \end{tabular}
-
-
-
 
 Parametry \acs{a} a \acs{b} respektive \acs{X} a \acs{Y} jsou odvozeny na základě měření, viz kapitola \ref{Exp_mer}. Z vyhodnocení vyplývá, že parametr b je závislý pouze na půdním druhu. Parametr a je závislý nejen na půdním druhu, ale také na sklonu svahu. Odteklá resp. přitelká výška je pak dopočítána jako
 
@@ -257,7 +248,7 @@ $$
 
 \paragraph{Odvozené veličiny}
 
-Z vypočteného průtoku, velikosti řešeného elementu a délky časového lze dopočítat objem odtoku
+Z vypočteného průtoku, velikosti řešeného elementu a délky časového lze dopočítat objem odtoku:
 $$
   \acs{Vout} = \acs{dT}\acs{qsur},
 $$
@@ -268,7 +259,6 @@ $$
 \begin{tabular}{rrl}
   kde \jj{Vout}{.}
 \end{tabular}
-
 
 
 
@@ -312,7 +302,7 @@ Tečné napětí dále využívané v modelu pak uvažuje výpočet tak, jak jej
 
 
 
-Vypočítaná rychlost a tečné napětí jsou v případě posuzování erozní ohroženosti porovnávány s limitními hodnotami krajních nevymílajících rychlostí a tečnéch napětí pro jednotlivé půdní druhy v závislosti na druhu vegetace \citep{DyrovaE.1984} a jsou uvedeny v tabulce 
+Vypočítaná rychlost a tečné napětí jsou hlavními kritérii pro vznik soustředěného odtoku v rýhách. Vzniku rýh je také považován za limitní z hlediska erozní ohroženosti. Umístění prvků protierozní ochrany by mělo být vedeno tak aby nedocházelo ke vzniku rýh. Limitní hodnoty krajních nevymílajících rychlostí a tečných napětí pro jednotlivé půdní druhy v závislosti na druhu vegetace jsou převzaty z předchozích verzí modelu \citep{DyrovaE.1984} a jsou uvedeny v tabulce 
 \ref{tabulkaDyrova}. % tabulka neni 
 V literatuře se setkáme i s odlišnými hodnotami. Například M. A. Velikanov stanovil krajní nevymílající rychlost pro půdy 0,24 $m/s$  \citep{CabikJ.1963}, což je hodnota nižší, než kterou stanovila E. Dýrová.
 
@@ -332,7 +322,7 @@ V literatuře se setkáme i s odlišnými hodnotami. Například M. A. Velikanov
 
 Výpočet soustředěného odtoku v rýhách implementovaný do modelu SMODERP vychází z několika předpokladů:
 \begin{enumerate}
-  \item Zavedení stejných zjednodušujících předpokladů výpočtu proudění obdobně jako v~případě výpočtu plošného odtoku, přesto že se nejednáo výpočet proudění o zanedbatelně malé hloubce. Předpokladem je, že se v jednotlivých elemetech v relativně malých časových krocích jedná o rovnoměrné ustálené proudění. Při rovnoměrném proudění se předpokládá sklon dna \acs{I} rovný sklonu hladiny vody v rýze a shodná drsnost v celé délce elementu. Průtok v rýze je vyjádřen použitím Chézyho rovnice v mannigově tvaru:
+  \item Zavedení stejných zjednodušujících předpokladů výpočtu proudění obdobně jako v~případě výpočtu plošného povrchového odtoku, přesto že se nejedná o výpočet proudění o zanedbatelně malé hloubce. Předpokladem je, že se v jednotlivých elemetech v relativně malých časových krocích jedná o rovnoměrné ustálené proudění. Při rovnoměrném proudění se předpokládá sklon dna \acs{I} rovný sklonu hladiny vody v rýze a shodná drsnost v celé délce elementu. Průtok v rýze je tedy vyjádřen použitím Chézyho rovnice v Mannigově tvaru:
   \begin{equation}
     \acs{qrill} = \acs{vrill} \acs{A} = \acs{A} \frac{1}{\acs{n}} \acs{Rrill}^{2/3} \acs{I}^{1/2}  ,
     \label{eq:qrill}
@@ -347,7 +337,8 @@ Výpočet soustředěného odtoku v rýhách implementovaný do modelu SMODERP v
 
   
   
-  \item Soustředěný odtok vniká v elementech, kde dojde k překročení kritické hladiny \acs{hcrit}, která je spočtena pro každý element na základě  hodnot kritického tečného napětí \ref{eg:tau} nebo rychlostí \ref{eg:v}. Objem vzniklé rýhy odpovídá nadkritickému množství vody \acs{Vrill}.
+  \item Soustředěný odtok vzniká v elementech, kde dojde k překročení kritické hladiny \acs{hcrit} (viz. \ref{sec:plosny_odtok}), která je spočtena pro každý element na základě  hodnot kritického tečného napětí \ref{eg:tau} nebo rychlostí \ref{eg:v}.
+  \item Objem vzniklé rýhy odpovídá nadkritickému objemu vody \acs{Vrill}, který vychází ze vztahu:
   $$
   \acs{Vrill}= \acs{Vtot} - \acs{Vcrit} = MAX(0;\acs{hsur} - \acs{hcrit}) \acs{bunka}
   $$
@@ -359,7 +350,7 @@ Výpočet soustředěného odtoku v rýhách implementovaný do modelu SMODERP v
   \end{tabular}
   
 
-  \item Další z důležitých zjednodušení je tvar příčného profilu rýhy, který je v modelu reprezentován obdélníkem, s pevným poměrem stran \acs{rratio}=výška/šířka rýhy. Velikost rýhy se zvětšuje pokud je nadkritické množství \acs{Vrill} větší než objem samotné rýhy. Pak se výška rýhy rovná výšce vodní hladiny v rýze (vlevo na obrázku~\ref{fig:rill_schema}). Pokud začne být nadkritické množství \acs{Vrill} menší než je velikost rýhy, začne se rýha prázdnit, velkost rýhy však zůstává konstantní (vpravo na obrázku~\ref{fig:rill_schema}). Hydraulický poloměr rýhy lze určit podle následujícího vztahu
+  \item Další z důležitých zjednodušení je tvar příčného profilu rýhy, který je v modelu reprezentován obdélníkem, s pevným poměrem stran \acs{rratio}=výška/šířka rýhy. Velikost rýhy se zvětšuje pokud je nadkritické množství \acs{Vrill} větší než objem samotné rýhy, tak aby byl splněn předpoklad v předchozím bodě. Pak se výška rýhy rovná výšce vodní hladiny v rýze (vlevo na obrázku~\ref{fig:rill_schema}). Pokud začne být nadkritické množství \acs{Vrill} menší než je objem rýhy a dochází k prázdnění, velkost rýhy zůstává konstantní (vpravo na obrázku~\ref{fig:rill_schema}) a dochází pouze k poklesu hladiny. Hydraulický poloměr rýhy lze určit podle následujícího vztahu:
 %   
 % 
 % 
@@ -393,7 +384,7 @@ Výpočet soustředěného odtoku v rýhách implementovaný do modelu SMODERP v
 
 
 \paragraph{Celková bilance}
-Pokud dojde k vzniku rýh, přičtou se do celkové bilance~\ref{eq:bilancnirce} další dva členy vyjadřující přítok a odtok v rýhách. Rovnice~\ref{eq:bilancnirce} vypadá následovně
+Pokud dojde k vzniku rýh, rovnici celkové bilance~\ref{eq:bilancnirce} je možné rozepsat členy vyjadřující přítok a odtok odděleně pro \textbf{plošný povrchový} a \textbf{soustředěný} odtok v Rovnice~\ref{eq:bilancnirce} vypadá následovně
 
 \begin{equation} 
 \acs{hsur}_{i,t} = \acs{hsur}_{i,t-1} + \acs{dT}\left(\acs{es}_{i,t} + \sum_j^m \acs{oin}_{j,t-1} - \acs{inf}_{i,t} - \acs{oout}_{i,t-1}  + \sum_k^n \acs{oinrill}_{k,t-1} - \acs{ooutrill}_{i,t-1} \right),
@@ -459,8 +450,8 @@ Q =\frac {1}{n} h^{2/3} S^{1/2}
 \subsubsection{Odtok hydrografickou sítí} \label{sec:tokyodtok}
 \textbf{tohle není vůbec napsané}
 
-kapitola nenese záměrně název vodní toky. SMODERP je zamýšlen také jako nástroj pro navrhování opatření v ploše povodí. Cílem je simulovat a navrhovat odtoky i v dočasné hydrografické síti, která je tvořena přirozeným nebo častěji umělým přerušením přirozené odtokové dráhy. Nejčastěji se jedná o příkopy a průlehy které mají odváděcí a často erozní funkci. 
-Všechny prvky (síť vodních toků, přkopy, průlehy, atp.) jsou zadávány v rámci jednoho shapefile. Každý jednotlivý úsek je zadán jako konkrétní polygon (feature). Výpočetně model pracuje v rastrové síti, ale v případě, že se na daném elemetu vyskytuje tok, je přiteklá voda dále odváděna tímto tokem ve směru toku bez ohledu na směr odtoku modelu terénu.
+Tato kapitola nenese záměrně název odtok ve vodních tocích. SMODERP je zamýšlen také jako nástroj pro navrhování opatření v ploše povodí. Cílem je simulovat a navrhovat odtoky i v dočasné hydrografické síti, která je tvořena přirozeným nebo častěji umělým přerušením přirozené odtokové dráhy. Nejčastěji se jedná o příkopy a průlehy které mají odváděcí a často erozní funkci. 
+Všechny prvky (síť vodních toků, příkopy, průlehy, atp.) jsou zadávány v rámci jednoho shapefile. Každý jednotlivý úsek je zadán jako konkrétní polygon (feature). Výpočetně model pracuje v rastrové síti, ale v případě, že se na daném elemetu vyskytuje tok, je voda dále odváděna tímto tokem ve bez ohledu na směr odtoku daným modelem terénu.
 
 Proudění v těchto otevřených korytech je řešeno Mannigovou rovnicí ve tvaru:
 
@@ -479,7 +470,7 @@ Proudění v těchto otevřených korytech je řešeno Mannigovou rovnicí ve tv
 %\end{tabular
 
 
-Pro vlastní výpočet je třeba zadat typ a příčný profil daného prvku. Délka úseku je převzata z vlastností polygonu. Protože je model určen pro malá povodí jsou v modelu předpokládány pouze základní příčné profily (trojúhelník, obdélník, lichoběžník, parabola). 
+Pro vlastní výpočet je třeba zadat typ a příčný profil daného prvku. Délka úseku a sklonu jsou převzaty z vlastností polygonu. Protože je model určen pro malá povodí jsou v modelu předpokládány pouze základní příčné profily (trojúhelník, obdélník, lichoběžník, parabola). 
 Zadávání příčných profilů není přímo součástí shapefile, ale pro ulehčení jsou parametry zadávány jako samostatná tabulka. V případě, že jsou některé charakteristiky shodné, je tak možné jim přiřadit shodné atributy z tabulky.
 V rámci zjednodušení výpočtu jsou zadávány profily parametricky. Zjednodušený výpočetní model neuvažuje rozlivy z koryta zpět do buněk odtoku. Jednotlivé prvky narůstají podle zvolených parametrů, tak aby veškerá voda zůstala v korytě.
 přehled parametrů je uveden v následující tabulce
