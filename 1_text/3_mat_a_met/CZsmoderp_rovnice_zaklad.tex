@@ -8,15 +8,15 @@
 %
 %
 Základní odvození vztahů povrchových procesů v modelu SMODERP vychází z rovnice kontinuity a rovnice pohybové na základě kinematického principu s využitím experimentálních měření.
-Jak již bylo zmíněno v úvodu, jedná se o distribuovaný epizodní hydrologicko erozní model. Výpočet je řešen na pravidelné rastrové síti elementů. Podrobnost řešení je dána rozlišením vstupního rastru. V celém řešeném prostou je po jednotlivých elementech v každém časovém kroku provedena bilance zásoby a následně vypočteno odteklého množství za daný časový krok. Obecně se jedná o tři základní složky:
+Jak již bylo zmíněno v úvodu, jedná se o distribuovaný epizodní hydrologicko erozní model. Výpočet je řešen na pravidelné rastrové síti elementů (@@@jj neříká se tomu u rastru buňka?). Podrobnost řešení je dána rozlišením vstupního rastru. V celém řešeném prostoru je po jednotlivých elementech v každém časovém kroku provedena bilance zásoby a následně vypočteno odteklého množství za daný časový krok. Směr odtoky z elementu je stanoven pomocí odtokových algoritmů. Obecně se jedná o tři základní složky:
 
 \begin{itemize}
-\item infiltrace do půdy\acs{Inf}
+\item infiltrace do půdy \acs{Inf}
 \item efektivní srážka \acs{ES}
-\item odteklé množství \acs{Otot}
+\item přiteklé a odteklé množství \acs{Itot} a \acs{Otot}
 \end{itemize}
 
-Proudění vody a množství odtoku na povrchu je pak podle řešeno třemi odlišnými typy odtoku. Mimo hydrografickou síť je se jedná o \textbf{povrchový odtok}, který je buď jako \textbf{plošný povrchový odtok} a nebo \textbf{soustředěný odtok v rýhách}. Ve vodních tocích a dočasné hydrografické síti se pak jedná o soustředěný odtok. V ploše povodí jsou směry odtoků resp. přítoků dány funkcí směru odtoku. V místě vodních toků je pak veškerý tok směrován dále vodním tokem.
+Proudění vody a množství odtoku na povrchu je pak podle řešeno třemi odlišnými typy odtoku. Mimo hydrografickou síť je se jedná o \textbf{povrchový odtok}, který je buď jako \textbf{plošný povrchový odtok} a nebo \textbf{soustředěný odtok v rýhách}. Ve vodních tocích a dočasné hydrografické síti se pak jedná o soustředěný odtok. V ploše povodí jsou směry odtoků resp. přítoků dány funkcí směru odtoku (@@@jj odvozeny na zahladě odtokových algoritmů). V místě vodních toků je pak veškerý tok směrován dále vodním tokem.
 
 % PeKa - pokuso jsem se rozdělit povrchový odtok (plošný a rýhy dohromady), ab bylo jasnější o co jde
 
@@ -67,7 +67,7 @@ Bilanční rovnici pro každou buňku $i$ v čase $t$ lze rozepsat jako:
 
 
 \begin{equation} 
-\frac{\mathrm{d}S}{\mathrm{d}t} = \acs{ES}_{i,t} + \sum_j^m \acs{Oin}_{j,t-1} - \acs{Inf}_{i,t} - \acs{Oout}_{i,t-1},
+\frac{\mathrm{d}S}{\mathrm{d}t} = \acs{ES}_{i,t-1} + \sum_j^m \acs{Oin}_{j,t-1} - \acs{Inf}_{i,t-1} - \acs{Oout}_{i,t-1},
 \label{eq:bilancnirceV}
 \end{equation}
 % 
@@ -79,7 +79,9 @@ Bilanční rovnici pro každou buňku $i$ v čase $t$ lze rozepsat jako:
 \end{tabular}
 
 
-Toto $m$ se liší podle použitého odtokového algoritmu jednosměrného \acs{D8} nebo vícesměrného \acs{mfda} ({\it multi-flow direction algorithm}). Objem srážky \acs{ES} a infiltrované množství \acs{Inf} lze určit přímo při výpočtu časového kroku $t$. Přiteklé a odteklé množství vody \acs{Oin} a \acs{Oout} z časového kroku $t-1$ (což odpovídá explicitnímu řešení časové derivace). 
+Toto $m$ se liší podle použitého odtokového algoritmu jednosměrného \acs{D8} nebo vícesměrného \acs{mfda} ({\it multi-flow direction algorithm}). 
+Model SMODERP2D řeší časový krok explicitně, veličiny na pravé straně rovnice jsou při řešení času $t$ známé.
+% Objem srážky \acs{ES} a infiltrované množství \acs{Inf} lze určit přímo při výpočtu časového kroku $t$. Přiteklé a odteklé množství vody \acs{Oin} a \acs{Oout} z časového kroku $t-1$ (což odpovídá explicitnímu řešení časové derivace). 
 
 
 
@@ -89,7 +91,7 @@ Při samotném řešení se v modelu SMODERP operuje s veličinami ve výškový
 %nejsou to náhodou objemové jednoty, které dělíme plochou
 
 \begin{equation} 
-\acs{hsur}_{i,t} = \acs{hsur}_{i,t-1} + \acs{dT}\left(\acs{es}_{i,t} + \sum_j^m \acs{oin}_{j,t-1} - \acs{inf}_{i,t} - \acs{oout}_{i,t-1}\right),
+\acs{hsur}_{i,t} = \acs{hsur}_{i,t-1} + \acs{dT}\left(\acs{es}_{i,t-1} + \sum_j^m \acs{oin}_{j,t-1} - \acs{inf}_{i,t-1} - \acs{oout}_{i,t-1}\right),
 \label{eq:bilancnirce}
 \end{equation}
 % 
@@ -146,7 +148,7 @@ $$
   kde \jj{PS}{,}
       \jj{Lai}{,}
       \jj{PotI}{\ a}
-      & $\sum_{\bar{t} = t_{init}}^{t}$ & vyjadřuje množství srážky které propadlo \\
+      & $\sum_{\bar{t} = t_{init}}^{t}$ & vyjadřuje množství srážky, které propadlo \\
       && povrchem listů plodiny od počátečního času $t_{init}$ do času $t$.
       \label{srazka}
 \end{tabular}
@@ -173,7 +175,7 @@ V modelu je použita infiltrace podle Philipa \citep{philip1957} v~následujíc�
 % 
 \begin{tabular}{rrl}
   kde \jj{inf}{,}
-      \jj{Sorb}{\ a}
+      \jj{Sorbi}{\ a}
       \jj{Ki}{.}
 \end{tabular}
 
@@ -350,8 +352,8 @@ Výpočet soustředěného odtoku v rýhách implementovaný do modelu SMODERP v
   \end{tabular}
   
 
-  \item Další z důležitých zjednodušení je tvar příčného profilu rýhy, který je v modelu reprezentován obdélníkem, s pevným poměrem stran \acs{rratio}=výška/šířka rýhy. Velikost rýhy se zvětšuje pokud je nadkritické množství \acs{Vrill} větší než objem samotné rýhy, tak aby byl splněn předpoklad v předchozím bodě. Pak se výška rýhy rovná výšce vodní hladiny v rýze (vlevo na obrázku~\ref{fig:rill_schema}). Pokud začne být nadkritické množství \acs{Vrill} menší než je objem rýhy a dochází k prázdnění, velkost rýhy zůstává konstantní (vpravo na obrázku~\ref{fig:rill_schema}) a dochází pouze k poklesu hladiny. Hydraulický poloměr rýhy lze určit podle následujícího vztahu:
-%   
+  \item Další z důležitých zjednodušení je tvar příčného profilu rýhy, který je v modelu reprezentován obdélníkem, s pevným poměrem stran \acs{rratio}=výška/šířka rýhy. Velikost rýhy se zvětšuje pokud je nadkritické množství \acs{Vrill} větší než objem samotné rýhy, tak aby byl splněn předpoklad v předchozím bodě. Pak se výška rýhy rovná výšce vodní hladiny v rýze (vlevo na obrázku~\ref{fig:rill_schema}). Pokud začne být nadkritické množství \acs{Vrill} menší než je objem rýhy a dochází k prázdnění, velkost rýhy zůstává konstantní (vpravo na obrázku~\ref{fig:rill_schema}) a dochází pouze k poklesu hladiny. Hydraulický poloměr rýhy, která se zvětšuje nebo je konstantní, lze určit podle následujícího vztahu:
+%  
 % 
 % 
 %   Rozměry rýhy nejsou známy, protože rozměr rýhy \acs{hrill}, \acs{brill} se dynamicky mění v závislosti na množství vody během simulace. 
@@ -373,7 +375,13 @@ Výpočet soustředěného odtoku v rýhách implementovaný do modelu SMODERP v
         \jj{rratio}{.}
   \end{tabular}
   
+  Hydraulický poloměr rýhy, kde hladina oproti výšce rýhy klesá, se určuje pouze jako 
   
+  $$ 
+    \acs{Rrill} = \frac{\acs{A}}{\acs{O}} = \dfrac{\acs{hrill} \acs{brill}}{\acs{brill}+2\acs{hrill}}.
+  $$
+  
+  \acs{rratio} tedy určuje tvar rýhy pouze při jejím zvětšování. 
 %   Poměr šířky a výšky je v programu stanoven v současné době pevně, ale jako parametr, který je možné v případě potřeby změnit. Objem rýhy je stanoven podle rovnice \ref{Vrill}.
 
 %   \item V případě poklesu objemu vody v rýze si rýha zachovává svůj maximální tvar.
@@ -457,7 +465,7 @@ Proudění v těchto otevřených korytech je řešeno Mannigovou rovnicí ve tv
 
 \textbf{překotrovat rci}
 \begin{equation}
-    \acs{qstream} = \acs{A} \frac{1}{\acs{n}} \acs{Rsheet}^{2/3} \acs{I}^{1/2}  ,
+    \acs{qstream} = \acs{A} \frac{1}{\acs{n}} \acs{Rstream}^{2/3} \acs{I}^{1/2}  ,
     \label{eq:qtok}
 \end{equation}
 
