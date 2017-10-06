@@ -1,0 +1,45 @@
+
+% 
+\begin{sidewaystable}
+% \begin{table}[]
+\centering
+\caption{Tabulka s přehledem vstulních dat modelu}
+\label{tab:vstupy}
+\small{
+% \begin{tabular}{p{4cm}lp{2cm}p{5cm}}
+\begin{tabular}{lllp{7.5cm}}
+\hline
+Název                              & Typ dat                                               & Povinný / volitelný & Poznámka                                                                                                                                                      \\ \hline \hline
+digitální model terénu             & \cellcolor[HTML]{96FFFB}{\color[HTML]{000000} raster} & Povinný           & Touto vrstvou se řídí i prostorová diskretizace                                                                                                               \\ \hline
+prostorové rozložení půd           & \cellcolor[HTML]{FFC702}vektor - polygony             & Povinný           & Polygon mají v atributové tabulce idenfikátor typu půdy                                                                                                       \\ \hline
+prostorové rozložení typu vegetace & \cellcolor[HTML]{FFC702}vektor- polygony              & Povinný           & polygon mají v atributové tabulce idenfikátor typu vegetace                                                                                                   \\ \hline
+srážková data                      & .txt soubor                                           & Povinný           & kumulativne zadaná srážka                                                                                                                                     \\ \hline
+maximální časový krok              & reálné číslo                                          & Povinný           & podle délky a intenzity srážky; doporučuje se 30 - 60 sekund                                                                                                  \\ \hline
+výstupní adrešář                   & text                                                  & Povinný           & adresář pro uložení výsledků (při začátku výpoštu se adresář vyčistí!)                                                                                        \\ \hline
+bodové výstupy hydrogramů          & \cellcolor[HTML]{FCFF2F}vektor - body                 & Volitelný         & Body, kde se výpíší výsledky. Pokud je ve stejné buňce jako bod úsek hydrografické sítě, vypíše veličony v příslušné linii                                    \\ \hline
+typ výpočtu                        & text                                                  & Povinný           & Uživatel má na výběr: pouze plošní odtok, plošný i rýhový odtok, plošný rýhový odtok i odtok hydraografickou sítí                                             \\ \hline
+volba výcesměrného odtoku          & \cellcolor[HTML]{9698ED}logická proměnná              & Povinný           & Výchozí je jednosměrný odtok. Uživatel může zvolit výceměrný odtok.                                                                                           \\ \hline
+paramtry půdy a vegetace           & \cellcolor[HTML]{67FD9A}tabulka                       & Povinný           & Tabulka parametrů půdy a vegetace. Názvy sloupců mají definované označení. Hodnoty se spojí s vektorovými vrstvami.                                           \\ \hline
+hydrografická síť                  & \cellcolor[HTML]{F8FF00}vektor - linie                & Volitelný         & Prostorové rozložení hydrografické sítě. Atributová tabulka obsahu identifikátor jednolivých linií hydrografické sítě.                                        \\ \hline
+parametry hydrografické sítě       & \cellcolor[HTML]{67FD9A}tabulka                       & Volitelný         & Tabulka parametrů jednotlivých částí hydraografické sítě. Názvy sloupců mají definované označení. Hodnoty se spojí s jednotlivými liniemi hydrografické sítě. \\ \hline
+volba arcgis výstupů               & \cellcolor[HTML]{9698ED}logická proměnná              & Povinný           & Výchozí formát výstupních rasterů je proprietární formát ERSI. Uživatel může zvolit textorý formát ASCII jako formát výstupních rasterů.                      \\ \hline
+\end{tabular}
+}
+% \end{table}
+\end{sidewaystable}
+% \begin{itemize} \itemsep 0pt
+% \item digitální model terénu
+% \item shapefile půd
+% \item shapefile využití území
+% \item srážkový soubor
+% \item časový krok výpočtu a celková doba simulace
+% \item výstupní adresář
+% \item bodová vrstva pro generování hydrogramů
+% \item výstupní adresář
+% \item typ výpočtu
+% \item volba výcesměrného odtoku
+% \item tabulka půd a vegetace a kód pro připojení
+% \item shapefile hydrografické sítě
+% \item tabulka vodních toků a kód pro připojení
+% \item volitelné formy výstupů
+% \end{itemize}
