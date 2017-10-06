@@ -456,15 +456,12 @@ Q =\frac {1}{n} h^{2/3} S^{1/2}
 
 %newb = math.sqrt(V/(rillRatio*l)) #KAvka, tohl eje divně
 \subsubsection{Odtok hydrografickou sítí} \label{sec:tokyodtok}
-\textbf{tohle není vůbec napsané}\\
-\textbf{neco jsem dopsal jj}
 
 SMODERP2D je zamýšlen také jako nástroj pro navrhování opatření v ploše povodí. Cílem je simulovat a navrhovat odtoky i v dočasné hydrografické síti, která je tvořena přirozeným nebo častěji umělým přerušením přirozené odtokové dráhy. Nejčastěji se jedná o příkopy a průlehy které mají odváděcí a často erozní funkci. 
 Všechny prvky (síť vodních toků, příkopy, průlehy, atp.) jsou zadávány v rámci jednoho shapefile. Každý jednotlivý úsek je zadán jako konkrétní linie (feature). Výpočetně model pracuje v rastrové síti, ale v případě, že se na dané buňce rastru vyskytuje úsek hydrografické sítě, je voda dále odváděna tímto úsekem ve směru jeho sklonu  bez ohledu na směr plošného či soustředěného odtoku.
 
 Proudění v těchto otevřených korytech je řešeno Mannigovou rovnicí ve tvaru:
 
-\textbf{překotrovat rci}
 \begin{equation}
     \acs{qstream} = \acs{A} \frac{1}{\acs{n}} \acs{Rstream}^{2/3} \acs{I}^{1/2}  ,
     \label{eq:qtok}
@@ -477,9 +474,6 @@ Proudění v těchto otevřených korytech je řešeno Mannigovou rovnicí ve tv
        \jj{n}{\ a}
        \jj{Rstream}{.}
 \end{tabular}
-
-
-  
   
 Pro vlastní výpočet je třeba zadat typ a příčný profil daného prvku. Délka úseku a sklonu jsou převzaty z liniové vrstvy a z digitálního modelu terénu. Protože je model určen pro malá povodí jsou v modelu předpokládány pouze základní tvary příčných profilů (trojúhelník, obdélník, lichoběžník, parabola). 
 Zadávání tvaru příčného profilu není součástí atributové tabulky shapefile, ale pro ulehčení jsou parametry zadávány v samostatná tabulce. V případě, že jsou některé charakteristiky shodné, je tak možné jim přiřadit shodné atributy z tabulky.

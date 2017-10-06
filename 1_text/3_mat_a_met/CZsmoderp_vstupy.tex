@@ -31,10 +31,21 @@ Rastr digitálního modelu terénu nebo také DMT, či anglicky DTM (Digital Ter
   \label{fig:bykovicedmt}
 \end{figure}
 
+\textbf{nebo}
+
+\begin{figure}
+  \centering
+  \includegraphics[width=0.5\textwidth]{./img/DMT_byk.png}
+  \caption{výřez digitálního modelu terénu povodí Býkovice}
+  \label{fig:bykovicedmt}
+\end{figure}
+
+ 
 \paragraph{Shapefile půd} \label{sec:vstuppuda}
 
+Datové zdroje fyzikálních vlastností jsou v rámci České Rebubliky roztříšťené. Model jako takový pracuje s jednou vstupní vrstvou půd. Příprava této vrstvy z dostupných dat je otázkou preprocessingu. V zásadě jsou tři základní dostupné datové zdroje půdních vlastnosti. Odděleně na zemdělské a lesní půdě a dále bezešvá vrstva půd KPP odpovídající měřítku 1:200000.
 
-V České republice se standardně používá na zemědělské půdě rozdělení půd podle zrnitosti dle Novákovi klasifikace . Půda je rozdělena podle obsahu tzv. jílových částic na půdy \cite{kavka} (@@@jj v bib/bib.bib zadna polozka s oznacenim kavka neni...):
+V České Republice se na zemědělské půdě standardně využívá rozdělení podle Novákovi klasifikace. Půda je rozdělena podle obsahu tzv. jílových částic na půdy \cite{kavka} (@@@jj v bib/bib.bib zadna polozka s oznacenim kavka neni...):
 \begin{itemize} \itemsep 0pt
   \item písčité
   \item hlinitopísčité
@@ -45,8 +56,8 @@ V České republice se standardně používá na zemědělské půdě rozdělen�
   \item jíl
 \end{itemize}
 
-Na lesních půdách je naopak využíván popis kategorií podle klasifikace USDA.
-Vstupní shapefile popisuje prostorové rozložení jedotlivých půdních typů na řešeném území. Pro určení charakteristik je nutné aby obsahoval atributové pole udávající identifikátor daného půdního typu. Identifikátor odkazuje na půdní charakteristiky, které jsou definované v dalších vstupech (popsáno níže). Shapefile popisující půdu je zobrazen na obrázku \ref{fig:bykovicepuda}.
+Na lesních půdách je v České Republice standardně využíván popis kategorií podle klasifikace USDA.
+Ukázkový obrázek ukazuje výřez připravené vrstvy po spojení z různých datových zdrojů. Pro určení charakteristik je nutné aby obsahoval atributové pole udávající identifikátor půdního typu. Identifikátor odkazuje na půdní charakteristiky, které jsou definované v dalších vstupech (popsáno níže). Shapefile popisující půdu je zobrazen na obrázku \ref{fig:bykovicepuda}.
 \begin{figure}
   \centering
   \includegraphics[width=0.5\textwidth]{./img/pudnityp.png}
@@ -54,8 +65,16 @@ Vstupní shapefile popisuje prostorové rozložení jedotlivých půdních typů
   \label{fig:bykovicepuda}
 \end{figure}
 
+\textbf{nebo}
 
+\begin{figure}
+  \centering
+  \includegraphics[width=0.5\textwidth]{./img/pudy.png}
+  \caption{výřez půdní mapy s vyznačenými půdními druhy}
+  \label{fig:bykovicepuda}
+\end{figure}
 
+ 
 \paragraph{Shapefile využití území} \label{sec:vstupvegetace}
 
 Obdobně jako u půdních dat je vstupem vektorový shapefile popisující využití území. Mezi základní typy pro které byl model testován patří:
@@ -75,6 +94,13 @@ Shapefile popisující vegetaci je zobrazen na obrázku \ref{fig:bykovicevegetac
   \centering
   \includegraphics[width=0.5\textwidth]{./img/lu.png}
   \caption{Ukázka vektorové vrstvy, atributové tabulky a polem v atributové tabulce (LandUse) s~identifikátorem typu vegetace na vyznačeném území (TP - travní porost).}
+  \label{fig:bykovicevegetace}
+\end{figure}
+
+\begin{figure}
+  \centering
+  \includegraphics[width=0.5\textwidth]{./img/LandCover.png}
+  \caption{Ukázka vektorové vrstvy využití území -  Land Cover}
   \label{fig:bykovicevegetace}
 \end{figure}
 
@@ -98,8 +124,19 @@ Hlavničky druhého až posledního sloupce jsou povinné. Jejich význam je pop
   \centering
   \includegraphics[width=0.75\textwidth]{./img/spojenistabulkou.png}
   \caption{Princip propojení atributových tabulek vektorových vrstev s tabulkou obsahující jednotlivé parametry}
-  \label{fig:pripravapar}
+  \label{fig:pripravapar_detail}
 \end{figure}
+
+Propojení vrstev je pak na mapovém výřezu je pak na obrázku @@@.
+
+\begin{figure}
+  \centering
+  \includegraphics[width=0.75\textwidth]{./img/kTabulce_soilveg.png}
+  \caption{Princip propojení atributových tabulek vektorových vrstev s tabulkou obsahující jednotlivé parametry}
+  \label{fig:pripravapar_vyrez}
+\end{figure}
+
+\textbf{nebo co toto} ty obrázky mám i zvlášť
 
 
 Meze jednotlivých parametrů jsou podrobněji popsány v kapitole XXX. 
@@ -131,12 +168,12 @@ Srážky se zadávají jako textový soubor se dvěma sloupci. V levém je časo
 
 \paragraph{Časový krok modelu (s) a celková doba simualce(min} \label{sec:vstupkrok}
 
-Časový krok modelu označený jako \acs{dT} je hodnota v minutách, která udává velikost počátečního časového kroku. tento zadaný kro je maximální hodnout. během výpočtu je časový krok dynamicky zkracován podle Courantovy podmínky.. Velikost časového kroku tedy závisí na rychlosti děje a na velikosti prostorového kroku (velikosti buňky DMT). %Vzhledem k tomu, že rychlost odtoku v rýhám může být řádově vyšší než rychlost plošného odtoku je snaha řídit velikost časového kroku podle rychlosti plošného odtoku, kde Courantovo kritérium povoluje vyšší časový krok. Velikosti časového kroku zásadně ovlivňuje celkovou délku výpočtu. Pokud časový krok vyhovuje Courantovu kritériu v plošném odtoku, ale toku v rýhách již nikoli, začne se časový krok dělit pouze interně při výpočtu rýh. Tyto děje se probíhají při běhu programu a uživatel je nijak neovlivňuje, nicméně, je třeba si uvědomit, že při vytvoření rýhového odtoku a nutností dělit časový krok v těchto buňkách může se doba výpočtu jednoho časového kroku prodloužit. která udává velikost jednoho kroku výpočtu, v němž probíhá výpočet odtoku a další nedílné součásti programu. Zadaný časový krok se mění podle potřeb Courantova kritéria \ref{section:cfl}, nikdy však nemůže být vyšší než vstupní zadaná hodnota uživatelem. 
+Časový krok modelu označený jako \acs{dT} je hodnota v sekundách, která udává velikost počátečního časového kroku. Tento zadaný krok je maximální hodnotu. během výpočtu. Časový krok je dynamicky upravován podle Courantovy podmínky, tak aby bylo zachována numerická stabilita implicitního řešení. Velikost časového kroku závisí na rychlosti povrchového odtoku a na velikosti prostorového kroku (velikosti buňky DMT). Zvolené řešení je detailněji popsáno v kapitole \ref{sec:cfl}. %Vzhledem k tomu, že rychlost odtoku v rýhám může být řádově vyšší než rychlost plošného odtoku je snaha řídit velikost časového kroku podle rychlosti plošného odtoku, kde Courantovo kritérium povoluje vyšší časový krok. Velikosti časového kroku zásadně ovlivňuje celkovou délku výpočtu. Pokud časový krok vyhovuje Courantovu kritériu v plošném odtoku, ale toku v rýhách již nikoli, začne se časový krok dělit pouze interně při výpočtu rýh. Tyto děje se probíhají při běhu programu a uživatel je nijak neovlivňuje, nicméně, je třeba si uvědomit, že při vytvoření rýhového odtoku a nutností dělit časový krok v těchto buňkách může se doba výpočtu jednoho časového kroku prodloužit. která udává velikost jednoho kroku výpočtu, v němž probíhá výpočet odtoku a další nedílné součásti programu. Zadaný časový krok se mění podle potřeb Courantova kritéria \ref{section:cfl}, nikdy však nemůže být vyšší než vstupní zadaná hodnota uživatelem. 
 
 %Při zadávání počátečního časového kroku je možno zvolit hodnotu v rozmezí od 0.05 do 0.3 minuty. 
 % Velikost časového kroku nejvíce ovlivňuje reálnou dobu běhu modelu. Čím nižší je časový krok, tím déle uživatel čeká na výsledky. 
 %Stejně jako u všech ostatních číselných hodnot zadávaných do programu ArcGIS je potřeba myslet na to, že čísla s desetinnými místy musí být odděleny tečkou, nikoliv čárkou.
-Délka běhu modelu je hodnota v minutách určující čas, do kterého se model po jednotlivých časových krocích dostane a skončí. Doporučená volba délky běhu modelu by měla být delší než zadávaná srážka.
+Délka běhu modelu je hodnota v minutách určující čas, do kterého se model po jednotlivých časových krocích dostane a skončí. Volba délky běhu modelu by měla dostatečně dlouhá, tak aby odtekla veškerá voda z řešeného území, především při zjišťován celkového objemu odtoku.
  
 
 
@@ -144,7 +181,7 @@ Délka běhu modelu je hodnota v minutách určující čas, do kterého se mode
 
 %Povrchová retence je děj, při kterém se zachytává počáteční část srážky, která se dále neúčastní odtoku. V reálném prostředí si lze toto představit jako zachytávání srážkové vody v nerovnostech na povrchu. Pouze po naplnění těchto malých nerovností dochází k povrchovému odtoku. Hodnota závisí na hustotě půdy a její deformaci. Povrchová retence se zadává v mm. Pro veškerá testování byla povrchová retence zvolena 0.2 mm.
 
-\paragraph{shapefile bodů pro generování hydrogramů} \label{sec:vstupbody}
+\paragraph{Shapefile bodů pro generování hydrogramů} \label{sec:vstupbody}
 
 Jedná  se o bodovou vrstvu. V těchto bodech se budou uživateli ukládat časové řady počítaných veličin. Tento volitelný vstupní parametr je podrobněji popsán ve výstupech \ref{sec:hydrogramy}.
 
