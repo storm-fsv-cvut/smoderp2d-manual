@@ -457,15 +457,10 @@ Q =\frac {1}{n} h^{2/3} S^{1/2}
 %newb = math.sqrt(V/(rillRatio*l)) #KAvka, tohl eje divně
 \subsubsection{Odtok hydrografickou sítí} \label{sec:tokyodtok}
 
-<<<<<<< HEAD
-Tato kapitola nenese záměrně pouze název odtok ve vodních tocích. SMODERP je zamýšlen především jako nástroj pro navrhování opatření v ploše povodí. Cílem je simulovat a navrhovat odtoky i v dočasné hydrografické síti, která je tvořena přirozeným nebo častěji umělým přerušením přirozené odtokové dráhy s cílem zamezit soustředění odtoku a vzniku rýh. Nejčastěji se jedná o příkopy a průlehy které mají odváděcí a často erozní funkci. 
-Všechny prvky (síť vodních toků, příkopy, průlehy, atp.) jsou zadávány v rámci jednoho shapefile. Každý jednotlivý úsek je zadán jako konkrétní polygon (feature). U jednotlivých úseků se předpokládá jejich napojení v uzlových bodech. Globálně model SMODERP pracuje v rastrové síti, ale v případě, že se na daném elemetu vyskytuje tok, je voda dále odváděna tímto tokem ve bez ohledu na směr odtoku daným modelem terénu.
 
-\textbf{semka dát obrázek}
-=======
 SMODERP2D je zamýšlen také jako nástroj pro navrhování opatření v ploše povodí. Cílem je simulovat a navrhovat odtoky i v dočasné hydrografické síti, která je tvořena přirozeným nebo častěji umělým přerušením přirozené odtokové dráhy. Nejčastěji se jedná o příkopy a průlehy které mají odváděcí a často erozní funkci. 
 Všechny prvky (síť vodních toků, příkopy, průlehy, atp.) jsou zadávány v rámci jednoho shapefile. Každý jednotlivý úsek je zadán jako konkrétní linie (feature). Výpočetně model pracuje v rastrové síti, ale v případě, že se na dané buňce rastru vyskytuje úsek hydrografické sítě, je voda dále odváděna tímto úsekem ve směru jeho sklonu  bez ohledu na směr plošného či soustředěného odtoku.
->>>>>>> origin/master
+
 
 Proudění v těchto otevřených korytech je řešeno Mannigovou rovnicí ve tvaru:
 
@@ -473,42 +468,7 @@ Proudění v těchto otevřených korytech je řešeno Mannigovou rovnicí ve tv
     \acs{qstream} = \acs{A} \frac{1}{\acs{n}} \acs{Rstream}^{2/3} \acs{I}^{1/2}  ,
     \label{eq:qtok}
 \end{equation}
-<<<<<<< HEAD
 
-%\begin{tabular}{stream}
- %   kde \jj{qstream}{,}
-  %      \jj{vstream}{,}
-   %     \jj{A}{,}
-    %    \jj{n}{\ a}
-     %   \jj{Rstream}{.}
-%\end{tabular
-
-
-Pro vlastní výpočet je třeba zadat typ a příčný profil daného prvku. Délka úseku a sklonu jsou převzaty z vlastností polygonu. V případě, že budou zadány velmi krátké úseky (do pětinásobku rozlišení vstupního modelu terénu) může dojít k numerické nestabilitě výpočtu. 
-Model určen pro malá povodí a tak jsou v modelu předpokládány pouze základní příčné profily (trojúhelník, obdélník, lichoběžník, parabola). Zadávání těchto příčných profilů není přímo součástí \textbf{shapefile}, ale pro ulehčení jsou parametry zadávány jako \textbf{samostatná tabulka} (\textit{viz. kapitola XXX}. V případě, že jsou některé charakteristiky shodné, je tak možné jim přiřadit shodné atributy z tabulky.
-Zjednodušený výpočetní model neuvažuje rozlivy z koryta zpět do buněk, aby tvořili plošný odtok. Jednotlivé prvky narůstají podle zvolených parametrů, tak aby veškerá voda zůstala v korytě. Přehled parametrů je uveden v následující tabulce:
-
-\textbf{vlžit tabuklu peka}
-
-cislo	smoderp	tvar	b	m	drsnost	Q365	pozn
-0	0	1.0	0.3	1.0	0.03	0.0	default
-1	obdelnik1	0.0	0.2	0.0	0.035	0.0
-2	lichobeznik1	1.0	0.2	2.0	0.035	0.0
-3	trojuhelnik1	2.0	0	2.0	0.03	0.0
-4	parabola1	3	0.7	0.0	0.03	0.0	b..sirkahladina
-
-
-
-
-kde:
-\begin{itemize}
-\item \textbf{b} - šířka profilu ve dně (u trojúhelníku se rovná nule)
-\item \textbf{m} - poměr sklonu svahů (pro obdélník je roven nule)
-\item \textbf{drsnost} - Maninngova drsnost v daném korytě.
-\item \textbf{Q365} - základní odtok. V případě dočasných prvků jako jsou příkopy je tato hodnota rovna nule, v případě vodních toků se jedná o základní odtok (např. $Q_{365}$)
-\item \textbf{poznámky} - jedná se o volitelnou položku, do výpočtu se nijak nepropaguje
-\end{itemize}
-=======
 % 
 \begin{tabular}{rrl}
    kde \jj{qstream}{,}
@@ -557,7 +517,7 @@ cislo & smoderp      & tvar & b   & m   & drsnost & Q365 & pozn    \\ \hline \hl
 % \item \textbf{Q365} - základní odtok. V případě dočasných prvků jako jsou příkopy je tato hodnota rovna nule, v případě vodních toků se jedná o základní odtok.-
 % \item \textbf{poznámky} - jedná se o volitelnou položku, do výpočtu se nijak nepropaguje
 % \end{itemize}
->>>>>>> origin/master
+
 
 Tímto způsobem jsou zadány tvary prvků, které se v řešené lokalitě vyskytují.
 \textbf{sem dát obrázek těch profilů}

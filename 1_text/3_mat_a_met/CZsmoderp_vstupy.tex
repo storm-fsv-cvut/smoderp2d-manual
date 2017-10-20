@@ -24,19 +24,11 @@ Přehled vstupů do modelu je ukázám v tabulce~\ref{tab:vstupy}
 
 Rastr digitálního modelu terénu nebo také DMT, či anglicky DTM (Digital Terrain Model) je souvislý povrch území obvykle znázorňující morfologii určité části Země. DMT rastr je složen z jednotlivých buněk. Nejčastější formou jsou buňky čtvercové, ale mohou mít i jiný tvar. Velikost buněk se liší v závislosti na velikosti zobrazovaného území. Pro účely modelu SMODERP 2D by minimální velikost buněk měla být 3 metry a výše. Optimum je však 5 metrů a více. Důležitá je i celková rozloha rastru, tedy počet buněk. Model byl testován na rastrech o velikosti od několika málo tisíc buněk. DMT jednoho z testovacích, povodí Nučice, obsahuje přes 125 tisíc buněk. Příklad DMT je ukázán na obrázku~\ref{fig:bykovicedmt}.
 
-\begin{figure}
-  \centering
-  \includegraphics[width=0.5\textwidth]{./img/dmtbk.png}
-  \caption{digitálního modelu terénu povodí Býkovice}
-  \label{fig:bykovicedmt}
-\end{figure}
-
-\textbf{nebo}
 
 \begin{figure}
   \centering
   \includegraphics[width=0.5\textwidth]{./img/DMT_byk.png}
-  \caption{výřez digitálního modelu terénu povodí Býkovice}
+  \caption{Výřez digitálního modelu terénu povodí Býkovice}
   \label{fig:bykovicedmt}
 \end{figure}
 
@@ -58,14 +50,7 @@ V České Republice se na zemědělské půdě standardně využívá rozdělen�
 
 Na lesních půdách je v České Republice standardně využíván popis kategorií podle klasifikace USDA.
 Ukázkový obrázek ukazuje výřez připravené vrstvy po spojení z různých datových zdrojů. Pro určení charakteristik je nutné aby obsahoval atributové pole udávající identifikátor půdního typu. Identifikátor odkazuje na půdní charakteristiky, které jsou definované v dalších vstupech (popsáno níže). Shapefile popisující půdu je zobrazen na obrázku \ref{fig:bykovicepuda}.
-\begin{figure}
-  \centering
-  \includegraphics[width=0.5\textwidth]{./img/pudnityp.png}
-  \caption{Ukázka vektorové vrstvy, atributové tabulky a polem v atributové tabulce (pudni\_druh) s identifikátorem půdního typu na vyznačeném území (HP).}
-  \label{fig:bykovicepuda}
-\end{figure}
 
-\textbf{nebo}
 
 \begin{figure}
   \centering
@@ -90,12 +75,6 @@ Obdobně jako u půdních dat je vstupem vektorový shapefile popisující využ
 
 \textit{Širokořádkové plodiny jsou například brambory, kukuřice, řepa, sója a slunečnice. Úzkořádkové plodiny jsou obiloviny nebo řepka.}
 Shapefile popisující vegetaci je zobrazen na obrázku \ref{fig:bykovicevegetace}. Obdobně jako u půd v předchozí sekci je třeba atributovou tabulku tohoto shapefilu doplnit o identifikátor daného typu vegetace. Tento identifikátor odkazuje na charakteristiky daného vegetačního povrchu definované v dalším vstupech (popsáno níže).
-\begin{figure}
-  \centering
-  \includegraphics[width=0.5\textwidth]{./img/lu.png}
-  \caption{Ukázka vektorové vrstvy, atributové tabulky a polem v atributové tabulce (LandUse) s~identifikátorem typu vegetace na vyznačeném území (TP - travní porost).}
-  \label{fig:bykovicevegetace}
-\end{figure}
 
 \begin{figure}
   \centering
