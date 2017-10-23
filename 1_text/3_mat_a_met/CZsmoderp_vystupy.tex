@@ -1,17 +1,27 @@
-%!TEX ROOT = ../mainCZ.tex
+Výstupy modelu jsou uloženy složky zadané jako vstupní parametr. Složka při spuštěné programu vyčistí. Výstupy jsou ve textových a rastrový formátech. Jako rastrový formát lze zvolit proprietární ESRI formát nebo formát ASII. Přehled rasterových výstupních souborů je v tabulce\ref{tab:vystupyrast}. Pokud jsou do vstupů zadány body pro výpočet hydrogramů vypíší se do souborů s příponou {\tt.dat}. Soubory mají hlavičku podle procesů, které v buňce pod daným bodem vzniknou. Popis vypsaných veličin je popsán tabulce~\ref{tab:vystupydat}
+
+
+\include{./tab/prehladvystupurast}
+
+
+\include{./tab/prehladvystupudat}
 
 
 
 
 
+\paragraph{State - typ průtoku na buňce}\label{sec:statpopis}
+  Jak bylo popsání no v kapitole~\ref{kap:tok} v modelu je možné řešit několik typů povrchového odtoku: plošný odtok, soustředěný odtoku a odtok hydrografickou sítí. Topografie hydrografické sítě je definována uživatelem. Vznik soustředěného odtoku je podmíněn překročením kritické výšky (popsáno v kapitole~\ref{sec:soustredenyodtok}). V programu jsou typy odtoku rozlišeny celočíselným identifikátorem označeným State, kde pokud State\\
+%   
+  \begin{tabular}{rcl}
+     =     &0&  dochází v buňce pouze k plošnému odtoku pokud \\
+     =     &1&  dochází v buňce k plošnému i soustředěnému odtoku  nebo pokud \\
+     =     &2&  @@@ plošný odtoku a rýha jen odtéká \\
+     && je to v teto verzi? Je to zajímavé pro uživatele? \\
+     $>$=  &1000&  je v buňce úsek hydrografické sítě. \\
+  \end{tabular}
 
-
-Výstupy modelu jsou uloženy složky zadané jako vstupní parametr. Složka při spuštěné programu vyčistí. Výstupy jsou ve textových a rastrový formátech. Jako rastrový formát lze zvolit proprietární ESRI formát nebo formát ASII. Přehled rasterových výstupních souborů je v tabulce\ref{tab:vystupyrast}. Pokud jsou do vstupů zadány body pro výpočet hydrogramů vypíší se do souborů s příponou {\tt.dat}. Soubory mají hlavičku podle procesů, které v buňce pod daným bodem vzniknou. Popis vypsaných veličin je popsán tabulce~\ref{tab:vystupnidat}
-
-\input{./tab/prehladvystupurast}
-
-
-\input{./tab/prehladvystupudat}
+  Identifikátor hydrografické sítě nemusí začínat číslem 1000 a nemusí být vzestupný (sestupný) u navazujících úseků. Tento identifikátor je v modelu definován jako 1000 + {\tt fid}, je tedy definován uživatelem nebo přiřazen použitým GIS softwarem. 
 
 
 
