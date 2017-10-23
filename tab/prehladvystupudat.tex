@@ -1,0 +1,86 @@
+\begin{table}
+ 
+
+ \centering
+ \caption{Popis veličin  v {\tt.dat} souborech}
+\label{tab:vystupydat}
+
+% \begin{tabular}{p{4cm}lp{2cm}p{5cm}}
+ \begin{tabular}{llp{0.5\textwidth}}
+  \hline  \hline
+ Název sloupce    & Jednotka    & Popis       \\ 
+ \hline
+ Buňka s plošným odtokem:	 &&\\ \hline
+ Time[s]          &   $m^2$      &  Čas výpočetního kroku          \\
+ deltaTime[s]     &   $m$        &  Aktuální délka časového kroku  \\
+ Rainfall[m]      &  $m$         &  Srážková výška v aktuálním časovém kroku \\
+ Water\_level\_[m]       &  $m^3$  & Výška hladiny plošného odtoku \\
+ Sheet\_Flow[m3/s]       &  $m^3s^{-1}$  & Průtok plošného odtoku  \\
+ Sheet\_V\_runoff[m3]    &  $m^3$     & Odteklý objem plošného odtoku \\
+ Sheet\_V\_rest[m3]      &  $m^3$     & Objem zbytku vody po plošném odtoku \\
+ Infiltration[m]         &  $m$      & Výška infiltrace v daném časovém kroku \\
+ Surface\_retetion[m]    &  $m$      & Výška zadržené vody na povrchu v daném časovém kroku \\
+ State                   &  -         & Typ odtoku na buňce (viz sekce~\ref{sec:statpopis})  \\
+ V\_inflow[m3]   &   $m^3$ &  Celkový objem přítoku do buňky \\
+ WlevelTotal[m]	  &   $m$	&  Celková výška hladiny  \\  \hline
+ Pro soustředěný odtok &&\\ \hline 
+ WlevelRill[m]         &   $m$       &  Výška hladiny v buňce se soustředěným odtokem* \\
+ Rill\_width[m]	       &   $m$ &  Šířka rýhy vzniklá soustředěným odtokem\\
+ Rill\_flow[m3/s]      &   $m^3s^{-1}$       &  Průtok v rýze soustředěného odtoku \\
+ Rill\_V\_runoff[m3]   &   $m^3$  &   Objem soustředěného odtoku rýhou \\
+ Rill\_V\_rest   &  $m^3$ &   Objem zbytku vody po soustředěném odtoku rýhou  \\
+ Surface\_Flow[m3/s]   &  $NA$ & Celkový průtok (plošný + soustředěný)  \\
+ Surface\_V\_runoff[m3]   &   $m$  & Celkový odteklý objem (plošný + soustředěný) \\
+ V\_to\_rill.m3. & $m$ &  @@@ toto tam chcem? to je V\_inflow cast co jde do ryhy, pridal jsem to tam jednou kdyz jsem hledal nejakou chybu...\\
+ ratio & $m$ &  Počet krácení časového kroku v rýhách @@@(je pro nas?)\\
+ courant & $m$ &  Courantovo kritérium pro plošná odtok @@@(je pro nas?)\\
+ courantrill & $m$ & Courantovo kritérium pro soustředěný odtok @@@(je pro nas?) \\
+ iter & $m$ &  Počet iterací pří výpočty daného výpočetního kroku @@@(to bych tam nechal, muže to napověděl jestli se tam neděje něco moc rychle, což může znamenat chybu v zadaných datech, třeba dát 600 mm do srážky místo 60 mm) \\
+  \hline
+   \hline
+   \multicolumn{3}{p{\textwidth}}{*výška hladiny u soustředěného odtoku není výška skutečné výška hladiny v rýze, ale v nadkritická výška hladiny vztažená na celou plochu výpočetní buňky}
+ \end{tabular}
+
+\end{table}
+
+
+% # Time[s];deltaTime[s];Rainfall[m];Water\_level\_[m];Sheet\_Flow[m3/s];Sheet\_V\_runoff[m3];
+% Sheet\_V\_rest[m3];Infiltration[m];Surface\_retetion[m];State;V\_inflow[m3];WlevelTotal[m];WlevelRill[m];
+% Rill\_width[m];Rill\_flow[m3/s];Rill\_V\_runoff[m3];Rill\_V\_rest;Surface\_Flow[m3/s];
+% Surface\_V\_runoff[m3];SurfaceBil[m3];V\_to\_rill.m3.;ratio;courant;courantrill;iter
+
+% 
+% -rwxrwx--- 1 root vboxsf 48835 čec 10 23:16 AreaRill.asc*
+% -rwxrwx--- 1 root vboxsf 48835 čec 10 23:16 CumInfiltL.asc*
+% -rwxrwx--- 1 root vboxsf 48835 čec 10 23:16 CumRainL.asc*
+% -rwxrwx--- 1 root vboxsf 48835 čec 10 23:16 CumVInL3.asc*
+% -rwxrwx--- 1 root vboxsf 48835 čec 10 23:16 CumVOutL3.asc*
+% -rwxrwx--- 1 root vboxsf 48835 čec 10 23:16 CumVOutRillL3.asc*
+% -rwxrwx--- 1 root vboxsf 48835 čec 10 23:16 CumVRestL3.asc*
+% -rwxrwx--- 1 root vboxsf 16698 čec 10 23:16 FinalState.asc*
+% -rwxrwx--- 1 root vboxsf 67689 čec 10 23:16 HCrit.asc*
+% -rwxrwx--- 1 root vboxsf 48835 čec 10 23:16 MaxQL3t\_1.asc*
+% -rwxrwx--- 1 root vboxsf 48835 čec 10 23:16 MaxQRillL3t\_1.asc*
+% -rwxrwx--- 1 root vboxsf 48835 čec 10 23:16 MaxVelovity.asc*
+% -rwxrwx--- 1 root vboxsf 48835 čec 10 23:16 MaxWateL.asc*
+% -rwxrwx--- 1 root vboxsf 48835 čec 10 23:16 MaxWaterRillL.asc*
+% -rwxrwx--- 1 root vboxsf  5895 čec 10 23:16 point000.dat*
+% -rwxrwx--- 1 root vboxsf  5895 čec 10 23:16 point001.dat*
+% -rwxrwx--- 1 root vboxsf  5895 čec 10 23:16 point002.dat*
+% -rwxrwx--- 1 root vboxsf  5894 čec 10 23:16 point003.dat*
+% -rwxrwx--- 1 root vboxsf  5894 čec 10 23:16 point004.dat*
+% -rwxrwx--- 1 root vboxsf  5895 čec 10 23:16 point005.dat*
+% -rwxrwx--- 1 root vboxsf 18563 čen 13 13:04 point006.dat*
+% -rwxrwx--- 1 root vboxsf  5895 čec 10 23:16 point007.dat*
+% -rwxrwx--- 1 root vboxsf  5895 čec 10 23:16 point008.dat*
+% -rwxrwx--- 1 root vboxsf  5895 čec 10 23:16 point009.dat*
+% -rwxrwx--- 1 root vboxsf  5895 čec 10 23:16 point010.dat*
+% -rwxrwx--- 1 root vboxsf  5895 čec 10 23:16 point011.dat*
+% -rwxrwx--- 1 root vboxsf   408 čec 10 23:16 points.txt*
+% -rwxrwx--- 1 root vboxsf 48835 čec 10 23:16 ShearStress.asc*
+% -rwxrwx--- 1 root vboxsf 72730 čec 10 23:16 Stream.asc*
+% -rwxrwx--- 1 root vboxsf   391 čen 13 13:04 stream.txt*
+% -rwxrwx--- 1 root vboxsf 48835 čec 10 23:16 SurRet.asc*
+% -rwxrwx--- 1 root vboxsf 16854 čec 10 23:16 toky.asc*
+% -rwxrwx--- 1 root vboxsf 48835 čec 10 23:16 TotalBil.asc*
+% -rwxrwx--- 1 root vboxsf 48835 čec 10 23:16 VRestEndRillL.asc*

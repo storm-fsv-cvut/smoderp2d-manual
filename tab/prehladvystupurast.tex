@@ -1,0 +1,72 @@
+\begin{table}
+ 
+
+ \centering
+ \caption{Přehled rastrových výstupů}
+\label{tab:vystupyrast}
+
+% \begin{tabular}{p{4cm}lp{2cm}p{5cm}}
+ \begin{tabular}{llp{0.5\textwidth}}
+ \hline
+ Název souboru    & Jednotka    & Popis       \\ 
+ (ESRI nebo .acs)    &     &        \\ \hline \hline
+ AreaRill       &   $m^2$      &  Plocha buňky, kterou porývá rýha \\
+ CumInfiltL     &   $m$        & Kumulativní infiltrace \\
+ CumRainL       &  $m$  &  Kumulativní srážka (bez intercepce a povrchové retence) \\
+ CumVInL3       &  $m^3$  & Kumulativní objem přítoků do buňky  (plošný + rýhový) \\
+ CumVOutL3       &  $m^3$  & Kumulativní objem odtoku z buňky \\
+ CumVOutRillL3       &  $m^3$  & Kumulativní objem odtoku z buňky rýhou \\
+ CumVRestL3      &  $m^3$  & Kumulativní zbytek po odtoku odtoku z buňky\\
+ VRestEndRillL   &  - &  - \\
+ FinalState    &  $NA$ & Typ odtoku buňky na konci výpočtu (viz sekce~\ref{sec:statpopis})\\
+ HCrit            & $m$    &  kritický výška hladiny \\
+ ShearStress   &   @@@ &  tečné napětí \\
+ MaxQL3t\_1	  &   $m^3-s^{-1}$	&  Maximální plošný průtok v buňce  \\
+ MaxQRillL3t\_1    &   $m^3-s^{-1}$	&  Maximální soustředěný průtok v buňce\\
+ MaxVelovity	&   $ms^{-1}$	&  Maximální rychlost proudění v buňce (plošného či soustředěného odtoku) \\
+ MaxWateL    &   $m$  &   Maximální výška hladiny plošného v buňce \\
+ MaxWaterRillL   &   $m$  &   Maximální výška hladiny soustředěného odtoku v buňce \\
+ toky   &  $NA$ &  Buňky mimo tok mají {\tt NODATA} hodnotu nebo id daného úseku toku.  \\
+ Stream   &  $NA$ & doplnym  \\
+ TotalBil   &   $m$  &  Bilance všech vstupů a výstupu z a do buňky  \\
+ \end{tabular}
+
+\end{table}
+
+
+
+% 
+% -rwxrwx--- 1 root vboxsf 48835 čec 10 23:16 AreaRill.asc*
+% -rwxrwx--- 1 root vboxsf 48835 čec 10 23:16 CumInfiltL.asc*
+% -rwxrwx--- 1 root vboxsf 48835 čec 10 23:16 CumRainL.asc*
+% -rwxrwx--- 1 root vboxsf 48835 čec 10 23:16 CumVInL3.asc*
+% -rwxrwx--- 1 root vboxsf 48835 čec 10 23:16 CumVOutL3.asc*
+% -rwxrwx--- 1 root vboxsf 48835 čec 10 23:16 CumVOutRillL3.asc*
+% -rwxrwx--- 1 root vboxsf 48835 čec 10 23:16 CumVRestL3.asc*
+% -rwxrwx--- 1 root vboxsf 16698 čec 10 23:16 FinalState.asc*
+% -rwxrwx--- 1 root vboxsf 67689 čec 10 23:16 HCrit.asc*
+% -rwxrwx--- 1 root vboxsf 48835 čec 10 23:16 MaxQL3t_1.asc*
+% -rwxrwx--- 1 root vboxsf 48835 čec 10 23:16 MaxQRillL3t_1.asc*
+% -rwxrwx--- 1 root vboxsf 48835 čec 10 23:16 MaxVelovity.asc*
+% -rwxrwx--- 1 root vboxsf 48835 čec 10 23:16 MaxWateL.asc*
+% -rwxrwx--- 1 root vboxsf 48835 čec 10 23:16 MaxWaterRillL.asc*
+% -rwxrwx--- 1 root vboxsf  5895 čec 10 23:16 point000.dat*
+% -rwxrwx--- 1 root vboxsf  5895 čec 10 23:16 point001.dat*
+% -rwxrwx--- 1 root vboxsf  5895 čec 10 23:16 point002.dat*
+% -rwxrwx--- 1 root vboxsf  5894 čec 10 23:16 point003.dat*
+% -rwxrwx--- 1 root vboxsf  5894 čec 10 23:16 point004.dat*
+% -rwxrwx--- 1 root vboxsf  5895 čec 10 23:16 point005.dat*
+% -rwxrwx--- 1 root vboxsf 18563 čen 13 13:04 point006.dat*
+% -rwxrwx--- 1 root vboxsf  5895 čec 10 23:16 point007.dat*
+% -rwxrwx--- 1 root vboxsf  5895 čec 10 23:16 point008.dat*
+% -rwxrwx--- 1 root vboxsf  5895 čec 10 23:16 point009.dat*
+% -rwxrwx--- 1 root vboxsf  5895 čec 10 23:16 point010.dat*
+% -rwxrwx--- 1 root vboxsf  5895 čec 10 23:16 point011.dat*
+% -rwxrwx--- 1 root vboxsf   408 čec 10 23:16 points.txt*
+% -rwxrwx--- 1 root vboxsf 48835 čec 10 23:16 ShearStress.asc*
+% -rwxrwx--- 1 root vboxsf 72730 čec 10 23:16 Stream.asc*
+% -rwxrwx--- 1 root vboxsf   391 čen 13 13:04 stream.txt*
+% -rwxrwx--- 1 root vboxsf 48835 čec 10 23:16 SurRet.asc*
+% -rwxrwx--- 1 root vboxsf 16854 čec 10 23:16 toky.asc*
+% -rwxrwx--- 1 root vboxsf 48835 čec 10 23:16 TotalBil.asc*
+% -rwxrwx--- 1 root vboxsf 48835 čec 10 23:16 VRestEndRillL.asc*
