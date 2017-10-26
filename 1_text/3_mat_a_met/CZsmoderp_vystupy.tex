@@ -1,13 +1,40 @@
-Výstupy modelu jsou uloženy složky zadané jako vstupní parametr. Složka při spuštěné programu vyčistí. Výstupy jsou ve textových a rastrový formátech. Jako rastrový formát lze zvolit proprietární ESRI formát nebo formát ASII. Přehled rasterových výstupních souborů je v tabulce\ref{tab:vystupyrast}. Pokud jsou do vstupů zadány body pro výpočet hydrogramů vypíší se do souborů s příponou {\tt.dat}. Soubory mají hlavičku podle procesů, které v buňce pod daným bodem vzniknou. Popis vypsaných veličin je popsán tabulce~\ref{tab:vystupydat}
+\textbf{Zde dodelat}
+\begin{itemize}
+  \item popsat výstupy mimo temp
+  \item popsat co jsou v temp
+  \item popsat výstupy v určitých krocích
+\end{itemize}
 
+Výstupy modelu jsou uloženy do složky zadané mezi vstupními parametry (obsah složky je při spuštěné programu vymazán!). Kumulativní nebo maximální hodnoty na celém řešeném území jsou v na konci výpočtu uloženy v rastrovém formátu (viz. kapitola~\ref{sec:rastr}). Volitelné výstupy hydrogramů v bodech ve formě časových řad jsou uloženy do textových souborů dat (viz. kapitola~\ref{sec:hydrogramy}). Pokud model počítá i úseku hydrografické sítě, jsou kumulativní a maximální hodnoty jednotlivých úseků vypsáný v tabulce v textovém formátu (viz. kapitola~\ref{sec:toktext}), prostorové rozložení jednotlivých úseků je uloženo jako jeden s rastrů (viz. kapitola~\ref{sec:rastr}), a pokud je v toku zadán bod pro výpis hydrogramů, vypíší se hodnoty jako časové řady v textovém formátu (viz. kapitola~\ref{sec:hydrogramy}). Jednotlivé výstupy jsou dále popsány podrobněji. 
+
+
+
+\paragraph{Rastrové výstupy}\label{sec:rastr}
+
+V rastrech jsou uloženy vybrané veličiny na celém řešeném území. Jako rastrový formát lze zvolit proprietární ESRI formát nebo textový formát ASII. Přehled rastrových výstupních souborů je shrnut v tabulce~\ref{tab:vystupyrast}. Pokud jsou v modelu řešený i úseky hydrografické sítě jsou v rastrech, tyto buňky uloženy s hodnotou {\tt NoData} (výjimku tvoří 2 rastry popisující vlastnosti úseků, viz tabulka~\ref{tab:vystupyrast}).  
 
 \include{./tab/prehladvystupurast}
+
+% jsou ve textovém nebo rastrovém formátu.  
+
+
+\paragraph{Hydrogramy}\label{sec:hydrogramy}
+
+Pokud jsou do vstupů zadány body pro výpis hydrogramů, vypíší se do testových souborů s příponou {\tt.dat}. Vypsané veličiny jsou závislé na typu odtokového procesu resp. typu výpočtu. Popis veličin při povrchovém resp. povrchovém i soustředěném odtoku (typ výpočtu {\tt only sheet runoff} resp. {\tt rill and sheet runoff}, viz kapitola~\ref{sec:vstupryhovy}) je shrnut v tabulce~\ref{tab:vystupydat}. Pokud je v buňce úsek hydrografické sítě, vypisují se pouze hodnoty úseku. Názvy a význam veličin popisující úsek toku je popsán v tabulce~\ref{tab:vystupytokdat}. Model v současné verzi uvažuje, že pokud je v buňce úsek toku, zabírá úsek celou buňku, přesto že jeho šířka menší než je šířka samotné buňky.  
+
 
 
 \include{./tab/prehladvystupudat}
 
+\include{./tab/prehladvystuputokdat}
 
 
+\paragraph{Tabulka hodnot úseků}\label{sec:toktext}
+V této tabulce uložené v textovém formátu jsou zapsány maximálních a kumulativních hodnot jednotlivých úseků. Hodnoty tabulce lze následně přiřadit podle identifikační hodnoty v prvním sloupci k jejich geografické reprezentaci v libovolném GIS softwaru. Názvy sloupců tabulky a jejich popis je stručně proveden v tabulce~\ref{tab:useky}
+
+
+
+\include{./tab/prehleduseky}
 
 
 \paragraph{State - typ průtoku na buňce}\label{sec:statpopis}
@@ -27,12 +54,7 @@ Výstupy modelu jsou uloženy složky zadané jako vstupní parametr. Složka p�
 
 
 %\section{Výstupní data} \label{section:vystupnidata}
-\textbf{Zde dodelat}
-\begin{itemize}
-\item popsat výstupy mimo temp
-\item popsat co jsou v temp
-\item popsat výstupy v určitých krocích
-\end{itemize}
+
 %Po úspěšném ukončení modelu je do výstupního adresáře uloženo několik souborů. Každý z těchto souborů obsahuje hodnoty pro každou buňku rastru. Buňky, na kterých neprobíhal výpočet neobsahují žádné hodnoty, tedy NoData. Základní výstupy jsou uvedeny přímo ve zvoleném výstupním adresáři. Mimo hlavní výstupy jsou volitelně ukládány i dočasné výstupy sloužící pro případnou kontrolu. V podadresáři \textbf{temp} jsou dočasné soubory výpočtu v ploše a v podadresáři \textbf{temp_dp} jsou dočasné soubory vodních toků. \textbf{Dočasným výsledkům bude věnována jedna z dalších kapitol}
 \textbf{tenhle seznam doplnit popisem o co tam jde a v jakých je to jednotkách}
 \begin{itemize}
@@ -94,7 +116,6 @@ Point hydrographs.txt je textový soubor s hodnotami výšky hladiny, průtoku, 
 Výstupem v současnosti je i řada dalších vrstev, které slouží ale spíše k tvorbě a testování modelu a pro samotného uživatele nejsou potřebné.	
 
 
-\paragraph{Hydrogramy} \label{sec:hydrogramy}
 
 
 
