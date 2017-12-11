@@ -1,3 +1,7 @@
+% zakomentovane je do tmp
+
+
+
 
 \begin{table}[h!]
  
@@ -11,16 +15,16 @@
   \hline  \hline
  Název sloupce        & Jednotka     & Popis                                 \\ 
  \hline
- FUD              &   ---      &  Identifikátor přiřazeného úseku ({\it feature id})   \\
- V\_out\_cum           &  $m^3$         & Kumulativní objem odtoku            \\
- Q\_max [L3t-1]    &   $m^3s_{-1}$  & Maximální průtok                    \\
- timeQ\_max[s]          &   $s$          &  Čas dosažení maximálního průtoku    \\
- h\_max[m]        &  $m$  &  Maximální výška hladiny v úseku     \\
- timeh\_max[s]    &  $s$ &  Čas dosažení maximálního průtoku    \\
- Cumulatice\_inflow\_from\_field[L3]         &  $m^3$  &  Kumulativní přítok do úseku z jeho okolí \\
- Left\_after\_last\_time\_step[L3]            &  $m^3$  &  Objem v úseku po skončení výpočtu \\
- Out\_form\_domain[L3]              &  $m^3$     & Kumulativní odtok úseku z řešeného území (hodnota je nulová pokud úsek odtéká do jiného navazujícího úseku)   \\
- to\_reach              &  ---     & FID úseku do které daný úsek odtéká (hodnota -9999 vyjadřuje situaci, kdy úsek kříží hranici řešeného a odtéká tedy mimo toto území) \\
+ FID            &   ---          &  Identifikátor přiřazeného úseku ({\it feature id})   \\
+ cVolM3         &  $m^3$         & Kumulativní objem odtoku                              \\
+ mFlowM3\_S      &   $m^3s_{-1}$  & Maximální průtok                                      \\
+ mFlowTimeS     &   $s$          &  Čas dosažení maximálního průtoku                     \\
+ mWatLM         &  $m$       &  Maximální výška hladiny v úseku                               \\
+%  mWatLTimeS     &  $s$       &  Čas dosažení maximálního průtoku                              \\
+%  cSurInFM3      &  $m^3$     &  Kumulativní přítok do úseku z jeho okolí   \\
+ restVolM3      &  $m^3$     &  Objem v úseku po skončení výpočtu         \\
+%  cVolDomM3      &  $m^3$     &  Kumulativní odtok úseku z řešeného území (hodnota je nulová pokud úsek odtéká do jiného navazujícího úseku)   \\
+ toFID          &  ---       &  FID úseku do které daný úsek odtéká (hodnota -9999 vyjadřuje situaci, kdy úsek kříží hranici řešeného a odtéká tedy mimo toto území) \\
   \hline
    \hline
  \end{tabular}
@@ -31,3 +35,4 @@
 
 % FID;V_out_cum [L^3];Q_max [L^3.t^{-1}];timeQ_max[s];h_max [L];timeh_max[s];
 % Cumulatice_inflow_from_field[L^3];Left_after_last_time_step[L^3];Out_form_domain[L^3];to_reach
+
