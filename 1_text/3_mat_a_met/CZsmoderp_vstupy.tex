@@ -9,7 +9,7 @@
 \end{itemize}
 
 
-Vstupní data modelu jsou ve třech formátech: rastrová, vektorová a textová. Do modelu vstupují informace o topografii řešeného území, informace o typech půd a vegetaci, informace o srážce atd. Jako základní vektorová data je zvolen formát shapefile. Tento vektorový formát byl vytvořen firmou ESRI, ale zpracovatelný xxx. Pramtery modelu jsou ulozeny v atributové tabulce pod specifickým názvém pole. 
+Vstupní data modelu jsou ve třech formátech: rastrovém, vektorovém a textovém. Do modelu vstupují informace o topografii řešeného území, informace o typech půd a vegetaci, informace o srážce atd. Základní formát vektorových dat formát shapefile. Tento vektorový formát byl vytvořen firmou ESRI, ale je zpracovatelný i jinými GIS softwary. Parametry modelu jsou uloženy v atributové tabulce pod specifickým názvem pole. 
 % Shapefile popisuje prvky jako body, linie nebo polygony. Každý prvek má obvykle nějaký atribut, který ho popisuje jako v tomto případě jméno, či typ půdy. 
 V následujícím text jsou popsány náležitosti vstupních dat. 
 % 
@@ -22,7 +22,7 @@ Přehled vstupů do modelu je ukázám v tabulce~\ref{tab:vstupy}
 
 \paragraph{Digitální model terénu} \label{sec:vstupdmt} 
 
-Rastr digitálního modelu terénu nebo také DMT, či anglicky DTM (Digital Terrain Model) je souvislý povrch území obvykle znázorňující morfologii určité části Země. DMT rastr je složen z jednotlivých buněk. Nejčastější formou jsou buňky čtvercové, ale mohou mít i jiný tvar. Velikost buněk se liší v závislosti na velikosti zobrazovaného území. Pro účely modelu SMODERP 2D by minimální velikost buněk měla být 3 metry a výše. Optimum je však 5 metrů a více. Důležitá je i celková rozloha rastru, tedy počet buněk. Model byl testován na rastrech o velikosti od několika málo tisíc buněk. DMT jednoho z testovacích, povodí Nučice, obsahuje přes 125 tisíc buněk. Příklad DMT je ukázán na obrázku~\ref{fig:bykovicedmt}.
+Rastr digitálního modelu terénu nebo také DMT, či anglicky DTM (Digital Terrain Model) je souvislý povrch území obvykle znázorňující morfologii určité části Země. DMT rastr je složen z jednotlivých buněk. Nejčastější formou jsou buňky čtvercové, ale mohou mít i jiný tvar. Velikost buněk se liší v závislosti na velikosti zobrazovaného území. Pro účely modelu SMODERP 2D by minimální velikost buněk měla být 3 metry a výše. Optimum je však 5 metrů a více. Důležitá je i celková rozloha rastru, tedy počet buněk. Model byl testován na rastrech o velikosti od několika málo tisíc buněk. DMT jednoho z testovacích, povodí Nučice, obsahuje přes 125 tisíc buněk. Příklad DMT dalšího testovacího povodí Býkovice je ukázán na obrázku~\ref{fig:bykovicedmt}.
 
 
 \begin{figure}
@@ -35,7 +35,7 @@ Rastr digitálního modelu terénu nebo také DMT, či anglicky DTM (Digital Ter
  
 \paragraph{Shapefile půd} \label{sec:vstuppuda}
 
-Datové zdroje fyzikálních vlastností jsou v rámci České Rebubliky roztříšťené. Model jako takový pracuje s jednou vstupní vrstvou půd. Příprava této vrstvy z dostupných dat je otázkou preprocessingu. V zásadě jsou tři základní dostupné datové zdroje půdních vlastnosti. Odděleně na zemdělské a lesní půdě a dále bezešvá vrstva půd KPP odpovídající měřítku 1:200000.
+Datové zdroje fyzikálních vlastností jsou v rámci České Rebubliky roztříštěné. Model SMODERP 2D pracuje s jednou vstupní vrstvou půd. Příprava této vrstvy z dostupných dat je otázkou preprocessingu. V zásadě jsou tři základní dostupné datové zdroje půdních vlastnosti. Odděleně na zemědělské a lesní půdě nebo bezešvá vrstva půd KPP odpovídající měřítku 1:200000.
 
 V České Republice se na zemědělské půdě standardně využívá rozdělení podle Novákovi klasifikace. Půda je rozdělena podle obsahu tzv. jílových částic na půdy \cite{kavka} (@@@jj v bib/bib.bib zadna polozka s oznacenim kavka neni...):
 \begin{itemize} \itemsep 0pt
@@ -49,7 +49,7 @@ V České Republice se na zemědělské půdě standardně využívá rozdělen�
 \end{itemize}
 
 Na lesních půdách je v České Republice standardně využíván popis kategorií podle klasifikace USDA.
-Ukázkový obrázek ukazuje výřez připravené vrstvy po spojení z různých datových zdrojů. Pro určení charakteristik je nutné aby obsahoval atributové pole udávající identifikátor půdního typu. Identifikátor odkazuje na půdní charakteristiky, které jsou definované v dalších vstupech (popsáno níže). Shapefile popisující půdu je zobrazen na obrázku \ref{fig:bykovicepuda}.
+Obrázek~\ref{fig:bykovicepuda} ukazuje výřez připravené vrstvy po spojení z různých datových zdrojů. Pro určení charakteristik je nutné aby obsahoval atributové pole udávající identifikátor půdního typu. Identifikátor odkazuje na půdní charakteristiky, které jsou definované v dalších vstupech (popsáno v sekci~\ref{sec:upravatabulkyparametru}).
 
 
 \begin{figure}
@@ -74,7 +74,7 @@ Obdobně jako u půdních dat je vstupem vektorový shapefile popisující využ
 \end{itemize}
 
 \textit{Širokořádkové plodiny jsou například brambory, kukuřice, řepa, sója a slunečnice. Úzkořádkové plodiny jsou obiloviny nebo řepka.}
-Shapefile popisující vegetaci je zobrazen na obrázku \ref{fig:bykovicevegetace}. Obdobně jako u půd v předchozí sekci je třeba atributovou tabulku tohoto shapefilu doplnit o identifikátor daného typu vegetace. Tento identifikátor odkazuje na charakteristiky daného vegetačního povrchu definované v dalším vstupech (popsáno níže).
+Shapefile popisující typ vegetace je na obrázku~\ref{fig:bykovicevegetace}. Obdobně jako u půd v předchozí sekci je třeba atributovou tabulku tohoto shapefilu doplnit o identifikátor daného typu vegetace. Tento identifikátor odkazuje na charakteristiky daného vegetačního povrchu definované v dalším vstupech (popsáno v sekci~\ref{sec:upravatabulkyparametru}).
 
 \begin{figure}
   \centering
@@ -87,39 +87,47 @@ Shapefile popisující vegetaci je zobrazen na obrázku \ref{fig:bykovicevegetac
 
 \paragraph{Tabulka parametrů půdy a vegetace}  \label{sec:upravatabulkyparametru}
 
-Tento vstup je tabulka, na kterou se odkazují identifikátory půdního typu a typu vegetačního pokryvu v atributových tabulkách polygonových vrstev s prostorovým rozložením půd a vegetace. Tato tabulka může být do modelu vlože jako textový soubor. Na obrázku~\ref{fig:tabsoilveg} je ukázán příklad takové tabulky. V prvním sloupci jsou složené identifikátory (id) typu půd a typu vegetace. Na prvním řádku je ukázka odpovídající id půdního typu z obrázku~\ref{fig:bykovicepuda} HP a id typu využití území z obrázku~\ref{fig:bykovicevegetace} TP, které jsou v tabulce na obrázku~\ref{fig:tabsoilveg} spojeny na HPTP. Tímto způsobem je program schopen propojit prostorové uspořádání pud a typu vegetace s příslušnými charakteristikami. Spojení identifikátorů z atributových tabulkách polygonových vrstev prování program automaticky. Uživatel musí pouze zaručit aby se identifikátory v nastavené v atributových tabulkách polygonových vrstev schodovali s identifikátory v tabulce půdních charakteristik a charakteristik vegetace. Princip přípravy a propojení rozložení typů a vegetačního pokryvu s odpovídajícími parametry je naznačen na obrátku~\ref{}
+Tento vstup je tabulka, na kterou se odkazují identifikátory půdního typu a typu vegetačního pokryvu v atributových tabulkách polygonových vrstev. Tato tabulka může být do modelu vlože jako textový soubor. Na obrázku~\ref{fig:pripravapar_vyrez} je ukázán příklad takové tabulky. V prvních dvou sloupcích jsou složené identifikátory (id) typu půd (Soil) a typu vegetace (Land Co.). Spojením těchto dvou id jsou označeny parametry pro danou kombinaci typu půdy a vegetačního pokryvu (třetí sloupec v tabulce na obrázku~\ref{fig:pripravapar_vyrez} s označením soilveg). Význam jednotlivých veličin je popsán v tabulce~\ref{tab:soilveg}. Při přípravě dat je nutné dodržet označení parametrů. 
 
-Hlavničky druhého až posledního sloupce jsou povinné. Jejich význam je popsán v tabulce~\ref{tab:soilveg}. Názvy v druhém až posledním sloupečku musí být zadány malými písmeny.
-\begin{figure}
+Na obrázku~\ref{fig:pripravapar_vyrez} jsou i ukázky jednotlivých vektorových vrstev před a po protnutí (intersect). 
+
+% Na prvním řádku je ukázka odpovídající id půdního typu z obrázku~\ref{fig:bykovicepuda} HP a id typu využití území z obrázku~\ref{fig:bykovicevegetace} TP, které jsou v tabulce na obrázku~\ref{fig:tabsoilveg} spojeny na HPTP. Tímto způsobem je program schopen propojit prostorové uspořádání pud a typu vegetace s příslušnými charakteristikami. Spojení identifikátorů z atributových tabulkách polygonových vrstev prování program automaticky. Uživatel musí pouze zaručit aby se identifikátory v nastavené v atributových tabulkách polygonových vrstev schodovali s identifikátory v tabulce půdních charakteristik a charakteristik vegetace. Princip přípravy a propojení rozložení typů a vegetačního pokryvu s odpovídajícími parametry je naznačen na obrátku~\ref{}
+% 
+% Hlavničky druhého až posledního sloupce jsou povinné. Jejich význam je popsán v tabulce~\ref{tab:soilveg}. Názvy v druhém až posledním sloupečku musí být zadány malými písmeny.
+% \begin{figure}
+%   \centering
+%   \includegraphics[width=1.0\textwidth]{./img/tabsoilveg.png}
+%   \caption{Ukázka tabulky s charakteristikami půd a vegetace. Význam veličin v jednotlivých sloupcích je popsán v tabulce~\ref{tab:soilveg}.}
+%   \label{fig:tabsoilveg}
+% \end{figure}
+
+
+% \begin{figure}
+%   \centering
+%   \includegraphics[width=0.75\textwidth]{./img/spojenistabulkou.png}
+%   \caption{Princip propojení atributových tabulek vektorových vrstev s tabulkou obsahující jednotlivé parametry}
+%   \label{fig:pripravapar_detail}
+% \end{figure}
+
+
+
+\begin{figure}[h!]
   \centering
-  \includegraphics[width=1.0\textwidth]{./img/tabsoilveg.png}
-  \caption{Ukázka tabulky s charakteristikami půd a vegetace. Význam veličin v jednotlivých sloupcích je popsán v tabulce~\ref{tab:soilveg}.}
-  \label{fig:tabsoilveg}
+  \includegraphics[width=0.9\textwidth]{./img/kTabulce_soilveg.png}
+  \caption{Princip propojení vektorových vrstev s tabulkou obsahující parametry typu půd a vegetace. Vlevo nahoře: mapa daného území;  Vpravo nahoře: rozložení typu půdy; Vlevo uprostřed:  rozložení typu vegetačního pokryvu; Vpravo uprostřed: protnutí obou předchozích vrstev; Dole: tabulka s parametry }
+  \label{fig:pripravapar_vyrez}
 \end{figure}
 
 \input{./tab/tabsoilveg}
 
-\begin{figure}
-  \centering
-  \includegraphics[width=0.75\textwidth]{./img/spojenistabulkou.png}
-  \caption{Princip propojení atributových tabulek vektorových vrstev s tabulkou obsahující jednotlivé parametry}
-  \label{fig:pripravapar_detail}
-\end{figure}
 
-Propojení vrstev je pak na mapovém výřezu je pak na obrázku @@@.
 
-\begin{figure}
-  \centering
-  \includegraphics[width=0.75\textwidth]{./img/kTabulce_soilveg.png}
-  \caption{Princip propojení atributových tabulek vektorových vrstev s tabulkou obsahující jednotlivé parametry}
-  \label{fig:pripravapar_vyrez}
-\end{figure}
 
-\textbf{nebo co toto} ty obrázky mám i zvlášť
+\textbf{nebo co toto} ty obrázky mám i zvlášť, @@@jj dal bych je zvlášť, dá se napsat popisek ke každému zvlášť i jeden společný (obr 5a, 5b, 5c....)
 
 
 Meze jednotlivých parametrů jsou podrobněji popsány v kapitole XXX. 
-Součástí manuálu jsou i vzorové tabulky.
+Součástí manuálu jsou i vzorové tabulky (do prilohy).
 
 
 
@@ -145,9 +153,11 @@ Srážky se zadávají jako textový soubor se dvěma sloupci. V levém je časo
 \end{figure}
 
 
-\paragraph{Časový krok modelu (s) a celková doba simualce(min} \label{sec:vstupkrok}
+\paragraph{Časový krok modelu a celková doba simulace} \label{sec:vstupkrok}
 
-Časový krok modelu označený jako \acs{dT} je hodnota v sekundách, která udává velikost počátečního časového kroku. Tento zadaný krok je maximální hodnotu. během výpočtu. Časový krok je dynamicky upravován podle Courantovy podmínky, tak aby bylo zachována numerická stabilita implicitního řešení. Velikost časového kroku závisí na rychlosti povrchového odtoku a na velikosti prostorového kroku (velikosti buňky DMT). Zvolené řešení je detailněji popsáno v kapitole \ref{sec:cfl}. %Vzhledem k tomu, že rychlost odtoku v rýhám může být řádově vyšší než rychlost plošného odtoku je snaha řídit velikost časového kroku podle rychlosti plošného odtoku, kde Courantovo kritérium povoluje vyšší časový krok. Velikosti časového kroku zásadně ovlivňuje celkovou délku výpočtu. Pokud časový krok vyhovuje Courantovu kritériu v plošném odtoku, ale toku v rýhách již nikoli, začne se časový krok dělit pouze interně při výpočtu rýh. Tyto děje se probíhají při běhu programu a uživatel je nijak neovlivňuje, nicméně, je třeba si uvědomit, že při vytvoření rýhového odtoku a nutností dělit časový krok v těchto buňkách může se doba výpočtu jednoho časového kroku prodloužit. která udává velikost jednoho kroku výpočtu, v němž probíhá výpočet odtoku a další nedílné součásti programu. Zadaný časový krok se mění podle potřeb Courantova kritéria \ref{section:cfl}, nikdy však nemůže být vyšší než vstupní zadaná hodnota uživatelem. 
+Časový krok modelu označený \acs{dT} je hodnota v sekundách. Jako vstupní parametr se zadává maximální časový krok. Tento časový krok je rovněž počáteční časový krok. Časový krok je v průběhu výpočtu upravován podle Courantovy podmínky, tak aby bylo zachována numerická stabilita explicitního řešení. Velikost časového kroku závisí na rychlosti povrchového odtoku a na velikosti prostorového kroku (velikosti buňky DMT). Maximální časový krok záleží na požadovaném detailu výstupních dat zejména při dotoku srážkové epizody, kdy jsou již rychlosti proudění nižší a kde by v tom příkladě Courantova kritérium povolovalo příliš velký časový krok. Zvolené řešení změn časového kroku je detailněji popsáno v kapitole \ref{sec:cfl}. 
+
+%Vzhledem k tomu, že rychlost odtoku v rýhám může být řádově vyšší než rychlost plošného odtoku je snaha řídit velikost časového kroku podle rychlosti plošného odtoku, kde Courantovo kritérium povoluje vyšší časový krok. Velikosti časového kroku zásadně ovlivňuje celkovou délku výpočtu. Pokud časový krok vyhovuje Courantovu kritériu v plošném odtoku, ale toku v rýhách již nikoli, začne se časový krok dělit pouze interně při výpočtu rýh. Tyto děje se probíhají při běhu programu a uživatel je nijak neovlivňuje, nicméně, je třeba si uvědomit, že při vytvoření rýhového odtoku a nutností dělit časový krok v těchto buňkách může se doba výpočtu jednoho časového kroku prodloužit. která udává velikost jednoho kroku výpočtu, v němž probíhá výpočet odtoku a další nedílné součásti programu. Zadaný časový krok se mění podle potřeb Courantova kritéria \ref{section:cfl}, nikdy však nemůže být vyšší než vstupní zadaná hodnota uživatelem. 
 
 %Při zadávání počátečního časového kroku je možno zvolit hodnotu v rozmezí od 0.05 do 0.3 minuty. 
 % Velikost časového kroku nejvíce ovlivňuje reálnou dobu běhu modelu. Čím nižší je časový krok, tím déle uživatel čeká na výsledky. 
@@ -178,4 +188,10 @@ Parametr volby vícesměrného odtoku je volitelný. Více o tomto typu odtoku j
 
 \paragraph{Hydrografická síť} \label{sec:vodnitoky}
 
-Hydrografickou sítí jsou myšleny nejen vodní toky, ale do modelu je možné zadávat i prvky dočasné hydrografické sítě jako jsou příkopy, průlehy, cesty s příkopy atp. Výpočet v modelu probíhá po zvoleých úsecích pomocí Manningovi rovnice pro výpočet průtoku. Prostorové úmístění jednotlivých prvků je formou shapefile (\textbf{Vrstva toků - Stream feature}). Jednotlivé vektory reprezentují úsek se stejnými charakteristikami. Tvar úseku, drsnost, základní průtok jsou pak zadávány pomocí externí tabulky kde jsou uvedeny charakteristiky pro jednotlivé typy úseků (\textbf{Tabulka vodních toků - Stream table}). Pro propojení prostorové informace s charakteristikami úseků je třeba mít v attributové tabulce shodný kód jako ve vrstvě vodních toků (\textbf{Kód vodních toků - Steam table code}).
+Hydrografickou sítí jsou myšleny nejen vodní toky, ale i prvky dočasné hydrografické sítě jako jsou příkopy, průlehy, cesty s příkopy a pod. Výpočet v modelu probíhá po jednotlivých úsecích pomocí Manningovi rovnice pro výpočet průtoku. Prostorové umístění jednotlivých prvků je formou shapefile (\textbf{Vrstva toků - Stream feature}). Jednotlivé vektory reprezentují úsek se stejnými charakteristikami. Tvar úseku, drsnost, základní průtok jsou pak zadávány pomocí externí tabulky kde jsou uvedeny charakteristiky pro jednotlivé typy úseků (\textbf{Tabulka vodních toků - Stream table}). Pro propojení prostorové informace s charakteristikami úseků je třeba mít v atributové tabulce shodný kód jako ve vrstvě vodních toků (\textbf{Kód vodních toků - Steam table code}).
+
+
+
+
+
+
