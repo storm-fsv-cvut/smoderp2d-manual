@@ -20,7 +20,7 @@ Přehled vstupů do modelu je ukázám v tabulce~\ref{tab:vstupy}
 \input{./tab/prehladvstupu}
 % 
 
-\paragraph{Digitální model terénu} \label{sec:vstupdmt} 
+\subsection{Digitální model terénu} \label{sec:vstupdmt} 
 
 Rastr digitálního modelu terénu nebo také DMT, či anglicky DTM (Digital Terrain Model) je souvislý povrch území obvykle znázorňující morfologii určité části Země. DMT rastr je složen z jednotlivých buněk. Nejčastější formou jsou buňky čtvercové, ale mohou mít i jiný tvar. Velikost buněk se liší v závislosti na velikosti zobrazovaného území. Pro účely modelu SMODERP 2D by minimální velikost buněk měla být 3 metry a výše. Optimum je však 5 metrů a více. Důležitá je i celková rozloha rastru, tedy počet buněk. Model byl testován na rastrech o velikosti od několika málo tisíc buněk. DMT jednoho z testovacích, povodí Nučice, obsahuje přes 125 tisíc buněk. Příklad DMT dalšího testovacího povodí Býkovice je ukázán na obrázku~\ref{fig:bykovicedmt}.
 
@@ -33,7 +33,7 @@ Rastr digitálního modelu terénu nebo také DMT, či anglicky DTM (Digital Ter
 \end{figure}
 
  
-\paragraph{Shapefile půd} \label{sec:vstuppuda}
+\subsection{Shapefile půd} \label{sec:vstuppuda}
 
 Datové zdroje fyzikálních vlastností jsou v rámci České Rebubliky roztříštěné. Model SMODERP 2D pracuje s jednou vstupní vrstvou půd. Příprava této vrstvy z dostupných dat je otázkou preprocessingu. V zásadě jsou tři základní dostupné datové zdroje půdních vlastnosti. Odděleně na zemědělské a lesní půdě nebo bezešvá vrstva půd KPP odpovídající měřítku 1:200000.
 
@@ -60,7 +60,7 @@ Obrázek~\ref{fig:bykovicepuda} ukazuje výřez připravené vrstvy po spojení 
 \end{figure}
 
  
-\paragraph{Shapefile využití území} \label{sec:vstupvegetace}
+\subsection{Shapefile využití území} \label{sec:vstupvegetace}
 
 Obdobně jako u půdních dat je vstupem vektorový shapefile popisující využití území. Mezi základní typy pro které byl model testován patří:
 \begin{itemize} \itemsep 0pt
@@ -85,7 +85,7 @@ Shapefile popisující typ vegetace je na obrázku~\ref{fig:bykovicevegetace}. O
 
 
 
-\paragraph{Tabulka parametrů půdy a vegetace}  \label{sec:upravatabulkyparametru}
+\subsection{Tabulka parametrů půdy a vegetace}  \label{sec:upravatabulkyparametru}
 
 Tento vstup je tabulka, na kterou se odkazují identifikátory půdního typu a typu vegetačního pokryvu v atributových tabulkách polygonových vrstev. Tato tabulka může být do modelu vlože jako textový soubor. Na obrázku~\ref{fig:pripravapar_vyrez} je ukázán příklad takové tabulky. V prvních dvou sloupcích jsou složené identifikátory (id) typu půd (Soil) a typu vegetace (Land Co.). Spojením těchto dvou id jsou označeny parametry pro danou kombinaci typu půdy a vegetačního pokryvu (třetí sloupec v tabulce na obrázku~\ref{fig:pripravapar_vyrez} s označením soilveg). Význam jednotlivých veličin je popsán v tabulce~\ref{tab:soilveg}. Při přípravě dat je nutné dodržet označení parametrů. 
 
@@ -131,7 +131,7 @@ Součástí manuálu jsou i vzorové tabulky (do prilohy).
 
 
 
-\paragraph{Srážkový soubor} \label{sec:vstupsrazka}
+\subsection{Srážkový soubor} \label{sec:vstupsrazka}
 
 Dalším vstupem je textový soubor obsahující srážková data. 
 % 
@@ -153,7 +153,7 @@ Srážky se zadávají jako textový soubor se dvěma sloupci. V levém je časo
 \end{figure}
 
 
-\paragraph{Časový krok modelu a celková doba simulace} \label{sec:vstupkrok}
+\subsection{Časový krok modelu a celková doba simulace} \label{sec:vstupkrok}
 
 Časový krok modelu označený \acs{dT} je hodnota v sekundách. Jako vstupní parametr se zadává maximální časový krok. Tento časový krok je rovněž počáteční časový krok. Časový krok je v průběhu výpočtu upravován podle Courantovy podmínky, tak aby bylo zachována numerická stabilita explicitního řešení. Velikost časového kroku závisí na rychlosti povrchového odtoku a na velikosti prostorového kroku (velikosti buňky DMT). Maximální časový krok záleží na požadovaném detailu výstupních dat zejména při dotoku srážkové epizody, kdy jsou již rychlosti proudění nižší a kde by v tom příkladě Courantova kritérium povolovalo příliš velký časový krok. Zvolené řešení změn časového kroku je detailněji popsáno v kapitole \ref{sec:cfl}. 
 
@@ -166,27 +166,27 @@ Délka běhu modelu je hodnota v minutách určující čas, do kterého se mode
  
 
 
-%\paragraph{Povrchová retence} \label{sec:vstupretence}
+%\subsection{Povrchová retence} \label{sec:vstupretence}
 
 %Povrchová retence je děj, při kterém se zachytává počáteční část srážky, která se dále neúčastní odtoku. V reálném prostředí si lze toto představit jako zachytávání srážkové vody v nerovnostech na povrchu. Pouze po naplnění těchto malých nerovností dochází k povrchovému odtoku. Hodnota závisí na hustotě půdy a její deformaci. Povrchová retence se zadává v mm. Pro veškerá testování byla povrchová retence zvolena 0.2 mm.
 
-\paragraph{Shapefile bodů pro generování hydrogramů} \label{sec:vstupbody}
+\subsection{Shapefile bodů pro generování hydrogramů} \label{sec:vstupbody}
 
 Jedná  se o bodovou vrstvu. V těchto bodech se budou uživateli ukládat časové řady počítaných veličin. Tento volitelný vstupní parametr je podrobněji popsán ve výstupech \ref{sec:hydrogramy}.
 
-\paragraph{Výstupní adresář} \label{sec:vstupadresar}
+\subsection{Výstupní adresář} \label{sec:vstupadresar}
 Výstupní adresář je složka, do které se uloží veškeré výsledné rastry a výstupní textové soubory. Na začátku běhu programu se obsah tohoto adresář celý vymaže, proto se doporučuje vždy provést kontrolu. V žádném případě nenastavujete jako výstupní adresář pracovní plochu, či jiný adresář, kde byste mohli mít uložena důležitá data!
 
-\paragraph{Rýhový odtok} \label{sec:vstupryhovy}
+\subsection{Rýhový odtok} \label{sec:vstupryhovy}
 
 Tento volitelný parametr po zaškrnutí umožní výpočet soustředěného odtoku. Soustředěný odtok je popsán v sekci \ref{sec:soustredenyodtok}.
 
-\paragraph{Vícesměrný odtok} \label{sec:vstupvicesmerny}
+\subsection{Vícesměrný odtok} \label{sec:vstupvicesmerny}
 
 Parametr volby vícesměrného odtoku je volitelný. Více o tomto typu odtoku je v části \ref{subsection:MD}
 
 
-\paragraph{Hydrografická síť} \label{sec:vodnitoky}
+\subsection{Hydrografická síť} \label{sec:vodnitoky}
 
 Hydrografickou sítí jsou myšleny nejen vodní toky, ale i prvky dočasné hydrografické sítě jako jsou příkopy, průlehy, cesty s příkopy a pod. Výpočet v modelu probíhá po jednotlivých úsecích pomocí Manningovi rovnice pro výpočet průtoku. Prostorové umístění jednotlivých prvků je formou shapefile (\textbf{Vrstva toků - Stream feature}). Jednotlivé vektory reprezentují úsek se stejnými charakteristikami. Tvar úseku, drsnost, základní průtok jsou pak zadávány pomocí externí tabulky kde jsou uvedeny charakteristiky pro jednotlivé typy úseků (\textbf{Tabulka vodních toků - Stream table}). Pro propojení prostorové informace s charakteristikami úseků je třeba mít v atributové tabulce shodný kód jako ve vrstvě vodních toků (\textbf{Kód vodních toků - Steam table code}).
 

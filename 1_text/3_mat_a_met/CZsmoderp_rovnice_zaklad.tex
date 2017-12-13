@@ -7,21 +7,8 @@
 %
 %
 %
-Základní odvození vztahů povrchových procesů v modelu SMODERP vychází z rovnice kontinuity a rovnice pohybové na základě kinematického principu s využitím experimentálních měření.
-Jak již bylo zmíněno v úvodu, jedná se o distribuovaný epizodní hydrologicko erozní model. Výpočet je řešen na pravidelné rastrové síti elementů (@@@jj neříká se tomu u rastru buňka?). Podrobnost řešení je dána rozlišením vstupního rastru. V celém řešeném prostoru je po jednotlivých elementech v každém časovém kroku provedena bilance zásoby a následně vypočteno odteklého množství za daný časový krok. Směr odtoky z elementu je stanoven pomocí odtokových algoritmů. Obecně se jedná o tři základní složky:
 
-\begin{itemize}
-\item infiltrace do půdy \acs{Inf}
-\item efektivní srážka \acs{ES}
-\item přiteklé a odteklé množství \acs{Itot} a \acs{Otot}
-\end{itemize}
-
-Proudění vody a množství odtoku na povrchu je pak podle řešeno třemi odlišnými typy odtoku. Mimo hydrografickou síť je se jedná o \textbf{povrchový odtok}, který je buď jako \textbf{plošný povrchový odtok} a nebo \textbf{soustředěný odtok v rýhách}. Ve vodních tocích a dočasné hydrografické síti se pak jedná o soustředěný odtok. V ploše povodí jsou směry odtoků resp. přítoků dány funkcí směru odtoku (@@@jj odvozeny na zahladě odtokových algoritmů). V místě vodních toků je pak veškerý tok směrován dále vodním tokem.
-
-% PeKa - pokuso jsem se rozdělit povrchový odtok (plošný a rýhy dohromady), ab bylo jasnější o co jde
-
-
-\subsubsection{Bilanční rovnice} 
+\section{Bilanční rovnice} 
 
 % 
 Základním vztahem řešení je bilance celkového zásoby v elementu.
@@ -125,7 +112,7 @@ Při samotném řešení se v modelu SMODERP operuje s veličinami ve výškový
 % 
 % 
 % 
-\paragraph{Efektivní srážka \acs{es}} 
+\subsection{Efektivní srážka \acs{es}} 
 
 Srážka je příčinou celého erozního procesu. Vzhledem k tomu, že se jedná o epizodní model je srážka zadávána v podobě konkrétní nebo návrhové srážky, která začíná s prvním časovým krokem výpočtu. Model počítá s vlivem intercepce, tedy že určitá část srážky bude zachycena rostlinami díky potenciální intercepci \acs{PotI}. Míra zachycení v každém výpočtovém čase je definována  pomocí poměrné plochy listové \acs{Lai} například \cite{Nevim}.
 
@@ -165,7 +152,7 @@ $$
 % 
 % 
 % 
-\paragraph{Intenzita infiltrace \acs{inf}}
+\subsection{Intenzita infiltrace \acs{inf}}
 
 V modelu je použita infiltrace podle Philipa \citep{philip1957} v~následujícím tvaru (pro příslušnou buňku $i$):
 \begin{eqnarray} \label{eq:phillip}
@@ -194,10 +181,10 @@ Philipova rovnice byla zvolena především z důvodu relativně malého počtu 
 % 
 % 
 % 
-\paragraph{Povrchový odtok  \acs{oin}, \acs{oout}} \label{sec:povrch_odtok}
+\subsection{Povrchový odtok  \acs{oin}, \acs{oout}} \label{sec:povrch_odtok}
 Povrchový odtok je v modelu rozdělen do dvou složek a to \textbf{plošný povrchový odtok} a \textbf{soustředěný odtok v rýhách}. Z hlediska výše uvedené rovnice \ref{eq:bilancnirce} se odtok, resp. přítok skládá z těchto dvou složek. Vznik soustředěného odtoku je podmíněn překročením limitní rychlosti, resp. limitního tečného napětí (viz. kapitola \ref{sec:soustredenyodtok}).
 
-\subsubsection{Plošný povrchový odtok} \label{sec:plosny_odtok}
+\section{Plošný povrchový odtok} \label{sec:plosny_odtok}
 
 Rovnice plošného odtoku vychází z kinematického přístupu k řešení pohybové rovnice,
 % 
@@ -248,7 +235,7 @@ $$
 % 
 % 
 
-\paragraph{Odvozené veličiny}
+\subsection{Odvozené veličiny}
 
 Z vypočteného průtoku, velikosti řešeného elementu a délky časového lze dopočítat objem odtoku:
 $$
@@ -320,7 +307,7 @@ V literatuře se setkáme i s odlišnými hodnotami. Například M. A. Velikanov
 % 
 % 
 % 
-\subsubsection{Soustředěný odtok v rýhách} \label{sec:soustredenyodtok}
+\section{Soustředěný odtok v rýhách} \label{sec:soustredenyodtok}
 
 Výpočet soustředěného odtoku v rýhách implementovaný do modelu SMODERP vychází z několika předpokladů:
 \begin{enumerate}
@@ -391,7 +378,7 @@ Výpočet soustředěného odtoku v rýhách implementovaný do modelu SMODERP v
 % Pro výpočet průtoku v rýze \acs{qrill} je pak možné využít Chézyho rovnici v manningově tvaru:.
 
 
-\paragraph{Celková bilance}
+\subsection{Celková bilance}
 Pokud dojde k vzniku rýh, rovnici celkové bilance~\ref{eq:bilancnirce} je možné rozepsat členy vyjadřující přítok a odtok odděleně pro \textbf{plošný povrchový} a \textbf{soustředěný} odtok v Rovnice~\ref{eq:bilancnirce} vypadá následovně
 
 \begin{equation} 
@@ -407,7 +394,7 @@ Pokud dojde k vzniku rýh, rovnici celkové bilance~\ref{eq:bilancnirce} je mož
 
 
 
-\paragraph{Rýhový odtok \acs{oinrill}, \acs{ooutrill}}
+\subsection{Rýhový odtok \acs{oinrill}, \acs{ooutrill}}
 
 Výška odtoku (resp. vtoku) z rýhy do dané výpočetní buňky je vypočtena za základě Chézyho rovnice~\ref{eq:qrill} takto:
 $$
@@ -439,7 +426,7 @@ $$
 
 
 
-\paragraph{Poznámka nebo to dát do diskuse k článku} 
+\subsection{Poznámka nebo to dát do diskuse k článku} 
 \begin{itemize}
 \item Výsledný tvar blíží Maningově rovnici
 \begin{eqnarray}
@@ -455,7 +442,7 @@ Q =\frac {1}{n} h^{2/3} S^{1/2}
 \end{itemize}
 
 %newb = math.sqrt(V/(rillRatio*l)) #KAvka, tohl eje divně
-\subsubsection{Odtok hydrografickou sítí} \label{sec:tokyodtok}
+\section{Odtok hydrografickou sítí} \label{sec:tokyodtok}
 
 
 SMODERP2D je zamýšlen také jako nástroj pro navrhování opatření v ploše povodí. Cílem je simulovat a navrhovat odtoky i v dočasné hydrografické síti, která je tvořena přirozeným nebo častěji umělým přerušením přirozené odtokové dráhy. Nejčastěji se jedná o příkopy a průlehy které mají odváděcí a často erozní funkci. 

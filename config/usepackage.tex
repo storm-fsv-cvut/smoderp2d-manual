@@ -72,7 +72,7 @@
 \usepackage{booktabs}
 \usepackage{url}
 %\usepackage[pdftex,unicode,bookmarksnumbered,raiselinks=true]{hyperref}
-\usepackage{indentfirst}
+% \usepackage{indentfirst}
 \usepackage{fancyhdr}
 \usepackage[font={footnotesize},labelfont=bf,justification=centering]{caption}
 \usepackage{hhline}
@@ -112,7 +112,7 @@
 
 
 \usepackage{dirtree}
-\usepackage{indentfirst}
+% \usepackage{indentfirst}
 
 % tohle je jen prikaz na delatni popisu rovnic 
 % jeho pouziti he v kapitole pouzite vztahy treba
@@ -121,3 +121,26 @@
 }
 
 
+
+% upraveni casti
+\titleformat
+{\part} % command
+[display] % shape
+{\bfseries\Huge} % format
+{Část \ \thepart} % label
+{5ex} % sep
+{
+%     \rule{\textwidth}{1pt}
+%     \vspace{1ex}
+%     \centering
+} % before-code
+[
+\vspace{-2.5ex}%
+\rule{\textwidth}{0.3pt}
+] % after-code
+ 
+ 
+ 
+ 
+ 
+ 

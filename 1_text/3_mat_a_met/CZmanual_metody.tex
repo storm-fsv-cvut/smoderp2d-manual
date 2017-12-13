@@ -3,30 +3,25 @@
 
 Tato část uživatelského manuálu popisuje jednotlivé výpočetní vztahy, které jsou v modelu využity. Dále je zde pro lepší pochopení uveden hlavní tok programu a v případě, že to lépe popisuje zvolené řešení jsou zde uvedeny i popis příslušné části zdrojového kódu.
 
+Základní odvození vztahů povrchových procesů v modelu SMODERP vychází z rovnice kontinuity a rovnice pohybové na základě kinematického principu s využitím experimentálních měření.
+Jak již bylo zmíněno v úvodu, jedná se o distribuovaný epizodní hydrologicko erozní model. Výpočet je řešen na pravidelné rastrové síti elementů (@@@jj neříká se tomu u rastru buňka?). Podrobnost řešení je dána rozlišením vstupního rastru. V celém řešeném prostoru je po jednotlivých elementech v každém časovém kroku provedena bilance zásoby a následně vypočteno odteklého množství za daný časový krok. Směr odtoky z elementu je stanoven pomocí odtokových algoritmů. Obecně se jedná o tři základní složky:
 
-\subsection{Použité vztahy a jejich odvození} \label{modelovani}
 
 
+\begin{itemize}\itemsep 0cm
+\item infiltrace do půdy \acs{Inf}
+\item efektivní srážka \acs{ES}
+\item přiteklé a odteklé množství \acs{Itot} a \acs{Otot}
+\end{itemize}
+
+Proudění vody a množství odtoku na povrchu je pak podle řešeno třemi odlišnými typy odtoku. Mimo hydrografickou síť je se jedná o \textbf{povrchový odtok}, který je buď jako \textbf{plošný povrchový odtok} a nebo \textbf{soustředěný odtok v rýhách}. Ve vodních tocích a dočasné hydrografické síti se pak jedná o soustředěný odtok. V ploše povodí jsou směry odtoků resp. přítoků dány funkcí směru odtoku (@@@jj odvozeny na zahladě odtokových algoritmů). V místě vodních toků je pak veškerý tok směrován dále vodním tokem.
+
+% PeKa - pokuso jsem se rozdělit povrchový odtok (plošný a rýhy dohromady), ab bylo jasnější o co jde
+
+
+
+\newpage
 % % % % %	\subsubsection{Použité rovnice}
-  \input{./1_text/3_mat_a_met/CZsmoderp_rovnice_zaklad}
+\input{./1_text/3_mat_a_met/CZsmoderp_rovnice_zaklad}
 
 
-\subsection{SMODERP 2D - postup výpočtu} \label{vypocet}
-
-Model SMODERP je napsán v programovacím jazyce Python. Příprava dat a samotný výpočet v časové smyčce jsou od sebe oddělny. Příprava dat využívá v současné době nástroje z knihoven ArcGIS, což byl jeden z primárních důvodů volby  programovacího jazyka Python, který je pro prostředí ArcGIS nativním programovacím jazykem. Proces samotného výpočtu již využívá pouze standardní knihovny Python, jako je knihovna \texttt{numpy}, nebo \texttt{math}, atp. Pro přehlednost je text rozdělen do třech částí, vstupní data \ref{kap:vstupy} a tok programu \ref{kap:tok}. % a výstupy \ref{kap:vystupy}
-
-%%%%%%\subsubsection{Princip výpočtu} \label{kap:principvypoctu}
-%%%%%%\input{./1_text/3_mat_a_met/CZsmoderp_princip}
-		
-	
-	\subsubsection{Vstupy do modelu} \label{kap:vstupy}
-	\input{./1_text/3_mat_a_met/CZsmoderp_vstupy} 
-	
-	\subsubsection{Tok programu} \label{kap:tok}
-	\input{./1_text/3_mat_a_met/CZsmoderp_process}
-	
-	\subsubsection{Výstupy z modelu} \label{kap:vystupy}
-	\input{./1_text/3_mat_a_met/CZsmoderp_vystupy}
-
-%\clearpage
-%\newpage\null\thispagestyle{empty}\newpage
