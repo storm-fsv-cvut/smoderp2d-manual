@@ -6,12 +6,15 @@
 \usepackage[IL2]{fontenc}
 % \usepackage{charter}
 
+
+
+\usepackage{xspace}
 \usepackage{framed}
 \usepackage{mathtools}
 \usepackage{pdflscape}
 \usepackage[top=3cm, left=3.5cm, right=2.5cm, bottom=3cm, headheight=15pt, includeheadfoot]{geometry}%rozměry stránky
 \usepackage{textcomp}
-\usepackage[round]{natbib}
+\usepackage{natbib}
 \usepackage{hyperref}
 \hypersetup{
     bookmarks=true,         % show bookmarks bar?
@@ -81,15 +84,10 @@
 \usepackage{placeins}
 
 \usepackage{titlesec}
-\setcounter{secnumdepth}{4}
-% 
-\titleformat{\paragraph}
-{\normalfont\normalsize\bfseries}{\theparagraph}{1em}{}
-\titlespacing*{\paragraph}
-{0pt}{3.25ex plus 1ex minus .2ex}{1.5ex plus .2ex}
 
 
-\usepackage[table]{xcolor}
+
+% \usepackage[table]{xcolor}
 \usepackage{setspace}
 
 
@@ -120,6 +118,14 @@
    & \acs{#1} & je \acl{#1}#2 \\
 }
 
+
+
+
+
+
+% Název smodepu 
+% 
+\newcommand{\smod}{Smoderp2D\xspace}
 
 
 % upraveni casti

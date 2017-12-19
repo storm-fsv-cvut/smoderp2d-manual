@@ -1,5 +1,24 @@
 %%!TEX ROOT = ../mainCZ.tex
 
+
+
+
+Vstupní data modelu jsou ve třech formátech: rastrovém, vektorovém a textovém. Do modelu vstupují informace o topografii řešeného území, informace o typech půd a vegetaci, informace o srážce atd. Základní formát vektorových dat je formát shapefile. Tento vektorový formát byl vytvořen firmou ESRI, ale je zpracovatelný i jinými GIS softwary. Parametry modelu jsou uloženy v atributové tabulce pod specifickým názvem pole. 
+% Shapefile popisuje prvky jako body, linie nebo polygony. Každý prvek má obvykle nějaký atribut, který ho popisuje jako v tomto případě jméno, či typ půdy. 
+V následujícím text jsou popsány náležitosti vstupních dat. 
+% 
+% Model pracuje s následujícími vstupy
+Přehled vstupů do modelu je ukázán v tabulce~\ref{tab:vstupy}.
+% 
+
+
+
+
+
+% 
+\input{./tab/prehladvstupu}
+
+\pozn{
 \textbf{Nutno dodělat}
 \begin{itemize} \itemsep 0pt
 \item upravit podle aktuálního stavu
@@ -7,22 +26,25 @@
 \item propojit s tabulkama co jsou jinde v textu
 \item vložit sem tabulky parametrů výpočtu pokud nejsou jinde
 \end{itemize}
+}
 
 
-Vstupní data modelu jsou ve třech formátech: rastrovém, vektorovém a textovém. Do modelu vstupují informace o topografii řešeného území, informace o typech půd a vegetaci, informace o srážce atd. Základní formát vektorových dat formát shapefile. Tento vektorový formát byl vytvořen firmou ESRI, ale je zpracovatelný i jinými GIS softwary. Parametry modelu jsou uloženy v atributové tabulce pod specifickým názvem pole. 
-% Shapefile popisuje prvky jako body, linie nebo polygony. Každý prvek má obvykle nějaký atribut, který ho popisuje jako v tomto případě jméno, či typ půdy. 
-V následujícím text jsou popsány náležitosti vstupních dat. 
-% 
-% Model pracuje s následujícími vstupy
-Přehled vstupů do modelu je ukázám v tabulce~\ref{tab:vstupy}
-% 
-% 
-\input{./tab/prehladvstupu}
-% 
+
+
+
+
+
+
+
+
+
+
+
+
 
 \subsection{Digitální model terénu} \label{sec:vstupdmt} 
 
-Rastr digitálního modelu terénu nebo také DMT, či anglicky DTM (Digital Terrain Model) je souvislý povrch území obvykle znázorňující morfologii určité části Země. DMT rastr je složen z jednotlivých buněk. Nejčastější formou jsou buňky čtvercové, ale mohou mít i jiný tvar. Velikost buněk se liší v závislosti na velikosti zobrazovaného území. Pro účely modelu SMODERP 2D by minimální velikost buněk měla být 3 metry a výše. Optimum je však 5 metrů a více. Důležitá je i celková rozloha rastru, tedy počet buněk. Model byl testován na rastrech o velikosti od několika málo tisíc buněk. DMT jednoho z testovacích, povodí Nučice, obsahuje přes 125 tisíc buněk. Příklad DMT dalšího testovacího povodí Býkovice je ukázán na obrázku~\ref{fig:bykovicedmt}.
+Rastr digitálního modelu terénu nebo také DMT, či anglicky DTM (Digital Terrain Model) je souvislý povrch území obvykle znázorňující morfologii určité části Země. DMT rastr je složen z jednotlivých buněk. Nejčastější formou jsou buňky čtvercové, ale mohou mít i jiný tvar. \pozn{smoderp dela jen ctverce, takze mozna zbytecna vedlejsi veta} Velikost buněk se liší v závislosti na velikosti zobrazovaného území. Pro účely modelu \smod by minimální velikost buněk měla být 2 metry, optimum je však 5 metrů a více. Důležitá je i celková rozloha rastru, tedy počet buněk. Model byl testován na rastrech o velikosti od několika málo tisíc buněk. DMT jednoho z testovacích, povodí Nučice, obsahuje přes 125 tisíc buněk. Příklad DMT dalšího testovacího povodí Býkovice je ukázán na obrázku~\ref{fig:bykovicedmt}.
 
 
 \begin{figure}
@@ -33,12 +55,30 @@ Rastr digitálního modelu terénu nebo také DMT, či anglicky DTM (Digital Ter
 \end{figure}
 
  
-\subsection{Shapefile půd} \label{sec:vstuppuda}
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+\subsection{Půdní data} \label{sec:vstuppuda}
 
-Datové zdroje fyzikálních vlastností jsou v rámci České Rebubliky roztříštěné. Model SMODERP 2D pracuje s jednou vstupní vrstvou půd. Příprava této vrstvy z dostupných dat je otázkou preprocessingu. V zásadě jsou tři základní dostupné datové zdroje půdních vlastnosti. Odděleně na zemědělské a lesní půdě nebo bezešvá vrstva půd KPP odpovídající měřítku 1:200000.
+Datové zdroje vlastností půd jsou v rámci České Republiky roztříštěné. Model \smod pracuje s jednou vstupní vrstvou půd. Příprava této vrstvy z dostupných dat je otázkou preprocessingu a spojení relevantních zdrojů. V zásadě jsou tři základní dostupné datové zdroje půdních vlastností. Odděleně připravená \pozn{to: jinou metodou pripravene si nejsem jist} data na zemědělské a lesní půdě nebo bezešvá vrstva půd KPP odpovídající měřítku 1:200000.
 
-V České Republice se na zemědělské půdě standardně využívá rozdělení podle Novákovi klasifikace. Půda je rozdělena podle obsahu tzv. jílových částic na půdy \cite{kavka} (@@@jj v bib/bib.bib zadna polozka s oznacenim kavka neni...):
-\begin{itemize} \itemsep 0pt
+V České Republice se na zemědělské půdě standardně využívá rozdělení podle Novákovi klasifikace. Půda je rozdělena podle obsahu tzv. jílových částic na půdy \cite{kavka} \pozn{ v bib/bib.bib zadna polozka s oznacenim kavka neni...}:
+\begin{itemize} \itemsep -3pt
   \item písčité
   \item hlinitopísčité
   \item písčitohlinité
@@ -49,51 +89,66 @@ V České Republice se na zemědělské půdě standardně využívá rozdělen�
 \end{itemize}
 
 Na lesních půdách je v České Republice standardně využíván popis kategorií podle klasifikace USDA.
-Obrázek~\ref{fig:bykovicepuda} ukazuje výřez připravené vrstvy po spojení z různých datových zdrojů. Pro určení charakteristik je nutné aby obsahoval atributové pole udávající identifikátor půdního typu. Identifikátor odkazuje na půdní charakteristiky, které jsou definované v dalších vstupech (popsáno v sekci~\ref{sec:upravatabulkyparametru}).
+Obrázek~\ref{fig:pripravapar_vyrez}b ukazuje výřez připravené vrstvy. Pro určení charakteristik je nutné, aby atributová tabulka dané vrstvy obsahoval identifikátor půdního typu. Identifikátor odkazuje na půdní charakteristiky, které jsou ale uložené ve zvláštní tabulce (viz níže). Mezi půdní charakteristiky používané modelem patří: \acs{HyVod} - \acl{HyVod}; \acs{Sorb} - \acl{Sorb}; \acs{n} - \acl{n},  \acs{a} - \acl{a}, \acs{b} - \acl{b}, \acs{X} - \acl{X}, \acs{Y} - \acl{Y}. Hodnoty těchto parametrů jsou definované v tabulce, která popsána v kapitole~\ref{sec:upravatabulkyparametru}, v atributové tabulce je připraven pouze identifikátor daného polygonu. Fyzikální význam těchto parametrů a jejich implementace v modelu jsou popsány v části~\ref{cast:1} toho manuálu. 
 
 
-\begin{figure}
-  \centering
-  \includegraphics[width=0.5\textwidth]{./img/pudy.png}
-  \caption{výřez půdní mapy s vyznačenými půdními druhy}
-  \label{fig:bykovicepuda}
-\end{figure}
-
+% \begin{figure}
+%   \centering
+%   \includegraphics[width=0.5\textwidth]{./img/pudy.png}
+%   \caption{výřez půdní mapy s vyznačenými půdními druhy}
+%   \label{fig:bykovicepuda}
+% \end{figure}
+% 
+%  
  
-\subsection{Shapefile využití území} \label{sec:vstupvegetace}
-
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+\subsection{Data o využití území} \label{sec:vstupvegetace}
+\pozn{pk - doplnit zdroje takovych dat}
 Obdobně jako u půdních dat je vstupem vektorový shapefile popisující využití území. Mezi základní typy pro které byl model testován patří:
-\begin{itemize} \itemsep 0pt
+\begin{itemize} \itemsep -3pt
   \item atropogení a zpevněné plochy  
   \item holá půda bez vegetace
   \item les
   \item sad
   \item travní porosty
-  \item zemědělské plodiny širokořádkové
-  \item zemědělské plodiny úzkořádkové
+  \item zemědělské plodiny širokořádkové\footnote{Širokořádkové plodiny jsou například brambory, kukuřice, řepa, sója a slunečnice.}
+  \item zemědělské plodiny úzkořádkové\footnote{Úzkořádkové plodiny jsou obiloviny nebo řepka.}
 \end{itemize}
 
-\textit{Širokořádkové plodiny jsou například brambory, kukuřice, řepa, sója a slunečnice. Úzkořádkové plodiny jsou obiloviny nebo řepka.}
-Shapefile popisující typ vegetace je na obrázku~\ref{fig:bykovicevegetace}. Obdobně jako u půd v předchozí sekci je třeba atributovou tabulku tohoto shapefilu doplnit o identifikátor daného typu vegetace. Tento identifikátor odkazuje na charakteristiky daného vegetačního povrchu definované v dalším vstupech (popsáno v sekci~\ref{sec:upravatabulkyparametru}).
 
-\begin{figure}
-  \centering
-  \includegraphics[width=0.5\textwidth]{./img/LandCover.png}
-  \caption{Ukázka vektorové vrstvy využití území -  Land Cover}
-  \label{fig:bykovicevegetace}
-\end{figure}
+Shapefile popisující využití území je na obrázku~\ref{fig:pripravapar_vyrez}c. Obdobně jako u půd v předchozí sekci je třeba atributovou tabulku tohoto shapefilu doplnit o identifikátor daného využití území. Tento identifikátor odkazuje na charakteristiky daného povrchu definované v dalším vstupech (popsáno v sekci~\ref{sec:upravatabulkyparametru}). Parametry, související s využitím území, které vstupující do modelu jsou zejména \acs{PotI} - \acl{PotI} a \acs{Lai} - \acl{Lai}. Jejich konkrétní použití je popsáno v části~\ref{cast:1} toho manuálu. 
+% 
+% \begin{figure}
+%   \centering
+%   \includegraphics[width=0.5\textwidth]{./img/LandCover.png}
+%   \caption{Ukázka vektorové vrstvy využití území -  Land Cover}
+%   \label{fig:bykovicevegetace}
+% \end{figure}
+% 
+% 
+% 
 
 
 
-\subsection{Tabulka parametrů půdy a vegetace}  \label{sec:upravatabulkyparametru}
 
-Tento vstup je tabulka, na kterou se odkazují identifikátory půdního typu a typu vegetačního pokryvu v atributových tabulkách polygonových vrstev. Tato tabulka může být do modelu vlože jako textový soubor. Na obrázku~\ref{fig:pripravapar_vyrez} je ukázán příklad takové tabulky. V prvních dvou sloupcích jsou složené identifikátory (id) typu půd (Soil) a typu vegetace (Land Co.). Spojením těchto dvou id jsou označeny parametry pro danou kombinaci typu půdy a vegetačního pokryvu (třetí sloupec v tabulce na obrázku~\ref{fig:pripravapar_vyrez} s označením soilveg). Význam jednotlivých veličin je popsán v tabulce~\ref{tab:soilveg}. Při přípravě dat je nutné dodržet označení parametrů. 
 
-Na obrázku~\ref{fig:pripravapar_vyrez} jsou i ukázky jednotlivých vektorových vrstev před a po protnutí (intersect). 
+
+
+\subsection{Tabulka parametrů půdy a využití území}  \label{sec:upravatabulkyparametru}
+
+Tento vstup je tabulka, která obsahuje hodnoty jednotlivých parametrů popsaných v předešlých kapitolách a části~\ref{cast:1} toho manuálu. Na tuto tabulku se odkazují identifikátory půdního typu a typu využití území v atributových tabulkách polygonových vrstev. Tato tabulka může být do modelu vlože jako textový soubor. Na obrázku~\ref{fig:pripravapar_vyrez}e je ukázán příklad takové tabulky. V prvních dvou sloupcích jsou identifikátory (id) typu půd (Soil) a typu využití území (Land Co.). Spojením těchto dvou id jsou označeny parametry pro danou kombinaci typu půdy a využití území (třetí sloupec v tabulce na obrázku~\ref{fig:pripravapar_vyrez}e s označením soilveg). Význam jednotlivých veličin je popsán v tabulce~\ref{tab:soilveg}. Při přípravě dat je nutné dodržet označení parametrů!
+
+Na obrázku~\ref{fig:pripravapar_vyrez} jsou i ukázky jednotlivých vektorových vrstev před (obrázek~\ref{fig:pripravapar_vyrez}b a ~\ref{fig:pripravapar_vyrez}c) a po protnutí (intersect; obrázek~\ref{fig:pripravapar_vyrez}d). 
 
 % Na prvním řádku je ukázka odpovídající id půdního typu z obrázku~\ref{fig:bykovicepuda} HP a id typu využití území z obrázku~\ref{fig:bykovicevegetace} TP, které jsou v tabulce na obrázku~\ref{fig:tabsoilveg} spojeny na HPTP. Tímto způsobem je program schopen propojit prostorové uspořádání pud a typu vegetace s příslušnými charakteristikami. Spojení identifikátorů z atributových tabulkách polygonových vrstev prování program automaticky. Uživatel musí pouze zaručit aby se identifikátory v nastavené v atributových tabulkách polygonových vrstev schodovali s identifikátory v tabulce půdních charakteristik a charakteristik vegetace. Princip přípravy a propojení rozložení typů a vegetačního pokryvu s odpovídajícími parametry je naznačen na obrátku~\ref{}
 % 
-% Hlavničky druhého až posledního sloupce jsou povinné. Jejich význam je popsán v tabulce~\ref{tab:soilveg}. Názvy v druhém až posledním sloupečku musí být zadány malými písmeny.
+% Hlavničky druhého až posledního sloupce jsou povinné. Jejich význam je popsán v tabulce~\ref{tab:soilve g}. Názvy v druhém až posledním sloupečku musí být zadány malými písmeny.
 % \begin{figure}
 %   \centering
 %   \includegraphics[width=1.0\textwidth]{./img/tabsoilveg.png}
@@ -113,8 +168,9 @@ Na obrázku~\ref{fig:pripravapar_vyrez} jsou i ukázky jednotlivých vektorovýc
 
 \begin{figure}[h!]
   \centering
-  \includegraphics[width=0.9\textwidth]{./img/kTabulce_soilveg.png}
-  \caption{Princip propojení vektorových vrstev s tabulkou obsahující parametry typu půd a vegetace. Vlevo nahoře: mapa daného území;  Vpravo nahoře: rozložení typu půdy; Vlevo uprostřed:  rozložení typu vegetačního pokryvu; Vpravo uprostřed: protnutí obou předchozích vrstev; Dole: tabulka s parametry }
+%   \includegraphics[width=0.9\textwidth]{./img/kTabulce_soilveg.png}
+  \includegraphics[width=0.9\textwidth]{./img/LUplusTAB.png} 
+  \caption{Princip propojení vektorových vrstev s tabulkou obsahující parametry typu půd a vegetace. a): mapa daného území;  b): rozložení typu půdy; c):  rozložení typu vegetačního pokryvu; d): protnutí obou předchozích vrstev; e): tabulka s parametry}
   \label{fig:pripravapar_vyrez}
 \end{figure}
 
@@ -123,17 +179,17 @@ Na obrázku~\ref{fig:pripravapar_vyrez} jsou i ukázky jednotlivých vektorovýc
 
 
 
-\textbf{nebo co toto} ty obrázky mám i zvlášť, @@@jj dal bych je zvlášť, dá se napsat popisek ke každému zvlášť i jeden společný (obr 5a, 5b, 5c....)
+\pozn{\textbf{nebo co toto} ty obrázky mám i zvlášť, @@@jj dal bych je zvlášť, dá se napsat popisek ke každému zvlášť i jeden společný (obr 5a, 5b, 5c....)}
 
 
-Meze jednotlivých parametrů jsou podrobněji popsány v kapitole XXX. 
-Součástí manuálu jsou i vzorové tabulky (do prilohy).
+\pozn{ Meze jednotlivých parametrů jsou podrobněji popsány v kapitole XXX. 
+Součástí manuálu jsou i vzorové tabulky (do prilohy).}
 
 
 
 \subsection{Srážkový soubor} \label{sec:vstupsrazka}
 
-Dalším vstupem je textový soubor obsahující srážková data. 
+Dalším vstupem je soubor obsahující srážková data. 
 % 
 % Na obrázku níže je ukázka textového souboru obsahující proměnlivou srážku, konkrétně je to měření na~rastru Býkovic ze~dne 8.2.2010.
 %\begin{figure}[hbt]
