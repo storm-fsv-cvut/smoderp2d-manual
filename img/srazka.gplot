@@ -1,0 +1,20 @@
+#!/usr/bin/gnuplot
+
+
+reset
+
+
+
+# set terminal pngcairo size 500,500 enhanced font 'Verdana,10'
+# set terminal pngcairo size 350,262.5 enhanced font 'Verdana,10'
+set terminal svg size 350,262 fname 'Verdana' fsize 10
+
+set output 'srazka-graf.svg'
+# set output 'srazka-graf.png'
+
+set nokey
+set title  'Srážková data'
+set xlabel 'Čas [min]'
+set ylabel 'Intenzita srážky [mm/min]'
+
+plot 'srazka-plot.txt' with filledcurves lt 0 title 'úhrn'
