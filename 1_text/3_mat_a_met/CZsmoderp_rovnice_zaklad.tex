@@ -526,45 +526,7 @@ $$
 $$
 
 
-% 
-% Zadávání tvaru příčného profilu není součástí atributové tabulky shapefile, ale pro ulehčení jsou parametry zadávány v samostatná tabulce. V případě, že jsou některé charakteristiky shodné, je tak možné jim přiřadit shodné atributy z tabulky.
-% V rámci zjednodušení výpočtu jsou zadávány profily parametricky. Zjednodušený výpočetní model neuvažuje rozlivy z koryta zpět do buněk odtoku. Jednotlivé prvky narůstají podle zvolených parametrů, tak aby veškerá voda zůstala v korytě.
-% přehled parametrů je uveden v tabulce~\ref{tab:toptab}
-% 
-% \begin{table}[htb!]
-% \centering
-% \caption{Příklad tabulky s parametry jednotlivých úseků hydrografické sítě}
-% \label{tab:toptab}
-% \begin{tabular}{lccccccc}
-% \hline
-% % 
-% cislo & smoderp      & tvar & b   & m   & drsnost & Q365 & pozn    \\ \hline \hline
-% 0      & 0            & 1    & 0.3 & 1.0 & 0.03    & 0.0  & default \\
-% 1      & obdelnik1    & 0    & 0.2 & 0.0 & 0.035   & 0.0  &         \\
-% 2      & lichobeznik1 & 1    & 0.2 & 2.0 & 0.035   & 0.0  &         \\
-% 3      & trojuhelnik1 & 2    & 0   & 2.0 & 0.03    & 0.0  &         \\
-% 4      & parabola1    & 3    & 0.7 & 0.0 & 0.03    & 0.0  &       \\ \hline
-% \end{tabular}
-% \end{table}
-% % 
-% % 
-% % 
-% \begin{tabular}{rrl}
-%    kde \jj{bhs}{,}
-%        \jj{m}{,}
-%        \jj{n}{,}
-%        \jj{Q365}{\ a}
-%        \jj{Rstream}{.}
-% \end{tabular}
 
-% kde:
-% \begin{itemize}
-% \item \textbf{b} - šířka profilu ve dně (u trojúhelníku se rovná nule)
-% \item \textbf{m} - poměr sklonu svahů (pro obdélník je roven nule)
-% \item \textbf{drsnost} - Maninngova drsnost v daném korytě.
-% \item \textbf{Q365} - základní odtok. V případě dočasných prvků jako jsou příkopy je tato hodnota rovna nule, v případě vodních toků se jedná o základní odtok.-
-% \item \textbf{poznámky} - jedná se o volitelnou položku, do výpočtu se nijak nepropaguje
-% \end{itemize}
 
 
 \pozn{ Tímto způsobem jsou zadány tvary prvků, které se v řešené lokalitě vyskytují.

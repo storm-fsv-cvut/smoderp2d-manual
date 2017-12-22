@@ -9,6 +9,9 @@ V následujícím text jsou popsány náležitosti vstupních dat.
 % 
 % Model pracuje s následujícími vstupy
 Přehled vstupů do modelu je ukázán v tabulce~\ref{tab:vstupy}.
+
+
+Princip pouštění modelu \smod v programu ArcGIS je popsán na konci této kapitoly (sekce~\ref{sec:intoolbox}). 
 % 
 
 
@@ -75,7 +78,7 @@ Rastr digitálního modelu terénu nebo také DMT, či anglicky DTM (Digital Ter
  
 \subsection{Půdní data} \label{sec:vstuppuda}
 
-Datové zdroje vlastností půd jsou v rámci České Republiky roztříštěné. Model \smod pracuje s jednou vstupní vrstvou půd. Příprava této vrstvy z dostupných dat je otázkou preprocessingu a spojení relevantních zdrojů. V zásadě jsou tři základní dostupné datové zdroje půdních vlastností. Odděleně připravená \pozn{to: jinou metodou pripravene si nejsem jist} data na zemědělské a lesní půdě nebo bezešvá vrstva půd KPP odpovídající měřítku 1:200000.
+Datové zdroje vlastností půd jsou v rámci České Republiky roztříštěné. Model \smod pracuje s jednou vstupní vrstvou půd. Příprava této vrstvy z dostupných dat je otázkou preprocessingu a propojení relevantních zdrojů. V zásadě jsou tři základní dostupné datové zdroje půdních vlastností. Odděleně připravená \pozn{to: jinou metodou pripravene si nejsem jist} data na zemědělské a lesní půdě nebo bezešvá vrstva půd KPP odpovídající měřítku 1:200000.
 
 V České Republice se na zemědělské půdě standardně využívá rozdělení podle Novákovi klasifikace. Půda je rozdělena podle obsahu tzv. jílových částic na půdy \cite{kavka} \pozn{ v bib/bib.bib zadna polozka s oznacenim kavka neni...}:
 \begin{itemize} \itemsep -3pt
@@ -89,7 +92,7 @@ V České Republice se na zemědělské půdě standardně využívá rozdělen�
 \end{itemize}
 
 Na lesních půdách je v České Republice standardně využíván popis kategorií podle klasifikace USDA.
-Obrázek~\ref{fig:pripravapar_vyrez}b ukazuje výřez připravené vrstvy. Pro určení charakteristik je nutné, aby atributová tabulka dané vrstvy obsahoval identifikátor půdního typu. Identifikátor odkazuje na půdní charakteristiky, které jsou ale uložené ve zvláštní tabulce (viz níže). Mezi půdní charakteristiky používané modelem patří: \acs{HyVod} - \acl{HyVod}; \acs{Sorb} - \acl{Sorb}; \acs{n} - \acl{n},  \acs{a} - \acl{a}, \acs{b} - \acl{b}, \acs{X} - \acl{X}, \acs{Y} - \acl{Y}. Hodnoty těchto parametrů jsou definované v tabulce, která popsána v kapitole~\ref{sec:upravatabulkyparametru}, v atributové tabulce je připraven pouze identifikátor daného polygonu. Fyzikální význam těchto parametrů a jejich implementace v modelu jsou popsány v části~\ref{cast:1} toho manuálu. 
+Obrázek~\ref{fig:pripravapar_vyrez}b ukazuje výřez připravené vrstvy. Pro určení charakteristik je nutné, aby atributová tabulka dané vrstvy obsahoval identifikátor půdního typu. Identifikátor odkazuje na půdní charakteristiky, které jsou ale uložené ve zvláštní tabulce (viz níže). Mezi půdní charakteristiky a parametry používané modelem patří: \acs{HyVod} - \acl{HyVod}; \acs{Sorb} - \acl{Sorb}; \acs{n} - \acl{n},  \acs{a} - \acl{a}, \acs{b} - \acl{b}, \acs{X} - \acl{X} a  \acs{Y} - \acl{Y}. Hodnoty těchto parametrů jsou definované v tabulce v kapitole~\ref{sec:upravatabulkyparametru}. Fyzikální význam těchto parametrů a jejich implementace v modelu jsou popsány v části~\ref{cast:1} toho manuálu. 
 
 
 % \begin{figure}
@@ -108,9 +111,16 @@ Obrázek~\ref{fig:pripravapar_vyrez}b ukazuje výřez připravené vrstvy. Pro u
  
  
  
+ 
+ 
+ 
+ 
+ 
+ 
+ 
 \subsection{Data o využití území} \label{sec:vstupvegetace}
 \pozn{pk - doplnit zdroje takovych dat}
-Obdobně jako u půdních dat je vstupem vektorový shapefile popisující využití území. Mezi základní typy pro které byl model testován patří:
+Obdobně jako u půdních dat je vstupem vektorový shapefile popisující využití území. Mezi základní typy, pro které byl model testován, patří:
 \begin{itemize} \itemsep -3pt
   \item atropogení a zpevněné plochy  
   \item holá půda bez vegetace
@@ -122,7 +132,7 @@ Obdobně jako u půdních dat je vstupem vektorový shapefile popisující využ
 \end{itemize}
 
 
-Shapefile popisující využití území je na obrázku~\ref{fig:pripravapar_vyrez}c. Obdobně jako u půd v předchozí sekci je třeba atributovou tabulku tohoto shapefilu doplnit o identifikátor daného využití území. Tento identifikátor odkazuje na charakteristiky daného povrchu definované v dalším vstupech (popsáno v sekci~\ref{sec:upravatabulkyparametru}). Parametry, související s využitím území, které vstupující do modelu jsou zejména \acs{PotI} - \acl{PotI} a \acs{Lai} - \acl{Lai}. Jejich konkrétní použití je popsáno v části~\ref{cast:1} toho manuálu. 
+Shapefile popisující využití území je ukázán na obrázku~\ref{fig:pripravapar_vyrez}c. Obdobně jako u půd v předchozí sekci je třeba atributovou tabulku tohoto shapefilu doplnit o identifikátor daného využití území. Tento identifikátor odkazuje na charakteristiky daného povrchu definované ve zvláštní tabulce (popsáno v sekci~\ref{sec:upravatabulkyparametru}). Parametry související s využitím území, které vstupující do modelu jsou zejména \acs{PotI} - \acl{PotI} a \acs{Lai} - \acl{Lai}. Jejich konkrétní použití je popsáno v části~\ref{cast:1} toho manuálu. 
 % 
 % \begin{figure}
 %   \centering
@@ -140,9 +150,17 @@ Shapefile popisující využití území je na obrázku~\ref{fig:pripravapar_vyr
 
 
 
+
+
+
+
+
+
+
+
 \subsection{Tabulka parametrů půdy a využití území}  \label{sec:upravatabulkyparametru}
 
-Tento vstup je tabulka, která obsahuje hodnoty jednotlivých parametrů popsaných v předešlých kapitolách a části~\ref{cast:1} toho manuálu. Na tuto tabulku se odkazují identifikátory půdního typu a typu využití území v atributových tabulkách polygonových vrstev. Tato tabulka může být do modelu vlože jako textový soubor. Na obrázku~\ref{fig:pripravapar_vyrez}e je ukázán příklad takové tabulky. V prvních dvou sloupcích jsou identifikátory (id) typu půd (Soil) a typu využití území (Land Co.). Spojením těchto dvou id jsou označeny parametry pro danou kombinaci typu půdy a využití území (třetí sloupec v tabulce na obrázku~\ref{fig:pripravapar_vyrez}e s označením soilveg). Význam jednotlivých veličin je popsán v tabulce~\ref{tab:soilveg}. Při přípravě dat je nutné dodržet označení parametrů!
+Další povinný vstup je tabulka, která obsahuje hodnoty jednotlivých parametrů popsaných v předešlých kapitolách a části~\ref{cast:1} toho manuálu. Na tuto tabulku se odkazují identifikátory půdního typu a typu využití území definované jako pro jednotlivé polygony. Tato tabulka může být do modelu vlože jako textový soubor. Na obrázku~\ref{fig:pripravapar_vyrez}e je ukázán příklad takové tabulky. V prvních dvou sloupcích jsou identifikátory (id) typu půd (Soil) a typu využití území (Land Co.). Spojením těchto dvou id jsou označeny parametry pro danou kombinaci typu půdy a využití území (třetí sloupec v tabulce na obrázku~\ref{fig:pripravapar_vyrez}e s označením soilveg). Význam jednotlivých veličin je popsán v tabulce~\ref{tab:soilveg}. Při přípravě dat je nutné dodržet označení parametrů!
 
 Na obrázku~\ref{fig:pripravapar_vyrez} jsou i ukázky jednotlivých vektorových vrstev před (obrázek~\ref{fig:pripravapar_vyrez}b a ~\ref{fig:pripravapar_vyrez}c) a po protnutí (intersect; obrázek~\ref{fig:pripravapar_vyrez}d). 
 
@@ -169,7 +187,7 @@ Na obrázku~\ref{fig:pripravapar_vyrez} jsou i ukázky jednotlivých vektorovýc
 \begin{figure}[h!]
   \centering
 %   \includegraphics[width=0.9\textwidth]{./img/kTabulce_soilveg.png}
-  \includegraphics[width=0.9\textwidth]{./img/LUplusTAB.png} 
+  \includegraphics[width=1.0\textwidth]{./img/LUplusTAB.png} 
   \caption{Princip propojení vektorových vrstev s tabulkou obsahující parametry typu půd a vegetace. a): mapa daného území;  b): rozložení typu půdy; c):  rozložení typu vegetačního pokryvu; d): protnutí obou předchozích vrstev; e): tabulka s parametry}
   \label{fig:pripravapar_vyrez}
 \end{figure}
@@ -187,7 +205,25 @@ Součástí manuálu jsou i vzorové tabulky (do prilohy).}
 
 
 
-\subsection{Srážkový soubor} \label{sec:vstupsrazka}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\subsection{Srážková data} \label{sec:vstupsrazka}
 
 Dalším vstupem je soubor obsahující srážková data. 
 % 
@@ -200,25 +236,39 @@ Dalším vstupem je soubor obsahující srážková data.
 %\end{figure}
 % 
 % 
-Srážky se zadávají jako textový soubor se dvěma sloupci. V levém je časový interval v minutách v pravém \textbf{kumulativní úhrn} za daný časový interval v \textbf{milimetrech}. Například hodnoty na obrázku \ref{fig:srazkovysoubor} ukazují, že za prvních 10 minut běhu modelu naprší  na každou buňku rastru 3 mm, v období 10 - 60 minut 40 mm a od 60. minuty je srážka 0 mm. 
+Srážky se zadávají jako textový soubor se dvěma sloupci. V levém sloupci je časový interval v minutách v pravém sloupci je \textbf{kumulativní úhrn} za daný časový interval v \textbf{milimetrech}. Ukázka jednoduché srážky a grafické reprezentace kumulativních dat jsou zobrazeny na obrázku~\ref{fig:srazkovysoubor}. 
 \begin{figure}
   \centering
-  \includegraphics[width=0.5\textwidth]{./img/srazka.png}
-  \caption{Ukázka srážkových dat. V intervalu 0 - 10 minut je úhrn 3 mm, v intervalu 10 - 60 minut je úhrn 40 mm a v intervalu 60 - 70 úhrn 0 mm}
+  \includegraphics[width=0.45\textwidth]{./img/srazka-graf.png}
+  \includegraphics[width=0.5\textwidth]{./img/srazka-soubor.png}
+  \caption{Ukázka srážkových dat. Vlevo: grafická reprezentace zadaných dat (srážka zobrazena v intenzitách; Napravo: ukázka dat v požadovaném formátu)}
   \label{fig:srazkovysoubor}
 \end{figure}
 
 
+
+
+
+
+
+
+
+
+
+
+
+
 \subsection{Časový krok modelu a celková doba simulace} \label{sec:vstupkrok}
 
-Časový krok modelu označený \acs{dT} je hodnota v sekundách. Jako vstupní parametr se zadává maximální časový krok. Tento časový krok je rovněž počáteční časový krok. Časový krok je v průběhu výpočtu upravován podle Courantovy podmínky, tak aby bylo zachována numerická stabilita explicitního řešení. Velikost časového kroku závisí na rychlosti povrchového odtoku a na velikosti prostorového kroku (velikosti buňky DMT). Maximální časový krok záleží na požadovaném detailu výstupních dat zejména při dotoku srážkové epizody, kdy jsou již rychlosti proudění nižší a kde by v tom příkladě Courantova kritérium povolovalo příliš velký časový krok. Zvolené řešení změn časového kroku je detailněji popsáno v kapitole \ref{sec:cfl}. 
+Časový krok modelu označený \acs{dT} je hodnota v sekundách. Jako vstupní parametr se zadává maximální časový krok. Tento časový krok je rovněž počáteční časový krok. Časový krok je v průběhu výpočtu upravován podle Courantovy podmínky, tak aby bylo zachována numerická stabilita explicitního řešení časové diskretizace. Délka časového kroku závisí na rychlosti povrchového odtoku a na velikosti prostorového kroku (velikosti buňky DMT). Maximální časový krok záleží na požadovaném detailu výstupních dat zejména při dotoku srážkové epizody, kdy jsou již rychlosti proudění nižší a kde by v tom příkladě Courantova kritérium povolovalo příliš velký časový krok. Zvolené řešení adaptace časového kroku je detailněji popsáno v kapitole \ref{sec:cfl}. 
 
 %Vzhledem k tomu, že rychlost odtoku v rýhám může být řádově vyšší než rychlost plošného odtoku je snaha řídit velikost časového kroku podle rychlosti plošného odtoku, kde Courantovo kritérium povoluje vyšší časový krok. Velikosti časového kroku zásadně ovlivňuje celkovou délku výpočtu. Pokud časový krok vyhovuje Courantovu kritériu v plošném odtoku, ale toku v rýhách již nikoli, začne se časový krok dělit pouze interně při výpočtu rýh. Tyto děje se probíhají při běhu programu a uživatel je nijak neovlivňuje, nicméně, je třeba si uvědomit, že při vytvoření rýhového odtoku a nutností dělit časový krok v těchto buňkách může se doba výpočtu jednoho časového kroku prodloužit. která udává velikost jednoho kroku výpočtu, v němž probíhá výpočet odtoku a další nedílné součásti programu. Zadaný časový krok se mění podle potřeb Courantova kritéria \ref{section:cfl}, nikdy však nemůže být vyšší než vstupní zadaná hodnota uživatelem. 
 
 %Při zadávání počátečního časového kroku je možno zvolit hodnotu v rozmezí od 0.05 do 0.3 minuty. 
 % Velikost časového kroku nejvíce ovlivňuje reálnou dobu běhu modelu. Čím nižší je časový krok, tím déle uživatel čeká na výsledky. 
 %Stejně jako u všech ostatních číselných hodnot zadávaných do programu ArcGIS je potřeba myslet na to, že čísla s desetinnými místy musí být odděleny tečkou, nikoliv čárkou.
-Délka běhu modelu je hodnota v minutách určující čas, do kterého se model po jednotlivých časových krocích dostane a skončí. Volba délky běhu modelu by měla dostatečně dlouhá, tak aby odtekla veškerá voda z řešeného území, především při zjišťován celkového objemu odtoku.
+
+Konečný čas simulace je hodnota v minutách. Délky běhu modelu by měla být dostatečná, tak aby odtekla veškerá voda z řešeného území, především při zjišťován celkového objemu odtoku.
  
 
 
@@ -226,28 +276,116 @@ Délka běhu modelu je hodnota v minutách určující čas, do kterého se mode
 
 %Povrchová retence je děj, při kterém se zachytává počáteční část srážky, která se dále neúčastní odtoku. V reálném prostředí si lze toto představit jako zachytávání srážkové vody v nerovnostech na povrchu. Pouze po naplnění těchto malých nerovností dochází k povrchovému odtoku. Hodnota závisí na hustotě půdy a její deformaci. Povrchová retence se zadává v mm. Pro veškerá testování byla povrchová retence zvolena 0.2 mm.
 
+
+
+
+
+
+
+
+
+
+
+
+
 \subsection{Shapefile bodů pro generování hydrogramů} \label{sec:vstupbody}
 
-Jedná  se o bodovou vrstvu. V těchto bodech se budou uživateli ukládat časové řady počítaných veličin. Tento volitelný vstupní parametr je podrobněji popsán ve výstupech \ref{sec:hydrogramy}.
+Jedná  se o bodovou vrstvu. V těchto bodech se budou ukládat časové řady počítaných veličin. Tento volitelný vstupní parametr je podrobněji popsán v kapitole popisující výstupy z modelu~ \ref{sec:hydrogramy}.
+
+
+
+
+
+
+
+
+
+
 
 \subsection{Výstupní adresář} \label{sec:vstupadresar}
 Výstupní adresář je složka, do které se uloží veškeré výsledné rastry a výstupní textové soubory. Na začátku běhu programu se obsah tohoto adresář celý vymaže, proto se doporučuje vždy provést kontrolu. V žádném případě nenastavujete jako výstupní adresář pracovní plochu, či jiný adresář, kde byste mohli mít uložena důležitá data!
 
-\subsection{Rýhový odtok} \label{sec:vstupryhovy}
+% % % % \subsection{Rýhový odtok} \label{sec:vstupryhovy}
+% % % % Tento volitelný parametr po zaškrnutí umožní výpočet soustředěného odtoku. Soustředěný odtok je popsán v sekci \ref{sec:soustredenyodtok}.
 
-Tento volitelný parametr po zaškrnutí umožní výpočet soustředěného odtoku. Soustředěný odtok je popsán v sekci \ref{sec:soustredenyodtok}.
 
-\subsection{Vícesměrný odtok} \label{sec:vstupvicesmerny}
 
-Parametr volby vícesměrného odtoku je volitelný. Více o tomto typu odtoku je v části \ref{subsection:MD}
+
+
+
+
+
+
+
+% 
+% \subsection{Vícesměrný odtok} \label{sec:vstupvicesmerny}
+% 
+% Výchozí odtokový algoritmus \acl{D8} \acs{D8}. Parametr volby vícesměrného odtokového algoritmu je volitelný. Více o tomto typu odtoku je v části \ref{subsection:MD}
+% 
+% 
+% 
+
+
+
+
+
 
 
 \subsection{Hydrografická síť} \label{sec:vodnitoky}
 
-Hydrografickou sítí jsou myšleny nejen vodní toky, ale i prvky dočasné hydrografické sítě jako jsou příkopy, průlehy, cesty s příkopy a pod. Výpočet v modelu probíhá po jednotlivých úsecích pomocí Manningovi rovnice pro výpočet průtoku. Prostorové umístění jednotlivých prvků je formou shapefile (\textbf{Vrstva toků - Stream feature}). Jednotlivé vektory reprezentují úsek se stejnými charakteristikami. Tvar úseku, drsnost, základní průtok jsou pak zadávány pomocí externí tabulky kde jsou uvedeny charakteristiky pro jednotlivé typy úseků (\textbf{Tabulka vodních toků - Stream table}). Pro propojení prostorové informace s charakteristikami úseků je třeba mít v atributové tabulce shodný kód jako ve vrstvě vodních toků (\textbf{Kód vodních toků - Steam table code}).
+Hydrografickou sítí jsou myšleny nejen vodní toky, ale i prvky dočasné hydrografické sítě jako jsou příkopy, průlehy, cesty s příkopy a pod. Výpočet v modelu probíhá po jednotlivých úsecích pomocí Manningovi rovnice pro výpočet průtoku (popsáno v části~\ref{cast:1}). Prostorové umístění jednotlivých úseků je definování pomocí shapefile liniové vrstvy. Charakteristiky jednotlivých úseků jsou definovány ve zvláštní tabulce,  kde jsou uvedeny charakteristiky pro jednotlivé úseky. Pro propojení prostorové informace s charakteristikami úseků je třeba mít v této tabulce shodný kód jako ve vrstvě vodních toků.
+
+V tabulce~\ref{tab:toptab} je ukázka zadávaných hodnot.  Model umožňuje vybrat ze čtyř tvarů příčného průřezu úseků kde každý tvar má povinné celočíselné označení: obdélník (výchozí; tvar:0), lichoběžník (tvar:1), trojúhelník (tvar:2) a parabola (tvar:3). V tomto případě je kód připojující charakteristiky s úseky ve vektorové vrstvě ve sloupci {\it smoderp}. Rovnice použity pro určení hydraulického poloměru jednotlivých tvarů příčných profilů jsou na ukázány v příloze~\ref{sec:priloha} na obrázku~\ref{fig:tvary_koryt}
+% 
+% Zadávání tvaru příčného profilu není součástí atributové tabulky shapefile, ale pro ulehčení jsou parametry zadávány v samostatná tabulce. V případě, že jsou některé charakteristiky shodné, je tak možné jim přiřadit shodné atributy z tabulky.
+% V rámci zjednodušení výpočtu jsou zadávány profily parametricky. Zjednodušený výpočetní model neuvažuje rozlivy z koryta zpět do buněk odtoku. Jednotlivé prvky narůstají podle zvolených parametrů, tak aby veškerá voda zůstala v korytě.
+% přehled parametrů je uveden v tabulce~\ref{tab:toptab}
+
+\begin{table}[htb!]
+\centering
+\caption{Příklad tabulky s parametry jednotlivých úseků hydrografické sítě}
+\label{tab:toptab}
+\begin{tabular}{lccccccc}
+\hline
+% 
+cislo & smoderp      & tvar & b   & m   & n & Q365 & pozn           \\ \hline \hline
+0      & 0            & 1    & 0.3 & 1.0 & 0.03    & 0.0  & default \\
+1      & obdelnik1    & 0    & 0.2 & 0.0 & 0.035   & 0.0  &         \\
+2      & lichobeznik1 & 1    & 0.2 & 2.0 & 0.035   & 0.0  &         \\
+3      & trojuhelnik1 & 2    & 0   & 2.0 & 0.03    & 0.0  &         \\
+3      & trojuhelnik2 & 2    & 0   & 2.5 & 0.03    & 15.0  &        \\
+4      & parabola1    & 3    & 0.7 & 0.0 & 0.03    & 0.0  &         \\ \hline
+\end{tabular}
+\end{table}
+% 
+% 
+% 
+\begin{tabular}{rrl}
+   kde \jj{bhs}{,}
+       \jj{m}{,}
+       \jj{n}{\ a}
+       \jj{Q365}{.}
+%        \jj{Rstream}{.}
+\end{tabular}
+
+
+\pozn{
+kde:
+\begin{itemize}
+\item \textbf{b} - šířka profilu ve dně (u trojúhelníku se rovná nule)
+\item \textbf{m} - poměr sklonu svahů (pro obdélník je roven nule)
+\item \textbf{drsnost} - Maninngova drsnost v daném korytě.
+\item \textbf{Q365} - základní odtok. V případě dočasných prvků jako jsou příkopy je tato hodnota rovna nule, v případě vodních toků se jedná o základní odtok.-
+\item \textbf{poznámky} - jedná se o volitelnou položku, do výpočtu se nijak nepropaguje
+\end{itemize}
+}
 
 
 
 
+
+
+
+\subsection{Použití modelu v ArcGIS} \label{sec:intoolbox}
 
 
