@@ -1,10 +1,10 @@
-Samotný program je rozdělen do několika podadresářů a souborů. Adresářová struktura s popisem nejdůležitějších adresářů a souborů je ukázána na obrázku~\ref{fig:adresare}. Klíčový soubory je {\tt data\_preparation.py}, kde je proveden {\it preprocessing} vstupních dat. Dalšími důležitými souborem jsou soubory {\tt runoff.py} a {\tt time\_step.py} zde je samotné řešení modelu. Soubory v adresáři {\tt main\_clasess/} obsahují definici datových struktur jednotlivých řešených dějů a skládají dohromady metody k řešení jednotlivých dějů modelu. Tuto metody jsou pak definované v adresáři {\tt processes/}. 
+Samotný program je rozdělen do několika podadresářů a souborů. Adresářová struktura s popisem nejdůležitějších adresářů a souborů je ukázána na obrázku~\ref{fig:adresare}. Klíčový soubory je {\tt data\_preparation.py}, kde je proveden {\it preprocessing} vstupních dat. Dalšími důležitými soubory jsou {\tt runoff.py} a {\tt time\_step.py}, kde probíhá probíhá samotný výpočet. Soubory v adresáři {\tt main\_clasess/} obsahují definici datových struktur jednotlivých řešených dějů a skládají dohromady metody k řešení jednotlivých častí modelu. Tuto metody jsou pak definované v adresáři {\tt processes/}. 
 
-Program SMODERP je napsaný v jazyce Python. Python je často používaný GIS softwary jako skriptovací jazyk a jsou pro ně k dispozici knihovny pro efektivní práci s geodaty\footnote{knihovna arcpy pro ArcGIS či knihovny grass.script pro GRASS GIS}. Programy či skripty napsané pomocí Python jsou spustitelné v prostředí daných GIS softwarů. Současná verze modelu SMODERP používá Python 2.7.X, který je kompatibilní s ArcGIS 10.X.
+Program \smod je napsaný v jazyce Python. Python je často používaný GIS softwary jako skriptovací jazyk a jsou pro ně k dispozici knihovny pro efektivní práci s geodaty\footnote{knihovna {\tt arcpy} pro ArcGIS či knihovny {\tt grass.script} pro GRASS GIS}. Programy či skripty napsané pomocí Python jsou spustitelné v prostředí daných GIS softwarů. Současná verze modelu \smod používá Python 2.7.X, který je kompatibilní s ArcGIS 10.X.
 
-Na obrázku~\ref{fig:flowchart} je zjednodušený diagram toku programu. Program řeší v každém časovém kroku rovnici~\ref{eq:bilancnirce}. Pokud je překročena kritická výška a půda se začne vymílat, začne se do celkového  odtoku  započítávat i rýhoví odtok. Bilanční rovnice je rozšířena (rovnice~\ref{eq:bilancnircerill}). Pokud je řešená buňka tok, načítá se celkový přítok $\sum_j^m \acs{oin}_{j,t-1}$ (případně $\sum_k^n \acs{oinrill}_{k,t-1}$) v rovnici~\ref{eq:bilancnirce} (~\ref{eq:bilancnircerill}) do daného úseku toku, kde se odtok řeší pomocí Chezyho rovnice.
+Na obrázku~\ref{fig:flowchart} je zjednodušený diagram toku programu. Program řeší v každém časovém kroku rovnici~\ref{eq:bilancnirce}. Pokud je překročena kritická výška a půda se začne vymílat, začne se do celkového  odtoku  započítávat i rýhoví odtok. Bilanční rovnice je rozšířena (\ref{eq:bilancnircerill}). Pokud je řešená součástí hydrografické sítě, načítá se celkový přítok $\sum_j^m \acs{oin}_{j,t-1}$ (případně $\sum_k^n \acs{oinrill}_{k,t-1}$) v rovnici~(\ref{eq:bilancnirce})  nebo (\ref{eq:bilancnircerill}) do daného úseku toku, kde se odtok řeší pomocí Chezyho rovnice.
 
-Pokud v daném časovém kroku překročí rychlost v jakékoli buňce Courantovo kritérium dojde ke zmenšení časového kroku a výpočet se v daném kroku opakuje. Pokud je Courantovo kritérium nízké, je možné časový krok zvýšit. To odpovídá kontrole a aktualizaci časového kroku v diagramu na obrázku~\ref{fig:flowchart}. Po dosažení konečného času dojde k uložení výsledných hodnot a ukončení programu.
+Pokud v daném časovém kroku překročí rychlost v jakékoli buňce Courantovo kritérium, dojde ke zmenšení časového kroku a výpočet se v daném kroku opakuje. Pokud je Courantovo kritérium nízké, je možné časový krok zvýšit. To odpovídá kontrole a aktualizaci časového kroku v diagramu na obrázku~\ref{fig:flowchart}. Po dosažení konečného času dojde k uložení výsledných hodnot a ukončení programu.
 
 
 \input{./img/dirtree}
@@ -44,7 +44,9 @@ Pokud v daném časovém kroku překročí rychlost v jakékoli buňce Courantov
 
 % Objektově orientované zpracování toku programu umožňuje jednak lepší orientaci v kódu a také lepší běh programu. Jednotlivé procesy jsou ro
 \subsection{Programovací jazyk Python} \label{sec:python}
-  Python je objektově orientovaný programovací jazyk, který se může využít v~mnoha oblastech vývoje softwaru. Nabízí významnou podporu k~integraci s~ostatními jazyky a~nástroji a~přichází s~mnoha standardními knihovnami. Jeho použití je velice široké od~programů na~zpracování multimedií až~po~zpracování textů. Python není závislý na~platformě, na~které běží \cite{python}. Zajímavým rozšířením jazyka Pyhton je NumPy. Je to balíček užívaný pro~vědecké výpočty. Umožňuje podporu velkých, multi-dimenzionálních polí a~matic, spolu s~velkou knihovnou matematických funkcí pro~práci s~těmito poli \cite{numpy}. Pomocí tohoto balíčku bylo v~programu operováno s~naprostou vetšinou polí a~matic. V~současnosti (Prosinec 2013) je nejnovější verze jazyka 3.3.3. Poslední verze vývojové větve 2.x Pythonu vyšla v~roce 2010 a~byla to~verze 2.7. Nyní všechna vylepšení jazyka už jsou dělána pro~vývojovou větev 3.x. K~tvorbě programu byla zvolena verze 2.6.5, která~je kompatibilní s~programem ArcGIS~10.0.     
+  Python je objektově orientovaný programovací jazyk, který se může využít v~mnoha oblastech vývoje softwaru. Nabízí významnou podporu k~integraci s~ostatními jazyky a~nástroji a~přichází s~mnoha standardními knihovnami. Jeho použití je velice široké od~programů na~zpracování multimedií až~po~zpracování textů. Python není závislý na~platformě, na~které běží \citep{python}. Zajímavým balíčkem jazyka Pyhton je {\tt numpy}~\citep{numpy}. Je to balíček užívaný pro~vědecké výpočty. Umožňuje podporu velkých, multi-dimenzionálních polí a~matic, spolu s~velkou knihovnou matematických funkcí pro~práci s~těmito poli. Pomocí tohoto balíčku bylo v~programu operováno s~naprostou vetšinou polí a~matic. 
+  
+  V~současnosti (Prosinec 2017) je nejnovější verze jazyka Python 3.6. Poslední verze vývojové větve 2.7 Pythonu vyšla v~roce 2010. Aktuální verze modelu \smod používá Python 2.7. Podpora Python 2.7 je plánována do jara 2020 (přesné datum zatím není stanoveno). Proto bude docházek k migraci modelu \smod na verzi  Python 3. 
 
   
   
@@ -53,16 +55,16 @@ Pokud v daném časovém kroku překročí rychlost v jakékoli buňce Courantov
   
   
 \subsection{CFL podmínka - řešení nestability výpočtu} \label{sec:cfl}
-  V předchozím verzích programu SMODERP nebyla ošetřena podmínka stability výpočtu, která vychází z explicitního řešení časově derivace. Při větších rychlostech toku či nevhodně zvolené délce časového kroku došlo k situaci, kdy z buňky odteklo více vody než v ní bylo. Situace byla nazvána přetečení. Program se ukončil a uložil se poslední úspěšný časový krok. 
+  V předchozích verzích programu SMODERP nebyla ošetřena podmínka stability výpočtu, která vychází z explicitního řešení časové derivace. Při větších rychlostech toku či nevhodně zvolené délce časového kroku docházelo k nestabilitám v řešení. Program se v takovém případě ukončil a uložil výsledky posledního úspěšně spočítaného časového kroku. 
 
-  V současné verzi programu SMODERP 2D je tento problém vyřešen Courant-Friedrich-Lewy (\acs{CFL}) podmínkou. Splnění této podmínky zajišťuje konvergenci explicitního řešení pokus je platí, že $\acs{CFL} < 1.0$. Z obecné rovnice CFL podmínky byla odvozena a upravena podmínka pro účely modelu SMODERP 2D na následující tvar:
+  V současné verzi programu \smod je tento problém vyřešen Courant-Friedrich-Lewy (\acs{CFL}) podmínkou. Splnění této podmínky zajišťuje konvergenci explicitního řešení pokud platí, že $\acs{CFL} < 1.0$. Z obecné rovnice \acs{CFL} podmínky byla odvozena a upravena podmínka pro účely modelu \smod na následující tvar: \pozn{neni k tomu 0.5601 nejak citace?} 
   \begin{equation}
     \acs{CFL} = \frac{1}{0.5601}\frac{v \acs{dT}}{\acs{dX}} 
     \label{eq:courrovnice}
   \end{equation}
   \begin{tabular}{rrl}
     kde \jj{CFL}{,}
-        & $v$ & je rychlost plošného či rýhového toku, \\
+        & $v$ & je rychlost plošného či rýhového toku [$m/s$], \\
         \jj{dT}{\ a}
         \jj{dX}{.}
   \end{tabular}
@@ -84,7 +86,7 @@ Pokud v daném časovém kroku překročí rychlost v jakékoli buňce Courantov
     \end{tabular}
   \end{table}
 
-  Proudění v {\bf rýhách} je zpravidla řádově rychlejší než plošný odtok. Pokud bychom v tomto případě uplatňovali stejný princip jako u plošného odtoku, časový krok by byl musel být velmi malý čímž by se prodlužoval strojoví čas výpočtu. K odtoku v rýhách většinou nedochází na celém území, ale pouze v poměrně malém počtu buněk (v poměru k celé ploše výpočetní oblasti). Proto se při výpočtu rýhového odtoku přistoupilo k lokálnímu krácení časového kroku pouze v buňkách, kde k rýhovému odtoku skutečně dojde. Časový krok v rýhách je dělen celočíselně faktorem označeným jako \acs{ratio}. CFL číslo se proto ukládá zvlášť u plošného a zvlášť u rýhového odtoku. Ke změně časového kroku plošného odtoku dojde pokud $\acs{ratio} > 10$. Časový krok plošného odtoku je pak násoben multiplikátorem \acs{dTmult}, který se po každém překročení maximální  \acs{CFL} zmenší na 90 \% své dosavadní hodnoty. Pokud je \acs{CFL} příznivé multiplikátor \acs{dTmult} se postupně zvětšuje vždy o 10 \% na hodnoty 1. Pravidla pro změna faktoru \acs{ratio} a multiplikátoru \acs{dTmult} jsou shrnuty~\ref{tab:cflrill}.
+  Soustředěný odtok v {\bf rýhách} je zpravidla řádově rychlejší než plošný odtok. Pokud bychom v tomto případě uplatňovali stejný princip jako u plošného odtoku, časový krok by byl extrémně malý, čímž by se prodlužoval strojoví čas výpočtu. K odtoku v rýhách většinou nedochází na celém území, ale pouze v poměrně malém počtu buněk (v poměru k celé ploše výpočetní oblasti). Proto se při výpočtu rýhového odtoku přistoupilo k lokálnímu krácení časového kroku pouze v buňkách, kde k rýhovému odtoku skutečně dojde. Časový krok v rýhách je dělen celočíselně faktorem označeným jako \acs{ratio}.  \acs{CFL} číslo se proto ukládá zvlášť u plošného a zvlášť u soustředěného odtoku. Ke změně časového kroku plošného odtoku dojde až pokud $\acs{ratio} > 10$. Časový krok plošného odtoku je pak násoben multiplikátorem \acs{dTmult}, který se po každém překročení maximální  \acs{CFL} zmenší na 90 \% své dosavadní hodnoty. Pokud je \acs{CFL} kritérium příznivé (začíná se zmenšovat) multiplikátor \acs{dTmult} se postupně zvětšuje vždy o 10 \% na hodnoty 1. Pravidla pro změna faktoru \acs{ratio} a multiplikátoru \acs{dTmult} jsou shrnuta~\ref{tab:cflrill}.
   \begin{table}[t!]
     \centering
     \caption{Kritéria změny faktoru \acs{ratio} při dělení časového kroku pří výpočtu rýhového odtoku}
@@ -107,7 +109,7 @@ Pokud v daném časovém kroku překročí rychlost v jakékoli buňce Courantov
   \end{table}
   
   
-  Obrázek \ref{fig:cfl1} a \ref{fig:cfl2} ukazují chování časového kroku v případě, že je řízen plošným obrázek~\ref{fig:cfl1} nebo rýhovým odtokem obrázek~\ref{fig:cfl2}. 
+  Obrázek \ref{fig:cfl1} a \ref{fig:cfl2} ukazují chování časového kroku v případě, že je řízen plošným obrázek~\ref{fig:cfl1} nebo soustředěným odtokem obrázek~\ref{fig:cfl2}. 
   
   
   \begin{figure}%[h!]

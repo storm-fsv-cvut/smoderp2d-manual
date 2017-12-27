@@ -62,9 +62,8 @@
   \newpage
   \pagenumbering{arabic}\setcounter{page}{1}% od uvodu do konce arabske cislice od 1
   \part*{Úvod}
-
   \input{./1_text/2_intro/CZ_manual_intro}
-  %%%%% \input{./1_text/2_intro/mainintro}
+
 
   \newpage
   \part{Popis řešení}\label{cast:1}
@@ -79,13 +78,14 @@
   \input{./1_text/3_mat_a_met/CZsmoderp_postup}
 
   \newpage
-  \part{Ukázka výsledků}
+  \setcounter{section}{0}
+  \part{Ukázka výsledků}\label{cast:3}
   \input{./1_text/4_concl/CZmainconcl}
-  % \input{./1_text/3_mat_a_met/CZmanual_metody}
+
 
   \newpage
   \appendix
-  \section*{Příloha}\addcontentsline{toc}{subsection}{Příloha}\label{sec:priloha}
+  \part*{Příloha}
   \input{./1_text/3_mat_a_met/CZmanual_Proloha}
 
 

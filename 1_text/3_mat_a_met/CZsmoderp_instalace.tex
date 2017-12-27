@@ -1,4 +1,4 @@
-
+  
   \smod je distribuován pod GPL licencí, takže uživatel má dvě možnosti jak získat model \smod: jako zdrojový kód a jako binární knihovnu. 
   
   Na stránkách katedry ... \pozn{dopln} lze stáhnout aktuální zdrojový kód modelu. Na stránkách github.com ... \pozn{dopln} lze stáhnout aktuální zdrojový či vývojové vrze. Na stránkách github.com ... \pozn{dopln}  lze rovněž stáhnout zdrojový kód toho manuálu. 
@@ -45,13 +45,20 @@
     \label{fig:tbsource}
   \end{figure}  
   
-  
   \begin{figure}
-    \centering
-    \includegraphics[width=0.75\textwidth]{./img/toolbox.png}
+    \begin{tikzpicture}
+    \node at (0,0) {\includegraphics[width=0.75\textwidth]{./img/toolbox.png}};
+    
+    
+    \draw [very thick] (-2.5,5) -- (5,5) node[right] {digitální model terénu sec};
+    \draw [very thick] (-2.0,4.3) -- (5,4.3) node[right] {digitální model terénu sec};
+    \draw [very thick] (-2.0,3.6) -- (5,3.6) node[right] {digitální model terénu sec};
+    \end{tikzpicture}
     \caption{Ukázka parametrů ArcGIS {\tt toolbox}}
     \label{fig:toolbox}
-  \end{figure}  
+  \end{figure} 
+%     \centering
+%     \includegraphics[width=0.75\textwidth]{./img/toolbox.png}
   
   
   

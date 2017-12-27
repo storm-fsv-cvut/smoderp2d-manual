@@ -21,7 +21,7 @@
 \node (rillflow) [process, below of=dec2, yshift=-0.5cm] {Rýhový odtok};
 
 \node (dec3) [decision, below of=rillflow, yshift=-0.5cm] {Je buňka v toku?};
-\node (streamflow) [process, below of=dec3, yshift=-0.5cm] {Otok úsekem toku};
+\node (streamflow) [process, below of=dec3, yshift=-0.5cm] {Odtok úsekem toku};
 
 \node (output) [io, below of=streamflow, yshift=-0.5cm] {Výstupní data};
 \node (stop) [startstop, below of=output, yshift=-0.5cm] {Konec};
@@ -63,7 +63,7 @@
 \draw [line] (dec3) -- node[anchor=north] {ne}(dd4);
 \draw [arrow] (dd4) -- (check);
 
-\draw [line] (streamflow) -- node[anchor=north] {ne}(dd5);
+\draw [line] (streamflow) -- node[anchor=north] {}(dd5);
 \draw [arrow] (dd5) -- (check);
 
 
