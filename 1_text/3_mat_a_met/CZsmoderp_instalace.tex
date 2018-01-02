@@ -40,23 +40,37 @@
   
   \begin{figure}
     \centering
-    \includegraphics[width=0.75\textwidth]{./img/start-smoderp.png}
-    \caption{Ukázka puštění modelu \smod v ArcGIS {\tt toolbox}}
-    \label{fig:tbsource}
-  \end{figure}  
-  
-  \begin{figure}
-    \begin{tikzpicture}
-    \node at (0,0) {\includegraphics[width=0.75\textwidth]{./img/toolbox.png}};
-    
-    
-    \draw [very thick] (-2.5,5) -- (5,5) node[right] {digitální model terénu sec};
-    \draw [very thick] (-2.0,4.3) -- (5,4.3) node[right] {digitální model terénu sec};
-    \draw [very thick] (-2.0,3.6) -- (5,3.6) node[right] {digitální model terénu sec};
-    \end{tikzpicture}
-    \caption{Ukázka parametrů ArcGIS {\tt toolbox}}
-    \label{fig:toolbox}
-  \end{figure} 
+    \begin{minipage}[t]{.55\textwidth}
+      \centering
+      \vspace{0pt}
+      \includegraphics[width=\textwidth]{./img/toolboxpopis.png}
+    \end{minipage}\hfill
+    \begin{minipage}[t]{.45\textwidth}
+      \centering
+      \vspace{0pt}
+      {\scriptsize\sffamily
+      \begin{tabular}{lp{.8\textwidth}}
+	\circled{1}  & Cesta k digitálnímu modlu terénu \\
+	\circled{2}  & Cesta k vektorové vrstvě rozložení typu půd \\
+	\circled{3}  & Název pole s id typů půd \\
+	\circled{4}  & Cesta k vektorové vrstvě využití území \\
+	\circled{5}  & Název pole s id využití území \\
+	\circled{6}  & Cesta k souboru se srážkovými daty \\
+	\circled{7}  & Maximální časový krok \\
+	\circled{8}  & Konečný čas výpočtu \\
+	\circled{9}  & Vrstva bodů pro výpis hydrogramů \\
+	\circled{10} & Výstupní adresář \\
+	\circled{11} & Tabulka s parametry modelu \\
+	\circled{12} & Označení pole v tabulce \circled{11} \\
+	\circled{13} & Cesta k vrstvě linií hydrografické sítě \\
+	\circled{14} & Cesta k tabulce s geometrií úseků hydrografické sítě \\
+	\circled{15} & Název společného pole pro spojení \circled{13} a \circled{14} \\
+	\circled{16} & Volba formy výstupních souborů \\
+      \end{tabular}
+      }
+    \end{minipage}
+    \caption{This is the caption for figure}
+  \end{figure}
 %     \centering
 %     \includegraphics[width=0.75\textwidth]{./img/toolbox.png}
   
