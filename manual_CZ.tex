@@ -12,14 +12,14 @@
 %
 %
 % pokud toto odkomentujes 
-% \newcommand*{\DEBUG}{}
+\newcommand*{\DEBUG}{}
 % zobrazi se poznamky
 % poznamky jsou oznaceny @@@
 % 
 % prikaz na delani poznamek
 \newcommand{\pozn}[1]{
    \ifdefined\DEBUG
-   {(\color{red}@@@ #1)}
+   {\color{red}(@@@ #1)}
    \fi
 }
 %
@@ -78,6 +78,7 @@
   \input{./1_text/3_mat_a_met/CZsmoderp_postup}
 
   \newpage
+  \FloatBarrier   % kvuli pretekani obrazku
   \setcounter{section}{0}
   \part{Ukázka výsledků}\label{cast:3}
   \input{./1_text/4_concl/CZmainconcl}

@@ -113,9 +113,6 @@ V následujícím textu jsou popsány jednotlivé členy za pravé straně rovni
 % 
 \subsection{Efektivní srážka \acs{es}} 
 
-\pozn{intercepční kapacita / potenciální intercepce}
-
-
 Srážka je příčinou celého erozního procesu. Vzhledem k tomu, že je \smod epizodní model zadává se srážka v podobě konkrétní nebo návrhové srážky, která začíná s prvním časovým krokem výpočtu. Model počítá s vlivem intercepce, tedy že určitá část srážky bude zachycena rostlinami díky jejich potenciální intercepci \acs{PotI}. Míra zachycení v každém časovém kroku (\acs{dT}) výpočtu je definována  pomocí poměrné plochy listové \acs{Lai} (například \pozn{ citace}).
 
 Označme množství srážky, které dopadá na povrch půdy i rostliny během \acs{dT} potenciální srážkou \acs{PS}. Část \acs{PS}, která zůstane  na povrchu rostliny během časovém kroku \acs{dT}, se dá vyjádřit jako násobek srážky \acs{PS} a \acs{Lai},
@@ -123,23 +120,31 @@ $$
 \acs{PS}\ I_{LAI}.
 $$
 % 
-Z tohoto vztahu vyplývá, že množství které propadne povrchem listů je 
+Z tohoto vztahu vyplývá, že množství, které propadne povrchem listů, je 
 $$
 \acs{PS}(1 - I_{LAI}).
 $$
 
-V modelu je rovněž zahrnuta intercepční kapacita \acs{PotI}, která se během začátku srážky plní. Výsledná intenzita efektivní srážky v čase $t$ je pak určena jako
+Potenciální intercepce \acs{PotI} se začne plnit na začátku srážkové epizody. Výsledná intenzita efektivní srážky v čase $t$ je pak určena jako
 
-\pozn{toto je taky blbost udelam to s s kdyz a velkou levou zavorkou}
 $$
- \acs{es}_t = MAX(0;\sum_{\bar{t} = t_{init}}^{t}\left(\acs{PS}_{\bar{t}}(1 - I_{LAI})\right)-\acs{PotI}))/\acs{dT},
+   \acs{es}_t= 
+    \begin{cases}
+     \acs{PS}_t(1 - I_{LAI}),& \text{pokud} \sum_{\bar{t} = t_{init}}^{t} (\acs{PS}_{\bar{t}}\ I_{LAI}) <= \acs{PotI}\\
+     \acs{PS}_t,             & \text{jinak}
+   \end{cases}
 $$
+
+
+% $$
+%  \acs{es}_t = MAX(0;\sum_{\bar{t} = t_{init}}^{t}\left(\acs{PS}_{\bar{t}}(1 - I_{LAI})\right)-\acs{PotI}))/\acs{dT},
+% $$
 % kde suma $\sum_{\bar{t} = t_{init}}^{t}$ vyjadřuje množství srážky které propadlo povrchem listů plodiny od počátečního času $t_{init}$ do času $t$.
 \begin{tabular}{rrl}
   kde \jj{PS}{,}
       \jj{Lai}{,}
       \jj{PotI}{\ a}
-      & $\sum_{\bar{t} = t_{init}}^{t}$ & vyjadřuje množství srážky, které propadlo \\
+      & $\sum_{\bar{t} = t_{init}}^{t} (\acs{PS}_{\bar{t}}\ I_{LAI}) $ & vyjadřuje množství srážky, které propadlo \\
       && povrchem listů plodiny od počátečního času $t_{init}$ do času $t$.
       \label{srazka}
 \end{tabular}

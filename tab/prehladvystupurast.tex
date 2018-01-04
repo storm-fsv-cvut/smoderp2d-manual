@@ -1,7 +1,7 @@
 % 11.12. Zakomentova radky jsou to tempu
 
 
-\begin{table}[h!]
+\begin{table}[t]
  
 
  \centering
@@ -13,18 +13,18 @@
  \hline
   Název souboru    & Jednotka    & Popis       \\ 
   (ESRI nebo .acs)    &     &        \\ \hline \hline
-  cInfiltrationM     &   $m$        & Kumulativní infiltrace \\
-  cRainfallM       &  $m$  &  Kumulativní srážka (bez intercepce a povrchové retence) \\
-  cVolInM3       &  $m^3$  & Kumulativní objem přítoků do buňky  (plošný + rýhový) \\
-  cSheetVolOutM3       &  $m^3$  & Kumulativní objem odtoku z buňky \\
+  cInfiltrationM      &   $m$        & Kumulativní infiltrace \\
+  cRainfallM          &  $m$    &  Kumulativní srážka (bez intercepce a povrchové retence) \\
+  cVolInM3            &  $m^3$  & Kumulativní objem přítoků do buňky  (plošný + soustředěný) \\
+  cSheetVolOutM3      &  $m^3$  & Kumulativní objem odtoku z buňky \\
   cRillVolOutM3       &  $m^3$  & Kumulativní objem odtoku z buňky rýhou \\
-  cVolRestM3      &  $m^3$  & Kumulativní zbytek po odtoku odtoku z buňky\\
-  mSurfaceFlowM3\_S  &   $m^3-s^{-1}$	&  Maximální celkový v buňce\\
-  mVelocityM\_S	&   $ms^{-1}$	&  Maximální rychlost proudění v buňce (plošného či soustředěného odtoku) \\
-  mReachFlowM3\_S   &  $NA$ & doplnym  \\
-  mShearStressPa   & $Pa$ &  tečné napětí \\
-  reachFID   &  $NA$ &  Buňky mimo tok mají {\tt NODATA} hodnotu nebo id daného úseku toku.  \\
-  massBalance   &   $m$  &  Bilance všech vstupů a výstupu z a do buňky  \\
+  cVolRestM3          &  $m^3$  & Kumulativní zbytek po odtoku odtoku z buňky\\
+  mSurfaceFlowM3\_S   &   $m^3s^{-1}$	&  Maximální celkový odtok v buňce\\
+  mVelocityM\_S       &   $ms^{-1}$	&  Maximální rychlost proudění v buňce (plošného či soustředěného odtoku) \\
+  mReachFlowM3\_S     &  $NA$ & Maximální odtok v úsecích hyd. sítě  \\
+  mShearStressPa      & $Pa$ &  Maximální tečné napětí \\
+  reachFID            &  $NA$ &  Buňky mimo tok mají {\tt NODATA} hodnotu nebo id daného úseku toku.  \\
+  massBalance         &   $m$  &  Bilance všech vstupů a výstupu z a do buňky  \\
   \hline
 %  tyhle jdou do tempu
 %  rillAreaM       &   $m^2$      &  Plocha buňky, kterou porývá rýha \\
