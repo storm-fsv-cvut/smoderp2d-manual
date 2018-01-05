@@ -113,6 +113,8 @@ V následujícím textu jsou popsány jednotlivé členy za pravé straně rovni
 % 
 \subsection{Efektivní srážka \acs{es}} 
 
+\pozn{potenciální intercepce jednotly???}
+
 Srážka je příčinou celého erozního procesu. Vzhledem k tomu, že je \smod epizodní model zadává se srážka v podobě konkrétní nebo návrhové srážky, která začíná s prvním časovým krokem výpočtu. Model počítá s vlivem intercepce, tedy že určitá část srážky bude zachycena rostlinami díky jejich potenciální intercepci \acs{PotI}. Míra zachycení v každém časovém kroku (\acs{dT}) výpočtu je definována  pomocí poměrné plochy listové \acs{Lai} (například \pozn{ citace}).
 
 Označme množství srážky, které dopadá na povrch půdy i rostliny během \acs{dT} potenciální srážkou \acs{PS}. Část \acs{PS}, která zůstane  na povrchu rostliny během časovém kroku \acs{dT}, se dá vyjádřit jako násobek srážky \acs{PS} a \acs{Lai},
@@ -300,6 +302,11 @@ Pro posouzení erozního ohrožení a pro určení vzniku rýhy je v každé bu�
 
 Povrchový odtok způsobuje tření na povrch půdy. Za určitých podmínek je soudržnost půdy nižší než tečné napětí proudící vody na jejím povrchu. Je několik způsobů jak tento moment určit \pozn{citace}. V modelu \smod jsou implementovány dva způsoby odvození: překročením kritického tečného napětí a překročením nevymílací rychlosti. Z obou odvození je určena kritická výška hladiny \acs{hcrit} povrchového odtoku po jejímž překročení začne vznikat rýha. 
 
+
+Při vzniku rýh dochází v k velkému odnosu půdy, proto by umístění prvků protierozní ochrany mělo být navrhnuto tak, aby k vniku rýh docházelo co nejméně. Kritické hodnoty nevymílacích rychlostí a tečných napětí jsou pro jednotlivé půdní druhy a druh vegetace \pozn{v tabulce na kterou to ma odkazovat je to jen pro pudni typ ne pro vegetaci} převzaty z předchozích verzí modelu (podle \cite{DyrovaE.1984}) a jsou uvedeny v tabulce.
+\pozn{na toto tema jsem nasel v adr tab jen jednu tabulku, tam je citovan vrana, ale zase neni v zadnym *.bib}
+V literatuře se setkáme i s odlišnými hodnotami. Například M. A. Velikanov stanovil kritickou nevymílací rychlost pro půdy 0.24 $m/s$   \pozn{divna citace typka s jinym jmenem}\citep{CabikJ.1963}, což je hodnota nižší, než kterou stanovila E. Dýrová.
+
 Vztah pro výpočet tečného napětí je v modelu \smod definován podle \cite{Schwab1993} jako
 % 
 % 
@@ -318,10 +325,6 @@ Vztah pro výpočet tečného napětí je v modelu \smod definován podle \cite{
       \jj{I}{\ a}
       \jj{K}{.}
 \end{tabular}
-
-Vznik rýh je také považován za limitní z hlediska erozní ohroženosti. Umístění prvků protierozní ochrany by mělo být vedeno tak, aby nedocházelo ke vzniku rýh. Kritické hodnoty nevymílacích rychlostí a tečných napětí jsou pro jednotlivé půdní druhy a druh vegetace \pozn{v tabulce na kterou to ma odkazovat je to jen pro pudni typ ne pro vegetaci} převzaty z předchozích verzí modelu (podle \cite{DyrovaE.1984}) a jsou uvedeny v tabulce.
-\pozn{na toto tema jsem nasel v adr tab jen jednu tabulku, tam je citovan vrana, ale zase neni v zadnym *.bib}
-V literatuře se setkáme i s odlišnými hodnotami. Například M. A. Velikanov stanovil kritickou nevymílací rychlost pro půdy 0.24 $m/s$   \pozn{divna citace typka s jinym jmenem}\citep{CabikJ.1963}, což je hodnota nižší, než kterou stanovila E. Dýrová.
 
 Přepočet kritické nevymílací rychlost na kritickou výšku hladiny \acs{hcrit} je odvozen z rovnic (\ref{eq:plos_prutok}) a (\ref{eq:v}) jako
 \begin{equation}
@@ -532,8 +535,8 @@ $$
 
 
 
-\pozn{ Tímto způsobem jsou zadány tvary prvků, které se v řešené lokalitě vyskytují.
-\textbf{sem dát obrázek těch profilů}}
+% \pozn{ Tímto způsobem jsou zadány tvary prvků, které se v řešené lokalitě vyskytují.
+% \textbf{sem dát obrázek těch profilů}}
 
 
 \pozn{\textbf{doplnit text jak probíhá vlastní výpočet} - tzn jak na sebe navazují jednotlivé úseky . a dát semka asi i nějaké  obrázky, jak to funguje. Je to v nějaké DP tuším (to najdu PK)}
