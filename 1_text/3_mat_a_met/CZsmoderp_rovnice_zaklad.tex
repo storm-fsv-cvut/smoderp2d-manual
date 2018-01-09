@@ -350,7 +350,7 @@ Výpočet kritické výšky hladiny z tečného napětí je jednoduše odvozen z
 \end{tabular}
 
 
-Pro každou buňku výpočetní oblasti je spočítáno \acs{hcrit} pomocí obou odvození (\ref{eq:hcrit_v}) a (\ref{eq:hcrit_tau}). Podmínka v modelu následné vybere menší z hodnot, která je pak pří výpočtu použita jako kritérium vzniku rýh \pozn{to chce asi strucne dovysvetlit proc bere tu mensi a doplnit literaturu}. 
+Pro každou buňku výpočetní oblasti je spočítáno \acs{hcrit} pomocí obou odvození (\ref{eq:hcrit_v}) a (\ref{eq:hcrit_tau}). Podmínka v modelu následně vybere menší z hodnot, která je pak pří výpočtu použita jako kritérium vzniku rýh \pozn{to chce asi strucne dovysvetlit proc bere tu mensi a doplnit literaturu}. 
 kritická nevymílací rychlost a kritické tečné napětí jsou vstupní parametry modelu. Návrh hodnot pro model \smod je ukázán v tabulce~\ref{tab:kriticke} v příloze~\ref{sec:priloha}. 
 
 
@@ -370,7 +370,7 @@ kritická nevymílací rychlost a kritické tečné napětí jsou vstupní param
 
 Výpočet soustředěného odtoku v rýhách implementovaný v modelu SMODERP vychází z několika předpokladů:
 \begin{enumerate}
-  \item Zavedení stejných zjednodušujících předpokladů výpočtu proudění jako v~případě výpočtu plošného povrchového odtoku (teorie kinematické vlny). Předpokladem je, že se tok ve všech časech a ve všech buňkách vždy dostane do ustáleného, tady že se vždy jedná o ustálené proudění. Při ustáleném proudění se předpokládá sklon \pozn{nebo to byt sklon treci síly?} dna \acs{I} paralelní se sklonem hladiny vody v rýze a neměnná drsnost v celé délce buňky. Průtok v rýze je tedy vyjádřen pomocí Chézyho rovnice v Mannigově tvaru:
+  \item Zavedení stejných zjednodušujících předpokladů výpočtu proudění jako v~případě výpočtu plošného povrchového odtoku (teorie kinematické vlny). Předpokladem je, že se tok ve všech časech a ve všech buňkách vždy dostane do ustáleného, tady že se vždy jedná o ustálené proudění. Při ustáleném proudění se předpokládá sklon \pozn{nebo to byt sklon treci síly?} dna \acs{I} paralelní se sklonem hladiny vody v rýze a neměnná drsnost v celé délce buňky. Průtok v rýze je tedy vyjádřen pomocí Manningovi rovnice:
   \begin{equation}
     \acs{qrill} = \acs{vrill} \acs{A} = \acs{A} \frac{1}{\acs{n}} \acs{Rrill}^{2/3} \acs{I}^{1/2}  ,
     \label{eq:qrill}
@@ -411,8 +411,8 @@ Výpočet soustředěného odtoku v rýhách implementovaný v modelu SMODERP vy
 %   
   \begin{figure}
     \centering
-    \includegraphics[width=0.9\textwidth]{./img/rill_schema.png}
-    \caption{Příčný řez rýhy a výška vodní hladiny při plnění rýhy či ustálení proudění (napravo), tvar rýhy při jejím prázdnění (nalevo)}
+    \includegraphics[width=0.9\textwidth]{./img/rill_schema2.png}
+    \caption{Příčný řez rýhou, která je v modelu \smod reprezentována obdélníkem.  Při plnění (zvětšování) rýhy roste výška hladiny vody v rýze s výškou rýhy a přes poměr \acs{rratio} s šířkou rýhy (nalevo). Pří prázdnění rýhy se tvar rýhy nemění pouze v ní dochází ke změně výšky hladiny v rýze (nalevo)}
     \label{fig:rill_schema}
   \end{figure}
 % 

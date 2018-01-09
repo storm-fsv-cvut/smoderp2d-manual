@@ -13,18 +13,21 @@
  \hline
   Název souboru    & Jednotka    & Popis       \\ 
   (ESRI nebo .acs)    &     &        \\ \hline \hline
-  cInfiltrationM      &   $m$        & Kumulativní infiltrace \\
-  cRainfallM          &  $m$    &  Kumulativní srážka (bez intercepce a povrchové retence) \\
-  cVolInM3            &  $m^3$  & Kumulativní objem přítoků do buňky  (plošný + soustředěný) \\
-  cSheetVolOutM3      &  $m^3$  & Kumulativní objem odtoku z buňky \\
-  cRillVolOutM3       &  $m^3$  & Kumulativní objem odtoku z buňky rýhou \\
-  cVolRestM3          &  $m^3$  & Kumulativní zbytek po odtoku odtoku z buňky\\
-  mSurfaceFlowM3\_S   &   $m^3s^{-1}$	&  Maximální celkový odtok v buňce\\
-  mVelocityM\_S       &   $ms^{-1}$	&  Maximální rychlost proudění v buňce (plošného či soustředěného odtoku) \\
-  mReachFlowM3\_S     &  $NA$ & Maximální odtok v úsecích hyd. sítě  \\
-  mShearStressPa      & $Pa$ &  Maximální tečné napětí \\
-  reachFID            &  $NA$ &  Buňky mimo tok mají {\tt NODATA} hodnotu nebo id daného úseku toku.  \\
-  massBalance         &   $m$  &  Bilance všech vstupů a výstupu z a do buňky  \\
+  cinfilt\_m      &   $m$        & Kumulativní infiltrace \\
+  crainf\_m          &  $m$    &  Kumulativní srážka (bez intercepce a povrchové retence) \\
+%   csheetvout\_m3      &  $m^3$  & Kumulativní objem odtoku z buňky \\
+%   crillvout\_m3       &  $m^3$  & Kumulativní objem odtoku z buňky rýhou \\
+  csurvout\_m3       &  $m^3$  & Kumulativní objem odtoku z buňky \\
+%   cvin\_m3            &  $m^3$  & Kumulativní objem přítoků do buňky  (plošný + soustředěný) \\
+  volrest\_m3          &  $m^3$  & Objem vody zbylé v buňkách po zkončení výpočtu\\
+  dmt                 &  $m$ &  Výřez použitého digitálního modelu terénu \\
+  flowdir             &  $NA$ &  Rastr s uloženými směry odtoku  \\
+  mshearstr\_pa      & $Pa$ &  Maximální tečné napětí \\
+%   mreachflm3\_s     &  $m^3s^{-1}$ & Maximální odtok v úsecích hyd. sítě  \\
+  msurfl\_m3\_s   &   $m^3s^{-1}$ &  Maximální celkový odtok v buňce\\
+  mvel\_m\_s       &   $ms^{-1}$ &  Maximální rychlost proudění v buňce (plošného či soustředěného odtoku) \\
+  reachFID            &  $NA$  &  Označuje úseky toku (=fid + 1000), buňky s plošným odtokem (=0) a plošným i soustředěným odtokem (=1) \\
+  massbalance         &   $m$  &  Bilance všech vstupů a výstupu z a do buňky  \\
   \hline
 %  tyhle jdou do tempu
 %  rillAreaM       &   $m^2$      &  Plocha buňky, kterou porývá rýha \\
