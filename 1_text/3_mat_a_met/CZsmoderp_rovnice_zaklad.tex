@@ -113,8 +113,6 @@ V následujícím textu jsou popsány jednotlivé členy za pravé straně rovni
 % 
 \subsection{Efektivní srážka \acs{es}} 
 
-\pozn{potenciální intercepce jednotly???}
-
 Srážka je příčinou celého erozního procesu. Vzhledem k tomu, že je \smod epizodní model zadává se srážka v podobě konkrétní nebo návrhové srážky, která začíná s prvním časovým krokem výpočtu. Model počítá s vlivem intercepce, tedy že určitá část srážky bude zachycena rostlinami díky jejich potenciální intercepci \acs{PotI}. Míra zachycení v každém časovém kroku (\acs{dT}) výpočtu je definována  pomocí poměrné plochy listové \acs{Lai} (například \pozn{ citace}).
 
 Označme množství srážky, které dopadá na povrch půdy i rostliny během \acs{dT} potenciální srážkou \acs{PS}. Část \acs{PS}, která zůstane  na povrchu rostliny během časovém kroku \acs{dT}, se dá vyjádřit jako násobek srážky \acs{PS} a \acs{Lai},
@@ -199,7 +197,7 @@ V modelu jsou uvažovány dvě složky povrchového odtoku: \textbf{plošný pov
 
 \subsection{Plošný povrchový odtok} \label{sec:plosny_odtok}
 
-Rovnice plošného odtoku vychází z použití teorie kinematické vlny při řešení pohybové rovnice Saint-Venantových (SV) rovnic. Použití toho přístupu předpokládá mělké povrchové proudění po dlouhém plochém\footnote{Plochém ve smyslu ne příliš zakřiveném. Nejedná se tedy o hladký povrch.} povrchu. Za těchto podmínek lze u pohybové rovnice SV rovnic zanedbat lokální změny kinetické a potenciální energie a lokální zrychlení. Při tomto zjednodušení lze řešit povrchový tok jako ustálené proudění~\citep{miller1984basic}. Plošný povrchový odtok pak lze řešit pomocí obecného mocninného vztahu \pozn{v anglicke literature tomu rikaj power law, tak nevim jak cesky} jako
+Rovnice plošného odtoku vychází z použití teorie kinematické vlny při řešení pohybové rovnice Saint-Venantových (SV) rovnic. Použití toho přístupu předpokládá mělké povrchové proudění po dlouhém plochém\footnote{Plochém ve smyslu ne příliš zakřiveném. Nejedná se tedy o hladký povrch.} povrchu. Za těchto podmínek lze u pohybové rovnice SV rovnic zanedbat lokální změny kinetické a potenciální energie a lokální zrychlení. Při tomto zjednodušení lze řešit povrchový tok jako ustálené proudění~\citep{miller1984basic}. Plošný povrchový odtok pak lze řešit pomocí obecného mocninného vztahu jako
 % 
 % 
 % 
@@ -225,7 +223,7 @@ $$
       \jj{I}{.}
 \end{tabular}
 
-Parametry \acs{a} a \acs{b} respektive \acs{X} a \acs{Y} jsou odvozeny na základě měření \citep{Neumann15:232823}, jejich hodnoty pro různé půdní typy jsou ukázány v tabulce~\ref{tab:Neuman_param} v příloze~\ref{sec:priloha}. Z vyhodnocení vyplývá, že parametr \acs{b} je závislý pouze na půdním druhu. Parametr \acs{a} je závislý nejen na půdním druhu, ale také na sklonu svahu $I$. Pokud je na povrchu půdy pokryt vegetací, je třeba provést korekci pomocí Manningova součinitele drsnosti pro povrchoví odtok. Parametr \acs{a} je pak definován jako
+Parametry \acs{a} a \acs{b} respektive \acs{X} a \acs{Y} jsou odvozeny na základě měření \citep{Neumann15:232823}, jejich hodnoty pro různé půdní typy jsou ukázány v tabulce~\ref{tab:kriticke} v příloze~\ref{sec:priloha}. Z vyhodnocení vyplývá, že parametr \acs{b} je závislý pouze na půdním druhu. Parametr \acs{a} je závislý nejen na půdním druhu, ale také na sklonu svahu $I$. Pokud je na povrchu půdy pokryt vegetací, je třeba provést korekci pomocí Manningova součinitele drsnosti pro povrchoví odtok. Parametr \acs{a} je pak definován jako
 $$
   a = \frac{\acs{X}\acs{I}^{\acs{Y}}}{100\acs{n}},
 $$
@@ -403,35 +401,51 @@ Výpočet soustředěného odtoku v rýhách implementovaný v modelu SMODERP vy
   \end{tabular}
   
 
-  \item Tvar přísného profilu rýhy je reprezentován obdélníkem, s pevným poměrem stran \acs{rratio}=výška/šířka rýhy. Velikost rýhy se zvětšuje pokud je nadkritické množství \acs{Vrill} větší než objem samotné rýhy, tak aby byl splněn předpoklad v předchozím bodě. Při zvětšovaná rýhy se tedy výška rýhy rovná výšce vodní hladiny v rýze (vlevo na obrázku~\ref{fig:rill_schema}). Pokud začne být nadkritické množství \acs{Vrill} menší než je objem rýhy a dochází k prázdnění rýhy. Velikost rýhy zůstává konstantní a rýze dochází pouze k poklesu hladiny (vpravo na obrázku~\ref{fig:rill_schema}). Hydraulický poloměr rýhy, která se zvětšuje nebo je konstantní, lze určit podle následujícího vztahu:
-%  
-% 
-% 
-%   Rozměry rýhy nejsou známy, protože rozměr rýhy \acs{hrill}, \acs{brill} se dynamicky mění v závislosti na množství vody během simulace. 
-%   
-  \begin{figure}
-    \centering
-    \includegraphics[width=0.9\textwidth]{./img/rill_schema2.png}
-    \caption{Příčný řez rýhou, která je v modelu \smod reprezentována obdélníkem.  Při plnění (zvětšování) rýhy roste výška hladiny vody v rýze s výškou rýhy a přes poměr \acs{rratio} s šířkou rýhy (nalevo). Pří prázdnění rýhy se tvar rýhy nemění pouze v ní dochází ke změně výšky hladiny v rýze (nalevo)}
+  \item Tvar přísného profilu rýhy je reprezentován obdélníkem, s pevným poměrem stran \acs{rratio}=výška/šířka rýhy. Velikost rýhy se zvětšuje pokud je nadkritické množství \acs{Vrill} větší než objem samotné rýhy, tak aby byl splněn předpoklad v předchozím bodě. Při zvětšovaná rýhy se tedy výška rýhy rovná výšce vodní hladiny v rýze (obrázek~\ref{fig:rill_plneni}). Pokud začne být nadkritické množství \acs{Vrill} menší než je objem rýhy a dochází k prázdnění rýhy. Velikost rýhy zůstává konstantní a rýze dochází pouze k poklesu hladiny (obrázek~\ref{fig:rill_prazdneni}). Tento mechanizmus ovlivňuje odtok přes hydraulický poloměr, který je u obdélníkového příčného profilu odvoze jako 
+  $$ 
+    \acs{Rrill} = \frac{\acs{A}}{\acs{O}} = \dfrac{\acs{hrill} \acs{brill}}{\acs{brill}+2\acs{hrill}} 
+  $$
+  \begin{tabular}{rrl}
+    kde \jj{brill}{\ a}
+        \jj{O}{.}
+%         \jj{rratio}{.}
+  \end{tabular}
+  
+  Při plnění nebo prázdnění se v tomto vztahu liší výpočet základny tohoto obdélníku. Pokus se rýha zvětšuje nebo je konstantní určuje se šířka základny jako (viz obrázek~\ref{fig:rill_plneni})
+  $$
+    \acs{brill} = \dfrac{\acs{hcrit}}{\acs{rratio}},
+  $$
+  \begin{tabular}{rrl}
+        \jj{rratio}{.}
+  \end{tabular}
+  
+  Pokud se rýha prázdní je šířka rýhy odvozena jako (viz obrázek~\ref{fig:rill_prazdneni})
+  $$
+    \quad \acs{brill} = \dfrac{\acs{yrill}}{\acs{rratio}}.
+  $$
+  
+  Jak je vidět na obrázku~\ref{fig:rill_prazdneni}. Plošný povrchový odtok s výškou hladiny \acs{hcrit} je předpokládán i na části buňky, kde je se vytvořila rýha. Toto zjednodušení se předpokládá jako zanedbatelné vzhledem k tomu, že plocha kterou pokývají rýhy je zpravila malá proti ploše celého povodí. 
+  
+  
+
+  \begin{figure}[t]
+    \begin{subfigure}[b]{1.\linewidth}
+      \centering
+      \includegraphics[width=1\linewidth]{./img/rill_schema_plneni.png}
+      \caption{Příčný průřez rýhou, která se plní}
+      \label{fig:rill_plneni}
+    \end{subfigure}
+    \begin{subfigure}[b]{1.\linewidth}
+      \includegraphics[width=1\linewidth]{./img/rill_schema_prazdneni.png}
+      \caption{Příčný průřez rýhou, která se prázdní}
+      \label{fig:rill_prazdneni}
+    \end{subfigure}
+    \caption{Příčný řez rýhou, která je v modelu \smod reprezentována obdélníkem.  Při plnění (zvětšování) rýhy roste výška hladiny vody v rýze s výškou rýhy a v poměru \acs{rratio} k šířce rýhy~\ref{fig:rill_plneni}.  Pří prázdnění rýhy se tvar rýhy nemění pouze v ní dochází ke změně výšky hladiny v rýze (nalevo)~\ref{fig:rill_prazdneni}.}
     \label{fig:rill_schema}
   \end{figure}
 % 
 %   
-  $$ 
-    \acs{Rrill} = \frac{\acs{A}}{\acs{O}} = \dfrac{\acs{hrill} \acs{brill}}{\acs{brill}+2\acs{hrill}} \qquad kde \quad \acs{brill} = \dfrac{\acs{hcrit}}{\acs{rratio}}
-  $$
-  \begin{tabular}{rrl}
-    kde \jj{brill}{,}
-        \jj{O}{\ a}
-        \jj{rratio}{.}
-  \end{tabular}
-  
-  Hydraulický poloměr rýhy, ve které výška hladina oproti výšce rýhy klesá, se určuje jako 
-  
-  $$ 
-    \acs{Rrill} = \frac{\acs{A}}{\acs{O}} = \dfrac{\acs{hrill} \acs{brill}}{\acs{brill}+2\acs{hrill}} \qquad kde \quad \acs{brill} = \dfrac{y}{\acs{rratio}}.
-  $$
-  
+
   
 \end{enumerate}
 
@@ -464,6 +478,13 @@ Pokud dojde k vzniku rýh, je rovnice celkové bilance~(\ref{eq:bilancnirce}) ro
 
 
 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
 % Množství odtoku \acs{Orill} za \acs{dT} je pak možné stanovit podle vztahu:
 % \begin{eqnarray}
 % O_{rill_{i,t}} [m^{3}] = \Delta t q_{sur}
@@ -504,11 +525,12 @@ Q =\frac {1}{n} h^{2/3} S^{1/2}
 \section{Odtok hydrografickou sítí} \label{sec:tokyodtok}
 
 
-\smod je zamýšlen také jako nástroj pro navrhování opatření v ploše povodí. Cílem je simulovat a navrhovat odtoky i v dočasné hydrografické síti, která je tvořena přirozeným nebo častěji umělým přerušením přirozené odtokové dráhy. Nejčastěji se jedná o příkopy a průlehy, které mají odváděcí a často protierozní funkci. 
-Všechny prvky (síť vodních toků, příkopy, průlehy, atp.) jsou zadávány v rámci jednoho shapefile. Každý jednotlivý úsek je zadán jako konkrétní linie (feature). Výpočetně model pracuje v rastrové síti. V případě, že se na dané buňce rastru vyskytuje úsek hydrografické sítě, je voda dále odváděna tímto úsekem ve směru jeho sklonu  bez ohledu na směr plošného či soustředěného odtoku.
+\smod je zamýšlen také jako nástroj pro navrhování půdo ochranných opatření v ploše povodí. Cílem je simulovat a navrhovat odtoky i v dočasné hydrografické síti, která je tvořena přirozeným nebo častěji umělým přerušením přirozené odtokové dráhy. Nejčastěji se jedná o příkopy a průlehy, které mají odváděcí a často protierozní funkci. 
+Všechny prvky (síť vodních toků, příkopy, průlehy, atp.) jsou zadávány v rámci jednoho shapefile. Každý jednotlivý úsek je zadán jako konkrétní linie (feature). 
 
+Na rozdíl od povrchového odtoku, který je prováděn v rastru buněk, řeší se výpočet v úsecích hydrografické sítě  po jednotlivých úsecích po skončení výpočtu povrchového odtoku. Jeden úsek hydrografické sítě zpravidla leží na několika buňkách rastru. Při výpočtu povrchového odtoku se do tohoto úseku započítá přítok ze všech buněk, které vtékají do buněk pod daným úsekem. Poté co výpočet povrchového odtoku skončí, provede se ve stejném časovém kroku výpočet odtoků v vtoků mezi jednotlivými úseky a spočítá se nová výška hladiny ve všech úsecích najednou. Princip propojení jednotlivých úseků je popsán v kapitole 
 
-Proudění v těchto otevřených korytech je řešeno Mannigovou rovnicí ve tvaru:
+Proudění v úsecích je řešeno Manningovou rovnicí ve tvaru:
 
 \begin{equation}
     \acs{qstream} = \acs{A} \frac{1}{\acs{n}} \acs{Rstream}^{2/3} \acs{I}^{1/2}  ,
@@ -533,12 +555,36 @@ $$
 
 
 
+% \pozn{a dát semka asi i nějaké  obrázky, jak to funguje. Je to v nějaké DP tuším (to najdu PK)}
+
+
+
+\subsection{Propojení úseků hydrografické sítě} \label{sec:tokyodtok}
+
+Na obrázku \ref{fig:mapalinie}, jsou ukázány úseky na podkladová vrstvě digitálního modelu terénu. Každý úsek to má označení {\tt FID}. Při přípravě dat dostane každý úsek atribut {\tt toFID}, který udává do jakého úseků daný úsek v vtéká. {\tt toFID} = -9999 značí odtok z výpočetní oblasti. 
+
+
+
+Pří přípravě dat je opraven směr úseku podle digitálního modelu terénu. Pokud má úsek oba koncové body v stejné výšce (sklon úseku je nulový), program se ukončí s chybovým hlášením: {\tt ZeroSlopeError: 'Reach FID:1 has zero slope.'}. Chybové hlášení označí problematický úsek (v této ukázce úsek s {\tt  FID = 1}) a uživatel musí daný úsek ve vstupních datech opravit tak, aby měl nenulový sklon (aby koncové body úseku nebyly ve stejné výšce).  
+
+
+\begin{figure}[t!]
+  \centering
+  \includegraphics[width=0.5\textwidth]{img/mapalinie}
+  \caption{Hydrografická síť s označením {\tt FID} (id linie) a {\tt toFID} (id následující linie při odtoku). Podkladová vrstva je digitální model terénu.}
+  \label{fig:mapalinie}
+\end{figure}
+
+
+
+
+
 
 
 % \pozn{ Tímto způsobem jsou zadány tvary prvků, které se v řešené lokalitě vyskytují.
 % \textbf{sem dát obrázek těch profilů}}
 
 
-\pozn{\textbf{doplnit text jak probíhá vlastní výpočet} - tzn jak na sebe navazují jednotlivé úseky . a dát semka asi i nějaké  obrázky, jak to funguje. Je to v nějaké DP tuším (to najdu PK)}
+% \pozn{\textbf{doplnit text jak probíhá vlastní výpočet} - tzn jak na sebe navazují jednotlivé úseky . a dát semka asi i nějaké  obrázky, jak to funguje. Je to v nějaké DP tuším (to najdu PK)}
 
 

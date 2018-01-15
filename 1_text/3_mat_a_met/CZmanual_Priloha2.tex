@@ -1,1 +1,36 @@
-Při přípravě vstupních dat, může docházet k problémům, jejichž příčiny jsou ze základních výstupů těžko odhalitelné nebo samotné výpisy základních výsledků modlu  můžou být základní vypsaná data pro danou aplikaci nedostatečná. Při běhu preprocessingu jsou ukládány dočasné vrstvy do adresářů {\tt temp} a {\tt temp\_dp} (pokud jsou řešeny i úseky hydrografické sítě). Tyto adresáře ve výchozím nastavení modelu na konci výpočtu smazány. Při běhu programu lze obdržet detailnější informaci o řešených procesech než je ukázány a základních výstupech. Pokud uživatel narazí na jeden z výše zmíněných problému má možnost pomocí dalšího parametru modelu zamezit mazání adresářů {\tt temp} a {\tt temp\_dp} a mít k dispozici další výstupní rastry a veličiny vypsaná v hydrogramech. Při tomto postupu je ale třeba zasáhnout do jednoho ze zdrojových skriptů a proto se doporučuje uživatelům, kteří budou \smod spouštět přímo ze zdrojového kód (pokud je \smod nainstalovaný pomocí spustitelného instalačního souboru, není tento postup možný). 
+
+
+
+Rozsah výstupních souborů, které jsou popsané v kapitole~\ref{kap:vystupy}, může být v určitých případech nedostatečný. Obecně mohou být tyto případy dva. V prvním případě je jejich rozsah nedostatečný z hlediska efektivního hledání chyb ve vstupních datech. V druhém případě vyžaduje samotná aplikace modelu  detailnější vhled do řešených procesů (například při vědeckých aplikací). Proto existuje v modelu \smod možnost detailnějších výpisů. 
+
+Při běhu $preprocessingu$ jsou ukládány dočasné vrstvy do adresářů {\tt temp} a {\tt temp\_dp} (pokud jsou řešeny i úseky hydrografické sítě). Tyto adresáře jsou ve výchozím nastavení smazány na konci výpočtu. Dále pak je možné získávat detailnější informaci vypisovanou do hydrogramů a více výstupních rastr souborů s dalšími veličinami.
+
+Pro získání těch detailnějších výsledků je třeba změnit jeden z parametrů modelu. Tento parametr je nejvíce využívána při vývoji modelu a proto se zadává v jednom ze zdrojových skriptů modelu. 
+
+V hlavním souboru v balíčku \smod {\tt smoderp2d/main.py} se volají metody ke načtení vstupních dat, $preprocessingu$ a k spuštění samotného výpočtu. V tomto souboru je metoda {\tt run()}. V těle této metody je $if$-konstrukt, který určí princip načtení vstupních dat na základě platformy na, které je model spuštěn. 
+
+    \begin{lstlisting}
+    51  if platform.system() == "Linux" :
+    52    from smoderp2d.src.main_classes.General import initLinux
+    53    init = initLinux
+    54  elif platform.system() == "Windows" :
+    55    from smoderp2d.src.main_classes.General import initWin
+    56    init = initWin
+    57    sys.argv.append('#')               #  mfda
+    58    sys.argv.append(False)             #  extra output
+    59    sys.argv.append('outdata.save')    #  in data
+    60    sys.argv.append('full')            #  castence nee v arcgis
+    61    sys.argv.append(False)             #  debug print
+    62    sys.argv.append('-')               #  print times
+    63  else :
+    64    from smoderp2d.src.main_classes.General import initNone
+    65    init = initNone
+    \end{lstlisting}
+    
+Na řádku 58\footnote{číslování řádků se může lišit} je přidaná proměnná s hodnotou {\tt False} a s komentářem {\tt \#  extra output}. Pokud je tato proměnná změněna na {\tt True} nebudou se mazat dočasné adresáře a hydrogramy a výstupní rastry budou doplněný o další proměnné. 
+
+
+
+
+    
+    
