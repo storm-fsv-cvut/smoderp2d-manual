@@ -3,7 +3,7 @@
 
 První část manuálu popisuje jednotlivé výpočetní vztahy použité v modelu \smod. Základní odvození povrchových procesů v modelu \smod vychází z rovnice kontinuity a pohybové rovnice. Pohybová rovnice je zjednodušená pomocí teorie kinematické vlny. Tímto způsobem je tok řízen mocninný vztahem jehož parametry byly měřeny (viz  příloha~\ref{sec:priloha}). 
 
-Jak již bylo zmíněno v úvodu, jedná se o distribuovaný epizodní hydrologicko-erozní model. Výpočet je řešen na pravidelné rastrové síti. Prostorová diskretizace modelu je řízena  rozlišením vstupního digitálního model terénu. V celém řešeném prostoru je po jednotlivých buňkách v každém časovém kroku provedena bilance vstupů a výstupů a následně vypočteno odteklého množství v daném časovém úseku. Směr odtoku z buňky je stanoven pomocí odtokových algoritmů. Formálně se jedná o řešení metodou konečných diferencí s explicitně řešenou časovou diskretizací. V bilanční rovnici jsou řešený tři základní složky:
+Jak již bylo zmíněno v úvodu, model \smod je distribuovaný epizodní hydrologicko-erozní model. Výpočet je řešen na pravidelné rastrové síti. Prostorová diskretizace modelu je řízena  rozlišením vstupního digitálního model terénu. V celém řešeném prostoru je po jednotlivých buňkách v každém časovém kroku provedena bilance vstupů a výstupů a následně vypočteno odteklé množství v daném časovém úseku v buňce. Formálně se jedná o řešení metodou konečných diferencí s explicitně řešenou časovou diskretizací. V bilanční rovnici jsou řešeny tři základní složky:
 
 
 \begin{itemize}\itemsep 0cm
@@ -13,7 +13,7 @@ Jak již bylo zmíněno v úvodu, jedná se o distribuovaný epizodní hydrologi
 \end{itemize}
 
 
-V modelu jsou definovány tři základní složky povrchového odtoku: \textbf{plošný} povrchový odtok, \textbf{soustředěný rýhový}  povrchový odtok a odtok dočasnou \textbf{hydrografickou sítí} (tok otevřeným korytem). V ploše povodí jsou směry odtoků odvozeny na zahladě odtokových algoritmů. V místě vodních toků či úseků hydrografické sítě je veškerý tok směrován korytem.\\
+Odteklé množství může být dále složeno ze tří základních typů odtoku: \textbf{plošného} povrchového odtoku, \textbf{soustředěného rýhového} povrchového odtoku a odtoku dočasnou \textbf{hydrografickou sítí} (tok otevřeným korytem). V ploše povodí jsou směry odtoků odvozeny na zahladě odtokových algoritmů. V místě vodních toků či úseků hydrografické sítě je veškerý tok směrován korytem.\\
 % PeKa - pokuso jsem se rozdělit povrchový odtok (plošný a rýhy dohromady), ab bylo jasnější o co jde
 % 
 % 

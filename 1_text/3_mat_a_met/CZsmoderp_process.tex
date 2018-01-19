@@ -1,4 +1,4 @@
-Samotný program modelu \smod je rozdělen do několika podadresářů a souborů. Adresářová struktura s popisem nejdůležitějších adresářů a souborů je ukázána na obrázku~\ref{fig:adresare} v příloze~\ref{sec:priloha}. Klíčovým souborem  je  soubor {\tt main.py}, kde se volají dvě základní metody z nichž jedna načte a připraví vstupní data a druhá spustí a provede výpočet.  Dalším důležitým souborem je {\tt src/data\_preparataion.py}, kde probíhá  {\it preprocessing} vstupních dat (v této verzi modelu implementovaný pomocí ArcGIS). Důležitými soubory jsou rovněž soubory {\tt src/runoff.py} a {\tt src/time\_step.py}, kde probíhá samotný výpočet. Soubory v adresáři {\tt src/main\_clasess/} obsahují definici datových struktur jednotlivých řešených dějů a skládají dohromady metody k řešení jednotlivých častí odtoku. Tuto metody jsou pak definované v adresáři {\tt src/processes/}. 
+Adresářová struktura programu modelu \smod s popisem nejdůležitějších adresářů a souborů je ukázána na obrázku~\ref{fig:adresare} v příloze~\ref{sec:priloha}. Klíčovým souborem  je  soubor {\tt main.py}, kde se volají dvě základní metody z nichž jedna načte a připraví vstupní data a druhá spustí a provede výpočet.  Dalším důležitým souborem je {\tt src/data\_preparataion.py}, kde probíhá  {\it preprocessing} vstupních dat (v této verzi modelu implementovaný pomocí ArcGIS). Důležitými soubory jsou rovněž soubory {\tt src/runoff.py} a {\tt src/time\_step.py}, kde probíhá samotný výpočet. Soubory v adresáři {\tt src/main\_clasess/} obsahují definici datových struktur jednotlivých řešených dějů a skládají dohromady metody k řešení jednotlivých častí odtoku. Tuto metody jsou pak definované v adresáři {\tt src/processes/}. 
 
 Program \smod je napsaný v jazyce Python. Python je často používaný GIS softwary jako skriptovací jazyk a jsou pro ně k dispozici knihovny pro efektivní práci s geodaty\footnote{knihovna {\tt arcpy} pro ArcGIS či knihovny {\tt grass.script} pro GRASS GIS}. Programy či skripty napsané pomocí Python jsou spustitelné v prostředí daných GIS softwarů. Současná verze modelu \smod používá Python 2.7.X, který je kompatibilní s ArcGIS 10.X.
 
@@ -50,9 +50,9 @@ Pokud v daném časovém kroku překročí rychlost v jakékoli buňce \acs{CFL}
 
 
 \subsection{Programovací jazyk Python} \label{sec:python}
-  Python je vysokoúrovňový objektově orientovaný programovací jazyk, který se může využít v~mnoha oblastech vývoje softwaru. Nabízí významnou podporu k~integraci s~ostatními jazyky a~nástroji a~přichází s~mnoha standardními knihovnami. Jeho použití je velice široké od~programů na~zpracování multimedií až~po~zpracování textů. Python multiplatformní programovací jazyk~\citep{python}. Zajímavým balíčkem jazyka Pyhton je {\tt numpy}~\citep{numpy}. Je to balíček užívaný pro~vědecké výpočty. Umožňuje manipulaci s velkými multi-dimenzionálními poli a disponuje velkou knihovnou matematických funkcí pro~práci s~těmito poli. Pomocí tohoto balíčku bylo v~programu operováno s~naprostou vetšinou polí a~matic. 
+  Python je vysokoúrovňový objektově orientovaný programovací jazyk, který se může využít v~mnoha oblastech vývoje softwaru. Nabízí významnou podporu k~integraci s~ostatními jazyky a~nástroji a~přichází s~mnoha standardními knihovnami. Jeho použití je velice široké od~programů na~zpracování multimedií až~po~zpracování textů. Python je multiplatformní programovací jazyk~\citep{python}. Zajímavým balíčkem jazyka Pyhton je {\tt numpy}~\citep{numpy}. Je to balíček užívaný pro~vědecké výpočty. Umožňuje manipulaci s velkými multi-dimenzionálními poli a disponuje velkou knihovnou matematických funkcí pro~práci s~těmito poli. Pomocí tohoto balíčku bylo v~programu operováno s~naprostou vetšinou polí a~matic. 
   
-  Aktuální verze modelu \smod používá Python 2.7. V~současnosti (Prosinec 2017) je nejnovější verze jazyka Python 3.6. Poslední verze vývojové větve 2.7 Pythonu vyšla v~roce 2010.  Podpora Python 2.7 je plánována do jara 2020 (přesné datum zatím není stanoveno). S koncem podpory Python 2.7 končí i implementace této verze v gis softwarech. ArcGIS PRO již podporuje výhradně Python 3. Proto bude docházek k migraci modelu \smod na verzi  Python~3. 
+  Aktuální verze modelu \smod používá Python 2.7. V~současnosti (Prosinec 2017) je nejnovější verze jazyka Python 3.6. Poslední verze vývojové větve Pythonu 2.7 vyšla v~roce 2010.  Podpora Python 2.7 je plánována do jara 2020 (přesné datum zatím není stanoveno). S koncem podpory Python 2.7 končí i implementace této verze v gis softwarech. ArcGIS PRO již podporuje výhradně Python 3. Proto bude docházek k migraci modelu \smod na verzi  Python~3. 
 
   
   
@@ -61,7 +61,7 @@ Pokud v daném časovém kroku překročí rychlost v jakékoli buňce \acs{CFL}
   
   
 \subsection{CFL podmínka - řešení nestability výpočtu} \label{sec:cfl}
-  V předchozích verzích programu \smod nebyla ošetřena podmínka stability výpočtu, která vychází z explicitního řešení časové derivace. Při větších rychlostech toku či nevhodně zvolené délce časového kroku docházelo k nestabilitám v řešení. Program se v takovém případě ukončil a uložil výsledky posledního úspěšně spočítaného časového kroku. 
+  V předchozích verzích modelu \smod nebyla ošetřena podmínka stability výpočtu, která vychází z řešení časové derivace. Při větších rychlostech toku či nevhodně zvolené délce časového kroku docházelo k nestabilitám v řešení. Program se v takovém případě ukončil a uložil výsledky posledního úspěšně spočítaného časového kroku. 
 
   V současné verzi programu \smod je tento problém vyřešen Courant-Friedrich-Lewy (\acs{CFL}) podmínkou. Splnění této podmínky zajišťuje konvergenci explicitního řešení pokud platí, že $\acs{CFL} < 1.0$. Z obecné rovnice \acs{CFL} podmínky byla odvozena a upravena podmínka pro účely modelu \smod na následující tvar: \pozn{neni k tomu 0.5601 nejak citace?} 
   \begin{equation}
@@ -75,7 +75,7 @@ Pokud v daném časovém kroku překročí rychlost v jakékoli buňce \acs{CFL}
         \jj{dX}{.}
   \end{tabular}
   
-  Po dopočítání časového kroku je uložena nejvyšší hodnota \acs{CFL} zjištěná z {\bf plošného odtoku} pomocí vztahu~(\ref{eq:courrovnice}). Poté se tato hodnota porovná s kritickou hodnotou \acs{CFL} a podle pravidel znázorněných v tabulce~\ref{tab:cflsheet} se změní (nebo nezmění) délka časového kroku \acs{dT}. Pokud dojde ke změně \acs{dT} opakuje se výpočet v daném časovém. Do dalšího času se výpočet posune, až když je zaručena stabilita výpočtu. 
+  Po dokončení výpočtu  časového kroku je uložena nejvyšší hodnota \acs{CFL} zjištěná z {\bf plošného odtoku} pomocí vztahu~(\ref{eq:courrovnice}). Poté se tato hodnota porovná s kritickou hodnotou \acs{CFL} a podle pravidel znázorněných v tabulce~\ref{tab:cflsheet} se změní (nebo nezmění) délka časového kroku \acs{dT}. Pokud dojde ke změně \acs{dT} opakuje se výpočet v daném časovém kroku a aktualizovaným \acs{dT}. Do dalšího času se výpočet posune, až když je zaručena stabilita výpočtu. 
   
   \begin{table}[t!]
     \centering

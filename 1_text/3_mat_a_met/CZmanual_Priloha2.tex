@@ -1,13 +1,13 @@
 
 
 
-Rozsah výstupních souborů, které jsou popsané v kapitole~\ref{kap:vystupy}, může být v určitých případech nedostatečný. Obecně mohou být tyto případy dva. V prvním případě je jejich rozsah nedostatečný z hlediska efektivního hledání chyb ve vstupních datech. V druhém případě vyžaduje samotná aplikace modelu  detailnější vhled do řešených procesů (například při vědeckých aplikací). Proto existuje v modelu \smod možnost detailnějších výpisů. 
+Rozsah výstupních souborů, které jsou popsané v kapitole~\ref{kap:vystupy}, může být v určitých případech nedostatečný. Obecně se jedná o dva případy. V prvním případě je jejich rozsah nedostatečný z hlediska efektivního hledání chyb ve vstupních datech. V druhém případě vyžaduje samotná aplikace modelu  detailnější vhled do řešených procesů (například při vědeckých aplikací). Proto existuje v modelu \smod možnost detailnějšího výpisů výsledků. 
 
-Při běhu $preprocessingu$ jsou ukládány dočasné vrstvy do adresářů {\tt temp} a {\tt temp\_dp} (pokud jsou řešeny i úseky hydrografické sítě). Tyto adresáře jsou ve výchozím nastavení smazány na konci výpočtu. Dále pak je možné získávat detailnější informaci vypisovanou do hydrogramů a více výstupních rastr souborů s dalšími veličinami.
+Při běhu $preprocessingu$ jsou ukládány dočasné vrstvy do adresářů {\tt temp} a {\tt temp\_dp} (pokud jsou řešeny i úseky hydrografické sítě). Tyto adresáře jsou ve výchozím nastavení smazány na konci výpočtu. Dále je možné získávat detailnější informaci vypisovanou do hydrogramů a více výstupních rastrů s dalšími veličinami.
 
 Pro získání těch detailnějších výsledků je třeba změnit jeden z parametrů modelu. Tento parametr je nejvíce využívána při vývoji modelu a proto se zadává v jednom ze zdrojových skriptů modelu. 
 
-V hlavním souboru v balíčku \smod {\tt smoderp2d/main.py} se volají metody ke načtení vstupních dat, $preprocessingu$ a k spuštění samotného výpočtu. V tomto souboru je metoda {\tt run()}. V těle této metody je $if$-konstrukt, který určí princip načtení vstupních dat na základě platformy na, které je model spuštěn. 
+V hlavním souboru v balíčku \smod ({\tt smoderp2d/main.py}) se volají metody ke načtení vstupních dat, $preprocessingu$ a k spuštění samotného výpočtu. V tomto souboru je metoda {\tt run()}, která je volána ve spouštěcím skriptu. V souboru {\tt smoderp2d/main.py} je $if$-konstrukt, který určí princip načtení vstupních dat na základě platformy na které je model spuštěn:
 
     \begin{lstlisting}
     51  if platform.system() == "Linux" :
@@ -26,8 +26,8 @@ V hlavním souboru v balíčku \smod {\tt smoderp2d/main.py} se volají metody k
     64    from smoderp2d.src.main_classes.General import initNone
     65    init = initNone
     \end{lstlisting}
-    
-Na řádku 58\footnote{číslování řádků se může lišit} je přidaná proměnná s hodnotou {\tt False} a s komentářem {\tt \#  extra output}. Pokud je tato proměnná změněna na {\tt True} nebudou se mazat dočasné adresáře a hydrogramy a výstupní rastry budou doplněný o další proměnné. 
+%     
+Na řádku 58\footnote{číslování řádků se může lišit} je přidaná proměnná s hodnotou {\tt False} a s komentářem {\tt \#  extra output}. Pokud je tato proměnná změněna na {\tt True} nebudou se mazat po skončení výpočtu dočasné adresáře a hydrogramy i výstupní rastry budou doplněný o další výsledky. 
 
 
 

@@ -11,7 +11,7 @@
 \section{Bilanční rovnice} 
 
 % 
-Základním řešeným vztahem je aktuální bilance celkového zásoby
+Základním řešeným vztahem je aktuální bilance celkové zásoby
 \begin{equation}
 \acs{dS} = \acs{Itot} - \acs{Otot},
 \label{eq:bilobecne}
@@ -44,7 +44,7 @@ $$
 \end{tabular}
 
 
-Bilanční rovnici pro buňku $i$ v čase $t$ lze rozepsat jako:
+Bilanční rovnici v buňce $i$ v čase $t$ lze rozepsat jako:
 
 
 
@@ -113,7 +113,7 @@ V následujícím textu jsou popsány jednotlivé členy za pravé straně rovni
 % 
 \subsection{Efektivní srážka \acs{es}} 
 
-Srážka je příčinou celého erozního procesu. Vzhledem k tomu, že je \smod epizodní model zadává se srážka v podobě konkrétní nebo návrhové srážky, která začíná s prvním časovým krokem výpočtu. Model počítá s vlivem intercepce, tedy že určitá část srážky bude zachycena rostlinami díky jejich potenciální intercepci \acs{PotI}. Míra zachycení v každém časovém kroku (\acs{dT}) výpočtu je definována  pomocí poměrné plochy listové \acs{Lai} (například \pozn{ citace}).
+Srážka je příčinou celého erozního procesu. Vzhledem k tomu, že je \smod epizodní model zadává se srážka v podobě konkrétní nebo návrhové srážky, která začíná s prvním časovým krokem výpočtu. Model počítá s vlivem intercepce, která je definována pomocí potenciální intercepce \acs{PotI} jako výška zachycené vody. Míra zachycení v každém časovém kroku (\acs{dT}) výpočtu je definována  pomocí poměrné plochy listové \acs{Lai} (například \pozn{ citace}).
 
 Označme množství srážky, které dopadá na povrch půdy i rostliny během \acs{dT} potenciální srážkou \acs{PS}. Část \acs{PS}, která zůstane  na povrchu rostliny během časovém kroku \acs{dT}, se dá vyjádřit jako násobek srážky \acs{PS} a \acs{Lai},
 $$
@@ -125,13 +125,13 @@ $$
 \acs{PS}(1 - I_{LAI}).
 $$
 
-Potenciální intercepce \acs{PotI} se začne plnit na začátku srážkové epizody. Výsledná intenzita efektivní srážky v čase $t$ je pak určena jako
+Potenciální intercepce \acs{PotI} se začne plnit na začátku srážkové epizody. Po naplnění \acs{PotI} dopadá celá srážka na povrch půdy. Výsledná intenzita efektivní srážky v čase $t$ je pak určena jako
 
 $$
    \acs{es}_t= 
     \begin{cases}
-     \acs{PS}_t(1 - I_{LAI}),& \text{pokud} \sum_{\bar{t} = t_{init}}^{t} (\acs{PS}_{\bar{t}}\ I_{LAI}) <= \acs{PotI}\\
-     \acs{PS}_t,             & \text{jinak}
+     \acs{PS}_t(1 - I_{LAI})\acs{dT},& \text{pokud} \sum_{\bar{t} = t_{init}}^{t} (\acs{PS}_{\bar{t}}\ I_{LAI}) <= \acs{PotI}\\
+     \acs{PS}_t\acs{dT},             & \text{jinak}
    \end{cases}
 $$
 
@@ -163,7 +163,7 @@ $$
 % 
 \subsection{Intenzita infiltrace \acs{inf}}
 
-V modelu je použita infiltrace podle Philipa \citep{philip1957} v~následujícím tvaru (pro příslušnou buňku $i$):
+V modelu je použita infiltrace podle Philipa \citep{philip1957} v~následujícím tvaru:
 \begin{eqnarray} \label{eq:phillip}
 \acs{inf} = \frac{1}{2}\acs{Sorb}t^{-1/2}+\acs{Ks}.
 \end{eqnarray}
@@ -178,7 +178,7 @@ V modelu je použita infiltrace podle Philipa \citep{philip1957} v~následujíc�
 
 
 
-Philipova infiltrační rovnice byla zvolena především z důvodu relativně malého počtu vstupních parametrů. Tato zjednodušená rovnice má dva členy: nasycenou hydraulickou vodivost \acs{Ks} a sorptivita \acs{Sorb}. Autoři modelu si byli vědomi omezení použití Philipovy rovnice vyplývající z podmínek, za kterých byla odvozena.  Možné odchylky způsobené volbou této rovnice odpovídají odchylkám v heterogenitě půdy a kvalitě ostatních vstupů, na jejichž základě model pracuje. Čas $t$ ve vztahu~(\ref{eq:phillip}) je čas od začátku srážky, který by měl být v epizodním modelu totožný s počátečním časem výpočtu. Tato nezbytná podmínka by měla být brána v potaz při přípravě vstupních dat. 
+Philipova infiltrační rovnice byla zvolena především z důvodu relativně malého počtu vstupních parametrů. Tato zjednodušená rovnice má dva členy: nasycenou hydraulickou vodivost \acs{Ks} a sorptivitu \acs{Sorb}. Autoři modelu si byli vědomi omezení použití Philipovy rovnice vyplývající z podmínek, za kterých byla odvozena.  Možné odchylky způsobené volbou této rovnice odpovídají odchylkám v heterogenitě půdy a rozptylu ostatních vstupních parametrů, na jejichž základě model pracuje. Čas $t$ ve vztahu~(\ref{eq:phillip}) je čas od začátku srážky, který by měl být v epizodním modelu totožný s počátečním časem výpočtu. Tato nezbytná podmínka by měla být brána v potaz při přípravě vstupních dat. 
 % 
 % 
 % 
@@ -197,7 +197,7 @@ V modelu jsou uvažovány dvě složky povrchového odtoku: \textbf{plošný pov
 
 \subsection{Plošný povrchový odtok} \label{sec:plosny_odtok}
 
-Rovnice plošného odtoku vychází z použití teorie kinematické vlny při řešení pohybové rovnice Saint-Venantových (SV) rovnic. Použití toho přístupu předpokládá mělké povrchové proudění po dlouhém plochém\footnote{Plochém ve smyslu ne příliš zakřiveném. Nejedná se tedy o hladký povrch.} povrchu. Za těchto podmínek lze u pohybové rovnice SV rovnic zanedbat lokální změny kinetické a potenciální energie a lokální zrychlení. Při tomto zjednodušení lze řešit povrchový tok jako ustálené proudění~\citep{miller1984basic}. Plošný povrchový odtok pak lze řešit pomocí obecného mocninného vztahu jako
+Rovnice plošného odtoku vychází z použití teorie kinematické vlny při řešení pohybové rovnice Saint-Venantových (SV) rovnic. Použití toho přístupu předpokládá mělké povrchové proudění po dlouhém plochém\footnote{Plochém ve smyslu ne příliš zakřiveném. Nejedná se tedy o hladký povrch.} povrchu. Za těchto podmínek lze u pohybové rovnice SV rovnic zanedbat lokální změny kinetické a potenciální energie a lokální zrychlení. Při tomto zjednodušení lze uvažovat povrchový tok jako ustálené proudění~\citep{miller1984basic}. Plošný povrchový odtok pak lze řešit pomocí obecného mocninného vztahu 
 % 
 % 
 % 
@@ -213,7 +213,7 @@ Rovnice plošného odtoku vychází z použití teorie kinematické vlny při ř
       \jj{a}{\ a}
       \jj{b}{.}
 \end{tabular}\\
-Parametr \acs{a} je řešený podle vztahu:
+Parametr \acs{a} je řešen podle vztahu:
 $$
 a = \acs{X}\acs{I}^{\acs{Y}},
 $$
@@ -223,7 +223,7 @@ $$
       \jj{I}{.}
 \end{tabular}
 
-Parametry \acs{a} a \acs{b} respektive \acs{X} a \acs{Y} jsou odvozeny na základě měření \citep{Neumann15:232823}, jejich hodnoty pro různé půdní typy jsou ukázány v tabulce~\ref{tab:kriticke} v příloze~\ref{sec:priloha}. Z vyhodnocení vyplývá, že parametr \acs{b} je závislý pouze na půdním druhu. Parametr \acs{a} je závislý nejen na půdním druhu, ale také na sklonu svahu $I$. Pokud je na povrchu půdy pokryt vegetací, je třeba provést korekci pomocí Manningova součinitele drsnosti pro povrchoví odtok. Parametr \acs{a} je pak definován jako
+Parametry \acs{a} a \acs{b} respektive \acs{X} a \acs{Y} jsou odvozeny na základě měření \citep{Neumann15:232823}, jejich hodnoty pro různé půdní typy jsou ukázány v tabulce~\ref{tab:kriticke} v příloze~\ref{sec:priloha}. Z vyhodnocení vyplývá, že parametr \acs{b} je závislý pouze na půdním druhu. Parametr \acs{a} je závislý nejen na půdním druhu, ale také na sklonu svahu $I$. Pokud je  povrch půdy pokryt vegetací, je třeba provést korekci pomocí Manningova součinitele drsnosti pro povrchoví odtok, který reprezentuje tření mezi tokem a vegetací. Parametr \acs{a} je pak definován jako
 $$
   a = \frac{\acs{X}\acs{I}^{\acs{Y}}}{100\acs{n}},
 $$
@@ -244,7 +244,7 @@ $$
       \jj{bunka}{.}
 \end{tabular}
 
-Efektivní vrstevnice \acs {effVrst} je největší délka v buňce rastru kolmou na směr odtoku. Jedná se tedy o délku průmětu průtočné plochy na danou buňku.
+Efektivní vrstevnice \acs {effVrst} je největší délka v buňce rastru kolmá na směr odtoku. Jedná se tedy o délku průmětu průtočné plochy na danou buňku.
 
 % $$
 % q_{sur} [m^{3}/s] = Ah_{sur}^{b} \Rightarrow \frac {1}{n} a h_{sur}^{X} i_{0}^{Y}
@@ -294,16 +294,7 @@ Pro posouzení erozního ohrožení a pro určení vzniku rýhy je v každé bu�
 \begin{tabular}{rrl}
   kde \jj{vsur}{.}
 \end{tabular}
-
-
-\subsubsection{Určení vzniku rýhy}\label{sec:vznikryhy}
-
-Povrchový odtok způsobuje tření na povrch půdy. Za určitých podmínek je soudržnost půdy nižší než tečné napětí proudící vody na jejím povrchu. Je několik způsobů jak tento moment určit \pozn{citace}. V modelu \smod jsou implementovány dva způsoby odvození: překročením kritického tečného napětí a překročením nevymílací rychlosti. Z obou odvození je určena kritická výška hladiny \acs{hcrit} povrchového odtoku po jejímž překročení začne vznikat rýha. 
-
-
-Při vzniku rýh dochází v k velkému odnosu půdy, proto by umístění prvků protierozní ochrany mělo být navrhnuto tak, aby k vniku rýh docházelo co nejméně. Kritické hodnoty nevymílacích rychlostí a tečných napětí jsou pro jednotlivé půdní druhy převzaty z předchozích verzí modelu (podle \cite{DyrovaE.1984, Neumann15:232823}). Hodnoty z obou zrdojů jsou ukázány v tabulkce~\ref{tab:kriticke} v příloze~\ref{sec:priloha}.
-V literatuře se setkáme i s odlišnými hodnotami. Například M. A. Velikanov stanovil kritickou nevymílací rychlost pro půdy 0.24 $m/s$  \citep{CabikJ.1963}, což je hodnota nižší, než kterou stanovila E. Dýrová.
-
+% 
 Vztah pro výpočet tečného napětí je v modelu \smod definován podle \cite{Schwab1993} jako
 % 
 % 
@@ -323,9 +314,19 @@ Vztah pro výpočet tečného napětí je v modelu \smod definován podle \cite{
       \jj{K}{.}
 \end{tabular}
 
+\subsubsection{Určení vzniku rýhy}\label{sec:vznikryhy}
+
+Povrchový odtok způsobuje tření na povrchu půdy. Za určitých podmínek je soudržnost půdy nižší než tečné napětí proudící vody na jejím povrchu. Je několik způsobů jak tento moment určit \pozn{citace}. V modelu \smod jsou implementovány dva způsoby odvození: překročením kritického tečného napětí a překročením nevymílací rychlosti. Z obou odvození je určena kritická výška hladiny povrchového odtoku \acs{hcrit}  po jejímž překročení začne vznikat rýha. 
+
+
+Při vzniku rýh dochází k velkému odnosu půdy, proto by umístění prvků protierozní ochrany mělo být navrhnuto tak, aby k vniku rýh docházelo co nejméně. Kritické hodnoty nevymílacích rychlostí a tečných napětí jsou pro jednotlivé půdní druhy převzaty z předchozích verzí modelu \citep{DyrovaE.1984, Neumann15:232823}. Hodnoty z obou zrdojů jsou ukázány v tabulkce~\ref{tab:kriticke} v příloze~\ref{sec:priloha}.
+V literatuře se setkáme i s odlišnými hodnotami. Například M. A. Velikanov stanovil kritickou nevymílací rychlost pro půdy 0.24 $m/s$  \citep{CabikJ.1963}, což je hodnota nižší, než kterou stanovila E. Dýrová. Při větších aplikací modelu se doporučuje provést rekalibraci parametrů pro dané specifické území. 
+
+
+
 Přepočet kritické nevymílací rychlost na kritickou výšku hladiny \acs{hcrit} je odvozen z rovnic (\ref{eq:plos_prutok}) a (\ref{eq:v}) jako
 \begin{equation}
-  \acs{hcrit} = \frac{100\ \acs{n}\ \acs{vcrit}^{1/(\acs{b}-1)}}{\acs{a}},
+  \acs{hcrit}_{,v} = \frac{100\ \acs{n}\ \acs{vcrit}^{1/(\acs{b}-1)}}{\acs{a}},
   \label{eq:hcrit_v}
 \end{equation}
 \begin{tabular}{rrl}
@@ -337,18 +338,23 @@ Přepočet kritické nevymílací rychlost na kritickou výšku hladiny \acs{hcr
 
 Výpočet kritické výšky hladiny z tečného napětí je jednoduše odvozen z vzorce (\ref{eq:tau}) jako
 \begin{equation}
-  \acs{hcrit} = \frac{\acs{taucrit}}{\acs{ro} \acs{g} \acs{I}},
+  \acs{hcrit}_{,\tau} = \frac{\acs{taucrit}}{\acs{ro} \acs{g} \acs{I}},
   \label{eq:hcrit_tau}
 \end{equation}
-
+% 
 \begin{tabular}{rrl}
   kde \jj{taucrit}{.} 
 %   
 \end{tabular}
 
 
-Pro každou buňku výpočetní oblasti je spočítáno \acs{hcrit} pomocí obou odvození (\ref{eq:hcrit_v}) a (\ref{eq:hcrit_tau}). Podmínka v modelu následně vybere menší z hodnot, která je pak pří výpočtu použita jako kritérium vzniku rýh \pozn{to chce asi strucne dovysvetlit proc bere tu mensi a doplnit literaturu}. 
-kritická nevymílací rychlost a kritické tečné napětí jsou vstupní parametry modelu. Návrh hodnot pro model \smod je ukázán v tabulce~\ref{tab:kriticke} v příloze~\ref{sec:priloha}. 
+Pro každou buňku výpočetní oblasti je spočítáno \acs{hcrit} pomocí obou odvození (\ref{eq:hcrit_v}) a (\ref{eq:hcrit_tau}). Podmínka v modelu následně vybere menší z hodnot
+$$
+  \acs{hcrit} = MIN(\acs{hcrit}_{,v},\acs{hcrit}_{,\tau}),
+$$
+která je pak pří výpočtu použita jako kritérium vzniku rýh. Kritická výška odvozená podle vztahu  (\ref{eq:hcrit_tau}) nebere v potaz parametry rovnice kinematické vlny a především pro malé hodnoty Manningova koeficientu \acs{n} (při řídkém nebo žádném vegetačním pokryvu) může být kritická hodnota \acs{hcrit} menší při použití rovnice (\ref{eq:hcrit_v}). Výběr menší hodnoty \acs{hcrit} by měl zamezit podhodnocení rizika vzniku rýhové eroze. 
+ 
+Kritická nevymílací rychlost a kritické tečné napětí jsou vstupní parametry modelu. Návrh hodnot pro model \smod je ukázán v tabulce~\ref{tab:kriticke} v příloze~\ref{sec:priloha}. 
 
 
 
@@ -365,9 +371,11 @@ kritická nevymílací rychlost a kritické tečné napětí jsou vstupní param
 % 
 \subsection{Soustředěný odtok v rýhách} \label{sec:soustredenyodtok}
 
-Výpočet soustředěného odtoku v rýhách implementovaný v modelu SMODERP vychází z několika předpokladů:
+Výpočet soustředěného odtoku v rýhách implementovaný v modelu SMODERP vychází z~několika předpokladů:
 \begin{enumerate}
-  \item Zavedení stejných zjednodušujících předpokladů výpočtu proudění jako v~případě výpočtu plošného povrchového odtoku (teorie kinematické vlny). Předpokladem je, že se tok ve všech časech a ve všech buňkách vždy dostane do ustáleného, tady že se vždy jedná o ustálené proudění. Při ustáleném proudění se předpokládá sklon \pozn{nebo to byt sklon treci síly?} dna \acs{I} paralelní se sklonem hladiny vody v rýze a neměnná drsnost v celé délce buňky. Průtok v rýze je tedy vyjádřen pomocí Manningovi rovnice:
+  \item Zavedením stejných zjednodušujících předpokladů výpočtu proudění jako v~případě výpočtu plošného povrchového odtoku (teorie kinematické vlny), lze řešit tok rýhou jako ustálené proudění.
+  %Předpokladem je, že se tok ve všech časech a ve všech buňkách vždy dostane do ustáleného, tady že se vždy jedná o ustálené proudění. 
+  Při ustáleném proudění se předpokládá sklon \pozn{nebo to byt sklon treci síly?} dna \acs{I} paralelní se sklonem hladiny vody v rýze a neměnná drsnost v celé délce buňky. Průtok v rýze je tedy vyjádřen pomocí Manningovi rovnice:
   \begin{equation}
     \acs{qrill} = \acs{vrill} \acs{A} = \acs{A} \frac{1}{\acs{n}} \acs{Rrill}^{2/3} \acs{I}^{1/2}  ,
     \label{eq:qrill}
@@ -380,12 +388,12 @@ Výpočet soustředěného odtoku v rýhách implementovaný v modelu SMODERP vy
         \jj{Rrill}{.}
   \end{tabular}
 
+  \item V každé buňce výpočetní oblasti může vzniknout pouze jedna přímá rýha bez ohledu na velikost buňky. 
   
   
   \item Soustředěný odtok vzniká v buňkách, kde dojde k překročení kritické výšky hladiny \acs{hcrit} (viz \ref{sec:vznikryhy}). Tato hodnota je určena pro každou buňku zvlášť na základě  hodnot kritického tečného napětí nebo kritické nevymílací rychlostí podle vzorců (\ref{eq:hcrit_v}) a (\ref{eq:hcrit_tau}).
   
   
-  \item V každé buňce výpočetní oblasti může vzniknout pouze jedna přímá rýha bez ohledu na velikost kroku prostorové diskretizace. 
   
   
   \item Objem vzniklé rýhy odpovídá nadkritickému objemu vody \acs{Vrill}, který vychází ze vztahu:
@@ -400,7 +408,7 @@ Výpočet soustředěného odtoku v rýhách implementovaný v modelu SMODERP vy
   \end{tabular}
   
 
-  \item Tvar přísného profilu rýhy je reprezentován obdélníkem, s pevným poměrem stran \acs{rratio}=výška/šířka rýhy. Velikost rýhy se zvětšuje pokud je nadkritické množství \acs{Vrill} větší než objem samotné rýhy, tak aby byl splněn předpoklad v předchozím bodě. Při zvětšovaná rýhy se tedy výška rýhy rovná výšce vodní hladiny v rýze (obrázek~\ref{fig:rill_plneni}). Pokud začne být nadkritické množství \acs{Vrill} menší než je objem rýhy a dochází k prázdnění rýhy. Velikost rýhy zůstává konstantní a rýze dochází pouze k poklesu hladiny (obrázek~\ref{fig:rill_prazdneni}). Tento mechanizmus ovlivňuje odtok přes hydraulický poloměr, který je u obdélníkového příčného profilu odvoze jako 
+  \item Tvar přísného profilu rýhy je reprezentován obdélníkem, s pevným poměrem stran \acs{rratio}=výška/šířka rýhy. Velikost rýhy se zvětšuje pokud je nadkritické množství \acs{Vrill} větší než objem samotné rýhy, tak aby byl splněn předpoklad v předchozím bodě. Při zvětšovaná rýhy se tedy výška rýhy rovná výšce vodní hladiny v rýze (obrázek~\ref{fig:rill_plneni}). Pokud začne být nadkritické množství \acs{Vrill} menší než je objem rýhy a dochází k prázdnění rýhy,  zůstává velikost rýhy  konstantní a v rýze dochází pouze k poklesu hladiny (obrázek~\ref{fig:rill_prazdneni}). Tento mechanizmus ovlivňuje odtok pomocí hydraulický poloměr, který je u obdélníkového příčného profilu odvoze jako 
   $$ 
     \acs{Rrill} = \frac{\acs{A}}{\acs{O}} = \dfrac{\acs{hrill} \acs{brill}}{\acs{brill}+2\acs{hrill}} 
   $$
@@ -410,20 +418,20 @@ Výpočet soustředěného odtoku v rýhách implementovaný v modelu SMODERP vy
 %         \jj{rratio}{.}
   \end{tabular}
   
-  Při plnění nebo prázdnění se v tomto vztahu liší výpočet základny tohoto obdélníku. Pokus se rýha zvětšuje nebo je konstantní určuje se šířka základny jako (viz obrázek~\ref{fig:rill_plneni})
+  Při plnění nebo prázdnění se v tomto vztahu liší výpočet základny tohoto obdélníku. Pokus se rýha zvětšuje nebo je konstantní určuje se šířka základny jako (obrázek~\ref{fig:rill_plneni})
   $$
-    \acs{brill} = \dfrac{\acs{hcrit}}{\acs{rratio}},
+    \acs{brill} = \dfrac{\acs{hcrit}}{\acs{rratio}} = \dfrac{\acs{ycrit}}{\acs{rratio}},
   $$
   \begin{tabular}{rrl}
         \jj{rratio}{.}
   \end{tabular}
   
-  Pokud se rýha prázdní je šířka rýhy odvozena jako (viz obrázek~\ref{fig:rill_prazdneni})
+  Pokud se rýha prázdní je šířka rýhy odvozena jako (obrázek~\ref{fig:rill_prazdneni})
   $$
     \quad \acs{brill} = \dfrac{\acs{yrill}}{\acs{rratio}}.
   $$
   
-  Jak je vidět na obrázku~\ref{fig:rill_prazdneni}. Plošný povrchový odtok s výškou hladiny \acs{hcrit} je předpokládán i na části buňky, kde je se vytvořila rýha. Toto zjednodušení se předpokládá jako zanedbatelné vzhledem k tomu, že plocha kterou pokývají rýhy je zpravila malá proti ploše celého povodí. 
+  Jak je vidět na obrázku~\ref{fig:rill_prazdneni}, k plošnému povrchovému odtoku s výškou hladiny \acs{hcrit} dochází i na části buňky, kde se vytvořila rýha. Chyba vzniklá tímto předpokladem je považována za zanedbatelnou protože plocha, kterou pokývají rýhy, je zpravila malá proti ploše celého povodí. 
   
   
 
@@ -439,7 +447,7 @@ Výpočet soustředěného odtoku v rýhách implementovaný v modelu SMODERP vy
       \caption{Příčný průřez rýhou, která se prázdní}
       \label{fig:rill_prazdneni}
     \end{subfigure}
-    \caption{Příčný řez rýhou, která je v modelu \smod reprezentována obdélníkem.  Při plnění (zvětšování) rýhy roste výška hladiny vody v rýze s výškou rýhy a v poměru \acs{rratio} k šířce rýhy~\ref{fig:rill_plneni}.  Pří prázdnění rýhy se tvar rýhy nemění pouze v ní dochází ke změně výšky hladiny v rýze (nalevo)~\ref{fig:rill_prazdneni}.}
+    \caption{Příčný řez rýhou, která je v modelu \smod reprezentována obdélníkem.  Při plnění (zvětšování) rýhy roste výška hladiny vody v rýze s výškou rýhy  v poměru \acs{rratio} k šířce rýhy~(obrázek~\ref{fig:rill_plneni}).  Při prázdnění rýhy se tvar rýhy nemění, dochází pouze ke změně výšky vodní hladiny v rýze (nalevo) (obrázek~\ref{fig:rill_prazdneni})}
     \label{fig:rill_schema}
   \end{figure}
 % 
@@ -471,7 +479,7 @@ Pokud dojde k vzniku rýh, je rovnice celkové bilance~(\ref{eq:bilancnirce}) ro
         \jj{ooutrill}{.}
         & $n$ & jsou buňky, odkud vtéká voda z rýh do buňky $i$.
   \end{tabular}\\
- $n$ může být prázdná množina pokud není překročena kritická výška nebo no může rovnat $m$ z rovnice~\ref{eq:bilancnirce} pokud je použit odtokový algoritmus \acs{D8} a na všech sousedních buňkách buňky $i$ je překročena kritická výška hladiny. 
+ Množství $n$ může být prázdná množina pokud není překročena kritická výška hladiny.
 
 
 
@@ -504,7 +512,7 @@ Pokud dojde k vzniku rýh, je rovnice celkové bilance~(\ref{eq:bilancnirce}) ro
 
 
 
-
+\pozn{
 \subsection{Poznámka nebo to dát do diskuse k článku} 
 \begin{itemize}
 \item Výsledný tvar blíží Maningově rovnici
@@ -519,15 +527,17 @@ Q =\frac {1}{n} h^{2/3} S^{1/2}
 \item tvar rýhy - výzkum funkce?
 \item jen jedna přímá rýha
 \end{itemize}
+}
+
 
 %newb = math.sqrt(V/(rillRatio*l)) #KAvka, tohl eje divně
 \section{Odtok hydrografickou sítí} \label{sec:tokyodtok}
 
 
-\smod je zamýšlen také jako nástroj pro navrhování půdo ochranných opatření v ploše povodí. Cílem je simulovat a navrhovat odtoky i v dočasné hydrografické síti, která je tvořena přirozeným nebo častěji umělým přerušením přirozené odtokové dráhy. Nejčastěji se jedná o příkopy a průlehy, které mají odváděcí a často protierozní funkci. 
-Všechny prvky (síť vodních toků, příkopy, průlehy, atp.) jsou zadávány v rámci jednoho shapefile. Každý jednotlivý úsek je zadán jako konkrétní linie (feature). 
+Hlavní použití modelu \smod spočívá především v navrhování půdo ochranných opatření v ploše povodí. Cílem je simulovat a navrhovat odtoky i v dočasné hydrografické síti, která je tvořena přirozeným nebo častěji umělým přerušením přirozené odtokové dráhy. Nejčastěji se jedná o příkopy či průlehy, které mají odváděcí a protierozní funkci. 
+Všechny prvky (síť vodních toků, příkopy, průlehy, atp.) jsou zadávány v rámci jedné liniové vektorové vrstvy, kde jsou úseky hydrografické sítě reprezentovány jednotlivými liniemi. 
 
-Na rozdíl od povrchového odtoku, který je prováděn v rastru buněk, řeší se výpočet v úsecích hydrografické sítě  po jednotlivých úsecích po skončení výpočtu povrchového odtoku. Jeden úsek hydrografické sítě zpravidla leží na několika buňkách rastru. Při výpočtu povrchového odtoku se do tohoto úseku započítá přítok ze všech buněk, které vtékají do buněk pod daným úsekem. Poté co výpočet povrchového odtoku skončí, provede se ve stejném časovém kroku výpočet odtoků v vtoků mezi jednotlivými úseky a spočítá se nová výška hladiny ve všech úsecích najednou. Princip propojení jednotlivých úseků je popsán v kapitole 
+Na rozdíl od výpočtu  povrchového odtoku, který je prováděn v rastru buněk, se  výpočet řeší v hydrografické síti po jednotlivých úsecích po skončení výpočtu povrchového odtoku. Jeden úsek hydrografické sítě zpravidla leží na několika buňkách rastru. Při výpočtu povrchového odtoku se do tohoto úseku započítá přítok ze všech buněk, které vtékají do buněk pod daným úsekem. Poté co výpočet povrchového odtoku skončí, provede se ve stejném časovém kroku výpočet odtoků v vtoků mezi jednotlivými úseky a spočítá se nová výška hladiny ve všech úsecích najednou. Princip propojení jednotlivých úseků je popsán v kapitole~\ref{sec:tokyodtok2}
 
 Proudění v úsecích je řešeno Manningovou rovnicí ve tvaru:
 
@@ -545,9 +555,9 @@ Proudění v úsecích je řešeno Manningovou rovnicí ve tvaru:
 \end{tabular}
   
 
-Pro vlastní výpočet je třeba zadat typ a příčný profil daného prvku. Délka úseku a sklonu jsou převzaty z liniové vrstvy a z digitálního modelu terénu. Protože je model určen pro malá povodí jsou v modelu předpokládány pouze základní tvary příčných profilů (trojúhelník, obdélník, lichoběžník, parabola). Vzorce pro výpočet odtoku různými geometriemi jsou ukázany v příloze \ref{sec:priloha} v tabulce na obrázku~\ref{fig:tvary_koryt}. Model \smod je schopen řešit odtok liniovými prvky, které se zapojí do odtoku až při tvorbě povrchového odtoku i~odtok vodními toky se základním odtokem. Princip zadávání geometrie úseků hydrografické sítě je popsán v častí~\ref{cast:2} v kapitole~\ref{sec:vodnitoky} tohoto manuálu. 
+Pro vlastní výpočet je třeba zadat typ a příčný profil daného úseku. Délka úseku a jeho sklon jsou převzaty z liniové vrstvy a z digitálního modelu terénu. Protože je model určen pro malá povodí jsou v modelu předpokládány pouze základní tvary příčných profilů (trojúhelník, obdélník, lichoběžník, parabola). Vzorce pro výpočet odtoku různými geometriemi příčných profilů jsou ukázány  v tabulce~\ref{fig:tvary_koryt} v příloze \ref{sec:priloha}. Model \smod je schopen řešit odtok liniovými prvky, které se zapojí do odtoku až při tvorbě povrchového odtoku i~odtok vodními toky se základním odtokem. Princip zadávání geometrie úseků hydrografické sítě je popsán v kapitole~\ref{sec:vodnitoky} v části~\ref{cast:2} tohoto manuálu. 
   
-Objem vody, který teže mezi jednolivýli úseky hydraulické sítě je určen jednoduše jako
+Objem vody, který teže mezi jednolivýli úseky hydrografické sítě je určen jako
 $$
   V_{stream,out} = \acs{dT}\acs{qstream}.
 $$
@@ -557,22 +567,23 @@ $$
 % \pozn{a dát semka asi i nějaké  obrázky, jak to funguje. Je to v nějaké DP tuším (to najdu PK)}
 
 
-
-\subsection{Propojení úseků hydrografické sítě} \label{sec:tokyodtok}
-
-Na obrázku \ref{fig:mapalinie}, jsou ukázány úseky na podkladová vrstvě digitálního modelu terénu. Každý úsek to má označení {\tt FID}. Při přípravě dat dostane každý úsek atribut {\tt toFID}, který udává do jakého úseků daný úsek v vtéká. {\tt toFID} = -9999 značí odtok z výpočetní oblasti. 
-
-
-
-Pří přípravě dat je opraven směr úseku podle digitálního modelu terénu. Pokud má úsek oba koncové body v stejné výšce (sklon úseku je nulový), program se ukončí s chybovým hlášením: {\tt ZeroSlopeError: 'Reach FID:1 has zero slope.'}. Chybové hlášení označí problematický úsek (v této ukázce úsek s {\tt  FID = 1}) a uživatel musí daný úsek ve vstupních datech opravit tak, aby měl nenulový sklon (aby koncové body úseku nebyly ve stejné výšce).  
-
-
-\begin{figure}[t!]
+\begin{figure}[b!]
   \centering
-  \includegraphics[width=0.5\textwidth]{img/mapalinie}
-  \caption{Hydrografická síť s označením {\tt FID} (id linie) a {\tt toFID} (id následující linie při odtoku). Podkladová vrstva je digitální model terénu.}
+  \includegraphics[width=0.5\textwidth]{./img/mapalinie.png}
+  \caption{Hydrografická síť s označením {\tt FID} (id linie) a {\tt toFID} (id následující linie při odtoku). Podkladová vrstva je digitální model terénu. {\tt toFID} = -9999 označuje  odtok přes okraj výpočetní oblasti.}
   \label{fig:mapalinie}
 \end{figure}
+
+\subsection{Propojení úseků hydrografické sítě} \label{sec:tokyodtok2}
+
+
+Na obrázku \ref{fig:mapalinie}, jsou ukázány úseky na podkladová vrstvě digitálního modelu terénu. Každý úsek to má označení {\tt FID}. Při přípravě dat dostane každý úsek atribut {\tt toFID}, který udává do jakého úseků daný úsek v vtéká. {\tt toFID} = -9999 značí odtok přes okraj výpočetní oblasti. 
+
+
+
+Pří přípravě dat je opraven směr úseku podle digitálního modelu terénu. Pokud má úsek oba koncové body v stejné výšce (sklon úseku je nulový), program se ukončí s chybovým hlášením: {\tt ZeroSlopeError: 'Reach FID:1 has zero slope.'}. Chybové hlášení označí problematický úsek (v této ukázce úsek s {\tt  FID = 1}) a uživatel musí daný úsek opravit ve vstupních datech tak, aby měl nenulový sklon (aby koncové body úseku nebyly ve stejné výšce).  
+
+
 
 
 
