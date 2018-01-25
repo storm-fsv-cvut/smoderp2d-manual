@@ -9,7 +9,7 @@
 }
 
 
-Výstupy modelu jsou uloženy do složky zadané mezi vstupními parametry (obsah složky je při spuštěné programu vymazán!). Kumulativní nebo maximální hodnoty veličin v jednotlivých  buňkách jsou na konci výpočtu uloženy v rastrovém formátu (viz kapitola~\ref{sec:rastr}). Průnik polygonů prostorové distribuce typu půd a využití území jsou uloženy ve vektorovém formátu (viz kapitola~\ref{sec:vektor}). Pokud model \smod počítá i úseky hydrografické sítě, jsou kumulativní nebo maximální hodnoty veličin jednotlivých úseků vypsáný v atributové tabulce vektorové vrstvy úseků (viz kapitola~\ref{sec:vektor}), prostorové rozložení jednotlivých úseků je uloženo také jako jeden s rastrů (viz kapitola~\ref{sec:rastr}).  Volitelné výstupy hydrogramů  v bodech jsou ve formě časových řad uloženy do textových souborů s příponou {\tt.dat} (viz kapitola~\ref{sec:hydrogramy}). Další nadstandardní výstupy lze získat způsobem popsaným v příloze~\ref{sec:priloha2}. Jednotlivé výstupy jsou dále popsány podrobněji. 
+Výstupy modelu jsou uloženy do složky zadané mezi vstupními parametry (obsah složky je při spuštění programu vymazán!). Kumulativní nebo maximální hodnoty veličin v jednotlivých  buňkách jsou na konci výpočtu uloženy v rastrovém formátu (viz kapitola~\ref{sec:rastr}). Průnik polygonů prostorové distribuce typu půd a využití území jsou uloženy ve vektorovém formátu (viz kapitola~\ref{sec:vektor}). Pokud model \smod počítá i úseky hydrografické sítě, jsou kumulativní nebo maximální hodnoty veličin jednotlivých úseků vypsáný v atributové tabulce vektorové vrstvy úseků (viz kapitola~\ref{sec:vektor}). Prostorové rozložení jednotlivých úseků je uloženo také jako jeden s rastrů (viz kapitola~\ref{sec:rastr}).  Volitelné výstupy hydrogramů  v bodech jsou ve formě časových řad uloženy do textových souborů s příponou {\tt.dat} (viz kapitola~\ref{sec:hydrogramy}). Další nadstandardní výstupy lze získat způsobem popsaným v příloze~\ref{sec:priloha2}. Jednotlivé výstupy jsou dále popsány podrobněji. 
 
 
 
@@ -25,7 +25,7 @@ Výstupy modelu jsou uloženy do složky zadané mezi vstupními parametry (obsa
 
 \subsection{Rastrové výstupy}\label{sec:rastr}
 
-V rastrech jsou uloženy maximální a kumulativní hodnoty vybraných veličin v jednotlivých buňkách řešeného území. Jako rastrový formát lze zvolit proprietární ESRI formát nebo textový formát ASII. Přehled rastrových výstupních souborů je shrnut v tabulce~\ref{tab:vystupyrast}. Pokud jsou v modelu řešeny i úseky hydrografické sítě jsou buňky rastru ležící na úseku uloženy s hodnotou {\tt NoData} (výjimku tvoří 2 rastry popisující vlastnosti úseků, viz tabulka~\ref{tab:vystupyrast}).  
+V rastrech jsou uloženy maximální a kumulativní hodnoty vybraných veličin v jednotlivých buňkách řešeného území. Jako rastrový formát lze zvolit proprietární ESRI formát nebo textový formát ASII. Přehled rastrových výstupních souborů je shrnut v tabulce~\ref{tab:vystupyrast}. Pokud jsou v modelu řešeny i úseky hydrografické sítě, jsou buňky rastru ležící na úseku uloženy s hodnotou {\tt NoData} (výjimku tvoří 2 rastry popisující vlastnosti úseků, viz tabulka~\ref{tab:vystupyrast}).  
 
 
 % jsou ve textovém nebo rastrovém formátu.  
@@ -55,7 +55,7 @@ Výstupní vektorová data jsou tři. Jedná se topologicky upravenou vrstvu ús
 
 \subsection{Hydrogramy}\label{sec:hydrogramy}
 
-Pokud jsou do vstupů zadány body pro výpis hydrogramů, vypíší se do textových souborů s příponou {\tt.dat}. Vypsané veličiny jsou závislé na typu odtokového procesu. Popis vypsaných veličin  povrchového odtoku je v tabulce~\ref{tab:vystupydat}. Pokud je bod v buňce úsek hydrografické sítě, vypisují se hodnoty tohoto celého úseku, přestože tento bod není na konci úseku.  Názvy a význam veličin popisující úsek toku jsou popsány v tabulce~\ref{tab:vystupytokdat}.  Model v současné verzi uvažuje, že pokud je v buňce úsek hydrografické sítě, zabírá úsek celou buňku, přesto že je jeho šířka menší než šířka samotné buňky.  Název těchto souborů je odvozen z FID upravené bodové vrstvy {\tt pointsCheck} ve tvaru $point$\{{\tt pointsCheck}:FID\}$.dat$. 
+Pokud jsou do vstupů zadány body pro výpis hydrogramů, vypíší se do textových souborů s příponou {\tt.dat}. Vypsané veličiny jsou závislé na typu odtokového procesu. Popis vypsaných veličin  povrchového odtoku je v tabulce~\ref{tab:vystupydat}. Pokud je bod v buňce úseku hydrografické sítě, vypisují se hodnoty tohoto celého úseku, přestože tento bod není na konci úseku.  Názvy a význam veličin popisujících úsek toku jsou popsány v tabulce~\ref{tab:vystupytokdat}.  Model v současné verzi uvažuje, že pokud je v buňce úsek hydrografické sítě, zabírá úsek celou buňku, přestože je jeho šířka menší než šířka samotné buňky.  Název těchto souborů je odvozen z FID upravené bodové vrstvy {\tt pointsCheck} ve tvaru $point$\{{\tt pointsCheck}:FID\}$.dat$. 
 
 
 
