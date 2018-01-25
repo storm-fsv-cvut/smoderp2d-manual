@@ -1,0 +1,30 @@
+\documentclass{standalone}
+
+\usepackage{tikz}
+
+\begin{document}
+
+
+\newcommand\xlicho{0}
+\newcommand\ylicho{0}
+
+
+\newcommand\vyska{1.8}    % vyska
+\newcommand\sirka{5}    % sirka
+
+
+
+  \begin{tikzpicture}[scale=1]
+    \draw (\xlicho,\ylicho+\vyska) -- (\xlicho+\sirka/3,\ylicho) -- (\xlicho+\sirka/1.5,\ylicho) -- node[above,sloped] {1:Z}  (\xlicho+\sirka,\ylicho+\vyska) -- (\xlicho+\sirka,\ylicho+\vyska) -- (\xlicho,\ylicho+\vyska) ;
+    \draw[dashed] (\xlicho+\sirka,\ylicho+\vyska) -- (\xlicho+\sirka+0.25,\ylicho+\vyska+0.25) -- (\xlicho-0.25,\ylicho+\vyska+0.25) -- (\xlicho,\ylicho+\vyska);
+    \draw[thick,<->] (\xlicho+\sirka/3,\ylicho-0.25) --  node[below]  {b} (\xlicho++\sirka/1.5,\ylicho-0.25) ;
+    \draw[thick,<->] (\xlicho++\sirka/1.5,\ylicho-0.25) --  node[below]  {e} (\xlicho+\sirka,\ylicho-0.25) ;
+    \draw[thick,<->] (\xlicho+1/0.75\sirka,\ylicho) --  node[right]  {d} (\xlicho+1/0.75\sirka,\ylicho+\vyska) ;
+    \draw[thick,<->] (\xlicho+0.5/0.75\sirka,\ylicho) --  node[right]  {D} (\xlicho+0.5/0.75\sirka,\ylicho+\vyska+0.25) ;
+    \draw[thick,<->] (\xlicho,\ylicho+\vyska+0.5) --  node[above]  {t} (\xlicho+\sirka,\ylicho+\vyska+0.5) ;
+    \draw[thick,<->] (\xlicho-0.25,\ylicho+\vyska+1) --  node[above]  {T} (\xlicho+\sirka+0.25,\ylicho+\vyska+1) ;
+    \node[text width=2cm] at (\xlicho+\sirka,\ylicho+0.25){\small $Z=e/d$};
+  \end{tikzpicture}
+  
+
+\end{document} 

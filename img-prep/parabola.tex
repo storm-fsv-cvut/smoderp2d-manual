@@ -1,0 +1,26 @@
+\documentclass{standalone}
+
+\usepackage{tikz}
+
+\begin{document}
+
+
+\newcommand\xpara{0}
+\newcommand\ypara{0}
+
+
+
+\newcommand\vyska{1.8}    % vyska
+\newcommand\sirka{5}    % sirka
+
+  \begin{tikzpicture}[scale=1]
+  \draw (\xpara,\ypara+\vyska) -- (\xpara+\sirka,\ypara+\vyska);
+  \draw[dashed] (\xpara+\sirka,\ypara+\vyska) -- (\xpara+\sirka+0.15,\ypara+\vyska+0.25) -- (\xpara-0.15,\ypara+\vyska+0.25) -- (\xpara,\ypara+\vyska);
+  \draw (\xpara,\ypara+\vyska) to[out=-60,in=-120] (\xpara+\sirka,\ypara+\vyska);
+  \draw[thick,<->] (\xpara,\ypara+\vyska+0.5) --  node[above]  {t} (\xpara+\sirka,\ypara+\vyska+0.5) ;
+  \draw[thick,<->] (\xpara-0.15,\ypara+\vyska+1.0) --  node[above]  {T} (\xpara+\sirka+0.15,\ypara+\vyska+1.0) ;
+  \draw[thick,<->] (\xpara+1/0.75\sirka,\ypara+\vyska/3.5) --  node[right]  {d} (\xpara+1/0.75\sirka,\ypara+\vyska) ;
+  \draw[thick,<->] (\xpara+0.5/0.75\sirka,\ypara+\vyska/3.5) --  node[right]  {D} (\xpara+0.5/0.75\sirka,\ypara+\vyska+0.25) ;
+  \end{tikzpicture}
+
+\end{document} 

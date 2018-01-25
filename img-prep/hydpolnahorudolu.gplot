@@ -1,0 +1,38 @@
+rr = 0.5
+
+# odtud se zacina razdnit
+hh = 10
+
+# b co zustane po konci pleneni
+bkonec = hh/rr
+
+
+# fplneni(x) = (x**2/rr)/(x/rr + 2*x) 
+# to same ale zjednodusene
+fplneni2(x)= x/(1+2*rr)
+
+fprazdneni(x) = (x*bkonec)/(bkonec + 2*x)
+
+
+
+#d='rill ratio' $rr
+
+set label sprintf("rill ratio = %3.4f",rr) at screen  0.5,0.90
+
+
+set ylabel 'výška hladiny v rýze'
+set xlabel 'hydraulický poloměr'
+set title  'průběh hydraulického poloměr při plnení a prázdění rýhy'
+#set label  "Subtitle" at screen 0.5, 0.92 font "Arial,10"
+plot [0:hh][0:10]  fplneni2(x) title 'plnění rýhy', fprazdneni(x) title 'prázdněný rýhy'
+
+
+
+
+
+
+
+
+
+
+

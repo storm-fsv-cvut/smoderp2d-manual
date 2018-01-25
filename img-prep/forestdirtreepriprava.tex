@@ -1,0 +1,84 @@
+\documentclass[border=5pt]{standalone}
+\usepackage{forest}
+\usepackage{tikz}
+
+\usepackage{dirtree}
+
+\begin{document}
+ \newgeometry{top=2.5cm, left=2.5cm, right=2.5cm, bottom=2.5cm,headheight=0pt}
+\begin{figure}[th!]
+{\small
+\dirtree{%
+.1 smoderp2d/.
+.2 main.py \dotfill \begin{minipage}[t]{0.4\textwidth}
+                    Hlavní skript volající ostatní{.} Upravuje / kontroluje formát vstupních parametrů{.}
+                    \end{minipage}.
+.2 src/.
+.3 flow\_algorithm/\dotfill \begin{minipage}[t]{0.4\textwidth}
+                    Adresář obsahuje metody pro práci s odtokovými algoritmy{.}
+                    \end{minipage}.
+% .4 arcgis\_dmtfce.py.
+% .4 D8.py   \dotfill \begin{minipage}[t]{0.4\textwidth}
+%                     Metody jednosměrného odtoku{.}
+%                     \end{minipage}.
+% .4 flow\_direction.py.
+% .4 mfd.py  \dotfill \begin{minipage}[t]{0.4\textwidth}
+%                     Metody vícesměrného odtoku{.}
+%                     \end{minipage}.
+% .4 py\_dmtfce.py.
+.3 io\_functions/ \dotfill \begin{minipage}[t]{0.4\textwidth}
+                            Adresář obsahuje metody pro I/O (vstup/výstup) operace{.}
+                            \end{minipage}.
+% .4 hydrographs.py.
+% .4 post\_proc.py.
+% .4 progress\_bar.py.
+% .4 prt.py.
+.3 main\_classes/  \dotfill \begin{minipage}[t]{0.4\textwidth}
+                             Adresář obsahuje hlavní datové struktury modelu{.}
+                             \end{minipage}.
+% .4 CumulativeMax.py.
+% .4 Flow.py.
+% .4 General.py.
+% .4 KinematicDiffuse.py.
+% .4 Stream.py.
+% .4 Subsurface.py.
+% .4 Surface.py.
+% .4 Vegetation.py.
+.3 processes/   \dotfill \begin{minipage}[t]{0.4\textwidth}
+                             Adresář obsahuje metody pro výpočet jednotlivých procesů (odtok, aktuální srážka atd){.}
+                             \end{minipage}.
+% .4 infiltration.py.
+% .4 rainfall.py.
+% .4 rill.py.
+% .4 subsurface.py.
+% .4 surface.py.
+.3 stream\_functions/   \dotfill \begin{minipage}[t]{0.4\textwidth}
+                             Adresář obsahuje metody pro preprocessing úseků hydrografické sítě a výpočet jednotlivých geometrií příčného profilu{.}
+                             \end{minipage}.
+% .4 stream\_f.py.
+% .4 stream\_preparation.py.
+.3 tools/    \dotfill \begin{minipage}[t]{0.4\textwidth}
+		Adresář obsahuje obecné nástroje, které přímo nesouvisí s řešenými procesy nebo výpočtem{.}
+		\end{minipage}.
+% .4 resolve\_partial\_computing.py.
+% .4 save\_load\_data.py.
+% .4 tools.py.
+.3 constants.py    \dotfill \begin{minipage}[t]{0.4\textwidth}
+		    Soubor obsahuje proměnné s pořadím jednotlivých parametrů pro načítání z ArcGIS toolboxu{.}
+		    \end{minipage}.
+.3 courant.py    \dotfill \begin{minipage}[t]{0.4\textwidth}
+		    Soubor obsahuje definici třídy pro správu délky časového kroku{.}
+		    \end{minipage}.
+.3 data\_preparation.py.%    \dotfill \begin{minipage}[t]{0.4\textwidth}
+		         % Soubor obsahuje metodu, který se spouští pří preprocessingu. Pouze v tomto souboru je nezbytná instalace balíčku arcpy{.}
+		         % \end{minipage}.
+.3 runoff.py.
+.3 time\_step.py.
+}
+}
+\caption{soubory a adresa modelu SMODERP}
+\label{fig:adresare}
+\end{figure}
+% \restoregeometry
+
+\end{document}

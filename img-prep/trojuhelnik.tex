@@ -1,0 +1,37 @@
+\documentclass{standalone}
+
+\usepackage{tikz}
+
+\begin{document}
+
+
+\newcommand\xtroj{0}
+\newcommand\ytroj{0}
+
+
+
+\newcommand\vyska{1.8}    % vyska
+\newcommand\sirka{5}    % sirka
+
+
+  \begin{tikzpicture}[scale=1]
+  % zaklad tvar
+  \draw (\xtroj,\ytroj+\vyska) -- (\xtroj+\sirka/2,\ytroj) -- node[above,sloped] {1:Z}  (\xtroj+\sirka,\ytroj+\vyska) -- (\xtroj+\sirka,\ytroj+\vyska) -- (\xtroj,\ytroj+\vyska) ;
+  % prirustek
+  \draw[dashed] (\xtroj+\sirka,\ytroj+\vyska) -- (\xtroj+\sirka+0.375,\ytroj+\vyska+0.25) -- (\xtroj-0.375,\ytroj+\vyska+0.25) -- (\xtroj,\ytroj+\vyska);
+  % d
+  \draw[thick,<->] (\xtroj+1/0.75\sirka,\ytroj) --  node[right]  {d} (\xtroj+1/0.75\sirka,\ytroj+\vyska) ;
+  % D
+  \draw[thick,<->] (\xtroj+0.4/0.75\sirka,\ytroj) --  node[right]  {D} (\xtroj+0.4/0.75\sirka,\ytroj+\vyska+0.25) ;
+  % e
+  \draw[thick,<->] (\xtroj++\sirka/2,\ytroj-0.25) --  node[below]  {e} (\xtroj+\sirka,\ytroj-0.25) ;
+  % t
+  \draw[thick,<->] (\xtroj,\ytroj+\vyska+0.5) --  node[above]  {t} (\xtroj+\sirka,\ytroj+\vyska+0.5) ;
+  % T
+  \draw[thick,<->] (\xtroj-0.375,\ytroj+\vyska+1) --  node[above]  {T} (\xtroj+\sirka+0.375,\ytroj+\vyska+1) ;
+  % Z
+  \node[text width=2cm] at (\xtroj+\sirka,\ytroj+0.25){\small $Z=e/d$};
+  \end{tikzpicture}
+  
+
+\end{document} 

@@ -74,30 +74,25 @@ Rastr digitálního modelu terénu DMT, či anglicky DTM (Digital Terrain Model)
  
 \subsection{Půdní data} \label{sec:vstuppuda}
 
-Datové zdroje vlastností půd jsou v rámci České Republiky roztříštěné. Model \smod pracuje s jednou vstupní vrstvou půd. Příprava této vrstvy z dostupných dat je otázkou $preprocessingu$ a propojení relevantních zdrojů. V zásadě jsou tři základní dostupné datové zdroje půdních vlastností. Odděleně připravená \pozn{to: jinou metodou pripravene si nejsem jist} data na zemědělské a lesní půdě nebo bezešvá vrstva půd KPP odpovídající měřítku 1:200000.
 
-V České Republice se na zemědělské půdě standardně využívá klasifikace podle Nováka. Půda je rozdělena podle obsahu jednotlivých frakcí na půdy: \pozn{r}:
-\begin{itemize} \itemsep -3pt
-  \item písčité,
-  \item hlinitopísčité,
-  \item písčitohlinité,
-  \item hlinité,
-  \item jílovitohlinité,
-  \item jílovité a
-  \item jíl.
-\end{itemize}
-% 
-Na lesních půdách je v České Republice standardně využíván popis kategorií podle klasifikace USDA\footnote{United States Department of Agriculture}.
+Vstupem do modelu je vektorová vrstva s vymezením jednotlivých půd.
+
+Z hlediska půdních dat jsou obecně v ČR v rozumném měřítku podrobnosti k dispozici několik datových zdrojů. prvním je syntetická půdní mapa v měřítku 1: 250 000 (KPP250), která vychází z komplexního průzkumu půd, tento datový podklad byl odvozen z předešlé tištěné mapy, čemuž také odpovídá měřítko podrobnosti dat. Po rozdělení půdního fondu na lesní a zemědělskou půdu jsou dalšími zdroji oddělené databáze pro tyto dvě skupiny. Na zemědělské půdě je dostupná půdní typologie (ve formě kódu BPEJ, resp. HPJ),  v současné době uvolněná k využití na portálu SPÚ. Prakticky neexistuje vhodný převodní klíč mezi hodnotami BPEJ a parametry infiltračních rovnic. Půdní druhy vyjadřující zrnitost ornice a podorničí podle Novákovy klasifikace je možné získat na VÚMOP v.v.i., dle aktuálního ceníku jako vektorovou vrstvu ve formátu shp. Dále jsou na portálu kpp.vumop.cz dostupné informace o konkrétních půdních sondách průzkumu KPP (kpp.vumop.cz).
+
+V případě lesních půd, lesnické typologie a informací o půdních charakteristikách je dostupnost dat omezená. Veřejně dostupné jsou kódy lesnické typologie, ale metodika pro převod kódované informace na hydrologické vlastnosti půd (Macků, 2012) není dohledatelná. Hloubka lesních půd, zrnitostní složení a některé další charakteristiky jsou k dispozici na Ústavu pro hospodářskou úpravu lesů (ÚHUL), ale jejich poskytnutí vyžaduje součinnost s uvedeným úřadem. 
+
+V případě využití modelu jsou klíčovým vstupem hydraulické charakteristiky půd, zejména nasycená hydraulická vodivost \acs{Ks}. Tato veličina je závislá na řadě půdních charakteristik, nejčastěji je vztahována k jejímu zrnitostnímu složení. Regionalizované informace o zrnitosti půd lze v ČR získat z výše jmenovaných datových zdrojů. 
+
+Kromě dostupnosti prostorových dat vstupuje další komplikace v podobě nesouladu v klasifikaci půd na lesní půdě (USDA) a zemědělské (Novákova klasifikace). Syntéza těchto dat není triviální.
+Průměrné hodnoty \acs{Ks} pro jednotlivé zrnitostní třídy, tzv. pedotransferové funkce, jsou odvozené z rozsáhlých půdních databází, které lze nalézt zejména v zahraniční literatuře \citep{wosten1999, toth2015}. V českých podmínkách je k dispozici, počtem analyzovaných vzorků značně omezená, databáze HYPRES-CZ \citep{mihalikova2013}. Obecně se však jedná o velmi variabilní data. Vzhledem k enormnímu rozptylu hodnot je pro snížení nejistot v hydrologickém modelování velmi žádoucí zajistit alespoň základní půdní rozbor v řešené lokalitě.
 
 
-
-Obrázek~\ref{fig:puda} ukazuje výřez připravené vrstvy. Pro určení charakteristik je nutné, aby atributová tabulka dané vrstvy obsahovala identifikátor půdního typu. Identifikátor odkazuje na půdní charakteristiky, které jsou ale uložené v samostatní tabulce (viz kapitola~\ref{sec:upravatabulkyparametru}). Mezi půdní charakteristiky a parametry používané modelem patří: \acs{HyVod} - \acl{HyVod}; \acs{Sorb} - \acl{Sorb}; \acs{n} - \acl{n}, \acs{b} - \acl{b}, \acs{X} - \acl{X} a  \acs{Y} - \acl{Y}. Hodnoty těchto parametrů lze převzít z tabulky~\ref{tab:kriticke} v příloze~\ref{sec:priloha}. Fyzikální význam těchto parametrů a jejich implementace v modelu jsou popsány v části~\ref{cast:1} toho manuálu. 
+Obrázek~\ref{fig:puda} ukazuje výřez připravené vrstvy. Pro určení charakteristik je nutné, aby atributová tabulka dané vrstvy obsahoval identifikátor půdního typu. Identifikátor odkazuje na půdní charakteristiky, které jsou ale uložené ve zvláštní tabulce (viz níže). Mezi půdní charakteristiky a parametry používané modelem patří: \acs{HyVod} - \acl{HyVod}; \acs{Sorb} - \acl{Sorb}; \acs{n} - \acl{n}, \acs{b} - \acl{b}, \acs{X} - \acl{X} a  \acs{Y} - \acl{Y}. Hodnoty těchto parametrů lze převzít z tabulky~\ref{tab:kriticke} v příloze~\ref{sec:priloha}. Fyzikální význam těchto parametrů a jejich implementace v modelu jsou popsány v části~\ref{cast:1} toho manuálu. 
 
 
 
 
 
- 
  
  
  
@@ -109,18 +104,23 @@ Obrázek~\ref{fig:puda} ukazuje výřez připravené vrstvy. Pro určení charak
  
  
 \subsection{Data využití území} \label{sec:vstupvegetace}
-\pozn{pk - doplnit zdroje takovych dat}
-Obdobně jako u půdních dat je vstupem vektorový shapefile popisující využití území. Mezi základní typy, pro které byl model testován, patří:
-\begin{itemize} \itemsep -3pt
-  \item atropogení a zpevněné plochy  
-  \item holá půda bez vegetace
-  \item les
-  \item sad
-  \item travní porosty
-  \item zemědělské plodiny širokořádkové\footnote{Širokořádkové plodiny jsou například brambory, kukuřice, řepa, sója a slunečnice.}
-  \item zemědělské plodiny úzkořádkové\footnote{Úzkořádkové plodiny jsou obiloviny nebo řepka.}
-\end{itemize}
+Obdobně jako u půdních dat je vstupem vektorový shapefile popisující využití území.
 
+Data o využití území jsou dostupné jak ve vektorové, tak rastrové podobě. Na stránkách MŽP je po registraci zdarma dostupná vrstva CORINE LandCover. Ve větším detailu je možné data o povrchu odvodit z databáze ZABAGED. Z vrstev je možné získat informace o plochách, liniových prvcích, cestní síti, vodních tocích. Využití území je možné na zemědělské půdě zpřesnit na základě dat LPIS. Převod liniových prvků na plošné je vhodné jen u prvků šířky srovnatelné se zvoleným rozlišením DMT, např. u dálnic a silnic první třídy. Rozumnou volbou podrobnosti účely hydrologického modelování je spojení vstupních vrstev do přiměřeného množství kategorií. Vhodné členění může být například:  
+\begin{itemize} \itemsep -3pt
+  \item orná půda,
+  \item travní porosty,
+  \item ostatní zeleň,
+  \item vodní plochy,
+  \item sady,
+  \item křovinaté porosty,
+  \item lesní porosty,
+  \item antropogenní a zpevněné plochy,
+  \item zahrady.
+\end{itemize}
+V kategorii zpevněných ploch jsou zařazeny jak oblasti zástavby, tak zpevněné komunikace s přiměřeným rozšířením podle kategorie silnice. 
+\pozn{????Orientační hodnoty poměrné plochy listové (Ppl), potenciální intercepce (Pi), povrchové drsnosti a retence jsou uvedeny v příloze.
+}
 
 Shapefile popisující využití území je ukázán na obrázku~\ref{fig:LU}. Obdobně jako u půd v předchozí sekci je třeba atributovou tabulku tohoto shapefilu doplnit o identifikátor daného využití území. Tento identifikátor odkazuje na charakteristiky daného povrchu definované ve zvláštní tabulce (popsáno v sekci~\ref{sec:upravatabulkyparametru}). Parametry související s využitím území, které vstupující do modelu jsou \acs{PotI} - \acl{PotI} a \acs{Lai} - \acl{Lai}. Jejich konkrétní použití je popsáno v části~\ref{cast:1} toho manuálu. 
 % 

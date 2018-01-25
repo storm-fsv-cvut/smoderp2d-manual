@@ -1,6 +1,27 @@
-\begin{figure}[t!]
-{\small
-\begin{center}
+\documentclass{standalone}
+
+\usepackage[czech]{babel}
+\usepackage[utf8]{inputenc}
+%\usepackage[IL2]{fontenc}
+\usepackage[T1]{fontenc}
+
+% nadefinovane tvary do flow chart diagramu
+% ten jeden po postaven v ./graph/CZflowch
+\usepackage{tikz}
+\usetikzlibrary{shapes.geometric, arrows}
+\tikzstyle{startstop} = [rectangle, rounded corners, minimum width=3cm, minimum height=1cm,text centered, draw=black, fill=red!30]
+\tikzstyle{io} = [trapezium, trapezium left angle=70, trapezium right angle=110, minimum width=1cm, minimum height=1cm, text centered, draw=black, fill=blue!30]
+\tikzstyle{arrow} = [thick,->,>=stealth]
+\tikzstyle{decision} =  [diamond, minimum width=1cm, minimum height=1cm, text centered, text width=2cm, draw=black, fill=green!30, aspect=2]
+\tikzstyle{process} = [rectangle, minimum width=3cm, minimum height=1cm, text centered, text width=3cm, draw=black, fill=orange!30]
+\tikzstyle{guide} = [inner sep=0pt,minimum size=0mm]
+\tikzstyle{line} = [thick]
+
+
+
+
+\begin{document}
+
 \begin{tikzpicture}[node distance=1.5cm]
 
 
@@ -10,12 +31,12 @@
 
 \node (dec1) [decision, below of=dataprep, yshift=-0.5cm] {Konečný čas?};
 
-\node (atm) [process, below of=dec1, yshift=-0.5cm] {Srážka za \acs{dT}};
+\node (atm) [process, below of=dec1, yshift=-0.5cm] {Srážka za $\Delta t$};
 \node (flow) [process, below of=atm] {Plošný odtok};
 
 
-\node (check) [process, right of=flow, xshift=2.0cm] {Kontrola \acs{dT}};
-\node (updatet) [process, right of=atm, xshift=2.0cm] {Aktualizace \acs{dT}};
+\node (check) [process, right of=flow, xshift=2.0cm] {Kontrola $\Delta t$};
+\node (updatet) [process, right of=atm, xshift=2.0cm] {Aktualizace $\Delta t$};
 
 \node (dec2) [decision, below of=flow, yshift=-0.5cm] {{\footnotesize Překročení kritické výšky hladiny?}};
 \node (rillflow) [process, below of=dec2, yshift=-0.5cm] {Rýhový odtok};
@@ -74,8 +95,7 @@
 
 
 \end{tikzpicture}
-\end{center}
-}
-\caption{Flow chart toku programu}
-\label{fig:flowchart}
-\end{figure}
+
+
+
+\end{document}
