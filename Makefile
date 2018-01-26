@@ -19,8 +19,7 @@ clean:
 	rm -f  *.dvi *.bbl *.blg *.aux *.log *.spl *.out *.toc 
 	
 cleanhtml: 
-	rm *.html
-	
+	rm -f html/*.png html/*.html html/*.css
 	
 tar: 
 	tar -hczf $d.tgz *.tex Makefile 1_tex bib config graph img tab *.kilepr 
@@ -38,6 +37,8 @@ tikzdopng:
 	convert -density 600 -limit memory 64MB -limit map 128MB -colorspace RGB img-prep/trojuhelnik.pdf img/trojuhelnik.png
 	$(TEX) -output-directory=img-prep/  img-prep/CZflowch.tex
 	convert -density 600 -limit memory 64MB -limit map 128MB -colorspace RGB img-prep/CZflowch.pdf img/CZflowch.png
+	$(TEX) -output-directory=img-prep/  img-prep/dirtreenapng.tex
+	convert -density 600 -limit memory 64MB -limit map 128MB -colorspace RGB img-prep/dirtreenapng.pdf img/dirtreenapng.png
 	
 html:	cleanhtml
-	htlatex $(latexfile)
+	htlatex $(latexfile) "" "" -dhtml/

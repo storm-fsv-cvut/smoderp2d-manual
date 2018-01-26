@@ -27,3 +27,13 @@ convert -resize 25% img-prep/courantratio2.png img-html/courantratio2.png
 
 
 convert -resize 80% img-prep/instalace.png img-html/instalace.png
+
+
+
+
+# dalsi jsou v img ne v img-prep
+convert -resize 15% img/trojuhelnik.png img-html/trojuhelnik.png
+convert -resize 15% img/lichobeznik.png img-html/lichobeznik.png
+convert -resize 15% img/parabola.png img-html/parabola.png
+convert -resize 15% img/CZflowch.png img-html/CZflowch.png
+convert -resize 15% img/dirtreenapng.png img-html/dirtreenapng.png
