@@ -25,8 +25,6 @@ tar:
 	tar -hczf $d.tgz *.tex Makefile 1_tex bib config graph img tab *.kilepr 
 zip: 
 	zip $d.zip *.tex obr/* tex/*.tex *.bib  *.pdf
-upload:
-	./upload.sh $(latexfile)
 	
 tikzdopng:	
 	$(TEX) -output-directory=img-prep/ img-prep/lichobeznik.tex
@@ -42,3 +40,6 @@ tikzdopng:
 	
 html:	cleanhtml
 	htlatex $(latexfile) "" "" -dhtml/
+	
+preklop:
+	./bash/preklopitreference.sh
