@@ -17,15 +17,14 @@ view :
 	okular $(latexfile).pdf &
 clean: 
 	rm -f  *.dvi *.bbl *.blg *.aux *.log *.spl *.out *.toc 
-	
-cleanhtml: 
-	rm -f html/*.png html/*.html html/*.css
-	
 tar: 
 	tar -hczf $d.tgz *.tex Makefile 1_tex bib config graph img tab *.kilepr 
 zip: 
 	zip $d.zip *.tex obr/* tex/*.tex *.bib  *.pdf
 	
+
+cleanhtml: 
+	rm -f html/*.png html/*.html html/*.css
 tikzdopng:	
 	$(TEX) -output-directory=img-prep/ img-prep/lichobeznik.tex
 	convert -density 600 -limit memory 64MB -limit map 128MB -colorspace RGB img-prep/lichobeznik.pdf img/lichobeznik.png
@@ -43,3 +42,9 @@ html:	cleanhtml
 	
 preklop:
 	./bash/preklopitreference.sh
+
+htmlup:
+	rsync -ave ssh --delete html/manual* sshsmoderp:/home/smoderp/public_html/html/
+	
+pdfup:
+	rsync -ave ssh --delete manual_CZ.pdf sshsmoderp:/home/smoderp/public_html/pdf/
