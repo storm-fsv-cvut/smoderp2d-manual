@@ -1,4 +1,4 @@
-latexfile = manual_CZ
+latexfile = smoderp2d_manual_cz
 
 TEX = pdflatex
 BIB = bibtex
