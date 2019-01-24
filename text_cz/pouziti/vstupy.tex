@@ -201,7 +201,7 @@ Význam jednotlivých veličin je popsán v tabulce~\ref{tab:soilveg}. Při př�
 
 
 
-
+\FloatBarrier
 
 
 
@@ -210,6 +210,13 @@ Význam jednotlivých veličin je popsán v tabulce~\ref{tab:soilveg}. Při př�
 
 
 \subsection{Srážková data} \label{sec:vstupsrazka}
+\begin{figure}
+  \centering
+  \includegraphics[width=0.45\textwidth]{./img/srazka-graf.png}
+  \includegraphics[width=0.5\textwidth]{./img/srazka-soubor.png}
+  \caption{Ukázka srážkových dat. Vlevo: grafická reprezentace zadaných dat (srážka zobrazena v intenzitách; Napravo: ukázka dat v požadovaném formátu).}
+  \label{fig:srazkovysoubor}
+\end{figure}
 
 Dalším vstupem je soubor obsahující srážková data. 
 % 
@@ -223,13 +230,6 @@ Dalším vstupem je soubor obsahující srážková data.
 % 
 % 
 Srážky se zadávají jako textový soubor se dvěma sloupci. V levém sloupci je časový interval v minutách, v pravém sloupci je \textbf{kumulativní úhrn} za daný časový interval v \textbf{milimetrech}. Ukázka jednoduché srážky a grafické reprezentace kumulativních dat je na obrázku~\ref{fig:srazkovysoubor}. První záznam vyjadřuje srážku od času 0 do například 10 minut (obrázek~\ref{fig:srazkovysoubor}). První záznam v textovém souboru musí mít nenulový čas i úhrn. Soubor může obsahovat prázdné řádky, které jsou ignorovány, nebo komentáře začínající \#. 
-\begin{figure}
-  \centering
-  \includegraphics[width=0.45\textwidth]{./img/srazka-graf.png}
-  \includegraphics[width=0.5\textwidth]{./img/srazka-soubor.png}
-  \caption{Ukázka srážkových dat. Vlevo: grafická reprezentace zadaných dat (srážka zobrazena v intenzitách; Napravo: ukázka dat v požadovaném formátu).}
-  \label{fig:srazkovysoubor}
-\end{figure}
 
 
 
