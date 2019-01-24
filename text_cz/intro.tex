@@ -23,4 +23,13 @@ Případné aktualizace, vzorová data, ukázky využití a další informace o 
 
 
 \subsection*{Hydrologické modelování}\addcontentsline{toc}{subsection}{Hydrologické modelování}
+Hydrologické modelování s využitím geografických informačních sytému (GIS) je oblast vyvíjející se od konce 70. let. Hydrologické modelu využívaly (a využívají) technologii operací s geodaty a databázemi, které GIS umožňuje. Přesto jsou některé topologické operace pro hydrologické modely specifické (např. definice rozvodnice povodí, lokalizace/odstranění bezodtokových míst)~\citep{devantier1993}. V zásadě se rozvíjeli modelu povrchového odtoku založené na pravidelném rastru nebo nepravidelné trojúhelníkové síť~\citep{devantier1993}. Rovněž docházelo k vývoji celistvých~\footnote{povodí je rozděleno na sub-povodí která jsou řešena celistvě například metodou SCS křivek} nebo plně distribuovaných modelů~\citep{devantier1993}. S vývojem informační techniky docházelo k větší integraci GIS softwaru a hydrologických modelů. Na obrázku~\ref{fig:klasGISHyd} je ukázána klasifikace propojení GIS a hydrologických modelu na konci 90. let~\citep{sui1999}. Hydrologický model buďto pouze využívá některé funkcionality GIS softwaru (obrázek~\ref{fig:klasGISHyd}a). V opačném případě již vývojář GIS softwaru integruje do systému některé prvky hydrologických modelů (obrázek~\ref{fig:klasGISHyd}b). GIS software a hydrologické model si pouze vyměňují některá data (pomocí binárních nebo ascii souborů (obrázek~\ref{fig:klasGISHyd}c), nebo GIS software umožňuje ve svém prostření vložit uživatelem vytvořené skripty, která pak tvoří hydrologický model (obrázek~\ref{fig:klasGISHyd}b)\footnote{Toto je případ modelu SMODERP2D pokud je spouštěn v prostředí ArcGIS}~\citep{sui1999}. Autoři studie se k těmto postupů staví kriticky. Jejich základní výhradou je, že struktury GIS software vytvářejí bariery pro popis hydrologických dějů, které mají jistá specifika. Konceptualizace pomocí vrstev ať už rastrových  nebo vektorových nemusí vyjadřovat heterogenitu hydrologických dějů nebo užití stochastických modelů. GIS softwary často umožňují pouze limitovanou prací časové proměnlivými ději~\citep{sui1999}.
 
+\begin{figure}
+  \centering
+  \includegraphics[width=\linewidth]{./img/klasifikaceGISHyd.png}
+  \caption{Klasifikace integrace hydrologických modelu podle~\cite{sui1999}}
+  \label{fig:klasGISHyd}
+\end{figure}
+
+Při popisu povrchového odtoku se nejčastěji využívá jedno ze zjednodušení Saint-Venantových rovnic ať už kinematickou (ref) nebo difuzní vlnou (ref). 
