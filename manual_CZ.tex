@@ -1,17 +1,8 @@
-\documentclass[a4paper, 11pt, twoside, draft]{article}
+\documentclass[a4paper, 11pt, twoside]{article}
+% \documentclass[a4paper, 11pt, twoside, draft]{article}
 \input{./config/usepackage}
-%\input{./config/hyphenation}
-%\input{./config/mix} 
 
-
-
-
-
-%
-%
-%
-%
-% pokud toto odkomentujes 
+% pokud toto odkomentujes
 % \newcommand*{\DEBUG}{}
 % zobrazi se poznamky
 % poznamky jsou oznaceny @@@
@@ -22,25 +13,11 @@
    {\color{red}(@@@ #1)}
    \fi
 }
-%
-%
-%
-%
-%
-
-
-
-
 
 \begin{document}
 
-
-
-
-  % titulni strana bez cisla strany
-%   \clearpage\maketitle
   \thispagestyle{empty}
-  \input{./text/title}
+  \input{./text_cz/title}
 
 
 
@@ -52,50 +29,43 @@
   \newpage
   \section*{Seznam zkratek}\addcontentsline{toc}{subsection}{Seznam zkratek}
   \begin{multicols}{2}
-  \input{./text/CZacronyms}
+  \input{./text_cz/CZacronyms}
   \end{multicols}
 
-  %\listoffigures\addcontentsline{toc}{subsection}{Seznam obrázků}
-  %\listoftables\addcontentsline{toc}{subsection}{Seznam tabulek}
+  \listoffigures\addcontentsline{toc}{subsection}{Seznam obrázků}
+  \listoftables\addcontentsline{toc}{subsection}{Seznam tabulek}
 
 
   \newpage
   \pagenumbering{arabic}\setcounter{page}{1}% od uvodu do konce arabske cislice od 1
   \part*{Úvod}
-  \input{./text/2_intro/CZ_manual_intro}
-
-
+  \input{./text_cz/2_intro/CZ_manual_intro}
+% 
+% 
   \newpage
   \part{Popis řešení}\label{cast:1}
-  \input{./text/3_mat_a_met/CZmanual_metody}
-
-
-
-  \FloatBarrier
-  \newpage
-  \setcounter{section}{0}
-  \part{Použití modelu}\label{cast:2}
-  \input{./text/3_mat_a_met/CZsmoderp_postup}
-
-% % % %   \newpage
-% % %   \FloatBarrier   % kvuli pretekani obrazku
-% % % %   \setcounter{section}{0}
-% % % % %   \part{Ukázka výsledků}\label{cast:3}   ted nechcem
-% % % %   \input{./text/4_concl/CZmainconcl}
-
-
+  \input{./text_cz/3_mat_a_met/CZmanual_metody}
+% 
+% 
+% 
+%   \FloatBarrier
 %   \newpage
-  \appendix
-  \section{Příloha: doplňující tabulky a grafy}\label{sec:priloha}
-  \input{./text/3_mat_a_met/CZmanual_Proloha}
-
+%   \setcounter{section}{0}
+%   \part{Použití modelu}\label{cast:2}
+%   \input{./text_cz/3_mat_a_met/CZsmoderp_postup}
+% 
+% 
 %   \appendix
-  \FloatBarrier
-  \section{Příloha: další výstupy}\label{sec:priloha2}
-  \input{./text/3_mat_a_met/CZmanual_Priloha2}
-
-
-  \newpage
+%   \section{Příloha: doplňující tabulky a grafy}\label{sec:priloha}
+%   \input{./text_cz/3_mat_a_met/CZmanual_Proloha}
+% 
+% %   \appendix
+%   \FloatBarrier
+%   \section{Příloha: další výstupy}\label{sec:priloha2}
+%   \input{./text_cz/3_mat_a_met/CZmanual_Priloha2}
+% 
+% 
+%   \newpage
 
   \part*{Seznam použitých zdrojů}
   \bibliographystyle{agsm}
