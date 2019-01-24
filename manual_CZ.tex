@@ -40,7 +40,7 @@
   % titulni strana bez cisla strany
 %   \clearpage\maketitle
   \thispagestyle{empty}
-  \input{./1_text/title}
+  \input{./text/title}
 
 
 
@@ -52,7 +52,7 @@
   \newpage
   \section*{Seznam zkratek}\addcontentsline{toc}{subsection}{Seznam zkratek}
   \begin{multicols}{2}
-  \input{./1_text/CZacronyms}
+  \input{./text/CZacronyms}
   \end{multicols}
 
   %\listoffigures\addcontentsline{toc}{subsection}{Seznam obrázků}
@@ -62,12 +62,12 @@
   \newpage
   \pagenumbering{arabic}\setcounter{page}{1}% od uvodu do konce arabske cislice od 1
   \part*{Úvod}
-  \input{./1_text/2_intro/CZ_manual_intro}
+  \input{./text/2_intro/CZ_manual_intro}
 
 
   \newpage
   \part{Popis řešení}\label{cast:1}
-  \input{./1_text/3_mat_a_met/CZmanual_metody}
+  \input{./text/3_mat_a_met/CZmanual_metody}
 
 
 
@@ -75,24 +75,24 @@
   \newpage
   \setcounter{section}{0}
   \part{Použití modelu}\label{cast:2}
-  \input{./1_text/3_mat_a_met/CZsmoderp_postup}
+  \input{./text/3_mat_a_met/CZsmoderp_postup}
 
 % % % %   \newpage
 % % %   \FloatBarrier   % kvuli pretekani obrazku
 % % % %   \setcounter{section}{0}
 % % % % %   \part{Ukázka výsledků}\label{cast:3}   ted nechcem
-% % % %   \input{./1_text/4_concl/CZmainconcl}
+% % % %   \input{./text/4_concl/CZmainconcl}
 
 
 %   \newpage
   \appendix
   \section{Příloha: doplňující tabulky a grafy}\label{sec:priloha}
-  \input{./1_text/3_mat_a_met/CZmanual_Proloha}
+  \input{./text/3_mat_a_met/CZmanual_Proloha}
 
 %   \appendix
   \FloatBarrier
   \section{Příloha: další výstupy}\label{sec:priloha2}
-  \input{./1_text/3_mat_a_met/CZmanual_Priloha2}
+  \input{./text/3_mat_a_met/CZmanual_Priloha2}
 
 
   \newpage
