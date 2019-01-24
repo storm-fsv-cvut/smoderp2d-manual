@@ -2,3 +2,6 @@
 *.aux
 *.lof
 *.toc
+*.toc
+*.bbl
+*.blg
