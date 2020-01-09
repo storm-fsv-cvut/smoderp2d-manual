@@ -13,54 +13,16 @@ Na odkazu lze stáhnout malíček modelu \smod, tento manuál a další aktuáln
 repozitář na platformě {\tt github.com}, kde je vždy dostupná aktuální verze modelu. 
 
 
-
-% Instalační soubor pro operační systém Windows lze stáhnout na adrese~\href{http://storm.fsv.cvut.cz/cinnost-katedry/volne-stazitelne-vysledky/smoderp/program-smoderp2d/}{storm.fsv.cvut/../smodep/program-smoderp2d/} na odkazu: Instalační EXE soubor pro Windows. Po spuštění souboru se otevře průvodce k instalaci standardního balíčku Python (úvodní obrazovka průvodce je ukázána na obrázku~\ref{fig:pruvodce}). Po ukončení instalace lze model \smod importovat do Python skriptu příkazem {\tt import smoderp2d.main}. 
-
-% Před použitím modelu se doporučuje provést test, který ověří, zda má uživatel nainstalované ostatní používané balíčky. Testovací skript je spolu s testovacími daty ke stažení na adrese ~\href{http://storm.fsv.cvut.cz/cinnost-katedry/volne-stazitelne-vysledky/smoderp/program-smoderp2d/}{storm.fsv.cvut/../smodep/program-smoderp2d/} na odkazu: Test po instalaci. Testovací skript s názvem {\tt importrun.py} uložte do společné složky s testovacími daty {\tt test-data}. Po spuštění skriptu se otevře okno terminálu příkazové řádky. Pokud instalace balíčku \smod neproběhla nebo proběhla chybně, vypíše testovací skript hlášení ukázané na obrázku~\ref{fig:importerror}. Pokud nejsou nainstalované jiné nezbytné balíčky, může se chybové hlášení lišit. Pokud například chybí balíček {\tt numpy}, vypíše se na třetí řádek hlášení: {\tt No module named numpy}. V takovém případě je nutné chybějící balíčky doinstalovat běžným způsobem. Pokud proběhne testovací běh modelu \smod bezchybně, proběhne v okně terminálu hlášení ukázané na obrázku~\ref{fig:testok}. Výstupní soubory jsou pak uložený do složky {\tt test-out} v adresáři kde je uložen skript {\tt importrun.py}. V tento moment je model \smod včetně nezbytných balíčků zdárně nainstalován a je připraven k použití.
-  
-% \begin{figure}[t!]
-%    \centering
-%    \includegraphics[width=0.75\textwidth]{./img/instalace.png}
-%    \caption{Úvodní obrazovka při instalaci balíčku \smod}
-%    \label{fig:pruvodce}
-%  \end{figure}
-% 
-%  \begin{figure}[b!]
-%    \centering
-%    \includegraphics[width=0.75\textwidth]{./img/importerror.png}
-%    \caption{Hlášení při chybné instalaci balíčku modelu \smod}
-%    \label{fig:importerror}
-%  \end{figure}
-% 
-%  \begin{figure}[t!]
-%    \centering
-%    \includegraphics[width=0.75\textwidth]{./img/testok.png}
-%    \caption{Zdárný průběh testovacího skriptu modelu}
-%    \label{fig:testok}
-%  \end{figure}
-  
 \subsection{Použití modelu v ArcGIS}
   
 Současná verze modelu \smod využívá k přípravě vstupních dat výhradně software ArcGIS a Python balíček {\tt arcpy}. 
 Proto je součástí staženého modelu ArcGIS toolbox, který umožní, po nalinkování kořenohového adresáře modelu, 
-spouštět model \smod přímoz prostředí ArcMAP. Spuštěný nalinkovaný a toolbox je ukázán na obrázku \ref{git:toolboxlink}
+spouštět model \smod přímo z prostředí ArcMap. Toolbox je uložen v adresáři {\tt smoderp2d/bin/arcgis}.
+Spuštěný a nalinkovaný toolbox je ukázán na obrázku \ref{fig:toolboxlink}
 Takto připravený toolbox s poskytnutými testovacími daty je možné pustit bez dalších modifikací a následně si prohlédnout 
-výsledky modelu (jednotlivé výstupy modelu jsou popsány dále v textu). 
+výsledky modelu (jednotlivé výstupy modelu jsou popsány dále v textu). Vysvětlení jednotlivých vstupů v celém toolboxu je ukázáno na obrázku~\ref{fig:toolbox}.
 
-Vysvětlení jednotlivých vstupů v celém toolboxu je ukázáno na obrázku~\ref{fig:toolbox}
 
-% Proto je potřeba vytvořit spouštěcí skript, který načte a spustí model \smod. Takový skript může obsahovat následující příkazy:
-% %   \begin{figure}[h!]
-%     \begin{lstlisting}
-%       import smoderp2d.main as sm
-%       sm.run()
-%     \end{lstlisting}
-% %     \caption{Skript pro spuštění modelu \smod}
-% %   \end{figure}
-%   {\tt import smoderp2d.main as sm}  načte balíček modelu \smod. Spuštěním metody  {\tt sm.run()} je spuštěn samotný model. 
-%   
-%   Pro použití modelu v prostředí ArcGIS je třeba vytvořit ArcGIS {\tt toolbox}, kde je nastavený jako zdrojový soubor  uložený spouštěcí skript. Další krok je nastavení parametrů ArcGIS {\tt toolbox} odkud se načítají vstupní parametry do modelu. Pořadí zadávaných hodnot je {\bf nutné dodržet}! Ukázka ArcGIS {\tt toolbox} a vysvětlení parametrů je ukázáno na obrázku~\ref{fig:toolbox}. Připravený ArcGIS {\tt toolbox} a spouštěcí skript lze stáhnout na adrese~\href{http://storm.fsv.cvut.cz/cinnost-katedry/volne-stazitelne-vysledky/smoderp/program-smoderp2d/}{storm.fsv.cvut/../smodep/program-smoderp2d/} na odkazu: Použití modelu v ArcGIS. Detailnější popis vstupních hodnot je v kapitole~\ref{kap:vstupy}.
-  
  \begin{figure}[t!]
     \centering
     \includegraphics[width=1.0\textwidth]{./img/arcmap01.png}
@@ -108,6 +70,43 @@ Vysvětlení jednotlivých vstupů v celém toolboxu je ukázáno na obrázku~\r
 %     \centering
 %     \includegraphics[width=0.75\textwidth]{./img/toolbox.png}
   
+  
+% Instalační soubor pro operační systém Windows lze stáhnout na adrese~\href{http://storm.fsv.cvut.cz/cinnost-katedry/volne-stazitelne-vysledky/smoderp/program-smoderp2d/}{storm.fsv.cvut/../smodep/program-smoderp2d/} na odkazu: Instalační EXE soubor pro Windows. Po spuštění souboru se otevře průvodce k instalaci standardního balíčku Python (úvodní obrazovka průvodce je ukázána na obrázku~\ref{fig:pruvodce}). Po ukončení instalace lze model \smod importovat do Python skriptu příkazem {\tt import smoderp2d.main}. 
+
+% Před použitím modelu se doporučuje provést test, který ověří, zda má uživatel nainstalované ostatní používané balíčky. Testovací skript je spolu s testovacími daty ke stažení na adrese ~\href{http://storm.fsv.cvut.cz/cinnost-katedry/volne-stazitelne-vysledky/smoderp/program-smoderp2d/}{storm.fsv.cvut/../smodep/program-smoderp2d/} na odkazu: Test po instalaci. Testovací skript s názvem {\tt importrun.py} uložte do společné složky s testovacími daty {\tt test-data}. Po spuštění skriptu se otevře okno terminálu příkazové řádky. Pokud instalace balíčku \smod neproběhla nebo proběhla chybně, vypíše testovací skript hlášení ukázané na obrázku~\ref{fig:importerror}. Pokud nejsou nainstalované jiné nezbytné balíčky, může se chybové hlášení lišit. Pokud například chybí balíček {\tt numpy}, vypíše se na třetí řádek hlášení: {\tt No module named numpy}. V takovém případě je nutné chybějící balíčky doinstalovat běžným způsobem. Pokud proběhne testovací běh modelu \smod bezchybně, proběhne v okně terminálu hlášení ukázané na obrázku~\ref{fig:testok}. Výstupní soubory jsou pak uložený do složky {\tt test-out} v adresáři kde je uložen skript {\tt importrun.py}. V tento moment je model \smod včetně nezbytných balíčků zdárně nainstalován a je připraven k použití.
+  
+% \begin{figure}[t!]
+%    \centering
+%    \includegraphics[width=0.75\textwidth]{./img/instalace.png}
+%    \caption{Úvodní obrazovka při instalaci balíčku \smod}
+%    \label{fig:pruvodce}
+%  \end{figure}
+% 
+%  \begin{figure}[b!]
+%    \centering
+%    \includegraphics[width=0.75\textwidth]{./img/importerror.png}
+%    \caption{Hlášení při chybné instalaci balíčku modelu \smod}
+%    \label{fig:importerror}
+%  \end{figure}
+% 
+%  \begin{figure}[t!]
+%    \centering
+%    \includegraphics[width=0.75\textwidth]{./img/testok.png}
+%    \caption{Zdárný průběh testovacího skriptu modelu}
+%    \label{fig:testok}
+%  \end{figure}
+  
+% Proto je potřeba vytvořit spouštěcí skript, který načte a spustí model \smod. Takový skript může obsahovat následující příkazy:
+% %   \begin{figure}[h!]
+%     \begin{lstlisting}
+%       import smoderp2d.main as sm
+%       sm.run()
+%     \end{lstlisting}
+% %     \caption{Skript pro spuštění modelu \smod}
+% %   \end{figure}
+%   {\tt import smoderp2d.main as sm}  načte balíček modelu \smod. Spuštěním metody  {\tt sm.run()} je spuštěn samotný model. 
+%   
+%   Pro použití modelu v prostředí ArcGIS je třeba vytvořit ArcGIS {\tt toolbox}, kde je nastavený jako zdrojový soubor  uložený spouštěcí skript. Další krok je nastavení parametrů ArcGIS {\tt toolbox} odkud se načítají vstupní parametry do modelu. Pořadí zadávaných hodnot je {\bf nutné dodržet}! Ukázka ArcGIS {\tt toolbox} a vysvětlení parametrů je ukázáno na obrázku~\ref{fig:toolbox}. Připravený ArcGIS {\tt toolbox} a spouštěcí skript lze stáhnout na adrese~\href{http://storm.fsv.cvut.cz/cinnost-katedry/volne-stazitelne-vysledky/smoderp/program-smoderp2d/}{storm.fsv.cvut/../smodep/program-smoderp2d/} na odkazu: Použití modelu v ArcGIS. Detailnější popis vstupních hodnot je v kapitole~\ref{kap:vstupy}.
   
   
   

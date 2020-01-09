@@ -1,4 +1,20 @@
-Adresářová struktura programu modelu \smod s popisem nejdůležitějších adresářů a souborů je ukázána na obrázku~\ref{fig:adresare} v příloze~\ref{sec:priloha}. Klíčovým souborem  je  soubor {\tt main.py}, kde se volají dvě základní metody z nichž jedna načte a připraví vstupní data a druhá spustí a provede výpočet.  Dalším důležitým souborem je {\tt src/data\_preparataion.py}, kde probíhá  {\it preprocessing} vstupních dat (v této verzi modelu implementovaný pomocí ArcGIS). Důležitými soubory jsou rovněž soubory {\tt src/runoff.py} a {\tt src/time\_step.py}, kde probíhá samotný výpočet. Soubory v adresáři {\tt src/main\_clasess/} obsahují definici datových struktur jednotlivých řešených dějů a skládají dohromady metody k řešení jednotlivých častí odtoku. Tyto metody jsou pak definované v adresáři {\tt src/processes/}. 
+Adresářová struktura programu modelu \smod s popisem nejdůležitějších adresářů 
+a souborů je ukázána na obrázku~\ref{fig:adresare} v příloze~\ref{sec:priloha}. 
+Klíčovým adresářem je adresář {\tt bin/}, kde jsou uložené gui plug-iny pro použitím modelu v ArcGis
+a dalších GIS softwarech. V adresáři {\tt smoderp2d/} je uložený samotný zdrojová kód modelu. 
+Dalším důležitým adresářem je adresář {\tt smoderp2d/providers}, kde probíhá  
+{\it preprocessing} vstupních dat (v této verzi modelu implementovaný pomocí ArcGIS). 
+Jak je vidět na obrázku~\ref{git:adresare}, a adresáři jsou i plug-iny pro 2 další
+git softwary. V současné verzi modelu zůstává jejich využití pouze experimentální. 
+V adresáři {\tt tests/data} jsou uložena testovací data. Jedná se o data experimentálního
+povodí Nučice, kde katedra KHMKI ČVUT v Praze provádí výzkum srážko-odtokových a erozních procesů
+na měřítku malého zemědělského povodí. Do adresáře {\tt tests/data} jsou rovněž
+uloženy výsledky testovací úlohy. 
+
+% Důležitými soubory jsou rovněž soubory {\tt src/runoff.py} a {\tt src/time\_step.py}, 
+% kde probíhá samotný výpočet. Soubory v adresáři {\tt src/main\_clasess/} obsahují 
+% definici datových struktur jednotlivých řešených dějů a skládají dohromady metody 
+% k řešení jednotlivých častí odtoku. Tyto metody jsou pak definované v adresáři {\tt src/processes/}. 
 
 Program \smod je napsaný v jazyce Python. Python je často používaný GIS softwary jako skriptovací jazyk a jsou pro něj k dispozici knihovny pro efektivní práci s geodaty\footnote{knihovna {\tt arcpy} pro ArcGIS či knihovny {\tt grass.script} pro GRASS GIS}. Programy či skripty napsané pomocí Python jsou spustitelné v prostředí daných GIS softwarů. Současná verze modelu \smod používá Python 2.7.X, který je kompatibilní s ArcGIS 10.X.
 
