@@ -1,8 +1,8 @@
 Uživatel má několik možností, jak získat model \smod. 
 % Pomocí instalačního souboru lze nainstalovat \smod jako běžný Python balíček. 
 Model \smod je poskytován ve formě zdrojového kódu. Je tedy možné spouštět 
-balíček přímo bez instalace. V této části manuálu je popsáno jak získat mode \smod a jak ho použít
-v prostředí ArcGIS.
+balíček přímo, bez instalace. V této části manuálu je popsáno jak a kde si mode  \smod 
+stáhnout  jak ho použít v prostředí ArcGIS.
   
 Model \smod je distribuován pod GPLv3\footnote{Více informací na: 
 \href{https://www.gnu.org/licenses/gpl-3.0.en.html}{gnu.org/licenses/gpl-3.0.en.html}} licencí. 
@@ -16,11 +16,14 @@ repozitář na platformě {\tt github.com}, kde je vždy dostupná aktuální ve
 \subsection{Použití modelu v ArcGIS}
   
 Současná verze modelu \smod využívá k přípravě vstupních dat výhradně software ArcGIS a Python balíček {\tt arcpy}. 
-Proto je součástí staženého modelu ArcGIS toolbox, který umožní, po nalinkování kořenohového adresáře modelu, 
+Proto je součástí staženého modelu ArcGIS toolbox, který umožní, po nalinkování kořenového adresáře modelu do ArcCatalog, 
 spouštět model \smod přímo z prostředí ArcMap. Toolbox je uložen v adresáři {\tt smoderp2d/bin/arcgis}.
-Spuštěný a nalinkovaný toolbox je ukázán na obrázku \ref{fig:toolboxlink}
+Spuštěný a nalinkovaný toolbox v prostředí ArcMap je ukázán na obrázku \ref{fig:toolboxlink}
 Takto připravený toolbox s poskytnutými testovacími daty je možné pustit bez dalších modifikací a následně si prohlédnout 
-výsledky modelu (jednotlivé výstupy modelu jsou popsány dále v textu). Vysvětlení jednotlivých vstupů v celém toolboxu je ukázáno na obrázku~\ref{fig:toolbox}.
+výsledky modelu, které jsou se uloží do adresáře {\tt smoderp/tests/data/output} 
+(jednotlivé výstupy modelu jsou popsány dále v textu). 
+Vysvětlení jednotlivých vstupů v celém toolboxu je ukázáno na obrázku~\ref{fig:toolbox}. Detailnější popis vstupů 
+do modelu a princip jich přípravy je popsán v následující podkapitole. 
 
 
  \begin{figure}[t!]
