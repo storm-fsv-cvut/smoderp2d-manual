@@ -22,23 +22,24 @@
 
 
   \newpage
-  \pagenumbering{roman}\setcounter{page}{1} % obsah a seznamy skratek, obrazku a tabulek rimska cislice od i
-  \tableofcontents\addcontentsline{toc}{subsection}{Obsah}
+  \pagenumbering{roman}
+  \setcounter{page}{1} % obsah a seznamy skratek, obrazku a tabulek rimska cislice od i
+  \tableofcontents\addcontentsline{toc}{section}{Obsah}
 
 
   \newpage
-  \section*{Seznam zkratek}\addcontentsline{toc}{subsection}{Seznam zkratek}
+  \section{Seznam zkratek}%\addcontentsline{toc}{section}{Seznam zkratek}
   \begin{multicols}{2}
   \input{./text_cz/akronymy}
   \end{multicols}
 
-  \listoffigures\addcontentsline{toc}{subsection}{Seznam obrázků}
-  \listoftables\addcontentsline{toc}{subsection}{Seznam tabulek}
+  \listoffigures\addcontentsline{toc}{section}{Seznam obrázků}
+  \listoftables\addcontentsline{toc}{section}{Seznam tabulek}
 
 
   \newpage
   \pagenumbering{arabic}\setcounter{page}{1}% od uvodu do konce arabske cislice od 1
-  \part*{Úvod}
+  \part{Úvod}
   \input{./text_cz/intro}
 % 
 % 
