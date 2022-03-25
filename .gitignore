@@ -5,7 +5,6 @@
 *.toc
 *.bbl
 *.blg
-*.pdf
 *.kilepr
 *.backup
 *.lot
