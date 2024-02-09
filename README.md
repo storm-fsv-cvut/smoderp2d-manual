@@ -1,5 +1,5 @@
 # smoderp2d-manual
-Starter guide and,
+Starter guide, and
 
-Reference manual of the rainfall-runoff/erosion model SMODERP2D (in Czech)
+Reference manual (in Czech) of the rainfall-runoff/erosion model SMODERP2D. 
 
