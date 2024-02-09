@@ -6,7 +6,7 @@
 *.bbl
 *.blg
 *.kilepr
-*.backup
-*.bak
+#*.backup
+#*.bak
 *.lot
 lit
