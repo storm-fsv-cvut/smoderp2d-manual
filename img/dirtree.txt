@@ -1,0 +1,23 @@
+smoderp2d - kořenový adresář modelu smoderp2d
+├── bin - gui pro spouštění modelu v gis 
+│   ├── arcgis - toolbox pro arcgis
+│   ├── grass - balíček pro grass gis 
+│   │   └── r.smoderp2d
+│   └── qgis - plug-in pro qgis
+│       └── smoderp
+├── smoderp2d - samotný model smoderp2d
+│   ├── core  - základní datové struktury modelu
+│   ├── flow_algorithm - definice odrokových algoritmů 
+│   ├── io_functions  - in / out funkce
+│   ├── processes - procesy počítané modelem smoderp2d: plošný/soustředěný odtok, infiltrace, srážka 
+│   ├── providers - obsahuje na platformě závyslé třídy pro přípravu dat 
+│   │   ├── arcgis - příprava dat v arcgis 
+│   │   ├── base - základní třída přípravy dat
+│   │   ├── cmd - třídy pro slouštění modelu v příkazové řádce
+│   │   └── grass - příprava dat v grass gis
+│   ├── stream_functions - funkce souvysející s výpočtem v hydrografické síti
+│   └── tools - obecné nástroje 
+├── tests - testovací data
+│   ├── data - testovací data pro arcgis
+│   └── grassdata - testovací data pro grass gis 
+└── utils - další nástroje
