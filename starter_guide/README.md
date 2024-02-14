@@ -1,5 +1,9 @@
 ###  SMODERP2D - Distributed event-based model for surface and subsurface runoff and erosion  ### 
 
+
+Welcome to the starter guide for the SMODERP2D model. The aim of this text is
+to provide basic information to users on how to run the SMODERP2D model.
+
 ```sh
     @ @ @   @       @     @ @     @ @ @     @ @ @ @  @ @ @    @ @ @
    @        @ @   @ @   @     @   @     @   @        @     @  @     @
@@ -16,9 +20,6 @@
                                \                      @       @     @
                                 \___________________ @ @ @ @  @ @ @
 ```
-
-Welcome to the starter guide for the SMODERP2D model. The aim of this text is
-to provide basic information to users on how to run the SMODERP2D model.
 
 This model was designed to calculate hydrological and erosion processes on
 individual plots or small catchments. The outputs of the model are primarily
