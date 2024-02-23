@@ -10,3 +10,5 @@
 #*.bak
 *.lot
 lit
+*~
+user_guide/site
