@@ -33,6 +33,13 @@ of Landscape Water Conservation, Faculty of Civil Engineering, Czech
 Technical University in Prague. Source code is licenced under GNU GPL
 and available from GitHub repository <https://github.com/storm-fsv-cvut/smoderp2d>.
 
+
+## Installation
+
+- [Installation instructions] (install.md)
+
+
+
 ## Providers
 
 SMODERP2D model relies on a GIS software were the input and output data can be acquired,
