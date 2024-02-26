@@ -42,7 +42,7 @@ modified and visualized. Currently, SMODERP2D supports 3 GIS software as a provi
 
 - [GRASS GIS](grass.md)
 
-- [QGIS](qgis.md)
+- [ArcGIS](arcgis.md)
 
 ## Input data
 
