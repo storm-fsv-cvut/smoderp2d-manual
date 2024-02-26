@@ -38,7 +38,7 @@ and available from GitHub repository <https://github.com/storm-fsv-cvut/smoderp2
 
 - [Installation instructions] (install.md)
 
-The SMODERP2D can be downloaded at @@@.
+The SMODERP2D can be downloaded at <version xy>.
 
 A third-party GIS software needs to be installed to run the model properly.
 The types od GIS softwares and specific install inslutrctions are described
