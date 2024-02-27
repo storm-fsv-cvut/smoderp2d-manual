@@ -33,7 +33,8 @@ of Landscape Water Conservation, Faculty of Civil Engineering, Czech
 Technical University in Prague. Source code is licenced under GNU GPL
 and available from GitHub repository <https://github.com/storm-fsv-cvut/smoderp2d>.
 
-$\frac{1}{2}$
+The surface water level is calculated as:
+$h^{sur}_{i,t} = h^{sur}_{i,t-1} + dt(es_{i,t-1} + \sum_j^m o^{in}_{j,t-1} - inf_{i,t-1} - o^{out}_{i,t-1})$
 
 ## Installation
 
