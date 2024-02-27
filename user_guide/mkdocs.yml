@@ -8,7 +8,7 @@ theme:
 use_directory_urls: false
 nav:
     - 'index.md'
+    - 'install.md'
     - 'qgis.md'
     - 'grass.md'
     - 'arcgis.md'
-    - 'install.md'
