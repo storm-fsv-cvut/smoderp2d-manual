@@ -34,7 +34,7 @@ Technical University in Prague. Source code is licenced under GNU GPL
 and available from GitHub repository <https://github.com/storm-fsv-cvut/smoderp2d>.
 
 
-## Installation
+## Installation 
 
 - [Installation instructions](install.md)
 
