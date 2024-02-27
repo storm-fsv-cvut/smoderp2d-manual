@@ -33,6 +33,7 @@ of Landscape Water Conservation, Faculty of Civil Engineering, Czech
 Technical University in Prague. Source code is licenced under GNU GPL
 and available from GitHub repository <https://github.com/storm-fsv-cvut/smoderp2d>.
 
+$\frac{1}{2}$
 
 ## Installation
 
