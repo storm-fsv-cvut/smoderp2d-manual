@@ -89,6 +89,9 @@ soil characteristics, which are stored in a separate table (see below).
 Physical meanings of these parameters and their implementation in the model are
 in detail described in the reference manual.
 
+For instance, in Czechia soil type data from agricultural land can be obtain
+via <kpp.vumop.cz>.
+
 ![Soil map with soil type identifier](./img/soil_map.png)
 
 
