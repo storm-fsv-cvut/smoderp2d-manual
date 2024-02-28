@@ -128,6 +128,23 @@ The meanings of the individual parameters are described in reference manual.
 
 {{ read_csv('tables/soil_veg_tab.csv', sep=';') }}
 
+### Water course network (Optional)
+
+### Points of interest (Optional)
+
+## Model settings
+
+- total and max dt
+- output directory
+- extra output
+- D8/mfda
+- kinematic/diffuse
+
+
+
+
+
+
 ## Outputs
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis vehicula tempus
