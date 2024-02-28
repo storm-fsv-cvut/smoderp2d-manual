@@ -71,10 +71,10 @@ A digital elevation model (DEM) or digital terrain model (DTM) **raster**
 represents the morphology of the modelled area. Each cell in the raster contains 
 information about the land elevation.
 
-The cell size can vary depending on the size of the modelled area. For the
-SMODERP2D model the minimum cell size should be 2 meters, with an optimum of 5
-meters or more.
-
+The model numerical scheme spatial discrimination is inherited from the DEM
+layer cell size. The cell size can vary depending on the size of the modelled
+area. For the SMODERP2D model the minimum cell size should be 2 meters, with an
+optimum of 5 meters or more.
 
 ![Digital elevation model with basemap](./img/dem_byk.png)
 
@@ -83,7 +83,7 @@ meters or more.
 **Vector** layer with polygons indicating the spatial distribution of soil
 types. 
 
-The figure shows a example of soil map  layer. The attribute table of the layer
+The figure shows a example of soil map layer. The attribute table of the layer
 must include field with soil type identifier. These identifiers correspond to
 soil characteristics, which are stored in a separate table (see below).
 Physical meanings of these parameters and their implementation in the model are
