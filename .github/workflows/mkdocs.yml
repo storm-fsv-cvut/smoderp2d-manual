@@ -18,4 +18,4 @@ jobs:
           key: ${{ github.ref }}
           path: .cache
       - run: pip install -r user_guide/requirements.txt
-      - run: (cd user_guide ; mkdocs gh-deploy --force)
+      - run: (cd user_guide ; sh download_tables.sh; sh mkdocs gh-deploy --force)

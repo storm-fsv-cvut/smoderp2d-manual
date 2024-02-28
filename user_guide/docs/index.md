@@ -81,6 +81,8 @@ semper hendrerit. Suspendisse potenti. Quisque id velit venenatis, venenatis
 tortor vitae, pellentesque augue. Maecenas pretium ligula sed eros semper, sed
 viverra mauris finibus. Nullam eu neque in libero eleifend lacinia.
 
+{{ read_csv('tables/soil_veg_tab.csv', sep=';') }}
+
 ## Outputs
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis vehicula tempus
