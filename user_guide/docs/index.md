@@ -65,6 +65,21 @@ The model incorporates information about the area's topography, soil types and
 land use spatial distribution, rainfall, and, where applicable, the geometry of
 hydrographic network. 
 
+## Digital elevation model (Compulsory)
+
+A digital elevation model (DEM) or digital terrain model (DTM) **raster**
+represents the morphology of the modelled area. Each cell in the raster contains 
+information about the land elevation.
+
+The cell size can vary depending on the size of the modelled area. For the
+SMODERP2D model the minimum cell size should be 2 meters, with an optimum of 5
+meters or more.
+
+For instance, the DTM of the Nucice catchment, the example location, one of the
+test areas, consists of over 125,000 cells at a 5-meter cell size.
+
+
+
 
 ### Soil and landuse parameters
 {{ read_csv('tables/soil_veg_tab.csv', sep=';') }}
