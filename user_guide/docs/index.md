@@ -95,7 +95,21 @@ via <https://kpp.vumop.cz>.
 ![Soil map with soil type identifier](./img/soil_map.png)
 
 
-### Soil and landuse parameters
+### Land use / Land cover (Compulsory)
+
+Similar to soils in the previous section, the attribute table of the land use
+vector layer requires supplementation with an identifier field for land use.
+This identifier corresponds to the surface characteristics defined in a
+separate table (see below).
+
+Physical meanings of the land used parameters and their implementation in the
+model are in detail described in the reference manual.
+
+![Land Cover vector map with land cover identifier](./img/land_cover_byk.png)
+
+
+
+### Soil and landuse parameters table (Compulsory)
 {{ read_csv('tables/soil_veg_tab.csv', sep=';') }}
 
 ## Outputs
