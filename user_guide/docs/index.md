@@ -61,26 +61,12 @@ pip install smoderp2d
 
 ## Input data
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis vehicula tempus
-nunc a vulputate. Cras mauris ligula, ultrices facilisis diam quis, condimentum
-convallis magna. Duis bibendum sapien ac mi tristique volutpat. Morbi dolor mi,
-commodo consectetur ligula id, laoreet porttitor sapien. Nam aliquet posuere ex
-eget tincidunt. Praesent vehicula erat lorem. Pellentesque habitant morbi
-tristique senectus et netus et malesuada fames ac turpis egestas. Aenean sit
-amet elit ac velit placerat blandit dictum faucibus massa. Integer sed dui
-lectus. Aenean non fermentum enim, sed molestie diam. Cras mollis euismod arcu.
-Ut eu elit et eros aliquet elementum. Aenean semper, augue quis tempus dapibus,
-felis ligula sodales justo, sit amet vulputate turpis velit a lorem. Morbi
-auctor dignissim tincidunt. In hac habitasse platea dictumst. Morbi rhoncus
-imperdiet purus quis scelerisque.
+The model incorporates information about the area's topography, soil types and
+land use spatial distribution, rainfall, and, where applicable, the geometry of
+hydrographic network. 
 
-Suspendisse et pulvinar nisi. Nulla bibendum dapibus neque eu vehicula. Aliquam
-erat volutpat. Suspendisse condimentum risus vitae justo porta rutrum. Nam
-rhoncus interdum dolor, id rutrum sem posuere vitae. Morbi tempus metus at
-semper hendrerit. Suspendisse potenti. Quisque id velit venenatis, venenatis
-tortor vitae, pellentesque augue. Maecenas pretium ligula sed eros semper, sed
-viverra mauris finibus. Nullam eu neque in libero eleifend lacinia.
 
+### Soil and landuse parameters
 {{ read_csv('tables/soil_veg_tab.csv', sep=';') }}
 
 ## Outputs
