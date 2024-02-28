@@ -65,7 +65,7 @@ The model incorporates information about the area's topography, soil types and
 land use spatial distribution, rainfall, and, where applicable, the geometry of
 hydrographic network. 
 
-## Digital elevation model (Compulsory)
+### Digital elevation model (Compulsory)
 
 A digital elevation model (DEM) or digital terrain model (DTM) **raster**
 represents the morphology of the modelled area. Each cell in the raster contains 
@@ -78,7 +78,7 @@ meters or more.
 
 ![Digital elevation model with basemap](./img/dem_byk.png)
 
-## Soil type  map (Compulsory)
+### Soil type  map (Compulsory)
 
 **Vector** layer with polygons indicating the spatial distribution of soil
 types. 
@@ -90,7 +90,7 @@ Physical meanings of these parameters and their implementation in the model are
 in detail described in the reference manual.
 
 For instance, in Czechia soil type data from agricultural land can be obtain
-via <kpp.vumop.cz>.
+via <https://kpp.vumop.cz>.
 
 ![Soil map with soil type identifier](./img/soil_map.png)
 
