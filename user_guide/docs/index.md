@@ -75,8 +75,6 @@ The cell size can vary depending on the size of the modelled area. For the
 SMODERP2D model the minimum cell size should be 2 meters, with an optimum of 5
 meters or more.
 
-#For instance, the DTM of the Nucice catchment, the example location, one of the
-#test areas, consists of over 125,000 cells at a 5-meter cell size.
 
 ![Digital elevation model with basemap](./img/dem_byk.png)
 
