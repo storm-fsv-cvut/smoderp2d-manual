@@ -75,10 +75,23 @@ The cell size can vary depending on the size of the modelled area. For the
 SMODERP2D model the minimum cell size should be 2 meters, with an optimum of 5
 meters or more.
 
-For instance, the DTM of the Nucice catchment, the example location, one of the
-test areas, consists of over 125,000 cells at a 5-meter cell size.
+#For instance, the DTM of the Nucice catchment, the example location, one of the
+#test areas, consists of over 125,000 cells at a 5-meter cell size.
 
+![Digital elevation model with basemap](./img/dem_byk.png)
 
+## Soil type  map (Compulsory)
+
+**Vector** layer with polygons indicating the spatial distribution of soil
+types. 
+
+The figure shows a example of soil map  layer. The attribute table of the layer
+must include field with soil type identifier. These identifiers correspond to
+soil characteristics, which are stored in a separate table (see below).
+Physical meanings of these parameters and their implementation in the model are
+in detail described in the reference manual.
+
+![Soil map with soil type identifier](./img/soil_map.png)
 
 
 ### Soil and landuse parameters
