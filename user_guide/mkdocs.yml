@@ -8,7 +8,13 @@ theme:
 use_directory_urls: false
 nav:
     - 'index.md'
-    - 'install.md'
     - 'qgis.md'
     - 'grass.md'
     - 'arcgis.md'
+markdown_extensions:
+  - attr_list
+  - md_in_html
+  - toc:
+      permalink:   
+plugins:
+  - glightbox

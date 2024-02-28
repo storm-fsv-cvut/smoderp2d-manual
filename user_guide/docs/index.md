@@ -33,23 +33,31 @@ of Landscape Water Conservation, Faculty of Civil Engineering, Czech
 Technical University in Prague. Source code is licenced under GNU GPL
 and available from GitHub repository <https://github.com/storm-fsv-cvut/smoderp2d>.
 
+## GIS providers
 
-## Installation 
-
-- [Installation instructions](install.md)
-
-
-
-## Providers
-
-SMODERP2D model relies on a GIS software were the input and output data can be acquired,
-modified and visualized. Currently, SMODERP2D supports 3 GIS software as a provider:
+SMODERP2D model relies on a GIS software were the input and output
+data can be acquired, modified and visualized. Currently, SMODERP2D
+supports three GIS solutions:
 
 - [QGIS](qgis.md)
 
 - [GRASS GIS](grass.md)
 
 - [ArcGIS](arcgis.md)
+
+## Installation instructions
+
+See specific instructions for
+[QGIS](qgis.md#installation-instructions), [GRASS
+GIS](grass.md#installation-instructions) and [ArcGIS
+Pro](arcgis.md#installation-instructions) for details.
+
+In case you will run SMODERP2D without the above mentioned GIS
+solutions, the recommended installation procedure is based on PyPI: <https://pypi.org/project/smoderp2d/>
+
+```sh
+pip install smoderp2d
+```
 
 ## Input data
 
