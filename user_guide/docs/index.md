@@ -110,6 +110,22 @@ model are in detail described in the reference manual.
 
 
 ### Soil and landuse parameters table (Compulsory)
+
+Another compulsory input is a table containing the values of individual soil
+type and land cover parameters. 
+
+
+This table is referenced by combinations of soil type and land use type
+identifiers defined for each polygon in the attribute tables of the vector
+inputs. In the example below, the first column contains parameters for the
+combination of soil type `CA` and land cover `ZP`.
+
+
+The table may be inserted into the model as a text file (.csv).  
+
+The meanings of the individual parameters are described in reference manual.
+
+
 {{ read_csv('tables/soil_veg_tab.csv', sep=';') }}
 
 ## Outputs
