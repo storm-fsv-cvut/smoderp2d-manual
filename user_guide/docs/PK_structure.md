@@ -24,25 +24,32 @@ Data types
 
 ### topologie
 
-data types
+####data types
 
-resolution
+####resolution
+####Data source for Czechia region
+CUZK data source description (may be in the future also descriptino how to get data from CUZK site
+types.
 
 ### land use
 
-data types
+####data types
+####Data source for Czechia region
+ZABAGED data source description (may be in the future also descriptino how to get data from CUZK site ad categoraziton of data + LPIS data source and theirs combination)
 
 ### soil data
 
-data types
-
+####data types
+####Data source for Czechia region
+soil texture a Ks values from rain.fsv.cvut.cz, link to paper aout initial condition or tables directli put here
 ### precipitation
 
-data types and format
-
+####data types and format
+####Data source for Czechia region
+from rain.fsv.cvut.cz - description how get data in QG and HYDRORAIN-6H
 ### table data
 
-data types
+####data types
 
 link to "manual data"
 
@@ -50,7 +57,10 @@ link to "manual data"
 
 ### watercourses and canals
 
-### table data
+#### table data
+####Data source for Czechia region
+**ZABAGED watercourses**
+** dry channel **
 
 # Model computation setup
 
