@@ -90,7 +90,7 @@ Physical meanings of these parameters and their implementation in the model are
 in detail described in the reference manual.
 
 For instance, in Czechia soil type data from agricultural land can be obtain
-via <https://kpp.vumop.cz>.
+via <https://rain.fsv.cvut.cz/pudy>.
 
 ![Soil map with soil type identifier](./img/soil_map.png)
 
