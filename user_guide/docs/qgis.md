@@ -18,4 +18,7 @@ imperdiet purus quis scelerisque.
 * Install QGIS: <https://www.qgis.org/en/site/forusers/download.html>
 * Install **SMODERP2D** plugin from QGIS plugin repository
 
-![Install QGIS SMODERP2D plugin](./img/qgis-plugin-install.png)
+![Install QGIS SMODERP2D plugin](./img/qgis_plugin_install.png)
+
+Open the plugin from the menu ``Plugins`` ➤ ``SMODERP2D`` or from the
+toolbar ![](./img/qgis_plugin_icon.png).
