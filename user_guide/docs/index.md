@@ -66,7 +66,8 @@ land use spatial distribution, rainfall for surface ruonoff processes, where app
 hydrographic network for stream ruonff.
 
 Inputes are describe in goups (see the picture). Left are for QIGS, right for ArcGIS platform.
-![Input data to model SMODERP](./img/AG_model_face.png). Data types of inputes data are descrime in table ** link to the tabel**
+![Input data to model SMODERP](./img/AG_model_face.png).
+Data types of inputes data are descrime in table ** link to the tabel**
 
 ### Digital elevation model (Compulsory)
 
