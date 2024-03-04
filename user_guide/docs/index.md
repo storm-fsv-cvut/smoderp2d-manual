@@ -111,7 +111,8 @@ Physical meanings of the land used parameters and their implementation in the
 model are in detail described in the reference manual.
 
 ![Land Cover vector map with land cover identifier](./img/land_cover_byk.png)
-
+For instance, in Czechia soil type data from agricultural land can be obtain
+from combination of ZABAGED and LPIS data.
 
 
 ### Soil and landuse parameters table (Compulsory)
@@ -149,7 +150,7 @@ unique stream characteristics, which are stored in a separate table (see below).
 Physical meanings of these parameters and their implementation in the model are
 in detail described in the reference manual.
 
-For instance, in Czechia type data can be obtain from ZABAGED data.
+For instance, in Czechia stream shape data can be obtain from ZABAGED data.
 
 ![watercourse with identifier](./img/stream_data.png)
 
@@ -168,9 +169,11 @@ The meanings of the individual parameters are described in reference manual.
 
 The monitored output data are continuously stored at these points. In the case of a point located outside the watercourse, surface runoff data are recorded. If the point is inserted into a watercourse, data are recorded for the relevant watercourse section.
 
-## Model settings
+### Model settings
+** Maximum time step ** - initial time step Δt is the value in seconds. The input parameter is the maximum time step. The time step Δt is adjusted during the calculation according to the numerical stability condition to maintain numerical stability. The length of the time step depends on the surface runoff velocity and the spatial step size (DMT cell size). The maximum time step depends on the desired detail of the output data, especially during a precipitation episode when flow velocities are already lower and when the stabiliti criterion would allow too large a time step. The implementation of the numerical stability are described in reference manual.
 
-- total and max dt
+**Total runnig time** - 
+
 - output directory
 - extra output
 - D8/mfda
