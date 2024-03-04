@@ -59,11 +59,14 @@ solutions, the recommended installation procedure is based on PyPI: <https://pyp
 pip install smoderp2d
 ```
 
-## Input data
+## Input data - sheet flow
 
-The model incorporates information about the area's topography, soil types and
-land use spatial distribution, rainfall, and, where applicable, the geometry of
-hydrographic network. 
+The inputes to the model incorporates information about the area's topography, soil types and
+land use spatial distribution, rainfall for surface ruonoff processes, where applicable, the geometry of
+hydrographic network for stream ruonff.
+
+Inputes are describe in goups (see the picture). Left are for QIGS, right for ArcGIS platform.
+![Input data to model SMODERP](./img/AG_model_face.png). Data types of inputes data are descrime in table ** link to the tabel**
 
 ### Digital elevation model (Compulsory)
 
@@ -73,19 +76,20 @@ information about the land elevation.
 
 The model numerical scheme spatial discrimination is inherited from the DEM
 layer cell size. The cell size can vary depending on the size of the modelled
-area. For the SMODERP2D model the minimum cell size should be 2 meters, with an
-optimum of 5 meters or more.
+area. For the SMODERP2D model the stabile computation  minimum cell size is recommended 2 meters, with an
+optimum of 5 meters. Cell size with total area are crucial parameters for computing time.
 
-![Digital elevation model with basemap](./img/dem_byk.png)
+![Digital elevation model with basemap (ČUZK)](./img/dem_byk.png)
 
 ### Soil type  map (Compulsory)
 
-**Vector** layer with polygons indicating the spatial distribution of soil
+
+**Vector (polygon)** layer with polygons indicating the spatial distribution of soil
 types. 
 
 The figure shows a example of soil map layer. The attribute table of the layer
 must include field with soil type identifier. These identifiers correspond to
-soil characteristics, which are stored in a separate table (see below).
+unique soil and land use characteristics, which are stored in a separate table (see below).
 Physical meanings of these parameters and their implementation in the model are
 in detail described in the reference manual.
 
@@ -98,9 +102,9 @@ via <https://rain.fsv.cvut.cz/pudy>.
 ### Land use / Land cover (Compulsory)
 
 Similar to soils in the previous section, the attribute table of the land use
-vector layer requires supplementation with an identifier field for land use.
-This identifier corresponds to the surface characteristics defined in a
-separate table (see below).
+**vector layer (polygon) ** requires supplementation with an identifier field for land use.
+These identifiers correspond to
+unique soil and land use characteristics, defined in a separate table (see below).
 
 Physical meanings of the land used parameters and their implementation in the
 model are in detail described in the reference manual.
@@ -128,9 +132,40 @@ The meanings of the individual parameters are described in reference manual.
 
 {{ read_csv('tables/soil_veg_tab.csv', sep=';') }}
 
-### Water course network (Optional)
+### Ranfall data
+The next input is a file containing rainfall data. The rainfall is entered as a text file with two columns. The left column is the time interval in minutes, the right column is the cumulative total for the time interval in millimetres. Real measured or design precipitation data can be used in model.
+For instance, in Czechia design precipitation can be obtain via web map services <https://rain.fsv.cvut.cz>.
 
+## Input data - stream flow
+Data for the watercoures are also divided to topology part and data table with unique characteristics of segments
+
+### Water course network (Optional)
+**Vector (polyline)** layer with polylines indicating the thopology of watercourses and/or temporal ditches technical conservation measure).
+The figure shows a example of water courses data. The attribute table of the layer
+must include field with stream type. The watercourse network must be hydrologically correct. Individual end points of the watercourse network must have a different elevation taken from the DMR and at the same time bifurcation of the watercourse cannot be allowed.
+These identifiers correspond to
+unique stream characteristics, which are stored in a separate table (see below).
+Physical meanings of these parameters and their implementation in the model are
+in detail described in the reference manual.
+
+For instance, in Czechia type data can be obtain from ZABAGED data.
+
+![watercourse with identifier](./img/stream_data.png)
+
+### Water course table (Optional)
+
+This table is referenced to unique stream types defined for each polygon in the attribute tables of the watercourse network
+inputs. In the example below, the first column contains parameters ** channel_ID ** for unioque stream part named.
+The table may be inserted into the model as a text file (.csv).  
+The meanings of the individual parameters are described in reference manual.
+
+
+{{ read_csv('tables/stream_shape.csv', sep=';') }}
+## Input data - other inputes and model settings
 ### Points of interest (Optional)
+**Vector (point)** layer with point for detail outputs as hydrographs (describe in outpust). In this points are indicating the thopology of watercourses and/or temporal ditches technical conservation measure).
+
+The monitored output data are continuously stored at these points. In the case of a point located outside the watercourse, surface runoff data are recorded. If the point is inserted into a watercourse, data are recorded for the relevant watercourse section.
 
 ## Model settings
 
