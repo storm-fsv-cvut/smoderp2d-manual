@@ -161,7 +161,7 @@ The table may be inserted into the model as a text file (.csv).
 The meanings of the individual parameters are described in reference manual.
 
 
-{{ read_csv('tables/stream_shape.csv', sep=';') }}
+{{ read_csv('tables/streams_shape.dbf') }}
 ## Input data - other inputes and model settings
 ### Points of interest (Optional)
 **Vector (point)** layer with point for detail outputs as hydrographs (describe in outpust). In this points are indicating the thopology of watercourses and/or temporal ditches technical conservation measure).
