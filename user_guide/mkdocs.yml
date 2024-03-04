@@ -3,6 +3,7 @@ site_url:  https://github.com/storm-fsv-cvut/smoderp2d/
 docs_dir:  docs
 theme: 
   name: readthedocs
+#  logo: img/qgis_plugin_icon.png
   features:
     - content.code.copy
 use_directory_urls: false
