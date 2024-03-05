@@ -9,7 +9,8 @@ theme:
 use_directory_urls: false
 nav:
     - 'index.md'
-    - 'providers_and_recom.md'
+    - 'providers.md'
+    - 'requirements.md'
     - 'inpute_data.md'
     - 'model_setup.md'
     - 'output.md'

@@ -1,6 +1,18 @@
-# Nic
+# Outputs
 
-## Nic
+## Basic outputs
 
-uplny_nic
+### Raster data
+
+### Vector and point data
+
+### Hydrograph data
+
+## Advanced outputs
+
+### Control
+
+### Temp
+
+### Hydrograph data
 
