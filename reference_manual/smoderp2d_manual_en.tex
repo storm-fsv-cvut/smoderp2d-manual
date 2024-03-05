@@ -25,56 +25,22 @@
 \begin{document}
 
   \thispagestyle{empty}
-  \input{./text_cz/title}
+  \input{./text_en/title}
 
   \newpage
   \pagenumbering{roman}
   \setcounter{page}{1} % obsah a seznamy skratek, obrazku a tabulek rimska cislice od i
   \tableofcontents\addcontentsline{toc}{section}{Obsah}
 
-
-  \newpage
-  \section{Seznam zkratek}%\addcontentsline{toc}{section}{Seznam zkratek}
-  \begin{multicols}{2}
-  \input{./text_cz/akronymy}
-  \end{multicols}
-
-  \listoffigures\addcontentsline{toc}{section}{Seznam obrázků}
-  \listoftables\addcontentsline{toc}{section}{Seznam tabulek}
-
-
   \newpage
   \pagenumbering{arabic}\setcounter{page}{1}% od uvodu do konce arabske cislice od 1
-  \part{Úvod}
-  \input{./text_cz/intro}
-% 
-% 
-  \newpage
-  \part{Popis řešení}\label{cast:1}
-  \input{./text_cz/mat_a_met/metody}
-% 
-% 
-
-  \FloatBarrier
-  \newpage
-  \part{Použití modelu}\label{cast:2}
-  \input{./text_cz/pouziti/postup}
-
-
-  \FloatBarrier
-  \appendix
-  \section{Příloha: doplňující tabulky a grafy}\label{sec:priloha}
-  \input{./text_cz/prilohy/priloha_1}
-
-%   \appendix
-%  \section{Příloha: další výstupy}\label{sec:priloha2}
-%  \input{./text_cz/prilohy/priloha_2}
-
+  \part{Introduction}
+  \input{./text_cz/main}
 
   \FloatBarrier
   %\newpage
 
-  \part*{Seznam použitých zdrojů}
+  \part*{References}
   \bibliographystyle{agsm}
   \bibliography{bib/bib}
 
