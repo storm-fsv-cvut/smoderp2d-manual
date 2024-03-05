@@ -1,7 +1,11 @@
 # Inpute data
 Input data are divided to two groups a) for surface runoff processes and b) stream flow
+## Ranfall data
+The next input is a file containing rainfall data. The rainfall is entered as a text file with two columns. The left column is the time interval in minutes, the right column is the cumulative total for the time interval in millimetres. Real measured or design precipitation data can be used in model.
+For instance, in Czechia design precipitation can be obtain via web map services <https://rain.fsv.cvut.cz>.
 
-## Input data - surface flow
+
+## Surface flow
 
 The inputes to the model incorporates information about the area's topography, soil types and
 land use spatial distribution, rainfall for surface ruonoff processes, where applicable, the geometry of
@@ -76,11 +80,8 @@ The meanings of the individual parameters are described in reference manual.
 
 {{ read_csv('tables/soil_veg_tab.csv', sep=';') }}
 
-### Ranfall data
-The next input is a file containing rainfall data. The rainfall is entered as a text file with two columns. The left column is the time interval in minutes, the right column is the cumulative total for the time interval in millimetres. Real measured or design precipitation data can be used in model.
-For instance, in Czechia design precipitation can be obtain via web map services <https://rain.fsv.cvut.cz>.
 
-## Input data - stream flow
+## Stream flow
 Data for the watercoures are also divided to topology part and data table with unique characteristics of segments
 
 ### Water course network (Optional)
@@ -103,9 +104,8 @@ inputs. In the example below, the first column contains parameters ** channel_ID
 The table may be inserted into the model as a text file (.csv).  
 The meanings of the individual parameters are described in reference manual.
 
-
 {{ read_csv('tables/streams_shape.dbf') }}
-## Input data - other inputes and model settings
+## Other input's and model settings
 ### Points of interest (Optional)
 **Vector (point)** layer with point for detail outputs as hydrographs (describe in outpust). In this points are indicating the thopology of watercourses and/or temporal ditches technical conservation measure).
 

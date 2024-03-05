@@ -14,7 +14,7 @@ felis ligula sodales justo, sit amet vulputate turpis velit a lorem. Morbi
 auctor dignissim tincidunt. In hac habitasse platea dictumst. Morbi rhoncus
 imperdiet purus quis scelerisque.
 
-## Installation instructions
+### Installation instructions
 
 * Install QGIS: <https://www.qgis.org/en/site/forusers/download.html>
 * Install **SMODERP2D** plugin from QGIS plugin repository
@@ -24,15 +24,15 @@ imperdiet purus quis scelerisque.
 Open the plugin from the menu ``Plugins`` ➤ ``SMODERP2D`` or from the
 toolbar ![](./img/qgis_plugin_icon.png).
 
-# GRASS GIS Addon
+## GRASS GIS Addon
 
-## Installation instructions
+### Installation instructions
 
 * Install GRASS GIS: <https://grass.osgeo.org/download/>
 * Download latest SMODERP2D version: <https://github.com/storm-fsv-cvut/smoderp2d/releases>
 * Open GRASS Addon located in ``bin/grass/r.smoderp2d/r.smoderp2d.py``
 
-# ArcGIS Pro - Toolbox
+## ArcGIS Pro - Toolbox
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis vehicula tempus
 nunc a vulputate. Cras mauris ligula, ultrices facilisis diam quis, condimentum
@@ -47,7 +47,7 @@ felis ligula sodales justo, sit amet vulputate turpis velit a lorem. Morbi
 auctor dignissim tincidunt. In hac habitasse platea dictumst. Morbi rhoncus
 imperdiet purus quis scelerisque.
 
-## Installation instructions
+### Installation instructions
 
 * Download ArcGIS Pro: <https://pro.arcgis.com/en/pro-app/latest/get-started/download-arcgis-pro.htm>
 * Download latest SMODERP2D version: <https://github.com/storm-fsv-cvut/smoderp2d/releases>
