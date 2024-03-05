@@ -10,6 +10,23 @@
 
 \input{./config/usepackage}
 
+% upraveni casti
+\titleformat
+{\part} % command
+[display] % shape
+{\bfseries\Huge} % format
+{Část \ \thepart\ } % label
+{5ex} % sep
+{
+%     \rule{\textwidth}{1pt}
+%     \vspace{1ex}
+%     \centering
+} % before-code
+[
+\vspace{-2.5ex}%
+\rule{\textwidth}{0.3pt}
+] % after-code
+
 % pokud toto odkomentujes
 % \newcommand*{\DEBUG}{}
 % zobrazi se poznamky
