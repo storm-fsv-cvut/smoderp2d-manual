@@ -1,5 +1,5 @@
-
-# QGIS Plugin
+# Providers and install
+## QGIS - Plugin
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis vehicula tempus
 nunc a vulputate. Cras mauris ligula, ultrices facilisis diam quis, condimentum
@@ -32,7 +32,7 @@ toolbar ![](./img/qgis_plugin_icon.png).
 * Download latest SMODERP2D version: <https://github.com/storm-fsv-cvut/smoderp2d/releases>
 * Open GRASS Addon located in ``bin/grass/r.smoderp2d/r.smoderp2d.py``
 
-# ArcGIS Pro Toolbox
+# ArcGIS Pro - Toolbox
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis vehicula tempus
 nunc a vulputate. Cras mauris ligula, ultrices facilisis diam quis, condimentum
