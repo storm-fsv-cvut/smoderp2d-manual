@@ -1,3 +1,301 @@
+
+
+\section{Introduction and model overview}
+
+\input{text_en/intro.tex}
+
+\section{Rainfall data}
+
+\section{Hillslope hydrology and hydraulics}
+
+    \subsection{Water balance (JJ)}
+
+    %The principle of the model is the cell-by-cell mass balance calculated in each
+    %time step. The change in the water level of the shear flow in any cell in time
+    %is controlled using the equation:  
+    %
+    %[Equation] 
+    %	
+    %(1) 
+    %
+    %where h is the surface water level (L), qin and qout are the sheet overland
+    %inflow and outflow into and out of a given raster cell (L.t−1), ep is the
+    %effective precipitation intensity (the potential precipitation reduced by the
+    %interception zone and the surface retention) (L.t−1), and inf is the
+    %infiltration rate (L.t−1).  
+    %
+    %The SMODERP2D model is subjected to uniform rainfall. The potential
+    %precipitation is reduced due to surface retention. The surface retention is the
+    %storage that needs to be filled before surface runoff can occur.  
+    %
+    %The time derivative in Equation (1) is calculated using an explicit method. The
+    %computation is therefore sensitive to the size of the time step. The size of
+    %the time step is controlled by the Courant criterion, which needs to be kept
+    %below the theoretical maximum value of 1, while the maximum value in practise
+    %is lower than 1 [46,47].  
+    %
+    %The sheet flow water level of the next time t + 1 step in Equation (1) which
+    %incorporates the sum (5) is calculated with the explicit time discretisation
+    %scheme for cell i as: 
+    %
+    %[Equation] 
+    %	
+    %(6) 
+
+        \subsubsection{Interception component (JJ)}
+        \subsubsection{Infiltration component (JJ) }
+
+ 
+            %Phillip infiltration 
+            %
+            %The infiltration component of Equation (1) is calculated by the Philip infiltration equation [44] 
+            %
+            %[Equation], 
+            %	
+            %
+            %(4) 
+            %
+            %where S stands for sorptivity (L.t1/2) and Ks stands for saturation hydraulic conductivity (L.t−1). 
+            %
+            %GA??? 
+
+ 
+
+        \subsubsection{Surface retention component (JJ)}
+    \subsection{Sheet flow hydraulics (JJ)}
+        \subsubsection{Principle of the solution}
+
+             %The kinematic wave approach is used in the calculation of the overland flow. The momentum is therefore expressed by the power-law: 
+             %
+             %[Equation], 
+             %	
+             %
+             %(2) 
+             %
+             %where a and b are power-law parameters. Equation (2) can be expressed in the form of the Manning–Strickler formula 
+             %
+             %[Equation] 
+             %	
+             %
+             %(3) 
+             %
+             %where b and Y are empirical parameters and s is the surface slope (L.L−1). n- Manning roughness coefficient for sheet flow 
+             %
+             % 
+             %
+             %XXX -  tables here or link to user guide 
+
+        \subsubsection{D8/ Multiple flow approach}
+
+            %Two (optional) types of flow direction can be used in the model solution 
+            %
+            %D8 algorithm 
+            %
+            %The flow routing of the surface runoff is based on the D8 one-direction flow algorithm [45]. The inflow to cell i is defined as the sum of the sheet outflows from the adjacent cells, as: 
+            %
+            %[Equation], 
+            %	
+            %
+            %(5) 
+            %
+            %where j is the index of the adjacent up-slope cells identified by the D8 flow algorithm. 
+            %
+            %Multiple flouw algorithm 
+            %
+ 
+
+        \subsection{Rill flow formation and hydraulics (JJ)}
+
+            %For each soil type a critical value of the tangential stress and velocity was
+            %estimated. From this critical value critical height in each cell is calculated.
+            %In principle this is a comparison of the current level and its critical value
+            %at each time interval. If the critical value is exceeded, the calculation
+            %enters the stage at which the rill starts to form. Dimensions of the rills are
+            %calculated from volume of the water exceeding the critical value. Sheet surface
+            %runoff is then calculated using the critical value level instead of current
+            %height in the time step. Once the level has dropped below the critical height
+            %value, the calculation returns only in the calculation of surface runoff. The
+            %resulting rasters of rill flow and speed in the rill are stored in
+            %user-selected directory along with vector shapefile of created rills.
+            %Calculation of the flow in the rill is based on Manning equation. 
+
+        \subsubsection{Rill formation (JJ)}
+
+            %The rill flow is also included in the calculation. In SMODERP2D, rill flow in a
+            %cell occurs if [Equation], where [Equation] is the critical water level. The
+            %water flow corresponding to the water level above the critical water level has
+            %enough energy to start to carry the soil particles and to create a rill. 
+            %
+            %The critical water level [Equation] is calculated as: 
+            %
+            %[Equation] 
+            %	
+            %
+            %(7) 
+            %
+            %where [Equation] is the water corresponding to the critical velocity, and
+            %[Equation] is the water level corresponding to the critical shear stress. As
+            %shown in Formula (7), [Equation] uses several values obtained with a different
+            %approach. This approach is adopted in order to remain on the safe side of the
+            %emergence of a rill, since [Equation] is more sensitive to the sheet flow
+            %velocity and [Equation] is more sensitive to the slope of the soil surface.  
+            %
+            %When the condition [Equation] is fulfilled, a rill starts to develop in a given
+            %cell and [Equation]. In SMODERP2D, the rill is a dynamic component and can
+            %increase as the rill flow increases. The rill volume is controlled by the
+            %volume of water corresponding to the rill water level [Equation] This volume is
+            %calculated as: 
+            %
+            %[Equation] 
+            %	
+            %
+            %(8) 
+            %
+            %where: 
+            %
+            %[Equation] 
+            %	
+            %
+            %(9) 
+            %
+            %P stands for the size of the raster cell. 
+
+        \subsubsection{Rill hydraulics (JJ)}
+
+            %The rill is simplified as a small channel at the soil surface with a
+            %rectangular cross section. The rectangle has width[Equation] and rill height
+            %[Equation]. The rill flow is as calculated with the Manning equation:  
+            %
+            %[Equation] 
+            %	
+            %
+            %(10) 
+            %
+            %where A is the cross section of the rill, [Equation] is the
+            %roughness in the rill, s is the surface slope, and [Equation] is the
+            %hydraulic radius of the rill.  
+            %
+            %As stated above, the size of the rill changes as [Equation] increases. The
+            %scheme of this change is shown in Figure 1. The change in the rill flow varies
+            %with the change in [Equation] in Equation (10), since [Equation] increases, and
+            %therefore [Equation] and [Equation] also increase. The [Equation] for an
+            %increasing rill is calculated as: 
+            %
+            %[Equation] 
+            %	
+            %
+            %(11) 
+            %
+            %where: 
+            %
+            %[Equation] 
+            %	
+            %
+            %(12) 
+            %
+            %  
+            %
+            %Figure 1. Scheme of the rill size during increasing surface runoff. 
+            %
+            %During the recession limb of the hydrograph, the rill size
+            %“locks”, and [Equation] decreases until the rill is empty. The scheme
+            %of the emptying rill and the rill flow is shown in Figure 2. In this
+            %case, [Equation] is calculated from fixed [Equation] and decreasing
+            %[Equation]. [Equation] for decreasing rill flow is calculated as: 
+            %
+            %[Equation] 
+            %	
+            %
+            %(13) 
+            %
+            %where: 
+            %
+            %[Equation] 
+            %	
+            %
+            %(14) 
+            %
+            % 
+            %
+            %Figure 2. Scheme of the rill size during the recession limb of the hydrograph. 
+            %
+            %The total water balance in cell i, where a rill is developed, is calculated as: 
+            %
+            %[Equation] 
+            %	
+            %
+            %(15) 
+            %
+            %where: 
+            %
+            %[Equation] 
+            %	
+            %
+            %(16) 
+            %
+            %[Equation] 
+            %	
+            %
+            %(17) 
+            %
+            % 
+            %
+            %and: 
+            %
+            %[Equation] 
+            %	
+            %
+            %(18) 
+            %
+            % 
+            %
+            %The rill water level is recalculated to cover the whole cell and not just the bottom of the rill, as shown in Figures 1 and 2. 
+
+ 
+
+    \subsection{Kinematic / Diffuse approach}
+
+        \subsubsection{Kinematic}
+        \subsubsection{Diffuse}
+
+    \subsection{Implicit /Explicit approach}
+
+        \subsubsection{Implicit}
+        \subsubsection{Explicit}
+
+    \subsection{Impute data requirements and description}
+
+        \subsubsection{DMR}
+        \subsubsection{Soil}
+        \subsubsection{Land Use}
+        \subsubsection{Soil and Land Use  combination}
+
+\section{Stream hydrology and hydraulics}
+
+    \subsection{Segmentation}
+    \subsection{Kinematic approach - Manning formula}
+    \subsection{Stream shape}
+    \subsection{Stream characteristics}
+
+\section{Impute data requirements and description}
+
+\section{Output data description}
+
+    \subsection{Basic data}
+    \subsection{Hydrograph data}
+    \subsection{Control}
+    \subsection{Temporary data}
+
+\section{Numerical solution and source code description}
+
+    \subsection{Source code architecture}
+    \subsection{NumPy solution}
+    \subsection{Implicit method numerical solution}
+
+\section{Reference}
+
+
+
 \section{Equations}
 
 
