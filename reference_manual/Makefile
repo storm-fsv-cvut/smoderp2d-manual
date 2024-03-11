@@ -1,4 +1,5 @@
 latexfile = smoderp2d_manual_cz
+latexfileen = smoderp2d_manual_en
 
 TEX = pdflatex
 BIB = bibtex
@@ -12,6 +13,12 @@ $(latexfile).pdf: clean
 	$(BIB) $(latexfile)
 	$(TEX) $(latexfile)
 	$(TEX) $(latexfile)
+
+en :
+	$(TEX) $(latexfileen)
+	$(BIB) $(latexfileen)
+	$(TEX) $(latexfileen)
+	$(TEX) $(latexfileen)
 
 view :
 	okular $(latexfile).pdf &

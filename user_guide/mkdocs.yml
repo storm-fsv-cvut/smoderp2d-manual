@@ -11,11 +11,10 @@ nav:
     - 'index.md'
     - 'providers.md'
     - 'requirements.md'
-    - 'inpute_data.md'
+    - 'input_data.md'
     - 'model_setup.md'
     - 'output.md'
     - 'reference_manual.md'
-
 markdown_extensions:
   - attr_list
   - md_in_html

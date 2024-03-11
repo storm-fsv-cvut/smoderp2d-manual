@@ -1,0 +1,65 @@
+\documentclass[a4paper, 11pt]{article}
+%\documentclass[a4paper, 11pt, twoside, draft]{article}
+
+%obecne
+\usepackage[english]{babel}
+\usepackage[utf8]{inputenc}
+
+\usepackage[T1]{fontenc}
+
+
+\input{./config/usepackage}
+
+% upraveni casti
+\titleformat
+{\part} % command
+[display] % shape
+{\bfseries\Huge} % format
+{Part \ \thepart\ } % label
+{5ex} % sep
+{
+%     \rule{\textwidth}{1pt}
+%     \vspace{1ex}
+%     \centering
+} % before-code
+[
+\vspace{-2.5ex}%
+\rule{\textwidth}{0.3pt}
+] % after-code
+
+% pokud toto odkomentujes
+% \newcommand*{\DEBUG}{}
+% zobrazi se poznamky
+% poznamky jsou oznaceny @@@
+%   
+% prikaz na delani poznamek
+\newcommand{\pozn}[1]{
+   \ifdefined\DEBUG
+   {\color{red}(@@@ #1)}
+   \fi
+}
+
+\begin{document}
+
+  \thispagestyle{empty}
+  \input{./text_en/title}
+
+  \newpage
+  \pagenumbering{roman}
+  \setcounter{page}{1} % obsah a seznamy skratek, obrazku a tabulek rimska cislice od i
+  \tableofcontents\addcontentsline{toc}{section}{Table of contents}
+
+  \newpage
+  \pagenumbering{arabic}\setcounter{page}{1}% od uvodu do konce arabske cislice od 1
+  %\part{Introduction}
+  \input{./text_en/main}
+
+  \FloatBarrier
+  %\newpage
+
+  \bibliographystyle{agsm}
+  \bibliography{bib/bib}
+
+\end{document}
+
+
