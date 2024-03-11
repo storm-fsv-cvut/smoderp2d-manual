@@ -84,4 +84,4 @@ Modelated processes
 
 ### Hydrograph data
 # Reference manual
-here refernce (processed manual) will be folow
+here reference (processed manual) will be follow
