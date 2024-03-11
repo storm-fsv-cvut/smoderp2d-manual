@@ -4,11 +4,11 @@ SMODERP2D model relies on a GIS software were the input and output
 data can be acquired, modified and visualized. Currently, SMODERP2D
 supports three GIS solutions:
 
-- [QGIS](qgis.md)
+- [QGIS](https://qgis.org)
 
-- [GRASS GIS](grass.md)
+- [GRASS GIS](https://grass.osgeo.org)
 
-- [ArcGIS](arcgis.md)
+- [ArcGIS](https://www.esri.com/en-us/arcgis/products/arcgis-pro/overview)
 
 ## Installation instructions
 
