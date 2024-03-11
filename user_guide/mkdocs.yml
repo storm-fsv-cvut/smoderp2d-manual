@@ -9,9 +9,13 @@ theme:
 use_directory_urls: false
 nav:
     - 'index.md'
-    - 'qgis.md'
-    - 'grass.md'
-    - 'arcgis.md'
+    - 'providers.md'
+    - 'requirements.md'
+    - 'inpute_data.md'
+    - 'model_setup.md'
+    - 'output.md'
+    - 'reference_manual.md'
+
 markdown_extensions:
   - attr_list
   - md_in_html

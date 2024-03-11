@@ -1,72 +1,7 @@
-# SMODERP2D
-**Distributed event-based model for surface a sheet runoff and for design of erosion control measure**
+# Inpute data
+Input data are divided to two groups a) for surface runoff processes and b) stream flow
 
-Welcome to the user guide for the SMODERP2D model. The aim of this text is
-to provide basic information to users on how to run the SMODERP2D model.
-
-```sh
-    @ @ @   @       @     @ @     @ @ @     @ @ @ @  @ @ @    @ @ @
-   @        @ @   @ @   @     @   @     @   @        @     @  @     @
-   @        @   @   @  @       @  @      @  @        @     @  @     @
-     @ @    @       @  @       @  @      @  @ @ @    @ @ @    @ @ @
-         @  @       @  @       @  @      @  @        @   @    @
-         @  @       @   @     @   @     @   @        @    @   @
-    @ @ @   @       @     @ @     @ @ @     @ @ @ @  @     @  @
-    \  \  /   / /    \   \  /   \  /    /     /       @ @ @   @ @ @
-     \ _\/   /_/      \   \/     \/    /_____/       @     @  @     @
-         \__/          \  /      _\___/                    @  @      @
-             \____      \/      /                         @   @      @
-                  \_____/______/                        @     @      @
-                               \                      @       @     @
-                                \___________________ @ @ @ @  @ @ @
-```
-
-The SMODERP2D model is designed to calculate hydrological and erosion processes on
-individual plots or small catchments. The outputs of the model are primarily
-used to determine runoff conditions in a catchment and obtain parameters for
-runoff and erosion control measures on agricultural land. Additionally,
-the model can assist in designing more complex systems, including sediment
-retention ponds, dry basins, or polders. Its use complies with current
-methods, technical standards, and recommended practices.
-
-The SMODERP2D model is open source project developed by the Department
-of Landscape Water Conservation, Faculty of Civil Engineering, Czech
-Technical University in Prague. Source code is licenced under GNU GPL
-and available from GitHub repository <https://github.com/storm-fsv-cvut/smoderp2d>.
-
-## Abut model
-
-## Users
-
-## Model definition and simulated processes
-
-## GIS providers
-
-SMODERP2D model relies on a GIS software were the input and output
-data can be acquired, modified and visualized. Currently, SMODERP2D
-supports three GIS solutions:
-
-- [QGIS](qgis.md)
-
-- [GRASS GIS](grass.md)
-
-- [ArcGIS](arcgis.md)
-
-## Installation instructions
-
-***See specific instructions for
-[QGIS](qgis.md#installation-instructions), [GRASS
-GIS](grass.md#installation-instructions) and [ArcGIS
-Pro](arcgis.md#installation-instructions) for details***
-
-In case you will run SMODERP2D without the above mentioned GIS
-solutions, the recommended installation procedure is based on PyPI: <https://pypi.org/project/smoderp2d/>
-
-```sh
-pip install smoderp2d
-```
-
-## Input data - sheet flow
+## Input data - surface flow
 
 The inputes to the model incorporates information about the area's topography, soil types and
 land use spatial distribution, rainfall for surface ruonoff processes, where applicable, the geometry of
@@ -89,7 +24,7 @@ optimum of 5 meters. Cell size with total area are crucial parameters for comput
 
 ![Digital elevation model with basemap (ČUZK)](./img/dem_byk.png)
 
-### Soil type  map (Compulsory)
+### Soil characteristics map (Compulsory)
 
 
 **Vector (polygon)** layer with polygons indicating the spatial distribution of soil
@@ -176,42 +111,4 @@ The meanings of the individual parameters are described in reference manual.
 
 The monitored output data are continuously stored at these points. In the case of a point located outside the watercourse, surface runoff data are recorded. If the point is inserted into a watercourse, data are recorded for the relevant watercourse section.
 
-### Model settings
-** Maximum time step ** - initial time step Δt is the value in seconds. The input parameter is the maximum time step. The time step Δt is adjusted during the calculation according to the numerical stability condition to maintain numerical stability. The length of the time step depends on the surface runoff velocity and the spatial step size (DMT cell size). The maximum time step depends on the desired detail of the output data, especially during a precipitation episode when flow velocities are already lower and when the stabiliti criterion would allow too large a time step. The implementation of the numerical stability are described in reference manual.
 
-**Total runnig time** - 
-
-- output directory
-- extra output
-- D8/mfda
-- kinematic/diffuse
-
-
-
-
-
-
-## Outputs
-
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis vehicula tempus
-nunc a vulputate. Cras mauris ligula, ultrices facilisis diam quis, condimentum
-convallis magna. Duis bibendum sapien ac mi tristique volutpat. Morbi dolor mi,
-commodo consectetur ligula id, laoreet porttitor sapien. Nam aliquet posuere ex
-eget tincidunt. Praesent vehicula erat lorem. Pellentesque habitant morbi
-tristique senectus et netus et malesuada fames ac turpis egestas. Aenean sit
-amet elit ac velit placerat blandit dictum faucibus massa. Integer sed dui
-lectus. Aenean non fermentum enim, sed molestie diam. Cras mollis euismod arcu.
-Ut eu elit et eros aliquet elementum. Aenean semper, augue quis tempus dapibus,
-felis ligula sodales justo, sit amet vulputate turpis velit a lorem. Morbi
-auctor dignissim tincidunt. In hac habitasse platea dictumst. Morbi rhoncus
-imperdiet purus quis scelerisque.
-
-Suspendisse et pulvinar nisi. Nulla bibendum dapibus neque eu vehicula. Aliquam
-erat volutpat. Suspendisse condimentum risus vitae justo porta rutrum. Nam
-rhoncus interdum dolor, id rutrum sem posuere vitae. Morbi tempus metus at
-semper hendrerit. Suspendisse potenti. Quisque id velit venenatis, venenatis
-tortor vitae, pellentesque augue. Maecenas pretium ligula sed eros semper, sed
-viverra mauris finibus. Nullam eu neque in libero eleifend lacinia.
-
-## PK struktura
-- [PK_test](PK_structure.md)
