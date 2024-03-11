@@ -1,4 +1,4 @@
-# Inpute data
+# Input data
 Input data are divided to two groups a) for surface runoff processes and b) stream flow
 
 ## Input data - surface flow

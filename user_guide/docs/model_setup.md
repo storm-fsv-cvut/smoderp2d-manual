@@ -7,10 +7,12 @@
 
 
 
-## output directory
+## Output directory
+## D8/MFDA
+
+<!--
 ## extra output
-## D8/mfda
 ## kinematic/diffuse
 ## implicit/explicit computing
-
+-->
 
