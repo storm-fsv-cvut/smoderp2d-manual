@@ -264,7 +264,7 @@
             %
             %P stands for the size of the raster cell. 
 
-        \subsubsection{Rill hydraulics (JJ)}
+        \subsubsection{Rill hydraulics (JJ)}\label{sec:rill}
 
             The rill is simplified as a small channel at the soil surface with
             a rectangular cross section. The rectangle has width $b_{rill}$ and
@@ -569,111 +569,52 @@
         using \texttt{krigov} methof that shown the best convergence.
 
 
-\newpage
-\section*{rejhy}
+        \paragraph{Implicit solution with rill flow} To calculated rill flow the water level in rill and needs to be calculated as 
+        \begin{equation}
+        h_{rill} = \text{max}(h-h_{crit},0),
+            \label{eq:hrill2}
+        \end{equation}
+        where 
+        \begin{equation}
+        h_{sheet} = \text{min}(h,h_{crit}).
+            \label{eq:hsheet2}
+        \end{equation}
+
+        Mannings formula is used to calculated the steady state flow in
+        the rill assuming rill is a channel (description in section \ref{sec:rill}.  
+        $$
+        q_{rill} = 1/n R(h_{rill})^{2/3} i^{1/2}
+        $$
 
 
-$$
-h_{sh} = \text{min}(h,h_{crit})
-$$
-$$
-h_{rl} = \text{max}(h-h_{crit},0)
-$$
-$$
-q_{rl} = 1/n R(h)^{2/3} i^{1/2}
-$$
+        The balance equation becomes
+        $$
+          \frac{h_{i,t} - h_{i,t-1} }{\Delta T} = 
+          es_{i,t} + \sum_j^{inflows} a_jh^{b_{j}}_{sh,j,t}  + \sum_k^{inflows} 1/n_k R_k(h_{rl,k,t})^{2/3} i_k^{1/2} - inf_{i,t} - a_ih^{b_{i}}_{sh,i,t} - 1/n R(h_{rl,i,t})^{2/3} i^{1/2},
+        $$
+        where $h_{sheet}$ and $h_{rill}$ are defined as (\ref{eq:hsheet2}) and  (\ref{eq:hrill2}).
 
+        This formula is rearranged and, for practical purposes, the linear equation is the system is calculated with condition \\
+        for  $h<=h_{crit}$ as
+        \begin{equation}
+            \left(\frac{1}{\Delta T}+a_ih^{b_{i}-1}_{i,t}\right)h_{i,t} -  \sum_j^{inflows} a_jh^{b_{j}-1}_{j,t} h_{j,t} = \frac{h_{i,t-1}}{\Delta} +  es_{i,t} - inf_{i,t}
+        \end{equation}
+        % 
+        % 
+        and for  $h>h_{crit}$ as
+        \begin{multline}
+          \left(\frac{1}{\Delta T}
+          + 1/n_i R_i(h_{i,t}-h_{crit,i})^{2/3} i_i^{1/2} \frac{1}{h_{i,t}}\right)h_{i,t}
+            - \sum_k^{inflows} \left( 1/n_k R_k(h_{k,t}-h_{crit,k})^{2/3} i_k^{1/2}  \frac{1}{h_{k,t}}\right)h_{k,t}
+          =  \\
+          \frac{h_{i,t-1} }{\Delta T}
+          + es_{i,t} 
+          + \sum_j^{inflows} a_j h^{b_{j}}_{crit,j}  
+          - inf_{i,t} 
+          - a_i h^{b_{i}}_{crit,i} 
+        \end{multline}
+    The later system of equations is constructed in similar fashion as the case of (\ref{eq:sys}) and solved with the same solver.
 
-
-$$
-  \frac{h_{i,t} - h_{i,t-1} }{\Delta T} = 
-  es_{i,t} + \sum_j^n a_jh^{b_{j}}_{sh,j,t}  + \sum_k^m 1/n_k R_k(h_{rl,k,t})^{2/3} i_k^{1/2} - inf_{i,t} - a_ih^{b_{i}}_{sh,i,t} - 1/n R(h_{rl,i,t})^{2/3} i^{1/2}
-$$
-
-
-ryhy i plosny
-\begin{multline}
-  \frac{h_{i,t} - h_{i,t-1} }{\Delta T} =
-  es_{i,t} 
-  + \sum_j^n a_j \text{min}(h_{j,t},h_{crit,j})^{b_{j}}  + \sum_k^m 1/n_k R_k(\text{max}(h_{k,t}-h_{crit,k},0))^{2/3} i_k^{1/2} - \\
-  - inf_{i,t} 
-  - a_i\text{min}(h_{i,t},h_{crit,i})^{b_{i}} - 1/n R(\text{max}(h_{i,t}-h_{crit,i},0))^{2/3} i_i^{1/2}
-\end{multline}
-
-
-
-Jakoby jen pokud nastanou rejhy, jinak ta bunka resi rovnici predtim (tu jen bez ryh)
-$$
-  \frac{h_{i,t} - h_{i,t-1} }{\Delta T} =  
-  es_{i,t} 
-  + \sum_j^n a_j h^{b_{j}}_{crit,j}  + \sum_k^m 1/n_k R_k(h_{k,t}-h_{crit,k})^{2/3} i_k^{1/2} 
-  - inf_{i,t} 
-  - a_i h^{b_{i}}_{crit,i} - 1/n_i R_i(h_{i,t}-h_{crit,i})^{2/3} i_i^{1/2}
-$$
-
-
-
-$$
-  \frac{h_{i,t}}{\Delta T}
-  + 1/n_i R_i(h_{i,t}-h_{crit,i})^{2/3} i_i^{1/2}
-  - \sum_k^m 1/n_k R_k(h_{k,t}-h_{crit,k})^{2/3} i_k^{1/2} 
-  =  
-  \frac{h_{i,t-1} }{\Delta T}
-  + es_{i,t} 
-  + \sum_j^n a_j h^{b_{j}}_{crit,j}  
-  - inf_{i,t} 
-  - a_i h^{b_{i}}_{crit,i} 
-$$
-
-nasobim 1 jako $h_{i,t}/h_{i,t}$ nebo  $h_{k,t}/h_{k,t}$, dle potreby
-
-$$
-  \frac{h_{i,t}}{\Delta T}
-  + 1/n_i R_i(h_{i,t}-h_{crit,i})^{2/3} i_i^{1/2} \frac{h_{i,t}}{h_{i,t}}
-  - \sum_k^m 1/n_k R_k(h_{k,t}-h_{crit,k})^{2/3} i_k^{1/2}  \frac{h_{k,t}}{h_{k,t}}
-  =  
-  \frac{h_{i,t-1} }{\Delta T}
-  + es_{i,t} 
-  + \sum_j^n a_j h^{b_{j}}_{crit,j}  
-  - inf_{i,t} 
-  - a_i h^{b_{i}}_{crit,i} 
-$$
-
-
-
-\begin{multline}
-  \left(\frac{1}{\Delta T}
-  + 1/n_i R_i(h_{i,t}-h_{crit,i})^{2/3} i_i^{1/2} \frac{1}{h_{i,t}}\right)h_{i,t}
-  - \sum_k^m \left( 1/n_k R_k(h_{k,t}-h_{crit,k})^{2/3} i_k^{1/2}  \frac{1}{h_{k,t}}\right)h_{k,t}
-  =  \\
-  \frac{h_{i,t-1} }{\Delta T}
-  + es_{i,t} 
-  + \sum_j^n a_j h^{b_{j}}_{crit,j}  
-  - inf_{i,t} 
-  - a_i h^{b_{i}}_{crit,i} 
-\end{multline}
-
-\newpage
-\section*{vysledny set}
-
-pro $h<=h_{crit}$:
-\begin{equation}
-  \left(\frac{1}{\Delta T}+a_ih^{b_{i}-1}_{i,t}\right)h_{i,t} -  \sum_j^m a_jh^{b_{j}-1}_{j,t} h_{j,t} = \frac{h_{i,t-1}}{\Delta} +  es_{i,t} - inf_{i,t}
-\end{equation}
-% 
-% 
-pro $h>h_{crit}$:
-\begin{multline}
-  \left(\frac{1}{\Delta T}
-  + 1/n_i R_i(h_{i,t}-h_{crit,i})^{2/3} i_i^{1/2} \frac{1}{h_{i,t}}\right)h_{i,t}
-  - \sum_k^m \left( 1/n_k R_k(h_{k,t}-h_{crit,k})^{2/3} i_k^{1/2}  \frac{1}{h_{k,t}}\right)h_{k,t}
-  =  \\
-  \frac{h_{i,t-1} }{\Delta T}
-  + es_{i,t} 
-  + \sum_j^n a_j h^{b_{j}}_{crit,j}  
-  - inf_{i,t} 
-  - a_i h^{b_{i}}_{crit,i} 
-\end{multline}
     \subsection{Impute data requirements and description}
 
         \input{tab_en/tabsoilveg.tex}
