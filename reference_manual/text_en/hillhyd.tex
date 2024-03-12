@@ -601,10 +601,10 @@
 
 
         The balance equation becomes
-        $$
+        \begin{dmath}
           \frac{h_{i,t} - h_{i,t-1} }{\Delta T} = 
           es_{i,t} + \sum_j^{inflows} a_jh^{b_{j}}_{sh,j,t}  + \sum_k^{inflows} 1/n_k R_k(h_{rl,k,t})^{2/3} i_k^{1/2} - inf_{i,t} - a_ih^{b_{i}}_{sh,i,t} - 1/n R(h_{rl,i,t})^{2/3} i^{1/2},
-        $$
+        \end{dmath}
         where $h_{sheet}$ and $h_{rill}$ are defined as (\ref{eq:hsheet2}) and  (\ref{eq:hrill2}).
 
         This formula is rearranged and, for practical purposes, the linear equation is the system is calculated with condition \\
@@ -617,7 +617,7 @@
         and for  $h>h_{crit}$ as
         \begin{multline}
           \left(\frac{1}{\Delta T}
-          + 1/n_i R_i(h_{i,t}-h_{crit,i})^{2/3} i_i^{1/2} \frac{1}{h_{i,t}}\right)h_{i,t}
+          + 1/n_i R_i(h_{i,t}-h_{crit,i})^{2/3} i_i^{1/2} \frac{1}{h_{i,t}}\right)h_{i,t} \\
             - \sum_k^{inflows} \left( 1/n_k R_k(h_{k,t}-h_{crit,k})^{2/3} i_k^{1/2}  \frac{1}{h_{k,t}}\right)h_{k,t}
           =  \\
           \frac{h_{i,t-1} }{\Delta T}
@@ -628,6 +628,8 @@
         \end{multline}
     The later system of equations is constructed in similar fashion as the case of (\ref{eq:sys}) and solved with the same solver.
 
+
+    \FloatBarrier
     \subsection{Input data requirements and description}
 
         \input{tab_en/tabsoilveg.tex}
@@ -635,3 +637,15 @@
         \subsubsection{Soil}
         \subsubsection{Land Use}
         \subsubsection{Soil and Land Use  combination}
+            \begin{figure}[!b]
+                \centering
+                \includegraphics[width=0.5\linewidth]{./img-prep/spojenistabulkou.png}
+                \caption{Combination of soil and landuse characteristics}
+                \label{fig:soilvegcreate}
+            \end{figure}
+        
+
+
+
+
+
