@@ -59,13 +59,26 @@
     %(6) 
 
         \subsubsection{Interception component (JJ)}
-            The SMODERP2D model is subjected to uniform rainfall. The potential
-            precipitation is reduced due to surface retention. The surface
-            retention is the storage that needs to be filled before surface
-            runoff can occur. 
-
-            TODO
-
+            The SMODERP2D model is subjected to uniform potential rainfall
+            $ps$.  The potential precipitation is reduced due to vegetation
+            interception to effective precipitation.  To calculated the
+            effective  precipitation the potential interception (amount of
+            water stored on vegetation) and canopy cover (percentage of surface
+            covered by vegetation) needs to be provided.  For time $t$ the
+            effective precipitation is calculated as:
+            $$
+            es_t= 
+              \begin{cases}
+              ps_t(1 - cc),& \text{if} \sum_{\bar{t} = t_{init}}^{t} (ps_{\bar{t}} cc) <= pi\\
+              {ps}_t,             & \text{else}
+            \end{cases}
+            $$
+            where $ps$ is potential precipitation, $cc$ canopy cover, and is
+            $pi$ potential precipitation.  The sum $\sum_{\bar{t} =
+            t_{init}}^{t} (ps_{\bar{t}} cc) <= pi$ indicated the amount of
+            water that accumulated in the interception zone from the initial
+            time to the current computation time.
+            
         \subsubsection{Infiltration component (JJ) }
             The infiltration component of Equation \ref{eq:bilance} is calculated by the
             Philip infiltration equation \citep{philip1957}
