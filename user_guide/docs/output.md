@@ -12,7 +12,7 @@ The results can also be divided into three groups
 
 ### Raster data
 
-- Among the basic results are the maximum or cumulative values of selected quantities:
+Among the basic results are the maximum or cumulative values of selected quantities:
 - cumulative infiltration (cinfil_m3.asc) – the total amount of infiltrated water,
 - cumulative precipitation (crain_m3.asc) – the total amount of precipitation,
 - cumulative surface runoff (cvsur_m3.asc) – the total amount of runoff,
@@ -21,6 +21,8 @@ The results can also be divided into three groups
 ### Vector and point data
 
 folder ./control_point - time series of outpust at monitored points. *The listed quantities at points depend on the type of runoff process. If the point is in the cell of a hydrographic network segment, the values of this entire segment relevant to the runoff process in the watercourse are listed. If the point is in the watershed area, the model gives the values of surface (areal and furrow) runoff for the respective cell*.
+
+Cumulative ruonff a maximal discharge in the edn of streams elements are stored in XXXX, **csv or .txt file** *in case stream flow are calculated*.
 
 XXX - outpoint, stream parts
 

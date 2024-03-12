@@ -74,7 +74,7 @@ The meanings of the individual parameters are described in reference manual.
 
 
 ## Stream flow
-Data for the watercoures are also divided to topology part and data table with unique characteristics of segments
+Data for the watercoures are also divided to topology part and data table with unique characteristics of segments. Stream flow are calculated if the *watercourses shapes* are in the intercect cumputing domain and the relevat *water course table* are added to the model interface.
 
 ### Water course network (Optional)
 **Vector (polyline)** layer with polylines indicating the thopology of watercourses and/or temporal ditches technical conservation measure).
