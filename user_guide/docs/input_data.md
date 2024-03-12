@@ -1,7 +1,7 @@
 # Input data
 Input data are divided to two groups a) for surface runoff processes and b) stream flow
 ## Ranfall data
-The next input is a file containing rainfall data. The rainfall is entered as a text file with two columns. The left column is the time interval in minutes, the right column is the cumulative total for the time interval in millimetres. Real measured or design precipitation data can be used in model.
+The next input is a file containing rainfall data. The rainfall is entered as a *.txt (text file) with two columns. The left column is the time interval in minutes, the right column is the cumulative rain from simulation start in millimetres. Real measured or design precipitation data can be used in model.
 For instance, in Czechia design precipitation can be obtain via web map services <https://rain.fsv.cvut.cz>.
 
 
@@ -24,7 +24,7 @@ information about the land elevation.
 The model numerical scheme spatial discrimination is inherited from the DEM
 layer cell size. The cell size can vary depending on the size of the modelled
 area. For the SMODERP2D model the stabile computation  minimum cell size is recommended 2 meters, with an
-optimum of 5 meters. Cell size with total area are crucial parameters for computing time.
+optimum of 5 meters. Cell size with total area are crucial parameters for computing time (*see reference manual*).
 
 ![Digital elevation model with basemap (ČUZK)](./img/dem_byk.png)
 
@@ -63,15 +63,7 @@ from combination of ZABAGED and LPIS data.
 
 ### Soil and landuse parameters table (Compulsory)
 
-Another compulsory input is a table containing the values of individual soil
-type and land cover parameters. 
-
-
-This table is referenced by combinations of soil type and land use type
-identifiers defined for each polygon in the attribute tables of the vector
-inputs. In the example below, the first column contains parameters for the
-combination of soil type `CA` and land cover `ZP`.
-
+A crucial input for the model is a table that lists the values of model equations parameters (for detail see reference manual). This parameter table is linked to soil type and land use spatial data intersect assigned to each polygon in the vector input's attribute tables. Table as an external input, this attribute table enhances the model's transparency and allows users to modify the input data's characteristics to suit their specific needs.This table is referenced by combinations of soil type and land use type identifiers defined for each polygon in the attribute tables of the vector inputs. In the example below, the first column contains parameters for the combination of soil type `CA` and land cover `ZP`.
 
 The table may be inserted into the model as a text file (.csv).  
 
@@ -88,8 +80,7 @@ Data for the watercoures are also divided to topology part and data table with u
 **Vector (polyline)** layer with polylines indicating the thopology of watercourses and/or temporal ditches technical conservation measure).
 The figure shows a example of water courses data. The attribute table of the layer
 must include field with stream type. The watercourse network must be hydrologically correct. Individual end points of the watercourse network must have a different elevation taken from the DMR and at the same time bifurcation of the watercourse cannot be allowed.
-These identifiers correspond to
-unique stream characteristics, which are stored in a separate table (see below).
+These identifiers correspond to unique stream characteristics, which are stored in a separate table (see below).
 Physical meanings of these parameters and their implementation in the model are
 in detail described in the reference manual.
 
@@ -100,7 +91,7 @@ For instance, in Czechia stream shape data can be obtain from ZABAGED data.
 ### Water course table (Optional)
 
 This table is referenced to unique stream types defined for each polygon in the attribute tables of the watercourse network
-inputs. In the example below, the first column contains parameters ** channel_ID ** for unioque stream part named.
+inputs. In the example below, the first column contains parameters ** channel_ID ** for unioque stream parts.
 The table may be inserted into the model as a text file (.csv).  
 The meanings of the individual parameters are described in reference manual.
 
@@ -108,7 +99,4 @@ The meanings of the individual parameters are described in reference manual.
 ## Other input's and model settings
 ### Points of interest (Optional)
 **Vector (point)** layer with point for detail outputs as hydrographs (describe in outpust). In this points are indicating the thopology of watercourses and/or temporal ditches technical conservation measure).
-
 The monitored output data are continuously stored at these points. In the case of a point located outside the watercourse, surface runoff data are recorded. If the point is inserted into a watercourse, data are recorded for the relevant watercourse section.
-
-
