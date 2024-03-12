@@ -110,7 +110,7 @@
 
         \begin{equation} 
         q = n^{-1} s^Y h^b,
-        \label{eq:powerlaw}
+        \label{eq:powerlaw2}
         \end{equation}
         where n is roughness,  Y  empirical parameter and s is the surface
         slope ($\mathrm{L.L^{-1}}$).
@@ -449,6 +449,7 @@
         \subsubsection{Kinematic}
         \subsubsection{Diffuse}
 
+    \FloatBarrier
     \subsection{Implicit /Explicit approach}
 
         \subsubsection{Explicit}
@@ -464,156 +465,108 @@
             \ref{eq:bilance} which incorporates the sum \ref{eq:d8} is calculated with the
             explicit time discretisation scheme for cell i as:
             \begin{equation} 
-            h_{i,t} =h_{i,t} + \mathrm{d}t (es_{i,t-1} + \sum_j^m q^{out}_{j,t-1}-
+            h_{i,t} =h_{i,t-1} + \mathrm{d}t (es_{i,t-1} + \sum_j^m q^{out}_{j,t-1}-
             inf_{i,t-1} - q^{out}_{i,t-1}),
-            \label{eq:bilance}
+            \label{eq:bilanceexpl}
             \end{equation}
 
-The full inference of the equation is as follows:
-  {\renewcommand{\arraystretch}{3.0} 
-  \begin{tabular}{rc}
 
-  $
-    H_{i,t} = H_{i,t-1} +
-  %   
-    es_{i,t-1}  + exf_{i,t-1} + \sum_{j}^{inflows}H^{in}_{j,t-1} - H^{out}_{i,t-1} - inf_{i.t-1}
-  %  
-  $
-
-  \\
-  &
-  $
-  q = aH^b; \quad a = xI^y; \quad A=\frac{a}{100N}; \quad
-  H^{in,out}_{i,t-1} = A \frac{6\triangle t q_{i,t-1}}{L_i}                                                                        
-  $
-
-  \\
-  
-  
-  
-  
-  
-  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%  
-
-  &
-  $
-    H_{i,t} = H_{i,t-1} +
-  %   
-    es_{i,t-1} + exf_{i,t-1}  +  \sum_{j}^{inflows} \frac{A6\triangle t}{L_j} q_{j,t-1}^{in} - \frac{A6\triangle t}{L_i}q_{i,t-1}^{out} - inf_{i.t-1}
-  %  
-  $
-
-  \\  
-  
-  &
-  $
-  \boxed{
-    H_{i,t} = H_{i,t-1} +
-  %   
-    es_{i,t-1}  + exf_{i,t-1} +  \sum_{j}^{inflows} \frac{A6\triangle t}{L_j} a_jH_{j,t-1}^{b_j} - \frac{A6\triangle t}{L_i}a_iH_{i,t-1}^{b_i} - inf_{i.t-1}
-  %  
-  }
-  $
-  \\  
-  
-  \end{tabular}
-  
-
-  
-  
-  
+           After inserting the equations~(\ref{eq:infiltration})
+           and~(\ref{eq:powerlaw2}) into equation~(\ref{eq:bilanceexpl}) the
+           final explicit form balance equation can be written as:
+            \begin{dmath}
+              h_{i,t} = h_{i,t-1} +
+              es_{i,t-1}  + exf_{i,t-1} +  \sum_{j}^{inflows}
+              1/n_{sheet,j}I_j^{y_j} h_{j,t-1}^{b_j} -
+              1/n_{sheet,i}I_i^{y_i}h_{i,t-1}^{b_i} - ( 
+              \frac{1}{2}S_it_1^{-1/2}+K_{s,i}).
+            \end{dmath}
 
 
         \subsubsection{Implicit}
+        Alternatively the equation (\ref{eq:bilance}) solved using implicit
+        scheme. The right hand side can be expressed in for time $t$ as:
 
-$$
-  \frac{h_{i,t} - h_{i,t-1} }{\Delta T} =  \left(es_{i,t} + \sum_j^m o^{in}_{j,t} - inf_{i,t} - o^{out}_{i,t}\right)
-$$
+        $$
+          \frac{h_{i,t} - h_{i,t-1} }{\mathrm{d} t} =  \left(es_{i,t} +
+          \sum_j^{inflows} q^{in}_{j,t} - inf_{i,t} - q^{out}_{i,t}\right).
+        $$
 
-
-$$
-  \frac{h_{i,t} - h_{i,t-1} }{\Delta T} =  \left(es_{i,t} + \sum_j^m a_jh^{b_{j}}_{j,t} - inf_{i,t} - a_ih^{b_{i}}_{i,t}\right)
-$$
-
-
-
-
-
-$$
-  h_{i,t} - \Delta T es_{i,t} - \Delta T \sum_j^m a_jh^{b_{j}}_{j,t} + \Delta T inf_{i,t} + \Delta T a_ih^{b_{i}}_{i,t} = h_{i,t-1} 
-$$
-
-
-$$
-  h_{i,t} - \Delta T \sum_j^m a_jh^{b_{j}}_{j,t} + \Delta T a_ih^{b_{i}}_{i,t} = h_{i,t-1} + \Delta T es_{i,t} - \Delta T inf_{i,t}
-$$
+        After inserting the power-law equation (\ref{eq:powerlaw}) and several rearrangements the formula above can be written 
+        as follows: 
 
 
 
-$$
-  h_{i,t} + \Delta T a_ih^{b_{i}}_{i,t} - \Delta T \sum_j^m a_jh^{b_{j}}_{j,t}  = h_{i,t-1} + \Delta T es_{i,t} - \Delta T inf_{i,t}
-$$
-
-$$
-  h_{i,t} + \Delta T a_ih^{b_{i}-1}_{i,t} h_{i,t} - \Delta T \sum_j^m a_jh^{b_{j}-1}_{j,t} h_{j,t} = h_{i,t-1} + \Delta T es_{i,t} - \Delta T inf_{i,t}
-$$
-
-
-$$
-  (1+\Delta T a_ih^{b_{i}-1}_{i,t})h_{i,t} - \Delta T \sum_j^m a_jh^{b_{j}-1}_{j,t} h_{j,t} = h_{i,t-1} + \Delta T es_{i,t} - \Delta T inf_{i,t}
-$$
-
-$$
-pro\ i=5\ a\ m\in\{7,8,9\}
-$$
+        $$
+          h_{i,t} + \mathrm{d} t a_ih^{b_{i}-1}_{i,t} h_{i,t} - \mathrm{d} t \sum_j^{inflows}
+          a_jh^{b_{j}-1}_{j,t} h_{j,t} = h_{i,t-1} + \mathrm{d} t es_{i,t} - \mathrm{d}
+          t inf_{i,t}.
+        $$
+        Here the known part of the balance equation (rainfall and infiltration) are at the right hand side. To 
+        extract the unknown $h$ form the power law a following rearrangement was used:
 
 
 
-$$
-  (1+\Delta T a_5h^{b_{5}-1}_{5,t})h_{5,t} - \Delta T ( a_7h^{b_{7}-1}_{7,t} h_{7,t} + a_8h^{b_{8}-1}_{8,t} h_{8,t} + a_9 h^{b_{9}-1}_{9,t} h_{9,t} ) = h_{5,t-1} + \Delta T es_{5,t} - \Delta T inf_{5,t}
-$$
+        \begin{equation}
+          (1+\mathrm{d} t a_ih^{b_{i}-1}_{i,t})h_{i,t} - \mathrm{d} t \sum_j^{inflows}
+          a_jh^{b_{j}-1}_{j,t} h_{j,t} = h_{i,t-1} + \mathrm{d} t es_{i,t} -
+          \mathrm{d} t inf_{i,t}
+          \label{eq:impl}
+        \end{equation}
+
+        From the equation (\ref{eq:impl}) the system of linear equations can be constructed. 
+
+        As example, lets show the equation (\ref{eq:impl}) for
+        $
+        i=5\ \mathrm{and}\ inflows\in\{7,8,9\}
+        $:
+
+
+        \begin{dmath}
+          (1+\Delta T a_5h^{b_{5}-1}_{5,t})h_{5,t} - \Delta T a_7h^{b_{7}-1}_{7,t} h_{7,t} + \Delta T a_8h^{b_{8}-1}_{8,t} h_{8,t} + \Delta T a_9 h^{b_{9}-1}_{9,t} h_{9,t}  = h_{5,t-1} + \Delta T es_{5,t} - \Delta T inf_{5,t}.
+        \end{dmath}
+
+        In matrix form the above equation can be written as:
 
 
 
-$$
-  (1+\Delta T a_5h^{b_{5}-1}_{5,t})h_{5,t} - \Delta T a_7h^{b_{7}-1}_{7,t} h_{7,t} + \Delta T a_8h^{b_{8}-1}_{8,t} h_{8,t} + \Delta T a_9 h^{b_{9}-1}_{9,t} h_{9,t}  = h_{5,t-1} + \Delta T es_{5,t} - \Delta T inf_{5,t}
-$$
+        \begin{dmath}
+        \begin{bmatrix}
+        \hdots& & & & & &  \\
+        \hdots  & 1+\Delta T a_5h^{b_{5}-1}_{5,t} & \hdots &  \Delta T a_7h^{b_{7}-1}_{7,t} &  \Delta T a_8h^{b_{8}-1}_{8,t} & \Delta T a_9 h^{b_{9}-1}_{9,t} & \hdots \\
+        \hdots&  & & & & &  \\
+        \hdots& && &  &  & \\
+        \hdots& && &  &   & \\
+        \hdots& && &  &   & \\
 
+        \end{bmatrix} 
+        % 
+        \begin{bmatrix}
+         \vdots \\
+         h_{5,t} \\
+         \vdots \\
+         h_{7,t} \\
+         h_{8,t} \\
+         h_{9,t} \\
+         \vdots \\
+        %  
+        \end{bmatrix}
+        =
+        \begin{bmatrix}
+         \vdots \\
+        h_{5,t-1} + \Delta T es_{5,t} - \Delta T inf_{5,t} \\
+         \vdots \\
+         \vdots \\
+         \vdots \\
+         \vdots \\
+         \vdots \\
+        %  
+        \end{bmatrix}
+        \label{eq:sys}
+        \end{dmath}
 
-
-\begin{equation}
-\begin{bmatrix}
-\hdots& & & & & &  \\
-\hdots  & 1+\Delta T a_5h^{b_{5}-1}_{5,t} & \hdots &  \Delta T a_7h^{b_{7}-1}_{7,t} &  \Delta T a_8h^{b_{8}-1}_{8,t} & \Delta T a_9 h^{b_{9}-1}_{9,t} & \hdots \\
-\hdots&  & & & & &  \\
-\hdots& && &  &  & \\
-\hdots& && &  &   & \\
-\hdots& && &  &   & \\
-
-\end{bmatrix} 
-% 
-\begin{bmatrix}
- \vdots \\
- h_{5,t} \\
- \vdots \\
- h_{7,t} \\
- h_{8,t} \\
- h_{9,t} \\
- \vdots \\
-%  
-\end{bmatrix}
-=
-\begin{bmatrix}
- \vdots \\
-h_{5,t-1} + \Delta T es_{5,t} - \Delta T inf_{5,t} \\
- \vdots \\
- \vdots \\
- \vdots \\
- \vdots \\
- \vdots \\
-%  
-\end{bmatrix}
-\end{equation}
+        The system (\ref{eq:sys}) is solved using \texttt{scipy} package method \texttt{root}
+        using \texttt{krigov} methof that shown the best convergence.
 
 
 \newpage
