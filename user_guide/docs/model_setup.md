@@ -8,11 +8,16 @@ This specifies the location where the results will be stored. Note that this fol
 ## Extra output
 If the ***extra outputs*** are check, ***temp*** and ***control*** data will be saved in output folder  
 Description of extra output these parameters described in the *reference manual*.
-## Flow direction
-Sheet flow have two options of ***flow direction***. ***D8*** and ***multiple flow direction*** (Seibert, 2013).
-Rill flow used only direct D8 flow direction
-## kinematic/diffuse
-## implicit/explicit computing
+## Computation settings
+### Flow direction
+Sheet flow have two options of ***flow direction***. ***D8*** and ***multiple flow direction (MFD)*** (Seibert, 2013). MFD is defalut
+
+Rill flow used D8 flow direction
+
+In places of watercourses, the water from the surface flow is further conducted through a network of watercourses in individual coswequencess sections.
+
+### kinematic/diffuse
+### implicit/explicit computing
 
 
 SEIBERT J., MCGLYNN B.L.: A new triangular multiple flow direction algorithm for computing upslope areas from gridded digital elevation models [online], <http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.79.977&rep=rep1&type=pdf>
