@@ -1,0 +1,46 @@
+\begin{table}[t]
+ 
+
+ \centering
+ \caption{Hydrograph variable description of surface runoff}
+\label{tab:hydrographs}
+% \begin{tabular}{p{4cm}lp{2cm}p{5cm}}
+\begin{tabular}{llp{0.5\textwidth}}
+  \hline  \hline
+ Column name  & Units      & Description       \\
+  \hline
+%  \hline
+%  Buňka s plošným odtokem:  &&\\
+ time[s]          &   $s$      &  Time from the beginning of simulation          \\
+ deltaTime[s]     &   $s$        &  Current time step length  \\
+ rainfall[m]      &  $m$         &  Rainfall depth in the current time step \\
+%  sheetWaterLevel[m]       &  $m^3$  & Level of sheet flow \\
+%  sheetFlow[m3/s]       &  $m^3s^{-1}$  & Sheet flow rate  \\
+%  sheetVolRunoff[m3]    &  $m^3$     & Runoff volume of sheet flow \\
+%  sheetVolRest[m3]      &  $m^3$     & Remaining volume after sheet flow \\
+%  infiltration[m]         &  $m$      & Infiltration depth in the current time step \\
+%  surfaceRetention[m]    &  $m$      & Height of retained water on surface in the current time step \\
+%  callState                   &  -         & Flow type in the cell (see section~\ref{sec:statpopis})  \\
+%  inflowVol[m3]   &   $m^3$ &  Total inflow volume into the cell \\
+ totalWaterLevel[m]$^*$   &   $m$   &  Total water level  \\
+%  \hline
+%  For concentrated runoff &&\\ \hline
+%  rillWaterLevel[m]         &   $m$       &  Water level in the cell with concentrated runoff* \\
+%  rillWidth[m]        &   $m$ &  Width of the channel formed by concentrated runoff\\
+%  rillFlow[m3/s]      &   $m^3s^{-1}$       &  Flow rate in the channel of concentrated runoff \\
+%  rillVolRunoff[m3]   &   $m^3$  &   Volume of concentrated runoff in the channel \\
+%  rillVolRest[m3]  &  $m^3$ &   Remaining volume after concentrated runoff in the channel  \\
+ surfaceFlow[m3/s]   &  $m^3s{-1}$ & Total flow (sheet + rill)  \\
+ surfaceVolRunoff[m3]   &   $m$  & Total runoff volume (sheet + rill) \\
+%  rillInflowVol[m3] & $m$ &  @@@ Do we need this? It is the inflow volume portion going into the channel, I added it once when I was looking for some error...\\
+%  ratio & $m$ &  Number of time step reductions in channels @@@(Is this for us?)\\
+%  sheetCourantCrit & $m$ &  Courant criterion for sheet flow @@@(Is this for us?)\\
+%  rillCourantCrit & $m$ & Courant criterion for concentrated runoff @@@(Is this for us?) \\
+%  nIter & $m$ &  Number of iterations in calculations of each computational step @@@(I would leave this, it can indicate if something is happening too quickly, which could mean an error in the input data, for example putting 600 mm of rainfall instead of 60 mm) \\
+  \hline
+   \hline
+   \multicolumn{3}{p{\textwidth}}{*The water level for rill runoff is not the actual water level in the channel, but rather the critical height of the water level related to the entire computational cell area}
+ \end{tabular}
+ \end{table}
+
+
