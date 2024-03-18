@@ -31,6 +31,22 @@ XXX - outpoint, stream parts *need be hire*
 
 *table with descrtiption of cols will be hire?*
 
+
+
+Tab: Surface runoff hydrograph variable description
+
+{{ read_csv('tables/basichydrographs.csv', sep=',') }}
+
+\* *The water level for rill runoff is not the actual water level in the
+channel, but rather the critical height of the water level related to the
+entire computational cell area*
+
+
+Tab: Stream hydrograph variable description
+
+{{ read_csv('tables/streamhydrographs.csv', sep=';') }}
+
+
 ## Advanced outputs
 
 Advanced outputs are stored in two specific folders:
