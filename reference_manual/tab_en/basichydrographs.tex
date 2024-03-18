@@ -12,7 +12,7 @@
 %  \hline
 %  Buňka s plošným odtokem:  &&\\
  time[s]          &   $s$      &  Time from the beginning of simulation          \\
- deltaTime[s]     &   $s$        &  Current time step length  \\
+% deltaTime[s]     &   $s$        &  Current time step length  \\
  rainfall[m]      &  $m$         &  Rainfall depth in the current time step \\
 %  sheetWaterLevel[m]       &  $m^3$  & Level of sheet flow \\
 %  sheetFlow[m3/s]       &  $m^3s^{-1}$  & Sheet flow rate  \\
@@ -31,7 +31,7 @@
 %  rillVolRunoff[m3]   &   $m^3$  &   Volume of concentrated runoff in the channel \\
 %  rillVolRest[m3]  &  $m^3$ &   Remaining volume after concentrated runoff in the channel  \\
  surfaceFlow[m3/s]   &  $m^3s{-1}$ & Total flow (sheet + rill)  \\
- surfaceVolRunoff[m3]   &   $m$  & Total runoff volume (sheet + rill) \\
+ cumSurfaceVolRunoff[m3]   &   $m$  & Cumulative runoff volume (sheet + rill) \\
 %  rillInflowVol[m3] & $m$ &  @@@ Do we need this? It is the inflow volume portion going into the channel, I added it once when I was looking for some error...\\
 %  ratio & $m$ &  Number of time step reductions in channels @@@(Is this for us?)\\
 %  sheetCourantCrit & $m$ &  Courant criterion for sheet flow @@@(Is this for us?)\\
