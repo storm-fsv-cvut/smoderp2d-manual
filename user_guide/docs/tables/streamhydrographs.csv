@@ -1,0 +1,8 @@
+
+Column name;Unit;Description
+time[s];s;Time from the beginning of simulation
+deltaTime[s];s;Current time step length
+rainfall[m];m;Rainfall depth in the current time step
+reachWaterLevel[m];m;Level of sheet flow
+reachFlow[m3/s];m^3s^{-1};Sheet flow rate
+cumReachVolRunoff[m3];m^3;Cumulative runoff volume in stream network reach 

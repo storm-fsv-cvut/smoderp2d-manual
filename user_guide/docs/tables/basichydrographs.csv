@@ -1,0 +1,6 @@
+Column name,Units,Description
+time[s],s,Time from the beginning of simulation
+rainfall[m],m,Rainfall depth in the current time step
+totalWaterLevel[m]*,m,Total water level
+surfaceFlow[m3/s],m^3s{-1},Total flow (sheet + rill)
+cumSurfaceVolRunoff[m3],m,Cumulative runoff volume (sheet + rill)
