@@ -35,7 +35,14 @@ XXX - outpoint, stream parts *need be hire*
 
 Tab: Surface runoff hydrograph variable description
 
-{{ read_csv('tables/basichydrographs.csv', sep=',') }}
+| **Column name**               | **Units**   | **Description**                            |
+|-------------------------------|-------------|--------------------------------------------|
+| **time\[s\]**                 | s           | Time from the beginning of simulation      |
+| **rainfall\[m\]**             | m           | Rainfall depth in the current time step    |
+| **totalWaterLevel\[m\]\***    | m           | Total water level                          |
+| **surfaceFlow\[m3/s\]**       | m^3s\{\-1\} | Total flow \(sheet \+ rill\)               |
+| **cumSurfaceVolRunoff\[m3\]** | m           | Cumulative runoff volume \(sheet \+ rill\) |
+
 
 \* *The water level for rill runoff is not the actual water level in the
 channel, but rather the critical height of the water level related to the
@@ -44,7 +51,15 @@ entire computational cell area*
 
 Tab: Stream hydrograph variable description
 
-{{ read_csv('tables/streamhydrographs.csv', sep=';') }}
+| **Column name**             | **Unit**     | **Description**                                  |
+|-----------------------------|--------------|--------------------------------------------------|
+| **time\[s\]**               | s            | Time from the beginning of simulation            |
+| **deltaTime\[s\]**          | s            | Current time step length                         |
+| **rainfall\[m\]**           | m            | Rainfall depth in the current time step          |
+| **reachWaterLevel\[m\]**    | m            | Level of sheet flow                              |
+| **reachFlow\[m3/s\]**       | m^3s^\{\-1\} | Sheet flow rate                                  |
+| **cumReachVolRunoff\[m3\]** | m^3          | Cumulative runoff volume in stream network reach |
+
 
 
 ## Advanced outputs
