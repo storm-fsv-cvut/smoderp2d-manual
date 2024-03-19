@@ -24,6 +24,18 @@ imperdiet purus quis scelerisque.
 Open the plugin from the menu ``Plugins`` ➤ ``SMODERP2D`` or from the
 toolbar ![](./img/qgis_plugin_icon.png).
 
+### Usage
+
+![](./img/qgis_plugin_spatial_data.png)
+
+![](./img/qgis_plugin_model_parameters.png)
+
+![](./img/qgis_plugin_comp_options.png)
+
+![](./img/qgis_plugin_advanced.png)
+
+![](./img/qgis_plugin_history.png)
+
 ## GRASS GIS Addon
 
 ### Installation instructions
