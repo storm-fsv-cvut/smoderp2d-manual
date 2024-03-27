@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><link rel="canonical" href="https://github.com/storm-fsv-cvut/smoderp2d/model_setup.html" />
+      <link rel="shortcut icon" href="img/favicon.ico" />
+    <title>Model settings - SMODERP2D</title>
+    <link rel="stylesheet" href="css/theme.css" />
+    <link rel="stylesheet" href="css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "Model settings";
+        var mkdocs_page_input_path = "model_setup.md";
+        var mkdocs_page_url = "/storm-fsv-cvut/smoderp2d/model_setup.html";
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+ <link href="assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
+    html.glightbox-open { overflow: initial; height: 100%; }
+    .gslide-title { margin-top: 0px; user-select: text; }
+    .gslide-desc { color: #666; user-select: text; }
+    .gslide-image img { background: white; }</style> <script src="assets/javascripts/glightbox.min.js"></script></head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href="index.html" class="icon icon-home"> SMODERP2D
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="./search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="index.html">SMODERP2D</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="providers.html">Providers and install</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="requirements.html">Requirements</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="input_data.html">Input data</a>
+                </li>
+              </ul>
+              <ul class="current">
+                <li class="toctree-l1 current"><a class="reference internal current" href="model_setup.html">Model settings</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#maximum-time-step">Maximum time step</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#total-runnig-time">Total runnig time</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#output-directory">Output directory</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#extra-output">Extra output</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#computation-settings">Computation settings</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#flow-direction">Flow direction</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#kinematicdiffuse">kinematic/diffuse</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#implicitexplicit-computing">implicit/explicit computing</a>
+    </li>
+        </ul>
+    </li>
+    </ul>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="output.html">Outputs</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="reference_manual.html">Reference manual</a>
+                </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">SMODERP2D</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="index.html" class="icon icon-home" aria-label="Docs"></a></li>
+      <li class="breadcrumb-item active">Model settings</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="model-settings">Model settings<a class="headerlink" href="#model-settings" title="Permanent link"></a></h1>
+<h2 id="maximum-time-step">Maximum time step<a class="headerlink" href="#maximum-time-step" title="Permanent link"></a></h2>
+<p>initial time step Δt is the value in seconds. The input parameter is the maximum time step. The time step Δt is adjusted during the calculation according to the numerical stability condition to maintain numerical stability. The length of the time step depends on the surface runoff velocity and the spatial step size (DMT cell size). The maximum time step depends on the desired detail of the output data, especially during a precipitation episode when flow velocities are already lower and when the stabiliti criterion would allow too large a time step. The implementation of the numerical stability are described in reference manual.</p>
+<h2 id="total-runnig-time">Total runnig time<a class="headerlink" href="#total-runnig-time" title="Permanent link"></a></h2>
+<p>The total simulation time refers to the duration over which the model performs its computations. To calculate the overall runoff volume accurately, the simulation duration must extend beyond the period of the simulated rainfall event. Conversely, to determine the peak flow rate, the simulation time may be shorter than the precipitation duration.</p>
+<h2 id="output-directory">Output directory<a class="headerlink" href="#output-directory" title="Permanent link"></a></h2>
+<p>This specifies the location where the results will be stored. Note that this folder may be overwritten.</p>
+<h2 id="extra-output">Extra output<a class="headerlink" href="#extra-output" title="Permanent link"></a></h2>
+<p>If the <strong><em>extra outputs</em></strong> are check, <strong><em>temp</em></strong> and <strong><em>control</em></strong> data will be saved in output folder<br />
+Description of extra output these parameters described in the <em>reference manual</em>.</p>
+<h2 id="computation-settings">Computation settings<a class="headerlink" href="#computation-settings" title="Permanent link"></a></h2>
+<h3 id="flow-direction">Flow direction<a class="headerlink" href="#flow-direction" title="Permanent link"></a></h3>
+<p>Sheet flow have two options of <strong><em>flow direction</em></strong>. <strong><em>D8</em></strong> and <strong><em>multiple flow direction (MFD)</em></strong> (Seibert, 2013). MFD is defalut</p>
+<p>Rill flow used D8 flow direction</p>
+<p>In places of watercourses, the water from the surface flow is further conducted through a network of watercourses in individual coswequencess sections.</p>
+<h3 id="kinematicdiffuse">kinematic/diffuse<a class="headerlink" href="#kinematicdiffuse" title="Permanent link"></a></h3>
+<h3 id="implicitexplicit-computing">implicit/explicit computing<a class="headerlink" href="#implicitexplicit-computing" title="Permanent link"></a></h3>
+<p>SEIBERT J., MCGLYNN B.L.: A new triangular multiple flow direction algorithm for computing upslope areas from gridded digital elevation models [online], <a href="http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.79.977&amp;rep=rep1&amp;type=pdf">http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.79.977&amp;rep=rep1&amp;type=pdf</a></p>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="input_data.html" class="btn btn-neutral float-left" title="Input data"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="output.html" class="btn btn-neutral float-right" title="Outputs">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href="input_data.html" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="output.html" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script src="js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = ".";</script>
+    <script src="js/theme_extra.js"></script>
+    <script src="js/theme.js"></script>
+      <script src="search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+<script>const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});</script></body>
+</html>
