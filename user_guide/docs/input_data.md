@@ -65,13 +65,14 @@ from combination of ZABAGED and LPIS data.
 
 A crucial input for the model is a table that lists the values of model equations parameters (for detail see reference manual). This parameter table is linked to soil type and land use spatial data intersect assigned to each polygon in the vector input's attribute tables. Table as an external input, this attribute table enhances the model's transparency and allows users to modify the input data's characteristics to suit their specific needs.This table is referenced by combinations of soil type and land use type identifiers defined for each polygon in the attribute tables of the vector inputs. In the example below, the first column contains parameters for the combination of soil type `CA` and land cover `ZP`.
 
-The table may be inserted into the model as a text file (.csv).  
+The table may be inserted into the model as a text file (.csv) or (better) as .dbf file.  
 
 The meanings of the individual parameters are described in reference manual.
 
 
 {{ read_csv('tables/soil_veg_tab.csv', sep=';') }}
 
+<https://smoderp.fsv.cvut.cz/smoderp2d> - tables for diffrent initial conditions.
 
 ## Stream flow
 Data for the watercoures are also divided to topology part and data table with unique characteristics of segments. Stream flow are calculated if the *watercourses shapes* are in the intercect cumputing domain and the relevat *water course table* are added to the model interface.
