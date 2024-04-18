@@ -6,12 +6,12 @@ calculation.
 The time step Δt is adjusted during the calculation according
 Courant–Friedrichs–Lewy condition to maintain numerical stability.  The length
 of the time step depends on the surface runoff velocity and the spatial step
-size (DMT cell size). Therefore a **maximum time** step needs to be set.
+size (DMT cell size). Therefore a ***maximum time*** step needs to be set.
 
 The maximum time step depends on the desired detail of the output data,
 especially during a precipitation episode when flow velocities are already
 lower and when the stability criterion would allow too large a time step. The
-implementation of the numerical stability are described in reference manual.
+implementation of the numerical stability are described in *reference manual*.
 
 The maxim time step is also user as the initial time step in the calculation.
 
@@ -28,7 +28,7 @@ folder may be overwritten.
 
 ## Extra output
 If the ***extra outputs*** are check, ***temp*** and ***control*** data will be
-saved in output folder  Description of extra output these parameters described
+saved in output folder.  Description of extra output these parameters described
 in the *reference manual*.
 
 ## Computation settings
