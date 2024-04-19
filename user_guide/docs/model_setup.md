@@ -29,7 +29,7 @@ folder may be overwritten.
 ## Extra output
 If the ***extra outputs*** are check, ***temp*** and ***control*** data will be
 saved in output folder.  Description of extra output these parameters described
-in the *reference manual*.
+in the **reference manual**.
 
 ## Computation settings
 
@@ -54,12 +54,21 @@ through a network based on the topology of the network.
 
 ### kinematic/diffuse
 The model is capable of using kinematic and diffusive wave approximation of
-Saint-Venant equations. ***Kinematic wave*** assumes that the slope of the water
-level is parallel to the slope of the soil surface. This approximation is valid 
-for step slopes 
+Saint-Venant equations. 
+
+***Kinematic wave*** approximation assumes that the slope of the water level is
+parallel to the slope of the soil surface. This approximation is valid for step
+slopes where substantial  backwater effect does not occur. 
+
+The ***diffusive wave***  is driven be the waster surface slope.  Therefore,
+the backwater effect is considered. The diffusive wave approximation should be
+used if flat areas as presented in the model. However, the diffusive wave is
+computationally more intensive compared to kinematic wave approximation. 
+
+For further details about the flow equation approximation see the **reference manual**.
 
 ### implicit/explicit computing
-*reference manual*.
+**reference manual**.
 
 SEIBERT J., MCGLYNN B.L.: A new triangular multiple flow direction algorithm
 for computing upslope areas from gridded digital elevation models [online],
