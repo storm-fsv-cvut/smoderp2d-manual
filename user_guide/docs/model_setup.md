@@ -52,7 +52,7 @@ direction.
 In watercourse network, the water from the surface flow is further conducted
 through a network based on the topology of the network. 
 
-### kinematic/diffuse
+### Shallow water flow equation approximation
 The model is capable of using kinematic and diffusive wave approximation of
 Saint-Venant equations. 
 
@@ -65,9 +65,37 @@ the backwater effect is considered. The diffusive wave approximation should be
 used if flat areas as presented in the model. However, the diffusive wave is
 computationally more intensive compared to kinematic wave approximation. 
 
-For further details about the flow equation approximation see the **reference manual**.
+For more details about the flow equation approximation see the **reference manual**.
 
-### implicit/explicit computing
+### Time derivative approximation
+The SMODERP2D calculated the transient water flow. Therefore, the time
+derivation takes place in the equation. To solve the time approach of the
+solution this derivative has to be solved. 
+
+Ordinary **explicit** and **implicit**  Euler methods are implemented in
+SMODERP2D to solve the time derivative. Essentially, the **explicit** method is
+usually more sensitive to time step length. In some cases this can cause slow
+down in the computation due to extremely small time step. The **implicit**
+generally allows the model to run with larger time step (depends on the model
+setting). However, a system of linear equations need to be constructed and
+solved. 
+
+Usually, the advantages of implicit method are pronounced for computation of
+larger areas (>1,000,000 cells in raster). For smaller areas (<1,000 cells in
+raster) the computation time to construct and solve the system of linear
+equations slows down the computation and explicit method may lead to shorter
+computational time, especially for larger raster cell size (>5 m). 
+
+No general recommendation to which method to use can be given. It is
+recommended to test both methods for each specific model, if necessary. 
+
+For further information about the explicit and implicit Euler method  see the
+**reference manual**.
+
+
+
+
+
 **reference manual**.
 
 SEIBERT J., MCGLYNN B.L.: A new triangular multiple flow direction algorithm
