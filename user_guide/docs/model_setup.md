@@ -34,17 +34,33 @@ in the *reference manual*.
 ## Computation settings
 
 ### Flow direction
-Sheet flow have two options of ***flow direction***. ***D8*** and ***multiple
-flow direction (MFD)*** (Seibert, 2013). MFD is defalut
+Flow direction algorithm controls to which computational cell or cells the 
+water flows i.e. it controls the flow routing. Two options are implemented in SMODERP2D:
 
-Rill flow used D8 flow direction
+- ***D8*** a single direction flow algorithm  and 
+- ***multiple flow direction***  algorithm (MFD) (Seibert, 2013).
 
-In places of watercourses, the water from the surface flow is further conducted
-through a network of watercourses in individual coswequencess sections.
+If D8 is set, all of the sheet flow volume from a cell flows to single adjacent
+cell with highest elevation difference.  If MFD is set,  the sheet flow volume
+from a cell is divided proportionally to multiple downslope cells based on
+elevation difference between cells.
+
+**note**: If MDF is set, the rill flow  still uses the D8 flow direction
+algorithm since the rill is essentially small channel that can only flow in on
+direction. 
+
+In watercourse network, the water from the surface flow is further conducted
+through a network based on the topology of the network. 
 
 ### kinematic/diffuse
+The model is capable of using kinematic and diffusive wave approximation of
+Saint-Venant equations. ***Kinematic wave*** assumes that the slope of the water
+level is parallel to the slope of the soil surface. This approximation is valid 
+for step slopes 
 
 ### implicit/explicit computing
+*reference manual*.
 
-
-SEIBERT J., MCGLYNN B.L.: A new triangular multiple flow direction algorithm for computing upslope areas from gridded digital elevation models [online], <http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.79.977&rep=rep1&type=pdf>
+SEIBERT J., MCGLYNN B.L.: A new triangular multiple flow direction algorithm
+for computing upslope areas from gridded digital elevation models [online],
+<http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.79.977&rep=rep1&type=pdf>
