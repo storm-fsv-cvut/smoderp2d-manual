@@ -7,11 +7,12 @@
     \frac{\mathrm{d}h}{\mathrm{d}t} = es_{i,t-1} + q^{in}_{i,t-1} - inf_{i,t-1} - q^{out}_{i,t-1},
     \label{eq:bilance}
     \end{equation}
-    where h is the surface water level (L), qin and qout are the sheet overland
-    inflow and outflow into and out of a given raster cell ($\mathrm{L.t^{-1}}$),
-    ep is the effective precipitation intensity (the potential precipitation
-    reduced by the interception zone and the surface retention)
-    ($\mathrm{L.t^{-1}}$), and inf is the infiltration rate ($\mathrm{L.t^{-1}}$).
+    where h is the surface water level (L), $\mathrm{q^{in}}$ and
+    $\mathrm{q^{out}}$ are the sheet overland inflow and outflow into and out
+    of a given raster cell ($\mathrm{L.t^{-1}}$), ep is the effective
+    precipitation intensity (the potential precipitation reduced by the
+    interception zone and the surface retention) ($\mathrm{L.t^{-1}}$), and inf
+    is the infiltration rate ($\mathrm{L.t^{-1}}$).
 
 
     %The principle of the model is the cell-by-cell mass balance calculated in each
@@ -48,8 +49,8 @@
 
         \subsubsection{Interception component (JJ)}
             The SMODERP2D model is subjected to uniform potential rainfall
-            $ps$.  The potential precipitation is reduced due to vegetation
-            interception to effective precipitation.  To calculated the
+            $\mathrm{ps}$. The potential precipitation is reduced to effective
+            precipitation due to vegetation interception.  To calculated the
             effective  precipitation the potential interception (amount of
             water stored on vegetation) and canopy cover (percentage of surface
             covered by vegetation) needs to be provided.  For time $t$ the
@@ -63,40 +64,38 @@
             $$
             where $ps$ is potential precipitation, $cc$ canopy cover, and is
             $pi$ potential precipitation.  The sum $\sum_{\bar{t} =
-            t_{init}}^{t} (ps_{\bar{t}} cc) <= pi$ indicated the amount of
+            t_{init}}^{t} (ps_{\bar{t}} cc) <= pi$ indicates the amount of
             water that accumulated in the interception zone from the initial
             time to the current computation time.
             
         \subsubsection{Infiltration component (JJ) }
-            The infiltration component of Equation \ref{eq:bilance} is calculated by the
-            Philip infiltration equation \citep{philip1957}
+            The infiltration component in Equation \ref{eq:bilance} is
+            calculated by the Philip infiltration equation \citep{philip1957}
             \begin{equation} 
-            inf = \frac{1}{2}St^{-1/2}+K_s.
+            inf = \frac{1}{2}St^{-1/2}+K_s,
             \label{eq:infiltration}
-            \end{equation} 
+            \end{equation}
             where S stands for sorptivity ($\mathrm{L.t^{1/2}}$) and ($\mathrm{K_s}$)
             stands for saturation hydraulic conductivity ($\mathrm{L.t^{-1}}$).
 
-            {\bf GA}
- 
-            %Phillip infiltration 
-            %
-            %The infiltration component of Equation (1) is calculated by the
-            %Philip infiltration equation [44] 
-            %
-            %[Equation], 
-            %	
-            %
-            %(4) 
-            %
-            %where S stands for sorptivity (L.t1/2) and Ks stands for
-            %saturation hydraulic conductivity (L.t−1). 
-            %
-            %GA??? 
-
- 
-
         \subsubsection{Surface retention component (JJ)}
+            The last component that control the runoff generation is surface retention. 
+            Surface retention represents depressions in the soil surface that needs to 
+            be filled by water before the surface runoff can be produced. 
+            Each cell in the model has defined a surface retention. Only the
+            actual rainfall reduced by infiltration can start to fill the
+            retention capacity. The water level that remains at the soil
+            surface and can contribute to runoff is calculated for time $t$ as:
+            $$
+            h_{sr}= 
+            \begin{cases}
+                0             & \text{if}\quad \sum_{\bar{t} = t_{init}}^{t} (es_{\bar{t}} - inf_{\bar{t}} <= sr\\
+                es_t - inf_t  & \text{else}\quad \sum_{\bar{t} = t_{init}}^{t} (es_{\bar{t}} - inf_{\bar{t}} > sr.
+            \end{cases}
+            $$
+            Where $h_{sr}$ stands for  the water level that contributes to
+            runoff (hereafter called $h$) and $sr$ for surface retention [$L$].
+
     \subsection{Sheet flow hydraulics (JJ)}
         The kinematic wave approach is used in the calculation of the overland flow.
         The momentum is therefore expressed by the power-law:
