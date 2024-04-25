@@ -58,7 +58,7 @@
             $$
             es_t= 
               \begin{cases}
-              ps_t(1 - cc),& \text{if} \sum_{\bar{t} = t_{init}}^{t} (ps_{\bar{t}} cc) <= pi\\
+                  ps_t(1 - cc),& \text{if}\quad \sum_{\bar{t} = t_{init}}^{t} (ps_{\bar{t}} cc) <= pi\\
               {ps}_t,             & \text{else}
             \end{cases}
             $$
@@ -89,8 +89,8 @@
             $$
             h_{sr}= 
             \begin{cases}
-                0             & \text{if}\quad \sum_{\bar{t} = t_{init}}^{t} (es_{\bar{t}} - inf_{\bar{t}} <= sr\\
-                es_t - inf_t  & \text{else}\quad \sum_{\bar{t} = t_{init}}^{t} (es_{\bar{t}} - inf_{\bar{t}} > sr.
+                0             & \text{if}\quad \sum_{\bar{t} = t_{init}}^{t} (es_{\bar{t}} - inf_{\bar{t}}) <= sr\\
+                es_t - inf_t  & \text{else}
             \end{cases}
             $$
             Where $h_{sr}$ stands for  the water level that contributes to
@@ -114,32 +114,8 @@
         \end{equation}
         where n is roughness,  Y  empirical parameter and s is the surface
         slope ($\mathrm{L.L^{-1}}$).
-        \subsubsection{Principle of the solution}
 
-             %The kinematic wave approach is used in the calculation of the
-             %overland flow. The momentum is therefore expressed by the power-law: 
-             %
-             %[Equation], 
-             %	
-             %
-             %(2) 
-             %
-             %where a and b are power-law parameters. Equation (2) can be
-             %expressed in the form of the Manning–Strickler formula 
-             %
-             %[Equation] 
-             %	
-             %
-             %(3) 
-             %
-             %where b and Y are empirical parameters and s is the surface slope
-             %(L.L−1). n- Manning roughness coefficient for sheet flow 
-             %
-             % 
-             %
-             %XXX -  tables here or link to user guide 
-
-        \subsubsection{D8/ Multiple flow approach}
+        \subsubsection{Surface flow routing}
 
             The flow routing of the surface runoff is based on the D8 one-direction flow
             algorithm \cite{o1984extraction}. The inflow to cell i is defined as the sum of the sheet
