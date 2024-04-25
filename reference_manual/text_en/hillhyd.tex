@@ -90,11 +90,15 @@
             The inflow to cell i is defined as the sum of the sheet outflows
             from the adjacent cells, as:
             \begin{equation} 
-            q^{in}_{i,t-1} = \sum_j^m q^{out}_{j,t-1}, 
+            q^{in}_{i,t-1} = \sum_j^m w_j q^{out}_{j,t-1}, 
             \label{eq:d8}
             \end{equation} 
-            where j is the index of the adjacent up-slope cells identified by the D8 or MFD
-            algorithm. 
+            where $j$ is the index of the adjacent up-slope inflow cell, $m$ is
+            a set of all inflows calls that is determined by  D8 or MFD
+            algorithm. $w_j$ is weight factor  that is set to 1 for D8
+            algorithm where all runoff water comes from single cell. For MFD
+            the $w_i$ can become any number between 0 and 1 representing
+            respective contribution of the cell to the inflow. 
 
             The rill flow (described in the following section) can only be
             based on the D8. The sheet flow can by calculated using D8 or MFD
