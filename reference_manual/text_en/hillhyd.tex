@@ -91,7 +91,7 @@
             from the adjacent cells, as:
             \begin{equation} 
             q^{in}_{i,t-1} = \sum_j^m w_j q^{out}_{j,t-1}, 
-            \label{eq:d8}
+            \label{eq:routing}
             \end{equation} 
             where $j$ is the index of the adjacent up-slope inflow cell, $m$ is
             a set of all inflows calls that is determined by  D8 or MFD
@@ -254,9 +254,27 @@
  
 
     \subsection{Kinematic / Diffuse approach}
-    
+        The model is capable of utilizing both kinematic and diffusive wave
+        approximations of the Saint-Venant equations. The kinematic wave
+        approximation assumes that the slope of the water level is parallel to
+        the slope of the soil surface. This approximation is valid for steep
+        slopes where substantial backwater effects do not occur. In contrast,
+        the diffusive wave approximation is driven by the water surface slope,
+        thereby considering the backwater effect. The diffusive wave
+        approximation should be used if flat(er) areas can be expected in the
+        model. The diffusive wave is computationally more intensive compared to
+        the kinematic wave approximation.
 
-    \FloatBarrier
+        In SMODERP2D, the two approaches are represented by varying the set $m$
+        and weights $w_j$ in equation (\ref{eq:routing}). In the kinematic wave
+        approach, the set $m$ and weights $w_j$ are calculated from the DEM at
+        the beginning of the calculation and remain constant throughout the
+        calculation. In the diffusive wave approach, the set $m$ and weights
+        $w_j$ are based on the water level $h$ above the reference level $z$.
+        The $m$ and $w_i$ are recalculated at each time step because $h$
+        changes during the calculation.
+
+    
     \subsection{Implicit /Explicit approach}
 
         \subsubsection{Explicit}
@@ -269,7 +287,7 @@
 
 
             The sheet flow water level of the next time t + 1 step in Equation
-            \ref{eq:bilance} which incorporates the sum \ref{eq:d8} is calculated with the
+            \ref{eq:bilance} which incorporates the sum \ref{eq:routing} is calculated with the
             explicit time discretisation scheme for cell i as:
             \begin{equation} 
             h_{i,t} =h_{i,t-1} + \mathrm{d}t (es_{i,t-1} + \sum_j^m q^{out}_{j,t-1}-
