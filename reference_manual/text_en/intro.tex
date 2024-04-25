@@ -1,3 +1,18 @@
+The SMODERP2D episodic rainfall-runoff/erosion model  based on a 1D profile
+version, in which the surface runoff and the erosion were typically calculated
+in several 1D profiles representing the main flow path in the hillslope
+\cite{Dostal2000}.  The current generation of the SMODERP2D model is pixel
+distributed, and is implemented in python in order to be compatible with most
+GIS software. The development is presented on the github platform at
+\href{https://github.com/storm-fsv-cvut/smoderp2d}{github.com/storm-fsv-cvut/smoderp2d}.
+
+The SMODERP2D model is primarily designed for surface runoff and erosion
+computation. The surface flow routing in the model is based on the digital
+elevation model (DEM). For simplicity, DEM also controls the spatial
+discretization of the model. 
+
+
+\subsection{Model history and development}
 The model has been developed since the end of the 1980´s at the Department of
 Irrigation, Drainage and Land Scape Engineering, Faculty of Civil Engineering,
 Czech Technical University in Prague. The first version of 1D model, designed
@@ -23,23 +38,9 @@ identical vegetation and soil types. At the moment, the new model divides the
 aforesaid sections into individual elements of the same length and forms thus
 an interphase terminated by testing and comparison to the distributed 2D model. 
 
-The 2D model which is developed in last year is prepared as an extension to the
-GIS softwares QGIS, ArcGIS. The actual script to calculate the 2D model was
-elaborated in Python and used in each providers.  
+The 2D model which was developed in last years is prepared as an extension to
+the GIS software such as grass, QGIS, or  ArcGIS. The computational core of the
+2D model was elaborated in Python and used in each provider. Additionally,
+mathematical description of rill flow and flow in watercourses were implemented
+in the 2D model version.
 
-Mathematical calculation of surface runoff, the 2D model also includes a
-submodel implemented for runoff calculation in the rills. 
-
-The SMODERP2D episodic rainfall-runoff/erosion model was used for the
-investiga-tion presented here. The 2D model is based on a 1D profile version,
-in which the surface runoff and the erosion were typically calculated in
-several 1D profiles representing the main flow path in the hillslope [20]. The
-current generation of the SMODERP2D model is pixel distributed, and is
-implemented in python in order to be compatible with most GIS software. The
-development is presented on the github platform at
-github.com/storm-fsv-cvut/smoderp2d (accessed on 1 January 2022). 
-
-The SMODERP2D model is primarily designed for surface runoff and erosion
-com-putation. The surface flow routing in the model is based on the digital
-elevation model (DEM). DEM also controls the spatial discretization of the
-model. 
