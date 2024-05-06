@@ -2,7 +2,7 @@
 
     \subsection{NumPy solution}
 
-
+    \subsection{Courant criteria}
 
     \subsection{Explicit/Implicit approach}
 
@@ -168,4 +168,71 @@
           - a_i h^{b_{i}}_{crit,i} 
         \end{multline}
     The later system of equations is constructed in similar fashion as the case of (\ref{eq:sys}) and solved with the same solver.
+
+
+
+    \subsection{Solving instability in calculation} 
+
+    At higher flow velocities or with inappropriately chosen time step or pixel
+    size, or if abrupt change in solution occurs,  instabilities occurred in
+    the solution. In the current version of the SMODERP2D program, this problem
+    is resolved for explicit solution by the Courant-Friedrich-Lewy (CFL)
+    condition and for implicit solution the model change the time step based on
+    the number of iterations in the system solution. 
+
+
+    \subsubsection{Courant-Friedrich-Lewy condition}
+    Filling of this condition ensures convergence of the explicit solution if
+    $\text{CFL} < 1.0$. The general equation of the CFL condition was derived
+    and adapted for the purposes of the SMODERP2D model to the following form:
+
+    \begin{equation}
+        \text{CFL} = \frac{1}{0.5601}\frac{v \Delta T}{\Delta X}
+        \label{eq:courrovnice}
+    \end{equation} where $v$ represents the velocity of surface or channel flow
+    [$m/s$], $\Delta T$ and $\Delta X$ represent time step and spatial step
+    respectively. The number 0.5601 was empiricaly shown to improve the
+    stability. Lower than 1 CFL conditions was also indicated by
+    \cite{zhang1989modeling, esteves2000overland}.
+
+    After completing of single time step, the highest value of CFL determined
+    from surface runoff using equation (\ref{eq:courrovnice}) is stored. Then,
+    this value is compared to the critical value of CFL, and according to the
+    rules illustrated in Table \ref{tab:cflsheet}, the time step length $\Delta
+    T$ is changed (or not changed). If $\Delta T$ changes, the calculation is
+    repeated in the given time step using the updated $\Delta T$. The
+    calculation progresses to the next time only when the stability of the
+    calculation is guaranteed.
+
+    \begin{table}[t!]
+        \centering
+        \caption{Criteria for changing the time step based on surface runoff}
+        \label{tab:cflsheet}
+        \begin{tabular}{ccc}
+            \hline
+            New &  $\text{CFL} < 0.75 \lor 1.0 < \text{CFL}$ & $ 0.75 \geq \text{CFL} \geq 1.0 \lor \text{CFL} = 0.0^*$ \\
+            \hline
+            \hline
+            $\Delta T$ &  = $\min\left(\frac{0.5601 \Delta X}{v}, \Delta T_{\text{max}}\right)$ & = original $\Delta T$\\
+            \hline
+    %         \multicolumn{3}{l}{{\small CFL = 0.0 typically in the case when the flow velocity is zero. In that case,}}
+        \end{tabular}
+    \end{table}
+
+
+    \subsubsection{Stability in implicit solution}
+    To ensure the stability in implicit solution, the model checks the number
+    of iterations in the in the solver of the linear system. High number of
+    iteration indicate abrupt change in the solution, that leads to instability
+    in the solution. The changes in time step length follow simple rules, that
+    are hard-coded to the model in the current version. The rules are as
+    followsL 
+    \begin{itemize}
+        \item if the number of iterations exceeds $it_{max}$, then the time step
+            is multiplied by factor smaller then one. 
+        \item if the number of iterations is lower then $it_{min}$, then the time
+            step is multiplied by factor larger then one. 
+        \item if the number of iterations is higher then $it_{min}$ and lower
+            then $it_{max}$, then the time step remains unchanged. 
+    \end{itemize}
 
