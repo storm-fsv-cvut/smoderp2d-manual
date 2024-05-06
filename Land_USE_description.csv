@@ -1,0 +1,8 @@
+LandUseCode;LU1_ID;Využití;Land Use;nsheet;pi;ppl;ret;nrill
+OP;1;orná pùda;Arable land;0.12;0.16;0.13;5;
+TP;2;travní porost;Grass;0.275;1.1;0.4;7;
+LP;3;lesní porost;Forest;0.4;1.354545455;0.622727273;9.454545455;
+AZP;4;antropogenní a zpevnìné plochy;Anthropogenic impermeable surfaces;0.05;0;0;2.5;
+ITK;5;intenzivní sady, vinice, chmelnice s holým meziøadím;Intensively cultivated land;0.15;1;0.4;5;
+ETK;6;extenzivní smíšené porosty;Extensive vegetation;0.35;1.4;0.65;8;
+VP;7;vodní plochy;Water;0.001;0;0;0;

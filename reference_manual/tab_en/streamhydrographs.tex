@@ -1,0 +1,21 @@
+
+\begin{table}[t]
+ \centering
+    \caption{Stream hydrograph variable description}
+\label{tab:vystupytokdat}
+\begin{tabular}{llp{0.5\textwidth}}
+  \hline  \hline
+ Column Name       & Unit       & Description                                      \\
+ \hline
+ time[s]              &   $s$              &  Time from the beginning of simulation                   \\
+ deltaTime[s]         &   $s$              &  Current time step length            \\
+ rainfall[m]          &  $m$               &  Rainfall depth in the current time step \\
+ reachWaterLevel[m]        &  $m$          &  Level of sheet flow            \\
+ reachFlow[m3/s]              &  $m^3s^{-1}$   &  Sheet flow rate                   \\
+ cumReachVolRunoff[m3]           &  $m^3$         & Cumulative runoff volume in stream network reach    \\
+%  reachVolInflow[m3]              &  $m^3$     & Sum of inflows from surrounding cells of the section in the current time step \\
+%  reachVolRest[m3]         &  $m^3$     & Volume in the reach after runoff      \\
+  \hline  \hline
+ \end{tabular}
+\end{table}
+
