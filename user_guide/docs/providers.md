@@ -1,25 +1,20 @@
 # Providers and install
+SMODERP has been adapted to work seamlessly with various Geographic Information System (GIS) platforms. Instalation for QGIS, GRASS GIS, and ArcGIS is decribed here.
+
 ## QGIS - Plugin
-
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis vehicula tempus
-nunc a vulputate. Cras mauris ligula, ultrices facilisis diam quis, condimentum
-convallis magna. Duis bibendum sapien ac mi tristique volutpat. Morbi dolor mi,
-commodo consectetur ligula id, laoreet porttitor sapien. Nam aliquet posuere ex
-eget tincidunt. Praesent vehicula erat lorem. Pellentesque habitant morbi
-tristique senectus et netus et malesuada fames ac turpis egestas. Aenean sit
-amet elit ac velit placerat blandit dictum faucibus massa. Integer sed dui
-lectus. Aenean non fermentum enim, sed molestie diam. Cras mollis euismod arcu.
-Ut eu elit et eros aliquet elementum. Aenean semper, augue quis tempus dapibus,
-felis ligula sodales justo, sit amet vulputate turpis velit a lorem. Morbi
-auctor dignissim tincidunt. In hac habitasse platea dictumst. Morbi rhoncus
-imperdiet purus quis scelerisque.
-
+In QGIS, the plugin repository is a central storage location where users can access and manage plugins that extend the functionality of the QGIS application. SMODERP are acessed from this repository.
 ### Installation instructions
 
 * Install QGIS: <https://www.qgis.org/en/site/forusers/download.html>
+
+* Check button "Show also Experimental Plugins" in Plugin/Settings 
+
+![Install QGIS SMODERP2D plugin](./img/experimetal_settings_plugins.png)
+
 * Install **SMODERP2D** plugin from QGIS plugin repository
 
 ![Install QGIS SMODERP2D plugin](./img/qgis_plugin_install.png)
+
 
 Open the plugin from the menu ``Plugins`` ➤ ``SMODERP2D`` or from the
 toolbar ![](./img/qgis_plugin_icon.png).
@@ -32,7 +27,7 @@ toolbar ![](./img/qgis_plugin_icon.png).
 
 ![](./img/qgis_plugin_comp_options.png)
 
-![](./img/qgis_plugin_advanced.png)
+![](./img/qgis_plugin_advanced_new.png)
 
 ![](./img/qgis_plugin_history.png)
 
@@ -45,6 +40,7 @@ toolbar ![](./img/qgis_plugin_icon.png).
 * Open GRASS Addon located in ``bin/grass/r.smoderp2d/r.smoderp2d.py``
 
 ## ArcGIS Pro - Toolbox
+In the ArcGIS environment are a toolboxes a collection of geoprocessing tools. SMODERP are developed as extend tolbox of the ArcGIS software.
 
 ### Installation instructions
 
