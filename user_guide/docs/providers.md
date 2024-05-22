@@ -1,7 +1,7 @@
-# Installation and Usage
-SMODERP has been adapted to work seamlessly with various Geographic Information System (GIS) platforms. Instalation for QGIS, GRASS GIS, and ArcGIS is decribed below.
+# Providers and install
+SMODERP has been adapted to work seamlessly with various Geographic Information System (GIS) platforms. Instalation for QGIS, GRASS GIS, and ArcGIS is decribed here.
 
-## QGIS Plugin
+## QGIS - Plugin
 In QGIS, the plugin repository is a central storage location where users can access and manage plugins that extend the functionality of the QGIS application. SMODERP are acessed from this repository.
 ### Installation instructions
 
@@ -39,7 +39,7 @@ toolbar ![](./img/qgis_plugin_icon.png).
 * Download latest SMODERP2D version: <https://github.com/storm-fsv-cvut/smoderp2d/releases>
 * Open GRASS Addon located in ``bin/grass/r.smoderp2d/r.smoderp2d.py``
 
-## ArcGIS Pro Toolbox
+## ArcGIS Pro - Toolbox
 In the ArcGIS environment are a toolboxes a collection of geoprocessing tools. SMODERP are developed as extend tolbox of the ArcGIS software.
 
 ### Installation instructions
@@ -62,76 +62,3 @@ Computation options and Advanced menu
 
 History runs are stored in **History** of ArcGIS Pro project.
 
-## Batch processing
-
-First, download SMODERP2D from GitHub repository
-<https://github.com/storm-fsv-cvut/smoderp2d>.
-
-Batch processing may be run as a single process or multiple processes
-defined by a CSV file.
-
-To run batch process GRASS GIS is required.
-
-!!! note
-
-    Note that on MS Windows GRASS GIS is part of the QGIS
-    installation. In this case there is no need to install GRASS GIS
-    separately.
-
-    You only need to adjust the installation path in 
-    `tests/batch/init_windows_env.bat` file:
-
-    - OSGeo4W installation
-    ```
-    set INSTALL_DIR=C:\OSGeo4W
-    ```
-
-    - QGIS standalone installation
-    ```
-    set INSTALL_DIR=C:\Program Files\QGIS 3.36.2\
-    ```
-    
-    You may also need to adjust GRASS version (in example below GRASS
-    8.3 is expected to be installed):
-    ```
-    set GRASS_VERSION=83
-    ```
-
-### Single process
-
-Open `batch_process_single.bat` (or `batch_process_single_linux.sh` on
-GNU/Linux) located in `tests/batch` directory and adjust input
-parameters. Then run the script.
-
-### Multiple processes
-
-Multiple processes may be defined by a CSV file, for example see
-`tests/batch/batch_process.csv` file.
-
-!!! note
-
-    If the content of the first cell starts with `#`, the process is skipped.
-
-Adjust parameters in your CSV file and run `batch_process_csv.bat` (or
-`batch_process_csv_linux.sh` on GNU/Linux) located in `tests/batch`
-directory.
-
-!!! tip
-
-    Processes may be run in parallel. Number of workers is defined in
-    the script:
-
-    ```
-     --workers 1
-    ```
-
-    Note that for parallel processing (ie. number of workers > 1)
-    [Joblib](https://joblib.readthedocs.io/en/stable/) Python package
-    is required. The package may be installed on Windows by
-    `install_joblib_windows.bat` located in `tests/batch`.
-
-    WARNING: parallel processing is experimental and may have various
-    problems.
-
-
-    
