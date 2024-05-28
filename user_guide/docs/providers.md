@@ -72,25 +72,25 @@ defined by a CSV file.
 
 To run batch process GRASS GIS is required.
 
-!!! note
+!!! note "Installation Note"
 
     Note that on MS Windows GRASS GIS is part of the QGIS
     installation. In this case there is no need to install GRASS GIS
     separately.
 
     You only need to adjust the installation path in 
-    `tests/batch/init_windows_env.bat` file:
+    `tests/batch/init_windows_env.bat` file based on how QGIS is installed.
 
-    - OSGeo4W installation
-    ```
-    set INSTALL_DIR=C:\OSGeo4W
-    ```
-
-    - QGIS standalone installation
+    - If QGIS is installed using QGIS standalone installator, set `INSTALL_DIR` where QGIS is installed, e.g.:
     ```
     set INSTALL_DIR=C:\Program Files\QGIS 3.36.2\
     ```
     
+    - If QGIS is installed using OSGeo4W network installator, set `INSTALL_DIR` where OSGeo4W is installed, e.g.:
+    ```
+    set INSTALL_DIR=C:\OSGeo4W
+    ```
+
     You may also need to adjust GRASS version (in example below GRASS
     8.3 is expected to be installed):
     ```
@@ -132,6 +132,3 @@ directory.
 
     WARNING: parallel processing is experimental and may have various
     problems.
-
-
-    
