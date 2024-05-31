@@ -19,19 +19,13 @@ Among the basic results are the maximum or cumulative values of selected quantit
 - maximum surface flow (mqsur_m3_s.asc) – maximum flow at a given point,
 
 ### Vector, point and table data
-
-folder ./control_point - time series of outpust at monitored points. *The listed quantities at points depend on the type of runoff process. If the point is in the cell of a hydrographic network segment, the values of this entire segment relevant to the runoff process in the watercourse are listed. If the point is in the watershed area, the model gives the values of surface (areal and furrow) runoff for the respective cell*.
-
-Cumulative ruonff a maximal discharge in the edn of streams elements are stored in XXXX, **csv or .txt file** *in case stream flow are calculated*.
-
-XXX - outpoint, stream parts *need be hire*
+- **stream-aoi** - is a cliped vector of streams by computing area.
+  - cumulative ruonff a maximal discharge in the ends of streams elements are stored in **streams.csv** file *(in case stream flow are calculated)*.
+- ** points_aoi** - cliped points of hydrograph by computing area.
+  - folder **./control_point** - time series of outpust at thos clipped points. *The listed quantities at points depend on the type of runoff process. If the point is in the cell of a hydrographic network segment, the values of this entire segment relevant to the runoff process in the watercourse are listed. If the point is in the watershed area, the model gives the values of surface (areal and furrow) runoff for the respective cell*.
 
 ### Hydrograph data
-./control_point - stored for each point in computation domain time series of basic data
-
-*table with descrtiption of cols will be hire?*
-
-
+**./control_point** - stored for each point in computation domain time series of basic data
 
 Tab: Surface runoff hydrograph variable description
 
@@ -39,12 +33,12 @@ Tab: Surface runoff hydrograph variable description
 |-------------------------------|-------------|--------------------------------------------|
 | **time\[s\]**                 | s           | Time from the beginning of simulation      |
 | **rainfall\[m\]**             | m           | Rainfall depth in the current time step    |
-| **totalWaterLevel\[m\]\***    | m           | Total water level                          |
+| **totalWaterLevel\[m\]\**     | m           | Total water level                          |
 | **surfaceFlow\[m3/s\]**       | m^3s\{\-1\} | Total flow \(sheet \+ rill\)               |
 | **cumSurfaceVolRunoff\[m3\]** | m           | Cumulative runoff volume \(sheet \+ rill\) |
 
 
-\* *The water level for rill runoff is not the actual water level in the
+ *The water level for rill runoff is not the actual water level in the
 channel, but rather the critical height of the water level related to the
 entire computational cell area*
 
