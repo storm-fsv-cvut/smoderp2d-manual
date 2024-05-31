@@ -31,6 +31,17 @@ toolbar ![](./img/qgis_plugin_icon.png).
 
 ![](./img/qgis_plugin_history.png)
 
+### Known issue
+
+On MS Windows QGIS plugin may suffer by poping-up windows when
+starting computation. It is caused by a bug in GRASS 8.3. This issue
+can be solved by copying ``core.py`` file available from [GitHub
+repository](https://raw.githubusercontent.com/storm-fsv-cvut/smoderp2d/master/bin/qgis/grass_patch/core.py)
+to a GRASS target directory which is typically located in:
+
+- ``C:\Program Files\QGIS 3.**.*\apps\grass\grass83\etc\python\grass\script`` in the case that QGIS has been installed by standalone installer, or
+- ``C:\OSGeo4W\apps\grass\grass83\etc\python\grass\script`` in the case that QGIS has been installed by OSGeo4W network installer.
+
 ## GRASS GIS Addon
 
 ### Installation instructions
