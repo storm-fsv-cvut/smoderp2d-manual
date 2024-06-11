@@ -71,7 +71,9 @@ to a GRASS target directory which is typically located in:
 
 * Install GRASS GIS: <https://grass.osgeo.org/download/>
 * Download latest SMODERP2D version: <https://github.com/storm-fsv-cvut/smoderp2d/releases>
-* Open GRASS Addon located in ``bin/grass/r.smoderp2d/r.smoderp2d.py``
+* Install GRASS Addon: `g.extension extension=r.smoderp2d url=/path/to/smoderp2d/bin/grass/r.smoderp2d`
+* Install SMODERP2D package: `python3 -m pip install smoderp2d`
+* Launch GRASS Addon: `r.smoderp2d`
 
 ## ArcGIS Pro Toolbox
 In the ArcGIS environment are a toolboxes a collection of geoprocessing tools. SMODERP are developed as extend tolbox of the ArcGIS software.
