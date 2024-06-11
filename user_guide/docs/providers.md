@@ -1,13 +1,23 @@
 # Installation and Usage
-SMODERP has been adapted to work seamlessly with various Geographic Information System (GIS) platforms. Instalation for QGIS, GRASS GIS, and ArcGIS is decribed below.
+
+SMODERP has been adapted to work seamlessly with various Geographic
+Information System (GIS) platforms. Instalation for **QGIS**
+(<https://qgis.org/>), **GRASS GIS** (<https://grass.osgeo.org/>), and
+**ArcGIS Pro**
+(<https://www.esri.com/en-us/arcgis/products/arcgis-pro/overview>) is
+decribed below.
 
 ## QGIS Plugin
-In QGIS, the plugin repository is a central storage location where users can access and manage plugins that extend the functionality of the QGIS application. SMODERP are acessed from this repository.
+
+In QGIS, the plugin repository is a central storage location where
+users can access and manage plugins that extend the functionality of
+the QGIS application. SMODERP2D may be acessed from this repository.
+
 ### Installation instructions
 
 * Install QGIS: <https://www.qgis.org/en/site/forusers/download.html>
 
-* Check button "Show also Experimental Plugins" in Plugin/Settings 
+* Check button `Show also Experimental Plugins` in Plugin/Settings 
 
 ![Install QGIS SMODERP2D plugin](./img/experimetal_settings_plugins.png)
 
@@ -21,13 +31,26 @@ toolbar ![](./img/qgis_plugin_icon.png).
 
 ### Usage
 
+The plugin consists of four tabs:
+
+- *Spatial data* for defining input spatial GIS layers
+
 ![](./img/qgis_plugin_spatial_data.png)
+
+- *Model parameters* for defining input parameters
 
 ![](./img/qgis_plugin_model_parameters.png)
 
+- *Computation options* for defining various options including target
+  directory where computation results will be stored
+
 ![](./img/qgis_plugin_comp_options.png)
 
-![](./img/qgis_plugin_advanced_new.png)
+- *Advanced* for defining advanced options
+
+![](./img/qgis_plugin_advanced.png)
+
+- History runs are stored in *History* tab
 
 ![](./img/qgis_plugin_history.png)
 
