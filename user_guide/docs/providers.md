@@ -75,6 +75,40 @@ to a GRASS target directory which is typically located in:
 * Install SMODERP2D package: `python3 -m pip install smoderp2d`
 * Launch GRASS Addon: `r.smoderp2d`
 
+### Usage
+
+GRASS Addon is organized into several tabs similar to the QGIS plugin:
+
+- *Spatial data*
+
+![](./img/grass_addon_spatial_data.png)
+
+- *Model parameters*
+
+![](./img/grass_addon_model_parameters.png)
+
+- *Computation options*
+
+![](./img/grass_addon_comp_options.png)
+
+- *Advanced*
+
+![](./img/grass_addon_advanced.png)
+
+Compared to the QGIS plugin, the GRASS addon has a few more tabs:
+
+- *Optional* for GRASS-related global options
+
+![](./img/grass_addon_optional.png)
+
+- *Command output* for messages printed by running command
+
+![](./img/grass_addon_command_output.png)
+
+- *Manual* for GRASS Addon documentation
+
+![](./img/grass_addon_manual.png)
+
 ## ArcGIS Pro Toolbox
 In the ArcGIS environment are a toolboxes a collection of geoprocessing tools. SMODERP are developed as extend tolbox of the ArcGIS software.
 
