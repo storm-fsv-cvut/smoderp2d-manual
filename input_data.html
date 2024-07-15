@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><link rel="canonical" href="https://github.com/storm-fsv-cvut/smoderp2d/input_data.html" />
+      <link rel="shortcut icon" href="img/favicon.ico" />
+    <title>Input data - SMODERP2D</title>
+    <link rel="stylesheet" href="css/theme.css" />
+    <link rel="stylesheet" href="css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "Input data";
+        var mkdocs_page_input_path = "input_data.md";
+        var mkdocs_page_url = "/storm-fsv-cvut/smoderp2d/input_data.html";
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+ <link href="assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
+    html.glightbox-open { overflow: initial; height: 100%; }
+    .gslide-title { margin-top: 0px; user-select: text; }
+    .gslide-desc { color: #666; user-select: text; }
+    .gslide-image img { background: white; }</style> <script src="assets/javascripts/glightbox.min.js"></script></head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href="index.html" class="icon icon-home"> SMODERP2D
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="./search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="index.html">SMODERP2D</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="providers.html">Installation and Usage</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="requirements.html">Requirements</a>
+                </li>
+              </ul>
+              <ul class="current">
+                <li class="toctree-l1 current"><a class="reference internal current" href="#">Input data</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#ranfall-data-4">Ranfall data (4)</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#surface-flow">Surface flow</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#digital-elevation-model-compulsory-1">Digital elevation model (Compulsory) (1)</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#soil-characteristics-map-compulsory-2">Soil characteristics map (Compulsory) (2)</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#land-use-land-cover-compulsory-3">Land use / Land cover (Compulsory) (3)</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#soil-and-landuse-parameters-table-compulsory-8">Soil and landuse parameters table (Compulsory) (8)</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#stream-flow-9">Stream flow (9)</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#water-course-network-optional">Water course network (Optional)</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#water-course-table-optional">Water course table (Optional)</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#other-inputs-and-model-settings">Other input's and model settings</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#points-of-interest-optional6">Points of interest (Optional)(6)</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#model-settins-5">Model settins (5)</a>
+    </li>
+        </ul>
+    </li>
+    </ul>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="model_setup.html">Model settings</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="output.html">Outputs</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="reference_manual.html">Reference manual</a>
+                </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">SMODERP2D</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="index.html" class="icon icon-home" aria-label="Docs"></a></li>
+      <li class="breadcrumb-item active">Input data</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="input-data">Input data<a class="headerlink" href="#input-data" title="Permanent link"></a></h1>
+<p>Input data are divided to two groups a) for surface runoff processes and b) stream flow
+Inputes are describe in goups (see the picture).
+<a class="glightbox" href="img/AG_model_face.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Input data to model SMODERP" src="img/AG_model_face.png" /></a>.
+Data types of inputes data are descrime in table ** link to the tabel**</p>
+<h2 id="ranfall-data-4">Ranfall data (4)<a class="headerlink" href="#ranfall-data-4" title="Permanent link"></a></h2>
+<p>The next input is a file containing rainfall data. The rainfall is entered as a *.txt (text file) with two columns. The left column is the time interval in minutes, the right column is the cumulative rain from simulation start in millimetres. Real measured or design precipitation data can be used in model.
+For instance, in Czechia design precipitation can be obtain via web map services <a href="https://rain.fsv.cvut.cz">https://rain.fsv.cvut.cz</a>.</p>
+<h2 id="surface-flow">Surface flow<a class="headerlink" href="#surface-flow" title="Permanent link"></a></h2>
+<p>The inputes to the model incorporates information about the area's topography, soil types and
+land use spatial distribution, rainfall for surface ruonoff processes, where applicable, the geometry of
+hydrographic network for stream ruonff.</p>
+<h3 id="digital-elevation-model-compulsory-1">Digital elevation model (Compulsory) (1)<a class="headerlink" href="#digital-elevation-model-compulsory-1" title="Permanent link"></a></h3>
+<p>A digital elevation model (DEM) or digital terrain model (DTM) <strong>raster</strong>
+represents the morphology of the modelled area. Each cell in the raster contains 
+information about the land elevation.</p>
+<p>The model numerical scheme spatial discrimination is inherited from the DEM
+layer cell size. The cell size can vary depending on the size of the modelled
+area. For the SMODERP2D model the stabile computation  minimum cell size is recommended 2 meters, with an
+optimum of 5 meters. Cell size with total area are crucial parameters for computing time (<em>see reference manual</em>).</p>
+<p><a class="glightbox" href="img/dem_byk.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Digital elevation model with basemap (ČUZK)" src="img/dem_byk.png" /></a></p>
+<h3 id="soil-characteristics-map-compulsory-2">Soil characteristics map (Compulsory) (2)<a class="headerlink" href="#soil-characteristics-map-compulsory-2" title="Permanent link"></a></h3>
+<p><strong>Vector (polygon)</strong> layer with polygons indicating the spatial distribution of soil
+types. </p>
+<p>The figure shows a example of soil map layer. The attribute table of the layer
+must include field with soil type identifier. These identifiers correspond to
+unique soil and land use characteristics, which are stored in a separate table (see below).
+Physical meanings of these parameters and their implementation in the model are
+in detail described in the reference manual.</p>
+<p>For instance, in Czechia soil type data from agricultural land can be obtain
+via <a href="https://rain.fsv.cvut.cz/pudy">https://rain.fsv.cvut.cz/pudy</a>.</p>
+<p><a class="glightbox" href="img/soil_map.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Soil map with soil type identifier" src="img/soil_map.png" /></a></p>
+<h3 id="land-use-land-cover-compulsory-3">Land use / Land cover (Compulsory) (3)<a class="headerlink" href="#land-use-land-cover-compulsory-3" title="Permanent link"></a></h3>
+<p>Similar to soils in the previous section, the attribute table of the land use
+**vector layer (polygon) ** requires supplementation with an identifier field for land use.
+These identifiers correspond to
+unique soil and land use characteristics, defined in a separate table (see below).</p>
+<p>Physical meanings of the land used parameters and their implementation in the
+model are in detail described in the reference manual.</p>
+<p><a class="glightbox" href="img/land_cover_byk.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Land Cover vector map with land cover identifier" src="img/land_cover_byk.png" /></a>
+For instance, in Czechia soil type data from agricultural land can be obtain
+from combination of ZABAGED and LPIS data.</p>
+<h3 id="soil-and-landuse-parameters-table-compulsory-8">Soil and landuse parameters table (Compulsory) (8)<a class="headerlink" href="#soil-and-landuse-parameters-table-compulsory-8" title="Permanent link"></a></h3>
+<p>A crucial input for the model is a table that lists the values of model equations parameters (for detail see reference manual). This parameter table is linked to soil type and land use spatial data intersect assigned to each polygon in the vector input's attribute tables. Table as an external input, this attribute table enhances the model's transparency and allows users to modify the input data's characteristics to suit their specific needs.This table is referenced by combinations of soil type and land use type identifiers defined for each polygon in the attribute tables of the vector inputs. In the example below, the first column contains parameters for the combination of soil type <code>CA</code> and land cover <code>ZP</code>.</p>
+<p>The table may be inserted into the model as a text file (.csv) or (better) as .dbf file.  </p>
+<p>The meanings of the individual parameters are described in reference manual.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">soilveg</th>
+<th style="text-align: right;">k</th>
+<th style="text-align: right;">s</th>
+<th style="text-align: right;">nrill</th>
+<th style="text-align: right;">pi</th>
+<th style="text-align: right;">ppl</th>
+<th style="text-align: right;">ret</th>
+<th style="text-align: right;">b</th>
+<th style="text-align: right;">nsheet</th>
+<th style="text-align: right;">y</th>
+<th style="text-align: right;">tau</th>
+<th style="text-align: right;">v</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">CAZP</td>
+<td style="text-align: right;">1.26e-07</td>
+<td style="text-align: right;">0.000125</td>
+<td style="text-align: right;">0.0035</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">1.5847</td>
+<td style="text-align: right;">0.0073</td>
+<td style="text-align: right;">0.488872</td>
+<td style="text-align: right;">100</td>
+<td style="text-align: right;">0.28</td>
+</tr>
+</tbody>
+</table>
+<p><a href="https://smoderp.fsv.cvut.cz/smoderp2d/data-and-examples/">https://smoderp.fsv.cvut.cz/smoderp2d/data-and-examples/</a> - tables for diffrent initial conditions.</p>
+<h2 id="stream-flow-9">Stream flow (9)<a class="headerlink" href="#stream-flow-9" title="Permanent link"></a></h2>
+<p>Data for the watercoures are also divided to topology part and data table with unique characteristics of segments. Stream flow are calculated if the <em>watercourses shapes</em> are in the intercect cumputing domain and the relevat <em>water course table</em> are added to the model interface.</p>
+<h3 id="water-course-network-optional">Water course network (Optional)<a class="headerlink" href="#water-course-network-optional" title="Permanent link"></a></h3>
+<p><strong>Vector (polyline)</strong> layer with polylines indicating the thopology of watercourses and/or temporal ditches technical conservation measure).
+The figure shows a example of water courses data. The attribute table of the layer
+must include field with stream type. The watercourse network must be hydrologically correct. Individual end points of the watercourse network must have a different elevation taken from the DMR and at the same time bifurcation of the watercourse cannot be allowed.
+These identifiers correspond to unique stream characteristics, which are stored in a separate table (see below).
+Physical meanings of these parameters and their implementation in the model are
+in detail described in the reference manual.</p>
+<p>For instance, in Czechia stream shape data can be obtain from ZABAGED data.</p>
+<p><a class="glightbox" href="./img/stream_data.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="watercourse with identifier" src="./img/stream_data.png" /></a></p>
+<h3 id="water-course-table-optional">Water course table (Optional)<a class="headerlink" href="#water-course-table-optional" title="Permanent link"></a></h3>
+<p>This table is referenced to unique stream types defined for each polygon in the attribute tables of the watercourse network
+inputs. In the example below, the first column contains parameters ** channel_ID ** for unioque stream parts.
+The table may be inserted into the model as a text file (.csv).<br />
+The meanings of the individual parameters are described in reference manual.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">|</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">|</td>
+</tr>
+<tr>
+<td style="text-align: left;">11.12.10.0300default  1shape0       00.20.00.0350         2rectangle1   10.22.00.0350         3trapezoid1   20.02.00.0300         4triangle1    30.70.00.0300b.surface5parabola1    00.20.00.0350         6obdelnik1    10.22.00.0350         7lichobeznik1 20.02.00.0300         8trojuhelnik1</td>
+</tr>
+</tbody>
+</table>
+<h2 id="other-inputs-and-model-settings">Other input's and model settings<a class="headerlink" href="#other-inputs-and-model-settings" title="Permanent link"></a></h2>
+<h3 id="points-of-interest-optional6">Points of interest (Optional)(6)<a class="headerlink" href="#points-of-interest-optional6" title="Permanent link"></a></h3>
+<p><strong>Vector (point)</strong> layer with point for detail outputs as hydrographs (describe in outpust). In this points are indicating the thopology of watercourses and/or temporal ditches technical conservation measure).
+The monitored output data are continuously stored at these points. In the case of a point located outside the watercourse, surface runoff data are recorded. If the point is inserted into a watercourse, data are recorded for the relevant watercourse section.</p>
+<h3 id="model-settins-5">Model settins (5)<a class="headerlink" href="#model-settins-5" title="Permanent link"></a></h3>
+<p>Checkboxes for types of computing (more information about model settings in next chapter)</p>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="requirements.html" class="btn btn-neutral float-left" title="Requirements"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="model_setup.html" class="btn btn-neutral float-right" title="Model settings">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href="requirements.html" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="model_setup.html" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script src="js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = ".";</script>
+    <script src="js/theme_extra.js"></script>
+    <script src="js/theme.js"></script>
+      <script src="search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+<script id="init-glightbox">const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});
+</script></body>
+</html>
