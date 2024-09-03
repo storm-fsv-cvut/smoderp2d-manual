@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><link rel="canonical" href="https://github.com/storm-fsv-cvut/smoderp2d/model_setup.html" />
+      <link rel="shortcut icon" href="img/favicon.ico" />
+    <title>Model settings - SMODERP2D</title>
+    <link rel="stylesheet" href="css/theme.css" />
+    <link rel="stylesheet" href="css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "Model settings";
+        var mkdocs_page_input_path = "model_setup.md";
+        var mkdocs_page_url = "/storm-fsv-cvut/smoderp2d/model_setup.html";
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+ <link href="assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
+    html.glightbox-open { overflow: initial; height: 100%; }
+    .gslide-title { margin-top: 0px; user-select: text; }
+    .gslide-desc { color: #666; user-select: text; }
+    .gslide-image img { background: white; }</style> <script src="assets/javascripts/glightbox.min.js"></script></head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href="index.html" class="icon icon-home"> SMODERP2D
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="./search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="index.html">SMODERP2D</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="providers.html">Installation and Usage</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="requirements.html">Requirements</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="input_data.html">Input data</a>
+                </li>
+              </ul>
+              <ul class="current">
+                <li class="toctree-l1 current"><a class="reference internal current" href="#">Model settings</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#maximum-time-step">Maximum time step</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#total-runnig-time">Total runnig time</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#output-directory">Output directory</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#extra-output">Extra output</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#computation-settings">Computation settings</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#flow-direction">Flow direction</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#shallow-water-flow-equation-approximation">Shallow water flow equation approximation</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#time-derivative-approximation">Time derivative approximation</a>
+    </li>
+        </ul>
+    </li>
+    </ul>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="output.html">Outputs</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="reference_manual.html">Reference manual</a>
+                </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">SMODERP2D</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="index.html" class="icon icon-home" aria-label="Docs"></a></li>
+      <li class="breadcrumb-item active">Model settings</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="model-settings">Model settings<a class="headerlink" href="#model-settings" title="Permanent link"></a></h1>
+<p>Besides the input date, further setting needs to be provided to start the
+calculation.</p>
+<h2 id="maximum-time-step">Maximum time step<a class="headerlink" href="#maximum-time-step" title="Permanent link"></a></h2>
+<p>The time step Δt is adjusted during the calculation according
+Courant–Friedrichs–Lewy condition to maintain numerical stability.  The length
+of the time step depends on the surface runoff velocity and the spatial step
+size (DMT cell size). Therefore a <strong><em>maximum time</em></strong> step needs to be set.</p>
+<p>The maximum time step depends on the desired detail of the output data,
+especially during a precipitation episode when flow velocities are already
+lower and when the stability criterion would allow too large a time step. The
+implementation of the numerical stability are described in <em>reference manual</em>.</p>
+<p>The maxim time step is also user as the initial time step in the calculation.</p>
+<h2 id="total-runnig-time">Total runnig time<a class="headerlink" href="#total-runnig-time" title="Permanent link"></a></h2>
+<p>The total simulation time refers to the duration over which the model performs
+its computations. To calculate the overall runoff volume accurately, the
+simulation duration must extend beyond the period of the simulated rainfall
+event. Conversely, to determine the peak flow rate, the simulation time may be
+shorter than the precipitation duration.</p>
+<h2 id="output-directory">Output directory<a class="headerlink" href="#output-directory" title="Permanent link"></a></h2>
+<p>This specifies the location where the results will be stored. Note that this
+folder may be overwritten.</p>
+<h2 id="extra-output">Extra output<a class="headerlink" href="#extra-output" title="Permanent link"></a></h2>
+<p>If the <strong><em>extra outputs</em></strong> are check, <strong><em>temp</em></strong> and <strong><em>control</em></strong> data will be
+saved in output folder.  Description of extra output these parameters described
+in the <strong>reference manual</strong>.</p>
+<h2 id="computation-settings">Computation settings<a class="headerlink" href="#computation-settings" title="Permanent link"></a></h2>
+<h3 id="flow-direction">Flow direction<a class="headerlink" href="#flow-direction" title="Permanent link"></a></h3>
+<p>Flow direction algorithm controls to which computational cell or cells the 
+water flows i.e. it controls the flow routing. Two options are implemented in SMODERP2D:</p>
+<ul>
+<li><strong><em>D8</em></strong> a single direction flow algorithm  and </li>
+<li><strong><em>multiple flow direction</em></strong>  algorithm (MFD) (Seibert, 2013).</li>
+</ul>
+<p>If D8 is set, all of the sheet flow volume from a cell flows to single adjacent
+cell with highest elevation difference.  If MFD is set,  the sheet flow volume
+from a cell is divided proportionally to multiple downslope cells based on
+elevation difference between cells.</p>
+<p><strong>note</strong>: If MDF is set, the rill flow  still uses the D8 flow direction
+algorithm since the rill is essentially small channel that can only flow in on
+direction. </p>
+<p>In watercourse network, the water from the surface flow is further conducted
+through a network based on the topology of the network. </p>
+<h3 id="shallow-water-flow-equation-approximation">Shallow water flow equation approximation<a class="headerlink" href="#shallow-water-flow-equation-approximation" title="Permanent link"></a></h3>
+<p>The model is capable of using kinematic and diffusive wave approximation of
+Saint-Venant equations. </p>
+<p><strong><em>Kinematic wave</em></strong> approximation assumes that the slope of the water level is
+parallel to the slope of the soil surface. This approximation is valid for step
+slopes where substantial  backwater effect does not occur. </p>
+<p>The <strong><em>diffusive wave</em></strong>  is driven be the waster surface slope.  Therefore,
+the backwater effect is considered. The diffusive wave approximation should be
+used if flat areas as presented in the model. However, the diffusive wave is
+computationally more intensive compared to kinematic wave approximation. </p>
+<p>For more details about the flow equation approximation see the <strong>reference manual</strong>.</p>
+<h3 id="time-derivative-approximation">Time derivative approximation<a class="headerlink" href="#time-derivative-approximation" title="Permanent link"></a></h3>
+<p>The SMODERP2D calculated the transient water flow. Therefore, the time
+derivation takes place in the equation. To solve the time approach of the
+solution this derivative has to be solved. </p>
+<p>Ordinary <strong>explicit</strong> and <strong>implicit</strong>  Euler methods are implemented in
+SMODERP2D to solve the time derivative. Essentially, the <strong>explicit</strong> method is
+usually more sensitive to time step length. In some cases this can cause slow
+down in the computation due to extremely small time step. The <strong>implicit</strong>
+generally allows the model to run with larger time step (depends on the model
+setting). However, a system of linear equations need to be constructed and
+solved. </p>
+<p>Usually, the advantages of implicit method are pronounced for computation of
+larger areas (&gt;1,000,000 cells in raster). For smaller areas (&lt;1,000 cells in
+raster) the computation time to construct and solve the system of linear
+equations slows down the computation and explicit method may lead to shorter
+computational time, especially for larger raster cell size (&gt;5 m). </p>
+<p>No general recommendation to which method to use can be given. It is
+recommended to test both methods for each specific model, if necessary. </p>
+<p>For further information about the explicit and implicit Euler method  see the
+<strong>reference manual</strong>.</p>
+<p><strong>reference manual</strong>.</p>
+<p>SEIBERT J., MCGLYNN B.L.: A new triangular multiple flow direction algorithm
+for computing upslope areas from gridded digital elevation models [online],
+<a href="http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.79.977&amp;rep=rep1&amp;type=pdf">http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.79.977&amp;rep=rep1&amp;type=pdf</a></p>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="input_data.html" class="btn btn-neutral float-left" title="Input data"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="output.html" class="btn btn-neutral float-right" title="Outputs">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href="input_data.html" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="output.html" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script src="js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = ".";</script>
+    <script src="js/theme_extra.js"></script>
+    <script src="js/theme.js"></script>
+      <script src="search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+<script id="init-glightbox">const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});
+</script></body>
+</html>

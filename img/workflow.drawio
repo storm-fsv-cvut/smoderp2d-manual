@@ -1,0 +1,109 @@
+<mxfile host="app.diagrams.net" modified="2023-06-19T10:49:52.752Z" agent="Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36" etag="EMWtNdA1YSxF_lUhdTZP" version="21.5.0" type="google">
+  <diagram name="Stránka-1" id="6fQ99t_Oc9UdTl56gqd6">
+    <mxGraphModel grid="1" page="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="3OqnFSuKNc_igBxT_YTC-15" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="3OqnFSuKNc_igBxT_YTC-2" target="3OqnFSuKNc_igBxT_YTC-13">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="584" y="260" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="3OqnFSuKNc_igBxT_YTC-2" value="Data providers" style="swimlane;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="150" y="80" width="910" height="130" as="geometry">
+            <mxRectangle x="325" y="80" width="140" height="30" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="3OqnFSuKNc_igBxT_YTC-3" value="GRASS GIS Provider" style="swimlane;whiteSpace=wrap;html=1;" vertex="1" parent="3OqnFSuKNc_igBxT_YTC-2">
+          <mxGeometry x="260" y="50" width="185" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="3OqnFSuKNc_igBxT_YTC-4" value="ArcGIS Provider" style="swimlane;whiteSpace=wrap;html=1;" vertex="1" parent="3OqnFSuKNc_igBxT_YTC-2">
+          <mxGeometry x="470" y="50" width="200" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="3OqnFSuKNc_igBxT_YTC-30" value="Profile1D Provider" style="swimlane;whiteSpace=wrap;html=1;dashed=1;" vertex="1" parent="3OqnFSuKNc_igBxT_YTC-2">
+          <mxGeometry x="50" y="50" width="185" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="3OqnFSuKNc_igBxT_YTC-12" value="CMD Provider" style="swimlane;whiteSpace=wrap;html=1;" vertex="1" parent="3OqnFSuKNc_igBxT_YTC-2">
+          <mxGeometry x="690" y="50" width="200" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="3OqnFSuKNc_igBxT_YTC-21" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="3OqnFSuKNc_igBxT_YTC-8" target="3OqnFSuKNc_igBxT_YTC-20">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="3OqnFSuKNc_igBxT_YTC-8" value="SMODERP core" style="swimlane;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="670" y="390" width="200" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="3OqnFSuKNc_igBxT_YTC-25" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="3OqnFSuKNc_igBxT_YTC-10" target="3OqnFSuKNc_igBxT_YTC-3">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="610" y="60" />
+              <mxPoint x="503" y="60" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="3OqnFSuKNc_igBxT_YTC-29" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;exitPerimeter=0;" edge="1" parent="1" target="3OqnFSuKNc_igBxT_YTC-4">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="610" y="30" as="sourcePoint" />
+            <mxPoint x="720" y="120" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="610" y="60" />
+              <mxPoint x="720" y="60" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="3OqnFSuKNc_igBxT_YTC-10" value="Input GIS layers&lt;br&gt;&amp;amp;&lt;br&gt;parameters" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="550" y="-40" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="3OqnFSuKNc_igBxT_YTC-27" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="3OqnFSuKNc_igBxT_YTC-11" target="3OqnFSuKNc_igBxT_YTC-12">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="3OqnFSuKNc_igBxT_YTC-11" value="Prepared&amp;nbsp;&lt;br&gt;data" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="880" y="-40" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="3OqnFSuKNc_igBxT_YTC-16" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="3OqnFSuKNc_igBxT_YTC-13" target="3OqnFSuKNc_igBxT_YTC-8">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="3OqnFSuKNc_igBxT_YTC-17" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="940" y="-40" as="targetPoint" />
+            <mxPoint x="520" y="320" as="sourcePoint" />
+            <Array as="points">
+              <mxPoint x="80" y="320" />
+              <mxPoint x="80" y="-70" />
+              <mxPoint x="940" y="-70" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="3OqnFSuKNc_igBxT_YTC-13" value="Perform&lt;br&gt;computation?" style="strokeWidth=2;html=1;shape=mxgraph.flowchart.decision;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="520" y="270" width="127.5" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="3OqnFSuKNc_igBxT_YTC-19" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" edge="1" parent="1" source="3OqnFSuKNc_igBxT_YTC-12">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="940" y="190" as="sourcePoint" />
+            <mxPoint x="770" y="390" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="940" y="320" />
+              <mxPoint x="770" y="320" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="3OqnFSuKNc_igBxT_YTC-20" value="Output&amp;nbsp;&lt;br&gt;data" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="710" y="500" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="3OqnFSuKNc_igBxT_YTC-22" value="Yes&lt;br&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="647.5" y="290" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="3OqnFSuKNc_igBxT_YTC-24" value="No" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="460" y="290" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="3OqnFSuKNc_igBxT_YTC-32" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="3OqnFSuKNc_igBxT_YTC-31" target="3OqnFSuKNc_igBxT_YTC-30">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="3OqnFSuKNc_igBxT_YTC-31" value="Input profile&lt;br&gt;parameters" style="ellipse;whiteSpace=wrap;html=1;dashed=1;" vertex="1" parent="1">
+          <mxGeometry x="232.5" y="-50" width="120" height="80" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><link rel="canonical" href="https://github.com/storm-fsv-cvut/smoderp2d/requirements.html" />
+      <link rel="shortcut icon" href="img/favicon.ico" />
+    <title>Requirements - SMODERP2D</title>
+    <link rel="stylesheet" href="css/theme.css" />
+    <link rel="stylesheet" href="css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "Requirements";
+        var mkdocs_page_input_path = "requirements.md";
+        var mkdocs_page_url = "/storm-fsv-cvut/smoderp2d/requirements.html";
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+ <link href="assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
+    html.glightbox-open { overflow: initial; height: 100%; }
+    .gslide-title { margin-top: 0px; user-select: text; }
+    .gslide-desc { color: #666; user-select: text; }
+    .gslide-image img { background: white; }</style> <script src="assets/javascripts/glightbox.min.js"></script></head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href="index.html" class="icon icon-home"> SMODERP2D
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="./search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="index.html">SMODERP2D</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="providers.html">Installation and Usage</a>
+                </li>
+              </ul>
+              <ul class="current">
+                <li class="toctree-l1 current"><a class="reference internal current" href="#">Requirements</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#model-limits-and-recommendation">Model limits and recommendation</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#data-requirements">Data requirements</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#hardware-requirements">Hardware requirements</a>
+    </li>
+    </ul>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="input_data.html">Input data</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="model_setup.html">Model settings</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="output.html">Outputs</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="reference_manual.html">Reference manual</a>
+                </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">SMODERP2D</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="index.html" class="icon icon-home" aria-label="Docs"></a></li>
+      <li class="breadcrumb-item active">Requirements</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="requirements">Requirements<a class="headerlink" href="#requirements" title="Permanent link"></a></h1>
+<h2 id="model-limits-and-recommendation">Model limits and recommendation<a class="headerlink" href="#model-limits-and-recommendation" title="Permanent link"></a></h2>
+<p>The limitations of the model lie in its mathematical representation of physical
+phenomena.</p>
+<p>SMODERP2D is an episodic model; therefore, it does not account for water
+redistribution in the soil. The model assumes continuous rainfall, which begins
+at the start of the calculation and ends a few minutes (or hours) before the
+conclusion. Although rainfall with varying intensity can be input, it must
+still be continuous. Gaps in the rainfall data would result in a
+misrepresentation of runoff and erosion.</p>
+<p>A reasonable spatial resolution is necessary for the model run properly. Each
+cell in the model represents a piece of land where a small brook could form or
+a rill could be created. Therefore, cells smaller than the width of a brook or
+rill would lead to a misrepresentation of hydraulic in such features.
+Conversely, cells that are too large would result in oversized brooks or rills,
+as only a single watercourse or rill can be represented in each cell. Thus, a
+cell size of 2 to 20 meters is recommended. It's important to note that the
+cell size may affect the time step and, consequently, the duration of the
+calculations. Therefore, it is recommended not to unnecessarily reduce the cell
+size.</p>
+<p>The SMODERP2D model is designed for catchment-scale applications and is not
+suitable for computing large continental-scale hydrological events. It is
+recommended for use in areas with a single outlet point and an area ranging
+from tens to tens of thousands of square meters.</p>
+<p>At its current state, the model does not allow water in the watercourse to
+overflow back to the surrounding land. However, the model can provide users
+with an estimation of how deep a watercourse must be to prevent overflow.</p>
+<h2 id="data-requirements">Data requirements<a class="headerlink" href="#data-requirements" title="Permanent link"></a></h2>
+<p>The model operates with geographical data using common GIS software
+(Geographical Information System). Therefore, typical input data for the model
+are in the form of rasters and vectors. Rainfall data is provided as a plain
+text file.  Similarly, the model outputs are stored in open-source raster and
+vector formats, as well as plain text files.</p>
+<h2 id="hardware-requirements">Hardware requirements<a class="headerlink" href="#hardware-requirements" title="Permanent link"></a></h2>
+<p>The model can run on standard laptops, PCs, or server hardware. However,
+workstations tend to expedite calculations due to their high-end CPUs. RAM and
+storage recommendations vary depending on the size of the modeled area and
+spatial resolution.</p>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="providers.html" class="btn btn-neutral float-left" title="Installation and Usage"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="input_data.html" class="btn btn-neutral float-right" title="Input data">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href="providers.html" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="input_data.html" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script src="js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = ".";</script>
+    <script src="js/theme_extra.js"></script>
+    <script src="js/theme.js"></script>
+      <script src="search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+<script id="init-glightbox">const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});
+</script></body>
+</html>

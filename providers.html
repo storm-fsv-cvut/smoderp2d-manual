@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><link rel="canonical" href="https://github.com/storm-fsv-cvut/smoderp2d/providers.html" />
+      <link rel="shortcut icon" href="img/favicon.ico" />
+    <title>Installation and Usage - SMODERP2D</title>
+    <link rel="stylesheet" href="css/theme.css" />
+    <link rel="stylesheet" href="css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "Installation and Usage";
+        var mkdocs_page_input_path = "providers.md";
+        var mkdocs_page_url = "/storm-fsv-cvut/smoderp2d/providers.html";
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+ <link href="assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
+    html.glightbox-open { overflow: initial; height: 100%; }
+    .gslide-title { margin-top: 0px; user-select: text; }
+    .gslide-desc { color: #666; user-select: text; }
+    .gslide-image img { background: white; }</style> <script src="assets/javascripts/glightbox.min.js"></script></head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href="index.html" class="icon icon-home"> SMODERP2D
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="./search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="index.html">SMODERP2D</a>
+                </li>
+              </ul>
+              <ul class="current">
+                <li class="toctree-l1 current"><a class="reference internal current" href="#">Installation and Usage</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#qgis-plugin">QGIS Plugin</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#installation-instructions">Installation instructions</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#usage">Usage</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#known-issues">Known issues</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#grass-gis-addon">GRASS GIS Addon</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#installation-instructions_1">Installation instructions</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#usage_1">Usage</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#arcgis-pro-toolbox">ArcGIS Pro Toolbox</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#installation-instructions_2">Installation instructions</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#usage_2">Usage</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#batch-processing">Batch processing</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#single-process">Single process</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#multiple-processes">Multiple processes</a>
+    </li>
+        </ul>
+    </li>
+    </ul>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="requirements.html">Requirements</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="input_data.html">Input data</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="model_setup.html">Model settings</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="output.html">Outputs</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="reference_manual.html">Reference manual</a>
+                </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">SMODERP2D</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="index.html" class="icon icon-home" aria-label="Docs"></a></li>
+      <li class="breadcrumb-item active">Installation and Usage</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="installation-and-usage">Installation and Usage<a class="headerlink" href="#installation-and-usage" title="Permanent link"></a></h1>
+<p>SMODERP has been adapted to work seamlessly with various Geographic
+Information System (GIS) platforms. Instalation for <strong>QGIS</strong>
+(<a href="https://qgis.org/">https://qgis.org/</a>), <strong>GRASS GIS</strong> (<a href="https://grass.osgeo.org/">https://grass.osgeo.org/</a>), and
+<strong>ArcGIS Pro</strong>
+(<a href="https://www.esri.com/en-us/arcgis/products/arcgis-pro/overview">https://www.esri.com/en-us/arcgis/products/arcgis-pro/overview</a>) is
+decribed below.</p>
+<h2 id="qgis-plugin">QGIS Plugin<a class="headerlink" href="#qgis-plugin" title="Permanent link"></a></h2>
+<p>In QGIS, the plugin repository is a central storage location where
+users can access and manage plugins that extend the functionality of
+the QGIS application. SMODERP2D may be acessed from this repository.</p>
+<h3 id="installation-instructions">Installation instructions<a class="headerlink" href="#installation-instructions" title="Permanent link"></a></h3>
+<ul>
+<li>
+<p>Install QGIS: <a href="https://www.qgis.org/en/site/forusers/download.html">https://www.qgis.org/en/site/forusers/download.html</a></p>
+<ul>
+<li>Suggested version: 3.34.10/3.38.2 or higher, see <a href="#known-issues">known issues</a> for details</li>
+</ul>
+</li>
+<li>
+<p>Check button <code>Show also Experimental Plugins</code> in Plugin/Settings </p>
+</li>
+</ul>
+<p><a class="glightbox" href="img/experimetal_settings_plugins.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Install QGIS SMODERP2D plugin" src="img/experimetal_settings_plugins.png" /></a></p>
+<ul>
+<li>Install <strong>SMODERP2D</strong> plugin from QGIS plugin repository</li>
+</ul>
+<p><a class="glightbox" href="img/qgis_plugin_install.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Install QGIS SMODERP2D plugin" src="img/qgis_plugin_install.png" /></a></p>
+<p>Open the plugin from the menu <code>Plugins</code> ➤ <code>SMODERP2D</code> or from the
+toolbar <a class="glightbox" href="img/qgis_plugin_icon.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="img/qgis_plugin_icon.png" /></a>.</p>
+<h3 id="usage">Usage<a class="headerlink" href="#usage" title="Permanent link"></a></h3>
+<p>The plugin consists of four tabs:</p>
+<ul>
+<li><em>Spatial data</em> for defining input spatial GIS layers</li>
+</ul>
+<p><a class="glightbox" href="img/qgis_plugin_spatial_data.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="img/qgis_plugin_spatial_data.png" /></a></p>
+<ul>
+<li><em>Model parameters</em> for defining input parameters</li>
+</ul>
+<p><a class="glightbox" href="img/qgis_plugin_model_parameters.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="img/qgis_plugin_model_parameters.png" /></a></p>
+<ul>
+<li><em>Computation options</em> for defining various options including target
+  directory where computation results will be stored</li>
+</ul>
+<p><a class="glightbox" href="img/qgis_plugin_comp_options.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="img/qgis_plugin_comp_options.png" /></a></p>
+<ul>
+<li><em>Advanced</em> for defining advanced options</li>
+</ul>
+<p><a class="glightbox" href="img/qgis_plugin_advanced.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="img/qgis_plugin_advanced.png" /></a></p>
+<ul>
+<li>History runs are stored in <em>History</em> tab</li>
+</ul>
+<p><a class="glightbox" href="img/qgis_plugin_history.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="img/qgis_plugin_history.png" /></a></p>
+<h3 id="known-issues">Known issues<a class="headerlink" href="#known-issues" title="Permanent link"></a></h3>
+<p>Only for QGIS 3.34.9/3.38.1 or lower: On MS Windows QGIS plugin may
+suffer by poping-up windows when starting computation. It is caused by
+a bug in GRASS 8.3. This issue can be solved by copying <code>core.py</code>
+file available from <a href="https://raw.githubusercontent.com/storm-fsv-cvut/smoderp2d/master/bin/qgis/grass_patch/core.py">GitHub
+repository</a>
+to a GRASS target directory which is typically located in:</p>
+<ul>
+<li><code>C:\Program Files\QGIS 3.**.*\apps\grass\grass83\etc\python\grass\script</code> in the case that QGIS has been installed by standalone installer, or</li>
+<li><code>C:\OSGeo4W\apps\grass\grass83\etc\python\grass\script</code> in the case that QGIS has been installed by OSGeo4W network installer.</li>
+</ul>
+<h2 id="grass-gis-addon">GRASS GIS Addon<a class="headerlink" href="#grass-gis-addon" title="Permanent link"></a></h2>
+<h3 id="installation-instructions_1">Installation instructions<a class="headerlink" href="#installation-instructions_1" title="Permanent link"></a></h3>
+<ul>
+<li>Install GRASS GIS: <a href="https://grass.osgeo.org/download/">https://grass.osgeo.org/download/</a></li>
+<li>Download latest SMODERP2D version: <a href="https://github.com/storm-fsv-cvut/smoderp2d/releases">https://github.com/storm-fsv-cvut/smoderp2d/releases</a></li>
+<li>Install GRASS Addon: <code>g.extension extension=r.smoderp2d url=/path/to/smoderp2d/bin/grass/r.smoderp2d</code></li>
+<li>Install SMODERP2D package: <code>python3 -m pip install smoderp2d</code></li>
+<li>Launch GRASS Addon: <code>r.smoderp2d</code></li>
+</ul>
+<h3 id="usage_1">Usage<a class="headerlink" href="#usage_1" title="Permanent link"></a></h3>
+<p>GRASS Addon is organized into several tabs similar to the QGIS plugin:</p>
+<ul>
+<li><em>Spatial data</em></li>
+</ul>
+<p><a class="glightbox" href="img/grass_addon_spatial_data.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="img/grass_addon_spatial_data.png" /></a></p>
+<ul>
+<li><em>Model parameters</em></li>
+</ul>
+<p><a class="glightbox" href="img/grass_addon_model_parameters.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="img/grass_addon_model_parameters.png" /></a></p>
+<ul>
+<li><em>Computation options</em></li>
+</ul>
+<p><a class="glightbox" href="img/grass_addon_comp_options.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="img/grass_addon_comp_options.png" /></a></p>
+<ul>
+<li><em>Advanced</em></li>
+</ul>
+<p><a class="glightbox" href="img/grass_addon_advanced.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="img/grass_addon_advanced.png" /></a></p>
+<p>Compared to the QGIS plugin, the GRASS addon has a few more tabs:</p>
+<ul>
+<li><em>Optional</em> for GRASS-related global options</li>
+</ul>
+<p><a class="glightbox" href="img/grass_addon_optional.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="img/grass_addon_optional.png" /></a></p>
+<ul>
+<li><em>Command output</em> for messages printed by running command</li>
+</ul>
+<p><a class="glightbox" href="img/grass_addon_command_output.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="img/grass_addon_command_output.png" /></a></p>
+<ul>
+<li><em>Manual</em> for GRASS Addon documentation</li>
+</ul>
+<p><a class="glightbox" href="img/grass_addon_manual.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="img/grass_addon_manual.png" /></a></p>
+<h2 id="arcgis-pro-toolbox">ArcGIS Pro Toolbox<a class="headerlink" href="#arcgis-pro-toolbox" title="Permanent link"></a></h2>
+<p>In the ArcGIS environment are a toolboxes a collection of geoprocessing tools. SMODERP are developed as extend tolbox of the ArcGIS software.</p>
+<h3 id="installation-instructions_2">Installation instructions<a class="headerlink" href="#installation-instructions_2" title="Permanent link"></a></h3>
+<ul>
+<li>Download ArcGIS Pro: <a href="https://pro.arcgis.com/en/pro-app/latest/get-started/download-arcgis-pro.htm">https://pro.arcgis.com/en/pro-app/latest/get-started/download-arcgis-pro.htm</a></li>
+<li>Download latest SMODERP2D version: <a href="https://github.com/storm-fsv-cvut/smoderp2d/releases">https://github.com/storm-fsv-cvut/smoderp2d/releases</a></li>
+<li>Open ArcGIS Toolbox located in <code>bin\arcgis\SMODERP2D.pyt</code></li>
+</ul>
+<p><a class="glightbox" href="img/AG_where_is.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="img/AG_where_is.png" /></a></p>
+<h3 id="usage_2">Usage<a class="headerlink" href="#usage_2" title="Permanent link"></a></h3>
+<p>Screen of ArGIS Pro - SMODERP Toolbox</p>
+<p><a class="glightbox" href="img/AG_model.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="img/AG_model.png" /></a></p>
+<p>Computation options and Advanced menu</p>
+<p><a class="glightbox" href="img/AG_options.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="img/AG_options.png" /></a></p>
+<p>History runs are stored in <strong>History</strong> of ArcGIS Pro project.</p>
+<h2 id="batch-processing">Batch processing<a class="headerlink" href="#batch-processing" title="Permanent link"></a></h2>
+<p>First, download SMODERP2D from GitHub repository
+<a href="https://github.com/storm-fsv-cvut/smoderp2d">https://github.com/storm-fsv-cvut/smoderp2d</a>.</p>
+<p>Batch processing may be run as a single process or multiple processes
+defined by a CSV file.</p>
+<p>To run batch process GRASS GIS is required.</p>
+<div class="admonition note">
+<p class="admonition-title">Installation Note</p>
+<p>Note that on MS Windows GRASS GIS is part of the QGIS
+installation. In this case there is no need to install GRASS GIS
+separately.</p>
+<p>You only need to adjust the installation path in 
+<code>tests/batch/init_windows_env.bat</code> file based on how QGIS is installed.</p>
+<ul>
+<li>
+<p>If QGIS is installed using QGIS standalone installator, set <code>INSTALL_DIR</code> where QGIS is installed, e.g.:
+<pre class="highlight"><code>set INSTALL_DIR=C:\Program Files\QGIS 3.36.2\</code></pre></p>
+</li>
+<li>
+<p>If QGIS is installed using OSGeo4W network installator, set <code>INSTALL_DIR</code> where OSGeo4W is installed, e.g.:
+<pre class="highlight"><code>set INSTALL_DIR=C:\OSGeo4W</code></pre></p>
+</li>
+</ul>
+<p>You may also need to adjust GRASS version (in example below GRASS
+8.3 is expected to be installed):
+<pre class="highlight"><code>set GRASS_VERSION=83</code></pre></p>
+</div>
+<h3 id="single-process">Single process<a class="headerlink" href="#single-process" title="Permanent link"></a></h3>
+<p>Open <code>batch_process_single.bat</code> (or <code>batch_process_single_linux.sh</code> on
+GNU/Linux) located in <code>tests/batch</code> directory and adjust input
+parameters. Then run the script.</p>
+<h3 id="multiple-processes">Multiple processes<a class="headerlink" href="#multiple-processes" title="Permanent link"></a></h3>
+<p>Multiple processes may be defined by a CSV file, for example see
+<code>tests/batch/batch_process.csv</code> file.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If the content of the first cell starts with <code>#</code>, the process is skipped.</p>
+</div>
+<p>Adjust parameters in your CSV file and run <code>batch_process_csv.bat</code> (or
+<code>batch_process_csv_linux.sh</code> on GNU/Linux) located in <code>tests/batch</code>
+directory.</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>Processes may be run in parallel. Number of workers is defined in
+the script:</p>
+<pre class="highlight"><code> --workers 1</code></pre>
+<p>Note that for parallel processing (ie. number of workers &gt; 1)
+<a href="https://joblib.readthedocs.io/en/stable/">Joblib</a> Python package
+is required. The package may be installed on Windows by
+<code>install_joblib_windows.bat</code> located in <code>tests/batch</code>.</p>
+<p>WARNING: parallel processing is experimental and may have various
+problems.</p>
+</div>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="index.html" class="btn btn-neutral float-left" title="SMODERP2D"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="requirements.html" class="btn btn-neutral float-right" title="Requirements">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href="index.html" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="requirements.html" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script src="js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = ".";</script>
+    <script src="js/theme_extra.js"></script>
+    <script src="js/theme.js"></script>
+      <script src="search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+<script id="init-glightbox">const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});
+</script></body>
+</html>

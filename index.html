@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="description" content="None" /><link rel="canonical" href="https://github.com/storm-fsv-cvut/smoderp2d/index.html" />
+      <link rel="shortcut icon" href="img/favicon.ico" />
+    <title>SMODERP2D</title>
+    <link rel="stylesheet" href="css/theme.css" />
+    <link rel="stylesheet" href="css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "SMODERP2D";
+        var mkdocs_page_input_path = "index.md";
+        var mkdocs_page_url = "/storm-fsv-cvut/smoderp2d/index.html";
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+ <link href="assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
+    html.glightbox-open { overflow: initial; height: 100%; }
+    .gslide-title { margin-top: 0px; user-select: text; }
+    .gslide-desc { color: #666; user-select: text; }
+    .gslide-image img { background: white; }</style> <script src="assets/javascripts/glightbox.min.js"></script></head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href="index.html" class="icon icon-home"> SMODERP2D
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="./search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+                <li class="toctree-l1 current"><a class="reference internal current" href="#">SMODERP2D</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#about-model">About model</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#users">Users</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#simulated-processes">Simulated processes</a>
+    </li>
+    </ul>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="providers.html">Installation and Usage</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="requirements.html">Requirements</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="input_data.html">Input data</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="model_setup.html">Model settings</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="output.html">Outputs</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="reference_manual.html">Reference manual</a>
+                </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">SMODERP2D</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="index.html" class="icon icon-home" aria-label="Docs"></a></li>
+      <li class="breadcrumb-item active">SMODERP2D</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="smoderp2d">SMODERP2D<a class="headerlink" href="#smoderp2d" title="Permanent link"></a></h1>
+<p><strong>Distributed event-based model for surface a sheet runoff and for design of erosion control measure</strong></p>
+<p>Welcome to the user guide for the SMODERP2D model. The aim of this text is
+to provide basic information to users on how to run the SMODERP2D model.</p>
+<pre class="highlight"><code class="language-sh">    @ @ @   @       @     @ @     @ @ @     @ @ @ @  @ @ @    @ @ @
+   @        @ @   @ @   @     @   @     @   @        @     @  @     @
+   @        @   @   @  @       @  @      @  @        @     @  @     @
+     @ @    @       @  @       @  @      @  @ @ @    @ @ @    @ @ @
+         @  @       @  @       @  @      @  @        @   @    @
+         @  @       @   @     @   @     @   @        @    @   @
+    @ @ @   @       @     @ @     @ @ @     @ @ @ @  @     @  @
+    \  \  /   / /    \   \  /   \  /    /     /       @ @ @   @ @ @
+     \ _\/   /_/      \   \/     \/    /_____/       @     @  @     @
+         \__/          \  /      _\___/                    @  @      @
+             \____      \/      /                         @   @      @
+                  \_____/______/                        @     @      @
+                               \                      @       @     @
+                                \___________________ @ @ @ @  @ @ @</code></pre>
+<p>The SMODERP2D model is designed to calculate hydrological and erosion processes on
+individual plots or small catchments. The outputs of the model are primarily
+used to determine runoff conditions in a catchment and obtain parameters for
+runoff and erosion control measures on agricultural land. Additionally,
+the model can assist in designing more complex systems, including sediment
+retention ponds, dry basins, or polders. Its use complies with current
+methods, technical standards, and recommended practices.</p>
+<p>The SMODERP2D model is open source project developed by the Department
+of Landscape Water Conservation, Faculty of Civil Engineering, Czech
+Technical University in Prague. Source code is licenced under GNU GPL
+and available from GitHub repository <a href="https://github.com/storm-fsv-cvut/smoderp2d">https://github.com/storm-fsv-cvut/smoderp2d</a>.</p>
+<h2 id="about-model">About model<a class="headerlink" href="#about-model" title="Permanent link"></a></h2>
+<p>SMODERP is a hydrological model designed to simulate soil erosion and surface runoff processes in small catchments or fields. Its primary focus is on predicting the impact of extrem rainfall on generation of surface runoff and cosequence erison process. The model takes into  various factors such as soil properties, land use, vegetation cover, and topography to accurately predict surface water flow, risk of rill erosion and discharge from extrem event in small watter bodies.
+SMODERP can be used for several applications, including:</p>
+<ul>
+<li><strong>Evaluation of conservation practices</strong>: The model can evaluate the effectiveness of soil and water conservation measures (such contour farming, managemen of cover crops, design of erosion control measure) in reducing of direct runff an rill soil erosion.</li>
+<li><strong>Assessment of soil erosion risk</strong>: By simulating the erosion process under different rainfall events and land management practices, SMODERP helps in identifying areas at risk of rill erosion.</li>
+<li><strong>Water resources management</strong>: By estimating surface runoff, SMODERP assists in water resources planning and management, including the design of conservation ditches systems and the assessment of flood risks.</li>
+<li><strong>Land use planning</strong>: The model can inform land use planning decisions by predicting the impact of different land use scenarios on soil erosion and runoff.</li>
+</ul>
+<p>SMODERP is characterized by its flexibility and adaptability to various scales and conditions, making it suitable for both research and practical applications in environmental and agricultural settings. Its development and updates are typically the result of collaborative efforts among research institutions, universities, and environmental agencies, aiming to improve its accuracy, user-friendliness, and applicability to a wide range of environmental and hydrological issues.</p>
+<h2 id="users">Users<a class="headerlink" href="#users" title="Permanent link"></a></h2>
+<p>The SMODERP hydrological model is utilized by a diverse group of professionals and researchers involved in environmental science, hydrology, land management, and related fields. </p>
+<p>Civil and enviromental engineers, particularly those in water resources engineering, stormwater management, and erosion control, use SMODERP for designing effective drainage systems, retention basins, and other infrastructure to manage runoff and mitigate erosion risks.</p>
+<p>Among its users are hydrologists who study the movement of surface watter from rainfall extrems. SMODERP can be used to predict surface runoff and soil erosion in response to various hydrological events. Environmental scientists, focusing on addressing environmental problems such as soil erosion, water pollution, and habitat destruction, employ the model to evaluate the impacts of land use changes and conservation practices.</p>
+<p>Conservationists and non-governmental organizations focused on conservation efforts and environmental protection utilize SMODERP to identify areas at risk, promote sustainable land management practices, and evaluate the success of conservation initiatives. Lastly, academics and students in environmental science, hydrology, agricultural science, and related disciplines use the model for educational purposes, research projects, and to deepen their understanding of hydrological processes and the dynamics of soil erosion. </p>
+<h2 id="simulated-processes">Simulated processes<a class="headerlink" href="#simulated-processes" title="Permanent link"></a></h2>
+<ul>
+<li><strong>Precipitation</strong>: -the model begins with specific or design rainfall event, including its intensity, duration, and temporal distribution. </li>
+<li><strong>Interception</strong> - vegetation can intercept a portion of the rainfall, storing it on leaves, branches, and stems. Leaf area index and maximal interception are used for.</li>
+<li><strong>Infiltration</strong> - the model estimates infiltration rates are calculated based on soil characteristics, land use, and the initial moisture condition of the soil. The Phillip infiltratin equation is used.</li>
+<li><strong>Surface Runoff Generation</strong> - once the rainfall intensity exceeds the soil’s infiltration capacity, excess water starts to flow over the land surface. Two subprocesses describe surface flow.</li>
+<li><strong>Sheet flow</strong> - flat flow on the whole surface</li>
+<li><strong>Rill flow</strong> - flow concentrated in to rills</li>
+<li><strong>Flow in water bodies</strong> - the model simulates runoff in streams and (dry) channels. It uses hydraulic principles and equations based on Manning’s equation, to calculate the speed and volume of water flow, considering the channel characteristics, roughness. Model calculated with base flow and inputes from surrounded watershed.</li>
+</ul>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="providers.html" class="btn btn-neutral float-right" title="Installation and Usage">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+    
+      <span><a href="providers.html" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script src="js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = ".";</script>
+    <script src="js/theme_extra.js"></script>
+    <script src="js/theme.js"></script>
+      <script src="search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+<script id="init-glightbox">const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});
+</script></body>
+</html>
+
+<!--
+MkDocs version : 1.6.1
+Build Date UTC : 2024-09-03 08:27:22.392604+00:00
+-->

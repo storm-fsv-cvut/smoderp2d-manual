@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><link rel="canonical" href="https://github.com/storm-fsv-cvut/smoderp2d/output.html" />
+      <link rel="shortcut icon" href="img/favicon.ico" />
+    <title>Outputs - SMODERP2D</title>
+    <link rel="stylesheet" href="css/theme.css" />
+    <link rel="stylesheet" href="css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "Outputs";
+        var mkdocs_page_input_path = "output.md";
+        var mkdocs_page_url = "/storm-fsv-cvut/smoderp2d/output.html";
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+ <link href="assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
+    html.glightbox-open { overflow: initial; height: 100%; }
+    .gslide-title { margin-top: 0px; user-select: text; }
+    .gslide-desc { color: #666; user-select: text; }
+    .gslide-image img { background: white; }</style> <script src="assets/javascripts/glightbox.min.js"></script></head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href="index.html" class="icon icon-home"> SMODERP2D
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="./search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="index.html">SMODERP2D</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="providers.html">Installation and Usage</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="requirements.html">Requirements</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="input_data.html">Input data</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="model_setup.html">Model settings</a>
+                </li>
+              </ul>
+              <ul class="current">
+                <li class="toctree-l1 current"><a class="reference internal current" href="#">Outputs</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#basic-outputs">Basic outputs</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#raster-data">Raster data</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#vector-point-and-table-data">Vector, point and table data</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#hydrograph-data">Hydrograph data</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#advanced-outputs">Advanced outputs</a>
+    </li>
+    </ul>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="reference_manual.html">Reference manual</a>
+                </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">SMODERP2D</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="index.html" class="icon icon-home" aria-label="Docs"></a></li>
+      <li class="breadcrumb-item active">Outputs</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="outputs">Outputs<a class="headerlink" href="#outputs" title="Permanent link"></a></h1>
+<p>The model processes a wide range of resulting data to make it usable for surface hydrology and design protection measures and can be divided into two basic groups: - continuously stored results at user-defined points
+- overall results, usually in raster format.
+The results can also be divided into three groups
+- basic results, which are available to regular users and contain only important overall results,
+- detailed results, which describe information not essential for most applied results (for example, the distribution of modeled quantity in furrows and surface runoff, etc.),
+- temporary files, which contain intermediate results during the processing of input data and serve to detect potential errors in the input data.</p>
+<h2 id="basic-outputs">Basic outputs<a class="headerlink" href="#basic-outputs" title="Permanent link"></a></h2>
+<h3 id="raster-data">Raster data<a class="headerlink" href="#raster-data" title="Permanent link"></a></h3>
+<p>Among the basic results are the maximum or cumulative values of selected quantities:
+- cumulative infiltration (cinfil_m3.asc) – the total amount of infiltrated water,
+- cumulative precipitation (crain_m3.asc) – the total amount of precipitation,
+- cumulative surface runoff (cvsur_m3.asc) – the total amount of runoff,
+- maximum surface flow (mqsur_m3_s.asc) – maximum flow at a given point,</p>
+<h3 id="vector-point-and-table-data">Vector, point and table data<a class="headerlink" href="#vector-point-and-table-data" title="Permanent link"></a></h3>
+<ul>
+<li><strong>stream-aoi</strong> - is a cliped vector of streams by computing area.</li>
+<li>cumulative ruonff a maximal discharge in the ends of streams elements are stored in <strong>streams.csv</strong> file <em>(in case stream flow are calculated)</em>.</li>
+<li>** points_aoi** - cliped points of hydrograph by computing area.</li>
+<li>folder <strong>./control_point</strong> - time series of outpust at thos clipped points. <em>The listed quantities at points depend on the type of runoff process. If the point is in the cell of a hydrographic network segment, the values of this entire segment relevant to the runoff process in the watercourse are listed. If the point is in the watershed area, the model gives the values of surface (areal and furrow) runoff for the respective cell</em>.</li>
+</ul>
+<h3 id="hydrograph-data">Hydrograph data<a class="headerlink" href="#hydrograph-data" title="Permanent link"></a></h3>
+<p><strong>./control_point</strong> - stored for each point in computation domain time series of basic data</p>
+<p>Tab: Surface runoff hydrograph variable description</p>
+<table>
+<thead>
+<tr>
+<th><strong>Column name</strong></th>
+<th><strong>Units</strong></th>
+<th><strong>Description</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>time[s]</strong></td>
+<td>s</td>
+<td>Time from the beginning of simulation</td>
+</tr>
+<tr>
+<td><strong>rainfall[m]</strong></td>
+<td>m</td>
+<td>Rainfall depth in the current time step</td>
+</tr>
+<tr>
+<td>*<em>totalWaterLevel[m]*</em></td>
+<td>m</td>
+<td>Total water level</td>
+</tr>
+<tr>
+<td><strong>surfaceFlow[m3/s]</strong></td>
+<td>m^3s{-1}</td>
+<td>Total flow (sheet + rill)</td>
+</tr>
+<tr>
+<td><strong>cumSurfaceVolRunoff[m3]</strong></td>
+<td>m</td>
+<td>Cumulative runoff volume (sheet + rill)</td>
+</tr>
+</tbody>
+</table>
+<p><em>The water level for rill runoff is not the actual water level in the
+channel, but rather the critical height of the water level related to the
+entire computational cell area</em></p>
+<p>Tab: Stream hydrograph variable description</p>
+<table>
+<thead>
+<tr>
+<th><strong>Column name</strong></th>
+<th><strong>Unit</strong></th>
+<th><strong>Description</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>time[s]</strong></td>
+<td>s</td>
+<td>Time from the beginning of simulation</td>
+</tr>
+<tr>
+<td><strong>deltaTime[s]</strong></td>
+<td>s</td>
+<td>Current time step length</td>
+</tr>
+<tr>
+<td><strong>rainfall[m]</strong></td>
+<td>m</td>
+<td>Rainfall depth in the current time step</td>
+</tr>
+<tr>
+<td><strong>reachWaterLevel[m]</strong></td>
+<td>m</td>
+<td>Level of sheet flow</td>
+</tr>
+<tr>
+<td><strong>reachFlow[m3/s]</strong></td>
+<td>m^3s^{-1}</td>
+<td>Sheet flow rate</td>
+</tr>
+<tr>
+<td><strong>cumReachVolRunoff[m3]</strong></td>
+<td>m^3</td>
+<td>Cumulative runoff volume in stream network reach</td>
+</tr>
+</tbody>
+</table>
+<h2 id="advanced-outputs">Advanced outputs<a class="headerlink" href="#advanced-outputs" title="Permanent link"></a></h2>
+<p>Advanced outputs are stored in two specific folders:
+- ./Control stored control results of subprocesses and subrutines</p>
+<p><em>table with descrtiption will be hire?</em></p>
+<ul>
+<li>./temp folder - stored mostly data from datapreparation (depends on GIS provider) </li>
+</ul>
+<p><em>table with descrtiption will be hire?</em></p>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="model_setup.html" class="btn btn-neutral float-left" title="Model settings"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="reference_manual.html" class="btn btn-neutral float-right" title="Reference manual">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href="model_setup.html" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="reference_manual.html" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script src="js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = ".";</script>
+    <script src="js/theme_extra.js"></script>
+    <script src="js/theme.js"></script>
+      <script src="search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+<script id="init-glightbox">const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});
+</script></body>
+</html>
