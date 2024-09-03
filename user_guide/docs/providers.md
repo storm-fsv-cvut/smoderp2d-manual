@@ -16,6 +16,7 @@ the QGIS application. SMODERP2D may be acessed from this repository.
 ### Installation instructions
 
 * Install QGIS: <https://www.qgis.org/en/site/forusers/download.html>
+    * Suggested version: 3.34.10/3.38.2 or higher, see [known issues](#known-issues) for details
 
 * Check button `Show also Experimental Plugins` in Plugin/Settings 
 
@@ -54,11 +55,12 @@ The plugin consists of four tabs:
 
 ![](./img/qgis_plugin_history.png)
 
-### Known issue
+### Known issues
 
-On MS Windows QGIS plugin may suffer by poping-up windows when
-starting computation. It is caused by a bug in GRASS 8.3. This issue
-can be solved by copying ``core.py`` file available from [GitHub
+Only for QGIS 3.34.9/3.38.1 or lower: On MS Windows QGIS plugin may
+suffer by poping-up windows when starting computation. It is caused by
+a bug in GRASS 8.3. This issue can be solved by copying ``core.py``
+file available from [GitHub
 repository](https://raw.githubusercontent.com/storm-fsv-cvut/smoderp2d/master/bin/qgis/grass_patch/core.py)
 to a GRASS target directory which is typically located in:
 
